@@ -669,7 +669,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
     var tiles = [["en", "English", ""], ["ur", "اردو", "Urdu"], ["hi", "हिंदी", "Hindi"], ["bn", "বাংলা", "Bangla"]].map(function (l) {
       return '<button type="button" class="lang-tile" data-pick="' + l[0] + '"><span class="nm ' + l[0] + '">' + l[1] + '</span><span class="sub">' + l[2] + '</span></button>';
     }).join("");
-    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · अपनी भाषा चुनें · আপনার ভাষা বেছে নিন</p>' + tiles + '</section>' + installCard();
+    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · अपनी भाषा चुनें · আপনার ভাষা বেছে নিন</p>' + installCard() + tiles + '</section>';
     setBar("");
   }
 
@@ -677,7 +677,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
     var t = T(), best = store("kartak-best-full");
     var facts = t.facts.map(function (f) { return '<div class="f"><strong>' + f[0] + '</strong><small>' + f[1] + '</small></div>'; }).join("");
     app.innerHTML =
-      '<section class="hello"><h1>' + t.title + '</h1><p>' + t.sub + '</p></section>' +
+      '<section class="hello"><h1>' + t.title + '</h1><p>' + t.sub + '</p></section>' + installCard() +
       '<section class="realtest" aria-label="' + t.real + '"><div class="cap">' + t.real + '</div>' + facts + '</section>' +
       '<section class="modes">' +
         '<button type="button" class="mode main" data-go="intro-full"><span class="ic">' + ICONS.clock + '</span><span class="t">' + t.full + '</span><span class="d">' + t.fullD + '</span></button>' +
@@ -685,7 +685,6 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
         '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
         '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
       '</section>' +
-      installCard() +
       '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + '%</bdi>' : t.none) + '</b></div>' +
       '<p class="fine">' + t.fine + '</p>';
     setBar("");
