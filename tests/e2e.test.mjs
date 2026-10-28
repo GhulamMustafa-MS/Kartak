@@ -7,7 +7,7 @@
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; offline after the first visit (a local server, then the internet off); the install help sheet
+ *             language; a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -15,7 +15,7 @@
  */
 import fs from "node:fs";
 import { createRequire } from "node:module";
-import { callApi, ROOT, ADMIN_PASSWORD } from "./testdb.mjs";
+import { callApi, ROOT, ADMIN_PASSWORD, db } from "./testdb.mjs";
 
 const { chromium, devices } = createRequire(import.meta.url)("playwright");
 const SHOTS = ROOT + "tests/screenshots/";
@@ -180,6 +180,27 @@ check("home-screen copy opens unlocked", true);
 
 console.log("page errors:", errors.length ? errors : "none");
 if (errors.length) failed++;
+// Time limit (D25): the seller makes a 7-day code; once the 7 days have passed, the worker app locks itself
+await seller.click("[data-days='7']");
+await seller.fill("#note", "Trial person");
+await seller.click("#make");
+await seller.waitForFunction(() => document.querySelector(".new-code .big") && document.querySelector("[data-days='7'][aria-pressed=true]"));
+const trialCode = (await seller.textContent(".new-code .big")).trim();
+check("seller can make a 7-day code", (await seller.textContent(".list")).includes("7 days, starts at first use"));
+check("WhatsApp message says how long it works", decodeURIComponent(await seller.getAttribute(".new-code a", "href")).includes("7 days from the first time"));
+await seller.screenshot({ path: SHOTS + "seller-limit.png", fullPage: true });
+const trialPhone = await phone();
+await trialPhone.goto("https://kartak-app.vercel.app/");
+await trialPhone.click("[data-pick=ar]");
+await trialPhone.fill("#codeIn", trialCode);
+await trialPhone.click("#unlockBtn");
+await trialPhone.waitForSelector("[data-go=practice]");
+await db.query("update kartak_codes set activated_at = now() - interval '8 days' where code = $1", [trialCode.replace("-", "")]);
+await trialPhone.reload();
+await trialPhone.waitForSelector(".err", { timeout: 5000 }).catch(() => {});
+check("after the time is over the app locks and says why (in Arabic)", (await trialPhone.textContent("#app")).includes(UI.ar.errExpired));
+await trialPhone.screenshot({ path: SHOTS + "expired-ar.png" });
+
 // Offline: a real local server (service workers need one), first visit online, then the internet goes off
 const http = await import("node:http");
 const server = http.createServer((req, res) => {

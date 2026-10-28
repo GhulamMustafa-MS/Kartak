@@ -46,6 +46,8 @@
 **Security and access**
 - The repo is public, so anyone technical can read the questions and the code. The code lock stops ordinary
   link sharing only. Fix: make the repo private (plan.md roadmap step 4).
+- A time-limited code (D25) is only checked when the app opens with internet, so a phone that stays offline
+  keeps working after the time is over until it next goes online.
 - Device ids live in the browser's storage: clearing site data or using another browser looks like a new
   phone, and the seller has to reset the code.
 - One shared seller password; no per-seller accounts or audit log.

@@ -6,9 +6,9 @@ The server side: Vercel serverless functions (Node 24, ES modules) for the acces
 | File | Purpose |
 |---|---|
 | `_db.js` | Shared Postgres client (`sql`), `normCode()`, `readBody()`; swapped for an in-memory database by the tests. Not an endpoint (leading `_`) |
-| `activate.js` | POST /api/activate - unlock with a code; locks it to one phone (D9) |
+| `activate.js` | POST /api/activate - unlock with a code; locks it to one phone (D9); refuses a code whose time limit is over (D25) |
 | `transfer.js` | POST /api/transfer - one-time token that moves a code to the iPhone home-screen app (D13) |
-| `admin.js` | POST /api/admin - seller actions (list, new, reset, disable, enable, delete); password checked by hash; CORS for the seller app (D12) |
+| `admin.js` | POST /api/admin - seller actions (list, new with an optional time limit, limit, reset, disable, enable, delete); password checked by hash; CORS for the seller app (D12) |
 | `health.js` | GET /api/health - `{ok:true}` when the database answers |
 
 Rules for changing files here:

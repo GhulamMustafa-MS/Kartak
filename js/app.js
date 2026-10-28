@@ -7,7 +7,8 @@
  *               Settings  SIZES (full 50 / quick 15 / practice 15 / all = whole bank), PASS = 80%,
  *                         QSEC = 90 s per question; full and quick are timed, practice and all are not
  *               State     S (current screen, mode, question index, answers); store() wraps localStorage
- *               Codes     API is only used on *.vercel.app; deviceId(), activate() -> /api/activate
+ *               Codes     API is only used on *.vercel.app; deviceId(), activate() -> /api/activate; the saved
+ *                         code is re-checked on every start with internet (turned off / time limit ended, D25)
  *               Speech    "Listen" button, shown only when the phone has a voice for the language
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
  *               Screens   drawLang, drawHome, drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
@@ -454,6 +455,8 @@
       (S.codeErr ? '<div class="err" role="alert">' + t[S.codeErr] + '</div>' : '') + '</section>';
     setBar('<button type="button" class="cta" id="unlockBtn"' + (S.codeBusy ? " disabled" : "") + '>' + (S.codeBusy ? t.checking : t.unlock) + '</button>');
   }
+  // Which message the code screen shows for each reason /api/activate gives.
+  function codeErr(reason) { return { used: "errUsed", disabled: "errDisabled", expired: "errExpired", net: "errNet" }[reason] || "errInvalid"; }
   function tryUnlock() {
     var el = document.getElementById("codeIn"); var code = (el ? el.value : "").trim();
     S.codeDraft = code; if (!code) return;
@@ -461,7 +464,7 @@
     activate(code, function (j) {
       S.codeBusy = false;
       if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); makeTransfer(); return; }
-      S.codeErr = { used: "errUsed", disabled: "errDisabled", net: "errNet" }[j.reason] || "errInvalid";
+      S.codeErr = codeErr(j.reason);
       drawGate();
     });
   }
@@ -530,7 +533,8 @@
   app.addEventListener("click", function (ev) { if (ev.target.closest("#installBtn")) installNow(); });
   app.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && ev.target.id === "codeIn") tryUnlock(); });
   // Re-check a saved code in the background; drop it only if the server says it is no longer valid for this phone.
-  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (j.ok) makeTransfer(); else if (j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} if (S.screen !== "q") render(); } });
+  // A code with a time limit (D25) stops here: the next start with internet finds it has ended and locks the app.
+  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (j.ok) makeTransfer(); else if (j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} S.codeErr = codeErr(j.reason); if (S.screen !== "q") render(); } });
   bar.addEventListener("click", onClick);
 
   redeemTransfer(render);

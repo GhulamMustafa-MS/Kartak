@@ -54,7 +54,9 @@ handbook itself stays outside the repo (copyright).
 Worker app (installable, works offline after the first visit):
 - Languages: a tile for each on the first screen and a dropdown at the top to switch any time (D24);
   Arabic and Urdu right-to-left. The app offers the languages listed in `KARTAK_LANGS` (js/i18n.js).
-- Code gate: a code from the seller unlocks the app on one phone (D9).
+- Code gate: a code from the seller unlocks the app on one phone (D9). The code is re-checked every time the
+  app opens with internet: a turned-off code or one whose time limit is over locks the app with a message
+  in the worker's language (D25).
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
   the worker stopped, D21), "Learn the question types" with a small example of each type.
@@ -62,7 +64,9 @@ Worker app (installable, works offline after the first visit):
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 
-Seller app: password once per phone; make / copy / WhatsApp a code; list with status; reset for a new phone;
+Seller app: password once per phone; make / copy / WhatsApp a code, with an optional time limit (1, 3, 7 or 30
+days from the first use, for people who want to try it first; changeable later, D25); list with status
+(including "Time over"); reset for a new phone;
 turn off / on; delete; its own home-screen icon (D12, D14).
 
 ## 5. Business model (agreed 28 Oct 2026)

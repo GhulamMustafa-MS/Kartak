@@ -2,7 +2,7 @@
  * seller/css/seller.css - styles for the seller app (seller/index.html).
  *
  * Purpose:    Colour tokens (light + dark) and the layout of the code list, buttons, install card and
- *             help sheet. Shares the green brand with the worker app; the seller icon is brown so the
+ *             help sheet, and the time-limit chips (D25). Shares the green brand with the worker app; the seller icon is brown so the
  *             two apps are easy to tell apart on a phone.
  * Used by:    seller/index.html.
  */
@@ -60,3 +60,12 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .sheet { width: 100%; max-width: 560px; background: var(--surface); border-radius: 22px 22px 0 0; padding: 20px max(16px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); display: grid; gap: 14px; }
 .sheet h2 { margin: 0; }
 .sheet ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+
+/* Time limit chips (decision D25): one row of choices, the chosen one filled. */
+.lbl { display: block; font-weight: 700; margin: 12px 0 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips button { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface-2); color: var(--ink); font: inherit; font-size: 15px; cursor: pointer; }
+.chips button[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); font-weight: 700; }
+.small { font-size: 14px; }
+.limit-edit { display: grid; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+

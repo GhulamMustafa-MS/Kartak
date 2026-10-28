@@ -3,11 +3,12 @@
  *
  * Purpose:    Codes lock to one phone, reset frees them, turned-off and deleted codes stop working,
  *             wrong passwords are refused, the iPhone hand-over token works once, CORS is only for the
- *             seller app. Prints each check and exits with code 1 if any fails.
+ *             seller app, time limits (a code ends N days after its first use, the seller can change
+ *             or remove the limit, D25). Prints each check and exits with code 1 if any fails.
  * Run:        cd tests && npm install && node api.test.mjs
  * Depends on: tests/testdb.mjs, api/*.js.
  */
-import { callApi, ADMIN_PASSWORD } from "./testdb.mjs";
+import { callApi, ADMIN_PASSWORD, db } from "./testdb.mjs";
 
 let failed = 0;
 const check = (name, ok) => { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; };
@@ -36,8 +37,26 @@ check("turned-off code refused", (await callApi("activate", { code: made, device
 await admin("enable", { code: made });
 check("turned back on", (await callApi("activate", { code: made, device: "home-CCCC" })).body.ok);
 const list = (await admin("delete", { code: made })).body.list;
-check("delete removes it", list.length === 0);
+check("delete removes it", !list.some((x) => x.code === made));
 check("deleted code refused", (await callApi("activate", { code: made, device: "home-CCCC" })).body.reason === "invalid");
+
+// Time limits (D25): days count from the first use; the code stops once they pass; the seller can change them.
+const trial = (await admin("new", { note: "Trial", days: 7 })).body.made;
+const row = (r) => r.body.list.find((x) => x.code === trial);
+check("7-day code: limit saved, not started before first use", row(await admin("list")).valid_days === 7 && !row(await admin("list")).ends);
+const first = (await callApi("activate", { code: trial, device: "phone-TTTT" })).body;
+check("7-day code works and says when it ends", first.ok && Math.round((new Date(first.ends) - Date.now()) / 86400000) === 7);
+await db.query("update kartak_codes set activated_at = now() - interval '8 days' where code = $1", [trial]);
+check("after 7 days the code is refused as expired", (await callApi("activate", { code: trial, device: "phone-TTTT" })).body.reason === "expired");
+check("seller list shows it as time over", row(await admin("list")).expired === true);
+check("expired code can't be handed to an iPhone home screen", !(await callApi("transfer", { action: "make", code: trial, device: "phone-TTTT" })).body.ok);
+await admin("limit", { code: trial, days: 30 });
+check("seller gives more days: works again", (await callApi("activate", { code: trial, device: "phone-TTTT" })).body.ok);
+await db.query("update kartak_codes set activated_at = now() - interval '40 days' where code = $1", [trial]);
+await admin("limit", { code: trial, days: null });
+check("no limit: works however long ago it started", (await callApi("activate", { code: trial, device: "phone-TTTT" })).body.ok);
+const bad = (await admin("new", { days: 5000 })).body;
+check("a silly number of days means no limit", bad.list.find((x) => x.code === bad.made).valid_days === null);
 
 const pre = await callApi("admin", {}, { method: "OPTIONS", origin: "https://kartak-seller.vercel.app" });
 check("CORS allowed for the seller app", pre.status === 204 && pre.headers["Access-Control-Allow-Origin"] === "https://kartak-seller.vercel.app");

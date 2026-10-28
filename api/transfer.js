@@ -8,7 +8,8 @@
  *             make:   { action: "make", code, device }    -> { ok, token }  (only the locked phone)
  *             redeem: { action: "redeem", token, device } -> { ok, code }   (one use)
  * Used by:    js/app.js (makeTransfer(), redeemTransfer()).
- * Depends on: api/_db.js; columns transfer_token, transfer_expires in kartak_codes.
+ *             A code whose time limit has passed (D25) can't be handed over.
+ * Depends on: api/_db.js; columns transfer_token, transfer_expires, valid_days in kartak_codes.
  */
 import crypto from "node:crypto";
 
@@ -25,13 +26,15 @@ export default async function handler(req, res) {
       const token = crypto.randomBytes(12).toString("base64url");
       const r = await sql`
         update kartak_codes set transfer_token = ${token}, transfer_expires = now() + interval '1 day'
-         where code = ${norm(body.code)} and device_id = ${device} and not disabled returning code`;
+         where code = ${norm(body.code)} and device_id = ${device} and not disabled
+           and (valid_days is null or activated_at + make_interval(days => valid_days) > now()) returning code`;
       return res.json(r.length ? { ok: true, token } : { ok: false });
     }
     if (body.action === "redeem") {
       const r = await sql`
         update kartak_codes set device_id = ${device}, transfer_token = null, transfer_expires = null, last_seen = now()
-         where transfer_token = ${String(body.token || "")} and transfer_expires > now() and not disabled returning code`;
+         where transfer_token = ${String(body.token || "")} and transfer_expires > now() and not disabled
+           and (valid_days is null or activated_at + make_interval(days => valid_days) > now()) returning code`;
       return res.json(r.length ? { ok: true, code: r[0].code } : { ok: false });
     }
     return res.json({ ok: false });

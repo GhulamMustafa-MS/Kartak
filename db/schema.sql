@@ -9,6 +9,8 @@
 --
 -- kartak_codes:    one row per access code. device_id = the phone it is locked to (null = not used yet).
 --                  transfer_token/expires = one-time hand-over to the iPhone home-screen app (decision D13).
+--                  valid_days = optional time limit in days from the first use (activated_at); null = no limit
+--                  (decision D25). A reset for a new phone does not restart the time.
 -- kartak_settings: key/value. admin_hash = SHA-256 of the seller password (the password itself is never stored).
 
 create table if not exists kartak_codes (
@@ -21,6 +23,7 @@ create table if not exists kartak_codes (
   activated_at timestamptz,
   last_seen timestamptz,
   transfer_token text,
-  transfer_expires timestamptz
+  transfer_expires timestamptz,
+  valid_days int
 );
 create table if not exists kartak_settings (k text primary key, v text not null);

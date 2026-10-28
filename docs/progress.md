@@ -11,7 +11,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
   Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 304 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place) /
   learn the types, code lock, installable, offline.
-- Seller app https://kartak-seller.vercel.app: make, send, reset, turn off and delete codes.
+- Seller app https://kartak-seller.vercel.app: make (with an optional 1/3/7/30-day limit for trials), send,
+  reset, change the time limit, turn off and delete codes.
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
 
@@ -35,6 +36,9 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (night, 2):** time-limited codes (D25): the seller picks no limit / 1 / 3 / 7 / 30 days when making
+  a code and can change it later; counted from the first use; the app locks with a message in the worker's
+  language when the time is over. Migration 003 run on the live database (existing codes have no limit).
 - **28 Oct 2026 (night):** offline fixed for the first visit: the service worker now saves the app and all
   questions as soon as it installs (it used to save only what loaded after it started); browser test turns the
   internet off and checks practice still works.

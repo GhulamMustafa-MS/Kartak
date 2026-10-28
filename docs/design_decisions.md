@@ -33,6 +33,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D22 | 28 Oct | The official handbook is the source of every question; its numbers replace the WHO ones | User | The exam is built on the handbook (BK-FS-Workers-E-2025-01); facts in handbook.md |
 | D23 | 28 Oct | Grow the bank to about 300 questions covering all 13 handbook chapters, each tagged with its chapter | User asked, AI wrote | Full mocks repeat less; every part of the syllabus is practised |
 | D24 | 28 Oct | All 11 exam languages (adds Arabic, Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish); a language dropdown at the top replaces the four buttons | User | Kitchen workers in Saudi speak them; the real exam offers exactly these 11 |
+| D25 | 28 Oct | Codes can have a time limit (no limit / 1 / 3 / 7 / 30 days), counted from the first use; the seller sets it when making the code and can change it later | User asked, AI designed | Trials for people who don't want to pay the full amount first |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -130,4 +131,19 @@ English words left in non-Latin scripts, Western digits, and every number the sa
 separate agent reviews each language against the English before it goes live. Rejected: a custom dropdown
 menu (more code, worse on phones and for accessibility); buttons that scroll sideways (hard to discover);
 machine translation without the word list (the same term would be translated differently across questions).
+
+## D25. Time-limited codes (trials)
+
+The user asked for codes that stop after a set time, so people can try the app before paying in full. The
+seller picks no limit, 1, 3, 7 or 30 days when making a code (chips under the name box) and can change it later
+with "Time limit" on the code, for example to No limit once a trial person pays. The days count from the
+**first use** (`activated_at`), not from when the code is made, so a code that waits a few days in WhatsApp
+loses nothing; a reset for a new phone does not restart the time, so a reset can't be used to get a fresh
+trial. One new column `valid_days` (migration 003); the end date is worked out as activated_at + valid_days,
+so changing the limit takes effect at once. The app already re-checks its code every time it opens with
+internet; an expired code now answers `expired`, the app removes the saved code and shows the code screen with
+"This code's time is over…" in the worker's language. Offline the app keeps working until the next time it
+is online (as the user asked; see summary.md 2). Rejected: counting from the day the code is made (unfair if
+the worker starts late); a separate end-date column (two facts to keep in step); turning the code off when it
+ends (the seller couldn't tell "turned off" from "time over").
 
