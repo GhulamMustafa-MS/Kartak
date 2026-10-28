@@ -29,6 +29,11 @@
   state (fridge shelf order, reheat only once, return to work after vomiting) and may differ from the exam.
 - The handbook is an English edition; the exam's Urdu, Hindi and Bangla wording may use different words.
 - No video questions yet (D5); the real exam has them.
+- Some of the 205 new questions use steps or wrong options from general good practice where the handbook
+  gives no fixed order or example (writers flagged them on 28 Oct); native speakers and real exam reports
+  should confirm them.
+- A worker who was part-way through "All questions" before 28 Oct carries on with the old 100 questions
+  until they press "start again".
 - The real exam's exact topic weighting is unknown; the bank's mix is a best guess.
 
 **Security and access**

@@ -54,7 +54,7 @@ Worker app (installable, works offline after the first visit):
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
   the worker stopped, D21), "Learn the question types" with a small example of each type.
-- 100 live questions (+2 video questions held back, D5) in all four languages; question order and answer
+- 305 live questions from all 13 handbook chapters (+2 video questions held back, D5) in all four languages; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 

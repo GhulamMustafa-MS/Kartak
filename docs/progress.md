@@ -7,7 +7,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 ## START HERE (last updated 28 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
-- Worker app https://kartak-app.vercel.app: 4 languages, 100 live questions, full mock / quick test /
+- Worker app https://kartak-app.vercel.app: 4 languages, 305 live questions (all 13
+  handbook chapters, D22, D23), full mock / quick test /
   practice / all questions (saved place) / learn the types, code lock, installable, offline.
 - Seller app https://kartak-seller.vercel.app: make, send, reset, turn off and delete codes.
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
