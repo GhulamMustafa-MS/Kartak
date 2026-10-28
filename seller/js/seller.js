@@ -1,7 +1,8 @@
 /*
  * seller/js/seller.js - the seller app: log in with the password, make, reset, turn off and delete codes.
  *
- * Purpose:    Draws every screen of seller/index.html into #app. A code can get a time limit (no limit /
+ * Purpose:    Draws every screen of seller/index.html into #app: the Codes tab and the Results tab (how each
+ *             person is doing, drawn by seller/js/stats.js, decision D26). A code can get a time limit (no limit /
  *             1 / 3 / 7 / 30 days from its first use, decision D25), chosen when it is made or changed
  *             later with "Time limit" on the code. Talks only to POST /api/admin on the
  *             worker app's address (API below), which checks the password on every call. The password is
@@ -10,12 +11,15 @@
  *             Destructive buttons need a second tap within 4 seconds.
  *             Also: add-to-home-screen card + help sheet (decision D13), service worker registration.
  * Used by:    seller/index.html.
- * Depends on: api/admin.js (on https://kartak-app.vercel.app), seller/sw.js, seller/icons/.
+ * Depends on: api/admin.js (on https://kartak-app.vercel.app), seller/js/stats.js, the worker app's
+ *             data/questions.json (topic and question names), seller/sw.js, seller/icons/.
  */
 (function () {
   "use strict";
   var app = document.getElementById("app");
-  var S = { key: get("kartak-admin-key"), list: [], made: null, madeDays: null, days: null, limitFor: null, err: null, busy: false, q: "" };
+  var S = { key: get("kartak-admin-key"), list: [], made: null, madeDays: null, days: null, limitFor: null, err: null, busy: false, q: "",
+    tab: "codes", stats: null, person: null, personRows: null, bank: null };
+  var K = window.KartakStats;
   // Time limits the seller can pick (decision D25): days from the code's first use; null = no limit.
   var LIMITS = [[null, "No limit"], [1, "1 day"], [3, "3 days"], [7, "7 days"], [30, "30 days"]];
   function limitName(d) { return d ? d + (d === 1 ? " day" : " days") : "No limit"; }
@@ -63,7 +67,7 @@
         if (!j.ok) {
           if (j.reason === "key") { S.key = null; set("kartak-admin-key", null); S.err = "That password is wrong."; }
           else S.err = "Something went wrong. Try again.";
-        } else { S.list = j.list; if (cb) cb(j); }
+        } else { S.list = j.list; if (j.stats) S.stats = j.stats; if (j.results) S.personRows = j.results; if (cb) cb(j); }
         draw();
       })
       .catch(function () { S.busy = false; S.err = "No internet. Connect and try again."; draw(); });
@@ -73,6 +77,29 @@
     var msg = "Kartak practice test\n\nYour code: " + fmt(code) + "\n\nOpen this link and type the code:\n" + appLink + "\n\nThe code works on one phone only." +
       (S.madeDays ? "\nIt works for " + limitName(S.madeDays) + " from the first time you use it." : "");
     return "https://wa.me/?text=" + encodeURIComponent(msg);
+  }
+
+  // The question bank (English text, chapter, type) names the topics and questions on the Results tab.
+  // It comes from the worker app, which allows this address to read it (vercel.json).
+  function loadBank() {
+    if (S.bank) return;
+    S.bank = {};
+    fetch(appLink + "data/questions.json").then(function (r) { return r.json(); }).then(function (d) {
+      var b = {}; d.questions.forEach(function (q) { b[q.id] = { ch: q.ch, type: q.type, q: q.en.q }; }); S.bank = b; draw();
+    }).catch(function () { S.bank = null; });
+  }
+  function openResults(code) {
+    S.tab = "results"; S.person = code || null; S.personRows = null; loadBank();
+    if (code) call({ action: "results", code: code }); else call({ action: "stats" });
+    scrollTo(0, 0);
+  }
+  function resultsView() {
+    if (S.person) {
+      var row = S.list.filter(function (r) { return r.code === S.person; })[0];
+      if (!row) return '<p class="muted">This code no longer exists.</p>';
+      return S.personRows ? K.person(row, S.personRows, S.bank || {}) : '<p class="muted">Loading…</p>';
+    }
+    return S.stats ? K.overview(S.stats, S.list, S.bank || {}) : '<p class="muted">Loading…</p>';
   }
 
   function draw() {
@@ -85,8 +112,15 @@
     var total = S.list.length, active = S.list.filter(function (r) { return r.active && !r.disabled && !r.expired; }).length, unused = S.list.filter(function (r) { return !r.active && !r.disabled; }).length;
     var q = S.q.toUpperCase().replace(/[^A-Z0-9 ]/g, "");
     var rows = S.list.filter(function (r) { return !q || r.code.indexOf(q.replace(/ /g, "")) > -1 || (r.note || "").toUpperCase().indexOf(q) > -1; });
+    var tabs = '<nav class="tabs" role="tablist"><button role="tab" data-tab="codes" aria-selected="' + (S.tab === "codes") + '">Codes</button>' +
+      '<button role="tab" data-tab="results" aria-selected="' + (S.tab === "results") + '">Results</button></nav>';
+    if (S.tab === "results") {
+      app.innerHTML = '<header><b>Kartak codes</b><span>' + (S.busy ? "Working…" : "") + '</span></header>' + tabs +
+        (S.err ? '<div class="err">' + esc(S.err) + '</div>' : '') + resultsView();
+      return;
+    }
     var html = '<header><b>Kartak codes</b><span>' + (S.busy ? "Working…" : "") + '</span></header>' +
-      installCard() + '<section class="stats"><div><b>' + total + '</b><small>codes made</small></div><div><b>' + active + '</b><small>on a phone</small></div><div><b>' + unused + '</b><small>not used yet</small></div></section>' +
+      installCard() + tabs + '<section class="stats"><div><b>' + total + '</b><small>codes made</small></div><div><b>' + active + '</b><small>on a phone</small></div><div><b>' + unused + '</b><small>not used yet</small></div></section>' +
       '<section class="card"><h2>New code</h2><p class="muted">Make one code for each person who pays. It works on one phone only.</p>' +
       '<input type="text" id="note" placeholder="Name (optional)" maxlength="60">' +
       '<span class="lbl">How long it works</span>' + chips(S.days, "data-days") +
@@ -100,9 +134,11 @@
         var lim = !r.valid_days ? "" : ' · ' + limitName(r.valid_days) + (r.ends ? (r.expired ? ", ended " : ", ends ") + day(r.ends) : ", starts at first use");
         return '<div class="item"><div class="top"><span class="c">' + fmt(r.code) + '</span>' + st + '</div>' +
           '<span class="muted">' + esc(r.note || "No name") + ' · made ' + day(r.created_at) + (r.reset_count ? ' · reset ' + r.reset_count + '×' : '') + lim + '</span>' +
+          (r.tests ? '<span class="res">' + K.summary(r) + ' ' + '<span class="pill v-' + K.verdict(r)[0] + '">' + K.verdict(r)[1] + '</span></span>' : '') +
           '<div class="acts">' + (r.active && !r.disabled ? '<button data-act="reset" data-code="' + r.code + '">Reset for new phone</button>' : '') +
           (r.disabled ? '<button data-act="enable" data-code="' + r.code + '">Turn back on</button>' : '<button data-act="disable" data-code="' + r.code + '">Turn off</button>') +
           '<button data-limitfor="' + r.code + '">Time limit</button>' +
+          '<button data-person="' + r.code + '">Results</button>' +
           '<button class="del" data-act="delete" data-code="' + r.code + '">Delete</button></div>' +
           (S.limitFor === r.code ? '<div class="limit-edit"><span class="muted small">Change the time limit. The days count from the first use' + (r.activated_at ? ' (' + day(r.activated_at) + ')' : '') + '.</span>' + chips(r.valid_days || null, "data-setlimit", r.code) + '</div>' : '') + '</div>';
       }).join("") : '<p class="muted">No codes yet.</p>') + '</section>' +
@@ -113,6 +149,9 @@
   app.addEventListener("click", function (ev) {
     var b = ev.target.closest("button"); if (!b || b.disabled) return;
     if (b.id === "installBtn") { installNow(); return; }
+    if (b.dataset.tab) { if (b.dataset.tab === "results") openResults(null); else { S.tab = "codes"; S.person = null; draw(); } return; }
+    if (b.dataset.person) { openResults(b.dataset.person); return; }
+    if (b.dataset.back) { openResults(null); return; }
     if (b.id === "login") { var k = document.getElementById("key").value.trim(); if (!k) return; S.key = k; set("kartak-admin-key", k); call({ action: "list" }); return; }
     if (b.id === "make") { var note = document.getElementById("note").value, d = S.days; call({ action: "new", note: note, days: d }, function (j) { S.made = j.made; S.madeDays = d; }); return; }
     if (b.dataset.days !== undefined) { S.days = b.dataset.days ? +b.dataset.days : null; keepNote(draw); return; }

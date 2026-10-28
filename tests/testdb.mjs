@@ -25,7 +25,7 @@ export const ADMIN_PASSWORD = "test-password";
 await db.query("insert into kartak_settings (k, v) values ('admin_hash', $1)", [crypto.createHash("sha256").update(ADMIN_PASSWORD).digest("hex")]);
 
 const handlers = {};
-for (const name of ["activate", "admin", "transfer", "health"]) handlers[name] = (await import(ROOT + "api/" + name + ".js")).default;
+for (const name of ["activate", "admin", "transfer", "health", "result"]) handlers[name] = (await import(ROOT + "api/" + name + ".js")).default;
 
 export async function callApi(name, body, { method = "POST", origin } = {}) {
   const out = { status: 200, headers: {}, body: null };

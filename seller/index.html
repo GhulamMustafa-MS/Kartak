@@ -6,7 +6,7 @@
               send it on WhatsApp, reset it for a new phone, turn it off or delete it.
               Deployed as its own Vercel project (root directory "seller") so it installs as a separate
               app with its own icon (decision D12).
-  Depends on: css/seller.css, js/seller.js, manifest.webmanifest, icons/, sw.js.
+  Depends on: css/seller.css, js/stats.js (Results tab), js/seller.js, manifest.webmanifest, icons/, sw.js.
 -->
 <html lang="en">
 <head>
@@ -28,6 +28,7 @@
 </head>
 <body>
 <div class="page" id="app"></div>
+<script src="/js/stats.js"></script>
 <script src="/js/seller.js"></script>
 
 </body>

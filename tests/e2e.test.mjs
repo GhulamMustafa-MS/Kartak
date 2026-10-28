@@ -3,7 +3,8 @@
  *
  * Purpose:    Serves the repo files as if they were on kartak-app / kartak-seller.vercel.app and answers
  *             /api/* with the real API code on the in-memory database, then: the seller logs in and
- *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result;
+ *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result, which
+ *             reaches the server and shows on the seller's Results tab and the person's page (D26);
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
@@ -28,6 +29,7 @@ globalThis.window = {};
 await import(ROOT + "js/i18n.js");
 const UI = window.KARTAK_UI;
 const UI_LANGS = window.KARTAK_LANGS.filter((l) => UI[l.code]);
+const VERCEL = JSON.parse(fs.readFileSync(ROOT + "vercel.json", "utf8"));
 const TYPES = { html: "text/html", js: "text/javascript", mjs: "text/javascript", css: "text/css", json: "application/json", png: "image/png", svg: "image/svg+xml", webmanifest: "application/manifest+json" };
 
 let failed = 0;
@@ -52,7 +54,10 @@ async function phone(device) {
       if (p.startsWith("/api/")) return r.fallback();
       const file = ROOT + dir + (p === "/" ? "index.html" : p.slice(1));
       if (!fs.existsSync(file)) return r.fulfill({ status: 404, body: "" });
-      await r.fulfill({ contentType: TYPES[file.split(".").pop()] || "text/plain", body: fs.readFileSync(file) });
+      // Same response headers as the live site gets from vercel.json (e.g. the seller may read questions.json).
+      const extra = {};
+      if (!dir) for (const h of VERCEL.headers || []) if (h.source === p) for (const x of h.headers) extra[x.key] = x.value;
+      await r.fulfill({ contentType: TYPES[file.split(".").pop()] || "text/plain", headers: extra, body: fs.readFileSync(file) });
     });
   }
   return page;
@@ -93,6 +98,22 @@ await worker.click("#bar [data-go=full]");
 await worker.waitForSelector(".qtext");
 await worker.screenshot({ path: SHOTS + "question-bn.png" });
 check("full mock has 50 questions", (await answerAll(worker)) === 50);
+check("results screen says results are saved", (await worker.textContent(".results")).includes(UI.bn.savedNote));
+await worker.waitForFunction(() => (localStorage.getItem("kartak-outbox") || "[]") === "[]", null, { timeout: 5000 }).catch(() => {});
+check("the full mock result reached the server", (await callApi("admin", { key: ADMIN_PASSWORD, action: "stats" })).body.stats.overall.fulls === 1);
+// Seller sees it on the Results tab, and this person's own page
+await seller.click("[data-tab=results]");
+await seller.waitForSelector(".person");
+check("seller Results tab shows the test and the person", (await seller.textContent("#app")).includes("tests taken") && (await seller.$$(".person")).length === 1);
+await seller.screenshot({ path: SHOTS + "seller-results.png", fullPage: true });
+await seller.click(".person");
+await seller.waitForSelector(".trend");
+check("seller sees one person's scores, topics and recent tests", (await seller.textContent("#app")).includes("Full mock exams") && (await seller.$$(".trend > span")).length === 1);
+await seller.waitForFunction(() => document.querySelectorAll(".qrow").length > 0, null, { timeout: 5000 }).catch(() => {});
+check("seller sees the questions this person missed, in English", (await seller.$$(".qrow")).length > 0);
+check("the seller's results pages fit the phone width", (await seller.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+await seller.screenshot({ path: SHOTS + "seller-person.png", fullPage: true });
+await seller.click("[data-tab=codes]");
 await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
 
 // "All questions": every live question, untimed, place saved between sittings (D21)

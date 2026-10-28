@@ -10,13 +10,14 @@
  kartak-app.vercel.app                  kartak-seller.vercel.app
  index.html + css/ + js/ + data/        seller/index.html + seller/css/ + seller/js/
  sw.js (offline), manifest              seller/sw.js, seller/manifest
-        |  POST /api/activate, /api/transfer        |  POST https://kartak-app.vercel.app/api/admin (CORS)
+        |  POST /api/activate, /api/transfer,      |  POST https://kartak-app.vercel.app/api/admin (CORS)
+        |       /api/result (test results)          |  GET .../data/questions.json (CORS, vercel.json)
         v                                            v
  Vercel project "kartak": api/*.js (Node serverless functions, region lhr1)
         |  SQL over HTTPS (@neondatabase/serverless), env DATABASE_URL
         v
  Neon Postgres: project "amigodb" (aws-eu-west-2), database "kartak", role "kartak_app"
- tables kartak_codes, kartak_settings (db/schema.sql)
+ tables kartak_codes, kartak_settings, kartak_results (db/schema.sql)
 ```
 
 ## Addresses and IDs (not secrets)
@@ -42,13 +43,17 @@ the seller password is known to Mustafa and Wessam and stored only as a SHA-256 
    the code is used elsewhere, turned off or deleted, it forgets it and shows the code screen.
 3. **Questions:** `data/questions.json` is fetched once per launch; `sw.js` keeps a copy for offline use
    (network first, so updates arrive on the next launch with internet).
-4. **Tests** run entirely on the phone; no answers or scores are sent anywhere (only the best full-mock
-   percentage is kept on the phone, `kartak-best-full`).
+4. **Tests** run entirely on the phone. When one finishes (and every 20 answers of "All questions"), the result
+   (type, language, score, time, the question ids asked and got wrong) goes into `kartak-outbox` on the phone
+   and is sent to `/api/result`, which saves it only if the code is locked to that phone (D26). Offline
+   results wait and go out on the next launch or when the internet comes back.
 5. **iPhone home screen:** Safari asks `/api/transfer` for a one-time token and puts it in the address; the
    home-screen copy redeems it on first launch (D13).
-6. **Seller:** every action posts to `/api/admin` with the password; the response is the full code list.
+6. **Seller:** every action posts to `/api/admin` with the password; the response is the full code list, each
+   code with a summary of its results. The Results tab asks for `stats` (all codes) or `results` (one code)
+   and reads the worker app's `data/questions.json` (allowed by `vercel.json`) to name topics and questions.
 
 ## Limits of this design
 
 See [summary.md](summary.md) section 2 (public repo means questions are readable; codes are checked per
-device id, which clearing browser data resets; no record of test results; one seller password).
+device id, which clearing browser data resets; results only from 28 Oct 2026; one seller password).

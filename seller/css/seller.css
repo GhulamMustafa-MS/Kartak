@@ -69,3 +69,33 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .small { font-size: 14px; }
 .limit-edit { display: grid; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 
+/* Tabs and the Results screens (decision D26). Verdict colours: green ready, yellow getting there, red needs practice. */
+.tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 4px; }
+.tabs button { min-height: 44px; border: 0; border-radius: 10px; background: none; color: var(--muted); font: inherit; font-weight: 700; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--primary); color: var(--primary-ink); }
+.pill.v-ready { background: var(--good-bg); color: var(--good); }
+.pill.v-close { background: var(--warn-bg); color: var(--warn); }
+.pill.v-weak { background: var(--bad-bg); color: var(--bad); }
+.pill.v-none { background: var(--surface-2); color: var(--muted); }
+.item .res { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; color: var(--ink); }
+.person { display: grid; gap: 2px; width: 100%; text-align: start; background: var(--surface-2); border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; margin-top: 8px; font: inherit; color: inherit; cursor: pointer; }
+.person .top, .card .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.card .top h2 { margin: 0; }
+.trow { display: grid; grid-template-columns: 1fr 80px auto; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.trow:last-child { border-bottom: 0; }
+.trow.two { grid-template-columns: 1fr auto; }
+.trow .tv small { font-weight: 400; }
+.trow .tv { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 700; }
+.trow .tv.ok { color: var(--good); } .trow .tv.no { color: var(--bad); }
+.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--muted); }
+.bar.good > span { background: var(--good); } .bar.mid > span { background: var(--warn); } .bar.bad > span { background: var(--bad); }
+.qrow { display: grid; gap: 2px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.qrow:last-child { border-bottom: 0; }
+.trend { display: flex; align-items: flex-end; gap: 6px; height: 120px; padding-top: 8px; }
+.trend > span { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; }
+.trend i { display: block; width: 100%; max-width: 28px; border-radius: 6px 6px 2px 2px; background: var(--muted); }
+.trend i.good { background: var(--good); } .trend i.mid { background: var(--warn); } .trend i.bad { background: var(--bad); }
+.trend small { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.back { min-height: 44px; justify-self: start; }
+

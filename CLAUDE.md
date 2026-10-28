@@ -109,6 +109,7 @@ Only push when both end in OK / ALL ... PASSED.
 | `sw.js` | Worker service worker: install + offline, network first, never caches `/api/` |
 | `seller.html` | Old seller address; forwards to the seller app |
 | `package.json` / `package-lock.json` | Runtime dependency of `api/` only (`@neondatabase/serverless`); Vercel installs it |
+| `vercel.json` | Vercel settings for the `kartak` project: lets the seller app read `data/questions.json` (CORS, D26) |
 | `.vercelignore` | What the `kartak` Vercel project must not publish (seller/, tests/, scripts/, docs/, db/, *.md) |
 | `.gitignore` | node_modules, test screenshots, local Vercel/env files |
 | `README.md` | Short public description and checks |

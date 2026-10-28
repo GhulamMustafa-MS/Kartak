@@ -4,7 +4,8 @@
  * Purpose:    Codes lock to one phone, reset frees them, turned-off and deleted codes stop working,
  *             wrong passwords are refused, the iPhone hand-over token works once, CORS is only for the
  *             seller app, time limits (a code ends N days after its first use, the seller can change
- *             or remove the limit, D25). Prints each check and exits with code 1 if any fails.
+ *             or remove the limit, D25), test results (only from the locked phone, saved once, summed up
+ *             for the seller, deleted with their code, D26). Prints each check and exits with code 1 if any fails.
  * Run:        cd tests && npm install && node api.test.mjs
  * Depends on: tests/testdb.mjs, api/*.js.
  */
@@ -57,6 +58,24 @@ await admin("limit", { code: trial, days: null });
 check("no limit: works however long ago it started", (await callApi("activate", { code: trial, device: "phone-TTTT" })).body.ok);
 const bad = (await admin("new", { days: 5000 })).body;
 check("a silly number of days means no limit", bad.list.find((x) => x.code === bad.made).valid_days === null);
+
+// Results (D26): only the phone the code is locked to can send; the same result is saved once; the seller sees it.
+const rc = (await admin("new", { note: "Results" })).body.made;
+await callApi("activate", { code: rc, device: "phone-RRRR" });
+const ids = Array.from({ length: 50 }, (_, k) => "k" + String(k + 1).padStart(3, "0"));
+const item = (id, mode, correct, wrong) => ({ id, mode, lang: "bn", total: 50, correct, timedOut: 0, seconds: 1800, asked: ids, wrong, at: new Date().toISOString() });
+const send = (device, items) => callApi("result", { code: rc, device, items });
+check("results from another phone are refused", (await send("phone-XXXX", [item("res-00000001", "full", 40, ids.slice(0, 10))])).body.reason === "code");
+check("results from the locked phone are saved", (await send("phone-RRRR", [item("res-00000001", "full", 40, ids.slice(0, 10)), item("res-00000002", "full", 30, ids.slice(0, 20))])).body.saved === 2);
+check("the same result sent again is saved once", (await send("phone-RRRR", [item("res-00000001", "full", 40, ids.slice(0, 10))])).body.saved === 0);
+check("a broken result is ignored", (await send("phone-RRRR", [{ id: "res-00000003", mode: "full", total: 50, correct: 99, asked: ids, wrong: [] }])).body.saved === 0);
+const summary = (await admin("list")).body.list.find((x) => x.code === rc);
+check("code list shows tests, average and full mocks passed", summary.tests === 2 && summary.avg === 70 && summary.fulls === 2 && summary.fulls_passed === 1);
+const st = (await admin("stats")).body.stats;
+check("stats: totals, pass rate and hardest questions", st.overall.tests === 2 && st.overall.fulls_passed === 1 && st.questions.find((q) => q.id === "k001").wrong === 2 && st.questions.find((q) => q.id === "k001").asked === 2);
+check("one person's tests, newest first", (await admin("results", { code: rc })).body.results.length === 2);
+await admin("delete", { code: rc });
+check("deleting a code deletes its results", (await admin("stats")).body.stats.overall.tests === 0);
 
 const pre = await callApi("admin", {}, { method: "OPTIONS", origin: "https://kartak-seller.vercel.app" });
 check("CORS allowed for the seller app", pre.status === 204 && pre.headers["Access-Control-Allow-Origin"] === "https://kartak-seller.vercel.app");

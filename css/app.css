@@ -404,3 +404,6 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
 @media (prefers-reduced-motion: reduce) { .dial .fgc { transition: none; } }
 @media (max-width: 370px) { .realtest strong { font-size: 22px; } .qtext { font-size: 20px; } .langs button { padding: 4px 9px; } }
 .modes .small-btn { justify-self: start; min-height: 44px; }
+
+/* Results screen: one quiet line saying results are saved for the seller (decision D26). */
+.results .saved { color: var(--muted); font-size: 14px; margin: 8px 0 0; }

@@ -15,11 +15,14 @@
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
  *               Events    one click handler for #app and #bar, the language dropdown, start-up
- * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it),
+ *               Results   record() / flushResults(): finished tests (and blocks of 20 in "All questions") go to
+ *                         an outbox and are sent to /api/result for the seller's analytics (D26)
+ * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it), kartak-outbox
+ *             (results not sent yet),
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
  *             kartak-all (saved place in "All questions", so it can be finished over several days).
  * Used by:    index.html.
- * Depends on: js/i18n.js, data/questions.json, api/activate.js, api/transfer.js, sw.js, icons/.
+ * Depends on: js/i18n.js, data/questions.json, api/activate.js, api/transfer.js, api/result.js, sw.js, icons/.
  */
 (function () {
   "use strict";
@@ -213,7 +216,7 @@
   function start(mode) {
     if (!BANK.length) { bankReady.then(function () { if (BANK.length) start(mode); }); return; }
     stopSpeak(); clearInterval(S.tick); S.tick = null;
-    S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q";
+    S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q"; S.allSent = 0;
     if (mode === "all" && resumeAll()) return;
     var idx = BANK.map(function (q, k) { return k; });
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
@@ -224,10 +227,49 @@
     openQ();
   }
 
+  /* Results for the seller's analytics (decision D26): each finished test, and every 20 answers of "All
+     questions", goes into an outbox on the phone and is sent to /api/result when there is internet. */
+  function outbox() { try { return JSON.parse(store("kartak-outbox") || "[]"); } catch (e) { return []; } }
+  function record(from, to) {
+    if (!API || !store("kartak-code") || to <= from) return;
+    var asked = [], wrong = [], correct = 0, timedOut = 0;
+    for (var k = from; k < to; k++) {
+      var q = S.qs[k], r = S.results[k] || { ok: false, timedOut: true };
+      asked.push(q.id); if (r.ok) correct++; else wrong.push(q.id); if (r.timedOut) timedOut++;
+    }
+    var id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2);
+    var box = outbox(); box.push({ id: id, mode: S.mode, lang: S.lang, total: to - from, correct: correct, timedOut: timedOut,
+      seconds: S.mode === "all" ? null : Math.round((Date.now() - S.startedAt) / 1000), asked: asked, wrong: wrong, at: new Date().toISOString() });
+    store("kartak-outbox", JSON.stringify(box.slice(-200)));
+    flushResults();
+  }
+  function flushResults() {
+    var box = outbox(), code = store("kartak-code");
+    if (!API || !code || !box.length || S.sending) return;
+    S.sending = true;
+    var batch = box.slice(0, 50);
+    fetch(API + "/result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code: code, device: deviceId(), items: batch }) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        S.sending = false;
+        if (!j.ok && j.reason !== "code") return; // try again later
+        var sent = batch.map(function (x) { return x.id; });
+        store("kartak-outbox", JSON.stringify(outbox().filter(function (x) { return sent.indexOf(x.id) < 0; })));
+        if (outbox().length && j.ok) flushResults();
+      })
+      .catch(function () { S.sending = false; });
+  }
+  // "All questions" is long, so it is reported in blocks of 20 answers (and whatever is left when the worker stops).
+  function recordAll(force) {
+    if (S.mode !== "all") return;
+    var n = S.results.filter(function (r) { return r; }).length;
+    if (n - (S.allSent || 0) >= 20 || (force && n > (S.allSent || 0))) { record(S.allSent || 0, n); S.allSent = n; saveAll(); }
+  }
+
   /* "All questions" can take several sittings: keep the place on the phone (decision D21). */
   function saveAll() {
     if (S.mode !== "all") return;
-    store("kartak-all", JSON.stringify({ ids: S.qs.map(function (q) { return q.id; }), results: S.results, shuffles: S.shuffles, perms: S.perms }));
+    store("kartak-all", JSON.stringify({ ids: S.qs.map(function (q) { return q.id; }), results: S.results, shuffles: S.shuffles, perms: S.perms, sent: S.allSent || 0 }));
   }
   function savedAll() {
     try { var d = JSON.parse(store("kartak-all") || "null"); return d && d.ids && d.results.length < d.ids.length ? d : null; } catch (e) { return null; }
@@ -237,7 +279,7 @@
     var byId = {}; BANK.forEach(function (q) { byId[q.id] = q; });
     if (!d.ids.every(function (id) { return byId[id]; })) { forgetAll(); return false; } // bank changed: start fresh
     S.qs = d.ids.map(function (id) { return byId[id]; });
-    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length;
+    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length; S.allSent = d.sent || 0;
     S.startedAt = Date.now(); openQ(); return true;
   }
   function forgetAll() { try { localStorage.removeItem("kartak-all"); } catch (e) {} }
@@ -373,7 +415,7 @@
     clearInterval(S.tick); S.tick = null; stopSpeak();
     for (var k = 0; k < N(); k++) if (!S.results[k]) S.results[k] = { ok: false, sel: null, timedOut: true };
     S.endedAt = Date.now(); S.screen = "results";
-    if (S.mode === "all") forgetAll();
+    if (S.mode === "all") { recordAll(true); forgetAll(); } else record(0, N());
     var score = S.results.filter(function (r) { return r.ok; }).length;
     if (S.mode === "full") { var pc = Math.round(score / N() * 100), prev = parseInt(store("kartak-best-full") || "0", 10); if (pc > prev) store("kartak-best-full", String(pc)); }
     drawResults(); window.scrollTo(0, 0);
@@ -405,7 +447,8 @@
     });
 
     app.innerHTML = '<section class="results"><div class="score">' + ring +
-      '<p class="verdict ' + (pass ? "pass" : "fail") + '">' + (pass ? t.passV : t.failV) + '</p><p>' + (pass ? t.passed : t.failed) + '</p>' + tally + '</div>' + rv + '</section>';
+      '<p class="verdict ' + (pass ? "pass" : "fail") + '">' + (pass ? t.passV : t.failV) + '</p><p>' + (pass ? t.passed : t.failed) + '</p>' + tally +
+      (API ? '<p class="saved">' + t.savedNote + '</p>' : '') + '</div>' + rv + '</section>';
     setBar('<button type="button" class="cta ghost" data-two="1" data-go="home">' + t.home + '</button><button type="button" class="cta" data-go="' + S.mode + '">' + t.again + '</button>');
   }
 
@@ -463,7 +506,7 @@
     S.codeBusy = true; S.codeErr = null; drawGate();
     activate(code, function (j) {
       S.codeBusy = false;
-      if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); makeTransfer(); return; }
+      if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); makeTransfer(); flushResults(); return; }
       S.codeErr = codeErr(j.reason);
       drawGate();
     });
@@ -484,6 +527,7 @@
     if (where === "all-restart") { forgetAll(); return start("all"); }
     if (SIZES[where]) return start(where);
     if (where.indexOf("intro-") === 0) { S.pending = where.slice(6); where = "intro"; }
+    if (S.screen === "q" && S.mode === "all") recordAll(true); // leaving "All questions": report what was answered
     clearInterval(S.tick); S.tick = null; stopSpeak();
     S.screen = where; render(); window.scrollTo(0, 0);
   }
@@ -522,7 +566,7 @@
     if (b.dataset.undo) { S.sel.pop(); drawQ(); return; }
     if (b.dataset.clear) { S.sel = []; drawQ(); return; }
     if (b.id === "cta") {
-      if (!timed()) { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); saveAll(); drawQ(); return; }
+      if (!timed()) { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); saveAll(); recordAll(false); drawQ(); return; }
       clearInterval(S.tick); S.tick = null;
       S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false };
       advance();
@@ -534,8 +578,9 @@
   app.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && ev.target.id === "codeIn") tryUnlock(); });
   // Re-check a saved code in the background; drop it only if the server says it is no longer valid for this phone.
   // A code with a time limit (D25) stops here: the next start with internet finds it has ended and locks the app.
-  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (j.ok) makeTransfer(); else if (j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} S.codeErr = codeErr(j.reason); if (S.screen !== "q") render(); } });
+  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (j.ok) { makeTransfer(); flushResults(); } else if (j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} S.codeErr = codeErr(j.reason); if (S.screen !== "q") render(); } });
   bar.addEventListener("click", onClick);
+  window.addEventListener("online", flushResults); // results saved offline go out as soon as there is internet
 
   redeemTransfer(render);
 })();

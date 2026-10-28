@@ -11,6 +11,8 @@
 --                  transfer_token/expires = one-time hand-over to the iPhone home-screen app (decision D13).
 --                  valid_days = optional time limit in days from the first use (activated_at); null = no limit
 --                  (decision D25). A reset for a new phone does not restart the time.
+-- kartak_results:  one row per finished test or block of "All questions" (decision D26): mode full / quick /
+--                  practice / all, language, score, and the question ids asked and got wrong (comma separated).
 -- kartak_settings: key/value. admin_hash = SHA-256 of the seller password (the password itself is never stored).
 
 create table if not exists kartak_codes (
@@ -27,3 +29,18 @@ create table if not exists kartak_codes (
   valid_days int
 );
 create table if not exists kartak_settings (k text primary key, v text not null);
+create table if not exists kartak_results (
+  id bigserial primary key,
+  client_id text unique not null,
+  code text not null references kartak_codes (code) on delete cascade,
+  mode text not null,
+  lang text not null default '',
+  total int not null,
+  correct int not null,
+  timed_out int not null default 0,
+  seconds int,
+  asked text not null default '',
+  wrong text not null default '',
+  finished_at timestamptz not null default now()
+);
+create index if not exists kartak_results_code on kartak_results (code, finished_at desc);

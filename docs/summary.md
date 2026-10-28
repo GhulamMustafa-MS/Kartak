@@ -46,6 +46,11 @@
 **Security and access**
 - The repo is public, so anyone technical can read the questions and the code. The code lock stops ordinary
   link sharing only. Fix: make the repo private (plan.md roadmap step 4).
+- Results (D26) exist only from 28 Oct 2026; tests taken before were never stored. Timed tests left half-way are
+  not recorded. A phone that never comes back online never sends its results.
+- Results are personal data tied to a name the seller types: keep names to first names or nicknames, and
+  delete codes (which deletes their results) when they are no longer needed. Workers are told their results
+  are saved; there is no way yet for a worker to ask for their results to be removed except through the seller.
 - A time-limited code (D25) is only checked when the app opens with internet, so a phone that stays offline
   keeps working after the time is over until it next goes online.
 - Device ids live in the browser's storage: clearing site data or using another browser looks like a new

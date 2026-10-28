@@ -34,6 +34,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D23 | 28 Oct | Grow the bank to about 300 questions covering all 13 handbook chapters, each tagged with its chapter | User asked, AI wrote | Full mocks repeat less; every part of the syllabus is practised |
 | D24 | 28 Oct | All 11 exam languages (adds Arabic, Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish); a language dropdown at the top replaces the four buttons | User | Kitchen workers in Saudi speak them; the real exam offers exactly these 11 |
 | D25 | 28 Oct | Codes can have a time limit (no limit / 1 / 3 / 7 / 30 days), counted from the first use; the seller sets it when making the code and can change it later | User asked, AI designed | Trials for people who don't want to pay the full amount first |
+| D26 | 28 Oct | Save every finished test against its code and show analytics in the seller app (Results tab + a page per person), for Mustafa and Wessam | User | See who is ready, which topics and questions people miss, which test types they use |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -146,4 +147,21 @@ internet; an expired code now answers `expired`, the app removes the saved code 
 is online (as the user asked; see summary.md 2). Rejected: counting from the day the code is made (unfair if
 the worker starts late); a separate end-date column (two facts to keep in step); turning the code off when it
 ends (the seller couldn't tell "turned off" from "time over").
+
+## D26. Results and analytics in the seller app
+
+The user wanted per-customer analytics (average score, pass rate, test types taken, what they get wrong), seen
+by him and Wessam in the seller app, and recorded from now on for every code, old ones included. The worker
+app now sends each finished test (and every 20 answers of "All questions", which may never be finished) to
+`/api/result`: type, language, score, time taken, and the ids of the questions asked and got wrong. It is
+queued on the phone first (`kartak-outbox`), so offline tests are sent later, and each result has its own id,
+so a retry can't count it twice. Only the phone the code is locked to can send, so nobody can fill another
+person's record. The seller app shows each code's summary in the list, a Results tab (totals, full-mock pass
+rate, people with a verdict, test types, weakest handbook chapters, hardest questions, languages) and a page per
+person (scores over time, full mocks, weak topics, missed questions, recent tests). "Ready" = passed at least
+2 full mocks and most of their full mocks, at 80% like the real exam. Topic and question names come from the
+worker app's question bank, which the seller app may read (`vercel.json`). Workers are told on the results
+screen, in their language, that their results are saved so the person who gave them the code can help.
+Abandoned timed tests are not recorded (only finished ones). Rejected: a separate owner-only page (the user
+chose the seller app); counting on the server from individual answers (more traffic, and tests run offline).
 

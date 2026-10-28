@@ -12,7 +12,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place) /
   learn the types, code lock, installable, offline.
 - Seller app https://kartak-seller.vercel.app: make (with an optional 1/3/7/30-day limit for trials), send,
-  reset, change the time limit, turn off and delete codes.
+  reset, change the time limit, turn off and delete codes; Results tab with each person's scores, readiness,
+  weak topics and the hardest questions (D26).
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
 
@@ -36,6 +37,9 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (night, 3):** results and analytics (D26): the worker app sends every finished test; the seller
+  app shows each code's summary, a Results tab and a page per person. Table `kartak_results` (migration 004)
+  created on the live database. Recording starts now for all codes, old and new.
 - **28 Oct 2026 (night, 2):** time-limited codes (D25): the seller picks no limit / 1 / 3 / 7 / 30 days when making
   a code and can change it later; counted from the first use; the app locks with a message in the worker's
   language when the time is over. Migration 003 run on the live database (existing codes have no limit).

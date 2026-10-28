@@ -66,7 +66,9 @@ Worker app (installable, works offline after the first visit):
 
 Seller app: password once per phone; make / copy / WhatsApp a code, with an optional time limit (1, 3, 7 or 30
 days from the first use, for people who want to try it first; changeable later, D25); list with status
-(including "Time over"); reset for a new phone;
+(including "Time over") and each code's results summary; a Results tab with totals, full-mock pass rate, who is
+ready, test types, weakest topics, hardest questions and languages, and a page per person (D26); reset for a
+new phone;
 turn off / on; delete; its own home-screen icon (D12, D14).
 
 ## 5. Business model (agreed 28 Oct 2026)
@@ -95,8 +97,8 @@ Ordered; each step should be finished, tested and documented before the next.
 5. **Protect the content:** make the GitHub repo private (Vercel deploys private repos; the old GitHub Pages
    link then stops working); optionally load questions from the API only for unlocked phones.
 6. **More languages** the exam offers: Nepali, Malayalam, Tamil, Filipino first (section 8).
-7. **Results and progress:** save each attempt (with consent) so the seller/owner sees who is ready;
-   per-topic weak areas; spaced repetition of mistakes.
+7. **Results and progress:** done 28 Oct 2026 for the seller (Results tab, D26). Next: show workers their own
+   progress and weak topics; spaced repetition of mistakes; an owner view per business.
 8. **Owner product:** owners buy codes for their staff and see readiness; later the per-branch food-safety
    checks product (fridge temperature logs, certificate expiry tracker, inspection checklists) at around
    149 SAR per branch per month.
