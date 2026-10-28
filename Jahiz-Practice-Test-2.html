@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jahiz Practice Test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap">
+<style>
+/* Layout: one phone-width column, content top-aligned and start-aligned, the main action pinned to a bottom bar within thumb reach.
+   Question types are colour-coded with the kitchen chopping-board colours staff already know (blue, green, yellow, red, brown). */
+:root {
+  --bg: #EEF2F1;
+  --surface: #FFFFFF;
+  --surface-2: #F5F8F7;
+  --ink: #10231E;
+  --muted: #51635D;
+  --line: #D2DBD8;
+  --primary: #0A6B4E;
+  --primary-ink: #FFFFFF;
+  --focus: #D99A00;
+  --sel-bg: #E1F0EA;
+  --good: #1E7A3C; --good-bg: #E2F2E6;
+  --bad: #B3261E;  --bad-bg: #FBE6E4;
+  --c-blue: #1F5FA8;   --c-blue-bg: #E3EDF8;
+  --c-green: #1E7A3C;  --c-green-bg: #E2F2E6;
+  --c-yellow: #8A6200; --c-yellow-bg: #FBF0D2;
+  --c-red: #B3261E;    --c-red-bg: #FBE6E4;
+  --c-brown: #7A4E2A;  --c-brown-bg: #F3EAE1;
+  --font-latin: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-bn: "Noto Sans Bengali", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-ur: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1513; --surface: #15201C; --surface-2: #1A2622; --ink: #E5EDEA; --muted: #9AACA5; --line: #2A3833;
+    --primary: #3BB68A; --primary-ink: #04120C; --focus: #F2C14E; --sel-bg: #183A2E;
+    --good: #5CC97E; --good-bg: #15301E; --bad: #F08A80; --bad-bg: #3A1A18;
+    --c-blue: #86B6EC; --c-blue-bg: #172636; --c-green: #5CC97E; --c-green-bg: #15301E;
+    --c-yellow: #E8C15A; --c-yellow-bg: #2E2712; --c-red: #F08A80; --c-red-bg: #3A1A18;
+    --c-brown: #D3A57C; --c-brown-bg: #2E241B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1513; --surface: #15201C; --surface-2: #1A2622; --ink: #E5EDEA; --muted: #9AACA5; --line: #2A3833;
+  --primary: #3BB68A; --primary-ink: #04120C; --focus: #F2C14E; --sel-bg: #183A2E;
+  --good: #5CC97E; --good-bg: #15301E; --bad: #F08A80; --bad-bg: #3A1A18;
+  --c-blue: #86B6EC; --c-blue-bg: #172636; --c-green: #5CC97E; --c-green-bg: #15301E;
+  --c-yellow: #E8C15A; --c-yellow-bg: #2E2712; --c-red: #F08A80; --c-red-bg: #3A1A18;
+  --c-brown: #D3A57C; --c-brown-bg: #2E241B;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body {
+  color: var(--ink);
+  font-family: var(--font-latin);
+  font-size: 17px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 140px;
+}
+html[lang="bn"] body { font-family: var(--font-bn); line-height: 1.65; }
+html[lang="ur"] body { font-family: var(--font-ur); line-height: 2.2; font-size: 16px; }
+button { font: inherit; color: inherit; }
+button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.page { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px 2px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 8px; background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.brand svg { width: 28px; height: 28px; flex: none; }
+.brand b { font-family: var(--font-latin); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: var(--ink); }
+.langs { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
+.langs button { border: 0; background: none; border-radius: 9px; padding: 4px 12px; min-height: 36px; cursor: pointer; font-size: 15px; color: var(--muted); }
+.langs button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); }
+.langs .ur { font-family: var(--font-ur); font-size: 14px; }
+.langs .bn { font-family: var(--font-bn); }
+.langs .en { font-family: var(--font-latin); font-weight: 700; }
+
+/* Language picker */
+.pick { display: grid; gap: 12px; padding-top: 8px; }
+.pick h1 { font-size: 26px; margin: 8px 0 4px; line-height: 1.25; }
+.pick .lead { margin: 0; color: var(--muted); font-size: 16px; }
+.lang-tile {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: start; width: 100%; cursor: pointer;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 18px 20px; min-height: 76px;
+}
+.lang-tile:hover { border-color: var(--primary); }
+.lang-tile .nm { font-size: 26px; font-weight: 700; }
+.lang-tile .nm.ur { font-family: var(--font-ur); font-weight: 600; font-size: 24px; line-height: 2; }
+.lang-tile .nm.bn { font-family: var(--font-bn); }
+.lang-tile .sub { color: var(--muted); font-family: var(--font-latin); font-size: 15px; }
+
+/* Home */
+.hello h1 { font-size: 30px; line-height: 1.15; margin: 4px 0 6px; text-wrap: balance; letter-spacing: -0.01em; }
+html[lang="ur"] .hello h1 { font-size: 24px; line-height: 1.9; font-weight: 700; }
+html[lang="bn"] .hello h1 { font-size: 26px; line-height: 1.35; }
+.hello p { margin: 0; color: var(--muted); max-width: 34em; }
+
+.realtest { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.realtest .cap { grid-column: 1 / -1; padding: 10px 16px; font-size: 15px; color: var(--muted); border-bottom: 1px solid var(--line); background: var(--surface-2); }
+.realtest .f { padding: 12px 16px; display: flex; flex-direction: column; }
+.realtest .f + .f { border-inline-start: 1px solid var(--line); }
+.realtest strong { font-family: var(--font-latin); font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.realtest small { color: var(--muted); font-size: 14px; }
+
+.modes { display: grid; gap: 10px; }
+.mode {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2px 14px; text-align: start; width: 100%; cursor: pointer;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 16px 18px;
+}
+.mode:hover { border-color: var(--primary); }
+.mode .ic { grid-row: 1 / span 2; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--sel-bg); color: var(--primary); }
+.mode .ic svg { width: 26px; height: 26px; }
+.mode .t { font-size: 20px; font-weight: 700; line-height: 1.3; }
+html[lang="ur"] .mode .t { font-size: 18px; line-height: 2; }
+.mode .d { color: var(--muted); font-size: 15px; line-height: 1.4; }
+html[lang="ur"] .mode .d { line-height: 2; }
+.mode.main { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.mode.main .ic { background: var(--primary-ink); color: var(--primary); }
+.mode.main .d { color: var(--primary-ink); opacity: 0.88; }
+
+.best { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; color: var(--muted); padding: 2px 4px; }
+.best b { color: var(--ink); font-variant-numeric: tabular-nums; font-family: var(--font-latin); }
+.fine { font-size: 13px; color: var(--muted); margin: 0; padding: 0 4px; }
+
+/* Type tag (chopping-board colours) */
+.tag { --c: var(--c-blue); --cbg: var(--c-blue-bg); display: flex; align-items: flex-start; gap: 12px; background: var(--cbg); border-radius: 14px; padding: 12px 14px; border-inline-start: 6px solid var(--c); }
+.tag svg { width: 24px; height: 24px; flex: none; color: var(--c); margin-top: 2px; }
+.tag .tt { font-weight: 700; color: var(--c); line-height: 1.3; }
+.tag .th { font-size: 15px; color: var(--ink); line-height: 1.4; }
+html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
+.t-single  { --c: var(--c-blue);   --cbg: var(--c-blue-bg); }
+.t-multi   { --c: var(--c-green);  --cbg: var(--c-green-bg); }
+.t-tf      { --c: var(--c-yellow); --cbg: var(--c-yellow-bg); }
+.t-order   { --c: var(--c-red);    --cbg: var(--c-red-bg); }
+.t-picture { --c: var(--c-brown);  --cbg: var(--c-brown-bg); }
+
+/* Question screen */
+.qhead { display: flex; align-items: center; gap: 14px; }
+.qhead .pos { flex: 1; min-width: 0; display: grid; gap: 6px; }
+.qhead .pos span { font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.track { display: flex; gap: 3px; }
+.track i { flex: 1; height: 6px; border-radius: 3px; background: var(--line); }
+.track i.done { background: var(--primary); }
+.track i.now { background: var(--focus); }
+
+.dial { width: 72px; height: 72px; flex: none; position: relative; }
+.dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.dial .bgc { fill: var(--surface); stroke: var(--line); stroke-width: 6; }
+.dial .fgc { fill: none; stroke: var(--primary); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset .25s linear; }
+.dial.low .fgc { stroke: var(--bad); }
+.dial b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-latin); font-size: 24px; font-variant-numeric: tabular-nums; line-height: 1; }
+.dial.low b { color: var(--bad); }
+.dial small { position: absolute; left: 0; right: 0; bottom: 13px; text-align: center; font-family: var(--font-latin); font-size: 10px; color: var(--muted); }
+
+.notice { background: var(--bad-bg); color: var(--bad); border-radius: 12px; padding: 8px 14px; font-weight: 700; font-size: 15px; }
+
+.qcard { display: grid; gap: 14px; }
+.qrow { display: flex; align-items: flex-start; gap: 12px; }
+.qtext { flex: 1; min-width: 0; margin: 0; font-size: 22px; line-height: 1.3; font-weight: 700; text-wrap: pretty; }
+html[lang="ur"] .qtext { font-size: 19px; line-height: 2.15; font-weight: 600; }
+html[lang="bn"] .qtext { font-size: 21px; line-height: 1.5; }
+.listen { flex: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px; min-height: 40px; font-size: 14px; }
+.listen svg { width: 18px; height: 18px; color: var(--primary); }
+.listen[aria-pressed="true"] { border-color: var(--primary); background: var(--sel-bg); }
+
+.pic { display: flex; align-items: center; justify-content: center; gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
+.pic svg { width: 96px; height: auto; max-width: 100%; }
+.pic .reading { display: grid; justify-items: center; gap: 2px; }
+.pic .reading strong { font-family: var(--font-latin); font-size: 46px; line-height: 1; font-variant-numeric: tabular-nums; direction: ltr; }
+.pic .reading small { color: var(--muted); font-size: 14px; text-align: center; max-width: 12em; }
+.th-tube { fill: var(--surface-2); stroke: var(--ink); stroke-width: 2; }
+.th-liquid { fill: var(--bad); }
+.th-tick { stroke: var(--muted); stroke-width: 1.5; }
+.th-lab { fill: var(--muted); font: 700 11px var(--font-latin); }
+
+.opts { display: grid; gap: 10px; }
+.opt {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: start; cursor: pointer;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 12px 16px; min-height: 60px; font-size: 18px; line-height: 1.35;
+}
+html[lang="ur"] .opt { font-size: 17px; line-height: 2; }
+.opt .mk { flex: none; width: 28px; height: 28px; border: 2.5px solid var(--muted); border-radius: 50%; display: grid; place-items: center; background: var(--surface); }
+.opt.multi .mk { border-radius: 8px; }
+.opt[aria-pressed="true"] { border-color: var(--primary); background: var(--sel-bg); }
+.opt[aria-pressed="true"] .mk { border-color: var(--primary); background: var(--primary); }
+.opt[aria-pressed="true"] .mk::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--primary-ink); }
+.opt.multi[aria-pressed="true"] .mk::after { width: 12px; height: 7px; border-radius: 0; background: none; border-left: 3px solid var(--primary-ink); border-bottom: 3px solid var(--primary-ink); transform: rotate(-45deg) translate(1px, -2px); }
+.opt.tfb { justify-content: center; font-weight: 700; font-size: 20px; min-height: 68px; }
+.opt.tfb .mk { display: none; }
+.tfrow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.opt.ok { border-color: var(--good); background: var(--good-bg); }
+.opt.no { border-color: var(--bad); background: var(--bad-bg); }
+.opt:disabled { cursor: default; }
+.opt:disabled:not(.ok):not(.no) { opacity: 0.55; }
+
+.ozone { display: grid; gap: 8px; }
+.ozone .lb { font-size: 15px; color: var(--muted); }
+.slot { display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; min-height: 54px; padding: 8px 14px; border: 2px dashed var(--line); border-radius: 14px; background: transparent; cursor: pointer; font-size: 17px; line-height: 1.35; }
+html[lang="ur"] .slot { line-height: 2; font-size: 16px; }
+.slot .n { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-latin); font-weight: 700; font-size: 15px; background: var(--line); }
+.slot.full { border-style: solid; border-color: var(--c-red); background: var(--c-red-bg); }
+.slot.full .n { background: var(--c-red); color: var(--surface); }
+.slot.ok { border-color: var(--good); background: var(--good-bg); }
+.slot.ok .n { background: var(--good); }
+.slot.no { border-color: var(--bad); background: var(--bad-bg); }
+.slot.no .n { background: var(--bad); }
+.slot:disabled { cursor: default; }
+.pool { display: grid; gap: 8px; }
+.stepb { width: 100%; text-align: start; cursor: pointer; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; min-height: 54px; font-size: 17px; line-height: 1.35; }
+html[lang="ur"] .stepb { line-height: 2; font-size: 16px; }
+.stepb:hover { border-color: var(--c-red); }
+.otools { display: flex; gap: 10px; flex-wrap: wrap; }
+.small-btn { background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; min-height: 40px; cursor: pointer; font-size: 15px; }
+
+.fb { border-radius: 16px; padding: 14px 16px; display: grid; gap: 4px; }
+.fb.ok { background: var(--good-bg); }
+.fb.no { background: var(--bad-bg); }
+.fb b { font-size: 20px; }
+.fb.ok b { color: var(--good); }
+.fb.no b { color: var(--bad); }
+.fb p { margin: 0; }
+
+/* Bottom action bar */
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding-top: 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.bar:empty { display: none; }
+.bar .in { max-width: 560px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 10px; }
+.bar .in.two { grid-template-columns: 1fr 1fr; }
+.cta { width: 100%; min-height: 58px; border: 0; border-radius: 16px; cursor: pointer; background: var(--primary); color: var(--primary-ink); font-weight: 700; font-size: 19px; }
+html[lang="ur"] .cta { font-size: 17px; }
+.cta:disabled { background: var(--line); color: var(--muted); cursor: not-allowed; }
+.cta.ghost { background: var(--surface); color: var(--ink); border: 2px solid var(--line); }
+
+/* Intro + learn */
+.intro { display: grid; gap: 14px; }
+.intro h1, .learn h1, .results h2 { margin: 6px 0 0; font-size: 26px; line-height: 1.25; }
+html[lang="ur"] .intro h1, html[lang="ur"] .learn h1, html[lang="ur"] .results h2 { font-size: 22px; line-height: 1.9; }
+.rules { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.rule { display: flex; align-items: center; gap: 14px; padding: 14px 16px; }
+.rule + .rule { border-top: 1px solid var(--line); }
+.rule .big { flex: none; width: 56px; text-align: center; font-family: var(--font-latin); font-weight: 700; font-size: 26px; color: var(--primary); font-variant-numeric: tabular-nums; }
+.intro .note { margin: 0; color: var(--muted); }
+
+.learn { display: grid; gap: 12px; }
+.learn .lead { margin: 0; color: var(--muted); }
+.ex { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
+.mini { display: grid; gap: 6px; pointer-events: none; }
+.mini .r { display: flex; align-items: center; gap: 10px; border: 1.5px solid var(--line); border-radius: 10px; padding: 6px 10px; font-size: 15px; }
+.mini .r .d { width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 50%; flex: none; }
+.mini .r.sq .d { border-radius: 5px; }
+.mini .r.on { border-color: var(--primary); background: var(--sel-bg); }
+.mini .r.on .d { background: var(--primary); border-color: var(--primary); }
+.mini .two { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.mini .two span { border: 1.5px solid var(--line); border-radius: 10px; padding: 6px; text-align: center; font-weight: 700; font-size: 15px; }
+.mini .two span.on { border-color: var(--primary); background: var(--sel-bg); }
+.mini .r .num { width: 22px; height: 22px; border-radius: 50%; background: var(--c-red); color: var(--surface); display: grid; place-items: center; font-family: var(--font-latin); font-weight: 700; font-size: 13px; flex: none; }
+
+/* Results */
+.results { display: grid; gap: 14px; }
+.score { display: grid; justify-items: center; gap: 4px; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px 16px; }
+.ring { width: 156px; height: 156px; direction: ltr; }
+.ring .tr { fill: none; stroke: var(--line); stroke-width: 12; }
+.ring .vl { fill: none; stroke-width: 12; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; }
+.ring .vl.pass { stroke: var(--good); }
+.ring .vl.fail { stroke: var(--bad); }
+.ring .pm { stroke: var(--ink); stroke-width: 3; }
+.ring text { fill: var(--ink); font-family: var(--font-latin); font-weight: 700; font-size: 34px; }
+.ring .sm { font-size: 14px; fill: var(--muted); }
+.verdict { margin: 0; font-size: 26px; font-weight: 700; }
+html[lang="ur"] .verdict { font-size: 22px; line-height: 2; }
+.verdict.pass { color: var(--good); }
+.verdict.fail { color: var(--bad); }
+.score p { margin: 0; color: var(--muted); max-width: 32em; }
+.tally { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; margin-top: 6px; }
+.tally div { background: var(--surface-2); border-radius: 12px; padding: 8px; display: grid; }
+.tally b { font-family: var(--font-latin); font-size: 22px; font-variant-numeric: tabular-nums; }
+.tally span { font-size: 13px; color: var(--muted); line-height: 1.3; }
+html[lang="ur"] .tally span { line-height: 1.9; }
+.tally .g b { color: var(--good); }
+.tally .x b { color: var(--bad); }
+.rv { background: var(--surface); border: 1px solid var(--line); border-inline-start: 6px solid var(--bad); border-radius: 14px; padding: 12px 14px; display: grid; gap: 6px; }
+.rv p { margin: 0; }
+.rv .q { font-weight: 700; }
+.rv .a { color: var(--good); font-weight: 700; }
+.rv .e { color: var(--muted); font-size: 15px; }
+.rv .to { color: var(--bad); font-size: 14px; font-weight: 700; }
+.rv ol { margin: 0; padding-inline-start: 22px; color: var(--good); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) { .dial .fgc { transition: none; } }
+@media (max-width: 370px) { .realtest strong { font-size: 22px; } .qtext { font-size: 20px; } .langs button { padding: 4px 9px; } }
+</style>
+
+<div class="page">
+  <header class="top">
+    <button class="brand" type="button" id="brandBtn" aria-label="Jahiz">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="8" fill="var(--primary)"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="var(--primary-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <b>Jahiz</b>
+    </button>
+    <div class="langs" role="group" aria-label="Language" id="langs">
+      <button type="button" class="en" data-lang="en">EN</button>
+      <button type="button" class="ur" data-lang="ur">اردو</button>
+      <button type="button" class="bn" data-lang="bn">বাংলা</button>
+    </div>
+  </header>
+  <main id="app" class="page" aria-live="polite"></main>
+</div>
+<div class="bar" id="bar"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- Text ---------------- */
+  var UI = {
+    en: {
+      chooseLang: "Choose your language", chooseLead: "You can change it at any time from the top of the screen.",
+      title: "Health certificate practice test",
+      sub: "Practise for the food workers’ health education test in your own language, at your own pace.",
+      real: "The real test", facts: [["50", "questions"], ["90", "minutes"], ["80%", "to pass"]],
+      mock: "Mock test", mockD: "Like the real test. 60 seconds for each question.",
+      practice: "Practice", practiceD: "No timer. See the right answer after every question.",
+      learn: "Learn the question types", learnD: "See how to answer each kind of question before you start.",
+      best: "Best mock test score", none: "Not taken yet",
+      fine: "Independent practice questions written for this app. This is not the official test.",
+      q: "Question",
+      types: {
+        single: ["Choose one answer", "Tap one box."],
+        multi: ["Choose all correct answers", "Tap every answer that is correct. There can be more than one."],
+        tf: ["True or false", "Tap True if the sentence is right, or False if it is wrong."],
+        order: ["Put the steps in order", "Tap the first step, then the second, until every step is placed."],
+        picture: ["Picture question", "Look at the picture carefully, then tap one answer."]
+      },
+      check: "Check my answer", next: "Next question", finish: "See my result",
+      correct: "Correct", wrong: "Not correct", answerIs: "Right answer",
+      yourOrder: "Your order", steps: "Steps to place", undo: "Remove last", clear: "Start again",
+      inPlace: "steps in the right place",
+      sec: "sec", timeUp: "Time ran out on the last question.",
+      introT: "Before you start", intro: [["15", "questions"], ["60", "seconds for each question"], ["12", "correct answers to pass"]],
+      introNote: "When the time runs out, the next question opens by itself. You cannot go back.",
+      start: "Start the test", back: "Back",
+      resultsT: "Your result", passMark: "Pass mark 80%",
+      passV: "Passed", failV: "Not ready yet",
+      passed: "Score 80% or more on mock tests a few times before you book the real test.",
+      failed: "Read why your answers were wrong, then try again.",
+      tCorrect: "correct", tWrong: "wrong", tTimeout: "ran out of time", timedOut: "Ran out of time",
+      review: "Your mistakes", noMistakes: "No mistakes. Well done.",
+      again: "Try again", home: "Home",
+      tTrue: "True", tFalse: "False",
+      fridge: "Fridge thermometer", probe: "Centre of a cooked chicken piece", freezer: "Freezer thermometer",
+      listen: "Listen", stop: "Stop", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
+    },
+    ur: {
+      chooseLang: "اپنی زبان چنیں", chooseLead: "آپ اسے اوپر سے کسی بھی وقت بدل سکتے ہیں۔",
+      title: "ہیلتھ سرٹیفکیٹ پریکٹس ٹیسٹ",
+      sub: "فوڈ ورکرز کے ہیلتھ ایجوکیشن ٹیسٹ کی تیاری کریں، اپنی زبان میں، اپنی رفتار سے۔",
+      real: "اصل ٹیسٹ", facts: [["50", "سوال"], ["90", "منٹ"], ["80%", "پاس کے لیے"]],
+      mock: "ماک ٹیسٹ", mockD: "اصل ٹیسٹ کی طرح۔ ہر سوال کے لیے 60 سیکنڈ۔",
+      practice: "پریکٹس", practiceD: "کوئی ٹائمر نہیں۔ ہر سوال کے بعد درست جواب دیکھیں۔",
+      learn: "سوالوں کی قسمیں سیکھیں", learnD: "شروع کرنے سے پہلے دیکھیں کہ ہر قسم کے سوال کا جواب کیسے دینا ہے۔",
+      best: "بہترین ماک ٹیسٹ اسکور", none: "ابھی نہیں دیا",
+      fine: "یہ اس ایپ کے لیے لکھے گئے آزاد پریکٹس سوالات ہیں۔ یہ سرکاری امتحان نہیں ہے۔",
+      q: "سوال",
+      types: {
+        single: ["ایک جواب چنیں", "ایک ڈبے پر ٹیپ کریں۔"],
+        multi: ["تمام درست جواب چنیں", "جتنے جواب درست ہیں سب پر ٹیپ کریں۔ ایک سے زیادہ ہو سکتے ہیں۔"],
+        tf: ["صحیح یا غلط", "جملہ ٹھیک ہو تو صحیح، غلط ہو تو غلط پر ٹیپ کریں۔"],
+        order: ["مراحل کو ترتیب دیں", "پہلے مرحلے پر ٹیپ کریں، پھر دوسرے پر، یہاں تک کہ سب لگ جائیں۔"],
+        picture: ["تصویر والا سوال", "تصویر غور سے دیکھیں، پھر ایک جواب پر ٹیپ کریں۔"]
+      },
+      check: "جواب چیک کریں", next: "اگلا سوال", finish: "نتیجہ دیکھیں",
+      correct: "درست", wrong: "درست نہیں", answerIs: "درست جواب",
+      yourOrder: "آپ کی ترتیب", steps: "لگانے والے مراحل", undo: "آخری ہٹائیں", clear: "دوبارہ شروع",
+      inPlace: "مراحل درست جگہ پر",
+      sec: "سیکنڈ", timeUp: "پچھلے سوال کا وقت ختم ہو گیا۔",
+      introT: "شروع کرنے سے پہلے", intro: [["15", "سوال"], ["60", "سیکنڈ ہر سوال کے لیے"], ["12", "درست جواب پاس ہونے کے لیے"]],
+      introNote: "وقت ختم ہونے پر اگلا سوال خود کھل جائے گا۔ آپ واپس نہیں جا سکتے۔",
+      start: "ٹیسٹ شروع کریں", back: "واپس",
+      resultsT: "آپ کا نتیجہ", passMark: "پاس مارک 80%",
+      passV: "پاس", failV: "ابھی تیار نہیں",
+      passed: "اصل ٹیسٹ بک کرنے سے پہلے ماک ٹیسٹ میں چند بار 80% یا زیادہ لائیں۔",
+      failed: "پڑھیں کہ آپ کے جواب کیوں غلط تھے، پھر دوبارہ کوشش کریں۔",
+      tCorrect: "درست", tWrong: "غلط", tTimeout: "وقت ختم", timedOut: "وقت ختم ہو گیا",
+      review: "آپ کی غلطیاں", noMistakes: "کوئی غلطی نہیں۔ شاباش!",
+      again: "دوبارہ کوشش کریں", home: "ہوم",
+      tTrue: "صحیح", tFalse: "غلط",
+      fridge: "فریج کا تھرمامیٹر", probe: "پکی ہوئی مرغی کا درمیانی حصہ", freezer: "فریزر کا تھرمامیٹر",
+      listen: "سنیں", stop: "روکیں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
+    },
+    bn: {
+      chooseLang: "আপনার ভাষা বেছে নিন", chooseLead: "উপর থেকে যেকোনো সময় এটি বদলাতে পারবেন।",
+      title: "হেলথ সার্টিফিকেট প্র্যাকটিস টেস্ট",
+      sub: "খাদ্যকর্মীদের হেলথ এডুকেশন টেস্টের প্রস্তুতি নিন, নিজের ভাষায়, নিজের গতিতে।",
+      real: "আসল টেস্ট", facts: [["50", "প্রশ্ন"], ["90", "মিনিট"], ["80%", "পাস করতে"]],
+      mock: "মক টেস্ট", mockD: "আসল টেস্টের মতো। প্রতিটি প্রশ্নে 60 সেকেন্ড।",
+      practice: "অনুশীলন", practiceD: "কোনো টাইমার নেই। প্রতিটি প্রশ্নের পর সঠিক উত্তর দেখুন।",
+      learn: "প্রশ্নের ধরন শিখুন", learnD: "শুরুর আগে দেখুন প্রতিটি ধরনের প্রশ্নে কীভাবে উত্তর দিতে হয়।",
+      best: "সেরা মক টেস্ট স্কোর", none: "এখনো দেননি",
+      fine: "এই অ্যাপের জন্য লেখা আলাদা অনুশীলনের প্রশ্ন। এটি সরকারি পরীক্ষা নয়।",
+      q: "প্রশ্ন",
+      types: {
+        single: ["একটি উত্তর বেছে নিন", "একটি বাক্সে চাপ দিন।"],
+        multi: ["সব সঠিক উত্তর বেছে নিন", "যতগুলো উত্তর সঠিক, সবগুলোতে চাপ দিন। একাধিক হতে পারে।"],
+        tf: ["সত্য না মিথ্যা", "বাক্যটি ঠিক হলে সত্য, ভুল হলে মিথ্যা চাপুন।"],
+        order: ["ধাপগুলো ক্রমে সাজান", "প্রথম ধাপে চাপ দিন, তারপর দ্বিতীয়টিতে, যতক্ষণ না সব ধাপ বসে যায়।"],
+        picture: ["ছবির প্রশ্ন", "ছবিটি ভালো করে দেখুন, তারপর একটি উত্তরে চাপ দিন।"]
+      },
+      check: "উত্তর যাচাই করুন", next: "পরের প্রশ্ন", finish: "ফলাফল দেখুন",
+      correct: "সঠিক", wrong: "সঠিক নয়", answerIs: "সঠিক উত্তর",
+      yourOrder: "আপনার ক্রম", steps: "যে ধাপগুলো বসাতে হবে", undo: "শেষটা সরান", clear: "আবার শুরু",
+      inPlace: "টি ধাপ সঠিক জায়গায়",
+      sec: "সেকেন্ড", timeUp: "আগের প্রশ্নের সময় শেষ হয়ে গেছে।",
+      introT: "শুরু করার আগে", intro: [["15", "টি প্রশ্ন"], ["60", "সেকেন্ড প্রতিটি প্রশ্নে"], ["12", "টি সঠিক উত্তর লাগবে পাস করতে"]],
+      introNote: "সময় শেষ হলে পরের প্রশ্ন নিজে থেকেই খুলবে। আগের প্রশ্নে ফেরা যাবে না।",
+      start: "টেস্ট শুরু করুন", back: "ফিরে যান",
+      resultsT: "আপনার ফলাফল", passMark: "পাস মার্ক 80%",
+      passV: "পাস", failV: "এখনো প্রস্তুত নন",
+      passed: "আসল টেস্ট বুক করার আগে মক টেস্টে কয়েকবার 80% বা তার বেশি পান।",
+      failed: "আপনার উত্তর কেন ভুল হয়েছে পড়ুন, তারপর আবার চেষ্টা করুন।",
+      tCorrect: "সঠিক", tWrong: "ভুল", tTimeout: "সময় শেষ", timedOut: "সময় শেষ হয়ে গেছে",
+      review: "আপনার ভুলগুলো", noMistakes: "কোনো ভুল নেই। সাবাশ!",
+      again: "আবার চেষ্টা করুন", home: "হোম",
+      tTrue: "সত্য", tFalse: "মিথ্যা",
+      fridge: "ফ্রিজের থার্মোমিটার", probe: "রান্না করা মুরগির টুকরার ভেতরের অংশ", freezer: "ফ্রিজারের থার্মোমিটার",
+      listen: "শুনুন", stop: "থামুন", tryPractice: "অনুশীলনে চেষ্টা করুন", exampleSteps: ["হাত ভেজান", "সাবান লাগান"]
+    }
+  };
+
+  // Original practice questions written for this app. Facts follow general food safety guidance (WHO Five Keys to Safer Food).
+  var Q = [
+    { type: "single", ans: 1,
+      en: { q: "How long should you scrub your hands with soap when you wash them?", o: ["3 seconds", "At least 20 seconds", "No soap needed, just rinse with water", "2 minutes under hot water, without soap"], e: "Scrub every part of your hands with soap for at least 20 seconds. Then rinse and dry them with a paper towel." },
+      ur: { q: "ہاتھ دھوتے وقت صابن سے کتنی دیر رگڑنے چاہئیں؟", o: ["3 سیکنڈ", "کم از کم 20 سیکنڈ", "صابن کی ضرورت نہیں، صرف پانی سے دھو لیں", "بغیر صابن کے گرم پانی کے نیچے 2 منٹ"], e: "ہاتھوں کے ہر حصے کو صابن سے کم از کم 20 سیکنڈ رگڑیں۔ پھر دھو کر کاغذی تولیے سے خشک کریں۔" },
+      bn: { q: "সাবান দিয়ে হাত ধোয়ার সময় কতক্ষণ ঘষতে হবে?", o: ["3 সেকেন্ড", "অন্তত 20 সেকেন্ড", "সাবান লাগবে না, শুধু পানি দিয়ে ধুয়ে নিন", "সাবান ছাড়া গরম পানির নিচে 2 মিনিট"], e: "হাতের প্রতিটি অংশ সাবান দিয়ে অন্তত 20 সেকেন্ড ঘষুন। তারপর ধুয়ে কাগজের তোয়ালে দিয়ে শুকিয়ে নিন।" } },
+    { type: "picture", pic: { kind: "fridge", v: 3 }, ans: 0,
+      en: { q: "The fridge thermometer shows this reading. Is the fridge safe?", o: ["Yes, it is 5°C or below", "No, it is too warm", "No, it is too cold for food", "It is only safe for drinks"], e: "Keep chilled food at 5°C or below. A reading of 3°C is safe." },
+      ur: { q: "فریج کا تھرمامیٹر یہ درجہ حرارت دکھا رہا ہے۔ کیا فریج محفوظ ہے؟", o: ["ہاں، یہ 5°C یا اس سے کم ہے", "نہیں، یہ بہت گرم ہے", "نہیں، کھانے کے لیے بہت ٹھنڈا ہے", "یہ صرف مشروبات کے لیے محفوظ ہے"], e: "ٹھنڈا رکھنے والا کھانا 5°C یا اس سے کم پر رکھیں۔ 3°C محفوظ ہے۔" },
+      bn: { q: "ফ্রিজের থার্মোমিটারে এই তাপমাত্রা দেখাচ্ছে। ফ্রিজটি কি নিরাপদ?", o: ["হ্যাঁ, এটি 5°C বা তার কম", "না, এটি বেশি গরম", "না, খাবারের জন্য বেশি ঠান্ডা", "এটি শুধু পানীয়ের জন্য নিরাপদ"], e: "ঠান্ডা রাখার খাবার 5°C বা তার কমে রাখুন। 3°C নিরাপদ।" } },
+    { type: "tf", ans: 0,
+      en: { q: "Bacteria grow fastest when food is between 5°C and 60°C.", e: "This is the danger zone. Keep cold food cold and hot food hot, and do not leave cooked food out for more than 2 hours." },
+      ur: { q: "جب کھانا 5°C اور 60°C کے درمیان ہو تو بیکٹیریا سب سے تیزی سے بڑھتے ہیں۔", e: "یہ خطرناک درجہ حرارت ہے۔ ٹھنڈا کھانا ٹھنڈا اور گرم کھانا گرم رکھیں، اور پکا ہوا کھانا 2 گھنٹے سے زیادہ باہر نہ چھوڑیں۔" },
+      bn: { q: "খাবার 5°C থেকে 60°C এর মধ্যে থাকলে ব্যাকটেরিয়া সবচেয়ে দ্রুত বাড়ে।", e: "এটি বিপজ্জনক তাপমাত্রা। ঠান্ডা খাবার ঠান্ডা আর গরম খাবার গরম রাখুন, এবং রান্না করা খাবার 2 ঘণ্টার বেশি বাইরে রাখবেন না।" } },
+    { type: "multi", ans: [0, 1, 2, 4],
+      en: { q: "Which of these must you tell your supervisor about before you start work?", o: ["Diarrhoea", "Vomiting", "Yellow skin or eyes", "A new haircut", "An infected cut on your hand"], e: "These can spread illness through food. You may need to stop handling food until you are well." },
+      ur: { q: "کام شروع کرنے سے پہلے آپ کو اپنے سپروائزر کو ان میں سے کس کے بارے میں بتانا ضروری ہے؟", o: ["دست (اسہال)", "الٹی", "جلد یا آنکھوں کا پیلا ہونا", "نیا ہیئر کٹ", "ہاتھ پر انفیکشن والا زخم"], e: "یہ بیماریاں کھانے کے ذریعے پھیل سکتی ہیں۔ ٹھیک ہونے تک آپ کو کھانا سنبھالنا بند کرنا پڑ سکتا ہے۔" },
+      bn: { q: "কাজ শুরু করার আগে এগুলোর মধ্যে কোনগুলো সুপারভাইজারকে জানাতে হবে?", o: ["ডায়রিয়া (পাতলা পায়খানা)", "বমি", "চামড়া বা চোখ হলুদ হওয়া", "নতুন চুল কাটা", "হাতে ইনফেকশন হওয়া কাটা"], e: "এগুলো খাবারের মাধ্যমে রোগ ছড়াতে পারে। সুস্থ না হওয়া পর্যন্ত খাবার নিয়ে কাজ বন্ধ রাখতে হতে পারে।" } },
+    { type: "order",
+      en: { q: "Put the hand washing steps in the correct order.", o: ["Wet your hands with water", "Put soap on your hands", "Scrub every part for at least 20 seconds", "Rinse with clean water", "Dry with a paper towel"], e: "Wet, soap, scrub, rinse, dry." },
+      ur: { q: "ہاتھ دھونے کے مراحل درست ترتیب میں لگائیں۔", o: ["ہاتھ پانی سے گیلے کریں", "ہاتھوں پر صابن لگائیں", "ہر حصہ کم از کم 20 سیکنڈ رگڑیں", "صاف پانی سے دھوئیں", "کاغذی تولیے سے خشک کریں"], e: "گیلا کریں، صابن لگائیں، رگڑیں، دھوئیں، خشک کریں۔" },
+      bn: { q: "হাত ধোয়ার ধাপগুলো সঠিক ক্রমে সাজান।", o: ["পানি দিয়ে হাত ভেজান", "হাতে সাবান লাগান", "প্রতিটি অংশ অন্তত 20 সেকেন্ড ঘষুন", "পরিষ্কার পানি দিয়ে ধুয়ে ফেলুন", "কাগজের তোয়ালে দিয়ে শুকান"], e: "ভেজান, সাবান লাগান, ঘষুন, ধুয়ে ফেলুন, শুকান।" } },
+    { type: "single", ans: 1,
+      en: { q: "Where should raw meat go in the fridge?", o: ["On the top shelf", "On the bottom shelf, below ready-to-eat food", "Next to the salad", "Anywhere, if it is covered"], e: "Juice from raw meat can drip. Keep it at the bottom so it cannot drip onto food that will not be cooked again." },
+      ur: { q: "فریج میں کچا گوشت کہاں رکھنا چاہیے؟", o: ["سب سے اوپر والے خانے میں", "سب سے نیچے، تیار کھانے کے نیچے", "سلاد کے ساتھ", "ڈھکا ہو تو کہیں بھی"], e: "کچے گوشت کا رس ٹپک سکتا ہے۔ اسے سب سے نیچے رکھیں تاکہ یہ اس کھانے پر نہ گرے جو دوبارہ نہیں پکایا جائے گا۔" },
+      bn: { q: "ফ্রিজে কাঁচা মাংস কোথায় রাখা উচিত?", o: ["সবচেয়ে উপরের তাকে", "সবচেয়ে নিচের তাকে, খাওয়ার জন্য তৈরি খাবারের নিচে", "সালাদের পাশে", "ঢাকা থাকলে যেকোনো জায়গায়"], e: "কাঁচা মাংসের রস পড়তে পারে। এটি সবচেয়ে নিচে রাখুন, যাতে যে খাবার আর রান্না হবে না তার উপর না পড়ে।" } },
+    { type: "tf", ans: 1,
+      en: { q: "You can use the same chopping board for raw chicken and salad if you wipe it with a cloth first.", e: "Wiping does not remove bacteria. Use separate boards, or wash and sanitise the board in between." },
+      ur: { q: "اگر پہلے کپڑے سے صاف کر لیں تو کچی مرغی اور سلاد کے لیے ایک ہی کٹنگ بورڈ استعمال کر سکتے ہیں۔", e: "کپڑے سے صاف کرنے سے بیکٹیریا ختم نہیں ہوتے۔ الگ بورڈ استعمال کریں، یا درمیان میں بورڈ کو دھو کر جراثیم سے پاک کریں۔" },
+      bn: { q: "কাপড় দিয়ে মুছে নিলে কাঁচা মুরগি আর সালাদের জন্য একই কাটিং বোর্ড ব্যবহার করা যায়।", e: "মুছলে ব্যাকটেরিয়া যায় না। আলাদা বোর্ড ব্যবহার করুন, অথবা মাঝখানে বোর্ড ধুয়ে জীবাণুমুক্ত করুন।" } },
+    { type: "single", ans: 1,
+      en: { q: "What is the safest way to defrost frozen chicken?", o: ["On the counter overnight", "In the fridge", "In a bowl of hot water", "Outside in the sun"], e: "Defrosting in the fridge keeps the chicken out of the danger zone while it thaws." },
+      ur: { q: "جمی ہوئی مرغی کو پگھلانے کا سب سے محفوظ طریقہ کیا ہے؟", o: ["رات بھر کاؤنٹر پر", "فریج میں", "گرم پانی کے برتن میں", "باہر دھوپ میں"], e: "فریج میں پگھلانے سے مرغی پگھلتے وقت خطرناک درجہ حرارت سے باہر رہتی ہے۔" },
+      bn: { q: "জমাট মুরগি গলানোর সবচেয়ে নিরাপদ উপায় কোনটি?", o: ["সারা রাত কাউন্টারে রেখে", "ফ্রিজের ভেতরে", "গরম পানির পাত্রে", "বাইরে রোদে"], e: "ফ্রিজে গলালে মুরগি গলার সময় বিপজ্জনক তাপমাত্রার বাইরে থাকে।" } },
+    { type: "picture", pic: { kind: "probe", v: 55 }, ans: 1,
+      en: { q: "The centre of a cooked chicken piece shows this temperature. What should you do?", o: ["Serve it", "Cook it longer, until the centre reaches at least 70°C", "Put it straight in the fridge", "Add more sauce and serve"], e: "Cook food until the centre reaches at least 70°C. 55°C is still in the danger zone." },
+      ur: { q: "پکی ہوئی مرغی کے ٹکڑے کے بیچ میں یہ درجہ حرارت ہے۔ آپ کو کیا کرنا چاہیے؟", o: ["پیش کر دیں", "مزید پکائیں جب تک بیچ کا درجہ حرارت کم از کم 70°C نہ ہو جائے", "سیدھا فریج میں رکھ دیں", "مزید ساس ڈال کر پیش کر دیں"], e: "کھانا اتنا پکائیں کہ بیچ کا درجہ حرارت کم از کم 70°C ہو۔ 55°C ابھی بھی خطرناک حد میں ہے۔" },
+      bn: { q: "রান্না করা মুরগির টুকরার ভেতরে এই তাপমাত্রা। আপনার কী করা উচিত?", o: ["পরিবেশন করুন", "আরও রান্না করুন, যতক্ষণ না ভেতরের তাপমাত্রা অন্তত 70°C হয়", "সোজা ফ্রিজে রেখে দিন", "আরও সস দিয়ে পরিবেশন করুন"], e: "খাবার এমনভাবে রান্না করুন যাতে ভেতরের তাপমাত্রা অন্তত 70°C হয়। 55°C এখনো বিপজ্জনক সীমায়।" } },
+    { type: "multi", ans: [0, 1, 2],
+      en: { q: "What should you wear in the food preparation area?", o: ["A hair covering", "A clean uniform", "A face mask", "Rings and a watch", "Long nails"], e: "Hair, jewellery and long nails can fall into food or carry germs. Always wear a clean uniform, a hair covering and a mask." },
+      ur: { q: "کھانا تیار کرنے کی جگہ پر آپ کو کیا پہننا چاہیے؟", o: ["بالوں کا کور", "صاف یونیفارم", "منہ کا ماسک", "انگوٹھی اور گھڑی", "لمبے ناخن"], e: "بال، زیور اور لمبے ناخن کھانے میں گر سکتے ہیں یا جراثیم رکھ سکتے ہیں۔ ہمیشہ صاف یونیفارم، بالوں کا کور اور ماسک پہنیں۔" },
+      bn: { q: "খাবার তৈরির জায়গায় আপনার কী পরা উচিত?", o: ["চুলের ঢাকনা (হেয়ারনেট)", "পরিষ্কার ইউনিফর্ম", "মুখের মাস্ক", "আংটি আর ঘড়ি", "লম্বা নখ"], e: "চুল, গয়না আর লম্বা নখ খাবারে পড়তে পারে বা জীবাণু বহন করতে পারে। সবসময় পরিষ্কার ইউনিফর্ম, চুলের ঢাকনা আর মাস্ক পরুন।" } },
+    { type: "order",
+      en: { q: "Put the steps for cleaning a work surface in the correct order.", o: ["Remove leftover food", "Wash with hot water and detergent", "Rinse with clean water", "Apply sanitiser", "Leave it to air dry"], e: "Remove food, wash, rinse, sanitise, then air dry. Sanitiser works best on a surface that is already clean." },
+      ur: { q: "کام کی جگہ صاف کرنے کے مراحل درست ترتیب میں لگائیں۔", o: ["بچا ہوا کھانا ہٹائیں", "گرم پانی اور ڈٹرجنٹ سے دھوئیں", "صاف پانی سے دھوئیں", "جراثیم کش (سینیٹائزر) لگائیں", "ہوا میں خشک ہونے دیں"], e: "کھانا ہٹائیں، دھوئیں، صاف پانی سے دھوئیں، سینیٹائزر لگائیں، پھر خشک ہونے دیں۔ سینیٹائزر پہلے سے صاف جگہ پر بہتر کام کرتا ہے۔" },
+      bn: { q: "কাজের জায়গা পরিষ্কার করার ধাপগুলো সঠিক ক্রমে সাজান।", o: ["বেঁচে যাওয়া খাবার সরিয়ে ফেলুন", "গরম পানি আর ডিটারজেন্ট দিয়ে ধুয়ে নিন", "পরিষ্কার পানি দিয়ে ধুয়ে ফেলুন", "জীবাণুনাশক (স্যানিটাইজার) লাগান", "বাতাসে শুকাতে দিন"], e: "খাবার সরান, ধুয়ে নিন, পরিষ্কার পানিতে ধুয়ে ফেলুন, স্যানিটাইজার লাগান, তারপর শুকাতে দিন। স্যানিটাইজার আগে থেকে পরিষ্কার জায়গায় ভালো কাজ করে।" } },
+    { type: "single", ans: 1,
+      en: { q: "Which stock should you use first?", o: ["The newest delivery", "The oldest stock that is still in date", "The biggest pack", "Whatever is at the front of the shelf"], e: "First in, first out. Use older stock first, and never use food that is past its use-by date." },
+      ur: { q: "کون سا سامان پہلے استعمال کرنا چاہیے؟", o: ["سب سے نئی سپلائی", "سب سے پرانا سامان جو ابھی میعاد میں ہو", "سب سے بڑا پیک", "جو شیلف کے سامنے رکھا ہو"], e: "پہلے آیا، پہلے استعمال۔ پرانا سامان پہلے استعمال کریں، اور میعاد ختم ہونے والا کھانا کبھی استعمال نہ کریں۔" },
+      bn: { q: "কোন মাল আগে ব্যবহার করা উচিত?", o: ["সবচেয়ে নতুন আসা মাল", "সবচেয়ে পুরোনো মাল, যার মেয়াদ এখনো আছে", "সবচেয়ে বড় প্যাকেট", "তাকের সামনে যা আছে"], e: "আগে এলে আগে ব্যবহার। পুরোনো মাল আগে ব্যবহার করুন, আর মেয়াদ শেষ হওয়া খাবার কখনো ব্যবহার করবেন না।" } },
+    { type: "tf", ans: 1,
+      en: { q: "Cleaning chemicals can go on the same shelf as food if the bottles are closed.", e: "Store chemicals in a separate area, away from food." },
+      ur: { q: "اگر بوتلیں بند ہوں تو صفائی کے کیمیکل کھانے کے ساتھ ایک ہی شیلف پر رکھے جا سکتے ہیں۔", e: "کیمیکل کو کھانے سے دور، الگ جگہ پر رکھیں۔" },
+      bn: { q: "বোতল বন্ধ থাকলে পরিষ্কারের কেমিক্যাল খাবারের সাথে একই তাকে রাখা যায়।", e: "কেমিক্যাল খাবার থেকে দূরে, আলাদা জায়গায় রাখুন।" } },
+    { type: "picture", pic: { kind: "freezer", v: -10 }, ans: 1,
+      en: { q: "The freezer thermometer shows this reading. Is it correct?", o: ["Yes, it is cold enough", "No, a freezer should be −18°C or colder", "No, a freezer should be 0°C", "It only matters at night"], e: "Keep freezers at −18°C or colder. −10°C is not cold enough." },
+      ur: { q: "فریزر کا تھرمامیٹر یہ درجہ حرارت دکھا رہا ہے۔ کیا یہ درست ہے؟", o: ["ہاں، کافی ٹھنڈا ہے", "نہیں، فریزر −18°C یا اس سے زیادہ ٹھنڈا ہونا چاہیے", "نہیں، فریزر 0°C پر ہونا چاہیے", "یہ صرف رات کو اہم ہے"], e: "فریزر کو −18°C یا اس سے زیادہ ٹھنڈا رکھیں۔ −10°C کافی ٹھنڈا نہیں۔" },
+      bn: { q: "ফ্রিজারের থার্মোমিটারে এই তাপমাত্রা দেখাচ্ছে। এটা কি ঠিক আছে?", o: ["হ্যাঁ, যথেষ্ট ঠান্ডা", "না, ফ্রিজার −18°C বা তার চেয়ে বেশি ঠান্ডা হওয়া উচিত", "না, ফ্রিজার 0°C এ থাকা উচিত", "এটা শুধু রাতে গুরুত্বপূর্ণ"], e: "ফ্রিজার −18°C বা তার চেয়ে বেশি ঠান্ডা রাখুন। −10°C যথেষ্ট ঠান্ডা নয়।" } },
+    { type: "multi", ans: [0, 1, 2],
+      en: { q: "Which of these are signs of pests in the kitchen?", o: ["Droppings", "Chewed or torn food packets", "Dead insects near the walls", "A clean floor", "Steam from the cooker"], e: "If you see any sign of pests, tell your supervisor straight away and keep food covered." },
+      ur: { q: "ان میں سے کون سی چیزیں کچن میں کیڑوں یا چوہوں کی نشانیاں ہیں؟", o: ["فضلہ (مینگنیاں)", "کترے یا پھٹے ہوئے کھانے کے پیکٹ", "دیواروں کے پاس مرے ہوئے کیڑے", "صاف فرش", "چولہے سے بھاپ"], e: "ایسی کوئی نشانی دیکھیں تو فوراً سپروائزر کو بتائیں اور کھانا ڈھانپ کر رکھیں۔" },
+      bn: { q: "এগুলোর মধ্যে কোনগুলো রান্নাঘরে পোকামাকড় বা ইঁদুরের লক্ষণ?", o: ["বিষ্ঠা (মল)", "কাটা বা ছেঁড়া খাবারের প্যাকেট", "দেয়ালের পাশে মরা পোকা", "পরিষ্কার মেঝে", "চুলা থেকে বাষ্প"], e: "এমন কোনো লক্ষণ দেখলে সাথে সাথে সুপারভাইজারকে জানান এবং খাবার ঢেকে রাখুন।" } }
+  ];
+
+  var TOTAL = Q.length;               // 15
+  var PASS = Math.ceil(TOTAL * 0.8);  // 12
+  var QSEC = 60;                      // seconds per question in the mock test
+  var TTS = { en: "en", ur: "ur", bn: "bn" };
+
+  var ICONS = {
+    single: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></svg>',
+    multi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M5 7l1.5 1.5L9.5 5.5"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M15 17l1.5 1.5 3-3"/><rect x="13" y="3" width="8" height="8" rx="2"/></svg>',
+    tf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5l3 3 5-6"/><path d="M15 9l6 6M21 9l-6 6"/></svg>',
+    order: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 6h11M10 12h11M10 18h11"/><path d="M4 5l1.5-1v4" /><path d="M3.5 11.2c.6-.9 2.6-.7 2.3.6-.2.8-2.3 2-2.3 2.7h2.5"/><path d="M3.5 17h2l-1 1.4c1.3 0 1.6 2.1 0 2.2-.6 0-1-.2-1.2-.5"/></svg>',
+    picture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.8"/><path d="M3.5 18l5.5-5.5 4 4 3-3 4.5 4.5"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
+    book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>',
+    shapes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="7" cy="7" r="4"/><rect x="13" y="3" width="8" height="8" rx="2"/><path d="M7 13l4 7H3z"/><path d="M14 15h6v6h-6z"/></svg>',
+    speaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>'
+  };
+
+  /* ---------------- State ---------------- */
+  var S = { lang: null, screen: "lang", mode: null, i: 0, sel: null, checked: false, results: [], shuffles: [], qDeadline: 0, tick: null, notice: false, startedAt: 0, endedAt: 0, speaking: false };
+
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  var saved = store("jahiz-lang");
+  if (saved && UI[saved]) { S.lang = saved; S.screen = "home"; }
+
+  var app = document.getElementById("app"), bar = document.getElementById("bar");
+  function T() { return UI[S.lang || "en"]; }
+  function L(q) { return q[S.lang || "en"]; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function minus(v) { return String(v).replace("-", "−"); }
+
+  /* ---------------- Speech (only shown when the phone has a voice for the language) ---------------- */
+  var voices = [];
+  function loadVoices() { try { voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; } catch (e) { voices = []; } }
+  function voiceFor(lang) { var p = TTS[lang]; for (var k = 0; k < voices.length; k++) if ((voices[k].lang || "").toLowerCase().indexOf(p) === 0) return voices[k]; return null; }
+  function canSpeak() { return !!(window.speechSynthesis && S.lang && voiceFor(S.lang)); }
+  function stopSpeak() { try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {} S.speaking = false; }
+  function speak(text) {
+    try {
+      stopSpeak();
+      var u = new SpeechSynthesisUtterance(text);
+      var v = voiceFor(S.lang); if (v) { u.voice = v; u.lang = v.lang; }
+      u.rate = 0.9;
+      u.onend = u.onerror = function () { S.speaking = false; var b = document.getElementById("listenBtn"); if (b) { b.setAttribute("aria-pressed", "false"); b.lastChild.textContent = T().listen; } };
+      speechSynthesis.speak(u); S.speaking = true;
+    } catch (e) { S.speaking = false; }
+  }
+  loadVoices();
+  try { if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { loadVoices(); if (S.screen === "q") drawQ(); }; } catch (e) {}
+
+  /* ---------------- Helpers ---------------- */
+  function shuffle(n) {
+    var a = []; for (var k = 0; k < n; k++) a.push(k);
+    do { for (var j = n - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t = a[j]; a[j] = a[r]; a[r] = t; } }
+    while (a.every(function (v, k) { return v === k; }));
+    return a;
+  }
+  function optsOf(q) { return q.type === "tf" ? [T().tTrue, T().tFalse] : L(q).o; }
+  function hasAnswer(q, sel) {
+    if (q.type === "multi") return sel && sel.length > 0;
+    if (q.type === "order") return sel && sel.length === q.en.o.length;
+    return sel !== null && sel !== undefined;
+  }
+  function grade(q, sel) {
+    if (!hasAnswer(q, sel)) return false;
+    if (q.type === "multi") { var a = sel.slice().sort(), b = q.ans.slice().sort(); return a.length === b.length && a.every(function (v, k) { return v === b[k]; }); }
+    if (q.type === "order") return sel.every(function (v, k) { return v === k; });
+    return sel === q.ans;
+  }
+  function tag(type, compact) {
+    var t = T().types[type];
+    return '<div class="tag t-' + type + '">' + ICONS[type] + '<div><div class="tt">' + t[0] + '</div>' + (compact ? '' : '<div class="th">' + t[1] + '</div>') + '</div></div>';
+  }
+  function setBar(html) { bar.innerHTML = html ? '<div class="in' + (html.indexOf("data-two") > -1 ? " two" : "") + '">' + html + '</div>' : ""; }
+
+  /* ---------------- Chrome ---------------- */
+  function syncChrome() {
+    var lg = S.lang || "en";
+    document.documentElement.lang = lg;
+    document.documentElement.dir = lg === "ur" ? "rtl" : "ltr";
+    var bs = document.querySelectorAll("#langs button");
+    for (var k = 0; k < bs.length; k++) bs[k].setAttribute("aria-pressed", String(bs[k].dataset.lang === S.lang));
+    document.getElementById("langs").hidden = !S.lang;
+  }
+
+  /* ---------------- Screens ---------------- */
+  function drawLang() {
+    var tiles = [["en", "English", ""], ["ur", "اردو", "Urdu"], ["bn", "বাংলা", "Bangla"]].map(function (l) {
+      return '<button type="button" class="lang-tile" data-pick="' + l[0] + '"><span class="nm ' + l[0] + '">' + l[1] + '</span><span class="sub">' + l[2] + '</span></button>';
+    }).join("");
+    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · আপনার ভাষা বেছে নিন</p>' + tiles + '</section>';
+    setBar("");
+  }
+
+  function drawHome() {
+    var t = T(), best = store("jahiz-best");
+    var facts = t.facts.map(function (f) { return '<div class="f"><strong>' + f[0] + '</strong><small>' + f[1] + '</small></div>'; }).join("");
+    app.innerHTML =
+      '<section class="hello"><h1>' + t.title + '</h1><p>' + t.sub + '</p></section>' +
+      '<section class="realtest" aria-label="' + t.real + '"><div class="cap">' + t.real + '</div>' + facts + '</section>' +
+      '<section class="modes">' +
+        '<button type="button" class="mode main" data-go="intro"><span class="ic">' + ICONS.clock + '</span><span class="t">' + t.mock + '</span><span class="d">' + t.mockD + '</span></button>' +
+        '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
+        '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
+      '</section>' +
+      '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + " / " + TOTAL + '</bdi>' : t.none) + '</b></div>' +
+      '<p class="fine">' + t.fine + '</p>';
+    setBar("");
+  }
+
+  function drawLearn() {
+    var t = T(), on = function (c) { return c ? " on" : ""; };
+    var ex = {
+      single: '<div class="mini"><div class="r"><span class="d"></span>A</div><div class="r on"><span class="d"></span>B</div><div class="r"><span class="d"></span>C</div></div>',
+      multi: '<div class="mini"><div class="r sq on"><span class="d"></span>A</div><div class="r sq"><span class="d"></span>B</div><div class="r sq on"><span class="d"></span>C</div></div>',
+      tf: '<div class="mini"><div class="two"><span class="on">' + t.tTrue + '</span><span>' + t.tFalse + '</span></div></div>',
+      order: '<div class="mini"><div class="r"><span class="num">1</span>' + esc(t.exampleSteps[0]) + '</div><div class="r"><span class="num">2</span>' + esc(t.exampleSteps[1]) + '</div></div>',
+      picture: '<div class="mini" style="justify-items:center">' + thermo("fridge", 3).replace('<svg ', '<svg style="width:56px" ') + '</div>'
+    };
+    var cards = ["single", "multi", "tf", "order", "picture"].map(function (ty) {
+      return '<div class="ex">' + tag(ty) + ex[ty] + '</div>';
+    }).join("");
+    app.innerHTML = '<section class="learn"><h1>' + t.learn + '</h1><p class="lead">' + t.learnD + '</p>' + cards + '</section>';
+    setBar('<button type="button" class="cta" data-go="practice">' + t.tryPractice + '</button>');
+  }
+
+  function drawIntro() {
+    var t = T();
+    var rules = t.intro.map(function (r) { return '<div class="rule"><span class="big">' + r[0] + '</span><span>' + r[1] + '</span></div>'; }).join("");
+    app.innerHTML = '<section class="intro"><h1>' + t.introT + '</h1><div class="rules">' + rules + '</div><p class="note">' + t.introNote + '</p></section>';
+    setBar('<button type="button" class="cta ghost" data-two="1" data-go="home">' + t.back + '</button><button type="button" class="cta" data-go="mock">' + t.start + '</button>');
+  }
+
+  function start(mode) {
+    stopSpeak(); clearInterval(S.tick); S.tick = null;
+    S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q";
+    S.shuffles = Q.map(function (q) { return q.type === "order" ? shuffle(q.en.o.length) : null; });
+    S.startedAt = Date.now();
+    openQ();
+  }
+
+  function openQ() {
+    var q = Q[S.i];
+    S.sel = (q.type === "multi" || q.type === "order") ? [] : null;
+    S.checked = false;
+    stopSpeak();
+    clearInterval(S.tick); S.tick = null;
+    if (S.mode === "mock") { S.qDeadline = Date.now() + QSEC * 1000; S.tick = setInterval(tick, 250); }
+    drawQ();
+    window.scrollTo(0, 0);
+  }
+
+  function tick() {
+    var left = Math.max(0, (S.qDeadline - Date.now()) / 1000);
+    paintDial(left);
+    if (left <= 0) {
+      clearInterval(S.tick); S.tick = null;
+      var q = Q[S.i];
+      S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: !hasAnswer(q, S.sel) };
+      S.notice = true;
+      advance();
+    }
+  }
+
+  function dialHTML(left) {
+    var R = 30, C = 2 * Math.PI * R, off = C * (1 - left / QSEC);
+    return '<div class="dial' + (left <= 10 ? " low" : "") + '" id="dial" role="timer" aria-label="' + Math.ceil(left) + " " + T().sec + '">' +
+      '<svg viewBox="0 0 72 72"><circle class="bgc" cx="36" cy="36" r="' + R + '"/><circle class="fgc" id="dialArc" cx="36" cy="36" r="' + R + '" stroke-dasharray="' + C.toFixed(2) + '" stroke-dashoffset="' + off.toFixed(2) + '"/></svg>' +
+      '<b id="dialNum">' + Math.ceil(left) + '</b><small>' + (S.lang === "en" ? "sec" : "") + '</small></div>';
+  }
+  function paintDial(left) {
+    var d = document.getElementById("dial"); if (!d) return;
+    var R = 30, C = 2 * Math.PI * R;
+    document.getElementById("dialArc").setAttribute("stroke-dashoffset", (C * (1 - left / QSEC)).toFixed(2));
+    document.getElementById("dialNum").textContent = Math.ceil(left);
+    d.classList.toggle("low", left <= 10);
+    d.setAttribute("aria-label", Math.ceil(left) + " " + T().sec);
+  }
+
+  function thermo(kind, v) {
+    var ranges = { fridge: [-5, 15, 5], probe: [0, 100, 20], freezer: [-30, 10, 10] };
+    var r = ranges[kind], min = r[0], max = r[1], step = r[2], top = 16, bot = 176, x = 40;
+    function y(val) { return bot - (val - min) / (max - min) * (bot - top); }
+    var ticks = "";
+    for (var val = min; val <= max; val += step) {
+      var yy = y(val);
+      ticks += '<line class="th-tick" x1="' + (x + 14) + '" x2="' + (x + 24) + '" y1="' + yy + '" y2="' + yy + '"/><text class="th-lab" x="' + (x + 28) + '" y="' + (yy + 4) + '">' + minus(val) + '</text>';
+    }
+    var lv = y(Math.max(min, Math.min(max, v)));
+    return '<svg viewBox="0 0 110 214" role="img" aria-label="' + minus(v) + '°C">' +
+      '<rect class="th-tube" x="' + (x - 9) + '" y="' + (top - 8) + '" width="18" height="' + (bot - top + 16) + '" rx="9"/>' +
+      '<circle class="th-tube" cx="' + x + '" cy="' + (bot + 18) + '" r="17"/>' +
+      '<rect class="th-liquid" x="' + (x - 4) + '" y="' + lv + '" width="8" height="' + (bot + 10 - lv) + '" rx="4"/>' +
+      '<circle class="th-liquid" cx="' + x + '" cy="' + (bot + 18) + '" r="12"/>' + ticks + '</svg>';
+  }
+
+  function drawQ() {
+    var t = T(), q = Q[S.i], lq = L(q), mock = S.mode === "mock";
+    var trackHTML = "";
+    for (var k = 0; k < TOTAL; k++) trackHTML += '<i class="' + (k < S.i ? "done" : k === S.i ? "now" : "") + '"></i>';
+    var html = '<div class="qhead"><div class="pos"><span>' + t.q + ' <bdi dir="ltr">' + (S.i + 1) + ' / ' + TOTAL + '</bdi></span><div class="track" aria-hidden="true">' + trackHTML + '</div></div>' +
+      (mock ? dialHTML(Math.max(0, (S.qDeadline - Date.now()) / 1000)) : '') + '</div>';
+    if (S.notice) { html += '<div class="notice">' + t.timeUp + '</div>'; S.notice = false; }
+    html += tag(q.type === "picture" ? "picture" : q.type);
+
+    html += '<section class="qcard"><div class="qrow"><h1 class="qtext">' + esc(lq.q) + '</h1>' +
+      (canSpeak() ? '<button type="button" class="listen" id="listenBtn" aria-pressed="' + S.speaking + '">' + ICONS.speaker + '<span>' + (S.speaking ? t.stop : t.listen) + '</span></button>' : '') + '</div>';
+
+    if (q.pic) {
+      html += '<div class="pic">' + thermo(q.pic.kind, q.pic.v) + '<div class="reading"><strong>' + minus(q.pic.v) + '°C</strong><small>' + t[q.pic.kind] + '</small></div></div>';
+    }
+
+    if (q.type === "order") html += orderHTML(q);
+    else if (q.type === "tf") {
+      html += '<div class="tfrow">' + [t.tTrue, t.tFalse].map(function (o, k) { return optBtn(q, o, k, "tfb"); }).join("") + '</div>';
+    } else {
+      html += '<div class="opts">' + optsOf(q).map(function (o, k) { return optBtn(q, o, k, q.type === "multi" ? "multi" : ""); }).join("") + '</div>';
+    }
+
+    if (S.checked) {
+      var ok = grade(q, S.sel), extra = "";
+      if (q.type === "order" && !ok) extra = '<p><bdi dir="ltr">' + S.sel.filter(function (v, k) { return v === k; }).length + ' / ' + lq.o.length + '</bdi> ' + t.inPlace + '</p>';
+      html += '<div class="fb ' + (ok ? "ok" : "no") + '"><b>' + (ok ? t.correct : t.wrong) + '</b>' + extra + '<p>' + esc(lq.e) + '</p></div>';
+    }
+    html += '</section>';
+    app.innerHTML = html;
+
+    var last = S.i === TOTAL - 1, ready = hasAnswer(q, S.sel);
+    var label = mock ? (last ? t.finish : t.next) : (S.checked ? (last ? t.finish : t.next) : t.check);
+    setBar('<button type="button" class="cta" id="cta"' + (ready ? "" : " disabled") + '>' + label + '</button>');
+  }
+
+  function optBtn(q, text, k, extra) {
+    var multi = q.type === "multi";
+    var on = multi ? S.sel.indexOf(k) > -1 : S.sel === k;
+    var cls = "opt" + (extra ? " " + extra : "");
+    if (S.checked) { var right = multi ? q.ans.indexOf(k) > -1 : q.ans === k; if (right) cls += " ok"; else if (on) cls += " no"; }
+    return '<button type="button" class="' + cls + '" data-opt="' + k + '" aria-pressed="' + on + '"' + (S.checked ? " disabled" : "") + '><span class="mk" aria-hidden="true"></span><span>' + esc(text) + '</span></button>';
+  }
+
+  function orderHTML(q) {
+    var t = T(), lq = L(q), n = lq.o.length, sh = S.shuffles[S.i];
+    var html = '<div class="ozone"><span class="lb">' + t.yourOrder + '</span>';
+    for (var k = 0; k < n; k++) {
+      var it = S.sel[k], cls = "slot" + (it !== undefined ? " full" : "");
+      if (S.checked && it !== undefined) cls += it === k ? " ok" : " no";
+      html += '<button type="button" class="' + cls + '" data-slot="' + k + '"' + (S.checked || it === undefined ? " disabled" : "") + '><span class="n">' + (k + 1) + '</span><span>' + (it !== undefined ? esc(lq.o[it]) : "") + '</span></button>';
+    }
+    html += '</div>';
+    if (!S.checked) {
+      var left = sh.filter(function (v) { return S.sel.indexOf(v) < 0; });
+      if (left.length) html += '<div class="ozone"><span class="lb">' + t.steps + '</span><div class="pool">' + left.map(function (v) { return '<button type="button" class="stepb" data-step="' + v + '">' + esc(lq.o[v]) + '</button>'; }).join("") + '</div></div>';
+      if (S.sel.length) html += '<div class="otools"><button type="button" class="small-btn" data-undo="1">' + t.undo + '</button><button type="button" class="small-btn" data-clear="1">' + t.clear + '</button></div>';
+    }
+    return html;
+  }
+
+  function copy(s) { return Array.isArray(s) ? s.slice() : s; }
+
+  function advance() { if (S.i < TOTAL - 1) { S.i++; openQ(); } else finish(); }
+
+  function finish() {
+    clearInterval(S.tick); S.tick = null; stopSpeak();
+    for (var k = 0; k < TOTAL; k++) if (!S.results[k]) S.results[k] = { ok: false, sel: null, timedOut: true };
+    S.endedAt = Date.now(); S.screen = "results";
+    var score = S.results.filter(function (r) { return r.ok; }).length;
+    if (S.mode === "mock") { var prev = parseInt(store("jahiz-best") || "0", 10); if (score > prev) store("jahiz-best", String(score)); }
+    drawResults(); window.scrollTo(0, 0);
+  }
+
+  function drawResults() {
+    var t = T();
+    var score = S.results.filter(function (r) { return r.ok; }).length;
+    var timeouts = S.results.filter(function (r) { return r.timedOut; }).length;
+    var wrongN = TOTAL - score - timeouts;
+    var pct = Math.round(score / TOTAL * 100), pass = score >= PASS;
+    var R = 62, C = 2 * Math.PI * R, dash = C * score / TOTAL, a = (0.8 * 360 - 90) * Math.PI / 180;
+    var ring = '<svg class="ring" viewBox="0 0 156 156" role="img" aria-label="' + pct + '%"><circle class="tr" cx="78" cy="78" r="' + R + '"/>' +
+      '<circle class="vl ' + (pass ? "pass" : "fail") + '" cx="78" cy="78" r="' + R + '" stroke-dasharray="' + dash.toFixed(1) + ' ' + C.toFixed(1) + '"/>' +
+      '<line class="pm" x1="' + (78 + (R - 10) * Math.cos(a)).toFixed(1) + '" y1="' + (78 + (R - 10) * Math.sin(a)).toFixed(1) + '" x2="' + (78 + (R + 10) * Math.cos(a)).toFixed(1) + '" y2="' + (78 + (R + 10) * Math.sin(a)).toFixed(1) + '"/>' +
+      '<text x="78" y="84" text-anchor="middle">' + pct + '%</text><text class="sm" x="78" y="106" text-anchor="middle">' + score + ' / ' + TOTAL + '</text></svg>';
+
+    var tally = '<div class="tally"><div class="g"><b>' + score + '</b><span>' + t.tCorrect + '</span></div><div class="x"><b>' + wrongN + '</b><span>' + t.tWrong + '</span></div>' +
+      (S.mode === "mock" ? '<div class="x"><b>' + timeouts + '</b><span>' + t.tTimeout + '</span></div>' : '<div><b>' + PASS + '</b><span>' + t.passMark + '</span></div>') + '</div>';
+
+    var wrong = []; S.results.forEach(function (r, k) { if (!r.ok) wrong.push(k); });
+    var rv = '<h2>' + t.review + '</h2>' + (wrong.length ? "" : '<p>' + t.noMistakes + '</p>');
+    wrong.forEach(function (k) {
+      var q = Q[k], lq = L(q), ans;
+      if (q.type === "order") ans = '<ol>' + lq.o.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join("") + '</ol>';
+      else if (q.type === "multi") ans = '<p class="a">' + t.answerIs + ': ' + q.ans.map(function (x) { return esc(lq.o[x]); }).join(", ") + '</p>';
+      else ans = '<p class="a">' + t.answerIs + ': ' + esc(optsOf(q)[q.ans]) + '</p>';
+      rv += '<div class="rv">' + (S.results[k].timedOut ? '<p class="to">' + t.timedOut + '</p>' : '') + '<p class="q">' + (k + 1) + '. ' + esc(lq.q) + '</p>' + ans + '<p class="e">' + esc(lq.e) + '</p></div>';
+    });
+
+    app.innerHTML = '<section class="results"><div class="score">' + ring +
+      '<p class="verdict ' + (pass ? "pass" : "fail") + '">' + (pass ? t.passV : t.failV) + '</p><p>' + (pass ? t.passed : t.failed) + '</p>' + tally + '</div>' + rv + '</section>';
+    setBar('<button type="button" class="cta ghost" data-two="1" data-go="home">' + t.home + '</button><button type="button" class="cta" data-go="' + (S.mode === "mock" ? "mock" : "practice") + '">' + t.again + '</button>');
+  }
+
+  function render() {
+    syncChrome();
+    if (!S.lang) { S.screen = "lang"; return drawLang(); }
+    if (S.screen === "home") drawHome();
+    else if (S.screen === "learn") drawLearn();
+    else if (S.screen === "intro") drawIntro();
+    else if (S.screen === "q") drawQ();
+    else if (S.screen === "results") drawResults();
+    else drawHome();
+  }
+
+  function go(where) {
+    if (where === "mock" || where === "practice") return start(where);
+    clearInterval(S.tick); S.tick = null; stopSpeak();
+    S.screen = where; render(); window.scrollTo(0, 0);
+  }
+
+  /* ---------------- Events ---------------- */
+  document.getElementById("langs").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-lang]"); if (!b) return;
+    S.lang = b.dataset.lang; store("jahiz-lang", S.lang); stopSpeak(); render();
+  });
+  document.getElementById("brandBtn").addEventListener("click", function () { if (S.lang) go("home"); });
+
+  function onClick(ev) {
+    var b = ev.target.closest("button"); if (!b || b.disabled) return;
+    if (b.dataset.pick) { S.lang = b.dataset.pick; store("jahiz-lang", S.lang); S.screen = "home"; render(); return; }
+    if (b.dataset.go) { go(b.dataset.go); return; }
+    if (S.screen !== "q") return;
+    var q = Q[S.i];
+    if (b.id === "listenBtn") {
+      if (S.speaking) { stopSpeak(); drawQ(); return; }
+      var lq = L(q), parts = [lq.q];
+      if (q.type === "order") parts = parts.concat(lq.o); else parts = parts.concat(optsOf(q));
+      speak(parts.join(". ")); drawQ(); return;
+    }
+    if (S.checked) { if (b.id === "cta") { advance(); } return; }
+    if (b.dataset.opt !== undefined) {
+      var k = +b.dataset.opt;
+      if (q.type === "multi") { var p = S.sel.indexOf(k); if (p > -1) S.sel.splice(p, 1); else S.sel.push(k); } else S.sel = k;
+      drawQ(); return;
+    }
+    if (b.dataset.step !== undefined) { S.sel.push(+b.dataset.step); drawQ(); return; }
+    if (b.dataset.slot !== undefined) { S.sel.splice(+b.dataset.slot, 1); drawQ(); return; }
+    if (b.dataset.undo) { S.sel.pop(); drawQ(); return; }
+    if (b.dataset.clear) { S.sel = []; drawQ(); return; }
+    if (b.id === "cta") {
+      if (S.mode === "practice") { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); drawQ(); return; }
+      clearInterval(S.tick); S.tick = null;
+      S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false };
+      advance();
+    }
+  }
+  app.addEventListener("click", onClick);
+  bar.addEventListener("click", onClick);
+
+  render();
+})();
+</script>
