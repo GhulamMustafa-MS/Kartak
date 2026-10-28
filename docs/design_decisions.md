@@ -29,6 +29,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D17 | 28 Oct | Full mock 50, quick test 15, practice 15; random from the bank; answers shuffled | User | Short and full versions; can't learn "it's the second one" |
 | D18 | 28 Oct | 100-question bank, more ordering questions | User asked, AI wrote | Variety for repeated mocks; workers struggle most with ordering |
 | D19 | 28 Oct | Folder CLAUDE.md files, file headers, one home per fact | User | Same way of working as the user's COM661 project |
+| D21 | 28 Oct | "All questions" mode: every live question, no timer, answer after each, place saved on the phone | User asked, AI designed the saving | Thorough practice over several days; 100 questions is too many for one sitting |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time

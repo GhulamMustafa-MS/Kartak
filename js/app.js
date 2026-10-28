@@ -4,7 +4,8 @@
  * Purpose:    One IIFE, no framework, no build step (decision D16). Sections, in file order:
  *               Text      UI strings come from js/i18n.js (window.KARTAK_UI)
  *               Bank      questions fetched from /data/questions.json; enabled !== false only
- *               Settings  SIZES (full 50 / quick 15 / practice 15), PASS = 80%, QSEC = 90 s per question
+ *               Settings  SIZES (full 50 / quick 15 / practice 15 / all = whole bank), PASS = 80%,
+ *                         QSEC = 90 s per question; full and quick are timed, practice and all are not
  *               State     S (current screen, mode, question index, answers); store() wraps localStorage
  *               Codes     API is only used on *.vercel.app; deviceId(), activate() -> /api/activate
  *               Speech    "Listen" button, shown only when the phone has a voice for the language
@@ -14,7 +15,8 @@
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
  *               Events    one click handler for #app and #bar, language switch, start-up
  * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it),
- *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %).
+ *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
+ *             kartak-all (saved place in "All questions", so it can be finished over several days).
  * Used by:    index.html.
  * Depends on: js/i18n.js, data/questions.json, api/activate.js, api/transfer.js, sw.js, icons/.
  */
@@ -30,7 +32,8 @@
   var bankReady = fetch("/data/questions.json").then(function (r) { return r.json(); }).then(function (d) {
     BANK = d.questions.filter(function (q) { return q.enabled !== false; });
   });
-  var SIZES = { full: 50, quick: 15, practice: 15 };
+  var SIZES = { full: 50, quick: 15, practice: 15, all: 100000 }; // "all" = every live question
+  function timed() { return S.mode === "full" || S.mode === "quick"; }
   function N() { return S.qs.length; }
   function PASS() { return Math.ceil(N() * 0.8); }
   var QSEC = 90;                      // seconds per question in the mock test (workers report 1:30)
@@ -44,6 +47,7 @@
     picture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.8"/><path d="M3.5 18l5.5-5.5 4 4 3-3 4.5 4.5"/></svg>',
     video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>',
     quick: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg>',
+    stack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M6 5h12M8 2h8" stroke-linecap="round"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
     book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>',
     shapes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="7" cy="7" r="4"/><rect x="13" y="3" width="8" height="8" rx="2"/><path d="M7 13l4 7H3z"/><path d="M14 15h6v6h-6z"/></svg>',
@@ -148,11 +152,19 @@
         '<button type="button" class="mode main" data-go="intro-full"><span class="ic">' + ICONS.clock + '</span><span class="t">' + t.full + '</span><span class="d">' + t.fullD + '</span></button>' +
         '<button type="button" class="mode" data-go="intro-quick"><span class="ic">' + ICONS.quick + '</span><span class="t">' + t.quick + '</span><span class="d">' + t.quickD + '</span></button>' +
         '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
+        allCard() +
         '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
       '</section>' +
       '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + '%</bdi>' : t.none) + '</b></div>' +
       '<p class="fine">' + t.fine + '</p>';
     setBar("");
+  }
+
+  function allCard() {
+    var t = T(), d = savedAll(), n = BANK.length || 100;
+    var desc = d ? t.allResume.replace("{i}", d.results.length + 1).replace("{n}", d.ids.length) : t.allD.replace("{n}", n);
+    return '<button type="button" class="mode" data-go="all"><span class="ic">' + ICONS.stack + '</span><span class="t">' + t.all + '</span><span class="d">' + desc + '</span></button>' +
+      (d ? '<button type="button" class="small-btn" data-go="all-restart">' + t.allRestart + '</button>' : '');
   }
 
   function drawLearn() {
@@ -184,6 +196,7 @@
     if (!BANK.length) { bankReady.then(function () { if (BANK.length) start(mode); }); return; }
     stopSpeak(); clearInterval(S.tick); S.tick = null;
     S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q";
+    if (mode === "all" && resumeAll()) return;
     var idx = BANK.map(function (q, k) { return k; });
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
     S.qs = idx.slice(0, Math.min(SIZES[mode], BANK.length)).map(function (k) { return BANK[k]; });
@@ -193,6 +206,24 @@
     openQ();
   }
 
+  /* "All questions" can take several sittings: keep the place on the phone (decision D21). */
+  function saveAll() {
+    if (S.mode !== "all") return;
+    store("kartak-all", JSON.stringify({ ids: S.qs.map(function (q) { return q.id; }), results: S.results, shuffles: S.shuffles, perms: S.perms }));
+  }
+  function savedAll() {
+    try { var d = JSON.parse(store("kartak-all") || "null"); return d && d.ids && d.results.length < d.ids.length ? d : null; } catch (e) { return null; }
+  }
+  function resumeAll() {
+    var d = savedAll(); if (!d) return false;
+    var byId = {}; BANK.forEach(function (q) { byId[q.id] = q; });
+    if (!d.ids.every(function (id) { return byId[id]; })) { forgetAll(); return false; } // bank changed: start fresh
+    S.qs = d.ids.map(function (id) { return byId[id]; });
+    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length;
+    S.startedAt = Date.now(); openQ(); return true;
+  }
+  function forgetAll() { try { localStorage.removeItem("kartak-all"); } catch (e) {} }
+
   function openQ() {
     var q = S.qs[S.i];
     S.sel = q.type === "order" ? S.shuffles[S.i].slice() : q.type === "multi" ? [] : null;
@@ -201,7 +232,7 @@
     S.checked = false;
     stopSpeak();
     clearInterval(S.tick); S.tick = null;
-    if (S.mode !== "practice") { S.qDeadline = Date.now() + QSEC * 1000; S.tick = setInterval(tick, 250); }
+    if (timed()) { S.qDeadline = Date.now() + QSEC * 1000; S.tick = setInterval(tick, 250); }
     drawQ();
     window.scrollTo(0, 0);
   }
@@ -252,7 +283,7 @@
   }
 
   function drawQ() {
-    var t = T(), q = S.qs[S.i], lq = L(q), mock = S.mode !== "practice";
+    var t = T(), q = S.qs[S.i], lq = L(q), mock = timed();
     var trackHTML = "";
     if (N() > 20) trackHTML = '<i class="done" style="flex:' + S.i + '"></i><i class="now" style="flex:1"></i><i style="flex:' + (N() - S.i - 1) + '"></i>';
     else for (var k = 0; k < N(); k++) trackHTML += '<i class="' + (k < S.i ? "done" : k === S.i ? "now" : "") + '"></i>';
@@ -324,6 +355,7 @@
     clearInterval(S.tick); S.tick = null; stopSpeak();
     for (var k = 0; k < N(); k++) if (!S.results[k]) S.results[k] = { ok: false, sel: null, timedOut: true };
     S.endedAt = Date.now(); S.screen = "results";
+    if (S.mode === "all") forgetAll();
     var score = S.results.filter(function (r) { return r.ok; }).length;
     if (S.mode === "full") { var pc = Math.round(score / N() * 100), prev = parseInt(store("kartak-best-full") || "0", 10); if (pc > prev) store("kartak-best-full", String(pc)); }
     drawResults(); window.scrollTo(0, 0);
@@ -342,7 +374,7 @@
       '<text x="78" y="84" text-anchor="middle">' + pct + '%</text><text class="sm" x="78" y="106" text-anchor="middle">' + score + ' / ' + N() + '</text></svg>';
 
     var tally = '<div class="tally"><div class="g"><b>' + score + '</b><span>' + t.tCorrect + '</span></div><div class="x"><b>' + wrongN + '</b><span>' + t.tWrong + '</span></div>' +
-      (S.mode !== "practice" ? '<div class="x"><b>' + timeouts + '</b><span>' + t.tTimeout + '</span></div>' : '<div><b>' + PASS() + '</b><span>' + t.passMark + '</span></div>') + '</div>';
+      (timed() ? '<div class="x"><b>' + timeouts + '</b><span>' + t.tTimeout + '</span></div>' : '<div><b>' + PASS() + '</b><span>' + t.passMark + '</span></div>') + '</div>';
 
     var wrong = []; S.results.forEach(function (r, k) { if (!r.ok) wrong.push(k); });
     var rv = '<h2>' + t.review + '</h2>' + (wrong.length ? "" : '<p>' + t.noMistakes + '</p>');
@@ -429,6 +461,7 @@
   }
 
   function go(where) {
+    if (where === "all-restart") { forgetAll(); return start("all"); }
     if (SIZES[where]) return start(where);
     if (where.indexOf("intro-") === 0) { S.pending = where.slice(6); where = "intro"; }
     clearInterval(S.tick); S.tick = null; stopSpeak();
@@ -470,7 +503,7 @@
     if (b.dataset.undo) { S.sel.pop(); drawQ(); return; }
     if (b.dataset.clear) { S.sel = []; drawQ(); return; }
     if (b.id === "cta") {
-      if (S.mode === "practice") { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); drawQ(); return; }
+      if (!timed()) { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); saveAll(); drawQ(); return; }
       clearInterval(S.tick); S.tick = null;
       S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false };
       advance();

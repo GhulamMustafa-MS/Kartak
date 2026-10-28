@@ -8,7 +8,7 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: 4 languages, 100 live questions, full mock / quick test /
-  practice / learn the types, code lock, installable, offline.
+  practice / all questions (saved place) / learn the types, code lock, installable, offline.
 - Seller app https://kartak-seller.vercel.app: make, send, reset, turn off and delete codes.
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
@@ -32,6 +32,8 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (night):** "All questions" mode: the whole bank, untimed, answer after each, place saved
+  on the phone with "carry on" and "start again" (D21). Roadmap: grow the bank to 200-300. Browser test added.
 - **28 Oct 2026 (evening):** split the app into `index.html`, `css/`, `js/`, `data/questions.json`;
   `api/_db.js` shared by the endpoints; `db/schema.sql` + migrations; `scripts/` (question validator, icon
   maker); `tests/` (19 API checks, 11 browser checks, all passing); CLAUDE.md in every folder, a header on

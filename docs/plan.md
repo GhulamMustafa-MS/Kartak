@@ -52,7 +52,8 @@ Worker app (installable, works offline after the first visit):
 - Language picker: English, اردو, हिंदी, বাংলা; switchable any time; Urdu right-to-left.
 - Code gate: a code from the seller unlocks the app on one phone (D9).
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
-  answer and reason after each), "Learn the question types" with a small example of each type.
+  answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
+  the worker stopped, D21), "Learn the question types" with a small example of each type.
 - 100 live questions (+2 video questions held back, D5) in all four languages; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
@@ -75,21 +76,23 @@ Ordered; each step should be finished, tested and documented before the next.
 
 1. **Prove it works** (now): free or paid testers through Wessam; collect confusing words per language and,
    above all, real exam results. Target: 10 workers with results.
-2. **Content quality:** native speakers check Bangla, Urdu and Hindi; check answers that rely on general
+2. **Bigger bank:** grow from 100 to 200-300 live questions so repeated full mocks repeat less (each full
+   mock uses half the bank today), weighted toward ordering questions and topics workers report.
+3. **Content quality:** native speakers check Bangla, Urdu and Hindi; check answers that rely on general
    advice (fridge shelf order, return to work after vomiting, dented cans) against what the real exam
    expects; add questions on any topic workers report from the real exam.
-3. **Video questions:** find out what the real videos show; make 7-8 short clips with an AI video tool
+4. **Video questions:** find out what the real videos show; make 7-8 short clips with an AI video tool
    (Google Veo via Gemini/Flow, or Kling; about £19 for a month) or film them; host them with the app; turn
    the video questions back on (`enabled: true`) and add new ones (D5).
-4. **Protect the content:** make the GitHub repo private (Vercel deploys private repos; the old GitHub Pages
+5. **Protect the content:** make the GitHub repo private (Vercel deploys private repos; the old GitHub Pages
    link then stops working); optionally load questions from the API only for unlocked phones.
-5. **More languages** the exam offers: Nepali, Malayalam, Tamil, Filipino first (section 8).
-6. **Results and progress:** save each attempt (with consent) so the seller/owner sees who is ready;
+6. **More languages** the exam offers: Nepali, Malayalam, Tamil, Filipino first (section 8).
+7. **Results and progress:** save each attempt (with consent) so the seller/owner sees who is ready;
    per-topic weak areas; spaced repetition of mistakes.
-7. **Owner product:** owners buy codes for their staff and see readiness; later the per-branch food-safety
+8. **Owner product:** owners buy codes for their staff and see readiness; later the per-branch food-safety
    checks product (fridge temperature logs, certificate expiry tracker, inspection checklists) at around
    149 SAR per branch per month.
-8. **Grow beyond one seller:** several sellers with their own logins and code counts; online payment through
+9. **Grow beyond one seller:** several sellers with their own logins and code counts; online payment through
    a merchant of record, later a Saudi entity; a custom domain.
 
 ## 7. Competition (researched before 28 Oct 2026)

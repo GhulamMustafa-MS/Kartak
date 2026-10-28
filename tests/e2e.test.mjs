@@ -4,6 +4,7 @@
  * Purpose:    Serves the repo files as if they were on kartak-app / kartak-seller.vercel.app and answers
  *             /api/* with the real API code on the in-memory database, then: the seller logs in and
  *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result;
+ *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language renders a question; the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
@@ -83,6 +84,29 @@ await worker.waitForSelector(".qtext");
 await worker.screenshot({ path: SHOTS + "question-bn.png" });
 check("full mock has 50 questions", (await answerAll(worker)) === 50);
 await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
+
+// "All questions": every live question, untimed, place saved between sittings (D21)
+await worker.click("#bar [data-go=home]");
+await worker.click("#langs [data-lang=en]");
+await worker.click("[data-go=all]");
+await worker.waitForSelector(".qtext");
+check("all questions covers the whole bank", (await worker.textContent(".qhead .pos span")).includes("/ 100"));
+for (let k = 0; k < 3; k++) {
+  const opt = await worker.$("[data-opt]");
+  if (opt) await opt.click();
+  await worker.click("#cta"); // check answer
+  await worker.click("#cta"); // next question
+}
+await worker.click("#brandBtn");
+check("home offers to carry on", (await worker.textContent("[data-go=all] .d")).includes("question 4 of 100"));
+await worker.click("[data-go=all]");
+await worker.waitForSelector(".qtext");
+check("carries on at question 4", (await worker.textContent(".qhead .pos span")).includes("4 / 100"));
+await worker.click("#brandBtn");
+await worker.click("[data-go=all-restart]");
+await worker.waitForSelector(".qtext");
+check("start again goes back to question 1", (await worker.textContent(".qhead .pos span")).includes("1 / 100"));
+await worker.click("#brandBtn");
 
 // Second phone refused
 const other = await phone();
