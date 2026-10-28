@@ -327,6 +327,14 @@ html[lang="ur"] .tally span { line-height: 1.9; }
 .rv .to { color: var(--bad); font-size: 14px; font-weight: 700; }
 .rv ol { margin: 0; padding-inline-start: 22px; color: var(--good); font-weight: 700; }
 
+/* Code gate */
+.gate { display: grid; gap: 14px; padding-top: 8px; }
+.gate h1 { margin: 6px 0 0; font-size: 26px; line-height: 1.25; }
+html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
+.gate p { margin: 0; color: var(--muted); }
+.code-in { width: 100%; min-height: 64px; border: 2px solid var(--line); border-radius: 16px; background: var(--surface); color: var(--ink); font: 700 28px var(--font-latin); letter-spacing: 0.18em; text-align: center; text-transform: uppercase; direction: ltr; padding: 8px 12px; }
+.code-in:focus { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--primary); }
+.gate .err { background: var(--bad-bg); color: var(--bad); border-radius: 12px; padding: 10px 14px; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) { .dial .fgc { transition: none; } }
 @media (max-width: 370px) { .realtest strong { font-size: 22px; } .qtext { font-size: 20px; } .langs button { padding: 4px 9px; } }
 </style>
@@ -354,6 +362,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
   /* ---------------- Text ---------------- */
   var UI = {
     en: {
+      codeT: "Enter your code", codeLead: "Type the code you got from the person who gave you this app.", unlock: "Unlock", errInvalid: "This code is not right. Check it and try again.", errUsed: "This code is already used on another phone. Ask the person who gave it to you to reset it.", errDisabled: "This code has been turned off. Ask the person who gave it to you.", errNet: "No internet. Connect and try again.", checking: "Checking…",
       chooseLang: "Choose your language", chooseLead: "You can change it at any time from the top of the screen.",
       title: "Health certificate practice test",
       sub: "Practise for the food workers’ health education test in your own language, at your own pace.",
@@ -393,6 +402,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       listen: "Listen", stop: "Stop", replay: "Replay", up: "Move up", down: "Move down", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
     },
     ur: {
+      codeT: "اپنا کوڈ لکھیں", codeLead: "وہ کوڈ لکھیں جو آپ کو یہ ایپ دینے والے نے دیا ہے۔", unlock: "کھولیں", errInvalid: "یہ کوڈ درست نہیں۔ چیک کر کے دوبارہ کوشش کریں۔", errUsed: "یہ کوڈ کسی اور فون پر استعمال ہو چکا ہے۔ جس نے کوڈ دیا ہے اس سے کہیں کہ اسے ری سیٹ کرے۔", errDisabled: "یہ کوڈ بند کر دیا گیا ہے۔ جس نے کوڈ دیا ہے اس سے بات کریں۔", errNet: "انٹرنیٹ نہیں ہے۔ انٹرنیٹ چلا کر دوبارہ کوشش کریں۔", checking: "چیک ہو رہا ہے…",
       chooseLang: "اپنی زبان چنیں", chooseLead: "آپ اسے اوپر سے کسی بھی وقت بدل سکتے ہیں۔",
       title: "ہیلتھ سرٹیفکیٹ پریکٹس ٹیسٹ",
       sub: "فوڈ ورکرز کے ہیلتھ ایجوکیشن ٹیسٹ کی تیاری کریں، اپنی زبان میں، اپنی رفتار سے۔",
@@ -432,6 +442,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       listen: "سنیں", stop: "روکیں", replay: "دوبارہ چلائیں", up: "اوپر کریں", down: "نیچے کریں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
     },
     bn: {
+      codeT: "আপনার কোড লিখুন", codeLead: "যিনি আপনাকে এই অ্যাপ দিয়েছেন, তার দেওয়া কোডটি লিখুন।", unlock: "খুলুন", errInvalid: "এই কোডটি ঠিক নয়। দেখে আবার চেষ্টা করুন।", errUsed: "এই কোডটি অন্য একটি ফোনে ব্যবহার হয়ে গেছে। যিনি কোড দিয়েছেন তাকে রিসেট করতে বলুন।", errDisabled: "এই কোডটি বন্ধ করা হয়েছে। যিনি কোড দিয়েছেন তার সাথে কথা বলুন।", errNet: "ইন্টারনেট নেই। ইন্টারনেট চালু করে আবার চেষ্টা করুন।", checking: "যাচাই হচ্ছে…",
       chooseLang: "আপনার ভাষা বেছে নিন", chooseLead: "উপর থেকে যেকোনো সময় এটি বদলাতে পারবেন।",
       title: "হেলথ সার্টিফিকেট প্র্যাকটিস টেস্ট",
       sub: "খাদ্যকর্মীদের হেলথ এডুকেশন টেস্টের প্রস্তুতি নিন, নিজের ভাষায়, নিজের গতিতে।",
@@ -590,6 +601,18 @@ html[lang="ur"] .tally span { line-height: 1.9; }
   var S = { lang: null, screen: "lang", mode: null, i: 0, sel: null, checked: false, results: [], shuffles: [], qDeadline: 0, tick: null, notice: false, startedAt: 0, endedAt: 0, speaking: false };
 
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  // Access codes: only enforced when served from the Vercel deployment, which has the /api backend.
+  var API = /\.vercel\.app$/.test(location.hostname) ? "/api" : null;
+  function deviceId() {
+    var d = store("kartak-dev");
+    if (!d) { d = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2); store("kartak-dev", d); }
+    return d;
+  }
+  function activate(code, cb) {
+    fetch(API + "/activate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code: code, device: deviceId() }) })
+      .then(function (r) { return r.json(); }).then(function (j) { cb(j); })
+      .catch(function () { cb({ ok: false, reason: "net" }); });
+  }
   var saved = store("jahiz-lang");
   if (saved && UI[saved]) { S.lang = saved; S.screen = "home"; }
 
@@ -882,9 +905,29 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     setBar('<button type="button" class="cta ghost" data-two="1" data-go="home">' + t.home + '</button><button type="button" class="cta" data-go="' + S.mode + '">' + t.again + '</button>');
   }
 
+  function needCode() { return API && !store("kartak-code"); }
+  function drawGate() {
+    var t = T();
+    app.innerHTML = '<section class="gate"><h1>' + t.codeT + '</h1><p>' + t.codeLead + '</p>' +
+      '<input id="codeIn" class="code-in" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABC-123" value="' + esc(S.codeDraft || "") + '">' +
+      (S.codeErr ? '<div class="err" role="alert">' + t[S.codeErr] + '</div>' : '') + '</section>';
+    setBar('<button type="button" class="cta" id="unlockBtn"' + (S.codeBusy ? " disabled" : "") + '>' + (S.codeBusy ? t.checking : t.unlock) + '</button>');
+  }
+  function tryUnlock() {
+    var el = document.getElementById("codeIn"); var code = (el ? el.value : "").trim();
+    S.codeDraft = code; if (!code) return;
+    S.codeBusy = true; S.codeErr = null; drawGate();
+    activate(code, function (j) {
+      S.codeBusy = false;
+      if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); return; }
+      S.codeErr = { used: "errUsed", disabled: "errDisabled", net: "errNet" }[j.reason] || "errInvalid";
+      drawGate();
+    });
+  }
   function render() {
     syncChrome();
     if (!S.lang) { S.screen = "lang"; return drawLang(); }
+    if (needCode()) { S.screen = "gate"; return drawGate(); }
     if (S.screen === "home") drawHome();
     else if (S.screen === "learn") drawLearn();
     else if (S.screen === "intro") drawIntro();
@@ -942,6 +985,10 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     }
   }
   app.addEventListener("click", onClick);
+  bar.addEventListener("click", function (ev) { if (ev.target.closest("#unlockBtn")) tryUnlock(); });
+  app.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && ev.target.id === "codeIn") tryUnlock(); });
+  // Re-check a saved code in the background; drop it only if the server says it is no longer valid for this phone.
+  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (!j.ok && j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} if (S.screen !== "q") render(); } });
   bar.addEventListener("click", onClick);
 
   render();
