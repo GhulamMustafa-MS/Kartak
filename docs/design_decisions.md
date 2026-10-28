@@ -105,6 +105,9 @@ Rejected: keeping WHO numbers (a worker who learns them would lose marks on the 
 Written chapter by chapter from the handbook text, with a target mix of about 35% single answer, 20%
 true/false, 18% multiple answers, 17% ordering and 10% picture, in all four languages. Each batch was checked
 by script (all languages present, valid answers, no Urdu script in Hindi, no English words left in the
-translations, 4-6 ordering steps) and merged with new ids after the last old one. Rejected: copying the
+translations, 4-6 ordering steps) and merged with new ids after the last old one (k103-k307; k124 was
+dropped in review and never published). A separate agent that had not written them then checked every new
+question against the handbook: no answer was wrong; 4 ordering questions had more than one defensible order
+and were fixed, and duplicates and wording too close to the handbook's lists were rewritten. Result: 304 live. Rejected: copying the
 handbook's own "Test Your Knowledge" questions (forbidden, and too few).
 

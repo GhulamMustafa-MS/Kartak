@@ -7,14 +7,14 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 ## START HERE (last updated 28 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
-- Worker app https://kartak-app.vercel.app: 4 languages, 305 live questions (all 13
+- Worker app https://kartak-app.vercel.app: 4 languages, 304 live questions (all 13
   handbook chapters, D22, D23), full mock / quick test /
   practice / all questions (saved place) / learn the types, code lock, installable, offline.
 - Seller app https://kartak-seller.vercel.app: make, send, reset, turn off and delete codes.
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
 
-**Next steps (roadmap step 1-2, plan.md 6):**
+**Next steps (roadmap steps 1 and 3, plan.md 6):**
 1. Wessam gives codes to workers; collect confusing words per language and real exam results.
 2. Ask workers what the real exam videos show (needed before making clips, D5).
 3. Native speakers check Bangla, Urdu and Hindi.
@@ -36,7 +36,9 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 - **28 Oct 2026 (late):** the official handbook became the source of every question (D22): `docs/handbook.md`
   (syllabus and numbers); 17 old questions corrected to its numbers (63°C, 75°C, above 82°C, 1.5 hours, thaw
   in the fridge or microwave, wash hands before the hair cover); every question tagged with its chapter (`ch`);
-  validator checks `ch` and `d`; browser test follows the bank size. About 200 new questions in progress (D23).
+  validator checks `ch` and `d`; browser test follows the bank size. Then 204 new questions in four languages,
+  written chapter by chapter from the handbook, checked by an independent review (4 ambiguous ordering
+  questions, duplicates and wording close to the handbook fixed): 304 live in all, every chapter covered (D23).
 - **28 Oct 2026 (night):** "All questions" mode: the whole bank, untimed, answer after each, place saved
   on the phone with "carry on" and "start again" (D21). Roadmap: grow the bank to 200-300. Browser test added.
 - **28 Oct 2026 (evening):** split the app into `index.html`, `css/`, `js/`, `data/questions.json`;
