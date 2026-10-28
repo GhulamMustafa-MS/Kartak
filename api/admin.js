@@ -6,10 +6,20 @@ import crypto from "node:crypto";
 const sql = neon(process.env.DATABASE_URL);
 const ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no 0/O, 1/I/L
 const gen = () => Array.from(crypto.randomBytes(6), (b) => ALPHABET[b % ALPHABET.length]).join("");
+const ALLOWED_ORIGINS = ["https://kartak-seller.vercel.app"];
 const norm = (c) => String(c || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
+  // The seller app lives on its own address, so allow it to call this endpoint.
+  const origin = req.headers.origin || "";
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  }
+  if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).json({ ok: false });
   const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
   try {
