@@ -416,7 +416,7 @@
   var installEvt = null;
   window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; });
   window.addEventListener("appinstalled", function () { installEvt = null; render(); });
-  if ("serviceWorker" in navigator && API) { try { navigator.serviceWorker.register("/sw.js").catch(function () {}); } catch (e) {} }
+  if ("serviceWorker" in navigator && (API || location.hostname === "localhost")) { try { navigator.serviceWorker.register("/sw.js").catch(function () {}); } catch (e) {} }
   var SHARE_SVG = '<span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7.5 7.5L12 3l4.5 4.5"/><path d="M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"/></svg></span>';
   function installCard() {
     if (standalone()) return "";

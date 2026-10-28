@@ -7,7 +7,7 @@
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; the install help sheet
+ *             language; offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -180,6 +180,31 @@ check("home-screen copy opens unlocked", true);
 
 console.log("page errors:", errors.length ? errors : "none");
 if (errors.length) failed++;
+// Offline: a real local server (service workers need one), first visit online, then the internet goes off
+const http = await import("node:http");
+const server = http.createServer((req, res) => {
+  const p = new URL(req.url, "http://x").pathname;
+  const file = ROOT + (p === "/" ? "index.html" : p.slice(1));
+  if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); return res.end(); }
+  res.writeHead(200, { "content-type": TYPES[file.split(".").pop()] || "text/plain" }); res.end(fs.readFileSync(file));
+});
+await new Promise((r) => server.listen(0, "127.0.0.1", r));
+const octx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+const off = await octx.newPage();
+await off.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+const base = `http://localhost:${server.address().port}/`;
+await off.goto(base);
+await off.evaluate(() => navigator.serviceWorker.ready);
+await off.waitForTimeout(500);
+await octx.setOffline(true);
+await off.reload();
+await off.click("[data-pick=bn]");
+await off.click("[data-go=practice]");
+await off.waitForSelector(".qtext", { timeout: 5000 }).catch(() => {});
+check("works offline after the first visit (questions saved)", !!(await off.$(".qtext")));
+await octx.close();
+server.close();
+
 await browser.close();
 console.log(failed ? `${failed} check(s) failed` : "ALL BROWSER CHECKS PASSED");
 process.exit(failed ? 1 : 0);

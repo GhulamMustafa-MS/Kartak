@@ -35,6 +35,9 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (night):** offline fixed for the first visit: the service worker now saves the app and all
+  questions as soon as it installs (it used to save only what loaded after it started); browser test turns the
+  internet off and checks practice still works.
 - **28 Oct 2026 (late, 6):** Malayalam, Tamil, Filipino, Indonesian and Turkish added; every language had a
   word list, three translators and an independent full review before going live (D24).
 - **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
