@@ -1,5 +1,12 @@
-// Network first, so people always get the newest questions when online; the saved copy is used only when offline.
-const CACHE = "kartak-v1";
+/*
+ * sw.js - service worker for the worker app (registered by js/app.js).
+ *
+ * Purpose:    Lets phones install the app and keeps it working offline. Network first: when online,
+ *             people always get the newest files and questions; the saved copy is used only offline.
+ *             /api/ calls are never cached. Every page visit falls back to the saved "/".
+ * Used by:    js/app.js (navigator.serviceWorker.register("/sw.js")).
+ */
+const CACHE = "kartak-v2"; // change the number to drop old saved copies after a big change
 self.addEventListener("install", (e) => { self.skipWaiting(); });
 self.addEventListener("activate", (e) => { e.waitUntil(self.clients.claim()); });
 self.addEventListener("fetch", (e) => {

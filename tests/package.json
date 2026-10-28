@@ -1,0 +1,14 @@
+{
+  "name": "kartak-tests",
+  "private": true,
+  "type": "module",
+  "description": "Tests and tools for Kartak. Kept out of the root package.json so Vercel never installs them.",
+  "scripts": {
+    "test": "node ../scripts/validate-questions.js && node api.test.mjs && node e2e.test.mjs",
+    "pretest": "npm --prefix .. install"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.2.17",
+    "playwright": "1.48.2"
+  }
+}

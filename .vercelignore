@@ -1,0 +1,8 @@
+# Files the worker app's Vercel project ("kartak") must not publish.
+# The seller app is its own Vercel project with root directory seller/.
+seller/
+tests/
+scripts/
+docs/
+db/
+*.md

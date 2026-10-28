@@ -1,3 +1,4 @@
+-- db/migrations/001_initial.sql - first version of the tables (run 28 Oct 2026).
 create table if not exists kartak_codes (
   code text primary key,
   note text not null default '',
@@ -6,8 +7,6 @@ create table if not exists kartak_codes (
   reset_count int not null default 0,
   created_at timestamptz not null default now(),
   activated_at timestamptz,
-  last_seen timestamptz,
-  transfer_token text,
-  transfer_expires timestamptz
+  last_seen timestamptz
 );
 create table if not exists kartak_settings (k text primary key, v text not null);

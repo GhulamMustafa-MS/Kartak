@@ -1,16 +1,23 @@
-// Moves an unlocked code to the home-screen copy of the app on iPhone, which has its own separate storage.
-// POST { action: "make", code, device } -> { ok, token }   (only for the phone the code is locked to)
-// POST { action: "redeem", token, device } -> { ok, code } (one use, expires after a day)
-import { neon } from "@neondatabase/serverless";
+/*
+ * api/transfer.js - POST /api/transfer: carry an unlocked code into the iPhone home-screen app.
+ *
+ * Purpose:    On iPhone the home-screen copy of a web app has its own storage, so it would not know the
+ *             code (decision D13). Safari asks for a one-time token ("make"), puts it in the address
+ *             (/?t=TOKEN); the home-screen copy opens that address and swaps the token for the code
+ *             ("redeem"), which moves the phone lock to its own device id. Tokens expire after a day.
+ *             make:   { action: "make", code, device }    -> { ok, token }  (only the locked phone)
+ *             redeem: { action: "redeem", token, device } -> { ok, code }   (one use)
+ * Used by:    js/app.js (makeTransfer(), redeemTransfer()).
+ * Depends on: api/_db.js; columns transfer_token, transfer_expires in kartak_codes.
+ */
 import crypto from "node:crypto";
 
-const sql = neon(process.env.DATABASE_URL);
-const norm = (c) => String(c || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+import { sql, normCode as norm, readBody } from "./_db.js";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   if (req.method !== "POST") return res.status(405).json({ ok: false });
-  const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
+  const body = readBody(req);
   const device = String(body.device || "").slice(0, 64);
   if (device.length < 8) return res.json({ ok: false });
   try {

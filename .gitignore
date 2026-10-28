@@ -1,0 +1,9 @@
+# Installed packages (root: the Neon driver for api/; tests/: PGlite and Playwright)
+node_modules/
+tests/node_modules/
+# Test output
+tests/screenshots/
+# Vercel CLI link folder and local secrets, if anyone uses the CLI
+.vercel/
+.env
+.env.*

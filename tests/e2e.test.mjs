@@ -1,0 +1,132 @@
+/*
+ * tests/e2e.test.mjs - drives both apps in a real browser on a phone-sized screen.
+ *
+ * Purpose:    Serves the repo files as if they were on kartak-app / kartak-seller.vercel.app and answers
+ *             /api/* with the real API code on the in-memory database, then: the seller logs in and
+ *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result;
+ *             a second phone is refused; every language renders a question; the install help sheet
+ *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
+ *             Screenshots go to tests/screenshots/ (git-ignored).
+ * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
+ * Depends on: tests/testdb.mjs, playwright, every file the two apps load.
+ */
+import fs from "node:fs";
+import { createRequire } from "node:module";
+import { callApi, ROOT, ADMIN_PASSWORD } from "./testdb.mjs";
+
+const { chromium, devices } = createRequire(import.meta.url)("playwright");
+const SHOTS = ROOT + "tests/screenshots/";
+fs.mkdirSync(SHOTS, { recursive: true });
+const TYPES = { html: "text/html", js: "text/javascript", mjs: "text/javascript", css: "text/css", json: "application/json", png: "image/png", svg: "image/svg+xml", webmanifest: "application/manifest+json" };
+
+let failed = 0;
+const check = (name, ok) => { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; };
+const errors = [];
+const browser = await chromium.launch();
+
+async function phone(device) {
+  const ctx = await browser.newContext(device ? { ...devices[device] } : { viewport: { width: 390, height: 844 }, hasTouch: true });
+  const page = await ctx.newPage();
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+  await page.route("https://kartak-app.vercel.app/api/**", async (r) => {
+    const req = r.request();
+    const name = new URL(req.url()).pathname.slice(5);
+    const out = await callApi(name, JSON.parse(req.postData() || "{}"), { method: req.method(), origin: req.headers().origin });
+    await r.fulfill({ status: out.status, headers: { ...out.headers, "content-type": "application/json" }, body: out.body ? JSON.stringify(out.body) : "" });
+  });
+  for (const [host, dir] of [["kartak-app", ""], ["kartak-seller", "seller/"]]) {
+    await page.route(`https://${host}.vercel.app/**`, async (r) => {
+      const p = new URL(r.request().url()).pathname;
+      if (p.startsWith("/api/")) return r.fallback();
+      const file = ROOT + dir + (p === "/" ? "index.html" : p.slice(1));
+      if (!fs.existsSync(file)) return r.fulfill({ status: 404, body: "" });
+      await r.fulfill({ contentType: TYPES[file.split(".").pop()] || "text/plain", body: fs.readFileSync(file) });
+    });
+  }
+  return page;
+}
+async function answerAll(page) {
+  let n = 0;
+  while (n < 60 && !(await page.$(".ring"))) {
+    const opt = await page.$("[data-opt]");
+    if (opt) await opt.click();
+    await page.click("#cta");
+    n++;
+  }
+  return n;
+}
+
+// Seller makes a code
+const seller = await phone();
+await seller.goto("https://kartak-seller.vercel.app/");
+await seller.fill("#key", ADMIN_PASSWORD);
+await seller.click("#login");
+await seller.click("#make");
+await seller.waitForSelector(".new-code");
+const code = (await seller.textContent(".new-code .big")).trim();
+check("seller makes a code", /^[A-Z2-9]{3}-[A-Z2-9]{3}$/.test(code));
+check("WhatsApp message carries the worker link", (await seller.getAttribute(".new-code a", "href")).includes("kartak-app.vercel.app"));
+await seller.screenshot({ path: SHOTS + "seller.png", fullPage: true });
+
+// Worker unlocks and takes the full mock
+const worker = await phone();
+await worker.goto("https://kartak-app.vercel.app/");
+await worker.click("[data-pick=bn]");
+await worker.fill("#codeIn", code);
+await worker.click("#unlockBtn");
+await worker.waitForSelector("[data-go=intro-full]");
+check("worker unlocks with the code", true);
+await worker.click("[data-go=intro-full]");
+await worker.click("#bar [data-go=full]");
+await worker.waitForSelector(".qtext");
+await worker.screenshot({ path: SHOTS + "question-bn.png" });
+check("full mock has 50 questions", (await answerAll(worker)) === 50);
+await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
+
+// Second phone refused
+const other = await phone();
+await other.goto("https://kartak-app.vercel.app/");
+await other.click("[data-pick=en]");
+await other.fill("#codeIn", code);
+await other.click("#unlockBtn");
+await other.waitForSelector(".err");
+check("second phone refused", (await other.textContent(".err")).includes("another phone"));
+
+// Every language shows a question
+for (const lang of ["en", "ur", "hi", "bn"]) {
+  await worker.click(`#langs [data-lang=${lang}]`);
+  await worker.click("#bar [data-go=home]").catch(() => {});
+  await worker.click("[data-go=practice]");
+  await worker.waitForSelector(".qtext");
+  const text = await worker.textContent(".qtext");
+  check(`practice question shows in ${lang}`, text.length > 5);
+  await worker.click("#brandBtn");
+}
+
+// iPhone: install help + hand-over to the home-screen copy
+const iphone = await phone("iPhone 13");
+await iphone.goto("https://kartak-app.vercel.app/");
+await iphone.click("[data-pick=en]");
+await callApi("admin", { key: ADMIN_PASSWORD, action: "new" });
+const list = (await callApi("admin", { key: ADMIN_PASSWORD, action: "list" })).body.list;
+const fresh = list.find((r) => !r.active).code;
+await iphone.fill("#codeIn", fresh);
+await iphone.click("#unlockBtn");
+await iphone.waitForSelector("#installBtn");
+await iphone.click("#installBtn");
+await iphone.waitForSelector("#sheet");
+check("iPhone install help opens", (await iphone.textContent("#sheet")).includes("Add to Home Screen"));
+await iphone.screenshot({ path: SHOTS + "install-sheet.png" });
+await iphone.waitForFunction(() => location.search.includes("t="));
+const homeScreen = await phone("iPhone 13");
+await homeScreen.goto(iphone.url());
+await homeScreen.click("[data-pick=en]").catch(() => {});
+await homeScreen.waitForSelector("[data-go=intro-full]");
+check("home-screen copy opens unlocked", true);
+
+console.log("page errors:", errors.length ? errors : "none");
+if (errors.length) failed++;
+await browser.close();
+console.log(failed ? `${failed} check(s) failed` : "ALL BROWSER CHECKS PASSED");
+process.exit(failed ? 1 : 0);

@@ -1,0 +1,62 @@
+/*
+ * seller/css/seller.css - styles for the seller app (seller/index.html).
+ *
+ * Purpose:    Colour tokens (light + dark) and the layout of the code list, buttons, install card and
+ *             help sheet. Shares the green brand with the worker app; the seller icon is brown so the
+ *             two apps are easy to tell apart on a phone.
+ * Used by:    seller/index.html.
+ */
+:root { --bg:#EEF2F1; --surface:#fff; --surface-2:#F5F8F7; --ink:#10231E; --muted:#51635D; --line:#D2DBD8; --primary:#0A6B4E; --primary-ink:#fff; --focus:#D99A00; --good:#1E7A3C; --good-bg:#E2F2E6; --bad:#B3261E; --bad-bg:#FBE6E4; --warn:#8A6200; --warn-bg:#FBF0D2; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0D1513; --surface:#15201C; --surface-2:#1A2622; --ink:#E5EDEA; --muted:#9AACA5; --line:#2A3833; --primary:#3BB68A; --primary-ink:#04120C; --focus:#F2C14E; --good:#5CC97E; --good-bg:#15301E; --bad:#F08A80; --bad-bg:#3A1A18; --warn:#E8C15A; --warn-bg:#2E2712; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body { margin: 0; color: var(--ink); font: 17px/1.5 "Atkinson Hyperlegible", system-ui, sans-serif; padding: 0 max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); }
+.page { max-width: 560px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; }
+header b { font-size: 22px; }
+header span { color: var(--muted); font-size: 15px; }
+button, input { font: inherit; color: inherit; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 12px; }
+h2 { margin: 0; font-size: 19px; }
+p { margin: 0; }
+.muted { color: var(--muted); font-size: 15px; }
+input[type=text], input[type=password] { width: 100%; min-height: 52px; border: 2px solid var(--line); border-radius: 14px; background: var(--surface-2); padding: 8px 14px; }
+.btn { min-height: 52px; border: 0; border-radius: 14px; background: var(--primary); color: var(--primary-ink); font-weight: 700; cursor: pointer; padding: 0 16px; }
+.btn.ghost { background: var(--surface); color: var(--ink); border: 2px solid var(--line); }
+.btn:disabled { opacity: .5; cursor: default; }
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.stats div { padding: 12px 14px; display: grid; }
+.stats div + div { border-left: 1px solid var(--line); }
+.stats b { font-size: 26px; font-variant-numeric: tabular-nums; }
+.stats small { color: var(--muted); font-size: 14px; }
+.new-code { text-align: center; background: var(--good-bg); border-radius: 16px; padding: 16px; display: grid; gap: 10px; }
+.new-code .big { font-size: 40px; font-weight: 700; letter-spacing: .12em; color: var(--good); }
+.err { background: var(--bad-bg); color: var(--bad); border-radius: 12px; padding: 10px 14px; font-weight: 700; }
+.list { display: grid; gap: 8px; }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; display: grid; gap: 8px; }
+.item .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.item .c { font-size: 20px; font-weight: 700; letter-spacing: .08em; }
+.pill { font-size: 13px; font-weight: 700; border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
+.pill.active { background: var(--good-bg); color: var(--good); }
+.pill.unused { background: var(--warn-bg); color: var(--warn); }
+.pill.off { background: var(--bad-bg); color: var(--bad); }
+.item .acts { display: flex; gap: 8px; }
+.item .acts button { min-height: 40px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface-2); padding: 0 12px; cursor: pointer; font-size: 15px; }
+.search { margin-bottom: 4px; }
+/* Phones: no text selection or grey flash when tapping, no double-tap zoom */
+button, a, .opt, .orow, .lang-tile, .mode, .item, .card, .stats { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; touch-action: manipulation; }
+input, textarea { -webkit-user-select: text; user-select: text; }
+.item .acts { flex-wrap: wrap; }
+.item .acts button.del { color: var(--bad); border-color: var(--bad); background: var(--bad-bg); }
+.install { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 2px dashed var(--primary); border-radius: 18px; padding: 12px 14px; }
+.install img { width: 44px; height: 44px; border-radius: 10px; flex: none; }
+.install .tx { flex: 1; display: grid; }
+.install .tx span { color: var(--muted); font-size: 14px; }
+.install button { flex: none; min-height: 44px; border: 0; border-radius: 12px; background: var(--primary); color: var(--primary-ink); font-weight: 700; padding: 0 16px; cursor: pointer; }
+.sheet-bg { position: fixed; inset: 0; z-index: 50; background: rgba(4,18,12,.55); display: flex; align-items: flex-end; justify-content: center; }
+.sheet { width: 100%; max-width: 560px; background: var(--surface); border-radius: 22px 22px 0 0; padding: 20px max(16px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); display: grid; gap: 14px; }
+.sheet h2 { margin: 0; }
+.sheet ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; }

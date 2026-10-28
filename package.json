@@ -2,6 +2,7 @@
   "name": "kartak",
   "private": true,
   "type": "module",
+  "description": "Kartak worker app + API. Runtime dependencies only (Vercel installs these); tests and tools live in tests/package.json.",
   "dependencies": {
     "@neondatabase/serverless": "0.10.4"
   }

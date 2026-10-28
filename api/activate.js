@@ -1,14 +1,19 @@
-// POST { code, device } -> { ok } | { ok:false, reason: "invalid" | "used" | "disabled" }
-// A code locks to the first phone (device id) that uses it. Only an admin reset frees it.
-import { neon } from "@neondatabase/serverless";
-
-const sql = neon(process.env.DATABASE_URL);
-const norm = (c) => String(c || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+/*
+ * api/activate.js - POST /api/activate: unlock the worker app with an access code.
+ *
+ * Purpose:    Checks a code and locks it to the first phone that uses it (decision D9).
+ *             Request  { code, device }  (device = random id the app keeps in localStorage "kartak-dev")
+ *             Response { ok: true } | { ok: false, reason: "invalid" | "used" | "disabled" }
+ *             The same phone can call it again any time (the app re-checks on every launch).
+ * Used by:    js/app.js (activate()).
+ * Depends on: api/_db.js; table kartak_codes (db/schema.sql).
+ */
+import { sql, normCode as norm, readBody } from "./_db.js";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   if (req.method !== "POST") return res.status(405).json({ ok: false });
-  const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
+  const body = readBody(req);
   const code = norm(body.code);
   const device = String(body.device || "").slice(0, 64);
   if (code.length !== 6 || device.length < 8) return res.json({ ok: false, reason: "invalid" });
