@@ -157,7 +157,7 @@ html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
 .dial .bgc { fill: var(--surface); stroke: var(--line); stroke-width: 6; }
 .dial .fgc { fill: none; stroke: var(--primary); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset .25s linear; }
 .dial.low .fgc { stroke: var(--bad); }
-.dial b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-latin); font-size: 24px; font-variant-numeric: tabular-nums; line-height: 1; }
+.dial b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-latin); font-size: 20px; direction: ltr; font-variant-numeric: tabular-nums; line-height: 1; }
 .dial.low b { color: var(--bad); }
 .dial small { position: absolute; left: 0; right: 0; bottom: 13px; text-align: center; font-family: var(--font-latin); font-size: 10px; color: var(--muted); }
 
@@ -218,6 +218,20 @@ html[lang="ur"] .slot { line-height: 2; font-size: 16px; }
 .stepb { width: 100%; text-align: start; cursor: pointer; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; min-height: 54px; font-size: 17px; line-height: 1.35; }
 html[lang="ur"] .stepb { line-height: 2; font-size: 16px; }
 .stepb:hover { border-color: var(--c-red); }
+.olist { display: grid; gap: 8px; }
+.orow { display: flex; align-items: center; gap: 10px; border: 2px solid var(--line); background: var(--surface); border-radius: 14px; padding: 6px 6px 6px 12px; min-height: 60px; }
+.orow .n { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-latin); font-weight: 700; font-size: 15px; background: var(--c-red); color: var(--surface); }
+.orow .tx { flex: 1; min-width: 0; font-size: 17px; line-height: 1.35; }
+html[lang="ur"] .orow .tx { line-height: 2; font-size: 16px; }
+.orow .arr { display: flex; gap: 6px; flex: none; }
+.orow .arr button { width: 46px; height: 46px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface-2); cursor: pointer; display: grid; place-items: center; }
+.orow .arr button svg { width: 22px; height: 22px; color: var(--ink); }
+.orow .arr button:disabled { opacity: 0.3; cursor: default; }
+.orow.moved { border-color: var(--c-red); background: var(--c-red-bg); }
+.orow.ok { border-color: var(--good); background: var(--good-bg); }
+.orow.ok .n { background: var(--good); }
+.orow.no { border-color: var(--bad); background: var(--bad-bg); }
+.orow.no .n { background: var(--bad); }
 .otools { display: flex; gap: 10px; flex-wrap: wrap; }
 .small-btn { background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; min-height: 40px; cursor: pointer; font-size: 15px; }
 
@@ -332,7 +346,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       title: "Health certificate practice test",
       sub: "Practise for the food workers’ health education test in your own language, at your own pace.",
       real: "The real test", facts: [["50", "questions"], ["90", "minutes"], ["80%", "to pass"]],
-      mock: "Mock test", mockD: "Like the real test. 60 seconds for each question.",
+      mock: "Mock test", mockD: "Like the real test. 1 minute 30 seconds for each question.",
       practice: "Practice", practiceD: "No timer. See the right answer after every question.",
       learn: "Learn the question types", learnD: "See how to answer each kind of question before you start.",
       best: "Best mock test score", none: "Not taken yet",
@@ -342,7 +356,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         single: ["Choose one answer", "Tap one box."],
         multi: ["Choose all correct answers", "Tap every answer that is correct. There can be more than one."],
         tf: ["True or false", "Tap True if the sentence is right, or False if it is wrong."],
-        order: ["Put the steps in order", "Tap the first step, then the second, until every step is placed."],
+        order: ["Put the steps in order", "Use the arrows at the end of each step to move it up or down until the order is right."],
         picture: ["Picture question", "Look at the picture carefully, then tap one answer."]
       },
       check: "Check my answer", next: "Next question", finish: "See my result",
@@ -350,7 +364,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       yourOrder: "Your order", steps: "Steps to place", undo: "Remove last", clear: "Start again",
       inPlace: "steps in the right place",
       sec: "sec", timeUp: "Time ran out on the last question.",
-      introT: "Before you start", intro: [["15", "questions"], ["60", "seconds for each question"], ["12", "correct answers to pass"]],
+      introT: "Before you start", intro: [["15", "questions"], ["1:30", "minutes for each question"], ["12", "correct answers to pass"]],
       introNote: "When the time runs out, the next question opens by itself. You cannot go back.",
       start: "Start the test", back: "Back",
       resultsT: "Your result", passMark: "Pass mark 80%",
@@ -362,14 +376,14 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "Try again", home: "Home",
       tTrue: "True", tFalse: "False",
       fridge: "Fridge thermometer", probe: "Centre of a cooked chicken piece", freezer: "Freezer thermometer",
-      listen: "Listen", stop: "Stop", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
+      listen: "Listen", stop: "Stop", up: "Move up", down: "Move down", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
     },
     ur: {
       chooseLang: "اپنی زبان چنیں", chooseLead: "آپ اسے اوپر سے کسی بھی وقت بدل سکتے ہیں۔",
       title: "ہیلتھ سرٹیفکیٹ پریکٹس ٹیسٹ",
       sub: "فوڈ ورکرز کے ہیلتھ ایجوکیشن ٹیسٹ کی تیاری کریں، اپنی زبان میں، اپنی رفتار سے۔",
       real: "اصل ٹیسٹ", facts: [["50", "سوال"], ["90", "منٹ"], ["80%", "پاس کے لیے"]],
-      mock: "ماک ٹیسٹ", mockD: "اصل ٹیسٹ کی طرح۔ ہر سوال کے لیے 60 سیکنڈ۔",
+      mock: "ماک ٹیسٹ", mockD: "اصل ٹیسٹ کی طرح۔ ہر سوال کے لیے ڈیڑھ منٹ۔",
       practice: "پریکٹس", practiceD: "کوئی ٹائمر نہیں۔ ہر سوال کے بعد درست جواب دیکھیں۔",
       learn: "سوالوں کی قسمیں سیکھیں", learnD: "شروع کرنے سے پہلے دیکھیں کہ ہر قسم کے سوال کا جواب کیسے دینا ہے۔",
       best: "بہترین ماک ٹیسٹ اسکور", none: "ابھی نہیں دیا",
@@ -379,7 +393,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         single: ["ایک جواب چنیں", "ایک ڈبے پر ٹیپ کریں۔"],
         multi: ["تمام درست جواب چنیں", "جتنے جواب درست ہیں سب پر ٹیپ کریں۔ ایک سے زیادہ ہو سکتے ہیں۔"],
         tf: ["صحیح یا غلط", "جملہ ٹھیک ہو تو صحیح، غلط ہو تو غلط پر ٹیپ کریں۔"],
-        order: ["مراحل کو ترتیب دیں", "پہلے مرحلے پر ٹیپ کریں، پھر دوسرے پر، یہاں تک کہ سب لگ جائیں۔"],
+        order: ["مراحل کو ترتیب دیں", "ہر مرحلے کے آخر میں تیر سے اسے اوپر یا نیچے کریں، جب تک ترتیب درست نہ ہو جائے۔"],
         picture: ["تصویر والا سوال", "تصویر غور سے دیکھیں، پھر ایک جواب پر ٹیپ کریں۔"]
       },
       check: "جواب چیک کریں", next: "اگلا سوال", finish: "نتیجہ دیکھیں",
@@ -387,7 +401,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       yourOrder: "آپ کی ترتیب", steps: "لگانے والے مراحل", undo: "آخری ہٹائیں", clear: "دوبارہ شروع",
       inPlace: "مراحل درست جگہ پر",
       sec: "سیکنڈ", timeUp: "پچھلے سوال کا وقت ختم ہو گیا۔",
-      introT: "شروع کرنے سے پہلے", intro: [["15", "سوال"], ["60", "سیکنڈ ہر سوال کے لیے"], ["12", "درست جواب پاس ہونے کے لیے"]],
+      introT: "شروع کرنے سے پہلے", intro: [["15", "سوال"], ["1:30", "منٹ ہر سوال کے لیے"], ["12", "درست جواب پاس ہونے کے لیے"]],
       introNote: "وقت ختم ہونے پر اگلا سوال خود کھل جائے گا۔ آپ واپس نہیں جا سکتے۔",
       start: "ٹیسٹ شروع کریں", back: "واپس",
       resultsT: "آپ کا نتیجہ", passMark: "پاس مارک 80%",
@@ -399,14 +413,14 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "دوبارہ کوشش کریں", home: "ہوم",
       tTrue: "صحیح", tFalse: "غلط",
       fridge: "فریج کا تھرمامیٹر", probe: "پکی ہوئی مرغی کا درمیانی حصہ", freezer: "فریزر کا تھرمامیٹر",
-      listen: "سنیں", stop: "روکیں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
+      listen: "سنیں", stop: "روکیں", up: "اوپر کریں", down: "نیچے کریں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
     },
     bn: {
       chooseLang: "আপনার ভাষা বেছে নিন", chooseLead: "উপর থেকে যেকোনো সময় এটি বদলাতে পারবেন।",
       title: "হেলথ সার্টিফিকেট প্র্যাকটিস টেস্ট",
       sub: "খাদ্যকর্মীদের হেলথ এডুকেশন টেস্টের প্রস্তুতি নিন, নিজের ভাষায়, নিজের গতিতে।",
       real: "আসল টেস্ট", facts: [["50", "প্রশ্ন"], ["90", "মিনিট"], ["80%", "পাস করতে"]],
-      mock: "মক টেস্ট", mockD: "আসল টেস্টের মতো। প্রতিটি প্রশ্নে 60 সেকেন্ড।",
+      mock: "মক টেস্ট", mockD: "আসল টেস্টের মতো। প্রতিটি প্রশ্নে দেড় মিনিট।",
       practice: "অনুশীলন", practiceD: "কোনো টাইমার নেই। প্রতিটি প্রশ্নের পর সঠিক উত্তর দেখুন।",
       learn: "প্রশ্নের ধরন শিখুন", learnD: "শুরুর আগে দেখুন প্রতিটি ধরনের প্রশ্নে কীভাবে উত্তর দিতে হয়।",
       best: "সেরা মক টেস্ট স্কোর", none: "এখনো দেননি",
@@ -416,7 +430,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         single: ["একটি উত্তর বেছে নিন", "একটি বাক্সে চাপ দিন।"],
         multi: ["সব সঠিক উত্তর বেছে নিন", "যতগুলো উত্তর সঠিক, সবগুলোতে চাপ দিন। একাধিক হতে পারে।"],
         tf: ["সত্য না মিথ্যা", "বাক্যটি ঠিক হলে সত্য, ভুল হলে মিথ্যা চাপুন।"],
-        order: ["ধাপগুলো ক্রমে সাজান", "প্রথম ধাপে চাপ দিন, তারপর দ্বিতীয়টিতে, যতক্ষণ না সব ধাপ বসে যায়।"],
+        order: ["ধাপগুলো ক্রমে সাজান", "প্রতিটি ধাপের শেষে তীর চেপে সেটি উপরে বা নিচে সরান, যতক্ষণ না ক্রম ঠিক হয়।"],
         picture: ["ছবির প্রশ্ন", "ছবিটি ভালো করে দেখুন, তারপর একটি উত্তরে চাপ দিন।"]
       },
       check: "উত্তর যাচাই করুন", next: "পরের প্রশ্ন", finish: "ফলাফল দেখুন",
@@ -424,7 +438,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       yourOrder: "আপনার ক্রম", steps: "যে ধাপগুলো বসাতে হবে", undo: "শেষটা সরান", clear: "আবার শুরু",
       inPlace: "টি ধাপ সঠিক জায়গায়",
       sec: "সেকেন্ড", timeUp: "আগের প্রশ্নের সময় শেষ হয়ে গেছে।",
-      introT: "শুরু করার আগে", intro: [["15", "টি প্রশ্ন"], ["60", "সেকেন্ড প্রতিটি প্রশ্নে"], ["12", "টি সঠিক উত্তর লাগবে পাস করতে"]],
+      introT: "শুরু করার আগে", intro: [["15", "টি প্রশ্ন"], ["1:30", "মিনিট প্রতিটি প্রশ্নে"], ["12", "টি সঠিক উত্তর লাগবে পাস করতে"]],
       introNote: "সময় শেষ হলে পরের প্রশ্ন নিজে থেকেই খুলবে। আগের প্রশ্নে ফেরা যাবে না।",
       start: "টেস্ট শুরু করুন", back: "ফিরে যান",
       resultsT: "আপনার ফলাফল", passMark: "পাস মার্ক 80%",
@@ -436,7 +450,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "আবার চেষ্টা করুন", home: "হোম",
       tTrue: "সত্য", tFalse: "মিথ্যা",
       fridge: "ফ্রিজের থার্মোমিটার", probe: "রান্না করা মুরগির টুকরার ভেতরের অংশ", freezer: "ফ্রিজারের থার্মোমিটার",
-      listen: "শুনুন", stop: "থামুন", tryPractice: "অনুশীলনে চেষ্টা করুন", exampleSteps: ["হাত ভেজান", "সাবান লাগান"]
+      listen: "শুনুন", stop: "থামুন", up: "উপরে সরান", down: "নিচে সরান", tryPractice: "অনুশীলনে চেষ্টা করুন", exampleSteps: ["হাত ভেজান", "সাবান লাগান"]
     }
   };
 
@@ -506,7 +520,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
 
   var TOTAL = Q.length;               // 15
   var PASS = Math.ceil(TOTAL * 0.8);  // 12
-  var QSEC = 60;                      // seconds per question in the mock test
+  var QSEC = 90;                      // seconds per question in the mock test (workers report 1:30)
   var TTS = { en: "en", ur: "ur", bn: "bn" };
 
   var ICONS = {
@@ -619,7 +633,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       single: '<div class="mini"><div class="r"><span class="d"></span>A</div><div class="r on"><span class="d"></span>B</div><div class="r"><span class="d"></span>C</div></div>',
       multi: '<div class="mini"><div class="r sq on"><span class="d"></span>A</div><div class="r sq"><span class="d"></span>B</div><div class="r sq on"><span class="d"></span>C</div></div>',
       tf: '<div class="mini"><div class="two"><span class="on">' + t.tTrue + '</span><span>' + t.tFalse + '</span></div></div>',
-      order: '<div class="mini"><div class="r"><span class="num">1</span>' + esc(t.exampleSteps[0]) + '</div><div class="r"><span class="num">2</span>' + esc(t.exampleSteps[1]) + '</div></div>',
+      order: '<div class="mini"><div class="r"><span class="num">1</span><span style="flex:1">' + esc(t.exampleSteps[0]) + '</span><b>↑ ↓</b></div><div class="r"><span class="num">2</span><span style="flex:1">' + esc(t.exampleSteps[1]) + '</span><b>↑ ↓</b></div></div>',
       picture: '<div class="mini" style="justify-items:center">' + thermo("fridge", 3).replace('<svg ', '<svg style="width:56px" ') + '</div>'
     };
     var cards = ["single", "multi", "tf", "order", "picture"].map(function (ty) {
@@ -646,7 +660,8 @@ html[lang="ur"] .tally span { line-height: 1.9; }
 
   function openQ() {
     var q = Q[S.i];
-    S.sel = (q.type === "multi" || q.type === "order") ? [] : null;
+    S.sel = q.type === "order" ? S.shuffles[S.i].slice() : q.type === "multi" ? [] : null;
+    S.touched = false;
     S.checked = false;
     stopSpeak();
     clearInterval(S.tick); S.tick = null;
@@ -661,7 +676,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     if (left <= 0) {
       clearInterval(S.tick); S.tick = null;
       var q = Q[S.i];
-      S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: !hasAnswer(q, S.sel) };
+      S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: !hasAnswer(q, S.sel) || (q.type === "order" && !S.touched) };
       S.notice = true;
       advance();
     }
@@ -671,13 +686,14 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     var R = 30, C = 2 * Math.PI * R, off = C * (1 - left / QSEC);
     return '<div class="dial' + (left <= 10 ? " low" : "") + '" id="dial" role="timer" aria-label="' + Math.ceil(left) + " " + T().sec + '">' +
       '<svg viewBox="0 0 72 72"><circle class="bgc" cx="36" cy="36" r="' + R + '"/><circle class="fgc" id="dialArc" cx="36" cy="36" r="' + R + '" stroke-dasharray="' + C.toFixed(2) + '" stroke-dashoffset="' + off.toFixed(2) + '"/></svg>' +
-      '<b id="dialNum">' + Math.ceil(left) + '</b><small>' + (S.lang === "en" ? "sec" : "") + '</small></div>';
+      '<b id="dialNum">' + mmss(left) + '</b></div>';
   }
+  function mmss(left) { var t = Math.ceil(left), m = Math.floor(t / 60), x = t % 60; return m + ":" + (x < 10 ? "0" : "") + x; }
   function paintDial(left) {
     var d = document.getElementById("dial"); if (!d) return;
     var R = 30, C = 2 * Math.PI * R;
     document.getElementById("dialArc").setAttribute("stroke-dashoffset", (C * (1 - left / QSEC)).toFixed(2));
-    document.getElementById("dialNum").textContent = Math.ceil(left);
+    document.getElementById("dialNum").textContent = mmss(left);
     d.classList.toggle("low", left <= 10);
     d.setAttribute("aria-label", Math.ceil(left) + " " + T().sec);
   }
@@ -744,20 +760,17 @@ html[lang="ur"] .tally span { line-height: 1.9; }
   }
 
   function orderHTML(q) {
-    var t = T(), lq = L(q), n = lq.o.length, sh = S.shuffles[S.i];
-    var html = '<div class="ozone"><span class="lb">' + t.yourOrder + '</span>';
+    var t = T(), lq = L(q), n = S.sel.length;
+    var up = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    var dn = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>';
+    var html = '<div class="olist">';
     for (var k = 0; k < n; k++) {
-      var it = S.sel[k], cls = "slot" + (it !== undefined ? " full" : "");
-      if (S.checked && it !== undefined) cls += it === k ? " ok" : " no";
-      html += '<button type="button" class="' + cls + '" data-slot="' + k + '"' + (S.checked || it === undefined ? " disabled" : "") + '><span class="n">' + (k + 1) + '</span><span>' + (it !== undefined ? esc(lq.o[it]) : "") + '</span></button>';
+      var it = S.sel[k], cls = "orow" + (S.touched ? " moved" : "");
+      if (S.checked) cls = "orow " + (it === k ? "ok" : "no");
+      html += '<div class="' + cls + '"><span class="n">' + (k + 1) + '</span><span class="tx">' + esc(lq.o[it]) + '</span>' +
+        (S.checked ? '' : '<span class="arr"><button type="button" data-up="' + k + '" aria-label="' + t.up + '"' + (k === 0 ? " disabled" : "") + '>' + up + '</button><button type="button" data-down="' + k + '" aria-label="' + t.down + '"' + (k === n - 1 ? " disabled" : "") + '>' + dn + '</button></span>') + '</div>';
     }
-    html += '</div>';
-    if (!S.checked) {
-      var left = sh.filter(function (v) { return S.sel.indexOf(v) < 0; });
-      if (left.length) html += '<div class="ozone"><span class="lb">' + t.steps + '</span><div class="pool">' + left.map(function (v) { return '<button type="button" class="stepb" data-step="' + v + '">' + esc(lq.o[v]) + '</button>'; }).join("") + '</div></div>';
-      if (S.sel.length) html += '<div class="otools"><button type="button" class="small-btn" data-undo="1">' + t.undo + '</button><button type="button" class="small-btn" data-clear="1">' + t.clear + '</button></div>';
-    }
-    return html;
+    return html + '</div>';
   }
 
   function copy(s) { return Array.isArray(s) ? s.slice() : s; }
@@ -845,7 +858,11 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       if (q.type === "multi") { var p = S.sel.indexOf(k); if (p > -1) S.sel.splice(p, 1); else S.sel.push(k); } else S.sel = k;
       drawQ(); return;
     }
-    if (b.dataset.step !== undefined) { S.sel.push(+b.dataset.step); drawQ(); return; }
+    if (b.dataset.up !== undefined || b.dataset.down !== undefined) {
+      var i1 = b.dataset.up !== undefined ? +b.dataset.up : +b.dataset.down, i2 = b.dataset.up !== undefined ? i1 - 1 : i1 + 1;
+      var tmp = S.sel[i1]; S.sel[i1] = S.sel[i2]; S.sel[i2] = tmp; S.touched = true;
+      var y = window.scrollY; drawQ(); window.scrollTo(0, y); return;
+    }
     if (b.dataset.slot !== undefined) { S.sel.splice(+b.dataset.slot, 1); drawQ(); return; }
     if (b.dataset.undo) { S.sel.pop(); drawQ(); return; }
     if (b.dataset.clear) { S.sel = []; drawQ(); return; }
