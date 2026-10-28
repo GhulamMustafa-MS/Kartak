@@ -1,5 +1,5 @@
 // Admin actions for the person selling codes. POST { key, action, code?, note? }
-// action: "list" | "new" | "reset" | "disable" | "enable". The key is checked against a SHA-256 hash stored in the database.
+// action: "list" | "new" | "reset" | "disable" | "enable" | "delete". The key is checked against a SHA-256 hash stored in the database.
 import { neon } from "@neondatabase/serverless";
 import crypto from "node:crypto";
 
@@ -41,6 +41,8 @@ export default async function handler(req, res) {
       await sql`update kartak_codes set device_id = null, reset_count = reset_count + 1 where code = ${code}`;
     } else if (body.action === "disable") {
       await sql`update kartak_codes set disabled = true where code = ${code}`;
+    } else if (body.action === "delete") {
+      await sql`delete from kartak_codes where code = ${code}`;
     } else if (body.action === "enable") {
       await sql`update kartak_codes set disabled = false where code = ${code}`;
     }

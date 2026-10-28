@@ -56,6 +56,11 @@ input[type=text], input[type=password] { width: 100%; min-height: 52px; border: 
 .item .acts { display: flex; gap: 8px; }
 .item .acts button { min-height: 40px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface-2); padding: 0 12px; cursor: pointer; font-size: 15px; }
 .search { margin-bottom: 4px; }
+/* Phones: no text selection or grey flash when tapping, no double-tap zoom */
+button, a, .opt, .orow, .lang-tile, .mode, .item, .card, .stats { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; touch-action: manipulation; }
+input, textarea { -webkit-user-select: text; user-select: text; }
+.item .acts { flex-wrap: wrap; }
+.item .acts button.del { color: var(--bad); border-color: var(--bad); background: var(--bad-bg); }
 .install { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 2px dashed var(--primary); border-radius: 18px; padding: 12px 14px; }
 .install img { width: 44px; height: 44px; border-radius: 10px; flex: none; }
 .install .tx { flex: 1; display: grid; }
@@ -147,9 +152,10 @@ input[type=text], input[type=password] { width: 100%; min-height: 52px; border: 
         return '<div class="item"><div class="top"><span class="c">' + fmt(r.code) + '</span>' + st + '</div>' +
           '<span class="muted">' + esc(r.note || "No name") + ' · made ' + day(r.created_at) + (r.reset_count ? ' · reset ' + r.reset_count + '×' : '') + '</span>' +
           '<div class="acts">' + (r.active && !r.disabled ? '<button data-act="reset" data-code="' + r.code + '">Reset for new phone</button>' : '') +
-          (r.disabled ? '<button data-act="enable" data-code="' + r.code + '">Turn back on</button>' : '<button data-act="disable" data-code="' + r.code + '">Turn off</button>') + '</div></div>';
+          (r.disabled ? '<button data-act="enable" data-code="' + r.code + '">Turn back on</button>' : '<button data-act="disable" data-code="' + r.code + '">Turn off</button>') +
+          '<button class="del" data-act="delete" data-code="' + r.code + '">Delete</button></div></div>';
       }).join("") : '<p class="muted">No codes yet.</p>') + '</section>' +
-      '<p class="muted">Reset lets the same code work once on a new phone. Turn off stops the code working anywhere.</p>';
+      '<p class="muted">Reset lets the same code work once on a new phone. Turn off stops the code working, and you can turn it back on later. Delete removes the code for good, and anyone using it is locked out.</p>';
     app.innerHTML = html;
   }
 
@@ -160,8 +166,8 @@ input[type=text], input[type=password] { width: 100%; min-height: 52px; border: 
     if (b.id === "make") { var note = document.getElementById("note").value; call({ action: "new", note: note }, function (j) { S.made = j.made; }); return; }
     if (b.id === "copy" && S.made) { try { navigator.clipboard.writeText(fmt(S.made)); b.textContent = "Copied"; } catch (e) {} return; }
     if (b.dataset.act) {
-      var ask = { reset: "Reset this code so it works on a new phone?", disable: "Turn this code off?", enable: "Turn this code back on?" }[b.dataset.act];
-      if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = "Tap again to confirm"; setTimeout(function () { if (b.isConnected) draw(); }, 4000); return; }
+      if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = b.dataset.act === "delete" ? "Tap again to delete for good" : "Tap again to confirm"; setTimeout(function () { if (b.isConnected) draw(); }, 4000); return; }
+      if (b.dataset.act === "delete" && S.made === b.dataset.code) S.made = null;
       call({ action: b.dataset.act, code: b.dataset.code }); return;
     }
   });
