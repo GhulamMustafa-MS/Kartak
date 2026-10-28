@@ -228,7 +228,7 @@ html[lang="ml"] .qtext, html[lang="ta"] .qtext { font-size: 19px; line-height: 1
 .listen[aria-pressed="true"] { border-color: var(--primary); background: var(--sel-bg); }
 
 .pic { display: flex; align-items: center; justify-content: center; gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
-.pic svg { width: 96px; height: auto; max-width: 100%; }
+.pic svg { width: 96px; height: auto; max-width: 100%; direction: ltr; } /* scale numbers like −5 stay left to right in Arabic and Urdu */
 .pic .reading { display: grid; justify-items: center; gap: 2px; }
 .pic .reading strong { font-family: var(--font-latin); font-size: 46px; line-height: 1; font-variant-numeric: tabular-nums; direction: ltr; }
 .pic .reading small { color: var(--muted); font-size: 14px; text-align: center; max-width: 12em; }

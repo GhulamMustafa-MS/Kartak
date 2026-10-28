@@ -79,6 +79,11 @@
   function T() { return UI[S.lang || "en"]; }
   function L(q) { return q[S.lang || "en"] || q.en; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // Question text: escape it, and keep temperatures and number ranges ("−18°C", "0-4°C", "10-20") reading left to
+  // right inside Arabic and Urdu sentences, otherwise the browser shows "C°18−".
+  function txt(s) {
+    return esc(s).replace(/[−-]?\d+(?:[.,]\d+)?(?:\s?[-–]\s?[−-]?\d+(?:[.,]\d+)?)?(?:\s?°C|%)?/g, function (m) { return '<bdi dir="ltr">' + m + '</bdi>'; });
+  }
   function minus(v) { return String(v).replace("-", "−"); }
 
   /* ---------------- Speech (only shown when the phone has a voice for the language) ---------------- */
@@ -304,7 +309,7 @@
     if (S.notice) { html += '<div class="notice">' + t.timeUp + '</div>'; S.notice = false; }
     html += tag(q.type === "picture" ? "picture" : q.type);
 
-    html += '<section class="qcard"><div class="qrow"><h1 class="qtext">' + esc(lq.q) + '</h1>' +
+    html += '<section class="qcard"><div class="qrow"><h1 class="qtext">' + txt(lq.q) + '</h1>' +
       (canSpeak() ? '<button type="button" class="listen" id="listenBtn" aria-pressed="' + S.speaking + '">' + ICONS.speaker + '<span>' + (S.speaking ? t.stop : t.listen) + '</span></button>' : '') + '</div>';
 
     if (q.vid) {
@@ -327,7 +332,7 @@
     if (S.checked) {
       var ok = grade(q, S.sel), extra = "";
       if (q.type === "order" && !ok) extra = '<p><bdi dir="ltr">' + S.sel.filter(function (v, k) { return v === k; }).length + ' / ' + lq.o.length + '</bdi> ' + t.inPlace + '</p>';
-      html += '<div class="fb ' + (ok ? "ok" : "no") + '"><b>' + (ok ? t.correct : t.wrong) + '</b>' + extra + '<p>' + esc(lq.e) + '</p></div>';
+      html += '<div class="fb ' + (ok ? "ok" : "no") + '"><b>' + (ok ? t.correct : t.wrong) + '</b>' + extra + '<p>' + txt(lq.e) + '</p></div>';
     }
     html += '</section>';
     app.innerHTML = html;
@@ -342,7 +347,7 @@
     var on = multi ? S.sel.indexOf(k) > -1 : S.sel === k;
     var cls = "opt" + (extra ? " " + extra : "");
     if (S.checked) { var right = multi ? q.ans.indexOf(k) > -1 : q.ans === k; if (right) cls += " ok"; else if (on) cls += " no"; }
-    return '<button type="button" class="' + cls + '" data-opt="' + k + '" aria-pressed="' + on + '"' + (S.checked ? " disabled" : "") + '><span class="mk" aria-hidden="true"></span><span>' + esc(text) + '</span></button>';
+    return '<button type="button" class="' + cls + '" data-opt="' + k + '" aria-pressed="' + on + '"' + (S.checked ? " disabled" : "") + '><span class="mk" aria-hidden="true"></span><span>' + txt(text) + '</span></button>';
   }
 
   function orderHTML(q) {
@@ -353,7 +358,7 @@
     for (var k = 0; k < n; k++) {
       var it = S.sel[k], cls = "orow" + (S.touched ? " moved" : "");
       if (S.checked) cls = "orow " + (it === k ? "ok" : "no");
-      html += '<div class="' + cls + '"><span class="n">' + (k + 1) + '</span><span class="tx">' + esc(lq.o[it]) + '</span>' +
+      html += '<div class="' + cls + '"><span class="n">' + (k + 1) + '</span><span class="tx">' + txt(lq.o[it]) + '</span>' +
         (S.checked ? '' : '<span class="arr"><button type="button" data-up="' + k + '" aria-label="' + t.up + '"' + (k === 0 ? " disabled" : "") + '>' + up + '</button><button type="button" data-down="' + k + '" aria-label="' + t.down + '"' + (k === n - 1 ? " disabled" : "") + '>' + dn + '</button></span>') + '</div>';
     }
     return html + '</div>';
@@ -392,10 +397,10 @@
     var rv = '<h2>' + t.review + '</h2>' + (wrong.length ? "" : '<p>' + t.noMistakes + '</p>');
     wrong.forEach(function (k) {
       var q = S.qs[k], lq = L(q), ans;
-      if (q.type === "order") ans = '<ol>' + lq.o.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join("") + '</ol>';
-      else if (q.type === "multi") ans = '<p class="a">' + t.answerIs + ': ' + q.ans.map(function (x) { return esc(lq.o[x]); }).join(", ") + '</p>';
-      else ans = '<p class="a">' + t.answerIs + ': ' + esc(optsOf(q)[q.ans]) + '</p>';
-      rv += '<div class="rv">' + (S.results[k].timedOut ? '<p class="to">' + t.timedOut + '</p>' : '') + '<p class="q">' + (k + 1) + '. ' + esc(lq.q) + '</p>' + ans + '<p class="e">' + esc(lq.e) + '</p></div>';
+      if (q.type === "order") ans = '<ol>' + lq.o.map(function (o) { return '<li>' + txt(o) + '</li>'; }).join("") + '</ol>';
+      else if (q.type === "multi") ans = '<p class="a">' + t.answerIs + ': ' + q.ans.map(function (x) { return txt(lq.o[x]); }).join(", ") + '</p>';
+      else ans = '<p class="a">' + t.answerIs + ': ' + txt(optsOf(q)[q.ans]) + '</p>';
+      rv += '<div class="rv">' + (S.results[k].timedOut ? '<p class="to">' + t.timedOut + '</p>' : '') + '<p class="q">' + (k + 1) + '. ' + txt(lq.q) + '</p>' + ans + '<p class="e">' + txt(lq.e) + '</p></div>';
     });
 
     app.innerHTML = '<section class="results"><div class="score">' + ring +

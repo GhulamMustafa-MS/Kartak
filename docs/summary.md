@@ -19,6 +19,7 @@
 | 28 Oct | Quick taps selected text and cards stayed highlighted | Tap fixes (D15) |
 | 28 Oct | The first bank's numbers (WHO) disagreed with the official handbook (60°C vs 63°C, 70°C vs 75°C and 82°C, thawing in cold water) | Every question checked and corrected against the handbook (D22, handbook.md) |
 | 28 Oct | The handbook contradicts itself on cooling (1.5 hours in chapter 11 and its answer key, 2 hours in chapter 6) and fridge temperature (5°C or below, 0-4°C, 4°C or below) | Questions use the answer-key value (1.5 hours) and "5°C or below"; never offer both conflicting values as options |
+| 28 Oct | In right-to-left text (Urdu, Arabic) temperatures showed reversed, "C°18−" for "−18°C", and the thermometer scale showed "5−" | Numbers and temperatures are wrapped in a left-to-right box (`txt()` in js/app.js); the thermometer drawing is always left-to-right; browser test checks every language |
 | 28 Oct | Earlier reply said 20 ordering questions; the bank has 16 live | Counted by `scripts/validate-questions.js`, which prints the real mix |
 
 ## 2. Limitations and risks

@@ -33,6 +33,9 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
+  wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
+  thermometer scale too (was showing "C°18−"); browser test checks it for every language.
 - **28 Oct 2026 (late, 3):** language dropdown at the top instead of four buttons; first screen shows a tile per
   language; `KARTAK_LANGS` in `js/i18n.js` drives both; validator checks every screen language is in the bank;
   browser test opens every language and checks it fits a 390 px phone (D24). Seven more languages in progress.

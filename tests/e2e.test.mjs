@@ -6,7 +6,7 @@
  *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result;
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
- *             reads in the right direction and fits a 390 px phone; the first screen has a tile per
+ *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
  *             language; the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
@@ -141,6 +141,9 @@ for (const lang of offered) {
   check(`practice question shows in ${lang}`, !!shown);
   const dir = await worker.evaluate(() => document.documentElement.dir);
   check(`${lang} reads ${["ar", "ur"].includes(lang) ? "right to left" : "left to right"}`, dir === (["ar", "ur"].includes(lang) ? "rtl" : "ltr"));
+  // Temperatures like −18°C must sit in a left-to-right box, or Arabic and Urdu show them as "C°18−".
+  const loose = await worker.evaluate(() => { let n = 0; const w = document.createTreeWalker(document.getElementById("app"), NodeFilter.SHOW_TEXT); let t; while ((t = w.nextNode())) if (/°C/.test(t.data) && t.parentElement.tagName !== "BDI" && !t.parentElement.closest("svg,.reading")) n++; return n; });
+  check(`${lang} temperatures read left to right`, loose === 0);
   const wide = await worker.evaluate(() => document.documentElement.scrollWidth);
   check(`${lang} fits the phone width`, wide <= 390);
   await worker.screenshot({ path: SHOTS + `question-${lang}.png` });
