@@ -29,6 +29,7 @@
   --c-yellow: #8A6200; --c-yellow-bg: #FBF0D2;
   --c-red: #B3261E;    --c-red-bg: #FBE6E4;
   --c-brown: #7A4E2A;  --c-brown-bg: #F3EAE1;
+  --c-purple: #6A3FA0; --c-purple-bg: #EFE8F7;
   --font-latin: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-bn: "Noto Sans Bengali", "Atkinson Hyperlegible", system-ui, sans-serif;
   --font-ur: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", serif;
@@ -40,7 +41,7 @@
     --good: #5CC97E; --good-bg: #15301E; --bad: #F08A80; --bad-bg: #3A1A18;
     --c-blue: #86B6EC; --c-blue-bg: #172636; --c-green: #5CC97E; --c-green-bg: #15301E;
     --c-yellow: #E8C15A; --c-yellow-bg: #2E2712; --c-red: #F08A80; --c-red-bg: #3A1A18;
-    --c-brown: #D3A57C; --c-brown-bg: #2E241B;
+    --c-brown: #D3A57C; --c-brown-bg: #2E241B; --c-purple: #C3A3EA; --c-purple-bg: #261E33;
     color-scheme: dark;
   }
 }
@@ -50,7 +51,7 @@
   --good: #5CC97E; --good-bg: #15301E; --bad: #F08A80; --bad-bg: #3A1A18;
   --c-blue: #86B6EC; --c-blue-bg: #172636; --c-green: #5CC97E; --c-green-bg: #15301E;
   --c-yellow: #E8C15A; --c-yellow-bg: #2E2712; --c-red: #F08A80; --c-red-bg: #3A1A18;
-  --c-brown: #D3A57C; --c-brown-bg: #2E241B;
+  --c-brown: #D3A57C; --c-brown-bg: #2E241B; --c-purple: #C3A3EA; --c-purple-bg: #261E33;
   color-scheme: dark;
 }
 
@@ -142,6 +143,17 @@ html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
 .t-tf      { --c: var(--c-yellow); --cbg: var(--c-yellow-bg); }
 .t-order   { --c: var(--c-red);    --cbg: var(--c-red-bg); }
 .t-picture { --c: var(--c-brown);  --cbg: var(--c-brown-bg); }
+.t-video   { --c: var(--c-purple); --cbg: var(--c-purple-bg); }
+.vid { display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.vp { position: relative; background: var(--surface-2); border-radius: 12px; min-height: 104px; display: grid; place-items: center; animation: vpop .45s ease-out both; }
+.vp .vn { position: absolute; top: 6px; inset-inline-start: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--c-purple); color: var(--surface); display: grid; place-items: center; font: 700 12px var(--font-latin); }
+.vp .sc { font-size: 40px; line-height: 1.1; text-align: center; direction: ltr; }
+.vp .bd { display: block; width: 74px; height: 12px; margin: 2px auto 0; border-radius: 4px; background: #C9472F; }
+.vp .bd.dirty { background: repeating-linear-gradient(90deg, #C9472F 0 9px, #8E2A18 9px 13px); }
+.vbar { display: flex; justify-content: flex-end; }
+@keyframes vpop { from { opacity: 0; transform: scale(.88); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .vp { animation: none; } }
 
 /* Question screen */
 .qhead { display: flex; align-items: center; gap: 14px; }
@@ -357,14 +369,15 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         multi: ["Choose all correct answers", "Tap every answer that is correct. There can be more than one."],
         tf: ["True or false", "Tap True if the sentence is right, or False if it is wrong."],
         order: ["Put the steps in order", "Use the arrows at the end of each step to move it up or down until the order is right."],
-        picture: ["Picture question", "Look at the picture carefully, then tap one answer."]
+        picture: ["Picture question", "Look at the picture carefully, then tap one answer."],
+        video: ["Video question", "Watch the clip. Tap Replay to watch again, then tap one answer."]
       },
       check: "Check my answer", next: "Next question", finish: "See my result",
       correct: "Correct", wrong: "Not correct", answerIs: "Right answer",
       yourOrder: "Your order", steps: "Steps to place", undo: "Remove last", clear: "Start again",
       inPlace: "steps in the right place",
       sec: "sec", timeUp: "Time ran out on the last question.",
-      introT: "Before you start", intro: [["15", "questions"], ["1:30", "minutes for each question"], ["12", "correct answers to pass"]],
+      introT: "Before you start", intro: [["20", "questions"], ["1:30", "minutes for each question"], ["16", "correct answers to pass"]],
       introNote: "When the time runs out, the next question opens by itself. You cannot go back.",
       start: "Start the test", back: "Back",
       resultsT: "Your result", passMark: "Pass mark 80%",
@@ -376,7 +389,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "Try again", home: "Home",
       tTrue: "True", tFalse: "False",
       fridge: "Fridge thermometer", probe: "Centre of a cooked chicken piece", freezer: "Freezer thermometer",
-      listen: "Listen", stop: "Stop", up: "Move up", down: "Move down", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
+      listen: "Listen", stop: "Stop", replay: "Replay", up: "Move up", down: "Move down", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
     },
     ur: {
       chooseLang: "اپنی زبان چنیں", chooseLead: "آپ اسے اوپر سے کسی بھی وقت بدل سکتے ہیں۔",
@@ -394,14 +407,15 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         multi: ["تمام درست جواب چنیں", "جتنے جواب درست ہیں سب پر ٹیپ کریں۔ ایک سے زیادہ ہو سکتے ہیں۔"],
         tf: ["صحیح یا غلط", "جملہ ٹھیک ہو تو صحیح، غلط ہو تو غلط پر ٹیپ کریں۔"],
         order: ["مراحل کو ترتیب دیں", "ہر مرحلے کے آخر میں تیر سے اسے اوپر یا نیچے کریں، جب تک ترتیب درست نہ ہو جائے۔"],
-        picture: ["تصویر والا سوال", "تصویر غور سے دیکھیں، پھر ایک جواب پر ٹیپ کریں۔"]
+        picture: ["تصویر والا سوال", "تصویر غور سے دیکھیں، پھر ایک جواب پر ٹیپ کریں۔"],
+        video: ["ویڈیو والا سوال", "کلپ دیکھیں۔ دوبارہ دیکھنے کے لیے ری پلے دبائیں، پھر ایک جواب پر ٹیپ کریں۔"]
       },
       check: "جواب چیک کریں", next: "اگلا سوال", finish: "نتیجہ دیکھیں",
       correct: "درست", wrong: "درست نہیں", answerIs: "درست جواب",
       yourOrder: "آپ کی ترتیب", steps: "لگانے والے مراحل", undo: "آخری ہٹائیں", clear: "دوبارہ شروع",
       inPlace: "مراحل درست جگہ پر",
       sec: "سیکنڈ", timeUp: "پچھلے سوال کا وقت ختم ہو گیا۔",
-      introT: "شروع کرنے سے پہلے", intro: [["15", "سوال"], ["1:30", "منٹ ہر سوال کے لیے"], ["12", "درست جواب پاس ہونے کے لیے"]],
+      introT: "شروع کرنے سے پہلے", intro: [["20", "سوال"], ["1:30", "منٹ ہر سوال کے لیے"], ["16", "درست جواب پاس ہونے کے لیے"]],
       introNote: "وقت ختم ہونے پر اگلا سوال خود کھل جائے گا۔ آپ واپس نہیں جا سکتے۔",
       start: "ٹیسٹ شروع کریں", back: "واپس",
       resultsT: "آپ کا نتیجہ", passMark: "پاس مارک 80%",
@@ -413,7 +427,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "دوبارہ کوشش کریں", home: "ہوم",
       tTrue: "صحیح", tFalse: "غلط",
       fridge: "فریج کا تھرمامیٹر", probe: "پکی ہوئی مرغی کا درمیانی حصہ", freezer: "فریزر کا تھرمامیٹر",
-      listen: "سنیں", stop: "روکیں", up: "اوپر کریں", down: "نیچے کریں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
+      listen: "سنیں", stop: "روکیں", replay: "دوبارہ چلائیں", up: "اوپر کریں", down: "نیچے کریں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
     },
     bn: {
       chooseLang: "আপনার ভাষা বেছে নিন", chooseLead: "উপর থেকে যেকোনো সময় এটি বদলাতে পারবেন।",
@@ -431,14 +445,15 @@ html[lang="ur"] .tally span { line-height: 1.9; }
         multi: ["সব সঠিক উত্তর বেছে নিন", "যতগুলো উত্তর সঠিক, সবগুলোতে চাপ দিন। একাধিক হতে পারে।"],
         tf: ["সত্য না মিথ্যা", "বাক্যটি ঠিক হলে সত্য, ভুল হলে মিথ্যা চাপুন।"],
         order: ["ধাপগুলো ক্রমে সাজান", "প্রতিটি ধাপের শেষে তীর চেপে সেটি উপরে বা নিচে সরান, যতক্ষণ না ক্রম ঠিক হয়।"],
-        picture: ["ছবির প্রশ্ন", "ছবিটি ভালো করে দেখুন, তারপর একটি উত্তরে চাপ দিন।"]
+        picture: ["ছবির প্রশ্ন", "ছবিটি ভালো করে দেখুন, তারপর একটি উত্তরে চাপ দিন।"],
+        video: ["ভিডিও প্রশ্ন", "ক্লিপটি দেখুন। আবার দেখতে রিপ্লে চাপুন, তারপর একটি উত্তরে চাপ দিন।"]
       },
       check: "উত্তর যাচাই করুন", next: "পরের প্রশ্ন", finish: "ফলাফল দেখুন",
       correct: "সঠিক", wrong: "সঠিক নয়", answerIs: "সঠিক উত্তর",
       yourOrder: "আপনার ক্রম", steps: "যে ধাপগুলো বসাতে হবে", undo: "শেষটা সরান", clear: "আবার শুরু",
       inPlace: "টি ধাপ সঠিক জায়গায়",
       sec: "সেকেন্ড", timeUp: "আগের প্রশ্নের সময় শেষ হয়ে গেছে।",
-      introT: "শুরু করার আগে", intro: [["15", "টি প্রশ্ন"], ["1:30", "মিনিট প্রতিটি প্রশ্নে"], ["12", "টি সঠিক উত্তর লাগবে পাস করতে"]],
+      introT: "শুরু করার আগে", intro: [["20", "টি প্রশ্ন"], ["1:30", "মিনিট প্রতিটি প্রশ্নে"], ["16", "টি সঠিক উত্তর লাগবে পাস করতে"]],
       introNote: "সময় শেষ হলে পরের প্রশ্ন নিজে থেকেই খুলবে। আগের প্রশ্নে ফেরা যাবে না।",
       start: "টেস্ট শুরু করুন", back: "ফিরে যান",
       resultsT: "আপনার ফলাফল", passMark: "পাস মার্ক 80%",
@@ -450,7 +465,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       again: "আবার চেষ্টা করুন", home: "হোম",
       tTrue: "সত্য", tFalse: "মিথ্যা",
       fridge: "ফ্রিজের থার্মোমিটার", probe: "রান্না করা মুরগির টুকরার ভেতরের অংশ", freezer: "ফ্রিজারের থার্মোমিটার",
-      listen: "শুনুন", stop: "থামুন", up: "উপরে সরান", down: "নিচে সরান", tryPractice: "অনুশীলনে চেষ্টা করুন", exampleSteps: ["হাত ভেজান", "সাবান লাগান"]
+      listen: "শুনুন", stop: "থামুন", replay: "আবার দেখুন", up: "উপরে সরান", down: "নিচে সরান", tryPractice: "অনুশীলনে চেষ্টা করুন", exampleSteps: ["হাত ভেজান", "সাবান লাগান"]
     }
   };
 
@@ -513,13 +528,41 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       ur: { q: "فریزر کا تھرمامیٹر یہ درجہ حرارت دکھا رہا ہے۔ کیا یہ درست ہے؟", o: ["ہاں، کافی ٹھنڈا ہے", "نہیں، فریزر −18°C یا اس سے زیادہ ٹھنڈا ہونا چاہیے", "نہیں، فریزر 0°C پر ہونا چاہیے", "یہ صرف رات کو اہم ہے"], e: "فریزر کو −18°C یا اس سے زیادہ ٹھنڈا رکھیں۔ −10°C کافی ٹھنڈا نہیں۔" },
       bn: { q: "ফ্রিজারের থার্মোমিটারে এই তাপমাত্রা দেখাচ্ছে। এটা কি ঠিক আছে?", o: ["হ্যাঁ, যথেষ্ট ঠান্ডা", "না, ফ্রিজার −18°C বা তার চেয়ে বেশি ঠান্ডা হওয়া উচিত", "না, ফ্রিজার 0°C এ থাকা উচিত", "এটা শুধু রাতে গুরুত্বপূর্ণ"], e: "ফ্রিজার −18°C বা তার চেয়ে বেশি ঠান্ডা রাখুন। −10°C যথেষ্ট ঠান্ডা নয়।" } },
     { type: "multi", ans: [0, 1, 2],
-      en: { q: "Which of these are signs of pests in the kitchen?", o: ["Droppings", "Chewed or torn food packets", "Dead insects near the walls", "A clean floor", "Steam from the cooker"], e: "If you see any sign of pests, tell your supervisor straight away and keep food covered." },
-      ur: { q: "ان میں سے کون سی چیزیں کچن میں کیڑوں یا چوہوں کی نشانیاں ہیں؟", o: ["فضلہ (مینگنیاں)", "کترے یا پھٹے ہوئے کھانے کے پیکٹ", "دیواروں کے پاس مرے ہوئے کیڑے", "صاف فرش", "چولہے سے بھاپ"], e: "ایسی کوئی نشانی دیکھیں تو فوراً سپروائزر کو بتائیں اور کھانا ڈھانپ کر رکھیں۔" },
-      bn: { q: "এগুলোর মধ্যে কোনগুলো রান্নাঘরে পোকামাকড় বা ইঁদুরের লক্ষণ?", o: ["বিষ্ঠা (মল)", "কাটা বা ছেঁড়া খাবারের প্যাকেট", "দেয়ালের পাশে মরা পোকা", "পরিষ্কার মেঝে", "চুলা থেকে বাষ্প"], e: "এমন কোনো লক্ষণ দেখলে সাথে সাথে সুপারভাইজারকে জানান এবং খাবার ঢেকে রাখুন।" } }
+      en: { q: "Which of these are signs of pests in the kitchen?", o: ["Rat, mouse or cockroach poo (droppings)", "Chewed or torn food packets", "Dead insects near the walls", "A clean floor", "Steam from the cooker"], e: "If you see any sign of pests, tell your supervisor straight away and keep food covered." },
+      ur: { q: "ان میں سے کون سی چیزیں کچن میں کیڑوں یا چوہوں کی نشانیاں ہیں؟", o: ["چوہے یا کاکروچ کی مینگنیاں (پاخانہ)", "کترے یا پھٹے ہوئے کھانے کے پیکٹ", "دیواروں کے پاس مرے ہوئے کیڑے", "صاف فرش", "چولہے سے بھاپ"], e: "ایسی کوئی نشانی دیکھیں تو فوراً سپروائزر کو بتائیں اور کھانا ڈھانپ کر رکھیں۔" },
+      bn: { q: "এগুলোর মধ্যে কোনগুলো রান্নাঘরে পোকামাকড় বা ইঁদুরের লক্ষণ?", o: ["ইঁদুর বা তেলাপোকার পায়খানা", "কাটা বা ছেঁড়া খাবারের প্যাকেট", "দেয়ালের পাশে মরা পোকা", "পরিষ্কার মেঝে", "চুলা থেকে বাষ্প"], e: "এমন কোনো লক্ষণ দেখলে সাথে সাথে সুপারভাইজারকে জানান এবং খাবার ঢেকে রাখুন।" } },
+    { type: "order",
+      en: { q: "Put these steps in order for getting ready before you start work in the kitchen.", o: ["Take off rings and watch", "Put on a hair cover", "Put on a clean apron", "Wash your hands", "Put on gloves"], e: "Hair cover and apron go on first, so you do not touch your hair or clothes after washing your hands. Gloves go on last, on clean hands." },
+      ur: { q: "کچن میں کام شروع کرنے سے پہلے تیار ہونے کے مراحل ترتیب میں لگائیں۔", o: ["انگوٹھی اور گھڑی اتاریں", "بالوں کا کور پہنیں", "صاف ایپرن پہنیں", "ہاتھ دھوئیں", "دستانے پہنیں"], e: "بالوں کا کور اور ایپرن پہلے پہنیں تاکہ ہاتھ دھونے کے بعد بالوں یا کپڑوں کو ہاتھ نہ لگے۔ دستانے آخر میں، صاف ہاتھوں پر پہنیں۔" },
+      bn: { q: "রান্নাঘরে কাজ শুরুর আগে তৈরি হওয়ার ধাপগুলো ক্রমে সাজান।", o: ["আংটি আর ঘড়ি খুলে ফেলুন", "চুলের ঢাকনা পরুন", "পরিষ্কার অ্যাপ্রন পরুন", "হাত ধুয়ে নিন", "গ্লাভস পরুন"], e: "চুলের ঢাকনা আর অ্যাপ্রন আগে পরুন, যাতে হাত ধোয়ার পর চুল বা কাপড়ে হাত না লাগে। গ্লাভস সবশেষে, পরিষ্কার হাতে পরুন।" } },
+    { type: "video", vid: [
+        '<div class="sc">🧑‍🍳</div><div class="sc">🍗</div><span class="bd"></span>',
+        '<div class="sc">🔪🍗</div><span class="bd"></span>',
+        '<div class="sc">🥬🍅</div><span class="bd dirty"></span>',
+        '<div class="sc">🔪🥗</div><span class="bd dirty"></span>'], ans: 0,
+      en: { q: "Watch the clip. What did the worker do wrong?", o: ["Cut the salad on the same board after raw chicken, without washing it", "Used a knife to cut the chicken", "Cut the chicken into small pieces", "Nothing, it was all correct"], e: "Raw chicken leaves bacteria on the board. Use a separate board for salad, or wash and sanitise the board first." },
+      ur: { q: "ویڈیو دیکھیں۔ ورکر نے کیا غلط کیا؟", o: ["کچی مرغی کے بعد اسی بورڈ پر بغیر دھوئے سلاد کاٹا", "مرغی کاٹنے کے لیے چھری استعمال کی", "مرغی چھوٹے ٹکڑوں میں کاٹی", "کچھ نہیں، سب ٹھیک تھا"], e: "کچی مرغی بورڈ پر بیکٹیریا چھوڑتی ہے۔ سلاد کے لیے الگ بورڈ استعمال کریں، یا پہلے بورڈ دھو کر جراثیم سے پاک کریں۔" },
+      bn: { q: "ভিডিওটি দেখুন। কর্মী কী ভুল করেছেন?", o: ["কাঁচা মুরগির পর একই বোর্ডে না ধুয়ে সালাদ কেটেছেন", "মুরগি কাটতে ছুরি ব্যবহার করেছেন", "মুরগি ছোট টুকরো করে কেটেছেন", "কিছুই না, সব ঠিক ছিল"], e: "কাঁচা মুরগি বোর্ডে ব্যাকটেরিয়া রেখে যায়। সালাদের জন্য আলাদা বোর্ড ব্যবহার করুন, অথবা আগে বোর্ড ধুয়ে জীবাণুমুক্ত করুন।" } },
+    { type: "order",
+      en: { q: "Put the steps for keeping cooked rice for later in the correct order.", o: ["Spread the rice into small, shallow containers", "Let it cool quickly, within 2 hours", "Cover it and write the date on the label", "Put it in the fridge at 5°C or below", "Reheat until steaming hot, at least 70°C in the centre"], e: "Cool food fast in shallow containers, then cover, label and chill it. Reheat it properly, and only once." },
+      ur: { q: "پکے ہوئے چاول بعد کے لیے رکھنے کے مراحل درست ترتیب میں لگائیں۔", o: ["چاول چھوٹے اور کم گہرے برتنوں میں پھیلائیں", "2 گھنٹے کے اندر جلدی ٹھنڈا ہونے دیں", "ڈھانپیں اور لیبل پر تاریخ لکھیں", "5°C یا اس سے کم پر فریج میں رکھیں", "اتنا گرم کریں کہ بھاپ نکلے، بیچ میں کم از کم 70°C"], e: "کھانا کم گہرے برتنوں میں جلدی ٹھنڈا کریں، پھر ڈھانپ کر، لیبل لگا کر فریج میں رکھیں۔ دوبارہ اچھی طرح گرم کریں، اور صرف ایک بار۔" },
+      bn: { q: "রান্না করা ভাত পরে খাওয়ার জন্য রাখার ধাপগুলো সঠিক ক্রমে সাজান।", o: ["ভাত ছোট ও অগভীর পাত্রে ছড়িয়ে দিন", "2 ঘণ্টার মধ্যে দ্রুত ঠান্ডা হতে দিন", "ঢেকে দিন আর লেবেলে তারিখ লিখুন", "5°C বা তার কমে ফ্রিজে রাখুন", "ভাপ ওঠা পর্যন্ত গরম করুন, ভেতরে অন্তত 70°C"], e: "অগভীর পাত্রে খাবার দ্রুত ঠান্ডা করুন, তারপর ঢেকে, লেবেল দিয়ে ফ্রিজে রাখুন। আবার ভালোভাবে গরম করুন, আর শুধু একবার।" } },
+    { type: "video", vid: [
+        '<div class="sc">🧑‍🍳🤧</div>',
+        '<div class="sc">✋</div>',
+        '<div class="sc">✋🍞</div>',
+        '<div class="sc">🍽️🍞</div><div class="sc">🧑</div>'], ans: 0,
+      en: { q: "Watch the clip. What should the worker have done after sneezing?", o: ["Washed hands before touching food", "Served the bread faster", "Wiped hands on the apron", "Nothing, it is fine"], e: "Sneezing puts germs on your hands. Always wash your hands before you touch food again." },
+      ur: { q: "ویڈیو دیکھیں۔ چھینکنے کے بعد ورکر کو کیا کرنا چاہیے تھا؟", o: ["کھانے کو ہاتھ لگانے سے پہلے ہاتھ دھونے", "روٹی جلدی پیش کرنی", "ایپرن سے ہاتھ صاف کرنے", "کچھ نہیں، یہ ٹھیک ہے"], e: "چھینک سے ہاتھوں پر جراثیم آ جاتے ہیں۔ دوبارہ کھانے کو ہاتھ لگانے سے پہلے ہمیشہ ہاتھ دھوئیں۔" },
+      bn: { q: "ভিডিওটি দেখুন। হাঁচির পর কর্মীর কী করা উচিত ছিল?", o: ["খাবার ধরার আগে হাত ধোয়া", "রুটি আরও তাড়াতাড়ি পরিবেশন করা", "অ্যাপ্রনে হাত মোছা", "কিছুই না, এটা ঠিক আছে"], e: "হাঁচিতে হাতে জীবাণু লাগে। আবার খাবার ধরার আগে সবসময় হাত ধুয়ে নিন।" } },
+    { type: "order",
+      en: { q: "Put the steps for checking food with a probe thermometer in the correct order.", o: ["Clean and sanitise the probe", "Push it into the thickest part of the food", "Wait until the number stops changing", "Write the temperature on the record sheet", "Clean and sanitise the probe again"], e: "A dirty probe can carry bacteria from one food to another, so clean it before and after every use." },
+      ur: { q: "پروب تھرمامیٹر سے کھانا چیک کرنے کے مراحل درست ترتیب میں لگائیں۔", o: ["پروب کو صاف اور جراثیم سے پاک کریں", "اسے کھانے کے سب سے موٹے حصے میں ڈالیں", "انتظار کریں جب تک نمبر بدلنا بند نہ ہو جائے", "درجہ حرارت ریکارڈ شیٹ پر لکھیں", "پروب کو دوبارہ صاف اور جراثیم سے پاک کریں"], e: "گندا پروب ایک کھانے سے دوسرے میں بیکٹیریا لے جا سکتا ہے، اس لیے ہر بار استعمال سے پہلے اور بعد صاف کریں۔" },
+      bn: { q: "প্রোব থার্মোমিটার দিয়ে খাবার পরীক্ষা করার ধাপগুলো সঠিক ক্রমে সাজান।", o: ["প্রোব পরিষ্কার ও জীবাণুমুক্ত করুন", "খাবারের সবচেয়ে মোটা অংশে ঢোকান", "সংখ্যা বদলানো থামা পর্যন্ত অপেক্ষা করুন", "তাপমাত্রা রেকর্ড শিটে লিখুন", "প্রোব আবার পরিষ্কার ও জীবাণুমুক্ত করুন"], e: "নোংরা প্রোব এক খাবার থেকে আরেক খাবারে ব্যাকটেরিয়া নিতে পারে, তাই প্রতিবার ব্যবহারের আগে ও পরে পরিষ্কার করুন।" } }
   ];
 
-  var TOTAL = Q.length;               // 15
-  var PASS = Math.ceil(TOTAL * 0.8);  // 12
+  var TOTAL = Q.length;               // 20
+  var PASS = Math.ceil(TOTAL * 0.8);  // 16
   var QSEC = 90;                      // seconds per question in the mock test (workers report 1:30)
   var TTS = { en: "en", ur: "ur", bn: "bn" };
 
@@ -529,6 +572,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     tf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5l3 3 5-6"/><path d="M15 9l6 6M21 9l-6 6"/></svg>',
     order: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 6h11M10 12h11M10 18h11"/><path d="M4 5l1.5-1v4" /><path d="M3.5 11.2c.6-.9 2.6-.7 2.3.6-.2.8-2.3 2-2.3 2.7h2.5"/><path d="M3.5 17h2l-1 1.4c1.3 0 1.6 2.1 0 2.2-.6 0-1-.2-1.2-.5"/></svg>',
     picture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.8"/><path d="M3.5 18l5.5-5.5 4 4 3-3 4.5 4.5"/></svg>',
+    video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
     book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>',
     shapes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="7" cy="7" r="4"/><rect x="13" y="3" width="8" height="8" rx="2"/><path d="M7 13l4 7H3z"/><path d="M14 15h6v6h-6z"/></svg>',
@@ -636,7 +680,8 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       order: '<div class="mini"><div class="r"><span class="num">1</span><span style="flex:1">' + esc(t.exampleSteps[0]) + '</span><b>↑ ↓</b></div><div class="r"><span class="num">2</span><span style="flex:1">' + esc(t.exampleSteps[1]) + '</span><b>↑ ↓</b></div></div>',
       picture: '<div class="mini" style="justify-items:center">' + thermo("fridge", 3).replace('<svg ', '<svg style="width:56px" ') + '</div>'
     };
-    var cards = ["single", "multi", "tf", "order", "picture"].map(function (ty) {
+    ex.video = '<div class="mini"><div class="vgrid">' + ["🧑‍🍳", "🔪🍗", "🥬", "🥗"].map(function (e, k) { return '<div class="vp" style="min-height:56px;animation-delay:' + (k * 0.8) + 's"><span class="vn">' + (k + 1) + '</span><div class="sc" style="font-size:24px">' + e + '</div></div>'; }).join("") + '</div></div>';
+    var cards = ["single", "multi", "tf", "order", "picture", "video"].map(function (ty) {
       return '<div class="ex">' + tag(ty) + ex[ty] + '</div>';
     }).join("");
     app.innerHTML = '<section class="learn"><h1>' + t.learn + '</h1><p class="lead">' + t.learnD + '</p>' + cards + '</section>';
@@ -662,6 +707,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     var q = Q[S.i];
     S.sel = q.type === "order" ? S.shuffles[S.i].slice() : q.type === "multi" ? [] : null;
     S.touched = false;
+    S.vidStart = Date.now();
     S.checked = false;
     stopSpeak();
     clearInterval(S.tick); S.tick = null;
@@ -727,6 +773,11 @@ html[lang="ur"] .tally span { line-height: 1.9; }
     html += '<section class="qcard"><div class="qrow"><h1 class="qtext">' + esc(lq.q) + '</h1>' +
       (canSpeak() ? '<button type="button" class="listen" id="listenBtn" aria-pressed="' + S.speaking + '">' + ICONS.speaker + '<span>' + (S.speaking ? t.stop : t.listen) + '</span></button>' : '') + '</div>';
 
+    if (q.vid) {
+      var el = (Date.now() - S.vidStart) / 1000;
+      html += '<div class="vid"><div class="vgrid">' + q.vid.map(function (f, k) { return '<div class="vp" style="animation-delay:' + (k * 1.2 - el).toFixed(2) + 's"><span class="vn">' + (k + 1) + '</span><div>' + f + '</div></div>'; }).join("") +
+        '</div><div class="vbar"><button type="button" class="small-btn" data-replay="1">↻ ' + t.replay + '</button></div></div>';
+    }
     if (q.pic) {
       html += '<div class="pic">' + thermo(q.pic.kind, q.pic.v) + '<div class="reading"><strong>' + minus(q.pic.v) + '°C</strong><small>' + t[q.pic.kind] + '</small></div></div>';
     }
@@ -852,6 +903,7 @@ html[lang="ur"] .tally span { line-height: 1.9; }
       if (q.type === "order") parts = parts.concat(lq.o); else parts = parts.concat(optsOf(q));
       speak(parts.join(". ")); drawQ(); return;
     }
+    if (b.dataset.replay) { S.vidStart = Date.now(); drawQ(); return; }
     if (S.checked) { if (b.id === "cta") { advance(); } return; }
     if (b.dataset.opt !== undefined) {
       var k = +b.dataset.opt;
