@@ -33,7 +33,10 @@ practice in their own language on their own phone, so the real exam feels famili
 - Difficulty mix: 20% very easy, 40% easy, 30% moderate, 10% difficult.
 - Types: single answer, multiple answers, true/false, put in order (steps shown mixed up with arrows at the
   end of each to move them, D7), picture, video. Workers say ordering questions are common and the hardest.
-- 11 languages: Arabic, English, Urdu, Malayalam, Hindi, Bengali, Tamil, Turkish, Filipino, Indonesian, Nepali.
+- 11 languages: Arabic, English, plus 9 more: Urdu, Malayalam, Hindi, Bengali, Tamil, Turkish, Filipino,
+  Indonesian, Nepali (candidate guide 2026, section 7.1, checked again 28 Oct 2026:
+  https://arkkanapp.net/Municipal/Certification_Candidate_Guide-Ar-2026.pdf). For any other language the centre
+  provides a reader who translates the exam aloud.
 - One free retake (at least 3 days and at most 3 months after the first attempt); after a second fail, proof
   of training and a paid attempt. The health certificate is valid for 1 year; refresher health education
   every 3 years (handbook chapter 1).

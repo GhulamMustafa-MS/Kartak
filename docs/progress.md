@@ -33,6 +33,7 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (late, 2):** checked the exam languages again in the official 2026 candidate guide (plan.md 3).
 - **28 Oct 2026 (late):** the official handbook became the source of every question (D22): `docs/handbook.md`
   (syllabus and numbers); 17 old questions corrected to its numbers (63°C, 75°C, above 82°C, 1.5 hours, thaw
   in the fridge or microwave, wash hands before the hair cover); every question tagged with its chapter (`ch`);
