@@ -25,7 +25,12 @@
 ## 2. Limitations and risks
 
 **Content**
-- Translations (Urdu, Hindi, Bangla) were written by AI; only one Bangla-speaking worker has tried the app.
+- Every translation was written by AI (Urdu, Hindi, Bangla first; Arabic, Nepali, Malayalam, Tamil, Filipino,
+  Indonesian, Turkish on 28 Oct, each reviewed by a second AI against the English); only one Bangla-speaking
+  worker has tried the app. Points the reviewers left for a native speaker: Arabic, how "كارتك" reads and a few
+  number forms; Nepali, "nuts" and "pests" wording; Malayalam, "shelf" (തട്ട്) and the Kartak spelling; Tamil,
+  phone menu labels and rice (சாதம்/சோறு); Filipino, "lentils (munggo)"; Indonesian, "basi"/"rusak" for spoiled;
+  Turkish, %80 vs 80% and "clean as you go". Phone menu labels in the install steps are best guesses.
 - Answers follow the official handbook (D22). A few questions rely on general advice the handbook doesn't
   state (fridge shelf order, reheat only once, return to work after vomiting) and may differ from the exam.
 - The handbook is an English edition; the exam's Urdu, Hindi and Bangla wording may use different words.

@@ -1,6 +1,7 @@
 # Kartak
 
-Practice for the Saudi food workers' health certificate exam, in English, اردو, हिंदी and বাংলা, on any phone.
+Practice for the Saudi food workers' health certificate exam on any phone, in all 11 languages of the real exam:
+English, العربية, اردو, हिंदी, বাংলা, नेपाली, മലയാളം, தமிழ், Filipino, Bahasa Indonesia and Türkçe.
 
 - **Workers:** https://kartak-app.vercel.app (needs an access code)
 - **Seller:** https://kartak-seller.vercel.app (password protected)

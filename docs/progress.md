@@ -7,9 +7,10 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 ## START HERE (last updated 28 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
-- Worker app https://kartak-app.vercel.app: 4 languages, 304 live questions (all 13
-  handbook chapters, D22, D23), full mock / quick test /
-  practice / all questions (saved place) / learn the types, code lock, installable, offline.
+- Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
+  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 304 live questions
+  (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place) /
+  learn the types, code lock, installable, offline.
 - Seller app https://kartak-seller.vercel.app: make, send, reset, turn off and delete codes.
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
@@ -17,7 +18,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 **Next steps (roadmap steps 1 and 3, plan.md 6):**
 1. Wessam gives codes to workers; collect confusing words per language and real exam results.
 2. Ask workers what the real exam videos show (needed before making clips, D5).
-3. Native speakers check Bangla, Urdu and Hindi.
+3. Native speakers check every language except English (all AI-translated; reviewers' open points per
+   language are in summary.md 2).
 4. The user tests the apps on a real iPhone (home-screen install and hand-over).
 5. Turn off or delete the test code MUSTFA ("Mustafa test") in the seller app once testing is finished.
 
@@ -33,6 +35,8 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (late, 6):** Malayalam, Tamil, Filipino, Indonesian and Turkish added; every language had a
+  word list, three translators and an independent full review before going live (D24).
 - **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
   Hindi: 2 meaning and 22 wording fixes).
 - **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
