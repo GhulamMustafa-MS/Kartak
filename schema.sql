@@ -6,6 +6,8 @@ create table if not exists kartak_codes (
   reset_count int not null default 0,
   created_at timestamptz not null default now(),
   activated_at timestamptz,
-  last_seen timestamptz
+  last_seen timestamptz,
+  transfer_token text,
+  transfer_expires timestamptz
 );
 create table if not exists kartak_settings (k text primary key, v text not null);

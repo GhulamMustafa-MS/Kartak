@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kartak Practice Test</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0A6B4E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kartak">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <script>if (/github\.io$/.test(location.hostname)) location.replace("https://kartak-app.vercel.app/");</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -332,6 +340,25 @@ html[lang="ur"] .tally span { line-height: 1.9; }
 .rv .to { color: var(--bad); font-size: 14px; font-weight: 700; }
 .rv ol { margin: 0; padding-inline-start: 22px; color: var(--good); font-weight: 700; }
 
+/* Add to home screen */
+.install { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 2px dashed var(--primary); border-radius: 18px; padding: 12px 14px; }
+.install img { width: 48px; height: 48px; border-radius: 12px; flex: none; }
+.install .tx { flex: 1; min-width: 0; display: grid; }
+.install .tx b { font-size: 17px; line-height: 1.3; }
+.install .tx span { color: var(--muted); font-size: 14px; line-height: 1.4; }
+html[lang="ur"] .install .tx b, html[lang="ur"] .install .tx span { line-height: 2; }
+.install button { flex: none; min-height: 44px; border: 0; border-radius: 12px; background: var(--primary); color: var(--primary-ink); font-weight: 700; padding: 0 16px; cursor: pointer; }
+.sheet-bg { position: fixed; inset: 0; z-index: 50; background: rgba(4, 18, 12, .55); display: flex; align-items: flex-end; justify-content: center; }
+.sheet { width: 100%; max-width: 560px; background: var(--surface); border-radius: 22px 22px 0 0; padding: 20px max(16px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); display: grid; gap: 14px; max-height: 90vh; overflow: auto; }
+.sheet h2 { margin: 0; font-size: 22px; line-height: 1.3; }
+html[lang="ur"] .sheet h2 { line-height: 1.9; font-size: 20px; }
+.sheet ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: st; }
+.sheet li { display: flex; gap: 12px; align-items: flex-start; counter-increment: st; font-size: 17px; line-height: 1.45; }
+html[lang="ur"] .sheet li { line-height: 2; }
+.sheet li::before { content: counter(st); flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: var(--primary-ink); display: grid; place-items: center; font: 700 15px var(--font-latin); margin-top: 2px; }
+.sheet .note { background: var(--surface-2); border-radius: 12px; padding: 10px 14px; color: var(--muted); font-size: 15px; }
+.sheet .glyph { display: inline-grid; place-items: center; vertical-align: middle; width: 26px; height: 26px; border-radius: 6px; background: var(--sel-bg); color: var(--primary); margin: 0 2px; }
+.sheet .glyph svg { width: 18px; height: 18px; }
 /* Code gate */
 .gate { display: grid; gap: 14px; padding-top: 8px; }
 .gate h1 { margin: 6px 0 0; font-size: 26px; line-height: 1.25; }
@@ -368,6 +395,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
   /* ---------------- Text ---------------- */
   var UI = {
     en: {
+      installT: "Add to home screen", installD: "Open Kartak like an app from your phone's home screen.", installBtn: "Add", sheetT: "Add Kartak to your home screen", iosSteps: ["Tap the Share button {share}. On newer iPhones, tap ⋯ first, then Share.", "Scroll down and tap “Add to Home Screen”.", "Tap “Add”. Kartak will appear on your home screen."], iosSafari: "If you opened this link inside WhatsApp, first tap ⋯ and choose “Open in Safari”.", andSteps: ["Tap the ⋮ menu at the top right of your browser.", "Tap “Add to Home screen” or “Install app”.", "Tap “Add” or “Install”."], gotIt: "Got it",
       codeT: "Enter your code", codeLead: "Type the code you got from the person who gave you this app.", unlock: "Unlock", errInvalid: "This code is not right. Check it and try again.", errUsed: "This code is already used on another phone. Ask the person who gave it to you to reset it.", errDisabled: "This code has been turned off. Ask the person who gave it to you.", errNet: "No internet. Connect and try again.", checking: "Checking…",
       chooseLang: "Choose your language", chooseLead: "You can change it at any time from the top of the screen.",
       title: "Health certificate practice test",
@@ -408,6 +436,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
       listen: "Listen", stop: "Stop", replay: "Replay", up: "Move up", down: "Move down", tryPractice: "Try them in practice", exampleSteps: ["Wet your hands", "Put on soap"]
     },
     ur: {
+      installT: "ہوم اسکرین پر لگائیں", installD: "کارتک کو ایپ کی طرح اپنے فون کی ہوم اسکرین سے کھولیں۔", installBtn: "لگائیں", sheetT: "کارتک کو ہوم اسکرین پر لگائیں", iosSteps: ["شیئر کا بٹن {share} دبائیں۔ نئے آئی فون پر پہلے ⋯ دبائیں، پھر شیئر۔", "نیچے جائیں اور “Add to Home Screen” دبائیں۔", "“Add” دبائیں۔ کارتک آپ کی ہوم اسکرین پر آ جائے گا۔"], iosSafari: "اگر آپ نے یہ لنک واٹس ایپ کے اندر کھولا ہے تو پہلے ⋯ دبائیں اور “Open in Safari” چنیں۔", andSteps: ["براؤزر کے اوپر دائیں طرف ⋮ مینو دبائیں۔", "“Add to Home screen” یا “Install app” دبائیں۔", "“Add” یا “Install” دبائیں۔"], gotIt: "ٹھیک ہے",
       codeT: "اپنا کوڈ لکھیں", codeLead: "وہ کوڈ لکھیں جو آپ کو یہ ایپ دینے والے نے دیا ہے۔", unlock: "کھولیں", errInvalid: "یہ کوڈ درست نہیں۔ چیک کر کے دوبارہ کوشش کریں۔", errUsed: "یہ کوڈ کسی اور فون پر استعمال ہو چکا ہے۔ جس نے کوڈ دیا ہے اس سے کہیں کہ اسے ری سیٹ کرے۔", errDisabled: "یہ کوڈ بند کر دیا گیا ہے۔ جس نے کوڈ دیا ہے اس سے بات کریں۔", errNet: "انٹرنیٹ نہیں ہے۔ انٹرنیٹ چلا کر دوبارہ کوشش کریں۔", checking: "چیک ہو رہا ہے…",
       chooseLang: "اپنی زبان چنیں", chooseLead: "آپ اسے اوپر سے کسی بھی وقت بدل سکتے ہیں۔",
       title: "ہیلتھ سرٹیفکیٹ پریکٹس ٹیسٹ",
@@ -448,6 +477,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
       listen: "سنیں", stop: "روکیں", replay: "دوبارہ چلائیں", up: "اوپر کریں", down: "نیچے کریں", tryPractice: "پریکٹس میں آزمائیں", exampleSteps: ["ہاتھ گیلے کریں", "صابن لگائیں"]
     },
     hi: {
+      installT: "होम स्क्रीन पर लगाएं", installD: "कार्तक को ऐप की तरह अपने फ़ोन की होम स्क्रीन से खोलें।", installBtn: "लगाएं", sheetT: "कार्तक को होम स्क्रीन पर लगाएं", iosSteps: ["शेयर बटन {share} दबाएं। नए आईफ़ोन पर पहले ⋯ दबाएं, फिर शेयर।", "नीचे जाएं और “Add to Home Screen” दबाएं।", "“Add” दबाएं। कार्तक आपकी होम स्क्रीन पर आ जाएगा।"], iosSafari: "अगर आपने यह लिंक व्हाट्सऐप के अंदर खोला है, तो पहले ⋯ दबाएं और “Open in Safari” चुनें।", andSteps: ["ब्राउज़र में ऊपर दाईं ओर ⋮ मेन्यू दबाएं।", "“Add to Home screen” या “Install app” दबाएं।", "“Add” या “Install” दबाएं।"], gotIt: "ठीक है",
       codeT: "अपना कोड लिखें", codeLead: "वह कोड लिखें जो आपको यह ऐप देने वाले ने दिया है।", unlock: "खोलें", errInvalid: "यह कोड सही नहीं है। देखकर फिर से कोशिश करें।", errUsed: "यह कोड किसी दूसरे फ़ोन पर इस्तेमाल हो चुका है। जिसने कोड दिया है उससे इसे रीसेट करने को कहें।", errDisabled: "यह कोड बंद कर दिया गया है। जिसने कोड दिया है उससे बात करें।", errNet: "इंटरनेट नहीं है। इंटरनेट चालू करके फिर से कोशिश करें।", checking: "जाँच हो रही है…",
       chooseLang: "अपनी भाषा चुनें", chooseLead: "आप इसे ऊपर से कभी भी बदल सकते हैं।",
       title: "हेल्थ सर्टिफिकेट प्रैक्टिस टेस्ट",
@@ -488,6 +518,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
       listen: "सुनें", stop: "रोकें", replay: "दोबारा चलाएं", up: "ऊपर करें", down: "नीचे करें", tryPractice: "प्रैक्टिस में आज़माएं", exampleSteps: ["हाथ गीले करें", "साबुन लगाएं"]
     },
     bn: {
+      installT: "হোম স্ক্রিনে যোগ করুন", installD: "কার্তককে অ্যাপের মতো আপনার ফোনের হোম স্ক্রিন থেকে খুলুন।", installBtn: "যোগ করুন", sheetT: "কার্তক হোম স্ক্রিনে যোগ করুন", iosSteps: ["শেয়ার বাটন {share} চাপুন। নতুন আইফোনে আগে ⋯ চাপুন, তারপর শেয়ার।", "নিচে নামুন এবং “Add to Home Screen” চাপুন।", "“Add” চাপুন। কার্তক আপনার হোম স্ক্রিনে চলে আসবে।"], iosSafari: "যদি হোয়াটসঅ্যাপের ভেতরে লিংকটি খুলে থাকেন, আগে ⋯ চাপুন এবং “Open in Safari” বেছে নিন।", andSteps: ["ব্রাউজারের উপরে ডান দিকে ⋮ মেনু চাপুন।", "“Add to Home screen” বা “Install app” চাপুন।", "“Add” বা “Install” চাপুন।"], gotIt: "ঠিক আছে",
       codeT: "আপনার কোড লিখুন", codeLead: "যিনি আপনাকে এই অ্যাপ দিয়েছেন, তার দেওয়া কোডটি লিখুন।", unlock: "খুলুন", errInvalid: "এই কোডটি ঠিক নয়। দেখে আবার চেষ্টা করুন।", errUsed: "এই কোডটি অন্য একটি ফোনে ব্যবহার হয়ে গেছে। যিনি কোড দিয়েছেন তাকে রিসেট করতে বলুন।", errDisabled: "এই কোডটি বন্ধ করা হয়েছে। যিনি কোড দিয়েছেন তার সাথে কথা বলুন।", errNet: "ইন্টারনেট নেই। ইন্টারনেট চালু করে আবার চেষ্টা করুন।", checking: "যাচাই হচ্ছে…",
       chooseLang: "আপনার ভাষা বেছে নিন", chooseLead: "উপর থেকে যেকোনো সময় এটি বদলাতে পারবেন।",
       title: "হেলথ সার্টিফিকেট প্র্যাকটিস টেস্ট",
@@ -638,7 +669,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
     var tiles = [["en", "English", ""], ["ur", "اردو", "Urdu"], ["hi", "हिंदी", "Hindi"], ["bn", "বাংলা", "Bangla"]].map(function (l) {
       return '<button type="button" class="lang-tile" data-pick="' + l[0] + '"><span class="nm ' + l[0] + '">' + l[1] + '</span><span class="sub">' + l[2] + '</span></button>';
     }).join("");
-    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · अपनी भाषा चुनें · আপনার ভাষা বেছে নিন</p>' + tiles + '</section>';
+    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · अपनी भाषा चुनें · আপনার ভাষা বেছে নিন</p>' + tiles + '</section>' + installCard();
     setBar("");
   }
 
@@ -654,6 +685,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
         '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
         '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
       '</section>' +
+      installCard() +
       '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + '%</bdi>' : t.none) + '</b></div>' +
       '<p class="fine">' + t.fine + '</p>';
     setBar("");
@@ -863,6 +895,44 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
   }
 
   function needCode() { return API && !store("kartak-code"); }
+
+  /* ---------------- Home screen install ---------------- */
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  function standalone() { try { return window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches; } catch (e) { return false; } }
+  var installEvt = null;
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; });
+  window.addEventListener("appinstalled", function () { installEvt = null; render(); });
+  if ("serviceWorker" in navigator && API) { try { navigator.serviceWorker.register("/sw.js").catch(function () {}); } catch (e) {} }
+  var SHARE_SVG = '<span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7.5 7.5L12 3l4.5 4.5"/><path d="M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"/></svg></span>';
+  function installCard() {
+    if (standalone()) return "";
+    var t = T();
+    return '<div class="install"><img src="/icons/icon-192.png" alt="" onerror="this.style.display=\'none\'"><div class="tx"><b>' + t.installT + '</b><span>' + t.installD + '</span></div><button type="button" id="installBtn">' + t.installBtn + '</button></div>';
+  }
+  function installNow() {
+    if (installEvt) { var e = installEvt; installEvt = null; e.prompt(); e.userChoice.then(function () { render(); }).catch(function () {}); return; }
+    var t = T(), steps = isIOS ? t.iosSteps : t.andSteps;
+    var el = document.createElement("div");
+    el.className = "sheet-bg"; el.id = "sheet";
+    el.innerHTML = '<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetT"><h2 id="sheetT">' + t.sheetT + '</h2><ol>' +
+      steps.map(function (x) { return '<li><span>' + esc(x).replace("{share}", SHARE_SVG) + '</span></li>'; }).join("") + '</ol>' +
+      (isIOS ? '<p class="note">' + t.iosSafari + '</p>' : '') + '<button type="button" class="cta" id="sheetClose">' + t.gotIt + '</button></div>';
+    document.body.appendChild(el);
+    el.addEventListener("click", function (ev) { if (ev.target === el || ev.target.id === "sheetClose") el.remove(); });
+  }
+  // iPhone home-screen apps have their own storage, so carry the unlocked code across with a one-time token in the address.
+  function makeTransfer() {
+    if (!API || !isIOS || standalone() || !store("kartak-code")) return;
+    fetch(API + "/transfer", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "make", code: store("kartak-code"), device: deviceId() }) })
+      .then(function (r) { return r.json(); }).then(function (j) { if (j.ok) try { history.replaceState(null, "", "/?t=" + j.token); } catch (e) {} }).catch(function () {});
+  }
+  function redeemTransfer(cb) {
+    var m = /[?&]t=([A-Za-z0-9_-]{8,40})/.exec(location.search);
+    if (!API || !m || store("kartak-code")) return cb();
+    fetch(API + "/transfer", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "redeem", token: m[1], device: deviceId() }) })
+      .then(function (r) { return r.json(); }).then(function (j) { if (j.ok) store("kartak-code", j.code); cb(); }).catch(function () { cb(); });
+    try { history.replaceState(null, "", "/"); } catch (e) {}
+  }
   function drawGate() {
     var t = T();
     app.innerHTML = '<section class="gate"><h1>' + t.codeT + '</h1><p>' + t.codeLead + '</p>' +
@@ -876,7 +946,7 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
     S.codeBusy = true; S.codeErr = null; drawGate();
     activate(code, function (j) {
       S.codeBusy = false;
-      if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); return; }
+      if (j.ok) { store("kartak-code", code.toUpperCase()); S.codeDraft = ""; S.screen = "home"; render(); makeTransfer(); return; }
       S.codeErr = { used: "errUsed", disabled: "errDisabled", net: "errNet" }[j.reason] || "errInvalid";
       drawGate();
     });
@@ -943,11 +1013,12 @@ html[lang="ur"] .gate h1 { font-size: 22px; line-height: 1.9; }
   }
   app.addEventListener("click", onClick);
   bar.addEventListener("click", function (ev) { if (ev.target.closest("#unlockBtn")) tryUnlock(); });
+  app.addEventListener("click", function (ev) { if (ev.target.closest("#installBtn")) installNow(); });
   app.addEventListener("keydown", function (ev) { if (ev.key === "Enter" && ev.target.id === "codeIn") tryUnlock(); });
   // Re-check a saved code in the background; drop it only if the server says it is no longer valid for this phone.
-  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (!j.ok && j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} if (S.screen !== "q") render(); } });
+  if (API && store("kartak-code")) activate(store("kartak-code"), function (j) { if (j.ok) makeTransfer(); else if (j.reason !== "net") { try { localStorage.removeItem("kartak-code"); } catch (e) {} if (S.screen !== "q") render(); } });
   bar.addEventListener("click", onClick);
 
-  render();
+  redeemTransfer(render);
 })();
 </script>
