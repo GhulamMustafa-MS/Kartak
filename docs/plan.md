@@ -35,16 +35,16 @@ practice in their own language on their own phone, so the real exam feels famili
   end of each to move them, D7), picture, video. Workers say ordering questions are common and the hardest.
 - 11 languages: Arabic, English, Urdu, Malayalam, Hindi, Bengali, Tamil, Turkish, Filipino, Indonesian, Nepali.
 - One free retake (at least 3 days and at most 3 months after the first attempt); after a second fail, proof
-  of training and a paid attempt. The certificate is renewed every 3 years.
+  of training and a paid attempt. The health certificate is valid for 1 year; refresher health education
+  every 3 years (handbook chapter 1).
 - The official handbook (BK-FS-Workers-E-2025-01) forbids copying or translating it, so Kartak's questions are
   original (D6).
 
-**Fixed food-safety numbers** used in every question, so the bank never contradicts itself (WHO Five Keys,
-Codex general hygiene principles): fridge 5°C or below; freezer −18°C or colder; danger zone 5°C to 60°C;
-cook to at least 70°C in the centre; reheat once, until steaming hot, at least 70°C; hot holding 60°C or
-above; never more than 2 hours at room temperature; wash hands with soap at least 20 seconds and dry with a
-paper towel; defrost in the fridge; first in, first out; never use food past its use-by date. No other
-specific numbers (no fines, ppm or legal details).
+**The handbook is the source of every question (D22).** The exam is built on the official handbook
+BK-FS-Workers-E-2025-01 (13 chapters). Its syllabus and every number Kartak uses (danger zone 5-63°C, cook
+75°C, reheat above 82°C, hot holding 63°C, fridge 5°C or below, freezer −18°C, cool within 1.5 hours, thaw in
+the fridge or microwave, and so on) are in [handbook.md](handbook.md), the one home for those facts. The
+handbook itself stays outside the repo (copyright).
 
 ## 4. What is built (details: [architecture.md](architecture.md), [api.md](api.md))
 
@@ -76,11 +76,11 @@ Ordered; each step should be finished, tested and documented before the next.
 
 1. **Prove it works** (now): free or paid testers through Wessam; collect confusing words per language and,
    above all, real exam results. Target: 10 workers with results.
-2. **Bigger bank:** grow from 100 to 200-300 live questions so repeated full mocks repeat less (each full
-   mock uses half the bank today), weighted toward ordering questions and topics workers report.
-3. **Content quality:** native speakers check Bangla, Urdu and Hindi; check answers that rely on general
-   advice (fridge shelf order, return to work after vomiting, dented cans) against what the real exam
-   expects; add questions on any topic workers report from the real exam.
+2. **Bigger bank:** done 28 Oct 2026, about 300 questions written from the handbook, every chapter covered (D23).
+   Next: add questions on topics workers report from the real exam.
+3. **Content quality:** native speakers check Bangla, Urdu and Hindi; check the few answers that rely on
+   general advice the handbook doesn't state (fridge shelf order, reheat only once, return to work after
+   vomiting); add questions on any topic workers report from the real exam.
 4. **Video questions:** find out what the real videos show; make 7-8 short clips with an AI video tool
    (Google Veo via Gemini/Flow, or Kling; about £19 for a month) or film them; host them with the app; turn
    the video questions back on (`enabled: true`) and add new ones (D5).
@@ -102,8 +102,9 @@ Modeeri (Egypt), SafetyCulture (global checklists), Ektefa (HR). None sells exam
 
 ## 8. How to make common changes
 
-**Add or fix a question:** edit `data/questions.json` (format: `data/CLAUDE.md`), give it the next free id,
-fill all four languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md section 5).
+**Add or fix a question:** check the fact in [handbook.md](handbook.md) (and the handbook itself), edit
+`data/questions.json` (format: `data/CLAUDE.md`), give it the next free id and its chapter (`ch`), fill all
+four languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md section 5).
 
 **Add a language** (example: Nepali, `ne`):
 1. `js/i18n.js`: copy the `en` block to `ne` and translate every value.

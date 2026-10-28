@@ -24,6 +24,9 @@ user says now, the user wins, then update this file.
 5. Update the header of every file you touched and the CLAUDE.md of every folder you touched (section 3).
 6. Commit with a clear message ending in the Co-Authored-By line, push, then confirm the Vercel deployments
    are READY and the live check passes (section 6).
+7. Sync the user's laptop copy `C:\Users\ghula\Downloads\Kartak` (not a git clone): copy every file changed in
+   the commit there when the chat is linked to the laptop; if it isn't, say so and list the files to copy.
+   Do this every time, without being asked. Goal: any new chat can pick up from the repo alone.
 
 ## 3. Documentation rules (always apply)
 
@@ -44,7 +47,8 @@ user says now, the user wins, then update this file.
 - **One home per fact.** Status (where we are, what's next, open items) -> `docs/progress.md`;
   decisions -> `docs/design_decisions.md`; the plan, product facts, roadmap and how-tos -> `docs/plan.md`;
   how the system fits together, addresses and IDs -> `docs/architecture.md`; endpoints -> `docs/api.md`;
-  problems, limitations, risks -> `docs/summary.md`. Everything else links to the home instead of repeating it.
+  problems, limitations, risks -> `docs/summary.md`; handbook syllabus and food-safety numbers ->
+  `docs/handbook.md`. Everything else links to the home instead of repeating it.
 - Don't create other planning files outside `docs/` unless asked.
 
 ## 4. How to write the code
@@ -54,9 +58,11 @@ user says now, the user wins, then update this file.
 - **Every word the worker sees goes in `js/i18n.js`** in all four languages (en, ur, hi, bn) in the same
   commit. Never hard-code English in `js/app.js`. Urdu is right-to-left. Words must be simple, everyday
   speech for kitchen workers (D4); explain harder words in brackets.
-- **Questions live only in `data/questions.json`** (format in `data/CLAUDE.md`). They are original, written
-  from WHO / Codex food-safety guidance with the fixed numbers in `docs/plan.md` section 3. Never copy or
-  translate the official Saudi booklet (it forbids it) and never claim questions are "the real questions" (D6).
+- **Questions live only in `data/questions.json`** (format in `data/CLAUDE.md`). They test the facts of the
+  official handbook BK-FS-Workers-E-2025-01, whose syllabus and numbers are in `docs/handbook.md` (D22): every
+  question must agree with it and carry its chapter (`ch`). Wording is always our own: never copy or translate
+  the handbook's text or its "Test Your Knowledge" questions (it forbids it), never put the handbook PDF in the
+  repo, and never claim questions are "the real questions" (D6).
 - **Phones first:** test at 390 px wide; tap targets at least 44 px; hover effects only inside
   `@media (hover: hover)`; no text selection on buttons (D15). Respect `prefers-reduced-motion` and dark mode.
 - **API** (`api/`): Vercel serverless functions, ES modules, one file per endpoint, shared code in
@@ -113,4 +119,4 @@ Only push when both end in OK / ALL ... PASSED.
 | [seller/](seller/CLAUDE.md) | The seller app (separate Vercel project) |
 | [scripts/](scripts/CLAUDE.md) | Question validator, icon maker |
 | [tests/](tests/CLAUDE.md) | API and browser tests |
-| [docs/](docs/CLAUDE.md) | Plan, decisions, architecture, API, progress, problems and limitations |
+| [docs/](docs/CLAUDE.md) | Plan, decisions, handbook facts, architecture, API, progress, problems and limitations |

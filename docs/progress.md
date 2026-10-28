@@ -32,6 +32,10 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (late):** the official handbook became the source of every question (D22): `docs/handbook.md`
+  (syllabus and numbers); 17 old questions corrected to its numbers (63°C, 75°C, above 82°C, 1.5 hours, thaw
+  in the fridge or microwave, wash hands before the hair cover); every question tagged with its chapter (`ch`);
+  validator checks `ch` and `d`; browser test follows the bank size. About 200 new questions in progress (D23).
 - **28 Oct 2026 (night):** "All questions" mode: the whole bank, untimed, answer after each, place saved
   on the phone with "carry on" and "start again" (D21). Roadmap: grow the bank to 200-300. Browser test added.
 - **28 Oct 2026 (evening):** split the app into `index.html`, `css/`, `js/`, `data/questions.json`;

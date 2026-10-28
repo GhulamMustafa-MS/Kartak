@@ -17,14 +17,17 @@
 | 28 Oct | iPhone home-screen app forgot the code | One-time hand-over token (D13) |
 | 28 Oct | Installing the seller page installed the worker app | Separate seller project and address (D12) |
 | 28 Oct | Quick taps selected text and cards stayed highlighted | Tap fixes (D15) |
+| 28 Oct | The first bank's numbers (WHO) disagreed with the official handbook (60°C vs 63°C, 70°C vs 75°C and 82°C, thawing in cold water) | Every question checked and corrected against the handbook (D22, handbook.md) |
+| 28 Oct | The handbook contradicts itself on cooling (1.5 hours in chapter 11 and its answer key, 2 hours in chapter 6) and fridge temperature (5°C or below, 0-4°C, 4°C or below) | Questions use the answer-key value (1.5 hours) and "5°C or below"; never offer both conflicting values as options |
 | 28 Oct | Earlier reply said 20 ordering questions; the bank has 16 live | Counted by `scripts/validate-questions.js`, which prints the real mix |
 
 ## 2. Limitations and risks
 
 **Content**
 - Translations (Urdu, Hindi, Bangla) were written by AI; only one Bangla-speaking worker has tried the app.
-- Answers follow general WHO/Codex guidance; a few may differ from what the Saudi exam expects (fridge shelf
-  order with fish above red meat, returning to work after vomiting, dented cans).
+- Answers follow the official handbook (D22). A few questions rely on general advice the handbook doesn't
+  state (fridge shelf order, reheat only once, return to work after vomiting) and may differ from the exam.
+- The handbook is an English edition; the exam's Urdu, Hindi and Bangla wording may use different words.
 - No video questions yet (D5); the real exam has them.
 - The real exam's exact topic weighting is unknown; the bank's mix is a best guess.
 

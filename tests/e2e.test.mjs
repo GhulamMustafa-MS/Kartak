@@ -18,6 +18,8 @@ import { callApi, ROOT, ADMIN_PASSWORD } from "./testdb.mjs";
 const { chromium, devices } = createRequire(import.meta.url)("playwright");
 const SHOTS = ROOT + "tests/screenshots/";
 fs.mkdirSync(SHOTS, { recursive: true });
+// The number of live questions, so the "All questions" checks follow the bank as it grows.
+const LIVE = JSON.parse(fs.readFileSync(ROOT + "data/questions.json", "utf8")).questions.filter((q) => q.enabled !== false).length;
 const TYPES = { html: "text/html", js: "text/javascript", mjs: "text/javascript", css: "text/css", json: "application/json", png: "image/png", svg: "image/svg+xml", webmanifest: "application/manifest+json" };
 
 let failed = 0;
@@ -90,7 +92,7 @@ await worker.click("#bar [data-go=home]");
 await worker.click("#langs [data-lang=en]");
 await worker.click("[data-go=all]");
 await worker.waitForSelector(".qtext");
-check("all questions covers the whole bank", (await worker.textContent(".qhead .pos span")).includes("/ 100"));
+check("all questions covers the whole bank", (await worker.textContent(".qhead .pos span")).includes(`/ ${LIVE}`));
 for (let k = 0; k < 3; k++) {
   const opt = await worker.$("[data-opt]");
   if (opt) await opt.click();
@@ -98,14 +100,14 @@ for (let k = 0; k < 3; k++) {
   await worker.click("#cta"); // next question
 }
 await worker.click("#brandBtn");
-check("home offers to carry on", (await worker.textContent("[data-go=all] .d")).includes("question 4 of 100"));
+check("home offers to carry on", (await worker.textContent("[data-go=all] .d")).includes(`question 4 of ${LIVE}`));
 await worker.click("[data-go=all]");
 await worker.waitForSelector(".qtext");
-check("carries on at question 4", (await worker.textContent(".qhead .pos span")).includes("4 / 100"));
+check("carries on at question 4", (await worker.textContent(".qhead .pos span")).includes(`4 / ${LIVE}`));
 await worker.click("#brandBtn");
 await worker.click("[data-go=all-restart]");
 await worker.waitForSelector(".qtext");
-check("start again goes back to question 1", (await worker.textContent(".qhead .pos span")).includes("1 / 100"));
+check("start again goes back to question 1", (await worker.textContent(".qhead .pos span")).includes(`1 / ${LIVE}`));
 await worker.click("#brandBtn");
 
 // Second phone refused

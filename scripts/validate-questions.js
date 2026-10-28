@@ -5,7 +5,7 @@
  *             known type, so a bad edit can't break the live app. Prints OK or a list of problems and
  *             exits with code 1 on any problem.
  * Run:        node scripts/validate-questions.js            (from the repo root, no install needed)
- * Depends on: data/questions.json (format: data/CLAUDE.md).
+ * Depends on: data/questions.json (format: data/CLAUDE.md); chapters 1-13 = docs/handbook.md.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -37,11 +37,14 @@ for (const q of bank.questions) {
   if (q.type === "multi" && !(Array.isArray(q.ans) && q.ans.length >= 2 && q.ans.every((a) => a >= 0 && a < n))) say(q, "ans must list at least two option indexes");
   if (q.type === "order" && "ans" in q) say(q, "order questions list options in the right order and have no ans");
   if (q.type === "picture" && !(q.pic && PIC_KINDS.includes(q.pic.kind) && typeof q.pic.v === "number")) say(q, "pic needs a kind and a number");
+  if ("ch" in q && !(Number.isInteger(q.ch) && q.ch >= 1 && q.ch <= 13)) say(q, "ch must be a handbook chapter 1-13 (docs/handbook.md)");
+  if ("d" in q && ![1, 2, 3, 4].includes(q.d)) say(q, "d must be 1, 2, 3 or 4");
   if (q.type === "video" && q.enabled !== false) say(q, "video questions stay disabled until real clips exist (decision D5)");
 }
 
 const live = bank.questions.filter((q) => q.enabled !== false);
 const byType = live.reduce((m, q) => ((m[q.type] = (m[q.type] || 0) + 1), m), {});
+const byCh = live.reduce((m, q) => ((m[q.ch || "none"] = (m[q.ch || "none"] || 0) + 1), m), {});
 if (problems.length) { console.log(problems.join("\n")); console.log(`${problems.length} problem(s)`); process.exit(1); }
-console.log(`OK: ${bank.questions.length} questions (${live.length} live), languages ${LANGS.join(", ")}, live by type ${JSON.stringify(byType)}`);
+console.log(`OK: ${bank.questions.length} questions (${live.length} live), languages ${LANGS.join(", ")}, live by type ${JSON.stringify(byType)}, live by handbook chapter ${JSON.stringify(byCh)}`);
 if (live.length < 50) { console.log("Problem: fewer than 50 live questions, the full mock needs 50"); process.exit(1); }

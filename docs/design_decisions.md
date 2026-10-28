@@ -30,6 +30,8 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D18 | 28 Oct | 100-question bank, more ordering questions | User asked, AI wrote | Variety for repeated mocks; workers struggle most with ordering |
 | D19 | 28 Oct | Folder CLAUDE.md files, file headers, one home per fact | User | Same way of working as the user's COM661 project |
 | D21 | 28 Oct | "All questions" mode: every live question, no timer, answer after each, place saved on the phone | User asked, AI designed the saving | Thorough practice over several days; 100 questions is too many for one sitting |
+| D22 | 28 Oct | The official handbook is the source of every question; its numbers replace the WHO ones | User | The exam is built on the handbook (BK-FS-Workers-E-2025-01); facts in handbook.md |
+| D23 | 28 Oct | Grow the bank to about 300 questions covering all 13 handbook chapters, each tagged with its chapter | User asked, AI wrote | Full mocks repeat less; every part of the syllabus is practised |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -85,3 +87,24 @@ by the service worker). No framework or bundler, so any file can be read and edi
 files as they are. Tests (PGlite in-memory Postgres + Playwright) live in `tests/` with their own
 package.json so Vercel never installs them. Rejected for now: React or a bundler (more tooling than the app
 needs).
+
+## D22. The handbook as the source
+
+The user shared the official handbook on 26 Oct 2026. The first bank used general WHO numbers, and several
+disagreed with the handbook: danger zone 5-60°C (handbook 5-63°C), cook to 70°C (75°C for 30 seconds), reheat
+to 70°C (above 82°C), hot holding 60°C (63°C), cold running water for thawing (handbook: fridge or microwave
+only), "never more than 2 hours out" (handbook: cool within 1.5 hours). On 28 Oct every question was checked
+and corrected, and each was tagged with its chapter (`ch`). The syllabus and numbers now live in
+[handbook.md](handbook.md). Where the handbook contradicts itself (cooling within 1.5 or 2 hours), questions
+use its own test answer (1.5 hours) and never offer both as competing options. The wording stays original and
+the PDF stays out of the repo, because the handbook forbids copying, adapting or translating it (D6).
+Rejected: keeping WHO numbers (a worker who learns them would lose marks on the real exam).
+
+## D23. About 300 questions
+
+Written chapter by chapter from the handbook text, with a target mix of about 35% single answer, 20%
+true/false, 18% multiple answers, 17% ordering and 10% picture, in all four languages. Each batch was checked
+by script (all languages present, valid answers, no Urdu script in Hindi, no English words left in the
+translations, 4-6 ordering steps) and merged with new ids after the last old one. Rejected: copying the
+handbook's own "Test Your Knowledge" questions (forbidden, and too few).
+
