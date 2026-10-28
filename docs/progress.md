@@ -33,6 +33,8 @@ is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that fol
 
 ## Log
 
+- **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
+  Hindi: 2 meaning and 22 wording fixes).
 - **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
   wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
   thermometer scale too (was showing "C°18−"); browser test checks it for every language.
