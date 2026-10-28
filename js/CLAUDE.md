@@ -9,7 +9,9 @@ modules, no build step, D16), so they run on old phones.
 | `app.js` | The app: screens, timer, scoring, access codes, install help, iPhone hand-over, events (section list in its header) |
 
 Rules:
-- New wording goes in `i18n.js` in all four languages in the same commit; `app.js` reads it with `T().key`.
+- New wording goes in `i18n.js` in every language in the same commit; `app.js` reads it with `T().key`.
+- The language list (`KARTAK_LANGS` in `i18n.js`) drives the dropdown, the first-screen tiles, text direction,
+  the html `lang` and the voice for "Listen"; `app.js` offers only languages that have a `KARTAK_UI` block.
 - Question text is never in these files; it is in `data/questions.json`.
 - Settings worth knowing: `QSEC` (seconds per question), `SIZES` (questions per mode; `all` = whole bank),
   `timed()` (full and quick are timed), pass mark 80% in `PASS()`.

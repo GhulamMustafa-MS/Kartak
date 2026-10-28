@@ -5,7 +5,9 @@
  *             /api/* with the real API code on the in-memory database, then: the seller logs in and
  *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result;
  *             "All questions" saves the place, carries on and starts again;
- *             a second phone is refused; every language renders a question; the install help sheet
+ *             a second phone is refused; every language in the dropdown shows its own words and questions,
+ *             reads in the right direction and fits a 390 px phone; the first screen has a tile per
+ *             language; the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -19,7 +21,13 @@ const { chromium, devices } = createRequire(import.meta.url)("playwright");
 const SHOTS = ROOT + "tests/screenshots/";
 fs.mkdirSync(SHOTS, { recursive: true });
 // The number of live questions, so the "All questions" checks follow the bank as it grows.
-const LIVE = JSON.parse(fs.readFileSync(ROOT + "data/questions.json", "utf8")).questions.filter((q) => q.enabled !== false).length;
+const BANK_Q = JSON.parse(fs.readFileSync(ROOT + "data/questions.json", "utf8")).questions.filter((q) => q.enabled !== false);
+const LIVE = BANK_Q.length;
+// The app's own wording and language list, read the same way the browser does.
+globalThis.window = {};
+await import(ROOT + "js/i18n.js");
+const UI = window.KARTAK_UI;
+const UI_LANGS = window.KARTAK_LANGS.filter((l) => UI[l.code]);
 const TYPES = { html: "text/html", js: "text/javascript", mjs: "text/javascript", css: "text/css", json: "application/json", png: "image/png", svg: "image/svg+xml", webmanifest: "application/manifest+json" };
 
 let failed = 0;
@@ -89,7 +97,7 @@ await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
 
 // "All questions": every live question, untimed, place saved between sittings (D21)
 await worker.click("#bar [data-go=home]");
-await worker.click("#langs [data-lang=en]");
+await worker.selectOption("#langSel", "en");
 await worker.click("[data-go=all]");
 await worker.waitForSelector(".qtext");
 check("all questions covers the whole bank", (await worker.textContent(".qhead .pos span")).includes(`/ ${LIVE}`));
@@ -119,16 +127,32 @@ await other.click("#unlockBtn");
 await other.waitForSelector(".err");
 check("second phone refused", (await other.textContent(".err")).includes("another phone"));
 
-// Every language shows a question
-for (const lang of ["en", "ur", "hi", "bn"]) {
-  await worker.click(`#langs [data-lang=${lang}]`);
+// Every language in the dropdown: its words, its questions, the right direction, nothing wider than the phone
+const offered = await worker.$$eval("#langSel option", (os) => os.map((o) => o.value));
+check("dropdown offers every language the app has words for", offered.length === UI_LANGS.length);
+for (const lang of offered) {
+  await worker.selectOption("#langSel", lang);
   await worker.click("#bar [data-go=home]").catch(() => {});
+  check(`home is in ${lang}`, (await worker.textContent(".hello h1")).trim() === UI[lang].title);
   await worker.click("[data-go=practice]");
   await worker.waitForSelector(".qtext");
-  const text = await worker.textContent(".qtext");
-  check(`practice question shows in ${lang}`, text.length > 5);
+  const text = (await worker.textContent(".qtext")).trim();
+  const shown = BANK_Q.find((q) => q[lang] && q[lang].q === text);
+  check(`practice question shows in ${lang}`, !!shown);
+  const dir = await worker.evaluate(() => document.documentElement.dir);
+  check(`${lang} reads ${["ar", "ur"].includes(lang) ? "right to left" : "left to right"}`, dir === (["ar", "ur"].includes(lang) ? "rtl" : "ltr"));
+  const wide = await worker.evaluate(() => document.documentElement.scrollWidth);
+  check(`${lang} fits the phone width`, wide <= 390);
+  await worker.screenshot({ path: SHOTS + `question-${lang}.png` });
   await worker.click("#brandBtn");
 }
+
+// First-visit language picker lists every language
+const fresh1 = await phone();
+await fresh1.goto("https://kartak-app.vercel.app/");
+check("first screen has a tile for every language", (await fresh1.$$("[data-pick]")).length === UI_LANGS.length);
+check("first screen fits the phone width", (await fresh1.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+await fresh1.screenshot({ path: SHOTS + "languages.png", fullPage: true });
 
 // iPhone: install help + hand-over to the home-screen copy
 const iphone = await phone("iPhone 13");

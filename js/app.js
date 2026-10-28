@@ -2,7 +2,7 @@
  * js/app.js - the worker practice app: every screen, the timer, scoring, access codes and install.
  *
  * Purpose:    One IIFE, no framework, no build step (decision D16). Sections, in file order:
- *               Text      UI strings come from js/i18n.js (window.KARTAK_UI)
+ *               Text      UI strings and the language list come from js/i18n.js (KARTAK_UI, KARTAK_LANGS)
  *               Bank      questions fetched from /data/questions.json; enabled !== false only
  *               Settings  SIZES (full 50 / quick 15 / practice 15 / all = whole bank), PASS = 80%,
  *                         QSEC = 90 s per question; full and quick are timed, practice and all are not
@@ -13,7 +13,7 @@
  *               Screens   drawLang, drawHome, drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
- *               Events    one click handler for #app and #bar, language switch, start-up
+ *               Events    one click handler for #app and #bar, the language dropdown, start-up
  * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it),
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
  *             kartak-all (saved place in "All questions", so it can be finished over several days).
@@ -37,7 +37,9 @@
   function N() { return S.qs.length; }
   function PASS() { return Math.ceil(N() * 0.8); }
   var QSEC = 90;                      // seconds per question in the mock test (workers report 1:30)
-  var TTS = { en: "en", ur: "ur", hi: "hi", bn: "bn" };
+  // Languages offered: those in KARTAK_LANGS that have screen wording in KARTAK_UI (js/i18n.js).
+  var LANGS = window.KARTAK_LANGS.filter(function (l) { return UI[l.code]; });
+  function meta(code) { for (var k = 0; k < LANGS.length; k++) if (LANGS[k].code === code) return LANGS[k]; return LANGS[0]; }
 
   var ICONS = {
     single: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></svg>',
@@ -71,7 +73,7 @@
       .catch(function () { cb({ ok: false, reason: "net" }); });
   }
   var saved = store("jahiz-lang");
-  if (saved && UI[saved]) { S.lang = saved; S.screen = "home"; }
+  if (saved && UI[saved] && meta(saved).code === saved) { S.lang = saved; S.screen = "home"; }
 
   var app = document.getElementById("app"), bar = document.getElementById("bar");
   function T() { return UI[S.lang || "en"]; }
@@ -82,7 +84,11 @@
   /* ---------------- Speech (only shown when the phone has a voice for the language) ---------------- */
   var voices = [];
   function loadVoices() { try { voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; } catch (e) { voices = []; } }
-  function voiceFor(lang) { var p = TTS[lang]; for (var k = 0; k < voices.length; k++) if ((voices[k].lang || "").toLowerCase().indexOf(p) === 0) return voices[k]; return null; }
+  function voiceFor(lang) {
+    var ps = meta(lang).voice;
+    for (var j = 0; j < ps.length; j++) for (var k = 0; k < voices.length; k++) if ((voices[k].lang || "").toLowerCase().replace("_", "-").indexOf(ps[j]) === 0) return voices[k];
+    return null;
+  }
   function canSpeak() { return !!(window.speechSynthesis && S.lang && voiceFor(S.lang)); }
   function stopSpeak() { try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {} S.speaking = false; }
   function speak(text) {
@@ -125,20 +131,26 @@
 
   /* ---------------- Chrome ---------------- */
   function syncChrome() {
-    var lg = S.lang || "en";
-    document.documentElement.lang = lg;
-    document.documentElement.dir = lg === "ur" ? "rtl" : "ltr";
-    var bs = document.querySelectorAll("#langs button");
-    for (var k = 0; k < bs.length; k++) bs[k].setAttribute("aria-pressed", String(bs[k].dataset.lang === S.lang));
+    var m = meta(S.lang || "en");
+    document.documentElement.lang = m.html;
+    document.documentElement.dir = m.dir;
+    var sel = document.getElementById("langSel");
+    if (!sel.options.length) sel.innerHTML = LANGS.map(function (l) { return '<option value="' + l.code + '" lang="' + l.html + '">' + esc(l.name) + '</option>'; }).join("");
+    sel.value = m.code;
+    var nm = document.getElementById("langName"); nm.textContent = m.name; nm.lang = m.html; nm.dir = m.dir;
+    sel.setAttribute("aria-label", T().chooseLang);
     document.getElementById("langs").hidden = !S.lang;
   }
 
   /* ---------------- Screens ---------------- */
   function drawLang() {
-    var tiles = [["en", "English", ""], ["ur", "اردو", "Urdu"], ["hi", "हिंदी", "Hindi"], ["bn", "বাংলা", "Bangla"]].map(function (l) {
-      return '<button type="button" class="lang-tile" data-pick="' + l[0] + '"><span class="nm ' + l[0] + '">' + l[1] + '</span><span class="sub">' + l[2] + '</span></button>';
+    var tiles = LANGS.map(function (l) {
+      return '<button type="button" class="lang-tile" data-pick="' + l.code + '"><span class="nm" lang="' + l.html + '" dir="' + l.dir + '">' + esc(l.name) + '</span>' +
+        (l.name !== l.en ? '<span class="sub">' + l.en + '</span>' : '') + '</button>';
     }).join("");
-    app.innerHTML = '<section class="pick"><h1>Choose your language</h1><p class="lead">اپنی زبان چنیں · अपनी भाषा चुनें · আপনার ভাষা বেছে নিন</p>' + installCard() + tiles + '</section>';
+    // "Choose your language" in a few of the languages, taken from i18n.js so nothing is hard-coded here.
+    var lead = LANGS.filter(function (l) { return l.code !== "en"; }).slice(0, 4).map(function (l) { return '<span lang="' + l.html + '" dir="' + l.dir + '">' + esc(UI[l.code].chooseLang) + '</span>'; }).join(" · ");
+    app.innerHTML = '<section class="pick"><h1>' + UI.en.chooseLang + '</h1><p class="lead">' + lead + '</p>' + installCard() + '<div class="tiles">' + tiles + '</div></section>';
     setBar("");
   }
 
@@ -469,9 +481,8 @@
   }
 
   /* ---------------- Events ---------------- */
-  document.getElementById("langs").addEventListener("click", function (ev) {
-    var b = ev.target.closest("button[data-lang]"); if (!b) return;
-    S.lang = b.dataset.lang; store("jahiz-lang", S.lang); stopSpeak(); render();
+  document.getElementById("langSel").addEventListener("change", function (ev) {
+    S.lang = ev.target.value; store("jahiz-lang", S.lang); stopSpeak(); render();
   });
   document.getElementById("brandBtn").addEventListener("click", function () { if (S.lang) go("home"); });
 

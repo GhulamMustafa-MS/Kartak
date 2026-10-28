@@ -1,8 +1,8 @@
 # Working rules for Kartak (read fully at the start of every chat)
 
-Kartak is a practice app for the Saudi food workers' health certificate exam, in English, Urdu, Hindi and
-Bangla, plus a separate seller app for selling one-phone access codes. Owner: Ghulam Mustafa
-(GitHub `GhulamMustafa-MS`). On-the-ground partner and seller in Saudi Arabia: Wessam.
+Kartak is a practice app for the Saudi food workers' health certificate exam, in the exam's languages
+(see `KARTAK_LANGS` in `js/i18n.js`), plus a separate seller app for selling one-phone access codes.
+Owner: Ghulam Mustafa (GitHub `GhulamMustafa-MS`). On-the-ground partner and seller in Saudi Arabia: Wessam.
 These rules were set by the user; follow them without being reminded. If a rule here conflicts with what the
 user says now, the user wins, then update this file.
 
@@ -55,9 +55,10 @@ user says now, the user wins, then update this file.
 
 - **No build step, no framework** (D16): plain HTML, CSS and browser JavaScript; files are served as they are.
   Keep it readable for the user: small functions, comments only where the *why* isn't obvious.
-- **Every word the worker sees goes in `js/i18n.js`** in all four languages (en, ur, hi, bn) in the same
-  commit. Never hard-code English in `js/app.js`. Urdu is right-to-left. Words must be simple, everyday
-  speech for kitchen workers (D4); explain harder words in brackets.
+- **Every word the worker sees goes in `js/i18n.js`** in every language the app offers (the list is
+  `KARTAK_LANGS` at the top of that file; the exam's 11 languages, D24) in the same commit. Never hard-code
+  English in `js/app.js`. Arabic and Urdu are right-to-left. Indonesian's code is `ind`, never `id`. Words
+  must be simple, everyday speech for kitchen workers (D4); explain harder words in brackets.
 - **Questions live only in `data/questions.json`** (format in `data/CLAUDE.md`). They test the facts of the
   official handbook BK-FS-Workers-E-2025-01, whose syllabus and numbers are in `docs/handbook.md` (D22): every
   question must agree with it and carry its chapter (`ch`). Wording is always our own: never copy or translate
@@ -75,7 +76,7 @@ user says now, the user wins, then update this file.
 ## 5. Checks (before every push)
 
 ```
-node scripts/validate-questions.js          # question bank structure, all four languages
+node scripts/validate-questions.js          # question bank structure, every language
 cd tests && npm install && npm test         # API rules + both apps in a phone-sized browser
 ```
 First time on a computer: `cd tests && npm install && npx playwright install chromium`.

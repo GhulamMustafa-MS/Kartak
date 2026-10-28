@@ -5,7 +5,8 @@
  *             known type, so a bad edit can't break the live app. Prints OK or a list of problems and
  *             exits with code 1 on any problem.
  * Run:        node scripts/validate-questions.js            (from the repo root, no install needed)
- * Depends on: data/questions.json (format: data/CLAUDE.md); chapters 1-13 = docs/handbook.md.
+ * Depends on: data/questions.json (format: data/CLAUDE.md); chapters 1-13 = docs/handbook.md;
+ *             js/i18n.js (every language with screen words must be in the bank, and the other way round).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -41,6 +42,14 @@ for (const q of bank.questions) {
   if ("d" in q && ![1, 2, 3, 4].includes(q.d)) say(q, "d must be 1, 2, 3 or 4");
   if (q.type === "video" && q.enabled !== false) say(q, "video questions stay disabled until real clips exist (decision D5)");
 }
+
+// The app offers a language only when js/i18n.js has its screen words; every one of those must be in the bank.
+globalThis.window = {};
+await import(path.join(__dirname, "..", "js", "i18n.js"));
+const uiLangs = Object.keys(window.KARTAK_UI);
+for (const l of uiLangs) if (!LANGS.includes(l)) problems.push(`js/i18n.js has "${l}" but data/questions.json does not`);
+for (const l of LANGS) if (!uiLangs.includes(l)) problems.push(`data/questions.json has "${l}" but js/i18n.js does not`);
+for (const l of uiLangs) if (!window.KARTAK_LANGS.some((m) => m.code === l)) problems.push(`"${l}" is missing from KARTAK_LANGS in js/i18n.js`);
 
 const live = bank.questions.filter((q) => q.enabled !== false);
 const byType = live.reduce((m, q) => ((m[q.type] = (m[q.type] || 0) + 1), m), {});

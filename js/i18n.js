@@ -1,15 +1,30 @@
 /*
- * js/i18n.js - every word the worker app shows, in English (en), Urdu (ur), Hindi (hi) and Bangla (bn).
+ * js/i18n.js - every word the worker app shows, in every language, and the list of languages.
  *
- * Purpose:    window.KARTAK_UI[lang] holds the same keys in every language. To add a language: copy the
- *             "en" block, translate every value, add the language to data/questions.json (every question
- *             needs the same code), add a button in index.html and a font rule in css/app.css
- *             (see docs/plan.md "Adding a language"). Strings may contain {share} (replaced by the share
- *             icon) and are inserted as HTML, so never put user input in here.
+ * Purpose:    window.KARTAK_LANGS lists the languages in the order the picker shows them (code used in
+ *             KARTAK_UI and data/questions.json, name in its own script, English name, text direction,
+ *             the html lang code, and the speech-voice prefixes to look for). window.KARTAK_UI[code] holds
+ *             the same keys in every language. The app offers a language only when KARTAK_UI has it.
+ *             To add a language: see docs/plan.md "Add a language". Strings may contain {share}, {n}, {i}
+ *             (filled in by app.js) and are inserted as HTML, so never put user input in here.
  * Used by:    js/app.js (T()).
- * Notes:      Urdu is right-to-left; app.js sets dir="rtl" for "ur" only. Translations were written by
- *             AI and still need checking by native speakers (docs/progress.md, open item).
+ * Notes:      Arabic and Urdu are right-to-left. Indonesian uses the code "ind" (not "id", which every
+ *             question already uses for its id). Translations were written by AI and still need checking
+ *             by native speakers (docs/progress.md, open item).
  */
+window.KARTAK_LANGS = [
+  { code: "en", name: "English", en: "English", dir: "ltr", html: "en", voice: ["en"] },
+  { code: "ar", name: "العربية", en: "Arabic", dir: "rtl", html: "ar", voice: ["ar"] },
+  { code: "ur", name: "اردو", en: "Urdu", dir: "rtl", html: "ur", voice: ["ur"] },
+  { code: "hi", name: "हिंदी", en: "Hindi", dir: "ltr", html: "hi", voice: ["hi"] },
+  { code: "bn", name: "বাংলা", en: "Bangla", dir: "ltr", html: "bn", voice: ["bn"] },
+  { code: "ne", name: "नेपाली", en: "Nepali", dir: "ltr", html: "ne", voice: ["ne"] },
+  { code: "ml", name: "മലയാളം", en: "Malayalam", dir: "ltr", html: "ml", voice: ["ml"] },
+  { code: "ta", name: "தமிழ்", en: "Tamil", dir: "ltr", html: "ta", voice: ["ta"] },
+  { code: "fil", name: "Filipino", en: "Filipino", dir: "ltr", html: "fil", voice: ["fil", "tl"] },
+  { code: "ind", name: "Bahasa Indonesia", en: "Indonesian", dir: "ltr", html: "id", voice: ["id", "in"] },
+  { code: "tr", name: "Türkçe", en: "Turkish", dir: "ltr", html: "tr", voice: ["tr"] }
+];
 window.KARTAK_UI = {
   en: {
     installT: "Add to home screen", installD: "Open Kartak like an app from your phone's home screen.", installBtn: "Add", sheetT: "Add Kartak to your home screen", iosSteps: ["Tap the Share button {share}. On newer iPhones, tap ⋯ first, then Share.", "Scroll down and tap “Add to Home Screen”.", "Tap “Add”. Kartak will appear on your home screen."], iosSafari: "If you opened this link inside WhatsApp, first tap ⋯ and choose “Open in Safari”.", andSteps: ["Tap the ⋮ menu at the top right of your browser.", "Tap “Add to Home screen” or “Install app”.", "Tap “Add” or “Install”."], gotIt: "Got it",

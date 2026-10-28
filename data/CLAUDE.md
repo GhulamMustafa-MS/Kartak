@@ -24,7 +24,7 @@ QUESTION:
 | `pic` | `picture` only: `{ "kind": "fridge" \| "freezer" \| "probe" \| "hot", "v": <°C> }`; the app draws a thermometer (scales: fridge −5..15, freezer −30..10, probe/hot 0..100) |
 | `vid` | `video` only: list of frames (HTML) shown one after another; to be replaced by real clips (D5) |
 | `enabled` | `false` hides a question from every test (the video questions until D5 is done) |
-| `en`, `ur`, `hi`, `bn` | `{ "q": question, "o": [options], "e": explanation }`; `tf` has no `o`. Same number and order of options in every language |
+| one key per language in `languages` (`en`, `ur`, `hi`, `bn`, `ar`, `ne`, `ml`, `ta`, `fil`, `ind`, `tr`) | `{ "q": question, "o": [options], "e": explanation }`; `tf` has no `o`. Same number and order of options in every language. Numbers in Western digits exactly as in English. Indonesian is `ind` because `id` is the question id |
 
 ## Rules
 

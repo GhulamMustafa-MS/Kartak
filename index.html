@@ -2,7 +2,8 @@
 <!--
   index.html - the worker practice app (the page served at https://kartak-app.vercel.app/).
 
-  Purpose:    Static shell only: head tags (icons, manifest, fonts), the header with the language switch,
+  Purpose:    Static shell only: head tags (icons, manifest, fonts), the header with the language dropdown
+              (its options are filled in by js/app.js from KARTAK_LANGS in js/i18n.js),
               and the two empty containers (#app for the screens, #bar for the bottom button bar).
               Every screen is drawn by js/app.js; all wording lives in js/i18n.js; the questions are
               loaded from data/questions.json.
@@ -25,7 +26,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;500;700&family=Noto+Sans+Tamil:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
@@ -35,12 +36,12 @@
       <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="8" fill="var(--primary)"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="var(--primary-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <b>Kartak</b>
     </button>
-    <div class="langs" role="group" aria-label="Language" id="langs">
-      <button type="button" class="en" data-lang="en">EN</button>
-      <button type="button" class="ur" data-lang="ur">اردو</button>
-      <button type="button" class="hi" data-lang="hi">हिंदी</button>
-      <button type="button" class="bn" data-lang="bn">বাংলা</button>
-    </div>
+    <label class="langsel" id="langs" hidden>
+      <svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3c-2.6 2.6-3.8 5.6-3.8 9s1.2 6.4 3.8 9"/></svg>
+      <span class="nm" id="langName" aria-hidden="true"></span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      <select id="langSel" aria-label="Language"></select>
+    </label>
   </header>
   <main id="app" class="page" aria-live="polite"></main>
 </div>

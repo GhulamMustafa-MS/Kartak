@@ -32,6 +32,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D21 | 28 Oct | "All questions" mode: every live question, no timer, answer after each, place saved on the phone | User asked, AI designed the saving | Thorough practice over several days; 100 questions is too many for one sitting |
 | D22 | 28 Oct | The official handbook is the source of every question; its numbers replace the WHO ones | User | The exam is built on the handbook (BK-FS-Workers-E-2025-01); facts in handbook.md |
 | D23 | 28 Oct | Grow the bank to about 300 questions covering all 13 handbook chapters, each tagged with its chapter | User asked, AI wrote | Full mocks repeat less; every part of the syllabus is practised |
+| D24 | 28 Oct | All 11 exam languages (adds Arabic, Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish); a language dropdown at the top replaces the four buttons | User | Kitchen workers in Saudi speak them; the real exam offers exactly these 11 |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -110,4 +111,23 @@ dropped in review and never published). A separate agent that had not written th
 question against the handbook: no answer was wrong; 4 ordering questions had more than one defensible order
 and were fixed, and duplicates and wording too close to the handbook's lists were rewritten. Result: 304 live. Rejected: copying the
 handbook's own "Test Your Knowledge" questions (forbidden, and too few).
+
+## D24. Every exam language, and a dropdown
+
+The user asked for all the exam's languages, Arabic first, then Nepali, then the rest, "done properly". Four
+buttons don't fit eleven languages on a phone, so the header now has one dropdown: a native `<select>` styled
+as a pill with a globe icon. On a phone it opens the phone's own list, which scrolls well, is large to tap and
+works with screen readers. The first screen shows a tile per language (name in its own script, English name
+under it). The list lives once, in `KARTAK_LANGS` in `js/i18n.js` (code, name, direction, html lang, voice),
+so adding a language needs no change to `app.js`. Indonesian uses the code `ind` because every question
+already has a field called `id`. Fonts: Noto Naskh Arabic (easier to read than Nastaliq for Arabic readers),
+Noto Sans Malayalam and Tamil; Nepali shares the Devanagari font with Hindi.
+
+How the translations were made, so the quality holds across 3,000+ texts: for each language, first a word
+list (glossary) and the app screens; then the 306 questions in three chunks by separate agents, all using that
+word list; a script checks every chunk (all questions present, same number of options, right script, no
+English words left in non-Latin scripts, Western digits, and every number the same as in the English); then a
+separate agent reviews each language against the English before it goes live. Rejected: a custom dropdown
+menu (more code, worse on phones and for accessibility); buttons that scroll sideways (hard to discover);
+machine translation without the word list (the same term would be translated differently across questions).
 

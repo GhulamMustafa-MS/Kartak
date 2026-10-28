@@ -2,8 +2,9 @@
  * css/app.css - all styles for the worker app (index.html).
  *
  * Purpose:    Colour tokens on :root (light) with dark-mode overrides, per-language fonts and line heights
- *             (Atkinson Hyperlegible, Noto Nastaliq Urdu, Noto Sans Devanagari, Noto Sans Bengali), and
- *             the components in screen order: header + language switch, language picker, home, question
+ *             (Atkinson Hyperlegible for Latin scripts, Noto Naskh Arabic, Noto Nastaliq Urdu, Noto Sans
+ *             Devanagari for Hindi and Nepali, Noto Sans Bengali, Malayalam and Tamil), and the components
+ *             in screen order: header + language dropdown, language picker, home, question
  *             type tags (kitchen chopping-board colours: blue single, green multi, yellow true/false,
  *             red order, brown picture, purple video), question screen, timer dial, answers, order rows,
  *             bottom bar, intro/learn, results, phone tap fixes, install card + sheet, code gate.
@@ -36,6 +37,9 @@
   --font-bn: "Noto Sans Bengali", "Atkinson Hyperlegible", system-ui, sans-serif;
   --font-hi: "Noto Sans Devanagari", "Atkinson Hyperlegible", system-ui, sans-serif;
   --font-ur: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", serif;
+  --font-ar: "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", system-ui, sans-serif;
+  --font-ml: "Noto Sans Malayalam", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-ta: "Noto Sans Tamil", "Atkinson Hyperlegible", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -72,6 +76,12 @@ body {
 html[lang="bn"] body { font-family: var(--font-bn); line-height: 1.65; }
 html[lang="hi"] body { font-family: var(--font-hi); line-height: 1.65; }
 html[lang="ur"] body { font-family: var(--font-ur); line-height: 2.2; font-size: 16px; }
+html[lang="ne"] body { font-family: var(--font-hi); line-height: 1.65; }
+html[lang="ar"] body { font-family: var(--font-ar); line-height: 1.8; }
+html[lang="ml"] body { font-family: var(--font-ml); line-height: 1.7; }
+html[lang="ta"] body { font-family: var(--font-ta); line-height: 1.7; }
+/* Malayalam and Tamil words are long: let them break instead of pushing the page wider than the phone. */
+html[lang="ml"] main, html[lang="ta"] main { overflow-wrap: anywhere; }
 button { font: inherit; color: inherit; }
 button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
@@ -82,33 +92,57 @@ button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .brand { display: flex; align-items: center; gap: 8px; background: none; border: 0; padding: 4px 0; cursor: pointer; }
 .brand svg { width: 28px; height: 28px; flex: none; }
 .brand b { font-family: var(--font-latin); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: var(--ink); }
-.langs { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
-.langs button { border: 0; background: none; border-radius: 9px; padding: 4px 10px; min-height: 36px; cursor: pointer; font-size: 15px; color: var(--muted); }
-.langs button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); }
-.langs .ur { font-family: var(--font-ur); font-size: 14px; }
-.langs .bn { font-family: var(--font-bn); }
-.langs .hi { font-family: var(--font-hi); }
-.langs .en { font-family: var(--font-latin); font-weight: 700; }
+/* Language dropdown: the pill shows the current language; an invisible native <select> covers it, so a tap
+   opens the phone's own list (easy to scroll with 11 languages, works with screen readers) and the pill stays
+   as narrow as the current name instead of as wide as the longest option. */
+.langsel { position: relative; display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-height: 44px; padding-inline: 12px 10px; color: var(--ink); cursor: pointer; }
+.langsel[hidden] { display: none; }
+.langsel .nm { font-weight: 700; font-size: 16px; line-height: 1.2; white-space: nowrap; font-family: var(--font-latin); }
+.langsel .nm[lang="ur"] { font-family: var(--font-ur); font-weight: 600; line-height: 1.9; }
+.langsel .nm[lang="ar"] { font-family: var(--font-ar); }
+.langsel .nm[lang="hi"], .langsel .nm[lang="ne"] { font-family: var(--font-hi); }
+.langsel .nm[lang="bn"] { font-family: var(--font-bn); }
+.langsel .nm[lang="ml"] { font-family: var(--font-ml); }
+.langsel .nm[lang="ta"] { font-family: var(--font-ta); }
+.langsel svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.langsel .globe { color: var(--primary); }
+.langsel .chev { color: var(--muted); }
+.langsel select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; }
+.langsel:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (hover: hover) { .langsel:hover { border-color: var(--primary); } }
 
 /* Language picker */
 .pick { display: grid; gap: 12px; padding-top: 8px; }
 .pick h1 { font-size: 26px; margin: 8px 0 4px; line-height: 1.25; }
-.pick .lead { margin: 0; color: var(--muted); font-size: 16px; }
+.pick .lead { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.pick .lead [lang="ar"] { font-family: var(--font-ar); }
+.pick .lead [lang="ur"] { font-family: var(--font-ur); }
+.pick .lead [lang="hi"], .pick .lead [lang="ne"] { font-family: var(--font-hi); }
+.pick .lead [lang="bn"] { font-family: var(--font-bn); }
+.pick .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .lang-tile {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: start; width: 100%; cursor: pointer;
-  background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 18px 20px; min-height: 76px;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; text-align: start; width: 100%; cursor: pointer;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 14px 16px; min-height: 84px;
 }
+/* English goes across the full width at the top, so the other ten pair up evenly. */
+.pick .tiles .lang-tile:first-child { grid-column: 1 / -1; min-height: 64px; }
 @media (hover: hover) { .lang-tile:hover { border-color: var(--primary); } }
-.lang-tile .nm { font-size: 26px; font-weight: 700; }
-.lang-tile .nm.ur { font-family: var(--font-ur); font-weight: 600; font-size: 24px; line-height: 2; }
-.lang-tile .nm.bn { font-family: var(--font-bn); }
-.lang-tile .nm.hi { font-family: var(--font-hi); }
+.lang-tile .nm { font-size: 22px; font-weight: 700; line-height: 1.3; font-family: var(--font-latin); }
+.lang-tile .nm[lang="ur"] { font-family: var(--font-ur); font-weight: 600; font-size: 21px; line-height: 2; }
+.lang-tile .nm[lang="ar"] { font-family: var(--font-ar); font-size: 23px; line-height: 1.6; }
+.lang-tile .nm[lang="bn"] { font-family: var(--font-bn); }
+.lang-tile .nm[lang="hi"], .lang-tile .nm[lang="ne"] { font-family: var(--font-hi); }
+.lang-tile .nm[lang="ml"] { font-family: var(--font-ml); font-size: 20px; }
+.lang-tile .nm[lang="ta"] { font-family: var(--font-ta); font-size: 20px; }
 .lang-tile .sub { color: var(--muted); font-family: var(--font-latin); font-size: 15px; }
 
 /* Home */
 .hello h1 { font-size: 30px; line-height: 1.15; margin: 4px 0 6px; text-wrap: balance; letter-spacing: -0.01em; }
 html[lang="ur"] .hello h1 { font-size: 24px; line-height: 1.9; font-weight: 700; }
 html[lang="bn"] .hello h1, html[lang="hi"] .hello h1 { font-size: 26px; line-height: 1.35; }
+html[lang="ne"] .hello h1 { font-size: 26px; line-height: 1.35; }
+html[lang="ar"] .hello h1 { font-size: 27px; line-height: 1.5; }
+html[lang="ml"] .hello h1, html[lang="ta"] .hello h1 { font-size: 23px; line-height: 1.45; }
 .hello p { margin: 0; color: var(--muted); max-width: 34em; }
 
 .realtest { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
@@ -186,6 +220,9 @@ html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
 .qtext { flex: 1; min-width: 0; margin: 0; font-size: 22px; line-height: 1.3; font-weight: 700; text-wrap: pretty; }
 html[lang="ur"] .qtext { font-size: 19px; line-height: 2.15; font-weight: 600; }
 html[lang="bn"] .qtext, html[lang="hi"] .qtext { font-size: 21px; line-height: 1.5; }
+html[lang="ne"] .qtext { font-size: 21px; line-height: 1.5; }
+html[lang="ar"] .qtext { font-size: 21px; line-height: 1.75; }
+html[lang="ml"] .qtext, html[lang="ta"] .qtext { font-size: 19px; line-height: 1.6; }
 .listen { flex: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px; min-height: 40px; font-size: 14px; }
 .listen svg { width: 18px; height: 18px; color: var(--primary); }
 .listen[aria-pressed="true"] { border-color: var(--primary); background: var(--sel-bg); }

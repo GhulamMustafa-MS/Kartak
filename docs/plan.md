@@ -52,12 +52,13 @@ handbook itself stays outside the repo (copyright).
 ## 4. What is built (details: [architecture.md](architecture.md), [api.md](api.md))
 
 Worker app (installable, works offline after the first visit):
-- Language picker: English, اردو, हिंदी, বাংলা; switchable any time; Urdu right-to-left.
+- Languages: a tile for each on the first screen and a dropdown at the top to switch any time (D24);
+  Arabic and Urdu right-to-left. The app offers the languages listed in `KARTAK_LANGS` (js/i18n.js).
 - Code gate: a code from the seller unlocks the app on one phone (D9).
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
   the worker stopped, D21), "Learn the question types" with a small example of each type.
-- 304 live questions from all 13 handbook chapters (+2 video questions held back, D5) in all four languages; question order and answer
+- 304 live questions from all 13 handbook chapters (+2 video questions held back, D5) in every language the app offers; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 
@@ -107,16 +108,20 @@ Modeeri (Egypt), SafetyCulture (global checklists), Ektefa (HR). None sells exam
 
 **Add or fix a question:** check the fact in [handbook.md](handbook.md) (and the handbook itself), edit
 `data/questions.json` (format: `data/CLAUDE.md`), give it the next free id and its chapter (`ch`), fill all
-four languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md section 5).
+languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md section 5).
 
-**Add a language** (example: Nepali, `ne`):
-1. `js/i18n.js`: copy the `en` block to `ne` and translate every value.
-2. `data/questions.json`: add `"ne"` to `languages` and a `ne` block to every question
-   (the validator lists any that are missing).
-3. `index.html`: add a button in `#langs`; `js/app.js`: add the tile in `drawLang()` and the voice code in
-   `TTS`; `css/app.css`: font and line-height rules if the script needs them (Google Fonts link in
-   index.html). Right-to-left languages also need the `dir` rule in `syncChrome()`.
-4. Tests, then check a question and the result screen on a phone.
+**Add a language** (example: Swahili, `sw`):
+1. `js/i18n.js`: add `{ code, name in its own script, English name, dir, html lang, voice prefixes }` to
+   `KARTAK_LANGS` (its place there is its place in the dropdown and on the first screen), then copy the `en`
+   block of `KARTAK_UI` to `sw` and translate every value (same keys and array lengths).
+2. `data/questions.json`: add `"sw"` to `languages` and a `sw` block to every question. Do it in stages: a
+   word list (glossary) first so every question uses the same words, then the questions in chunks, then an
+   independent review (how it was done for the 7 languages added on 28 Oct: D24).
+3. `css/app.css` + the Google Fonts link in `index.html`: a font and line-height rule if the script needs one.
+   Nothing to change in `js/app.js`: the dropdown, tiles, direction and voice come from `KARTAK_LANGS`.
+4. `node scripts/validate-questions.js` (checks the bank and that every language in `i18n.js` is in the bank),
+   then the tests: the browser test opens every language, checks its words and questions, its direction and
+   that nothing is wider than a 390 px phone.
 
 **Change the timer or test sizes:** `QSEC` and `SIZES` at the top of `js/app.js`; update the wording in
 `js/i18n.js` (`fullD`, `quickD`, `practiceD`, `intro`) and plan.md section 3.
