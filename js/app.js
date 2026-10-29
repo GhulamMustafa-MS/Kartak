@@ -9,7 +9,8 @@
  *               State     S (current screen, mode, question index, answers); store() wraps localStorage
  *               Codes     API is only used on *.vercel.app; deviceId(), activate() -> /api/activate; the saved
  *                         code is re-checked on every start with internet (turned off / time limit ended, D25)
- *               Speech    "Listen" button, shown only when the phone has a voice for the language
+ *               Speech    "Listen" button, shown only when the phone has a voice for the language; reads the
+ *                         choices in the order on the screen (never the answer order)
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
  *               Screens   drawLang, drawHome, drawAllPick ("All questions": every type or one type, D29), drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
@@ -648,7 +649,11 @@
     if (b.id === "listenBtn") {
       if (S.speaking) { stopSpeak(); drawQ(); return; }
       var lq = L(q), parts = [lq.q];
-      if (q.type === "order") parts = parts.concat(lq.o); else parts = parts.concat(optsOf(q));
+      // Read the choices in the order they are on the screen, never the answer order (ordering steps are
+      // stored correct-first, and the other options are shuffled on screen).
+      if (q.type === "order") parts = parts.concat(S.sel.map(function (k) { return lq.o[k]; }));
+      else if (S.perms[S.i]) parts = parts.concat(S.perms[S.i].map(function (k) { return lq.o[k]; }));
+      else parts = parts.concat(optsOf(q));
       speak(parts.join(". ")); drawQ(); return;
     }
     if (b.dataset.replay) { S.vidStart = Date.now(); drawQ(); return; }

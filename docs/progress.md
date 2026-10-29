@@ -38,6 +38,8 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **29 Oct 2026 (4):** fixed "Listen" giving away the answer on ordering questions (it read the steps in the
+  correct order); it now reads every question's choices in the order on the screen. Cache `kartak-v7`.
 - **29 Oct 2026 (3):** "All questions" can be one type only (D29): a chooser shows All types and each
   question type with its count; the type is saved with the place. New words in all 11 languages (allPickT,
   allPickD, allTypes, nQ). Service worker cache `kartak-v6`. Tested in the test browser, not yet on a real phone.
@@ -63,12 +65,12 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 - **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
   wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
   thermometer scale too (was showing "C°18−"); browser test checks it for every language.
-- **28 Oct 2026 (late, 3):** language dropdown at the top instead of four buttons; first screen shows a tile per
-  language; `KARTAK_LANGS` in `js/i18n.js` drives both; validator checks every screen language is in the bank;
-  browser test opens every language and checks it fits a 390 px phone (D24). Seven more languages in progress.
 
 ## Archive
 
+- **28 Oct 2026 (late, 3):** language dropdown at the top instead of four buttons; first screen shows a tile per
+  language; `KARTAK_LANGS` in `js/i18n.js` drives both; validator checks every screen language is in the bank;
+  browser test opens every language and checks it fits a 390 px phone (D24). Seven more languages in progress.
 - **28 Oct 2026 (late, 2):** checked the exam languages again in the official 2026 candidate guide (plan.md 3).
 - **28 Oct 2026 (late):** the official handbook became the source of every question (D22): `docs/handbook.md`
   (syllabus and numbers); 17 old questions corrected to its numbers (63°C, 75°C, above 82°C, 1.5 hours, thaw
