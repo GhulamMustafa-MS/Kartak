@@ -24,7 +24,7 @@ user says now, the user wins, then update this file.
 5. Update the header of every file you touched and the CLAUDE.md of every folder you touched (section 3).
 6. Commit with a clear message ending in the Co-Authored-By line, push, then confirm the Vercel deployments
    are READY and the live check passes (section 6).
-7. Sync the user's laptop copy `C:\Users\ghula\Downloads\Kartak` (not a git clone): copy every file changed in
+7. Sync the user's laptop copy `C:\Users\ghula\Downloads\Code\Kartak` (not a git clone): copy every file changed in
    the commit there when the chat is linked to the laptop; if it isn't, say so and list the files to copy.
    Do this every time, without being asked. Goal: any new chat can pick up from the repo alone.
 
