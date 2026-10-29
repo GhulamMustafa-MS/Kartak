@@ -33,7 +33,7 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 
 **Where things are:** rules `CLAUDE.md`; plan `docs/plan.md`; decisions `docs/design_decisions.md`; system and
 IDs `docs/architecture.md`; endpoints `docs/api.md`; problems and limits `docs/summary.md`. A copy of the repo
-is in the user's laptop folder `Downloads\Kartak` (not a git clone; see that folder's note).
+is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see that folder's note).
 
 ## Log
 
