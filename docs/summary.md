@@ -21,6 +21,7 @@
 | 28 Oct | The handbook contradicts itself on cooling (1.5 hours in chapter 11 and its answer key, 2 hours in chapter 6) and fridge temperature (5°C or below, 0-4°C, 4°C or below) | Questions use the answer-key value (1.5 hours) and "5°C or below"; never offer both conflicting values as options |
 | 28 Oct | In right-to-left text (Urdu, Arabic) temperatures showed reversed, "C°18−" for "−18°C", and the thermometer scale showed "5−" | Numbers and temperatures are wrapped in a left-to-right box (`txt()` in js/app.js); the thermometer drawing is always left-to-right; browser test checks every language |
 | 28 Oct | Offline only worked from the second visit: the service worker saved files only after it had started, so the first visit's questions were not saved | `sw.js` saves the app and questions when it installs (`kartak-v3`); it also registers on localhost so the browser test can turn the internet off and check |
+| 29 Oct | The phone's Back button closed the whole app (it is one page with no history) | Each app keeps one history entry while an inner screen is open; Back now goes to the home screen (seller: up a level), and asks before losing test answers (D28) |
 | 28 Oct | Earlier reply said 20 ordering questions; the bank has 16 live | Counted by `scripts/validate-questions.js`, which prints the real mix |
 
 ## 2. Limitations and risks

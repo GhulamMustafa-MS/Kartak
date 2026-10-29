@@ -9,6 +9,7 @@
  *             kept on this phone in localStorage "kartak-admin-key" so it is typed once.
  *             "Send on WhatsApp" opens wa.me with the code and the worker link (appLink).
  *             Destructive buttons need a second tap within 4 seconds.
+ *             The phone's Back button goes up a level (person -> Results -> Codes) instead of closing (D28).
  *             Also: add-to-home-screen card + help sheet (decision D13), service worker registration.
  * Used by:    seller/index.html.
  * Depends on: api/admin.js (on https://kartak-app.vercel.app), seller/js/stats.js, the worker app's
@@ -102,7 +103,25 @@
     return S.stats ? K.overview(S.stats, S.list, S.bank || {}) : '<p class="muted">Loading…</p>';
   }
 
+  /* Back button (decision D28): one history entry per level (Results tab, then one person), so the phone's
+     Back goes up a level instead of closing the app. Back on the Codes tab closes it as usual. */
+  var pushed = 0, skipPop = 0;
+  function level() { return S.key && S.tab === "results" ? (S.person ? 2 : 1) : 0; }
+  function syncHistory() {
+    if (!window.history || !history.pushState) return;
+    var want = level();
+    while (pushed < want) { pushed++; history.pushState({ kartak: pushed }, ""); }
+    if (pushed > want) { skipPop++; history.go(want - pushed); pushed = want; } // went up with a button
+  }
+  window.addEventListener("popstate", function () {
+    if (skipPop) { skipPop--; return; }
+    if (!pushed) return;
+    pushed--;
+    if (S.person) openResults(null); else { S.tab = "codes"; S.person = null; draw(); }
+  });
+
   function draw() {
+    syncHistory();
     if (!S.key) {
       app.innerHTML = '<header><b>Kartak codes</b></header>' + installCard() + '<section class="card"><h2>Enter your password</h2><p class="muted">You only need to do this once on this phone.</p>' +
         '<input type="password" id="key" autocomplete="current-password">' + (S.err ? '<div class="err">' + esc(S.err) + '</div>' : '') +

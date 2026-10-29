@@ -8,7 +8,7 @@
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; Key words shows every word with its picture and the video (D27); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
+ *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -113,7 +113,11 @@ await seller.waitForFunction(() => document.querySelectorAll(".qrow").length > 0
 check("seller sees the questions this person missed, in English", (await seller.$$(".qrow")).length > 0);
 check("the seller's results pages fit the phone width", (await seller.evaluate(() => document.documentElement.scrollWidth)) <= 390);
 await seller.screenshot({ path: SHOTS + "seller-person.png", fullPage: true });
-await seller.click("[data-tab=codes]");
+// Phone Back button in the seller app (D28): person -> Results -> Codes, instead of closing the app
+await seller.goBack(); await seller.waitForSelector(".person");
+check("seller Back from a person goes to the Results tab", !(await seller.$(".trend")));
+await seller.goBack(); await seller.waitForSelector("#make");
+check("seller Back from Results goes to the Codes tab", (await seller.evaluate(() => history.state)) === null);
 await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
 
 // "All questions": every live question, untimed, place saved between sittings (D21)
@@ -138,6 +142,25 @@ await worker.click("[data-go=all-restart]");
 await worker.waitForSelector(".qtext");
 check("start again goes back to question 1", (await worker.textContent(".qhead .pos span")).includes(`1 / ${LIVE}`));
 await worker.click("#brandBtn");
+
+// Phone Back button (D28): goes to the home screen instead of closing the app; a test with answers asks first
+await worker.click("[data-go=words]");
+await worker.waitForSelector(".word");
+await worker.goBack();
+await worker.waitForSelector("[data-go=intro-full]");
+check("Back from Key words goes to the home screen", (await worker.evaluate(() => history.state)) === null);
+await worker.click("[data-go=practice]");
+await worker.waitForSelector(".qtext");
+{ const opt = await worker.$("[data-opt]"); if (opt) await opt.click(); }
+await worker.click("#cta"); // check the answer, so there is something to lose
+worker.once("dialog", (d) => d.dismiss());
+await worker.goBack();
+await worker.waitForTimeout(300);
+check("Back in a test with answers asks first, and Cancel keeps the test", !!(await worker.$(".qtext")) && (await worker.evaluate(() => history.state)) !== null);
+worker.once("dialog", (d) => d.accept());
+await worker.goBack();
+await worker.waitForSelector("[data-go=intro-full]");
+check("Back then OK leaves the test for the home screen (one more Back closes the app)", (await worker.evaluate(() => history.state)) === null);
 
 // Second phone refused
 const other = await phone();

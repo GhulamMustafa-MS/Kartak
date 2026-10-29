@@ -36,6 +36,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D25 | 28 Oct | Codes can have a time limit (no limit / 1 / 3 / 7 / 30 days), counted from the first use; the seller sets it when making the code and can change it later | User asked, AI designed | Trials for people who don't want to pay the full amount first |
 | D26 | 28 Oct | Save every finished test against its code and show analytics in the seller app (Results tab + a page per person), for Mustafa and Wessam | User | See who is ready, which topics and questions people miss, which test types they use |
 | D27 | 29 Oct | "Key words" screen: the exam's 33 hard words explained simply in every language, with pictures, thermometers and a cartoon video; the app is sold alongside the course, not instead of it | User asked (Wessam: workers won't understand HACCP, probes, danger zones before the course) | Workers learn the words before practising; managers see it supports the 800-riyal course |
+| D28 | 29 Oct | The phone's Back button goes back a screen (to home in the worker app; person -> Results -> Codes in the seller app) instead of closing the app; leaving a test with answers asks first | User asked, AI designed | Back closed the whole app because it is one web page |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -180,3 +181,15 @@ real footage (Wessam, 29 Oct); Claude can't film or generate realistic video, so
 Rejected for now: AI video tools (cost, wrong hands and text) and filming (needs a kitchen and permission);
 both stay options for the video questions later.
 
+## D28. The phone's Back button
+
+Both apps are one web page that redraws itself, so the phone had no earlier page to go back to and Back closed
+the app. Now each app adds one history entry when an inner screen opens (worker: a test, results, Learn, Key
+words; seller: the Results tab, then one person) and removes it again when a button takes you back. Back
+removes the entry and the app shows the screen above: the home screen in the worker app, Results then Codes
+in the seller app. Back on the home screen (or the Codes tab) still closes the app, as phones expect. Leaving a
+full mock, quick test or practice with at least one answer asks "Leave this test? Your answers will be lost."
+(in every language), also from the Kartak logo; "All questions" never asks because it saves its place.
+Rejected: going back one question at a time inside a test (answers are final in timed tests, and many Backs
+would be needed to get out); a history entry per screen with the screen in the address (more to get wrong,
+and Back from results would reopen a finished test).

@@ -14,6 +14,7 @@
  *               Screens   drawLang, drawHome, drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
+ *               Back      the phone's Back button goes to the home screen instead of closing the app (D28)
  *               Events    one click handler for #app and #bar, the language dropdown, start-up
  *               Results   record() / flushResults(): finished tests (and blocks of 20 in "All questions") go to
  *                         an outbox and are sent to /api/result for the seller's analytics (D26)
@@ -275,7 +276,7 @@
   function start(mode) {
     if (!BANK.length) { bankReady.then(function () { if (BANK.length) start(mode); }); return; }
     stopSpeak(); clearInterval(S.tick); S.tick = null;
-    S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q"; S.allSent = 0;
+    S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q"; S.allSent = 0; syncHistory();
     if (mode === "all" && resumeAll()) return;
     var idx = BANK.map(function (q, k) { return k; });
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
@@ -581,7 +582,30 @@
     else if (S.screen === "q") drawQ();
     else if (S.screen === "results") drawResults();
     else drawHome();
+    syncHistory();
   }
+
+  /* ---------------- Back button (decision D28) ----------------
+     The app is one page, so the phone's Back button used to close it. While an inner screen is open (a test,
+     results, Learn, Key words) we keep one extra history entry. Back removes it and we show the home screen
+     instead; Back on the home screen closes the app as usual. Leaving a test with answers asks first. */
+  var inner = false, skipPop = false;
+  function isInner() { return S.screen !== "home" && S.screen !== "lang" && S.screen !== "gate"; }
+  function syncHistory() {
+    if (!window.history || !history.pushState) return;
+    if (isInner() && !inner) { history.pushState({ kartak: 1 }, ""); inner = true; }
+    else if (!isInner() && inner) { inner = false; skipPop = true; history.back(); } // drop our entry
+  }
+  // A test with answers that would be lost ("All questions" saves itself, so it never asks).
+  function midTest() { return S.screen === "q" && S.mode !== "all" && S.results.some(Boolean); }
+  function okToLeave() { return !midTest() || window.confirm(T().leaveTest); }
+  window.addEventListener("popstate", function () {
+    if (skipPop) { skipPop = false; return; }
+    if (!inner) return;
+    inner = false;
+    if (!okToLeave()) { history.pushState({ kartak: 1 }, ""); inner = true; return; } // stay in the test
+    go("home");
+  });
 
   function go(where) {
     if (where === "all-restart") { forgetAll(); return start("all"); }
@@ -596,7 +620,7 @@
   document.getElementById("langSel").addEventListener("change", function (ev) {
     S.lang = ev.target.value; store("jahiz-lang", S.lang); stopSpeak(); render();
   });
-  document.getElementById("brandBtn").addEventListener("click", function () { if (S.lang) go("home"); });
+  document.getElementById("brandBtn").addEventListener("click", function () { if (S.lang && okToLeave()) go("home"); });
 
   function onClick(ev) {
     var b = ev.target.closest("button"); if (!b || b.disabled) return;

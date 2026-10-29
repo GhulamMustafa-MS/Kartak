@@ -5,7 +5,7 @@ modules, no build step, D16), so they run on old phones.
 
 | File | Purpose |
 |---|---|
-| `i18n.js` | `window.KARTAK_UI`: every word the app shows, in en / ur / hi / bn, same keys in each |
+| `i18n.js` | `window.KARTAK_LANGS` (the 11 languages) and `window.KARTAK_UI`: every word the app shows, same keys in each language |
 | `app.js` | The app: screens, timer, scoring, access codes, install help, iPhone hand-over, events (section list in its header) |
 
 Rules:
@@ -15,4 +15,6 @@ Rules:
 - Question text is never in these files; it is in `data/questions.json`.
 - Settings worth knowing: `QSEC` (seconds per question), `SIZES` (questions per mode; `all` = whole bank),
   `timed()` (full and quick are timed), pass mark 80% in `PASS()`.
+- The phone's Back button (D28): `syncHistory()` keeps one history entry while an inner screen is open and the
+  `popstate` handler goes home; call `render()` or `go()` to change screens so it stays right.
 - localStorage keys are listed in the `app.js` header; renaming one logs everyone out of that setting.

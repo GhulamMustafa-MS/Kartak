@@ -4,13 +4,13 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 28 Oct 2026)
+## START HERE (last updated 29 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
   Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 304 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place) /
-  key words, learn the types, code lock, installable, offline.
+  key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
 - Seller app https://kartak-seller.vercel.app: make (with an optional 1/3/7/30-day limit for trials), send,
   reset, change the time limit, turn off and delete codes; Results tab with each person's scores, readiness,
   weak topics and the hardest questions (D26).
@@ -37,6 +37,9 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **29 Oct 2026 (2):** the phone's Back button no longer closes the apps (D28): worker app goes to the home
+  screen and asks before throwing away test answers (new `leaveTest` words in all 11 languages); seller app goes
+  person -> Results -> Codes. Service worker cache now `kartak-v5`. Tested in the test browser, not yet on a real phone.
 - **29 Oct 2026:** "Key words" screen (D27): 33 exam words in all 11 languages with pictures, thermometers and
   a cartoon cross-contamination clip; clip maker in `scripts/`. Pitch for managers reframed as "Kartak makes the
   course pay off" (Wessam: workers need the course to understand the words). Real exam videos are real footage.
@@ -60,6 +63,9 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
   language; `KARTAK_LANGS` in `js/i18n.js` drives both; validator checks every screen language is in the bank;
   browser test opens every language and checks it fits a 390 px phone (D24). Seven more languages in progress.
 - **28 Oct 2026 (late, 2):** checked the exam languages again in the official 2026 candidate guide (plan.md 3).
+
+## Archive
+
 - **28 Oct 2026 (late):** the official handbook became the source of every question (D22): `docs/handbook.md`
   (syllabus and numbers); 17 old questions corrected to its numbers (63°C, 75°C, above 82°C, 1.5 hours, thaw
   in the fridge or microwave, wash hands before the hair cover); every question tagged with its chapter (`ch`);
@@ -82,7 +88,3 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
   first tests by Wessam (14/15) and a Bangla-speaking worker (failed; ordering and some words were hard).
 - **Before 28 Oct 2026:** research on Saudi food-worker certificates, the Al Arkkan exam guide, competitors and
   the business model (plan.md 1, 3, 5, 7).
-
-## Archive
-
-(empty)
