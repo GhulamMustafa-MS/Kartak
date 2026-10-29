@@ -11,7 +11,7 @@
  *                         code is re-checked on every start with internet (turned off / time limit ended, D25)
  *               Speech    "Listen" button, shown only when the phone has a voice for the language
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
- *               Screens   drawLang, drawHome, drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
+ *               Screens   drawLang, drawHome, drawAllPick ("All questions": every type or one type, D29), drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
  *               Back      the phone's Back button goes to the home screen instead of closing the app (D28)
@@ -21,7 +21,8 @@
  * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it), kartak-outbox
  *             (results not sent yet),
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
- *             kartak-all (saved place in "All questions", so it can be finished over several days).
+ *             kartak-all (saved place in "All questions", and its question type if one was picked, so it can
+ *             be finished over several days).
  * Used by:    index.html.
  * Depends on: js/i18n.js, data/questions.json, data/words.json, videos/, api/activate.js, api/transfer.js, api/result.js, sw.js, icons/.
  */
@@ -63,7 +64,7 @@
   };
 
   /* ---------------- State ---------------- */
-  var S = { lang: null, screen: "lang", mode: null, i: 0, sel: null, checked: false, results: [], shuffles: [], qDeadline: 0, tick: null, notice: false, startedAt: 0, endedAt: 0, speaking: false };
+  var S = { lang: null, screen: "lang", mode: null, i: 0, sel: null, checked: false, results: [], shuffles: [], qDeadline: 0, tick: null, notice: false, startedAt: 0, endedAt: 0, speaking: false, allType: null };
 
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   // Access codes: only enforced when served from the Vercel deployment, which has the /api backend.
@@ -184,11 +185,25 @@
     setBar("");
   }
 
+  // "All questions": with a saved place the card carries on (and says which type); otherwise it opens the
+  // chooser, where the worker picks every question or only one type (decision D29).
   function allCard() {
     var t = T(), d = savedAll(), n = BANK.length || 100;
-    var desc = d ? t.allResume.replace("{i}", d.results.length + 1).replace("{n}", d.ids.length) : t.allD.replace("{n}", n);
-    return '<button type="button" class="mode" data-go="all"><span class="ic">' + ICONS.stack + '</span><span class="t">' + t.all + '</span><span class="d">' + desc + '</span></button>' +
-      (d ? '<button type="button" class="small-btn" data-go="all-restart">' + t.allRestart + '</button>' : '');
+    var desc = d ? t.allResume.replace("{i}", d.results.length + 1).replace("{n}", d.ids.length) + (d.type && t.types[d.type] ? " " + t.types[d.type][0] + "." : "") : t.allD.replace("{n}", n);
+    return '<button type="button" class="mode" data-go="' + (d ? "all" : "allpick") + '"><span class="ic">' + ICONS.stack + '</span><span class="t">' + t.all + '</span><span class="d">' + desc + '</span></button>' +
+      (d ? '<button type="button" class="small-btn" data-go="allpick">' + t.allRestart + '</button>' : '');
+  }
+  function drawAllPick() {
+    var t = T(), counts = {};
+    BANK.forEach(function (q) { counts[q.type] = (counts[q.type] || 0) + 1; });
+    var nq = function (n) { return t.nQ.replace("{n}", '<bdi dir="ltr">' + n + '</bdi>'); };
+    var rows = '<button type="button" class="mode" data-alltype=""><span class="ic">' + ICONS.stack + '</span><span class="t">' + t.allTypes + '</span><span class="d">' + nq(BANK.length) + '</span></button>' +
+      Object.keys(t.types).filter(function (k) { return counts[k]; }).map(function (k) {
+        return '<button type="button" class="mode" data-alltype="' + k + '"><span class="ic">' + ICONS[k] + '</span><span class="t">' + t.types[k][0] + '</span><span class="d">' + nq(counts[k]) + '</span></button>';
+      }).join("");
+    app.innerHTML = '<section class="hello"><h1>' + t.allPickT + '</h1><p>' + t.allPickD + '</p></section><section class="modes allpick">' + rows + '</section>';
+    setBar('<button type="button" class="cta ghost" data-go="home">' + t.home + '</button>');
+    if (!BANK.length) bankReady.then(function () { if (S.screen === "allpick" && BANK.length) drawAllPick(); });
   }
 
   /* "Key words" (decision D27): the exam's hard words explained simply, each with a picture, a thermometer or a
@@ -279,6 +294,7 @@
     S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q"; S.allSent = 0; syncHistory();
     if (mode === "all" && resumeAll()) return;
     var idx = BANK.map(function (q, k) { return k; });
+    if (mode === "all" && S.allType) idx = idx.filter(function (k) { return BANK[k].type === S.allType; }); // one type only (D29)
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
     S.qs = idx.slice(0, Math.min(SIZES[mode], BANK.length)).map(function (k) { return BANK[k]; });
     S.shuffles = S.qs.map(function (q) { return q.type === "order" ? shuffle(q.en.o.length) : null; });
@@ -329,7 +345,7 @@
   /* "All questions" can take several sittings: keep the place on the phone (decision D21). */
   function saveAll() {
     if (S.mode !== "all") return;
-    store("kartak-all", JSON.stringify({ ids: S.qs.map(function (q) { return q.id; }), results: S.results, shuffles: S.shuffles, perms: S.perms, sent: S.allSent || 0 }));
+    store("kartak-all", JSON.stringify({ ids: S.qs.map(function (q) { return q.id; }), results: S.results, shuffles: S.shuffles, perms: S.perms, sent: S.allSent || 0, type: S.allType || null }));
   }
   function savedAll() {
     try { var d = JSON.parse(store("kartak-all") || "null"); return d && d.ids && d.results.length < d.ids.length ? d : null; } catch (e) { return null; }
@@ -339,7 +355,7 @@
     var byId = {}; BANK.forEach(function (q) { byId[q.id] = q; });
     if (!d.ids.every(function (id) { return byId[id]; })) { forgetAll(); return false; } // bank changed: start fresh
     S.qs = d.ids.map(function (id) { return byId[id]; });
-    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length; S.allSent = d.sent || 0;
+    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length; S.allSent = d.sent || 0; S.allType = d.type || null;
     S.startedAt = Date.now(); openQ(); return true;
   }
   function forgetAll() { try { localStorage.removeItem("kartak-all"); } catch (e) {} }
@@ -578,6 +594,7 @@
     if (S.screen === "home") drawHome();
     else if (S.screen === "learn") drawLearn();
     else if (S.screen === "words") drawWords();
+    else if (S.screen === "allpick") drawAllPick();
     else if (S.screen === "intro") drawIntro();
     else if (S.screen === "q") drawQ();
     else if (S.screen === "results") drawResults();
@@ -608,7 +625,6 @@
   });
 
   function go(where) {
-    if (where === "all-restart") { forgetAll(); return start("all"); }
     if (SIZES[where]) return start(where);
     if (where.indexOf("intro-") === 0) { S.pending = where.slice(6); where = "intro"; }
     if (S.screen === "q" && S.mode === "all") recordAll(true); // leaving "All questions": report what was answered
@@ -626,6 +642,7 @@
     var b = ev.target.closest("button"); if (!b || b.disabled) return;
     if (b.dataset.pick) { S.lang = b.dataset.pick; store("jahiz-lang", S.lang); S.screen = "home"; render(); return; }
     if (b.dataset.go) { go(b.dataset.go); return; }
+    if (b.dataset.alltype !== undefined) { forgetAll(); S.allType = b.dataset.alltype || null; start("all"); return; }
     if (S.screen !== "q") return;
     var q = S.qs[S.i];
     if (b.id === "listenBtn") {

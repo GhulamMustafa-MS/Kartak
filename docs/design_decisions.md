@@ -37,6 +37,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D26 | 28 Oct | Save every finished test against its code and show analytics in the seller app (Results tab + a page per person), for Mustafa and Wessam | User | See who is ready, which topics and questions people miss, which test types they use |
 | D27 | 29 Oct | "Key words" screen: the exam's 33 hard words explained simply in every language, with pictures, thermometers and a cartoon video; the app is sold alongside the course, not instead of it | User asked (Wessam: workers won't understand HACCP, probes, danger zones before the course) | Workers learn the words before practising; managers see it supports the 800-riyal course |
 | D28 | 29 Oct | The phone's Back button goes back a screen (to home in the worker app; person -> Results -> Codes in the seller app) instead of closing the app; leaving a test with answers asks first | User asked, AI designed | Back closed the whole app because it is one web page |
+| D29 | 29 Oct | "All questions" can be only one type of question (for example only "Order the steps"); a chooser screen offers every type or one type, with how many questions each has | User asked, AI designed | Workers who struggle with one type (often ordering) can practise just that |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -193,3 +194,14 @@ full mock, quick test or practice with at least one answer asks "Leave this test
 Rejected: going back one question at a time inside a test (answers are final in timed tests, and many Backs
 would be needed to get out); a history entry per screen with the screen in the address (more to get wrong,
 and Back from results would reopen a finished test).
+
+## D29. Practise one type of question
+
+Workers who struggle with one kind of question, most often putting steps in order, wanted to practise only
+that kind. "All questions" now opens a chooser: "All types" or one type (pick one answer, pick all correct
+answers, true or false, order the steps, picture question), each showing how many questions it has; types with
+no live questions are hidden. The chosen type is saved with the place in "All questions", so carrying on stays
+in that type and the home card says which type it is. Starting again goes back to the chooser. Results still go
+to the seller as "All questions" (the analytics already show which questions each person gets wrong).
+Rejected: a type filter on the timed mocks (the real exam mixes types, so the mocks should too) and filters on
+several types at once (more taps for little gain; "All types" covers the mix).

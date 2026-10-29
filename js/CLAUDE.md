@@ -17,4 +17,6 @@ Rules:
   `timed()` (full and quick are timed), pass mark 80% in `PASS()`.
 - The phone's Back button (D28): `syncHistory()` keeps one history entry while an inner screen is open and the
   `popstate` handler goes home; call `render()` or `go()` to change screens so it stays right.
+- "All questions" by type (D29): `S.allType` (null = every type) filters the bank in `start()` and is saved
+  in `kartak-all`; the chooser is `drawAllPick()` (screen `allpick`).
 - localStorage keys are listed in the `app.js` header; renaming one logs everyone out of that setting.

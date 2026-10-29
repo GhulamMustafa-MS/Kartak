@@ -5,7 +5,7 @@
  *             /api/* with the real API code on the in-memory database, then: the seller logs in and
  *             makes a code; a worker picks Bangla, unlocks, takes a full 50-question mock to the result, which
  *             reaches the server and shows on the seller's Results tab and the person's page (D26);
- *             "All questions" saves the place, carries on and starts again;
+ *             "All questions" saves the place, carries on, and can be only one type of question (D29);
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
  *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
@@ -123,7 +123,14 @@ await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
 // "All questions": every live question, untimed, place saved between sittings (D21)
 await worker.click("#bar [data-go=home]");
 await worker.selectOption("#langSel", "en");
-await worker.click("[data-go=all]");
+await worker.click("[data-go=allpick]");
+await worker.waitForSelector("[data-alltype]");
+const LIVE_Q = JSON.parse(fs.readFileSync(ROOT + "data/questions.json", "utf8")).questions.filter((q) => q.enabled !== false);
+const TYPES_LIVE = [...new Set(LIVE_Q.map((q) => q.type))];
+check("All questions offers every type plus all types", (await worker.$$("[data-alltype]")).length === TYPES_LIVE.length + 1);
+check("the question-type chooser fits the phone width", (await worker.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+await worker.screenshot({ path: SHOTS + "all-types.png", fullPage: true });
+await worker.click("[data-alltype='']");
 await worker.waitForSelector(".qtext");
 check("all questions covers the whole bank", (await worker.textContent(".qhead .pos span")).includes(`/ ${LIVE}`));
 for (let k = 0; k < 3; k++) {
@@ -138,10 +145,21 @@ await worker.click("[data-go=all]");
 await worker.waitForSelector(".qtext");
 check("carries on at question 4", (await worker.textContent(".qhead .pos span")).includes(`4 / ${LIVE}`));
 await worker.click("#brandBtn");
-await worker.click("[data-go=all-restart]");
+// Only one type of question (D29): "Order the steps" only, its place saved like the rest
+const ORDER_N = LIVE_Q.filter((q) => q.type === "order").length;
+await worker.click("[data-go=allpick]");
+await worker.click("[data-alltype=order]");
 await worker.waitForSelector(".qtext");
-check("start again goes back to question 1", (await worker.textContent(".qhead .pos span")).includes(`1 / ${LIVE}`));
+check("picking one type starts again at question 1 of that type only", (await worker.textContent(".qhead .pos span")).includes(`1 / ${ORDER_N}`));
+let onlyOrder = true;
+for (let k = 0; k < 3; k++) {
+  if (!(await worker.$(".tag.t-order"))) onlyOrder = false;
+  await worker.click("#cta"); // check answer
+  await worker.click("#cta"); // next question
+}
+check("every question shown is an ordering question", onlyOrder && !!(await worker.$(".tag.t-order")));
 await worker.click("#brandBtn");
+check("home carries on in the same type", (await worker.textContent("[data-go=all] .d")).includes(`question 4 of ${ORDER_N}`) && (await worker.textContent("[data-go=all] .d")).includes(UI.en.types.order[0]));
 
 // Phone Back button (D28): goes to the home screen instead of closing the app; a test with answers asks first
 await worker.click("[data-go=words]");
