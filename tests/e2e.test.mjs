@@ -8,7 +8,7 @@
  *             "All questions" saves the place, carries on and starts again;
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
+ *             language; Key words shows every word with its picture and the video (D27); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -168,6 +168,20 @@ for (const lang of offered) {
   const wide = await worker.evaluate(() => document.documentElement.scrollWidth);
   check(`${lang} fits the phone width`, wide <= 390);
   await worker.screenshot({ path: SHOTS + `question-${lang}.png` });
+  await worker.click("#brandBtn");
+}
+
+// Key words (D27): every word with its picture, the video plays from the repo, fits the phone, in two scripts
+const WORDS_N = JSON.parse(fs.readFileSync(ROOT + "data/words.json", "utf8")).words.length;
+for (const lang of ["bn", "ar"]) {
+  await worker.selectOption("#langSel", lang);
+  await worker.click("#bar [data-go=home]").catch(() => {});
+  await worker.click("[data-go=words]");
+  await worker.waitForSelector(".word");
+  check(`Key words shows all ${WORDS_N} words in ${lang}`, (await worker.$$(".word")).length === WORDS_N && (await worker.textContent(".words h1")).trim() === UI[lang].words);
+  check(`Key words video is there in ${lang}`, (await worker.$$("video[src='/videos/cross-contamination.mp4']")).length === 1);
+  check(`Key words fit the phone width in ${lang}`, (await worker.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+  await worker.screenshot({ path: SHOTS + `words-${lang}.png`, fullPage: true });
   await worker.click("#brandBtn");
 }
 

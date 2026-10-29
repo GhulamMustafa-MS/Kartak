@@ -1,0 +1,1693 @@
+{
+ "words": [
+  {
+   "id": "w01",
+   "ch": 1,
+   "pic": {
+    "icon": "person"
+   },
+   "en": {
+    "t": "Food handler",
+    "d": "Anyone who touches food, or the tools and surfaces that food touches. Cooks, packers, fruit and vegetable sellers and people who wash kitchen tools are all food handlers."
+   },
+   "ur": {
+    "t": "فوڈ ہینڈلر (کھانے سے جڑا ورکر)",
+    "d": "جو بھی کھانے کو، یا ان اوزاروں اور جگہوں کو چھوتا ہے جن سے کھانا لگتا ہے۔ باورچی، پیکنگ کرنے والے، پھل اور سبزی بیچنے والے اور کچن کے برتن دھونے والے سب فوڈ ہینڈلر ہیں۔"
+   },
+   "hi": {
+    "t": "फ़ूड हैंडलर (खाने से जुड़ा कर्मचारी)",
+    "d": "जो भी खाने को, या उन औज़ारों और जगहों को छूता है जिनसे खाना लगता है। रसोइए, पैकिंग करने वाले, फल और सब्ज़ी बेचने वाले और किचन के बर्तन धोने वाले, सब फ़ूड हैंडलर हैं।"
+   },
+   "bn": {
+    "t": "ফুড হ্যান্ডলার (খাবারের সাথে জড়িত কর্মী)",
+    "d": "যে কেউ খাবার ছোঁয়, বা খাবারে লাগে এমন যন্ত্রপাতি আর জায়গা ছোঁয়। বাবুর্চি, প্যাকিং কর্মী, ফল ও সবজি বিক্রেতা আর রান্নাঘরের বাসন ধোয়ার লোক, সবাই ফুড হ্যান্ডলার।"
+   },
+   "ar": {
+    "t": "عامل الأغذية",
+    "d": "كل شخص يلمس الطعام، أو يلمس الأدوات والأسطح التي يلمسها الطعام. الطباخ، وعامل التغليف، وبائع الخضار والفواكه، ومن يغسل أدوات المطبخ، كلهم عمال أغذية."
+   },
+   "ne": {
+    "t": "खाना छुने कामदार (फुड ह्यान्डलर)",
+    "d": "खाना छुने, वा खाना छुने औजार र सतह छुने जो कोही। भान्छे, प्याक गर्ने, फलफूल र तरकारी बेच्ने र भान्साका भाँडा धुने सबै खाना छुने कामदार हुन्।"
+   },
+   "ml": {
+    "t": "ഭക്ഷണം കൈകാര്യം ചെയ്യുന്നയാൾ (ഫുഡ് ഹാൻഡ്‌ലർ)",
+    "d": "ഭക്ഷണമോ, ഭക്ഷണം തൊടുന്ന ഉപകരണങ്ങളോ പ്രതലങ്ങളോ തൊടുന്ന ആരും. കുക്കുകൾ, പാക്ക് ചെയ്യുന്നവർ, പഴവും പച്ചക്കറിയും വിൽക്കുന്നവർ, അടുക്കള പാത്രങ്ങൾ കഴുകുന്നവർ എല്ലാവരും ഫുഡ് ഹാൻഡ്‌ലർമാരാണ്."
+   },
+   "ta": {
+    "t": "உணவுப் பணியாளர்",
+    "d": "உணவையோ, உணவு படும் கருவிகளையோ மேற்பரப்புகளையோ தொடும் எவரும். சமைப்பவர்கள், பேக் செய்பவர்கள், பழம் காய்கறி விற்பவர்கள், சமையலறைப் பாத்திரங்களைக் கழுவுபவர்கள் எல்லோரும் உணவுப் பணியாளர்கள்தான்."
+   },
+   "fil": {
+    "t": "Food handler (taong humahawak ng pagkain)",
+    "d": "Sinumang humahawak ng pagkain, o ng mga gamit at surface na dumidikit sa pagkain. Ang mga kusinero, tagabalot, tindero ng prutas at gulay, at mga naghuhugas ng gamit sa kusina ay food handler lahat."
+   },
+   "ind": {
+    "t": "Penjamah makanan (orang yang memegang makanan)",
+    "d": "Siapa saja yang menyentuh makanan, atau alat dan permukaan yang menyentuh makanan. Juru masak, pengemas, penjual buah dan sayur, dan orang yang mencuci alat dapur semuanya penjamah makanan."
+   },
+   "tr": {
+    "t": "Gıda çalışanı (gıdaya dokunan çalışan)",
+    "d": "Gıdaya ya da gıdanın değdiği alet ve yüzeylere dokunan herkes. Aşçılar, paketleyenler, meyve ve sebze satıcıları ve mutfak aletlerini yıkayanlar, hepsi gıda çalışanıdır."
+   }
+  },
+  {
+   "id": "w02",
+   "ch": 1,
+   "pic": {
+    "icon": "card"
+   },
+   "en": {
+    "t": "Health certificate",
+    "d": "The card that lets you work with food. You need a medical check and this test to get it. It lasts 1 year, so renew it before it ends."
+   },
+   "ur": {
+    "t": "ہیلتھ سرٹیفکیٹ (صحت کا کارڈ)",
+    "d": "وہ کارڈ جس سے آپ کھانے کا کام کر سکتے ہیں۔ اسے لینے کے لیے میڈیکل چیک اپ اور یہ ٹیسٹ ضروری ہیں۔ یہ 1 سال چلتا ہے، اس لیے ختم ہونے سے پہلے نیا کروائیں۔"
+   },
+   "hi": {
+    "t": "हेल्थ सर्टिफिकेट (सेहत का कार्ड)",
+    "d": "वह कार्ड जिससे आप खाने का काम कर सकते हैं। इसे पाने के लिए मेडिकल जाँच और यह टेस्ट ज़रूरी हैं। यह 1 साल चलता है, इसलिए ख़त्म होने से पहले इसे नया करवाएँ।"
+   },
+   "bn": {
+    "t": "হেলথ সার্টিফিকেট (স্বাস্থ্য কার্ড)",
+    "d": "যে কার্ড থাকলে আপনি খাবারের কাজ করতে পারেন। এটা পেতে মেডিকেল চেকআপ আর এই পরীক্ষা লাগে। এটা 1 বছর চলে, তাই শেষ হওয়ার আগেই নতুন করুন।"
+   },
+   "ar": {
+    "t": "الشهادة الصحية",
+    "d": "البطاقة التي تسمح لك بالعمل مع الطعام. تحتاج إلى فحص طبي وإلى هذا الاختبار لتحصل عليها. وهي صالحة لمدة سنة واحدة، فجدّدها قبل أن تنتهي."
+   },
+   "ne": {
+    "t": "हेल्थ सर्टिफिकेट (स्वास्थ्य प्रमाणपत्र)",
+    "d": "खानासम्बन्धी काम गर्न दिने कार्ड। यो पाउन स्वास्थ्य जाँच र यो परीक्षा चाहिन्छ। यो 1 वर्ष चल्छ, त्यसैले सकिनुअघि नै नवीकरण गर्नुहोस्।"
+   },
+   "ml": {
+    "t": "ഹെൽത്ത് സർട്ടിഫിക്കറ്റ്",
+    "d": "ഭക്ഷണവുമായി ജോലി ചെയ്യാൻ അനുവദിക്കുന്ന കാർഡ്. ഇത് കിട്ടാൻ മെഡിക്കൽ പരിശോധനയും ഈ ടെസ്റ്റും വേണം. ഇതിന് 1 വർഷം കാലാവധിയുണ്ട്, അതിനാൽ തീരുന്നതിന് മുമ്പ് പുതുക്കുക."
+   },
+   "ta": {
+    "t": "ஹெல்த் சர்டிஃபிகேட் (சுகாதாரச் சான்றிதழ்)",
+    "d": "உணவுடன் வேலை செய்ய அனுமதிக்கும் கார்டு. இதைப் பெற மருத்துவப் பரிசோதனையும் இந்தத் தேர்வும் தேவை. இது 1 வருடம் செல்லும், அதனால் முடிவதற்கு முன் புதுப்பியுங்கள்."
+   },
+   "fil": {
+    "t": "Health certificate",
+    "d": "Ang card na nagpapahintulot sa iyong magtrabaho sa pagkain. Kailangan mo ng medical check at ng test na ito para makuha ito. Tumatagal ito ng 1 taon, kaya i-renew mo ito bago ito matapos."
+   },
+   "ind": {
+    "t": "Sertifikat kesehatan",
+    "d": "Kartu yang membuat Anda boleh bekerja dengan makanan. Untuk mendapatkannya, Anda perlu pemeriksaan kesehatan dan tes ini. Kartu ini berlaku 1 tahun, jadi perpanjang sebelum habis."
+   },
+   "tr": {
+    "t": "Sağlık sertifikası",
+    "d": "Gıdayla çalışmana izin veren kart. Bu kartı almak için sağlık kontrolü ve bu sınav gerekir. Kart 1 yıl geçerlidir, bitmeden önce yenile."
+   }
+  },
+  {
+   "id": "w03",
+   "ch": 3,
+   "pic": {
+    "icon": "germ"
+   },
+   "en": {
+    "t": "Germs (bacteria)",
+    "d": "Tiny living things you cannot see. Some make food go bad and some make people sick. They grow fast in warm food."
+   },
+   "ur": {
+    "t": "جراثیم (بیکٹیریا)",
+    "d": "بہت چھوٹی زندہ چیزیں جو آنکھ سے نظر نہیں آتیں۔ کچھ کھانے کو خراب کرتے ہیں اور کچھ لوگوں کو بیمار کرتے ہیں۔ یہ ہلکے گرم کھانے میں تیزی سے بڑھتے ہیں۔"
+   },
+   "hi": {
+    "t": "कीटाणु (बैक्टीरिया)",
+    "d": "बहुत छोटे जीव जो आँख से नहीं दिखते। कुछ खाने को ख़राब करते हैं और कुछ लोगों को बीमार करते हैं। ये हल्के गरम खाने में तेज़ी से बढ़ते हैं।"
+   },
+   "bn": {
+    "t": "জীবাণু (ব্যাকটেরিয়া)",
+    "d": "খুব ছোট জীব, চোখে দেখা যায় না। কিছু খাবার নষ্ট করে আর কিছু মানুষকে অসুস্থ করে। হালকা গরম খাবারে এরা তাড়াতাড়ি বাড়ে।"
+   },
+   "ar": {
+    "t": "الجراثيم (البكتيريا)",
+    "d": "كائنات حية صغيرة جداً لا تراها بعينك. بعضها يفسد الطعام، وبعضها يسبب المرض للناس. تنمو بسرعة في الطعام الدافئ."
+   },
+   "ne": {
+    "t": "किटाणु (ब्याक्टेरिया)",
+    "d": "आँखाले देख्न नसकिने साना जीव। कतिले खाना बिगार्छन् र कतिले मान्छेलाई बिरामी बनाउँछन्। मनतातो खानामा यिनीहरू छिटो बढ्छन्।"
+   },
+   "ml": {
+    "t": "അണുക്കൾ (ബാക്ടീരിയ)",
+    "d": "കണ്ണുകൊണ്ട് കാണാൻ പറ്റാത്ത വളരെ ചെറിയ ജീവികൾ. ചിലത് ഭക്ഷണം കേടാക്കും, ചിലത് ആളുകൾക്ക് അസുഖം ഉണ്ടാക്കും. ഇളം ചൂടുള്ള ഭക്ഷണത്തിൽ ഇവ വേഗം വളരും."
+   },
+   "ta": {
+    "t": "கிருமிகள் (பாக்டீரியா)",
+    "d": "கண்ணுக்குத் தெரியாத மிகச் சிறிய உயிரினங்கள். சில உணவைக் கெடுக்கும், சில மனிதர்களுக்கு நோய் உண்டாக்கும். வெதுவெதுப்பான உணவில் இவை வேகமாக வளரும்."
+   },
+   "fil": {
+    "t": "Mikrobyo (bacteria)",
+    "d": "Napakaliliit na buhay na bagay na hindi mo nakikita. May mga nagpapasira ng pagkain at may mga nagpapasakit ng tao. Mabilis silang dumami sa maligamgam na pagkain."
+   },
+   "ind": {
+    "t": "Kuman (bakteri)",
+    "d": "Makhluk hidup sangat kecil yang tidak bisa Anda lihat. Ada yang membuat makanan basi dan ada yang membuat orang sakit. Kuman cepat tumbuh di makanan yang hangat."
+   },
+   "tr": {
+    "t": "Mikroplar (bakteriler)",
+    "d": "Gözle göremediğin çok küçük canlılar. Bazıları gıdayı bozar, bazıları insanları hasta eder. Ilık gıdada hızlı çoğalırlar."
+   }
+  },
+  {
+   "id": "w04",
+   "ch": 3,
+   "pic": {
+    "thermo": "zone"
+   },
+   "en": {
+    "t": "Danger zone",
+    "d": "From 5°C to 63°C. Germs grow fastest in this range. Keep cold food at 5°C or below and hot food at 63°C or above."
+   },
+   "ur": {
+    "t": "خطرناک درجہ حرارت (ڈینجر زون)",
+    "d": "5°C سے 63°C تک۔ اس درجہ حرارت میں جراثیم سب سے تیزی سے بڑھتے ہیں۔ ٹھنڈا کھانا 5°C یا اس سے کم پر اور گرم کھانا 63°C یا اس سے زیادہ پر رکھیں۔"
+   },
+   "hi": {
+    "t": "खतरे वाला तापमान (डेंजर ज़ोन)",
+    "d": "5°C से 63°C तक। इस तापमान में कीटाणु सबसे तेज़ी से बढ़ते हैं। ठंडा खाना 5°C या उससे कम पर और गरम खाना 63°C या उससे ज़्यादा पर रखें।"
+   },
+   "bn": {
+    "t": "বিপজ্জনক তাপমাত্রা (ডেঞ্জার জোন)",
+    "d": "5°C থেকে 63°C পর্যন্ত। এই তাপমাত্রায় জীবাণু সবচেয়ে দ্রুত বাড়ে। ঠান্ডা খাবার 5°C বা তার কমে আর গরম খাবার 63°C বা তার বেশিতে রাখুন।"
+   },
+   "ar": {
+    "t": "منطقة الخطر",
+    "d": "من 5°C إلى 63°C. في هذه الحرارة تنمو الجراثيم أسرع شيء. احفظ الطعام البارد على 5°C أو أقل، والطعام الساخن على 63°C أو أكثر."
+   },
+   "ne": {
+    "t": "खतराको तापक्रम (डेन्जर जोन)",
+    "d": "5°C देखि 63°C सम्म। यो तापक्रममा किटाणु सबैभन्दा छिटो बढ्छन्। चिसो खाना 5°C वा त्योभन्दा कममा र तातो खाना 63°C वा त्योभन्दा बढीमा राख्नुहोस्।"
+   },
+   "ml": {
+    "t": "അപകട മേഖല (ഡേഞ്ചർ സോൺ)",
+    "d": "5°C മുതൽ 63°C വരെ. ഈ ചൂടിലാണ് അണുക്കൾ ഏറ്റവും വേഗം വളരുന്നത്. തണുത്ത ഭക്ഷണം 5°C അല്ലെങ്കിൽ അതിനു താഴെയും, ചൂടുള്ള ഭക്ഷണം 63°C അല്ലെങ്കിൽ അതിനു മുകളിലും വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "ஆபத்தான வெப்பநிலை (டேஞ்சர் சோன்)",
+    "d": "5°C முதல் 63°C வரை. இந்த வெப்பநிலையில்தான் கிருமிகள் மிக வேகமாக வளரும். குளிர்ந்த உணவை 5°C அல்லது அதற்குக் கீழும், சூடான உணவை 63°C அல்லது அதற்கு மேலும் வையுங்கள்."
+   },
+   "fil": {
+    "t": "Danger zone (delikadong init)",
+    "d": "Mula 5°C hanggang 63°C. Dito pinakamabilis dumami ang mikrobyo. Panatilihin ang malamig na pagkain sa 5°C o mas mababa, at ang mainit na pagkain sa 63°C o mas mataas."
+   },
+   "ind": {
+    "t": "Zona bahaya",
+    "d": "Dari 5°C sampai 63°C. Kuman paling cepat tumbuh pada suhu ini. Simpan makanan dingin pada 5°C atau lebih rendah, dan makanan panas pada 63°C atau lebih tinggi."
+   },
+   "tr": {
+    "t": "Tehlikeli sıcaklık aralığı",
+    "d": "5°C ile 63°C arası. Mikroplar en hızlı bu aralıkta çoğalır. Soğuk gıdayı 5°C veya altında, sıcak gıdayı 63°C veya üstünde tut."
+   }
+  },
+  {
+   "id": "w05",
+   "ch": 6,
+   "pic": {
+    "icon": "sick"
+   },
+   "en": {
+    "t": "Food poisoning",
+    "d": "Getting sick from bad food, with stomach pain, vomiting, diarrhoea or fever. It usually starts 2 to 36 hours after eating."
+   },
+   "ur": {
+    "t": "فوڈ پوائزننگ (کھانے سے ہونے والی بیماری)",
+    "d": "خراب کھانا کھا کر بیمار ہونا، جس میں پیٹ درد، الٹی، دست یا بخار ہوتا ہے۔ یہ عام طور پر کھانے کے 2 سے 36 گھنٹے بعد شروع ہوتی ہے۔"
+   },
+   "hi": {
+    "t": "फ़ूड पॉइज़निंग (ख़राब खाने से बीमारी)",
+    "d": "ख़राब खाना खाकर बीमार होना, जिसमें पेट दर्द, उल्टी, दस्त या बुख़ार होता है। यह आम तौर पर खाने के 2 से 36 घंटे बाद शुरू होती है।"
+   },
+   "bn": {
+    "t": "ফুড পয়জনিং (খারাপ খাবার থেকে অসুখ)",
+    "d": "খারাপ খাবার খেয়ে অসুস্থ হওয়া, সাথে পেট ব্যথা, বমি, ডায়রিয়া (পাতলা পায়খানা) বা জ্বর। সাধারণত খাওয়ার 2 থেকে 36 ঘণ্টা পরে শুরু হয়।"
+   },
+   "ar": {
+    "t": "التسمم الغذائي",
+    "d": "المرض بسبب طعام فاسد أو ملوث، مع ألم في البطن أو تقيؤ أو إسهال أو حمى. يبدأ عادة بعد 2 إلى 36 ساعة من الأكل."
+   },
+   "ne": {
+    "t": "खानाबाट हुने बिरामी (फुड पोइजनिङ)",
+    "d": "बिग्रेको खाना खाएर बिरामी हुनु, पेट दुख्ने, बान्ता, पखाला वा ज्वरो आउने। यो प्रायः खाएको 2 देखि 36 घण्टापछि सुरु हुन्छ।"
+   },
+   "ml": {
+    "t": "ഭക്ഷ്യവിഷബാധ",
+    "d": "കേടായ ഭക്ഷണം കഴിച്ച് അസുഖം വരുന്നത്. വയറുവേദന, ഛർദ്ദി, വയറിളക്കം, പനി എന്നിവ ഉണ്ടാകും. സാധാരണ കഴിച്ച് 2 മുതൽ 36 മണിക്കൂർ കഴിഞ്ഞ് തുടങ്ങും."
+   },
+   "ta": {
+    "t": "உணவு நச்சு (ஃபுட் பாய்சனிங்)",
+    "d": "கெட்ட உணவைச் சாப்பிட்டு நோய் வருவது. வயிற்று வலி, வாந்தி, வயிற்றுப்போக்கு அல்லது காய்ச்சல் வரும். பொதுவாகச் சாப்பிட்டு 2 முதல் 36 மணி நேரத்தில் தொடங்கும்."
+   },
+   "fil": {
+    "t": "Food poisoning (pagkalason sa pagkain)",
+    "d": "Pagkakasakit dahil sa sirang pagkain, na may sakit ng tiyan, pagsusuka, pagtatae o lagnat. Kadalasan nagsisimula ito 2 hanggang 36 na oras pagkatapos kumain."
+   },
+   "ind": {
+    "t": "Keracunan makanan",
+    "d": "Sakit karena makanan yang buruk, dengan sakit perut, muntah, diare atau demam. Biasanya mulai 2 sampai 36 jam setelah makan."
+   },
+   "tr": {
+    "t": "Gıda zehirlenmesi",
+    "d": "Bozuk gıda yüzünden hastalanmak. Karın ağrısı, kusma, ishal ya da ateş olur. Genelde yedikten 2 ile 36 saat sonra başlar."
+   }
+  },
+  {
+   "id": "w06",
+   "ch": 2,
+   "pic": {
+    "video": "/videos/cross-contamination.mp4"
+   },
+   "en": {
+    "t": "Cross-contamination",
+    "d": "When germs move from raw food, dirty hands or dirty tools to food that is ready to eat. In the video, raw chicken is cut on the board used for vegetables without cleaning it first. That is wrong."
+   },
+   "ur": {
+    "t": "کراس کنٹیمینیشن (جراثیم کا ایک چیز سے دوسری پر جانا)",
+    "d": "جب جراثیم کچے کھانے، گندے ہاتھوں یا گندے اوزاروں سے تیار کھانے پر چلے جائیں۔ ویڈیو میں کچی مرغی اسی بورڈ پر کاٹی جاتی ہے جو سبزیوں کا ہے، اور بورڈ پہلے صاف نہیں کیا جاتا۔ یہ غلط ہے۔"
+   },
+   "hi": {
+    "t": "क्रॉस-कंटैमिनेशन (कीटाणु का एक चीज़ से दूसरी पर जाना)",
+    "d": "जब कीटाणु कच्चे खाने, गंदे हाथों या गंदे औज़ारों से तैयार खाने पर चले जाएँ। वीडियो में कच्चा चिकन उसी बोर्ड पर काटा जाता है जो सब्ज़ियों का है, और बोर्ड पहले साफ़ नहीं किया जाता। यह ग़लत है।"
+   },
+   "bn": {
+    "t": "ক্রস-কন্টামিনেশন (জীবাণু এক জিনিস থেকে আরেক জিনিসে যাওয়া)",
+    "d": "যখন কাঁচা খাবার, নোংরা হাত বা নোংরা যন্ত্রপাতি থেকে জীবাণু খাওয়ার জন্য তৈরি খাবারে চলে যায়। ভিডিওতে সবজির বোর্ডেই কাঁচা মুরগি কাটা হয়, আগে বোর্ড পরিষ্কার না করে। এটা ভুল।"
+   },
+   "ar": {
+    "t": "التلوث الخلطي (انتقال الجراثيم من شيء إلى آخر)",
+    "d": "عندما تنتقل الجراثيم من الطعام النيء أو من اليدين الوسختين أو من الأدوات الوسخة إلى الطعام الجاهز للأكل. في الفيديو يُقطع الدجاج النيء على لوح الخضار بدون تنظيفه أولاً. هذا خطأ."
+   },
+   "ne": {
+    "t": "एउटा कुराबाट अर्कोमा किटाणु सर्नु (क्रस-कन्टामिनेसन)",
+    "d": "काँचो खाना, फोहोर हात वा फोहोर औजारबाट किटाणु सिधै खाने खानामा सर्नु। भिडियोमा, तरकारी काट्ने पाटीमा पहिले सफा नगरी काँचो कुखुरा काटिन्छ। यो गलत हो।"
+   },
+   "ml": {
+    "t": "ക്രോസ് കണ്ടാമിനേഷൻ (ഒന്നിൽ നിന്ന് മറ്റൊന്നിലേക്ക് അണുക്കൾ പകരൽ)",
+    "d": "പച്ച ഭക്ഷണത്തിൽ നിന്നോ, വൃത്തികെട്ട കൈകളിൽ നിന്നോ, വൃത്തികെട്ട ഉപകരണങ്ങളിൽ നിന്നോ അണുക്കൾ നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണത്തിലേക്ക് പകരുന്നത്. വീഡിയോയിൽ, പച്ചക്കറി മുറിക്കുന്ന ബോർഡ് കഴുകാതെ അതിൽ പച്ച ചിക്കൻ മുറിക്കുന്നു. അത് തെറ്റാണ്."
+   },
+   "ta": {
+    "t": "கிருமிகள் ஒன்றிலிருந்து மற்றொன்றுக்குப் பரவுதல் (கிராஸ் கன்டாமினேஷன்)",
+    "d": "பச்சையான உணவு, அழுக்கான கைகள் அல்லது அழுக்கான கருவிகளிலிருந்து கிருமிகள் அப்படியே சாப்பிடக்கூடிய உணவுக்குப் போவது. வீடியோவில், காய்கறி வெட்டும் பலகையைக் கழுவாமலே அதில் பச்சைக் கோழி வெட்டப்படுகிறது. அது தவறு."
+   },
+   "fil": {
+    "t": "Cross-contamination (paglipat ng mikrobyo mula hilaw papunta sa luto)",
+    "d": "Kapag lumipat ang mikrobyo mula sa hilaw na pagkain, maruming kamay o maruming gamit papunta sa pagkaing handa nang kainin. Sa video, hiniwa ang hilaw na manok sa chopping board na para sa gulay nang hindi muna ito nililinis. Mali iyon."
+   },
+   "ind": {
+    "t": "Kontaminasi silang (kuman pindah dari satu makanan ke makanan lain)",
+    "d": "Saat kuman pindah dari makanan mentah, tangan kotor atau alat kotor ke makanan siap makan. Di video, ayam mentah dipotong di talenan untuk sayur tanpa dibersihkan dulu. Itu salah."
+   },
+   "tr": {
+    "t": "Çapraz bulaşma (mikrobun bir şeyden diğerine geçmesi)",
+    "d": "Mikropların çiğ gıdadan, kirli ellerden ya da kirli aletlerden hazır yenecek gıdaya geçmesi. Videoda çiğ tavuk, sebze için kullanılan kesme tahtasında, tahta önce temizlenmeden kesiliyor. Bu yanlış."
+   }
+  },
+  {
+   "id": "w07",
+   "ch": 3,
+   "pic": {
+    "icon": "meat"
+   },
+   "en": {
+    "t": "Raw food",
+    "d": "Food that is not cooked yet, like raw meat, chicken, fish and eggs. It can carry germs, so keep it away from ready-to-eat food."
+   },
+   "ur": {
+    "t": "کچا کھانا",
+    "d": "وہ کھانا جو ابھی پکا نہیں، جیسے کچا گوشت، مرغی، مچھلی اور انڈے۔ اس میں جراثیم ہو سکتے ہیں، اس لیے اسے تیار کھانے سے دور رکھیں۔"
+   },
+   "hi": {
+    "t": "कच्चा खाना",
+    "d": "वह खाना जो अभी पका नहीं है, जैसे कच्चा मांस, चिकन, मछली और अंडे। इसमें कीटाणु हो सकते हैं, इसलिए इसे तैयार खाने से दूर रखें।"
+   },
+   "bn": {
+    "t": "কাঁচা খাবার",
+    "d": "যে খাবার এখনো রান্না হয়নি, যেমন কাঁচা মাংস, মুরগি, মাছ আর ডিম। এতে জীবাণু থাকতে পারে, তাই খাওয়ার জন্য তৈরি খাবার থেকে দূরে রাখুন।"
+   },
+   "ar": {
+    "t": "الطعام النيء",
+    "d": "طعام لم يُطبخ بعد، مثل اللحم النيء والدجاج والسمك والبيض. قد يحمل جراثيم، فأبعده عن الطعام الجاهز للأكل."
+   },
+   "ne": {
+    "t": "काँचो खाना",
+    "d": "अझै नपकाएको खाना, जस्तै काँचो मासु, कुखुरा, माछा र अण्डा। यसमा किटाणु हुन सक्छ, त्यसैले यसलाई सिधै खाने खानाबाट टाढा राख्नुहोस्।"
+   },
+   "ml": {
+    "t": "പച്ച (വേവിക്കാത്ത) ഭക്ഷണം",
+    "d": "ഇനിയും വേവിക്കാത്ത ഭക്ഷണം. ഉദാഹരണം പച്ച ഇറച്ചി, ചിക്കൻ, മീൻ, മുട്ട. ഇതിൽ അണുക്കൾ ഉണ്ടാകാം, അതിനാൽ നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണത്തിൽ നിന്ന് മാറ്റി വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "பச்சையான (சமைக்காத) உணவு",
+    "d": "இன்னும் சமைக்காத உணவு, உதாரணமாகப் பச்சை இறைச்சி, கோழி, மீன், முட்டை. இதில் கிருமிகள் இருக்கலாம், அதனால் அப்படியே சாப்பிடக்கூடிய உணவிலிருந்து தள்ளி வையுங்கள்."
+   },
+   "fil": {
+    "t": "Hilaw na pagkain",
+    "d": "Pagkaing hindi pa luto, gaya ng hilaw na karne, manok, isda at itlog. Puwede itong may mikrobyo, kaya ilayo ito sa pagkaing handa nang kainin."
+   },
+   "ind": {
+    "t": "Makanan mentah",
+    "d": "Makanan yang belum dimasak, seperti daging, ayam, ikan dan telur mentah. Makanan ini bisa membawa kuman, jadi jauhkan dari makanan siap makan."
+   },
+   "tr": {
+    "t": "Çiğ gıda",
+    "d": "Henüz pişmemiş gıda, örneğin çiğ et, tavuk, balık ve yumurta. Mikrop taşıyabilir, bu yüzden hazır yenecek gıdadan uzak tut."
+   }
+  },
+  {
+   "id": "w08",
+   "ch": 3,
+   "pic": {
+    "icon": "plate"
+   },
+   "en": {
+    "t": "Ready-to-eat food",
+    "d": "Food that is eaten without more cooking, like salad, sandwiches, fruit and cooked dishes. If germs get on it, nothing kills them before someone eats it."
+   },
+   "ur": {
+    "t": "تیار کھانا (جو بغیر پکائے کھایا جائے)",
+    "d": "وہ کھانا جو مزید پکائے بغیر کھایا جاتا ہے، جیسے سلاد، سینڈوچ، پھل اور پکے ہوئے کھانے۔ اگر اس پر جراثیم لگ جائیں تو کھانے سے پہلے کوئی چیز انہیں نہیں مارتی۔"
+   },
+   "hi": {
+    "t": "तैयार खाना (जो बिना पकाए खाया जाता है)",
+    "d": "वह खाना जो और पकाए बिना खाया जाता है, जैसे सलाद, सैंडविच, फल और पका हुआ खाना। अगर इस पर कीटाणु लग जाएँ, तो खाने से पहले कोई चीज़ उन्हें नहीं मारती।"
+   },
+   "bn": {
+    "t": "খাওয়ার জন্য তৈরি খাবার (রান্না ছাড়াই খাওয়া হয়)",
+    "d": "যে খাবার আর রান্না না করেই খাওয়া হয়, যেমন সালাদ, স্যান্ডউইচ, ফল আর রান্না করা খাবার। এতে জীবাণু লাগলে, কেউ খাওয়ার আগে কিছুই সেগুলো মারে না।"
+   },
+   "ar": {
+    "t": "الطعام الجاهز للأكل",
+    "d": "طعام يؤكل بدون طبخ آخر، مثل السلطة والسندويشات والفواكه والأطباق المطبوخة. إذا وصلت إليه الجراثيم فلا شيء يقتلها قبل أن يأكله أحد."
+   },
+   "ne": {
+    "t": "सिधै खाने खाना (नपकाई खाइने)",
+    "d": "फेरि नपकाई खाइने खाना, जस्तै सलाद, स्यान्डविच, फलफूल र पकाएका परिकार। यसमा किटाणु पर्‍यो भने, कसैले खानुअघि तिनलाई कुनै कुराले मार्दैन।"
+   },
+   "ml": {
+    "t": "നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണം",
+    "d": "ഇനി വേവിക്കാതെ കഴിക്കുന്ന ഭക്ഷണം. ഉദാഹരണം സാലഡ്, സാൻഡ്‌വിച്ച്, പഴങ്ങൾ, വേവിച്ച കറികൾ. ഇതിൽ അണുക്കൾ വീണാൽ, ആരെങ്കിലും കഴിക്കുന്നതിന് മുമ്പ് അവയെ കൊല്ലാൻ ഒന്നുമില്ല."
+   },
+   "ta": {
+    "t": "அப்படியே சாப்பிடக்கூடிய உணவு",
+    "d": "மீண்டும் சமைக்காமல் சாப்பிடும் உணவு, உதாரணமாகச் சாலட், சாண்ட்விச், பழங்கள், சமைத்த உணவுகள். இதில் கிருமிகள் பட்டால், யாராவது சாப்பிடுவதற்கு முன் அவற்றைக் கொல்ல எதுவும் இல்லை."
+   },
+   "fil": {
+    "t": "Pagkaing handa nang kainin",
+    "d": "Pagkaing kinakain nang hindi na niluluto ulit, gaya ng salad, sandwich, prutas at lutong ulam. Kapag nadapuan ito ng mikrobyo, walang papatay sa mga ito bago may kumain."
+   },
+   "ind": {
+    "t": "Makanan siap makan",
+    "d": "Makanan yang dimakan tanpa dimasak lagi, seperti salad, roti isi, buah dan masakan matang. Kalau kuman menempel, tidak ada yang membunuhnya sebelum orang memakannya."
+   },
+   "tr": {
+    "t": "Hazır yenecek gıda",
+    "d": "Tekrar pişirilmeden yenen gıda, örneğin salata, sandviç, meyve ve pişmiş yemekler. Üstüne mikrop bulaşırsa, biri yemeden önce onları öldürecek hiçbir şey yoktur."
+   }
+  },
+  {
+   "id": "w09",
+   "ch": 3,
+   "pic": {
+    "icon": "warn"
+   },
+   "en": {
+    "t": "High-risk food",
+    "d": "Food where germs grow easily, like cooked meat, ready meals, egg dishes, milk and cream. Keep it cold or keep it hot, never just warm."
+   },
+   "ur": {
+    "t": "زیادہ خطرے والا کھانا",
+    "d": "وہ کھانا جس میں جراثیم آسانی سے بڑھتے ہیں، جیسے پکا ہوا گوشت، بنے بنائے کھانے، انڈے والے کھانے، دودھ اور کریم۔ اسے ٹھنڈا رکھیں یا گرم رکھیں، کبھی صرف ہلکا گرم نہیں۔"
+   },
+   "hi": {
+    "t": "ज़्यादा खतरे वाला खाना",
+    "d": "वह खाना जिसमें कीटाणु आसानी से बढ़ते हैं, जैसे पका हुआ मांस, बना-बनाया खाना, अंडे वाली चीज़ें, दूध और क्रीम। इसे ठंडा रखें या गरम रखें, कभी सिर्फ़ हल्का गरम नहीं।"
+   },
+   "bn": {
+    "t": "বেশি ঝুঁকির খাবার",
+    "d": "যে খাবারে জীবাণু সহজে বাড়ে, যেমন রান্না করা মাংস, তৈরি করা খাবার, ডিমের খাবার, দুধ আর ক্রিম। এটা ঠান্ডা রাখুন বা গরম রাখুন, কখনো শুধু হালকা গরম নয়।"
+   },
+   "ar": {
+    "t": "الطعام عالي الخطورة",
+    "d": "طعام تنمو فيه الجراثيم بسهولة، مثل اللحم المطبوخ والوجبات الجاهزة وأطباق البيض والحليب والقشطة. احفظه بارداً أو ساخناً، ولا تتركه دافئاً أبداً."
+   },
+   "ne": {
+    "t": "धेरै जोखिम भएको खाना",
+    "d": "किटाणु सजिलै बढ्ने खाना, जस्तै पकाएको मासु, तयारी खाना, अण्डाका परिकार, दूध र क्रिम। यसलाई चिसो राख्नुहोस् वा तातो राख्नुहोस्, कहिल्यै मनतातो मात्र होइन।"
+   },
+   "ml": {
+    "t": "ഹൈ-റിസ്ക് ഭക്ഷണം (അണുക്കൾ എളുപ്പം വളരുന്നത്)",
+    "d": "അണുക്കൾ എളുപ്പം വളരുന്ന ഭക്ഷണം. ഉദാഹരണം വേവിച്ച ഇറച്ചി, റെഡി മീൽസ്, മുട്ട കൊണ്ടുള്ള വിഭവങ്ങൾ, പാൽ, ക്രീം. ഇത് തണുപ്പിച്ചോ ചൂടോടെയോ വയ്ക്കുക, ഒരിക്കലും ഇളം ചൂടിൽ വയ്ക്കരുത്."
+   },
+   "ta": {
+    "t": "அதிக ஆபத்துள்ள உணவு",
+    "d": "கிருமிகள் எளிதாக வளரும் உணவு, உதாரணமாகச் சமைத்த இறைச்சி, ரெடி மீல்ஸ், முட்டை உணவுகள், பால், கிரீம். இதைக் குளிராகவோ சூடாகவோ வையுங்கள், வெதுவெதுப்பாக ஒருபோதும் விடாதீர்கள்."
+   },
+   "fil": {
+    "t": "High-risk na pagkain (madaling pamahayan ng mikrobyo)",
+    "d": "Pagkaing madaling dumami ang mikrobyo, gaya ng lutong karne, handang ulam (ready meals), mga ulam na may itlog, gatas at cream. Panatilihin itong malamig o mainit, huwag lang maligamgam."
+   },
+   "ind": {
+    "t": "Makanan berisiko tinggi",
+    "d": "Makanan tempat kuman mudah tumbuh, seperti daging matang, makanan siap saji, masakan dari telur, susu dan krim. Simpan tetap dingin atau tetap panas, jangan hanya hangat."
+   },
+   "tr": {
+    "t": "Yüksek riskli gıda",
+    "d": "Mikropların kolay çoğaldığı gıda, örneğin pişmiş et, hazır yemekler, yumurtalı yemekler, süt ve krema. Ya soğuk tut ya sıcak tut, asla sadece ılık bırakma."
+   }
+  },
+  {
+   "id": "w10",
+   "ch": 12,
+   "pic": {
+    "thermo": "probe",
+    "v": 75
+   },
+   "en": {
+    "t": "Probe thermometer",
+    "d": "A thermometer with a metal spike. Push it into the thickest part of the food, wait 15 to 20 seconds and read the number. Clean and disinfect it before and after use."
+   },
+   "ur": {
+    "t": "پروب تھرمامیٹر (سوئی والا تھرمامیٹر)",
+    "d": "دھات کی نوک والا تھرمامیٹر۔ اسے کھانے کے سب سے موٹے حصے میں ڈالیں، 15 سے 20 سیکنڈ انتظار کریں اور نمبر پڑھیں۔ استعمال سے پہلے اور بعد اسے صاف کریں اور جراثیم سے پاک کریں۔"
+   },
+   "hi": {
+    "t": "प्रोब थर्मामीटर (सुई वाला थर्मामीटर)",
+    "d": "धातु की नोक वाला थर्मामीटर। इसे खाने के सबसे मोटे हिस्से में डालें, 15 से 20 सेकंड रुकें और नंबर पढ़ें। इस्तेमाल से पहले और बाद में इसे साफ़ और सैनिटाइज़ करें (कीटाणु मारें)।"
+   },
+   "bn": {
+    "t": "প্রোব থার্মোমিটার (সুই লাগানো থার্মোমিটার)",
+    "d": "ধাতুর সুচালো মাথাওয়ালা থার্মোমিটার। খাবারের সবচেয়ে মোটা অংশে ঢোকান, 15 থেকে 20 সেকেন্ড অপেক্ষা করুন আর সংখ্যাটা পড়ুন। ব্যবহারের আগে ও পরে পরিষ্কার করে জীবাণুমুক্ত করুন।"
+   },
+   "ar": {
+    "t": "ميزان الحرارة ذو السيخ",
+    "d": "ميزان حرارة له سيخ معدني. أدخله في أسمك جزء من الطعام، وانتظر 15 إلى 20 ثانية، ثم اقرأ الرقم. نظّفه وعقّمه قبل الاستعمال وبعده."
+   },
+   "ne": {
+    "t": "प्रोब थर्मामिटर (भित्र घुसाउने सुई भएको थर्मामिटर)",
+    "d": "धातुको सुई भएको थर्मामिटर। यसलाई खानाको सबैभन्दा बाक्लो भागमा घुसाउनुहोस्, 15 देखि 20 सेकेन्ड पर्खनुहोस् र अङ्क पढ्नुहोस्। प्रयोग गर्नुअघि र पछि यसलाई सफा गरेर किटाणुनाशक लगाउनुहोस्।"
+   },
+   "ml": {
+    "t": "പ്രോബ് തെർമോമീറ്റർ (കുത്തി നോക്കുന്ന തെർമോമീറ്റർ)",
+    "d": "ലോഹത്തിന്റെ കൂർത്ത മുനയുള്ള തെർമോമീറ്റർ. ഭക്ഷണത്തിന്റെ ഏറ്റവും കട്ടിയുള്ള ഭാഗത്ത് കുത്തിയിറക്കുക, 15 മുതൽ 20 സെക്കൻഡ് കാത്തിരിക്കുക, എന്നിട്ട് നമ്പർ നോക്കുക. ഉപയോഗിക്കുന്നതിന് മുമ്പും ശേഷവും ഇത് വൃത്തിയാക്കി അണുനശീകരണം ചെയ്യുക."
+   },
+   "ta": {
+    "t": "ப்ரோப் தெர்மாமீட்டர் (குத்திப் பார்க்கும் தெர்மாமீட்டர்)",
+    "d": "உலோக ஊசி முனை உள்ள தெர்மாமீட்டர். உணவின் தடிமனான பகுதியில் குத்துங்கள், 15 முதல் 20 வினாடிகள் காத்திருங்கள், பிறகு எண்ணைப் பாருங்கள். பயன்படுத்தும் முன்பும் பின்பும் இதைச் சுத்தம் செய்து கிருமிநீக்கம் செய்யுங்கள்."
+   },
+   "fil": {
+    "t": "Probe thermometer",
+    "d": "Thermometer na may matulis na bakal na dulo. Itusok ito sa pinakamakapal na bahagi ng pagkain, maghintay ng 15 hanggang 20 segundo at basahin ang numero. Linisin at i-disinfect ito bago at pagkatapos gamitin."
+   },
+   "ind": {
+    "t": "Termometer tusuk",
+    "d": "Termometer dengan ujung logam yang runcing. Tusukkan ke bagian paling tebal makanan, tunggu 15 sampai 20 detik, lalu baca angkanya. Bersihkan dan disinfeksi sebelum dan sesudah dipakai."
+   },
+   "tr": {
+    "t": "Batırmalı termometre",
+    "d": "Sivri metal ucu olan termometre. Ucu yemeğin en kalın yerine batır, 15 ile 20 saniye bekle ve sayıyı oku. Kullanmadan önce ve sonra temizle ve dezenfekte et."
+   }
+  },
+  {
+   "id": "w11",
+   "ch": 11,
+   "pic": {
+    "thermo": "probe",
+    "v": 75
+   },
+   "en": {
+    "t": "Cooking temperature",
+    "d": "The centre of cooked food must reach at least 75°C for 30 seconds. This kills most germs. The colour of the food does not show if it is cooked."
+   },
+   "ur": {
+    "t": "پکانے کا درجہ حرارت",
+    "d": "پکے ہوئے کھانے کا بیچ کم از کم 75°C تک پہنچے اور 30 سیکنڈ تک رہے۔ اس سے زیادہ تر جراثیم مر جاتے ہیں۔ کھانے کے رنگ سے پتا نہیں چلتا کہ وہ پک گیا ہے۔"
+   },
+   "hi": {
+    "t": "पकाने का तापमान",
+    "d": "पके हुए खाने का बीच का हिस्सा कम से कम 75°C तक पहुँचे और 30 सेकंड तक रहे। इससे ज़्यादातर कीटाणु मर जाते हैं। खाने के रंग से पता नहीं चलता कि वह पक गया है।"
+   },
+   "bn": {
+    "t": "রান্নার তাপমাত্রা",
+    "d": "রান্না করা খাবারের ভেতরের মাঝখান অন্তত 75°C এ পৌঁছে 30 সেকেন্ড থাকতে হবে। এতে বেশিরভাগ জীবাণু মরে যায়। খাবারের রং দেখে বোঝা যায় না যে রান্না হয়েছে কি না।"
+   },
+   "ar": {
+    "t": "حرارة الطبخ",
+    "d": "يجب أن يصل وسط الطعام المطبوخ إلى 75°C على الأقل لمدة 30 ثانية. هذا يقتل أكثر الجراثيم. لون الطعام لا يدل على أنه نضج."
+   },
+   "ne": {
+    "t": "पकाउने तापक्रम",
+    "d": "पकाएको खानाको बीच भाग कम्तीमा 75°C पुगेर 30 सेकेन्डसम्म रहनुपर्छ। यसले धेरैजसो किटाणु मार्छ। खानाको रङ हेरेर पाकेको छ कि छैन थाहा हुँदैन।"
+   },
+   "ml": {
+    "t": "വേവിക്കുന്ന ചൂട്",
+    "d": "വേവിച്ച ഭക്ഷണത്തിന്റെ നടുഭാഗം കുറഞ്ഞത് 75°C എത്തി 30 സെക്കൻഡ് നിൽക്കണം. ഇത് മിക്ക അണുക്കളെയും കൊല്ലും. ഭക്ഷണത്തിന്റെ നിറം നോക്കി വെന്തോ എന്ന് അറിയാൻ പറ്റില്ല."
+   },
+   "ta": {
+    "t": "சமைக்கும் வெப்பநிலை",
+    "d": "சமைத்த உணவின் நடுப்பகுதி குறைந்தது 75°C-ஐ அடைந்து 30 வினாடிகள் இருக்க வேண்டும். இது பெரும்பாலான கிருமிகளைக் கொல்லும். உணவின் நிறத்தைப் பார்த்து வெந்ததா என்று சொல்ல முடியாது."
+   },
+   "fil": {
+    "t": "Temperatura ng pagluluto",
+    "d": "Ang gitna ng lutong pagkain ay dapat umabot ng hindi bababa sa 75°C nang 30 segundo. Pinapatay nito ang karamihan ng mikrobyo. Hindi makikita sa kulay ng pagkain kung luto na ito."
+   },
+   "ind": {
+    "t": "Suhu memasak",
+    "d": "Bagian tengah makanan yang dimasak harus mencapai paling sedikit 75°C selama 30 detik. Ini membunuh sebagian besar kuman. Warna makanan tidak menunjukkan makanan sudah matang atau belum."
+   },
+   "tr": {
+    "t": "Pişirme sıcaklığı",
+    "d": "Pişen yemeğin ortası en az 75°C'ye ulaşmalı ve 30 saniye bu sıcaklıkta kalmalı. Bu, mikropların çoğunu öldürür. Yemeğin rengi, pişip pişmediğini göstermez."
+   }
+  },
+  {
+   "id": "w12",
+   "ch": 11,
+   "pic": {
+    "thermo": "probe",
+    "v": 85
+   },
+   "en": {
+    "t": "Reheating",
+    "d": "Heating cooked food again. The centre must go above 82°C."
+   },
+   "ur": {
+    "t": "دوبارہ گرم کرنا",
+    "d": "پکے ہوئے کھانے کو پھر سے گرم کرنا۔ اس کا بیچ 82°C سے زیادہ ہونا چاہیے۔"
+   },
+   "hi": {
+    "t": "दोबारा गरम करना",
+    "d": "पके हुए खाने को फिर से गरम करना। उसका बीच का हिस्सा 82°C से ज़्यादा होना चाहिए।"
+   },
+   "bn": {
+    "t": "আবার গরম করা",
+    "d": "রান্না করা খাবার আবার গরম করা। ভেতরের মাঝখান 82°C এর বেশি হতে হবে।"
+   },
+   "ar": {
+    "t": "إعادة التسخين",
+    "d": "تسخين الطعام المطبوخ مرة ثانية. يجب أن تصبح حرارة وسطه أعلى من 82°C."
+   },
+   "ne": {
+    "t": "फेरि तताउनु",
+    "d": "पकाएको खानालाई फेरि तताउनु। यसको बीच भाग 82°C भन्दा बढी पुग्नुपर्छ।"
+   },
+   "ml": {
+    "t": "വീണ്ടും ചൂടാക്കൽ",
+    "d": "വേവിച്ച ഭക്ഷണം വീണ്ടും ചൂടാക്കുന്നത്. നടുഭാഗം 82°C-ന് മുകളിൽ എത്തണം."
+   },
+   "ta": {
+    "t": "மீண்டும் சூடாக்குதல்",
+    "d": "சமைத்த உணவை மறுபடியும் சூடாக்குவது. நடுப்பகுதி 82°C-க்கு மேல் போக வேண்டும்."
+   },
+   "fil": {
+    "t": "Pag-init ulit (reheating)",
+    "d": "Pag-init ulit ng lutong pagkain. Ang gitna ay dapat lumampas sa 82°C."
+   },
+   "ind": {
+    "t": "Memanaskan ulang",
+    "d": "Memanaskan lagi makanan yang sudah dimasak. Bagian tengahnya harus lebih dari 82°C."
+   },
+   "tr": {
+    "t": "Tekrar ısıtmak",
+    "d": "Pişmiş yemeği yeniden ısıtmak. Ortası 82°C'nin üstüne çıkmalı."
+   }
+  },
+  {
+   "id": "w13",
+   "ch": 11,
+   "pic": {
+    "thermo": "hot",
+    "v": 65
+   },
+   "en": {
+    "t": "Hot holding",
+    "d": "Keeping cooked food hot until it is served, for example in a hot cabinet. It must stay at 63°C or above."
+   },
+   "ur": {
+    "t": "گرم رکھنا (ہاٹ ہولڈنگ)",
+    "d": "پکے ہوئے کھانے کو پیش کرنے تک گرم رکھنا، مثلاً ہاٹ کیبنٹ (گرم رکھنے والی الماری) میں۔ اسے 63°C یا اس سے زیادہ پر رہنا چاہیے۔"
+   },
+   "hi": {
+    "t": "गरम रखना (हॉट होल्डिंग)",
+    "d": "पके हुए खाने को परोसने तक गरम रखना, जैसे गरम कैबिनेट में। इसे 63°C या उससे ज़्यादा पर रहना चाहिए।"
+   },
+   "bn": {
+    "t": "গরম রাখা (হট হোল্ডিং)",
+    "d": "রান্না করা খাবার পরিবেশন পর্যন্ত গরম রাখা, যেমন হট কেবিনেটে (গরম রাখার আলমারি)। এটা 63°C বা তার বেশিতে থাকতে হবে।"
+   },
+   "ar": {
+    "t": "حفظ الطعام ساخناً",
+    "d": "إبقاء الطعام المطبوخ ساخناً حتى يُقدَّم، مثلاً في خزانة حفظ الطعام ساخناً. يجب أن يبقى على 63°C أو أكثر."
+   },
+   "ne": {
+    "t": "तातो राख्ने (हट होल्डिङ)",
+    "d": "पकाएको खाना नपस्केसम्म तातो राख्नु, जस्तै तातो राख्ने क्याबिनेटमा। यो 63°C वा त्योभन्दा बढीमा रहनुपर्छ।"
+   },
+   "ml": {
+    "t": "ചൂടോടെ വയ്ക്കൽ",
+    "d": "വേവിച്ച ഭക്ഷണം കൊടുക്കുന്നത് വരെ ചൂടോടെ വയ്ക്കുന്നത്, ഉദാഹരണം ചൂടോടെ വയ്ക്കുന്ന കാബിനറ്റിൽ. ഇത് 63°C അല്ലെങ്കിൽ അതിനു മുകളിൽ നിൽക്കണം."
+   },
+   "ta": {
+    "t": "சூடாக வைத்திருத்தல்",
+    "d": "சமைத்த உணவைப் பரிமாறும் வரை சூடாக வைத்திருப்பது, உதாரணமாகச் சூடாக வைக்கும் கேபினட்டில். அது 63°C அல்லது அதற்கு மேல் இருக்க வேண்டும்."
+   },
+   "fil": {
+    "t": "Hot holding (pinapanatiling mainit)",
+    "d": "Pagpapanatiling mainit ng lutong pagkain hanggang ihain, halimbawa sa hot cabinet. Dapat itong manatili sa 63°C o mas mataas."
+   },
+   "ind": {
+    "t": "Menjaga makanan tetap panas",
+    "d": "Menjaga makanan matang tetap panas sampai disajikan, misalnya di lemari penghangat makanan. Suhunya harus tetap 63°C atau lebih."
+   },
+   "tr": {
+    "t": "Sıcak tutma",
+    "d": "Pişmiş yemeği servis edilene kadar sıcak tutmak, örneğin sıcak tutma dolabında. 63°C veya üstünde kalmalı."
+   }
+  },
+  {
+   "id": "w14",
+   "ch": 12,
+   "pic": {
+    "thermo": "fridge",
+    "v": 3
+   },
+   "en": {
+    "t": "Fridge",
+    "d": "Keeps chilled food at 5°C or below. Set it between 0 and 4°C, and check and write down the temperature every day."
+   },
+   "ur": {
+    "t": "فریج",
+    "d": "ٹھنڈے کھانے کو 5°C یا اس سے کم پر رکھتا ہے۔ اسے 0 سے 4°C کے درمیان سیٹ کریں، اور ہر روز درجہ حرارت چیک کر کے لکھیں۔"
+   },
+   "hi": {
+    "t": "फ्रिज",
+    "d": "ठंडे खाने को 5°C या उससे कम पर रखता है। इसे 0 से 4°C के बीच सेट करें, और हर दिन तापमान जाँचकर लिखें।"
+   },
+   "bn": {
+    "t": "ফ্রিজ",
+    "d": "ঠান্ডা খাবার 5°C বা তার কমে রাখে। এটা 0 থেকে 4°C এর মধ্যে সেট করুন, আর প্রতিদিন তাপমাত্রা চেক করে লিখে রাখুন।"
+   },
+   "ar": {
+    "t": "الثلاجة",
+    "d": "تحفظ الطعام المبرّد على 5°C أو أقل. اضبطها بين 0 و4°C، وافحص حرارتها كل يوم واكتبها."
+   },
+   "ne": {
+    "t": "फ्रिज",
+    "d": "चिसो राखिएको खानालाई 5°C वा त्योभन्दा कममा राख्छ। यसलाई 0 देखि 4°C बीचमा मिलाउनुहोस्, र हरेक दिन तापक्रम जाँचेर लेख्नुहोस्।"
+   },
+   "ml": {
+    "t": "ഫ്രിഡ്ജ്",
+    "d": "തണുപ്പിച്ച ഭക്ഷണം 5°C അല്ലെങ്കിൽ അതിനു താഴെ വയ്ക്കുന്നു. ഇത് 0-നും 4°C-നും ഇടയിൽ സെറ്റ് ചെയ്യുക. എല്ലാ ദിവസവും താപനില നോക്കി എഴുതി വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "ஃப்ரிட்ஜ்",
+    "d": "குளிர வைத்த உணவை 5°C அல்லது அதற்குக் கீழ் வைக்கும். இதை 0 முதல் 4°C வரை செட் செய்யுங்கள். தினமும் வெப்பநிலையைப் பார்த்து எழுதி வையுங்கள்."
+   },
+   "fil": {
+    "t": "Ref",
+    "d": "Pinapanatili nito ang pinalamig na pagkain sa 5°C o mas mababa. I-set ito sa pagitan ng 0 at 4°C, at tingnan at isulat ang temperatura araw-araw."
+   },
+   "ind": {
+    "t": "Kulkas",
+    "d": "Menyimpan makanan dingin pada 5°C atau lebih rendah. Atur suhunya antara 0 dan 4°C, lalu periksa dan catat suhunya setiap hari."
+   },
+   "tr": {
+    "t": "Buzdolabı",
+    "d": "Soğuk tutulan gıdayı 5°C veya altında tutar. 0 ile 4°C arasına ayarla, sıcaklığı her gün kontrol et ve yaz."
+   }
+  },
+  {
+   "id": "w15",
+   "ch": 12,
+   "pic": {
+    "thermo": "freezer",
+    "v": -18
+   },
+   "en": {
+    "t": "Freezer",
+    "d": "Keeps frozen food at −18°C or colder. Freezing stops germs growing but does not kill them."
+   },
+   "ur": {
+    "t": "فریزر",
+    "d": "جمے ہوئے کھانے کو −18°C یا اس سے زیادہ ٹھنڈا رکھتا ہے۔ جمانے سے جراثیم کا بڑھنا رک جاتا ہے مگر وہ مرتے نہیں۔"
+   },
+   "hi": {
+    "t": "फ्रीज़र",
+    "d": "जमे हुए खाने को −18°C या उससे ज़्यादा ठंडा रखता है। जमाने से कीटाणुओं का बढ़ना रुक जाता है, पर वे मरते नहीं।"
+   },
+   "bn": {
+    "t": "ফ্রিজার",
+    "d": "জমাট খাবার −18°C বা তার চেয়ে বেশি ঠান্ডায় রাখে। জমালে জীবাণু বাড়া বন্ধ হয়, কিন্তু জীবাণু মরে না।"
+   },
+   "ar": {
+    "t": "الفريزر",
+    "d": "يحفظ الطعام المجمّد على −18°C أو أبرد. التجميد يوقف نمو الجراثيم لكنه لا يقتلها."
+   },
+   "ne": {
+    "t": "फ्रिजर",
+    "d": "जमेको खानालाई −18°C वा त्योभन्दा चिसोमा राख्छ। जमाउँदा किटाणु बढ्न रोकिन्छ तर तिनीहरू मर्दैनन्।"
+   },
+   "ml": {
+    "t": "ഫ്രീസർ",
+    "d": "ഫ്രോസൺ ഭക്ഷണം −18°C അല്ലെങ്കിൽ അതിലും തണുപ്പിൽ വയ്ക്കുന്നു. ഫ്രീസ് ചെയ്താൽ അണുക്കൾ വളരുന്നത് നിൽക്കും, പക്ഷേ അവ ചാകില്ല."
+   },
+   "ta": {
+    "t": "ஃப்ரீசர்",
+    "d": "உறைந்த உணவை −18°C அல்லது அதைவிடக் குளிரில் வைக்கும். உறைய வைத்தால் கிருமிகள் வளர்வது நிற்கும், ஆனால் அவை சாகாது."
+   },
+   "fil": {
+    "t": "Freezer",
+    "d": "Pinapanatili nito ang frozen na pagkain sa −18°C o mas malamig. Pinapahinto ng pagyeyelo ang pagdami ng mikrobyo pero hindi sila pinapatay."
+   },
+   "ind": {
+    "t": "Freezer",
+    "d": "Menyimpan makanan beku pada −18°C atau lebih dingin. Membekukan menghentikan pertumbuhan kuman, tetapi tidak membunuhnya."
+   },
+   "tr": {
+    "t": "Dondurucu",
+    "d": "Donmuş gıdayı −18°C veya daha soğukta tutar. Dondurmak mikropların çoğalmasını durdurur ama onları öldürmez."
+   }
+  },
+  {
+   "id": "w16",
+   "ch": 11,
+   "pic": {
+    "icon": "clock"
+   },
+   "en": {
+    "t": "Cooling",
+    "d": "Bringing hot food down to fridge temperature fast, within 1.5 hours. Use small, shallow containers."
+   },
+   "ur": {
+    "t": "ٹھنڈا کرنا",
+    "d": "گرم کھانے کو جلدی فریج والے درجہ حرارت تک لانا، 1.5 گھنٹے (ڈیڑھ گھنٹے) کے اندر۔ چھوٹے اور کم گہرے برتن استعمال کریں۔"
+   },
+   "hi": {
+    "t": "ठंडा करना",
+    "d": "गरम खाने को जल्दी फ्रिज वाले तापमान तक लाना, 1.5 घंटे (डेढ़ घंटे) के अंदर। छोटे और कम गहरे डिब्बे इस्तेमाल करें।"
+   },
+   "bn": {
+    "t": "ঠান্ডা করা",
+    "d": "গরম খাবার তাড়াতাড়ি ফ্রিজের তাপমাত্রায় নামানো, 1.5 ঘণ্টার (দেড় ঘণ্টার) মধ্যে। ছোট ও অগভীর পাত্র ব্যবহার করুন।"
+   },
+   "ar": {
+    "t": "التبريد",
+    "d": "تنزيل حرارة الطعام الساخن إلى حرارة الثلاجة بسرعة، خلال 1.5 ساعة (ساعة ونصف). استعمل أوعية صغيرة قليلة العمق."
+   },
+   "ne": {
+    "t": "सेलाउनु",
+    "d": "तातो खानालाई छिटो फ्रिजको तापक्रमसम्म झार्नु, 1.5 घण्टा (डेढ घण्टा) भित्र। साना र कम गहिरा भाँडा प्रयोग गर्नुहोस्।"
+   },
+   "ml": {
+    "t": "തണുപ്പിക്കൽ",
+    "d": "ചൂടുള്ള ഭക്ഷണം വേഗം ഫ്രിഡ്ജിലെ തണുപ്പിലേക്ക് എത്തിക്കുന്നത്, 1.5 മണിക്കൂറിനുള്ളിൽ (ഒന്നര മണിക്കൂർ). ചെറിയ, ആഴം കുറഞ്ഞ പാത്രങ്ങൾ ഉപയോഗിക്കുക."
+   },
+   "ta": {
+    "t": "ஆற வைத்தல்",
+    "d": "சூடான உணவை வேகமாக ஃப்ரிட்ஜ் வெப்பநிலைக்குக் கொண்டு வருவது, 1.5 மணி நேரத்துக்குள் (ஒன்றரை மணி நேரம்). சிறிய, ஆழமில்லாத டப்பாக்களைப் பயன்படுத்துங்கள்."
+   },
+   "fil": {
+    "t": "Pagpapalamig (cooling)",
+    "d": "Pagpapalamig ng mainit na pagkain hanggang temperatura ng ref nang mabilis, sa loob ng 1.5 oras (isa't kalahating oras). Gumamit ng maliliit at mababaw na lalagyan."
+   },
+   "ind": {
+    "t": "Mendinginkan",
+    "d": "Menurunkan suhu makanan panas sampai suhu kulkas dengan cepat, dalam 1.5 jam (satu setengah jam). Pakai wadah kecil yang dangkal."
+   },
+   "tr": {
+    "t": "Soğutmak",
+    "d": "Sıcak yemeği hızlıca, 1.5 saat (bir buçuk saat) içinde buzdolabı sıcaklığına indirmek. Küçük ve sığ kaplar kullan."
+   }
+  },
+  {
+   "id": "w17",
+   "ch": 12,
+   "pic": {
+    "icon": "snow"
+   },
+   "en": {
+    "t": "Thawing (defrosting)",
+    "d": "Letting frozen food become soft before cooking. Do it in the fridge (0 to 4°C) or in the microwave, never on the counter."
+   },
+   "ur": {
+    "t": "پگھلانا (ڈیفراسٹ کرنا)",
+    "d": "جمے ہوئے کھانے کو پکانے سے پہلے نرم ہونے دینا۔ یہ فریج میں (0 سے 4°C) یا مائیکروویو میں کریں، کبھی کاؤنٹر پر نہیں۔"
+   },
+   "hi": {
+    "t": "पिघलाना (डीफ़्रॉस्ट करना)",
+    "d": "जमे हुए खाने को पकाने से पहले नरम होने देना। यह फ्रिज में (0 से 4°C) या माइक्रोवेव में करें, कभी काउंटर पर नहीं।"
+   },
+   "bn": {
+    "t": "বরফ গলানো (ডিফ্রস্ট করা)",
+    "d": "রান্নার আগে জমাট খাবার নরম হতে দেওয়া। এটা ফ্রিজে (0 থেকে 4°C) বা মাইক্রোওয়েভে করুন, কখনো কাউন্টারে নয়।"
+   },
+   "ar": {
+    "t": "فك التجميد",
+    "d": "ترك الطعام المجمّد حتى يلين قبل الطبخ. افعل ذلك في الثلاجة (0 إلى 4°C) أو في المايكروويف، ولا تفعله أبداً على الطاولة."
+   },
+   "ne": {
+    "t": "बरफ पगाल्नु (डिफ्रस्ट)",
+    "d": "जमेको खानालाई पकाउनुअघि नरम हुन दिनु। यो फ्रिजमा (0 देखि 4°C) वा माइक्रोवेभमा गर्नुहोस्, कहिल्यै काउन्टरमा होइन।"
+   },
+   "ml": {
+    "t": "ഐസ് ഉരുക്കൽ (ഡിഫ്രോസ്റ്റ്)",
+    "d": "ഫ്രോസൺ ഭക്ഷണം വേവിക്കുന്നതിന് മുമ്പ് മയപ്പെടാൻ വയ്ക്കുന്നത്. ഇത് ഫ്രിഡ്ജിൽ (0 മുതൽ 4°C വരെ) അല്ലെങ്കിൽ മൈക്രോവേവിൽ ചെയ്യുക, ഒരിക്കലും മേശപ്പുറത്ത് വയ്ക്കരുത്."
+   },
+   "ta": {
+    "t": "ஐஸ் கரைய வைத்தல் (டீஃப்ராஸ்ட்)",
+    "d": "உறைந்த உணவைச் சமைப்பதற்கு முன் மென்மையாக ஆக விடுவது. இதை ஃப்ரிட்ஜில் (0 முதல் 4°C) அல்லது மைக்ரோவேவில் செய்யுங்கள், மேடையின் மேல் ஒருபோதும் வைக்காதீர்கள்."
+   },
+   "fil": {
+    "t": "Pag-defrost (lusawin ang yelo)",
+    "d": "Pagpapalambot ng frozen na pagkain bago lutuin. Gawin ito sa ref (0 hanggang 4°C) o sa microwave, huwag kailanman sa ibabaw ng mesa."
+   },
+   "ind": {
+    "t": "Mencairkan es (defrost)",
+    "d": "Membuat makanan beku menjadi lunak sebelum dimasak. Lakukan di kulkas (0 sampai 4°C) atau di microwave, jangan pernah di atas meja dapur."
+   },
+   "tr": {
+    "t": "Çözdürmek (buzunu çözmek)",
+    "d": "Donmuş gıdayı pişirmeden önce yumuşamaya bırakmak. Bunu buzdolabında (0 ile 4°C) ya da mikrodalgada yap, asla tezgahta yapma."
+   }
+  },
+  {
+   "id": "w18",
+   "ch": 12,
+   "pic": {
+    "icon": "calendar"
+   },
+   "en": {
+    "t": "Use-by date",
+    "d": "The last day that high-risk food like meat, fish or dairy is safe to use. After this date, throw it away."
+   },
+   "ur": {
+    "t": "یوز بائی تاریخ (استعمال کی آخری تاریخ)",
+    "d": "وہ آخری دن جب تک زیادہ خطرے والا کھانا، جیسے گوشت، مچھلی یا دودھ کی چیزیں، استعمال کے لیے محفوظ ہے۔ اس تاریخ کے بعد اسے پھینک دیں۔"
+   },
+   "hi": {
+    "t": "यूज़ बाय तारीख (इस्तेमाल की आख़िरी तारीख)",
+    "d": "वह आख़िरी दिन जब तक ज़्यादा खतरे वाला खाना, जैसे मांस, मछली या दूध की चीज़ें, इस्तेमाल के लिए सुरक्षित है। इस तारीख के बाद इसे फेंक दें।"
+   },
+   "bn": {
+    "t": "ইউজ বাই তারিখ (ব্যবহারের শেষ তারিখ)",
+    "d": "বেশি ঝুঁকির খাবার, যেমন মাংস, মাছ বা দুধের জিনিস, নিরাপদে ব্যবহারের শেষ দিন। এই তারিখের পরে ফেলে দিন।"
+   },
+   "ar": {
+    "t": "تاريخ انتهاء الصلاحية",
+    "d": "آخر يوم يكون فيه الطعام عالي الخطورة، مثل اللحم والسمك ومنتجات الألبان، آمناً للاستعمال. بعد هذا التاريخ ارمه."
+   },
+   "ne": {
+    "t": "प्रयोग गर्ने अन्तिम मिति (युज बाइ डेट)",
+    "d": "मासु, माछा वा दूधका सामान जस्ता धेरै जोखिम भएको खाना सुरक्षित रूपमा प्रयोग गर्न सकिने अन्तिम दिन। यो मितिपछि फालिदिनुहोस्।"
+   },
+   "ml": {
+    "t": "\"യൂസ് ബൈ\" തീയതി (ഈ ദിവസത്തിന് ശേഷം ഉപയോഗിക്കരുത്)",
+    "d": "ഇറച്ചി, മീൻ, പാൽ ഉൽപ്പന്നങ്ങൾ പോലുള്ള ഹൈ-റിസ്ക് ഭക്ഷണം സുരക്ഷിതമായി ഉപയോഗിക്കാവുന്ന അവസാന ദിവസം. ഈ തീയതി കഴിഞ്ഞാൽ കളയുക."
+   },
+   "ta": {
+    "t": "பயன்படுத்த வேண்டிய கடைசி தேதி (யூஸ்-பை தேதி)",
+    "d": "இறைச்சி, மீன், பால் பொருட்கள் போன்ற அதிக ஆபத்துள்ள உணவைப் பாதுகாப்பாகப் பயன்படுத்தக்கூடிய கடைசி நாள். இந்தத் தேதிக்குப் பிறகு தூக்கி எறியுங்கள்."
+   },
+   "fil": {
+    "t": "Use-by date (huling araw na puwedeng kainin)",
+    "d": "Ang huling araw na ligtas gamitin ang high-risk na pagkain gaya ng karne, isda o mga produktong gatas. Pagkalipas ng petsang ito, itapon ito."
+   },
+   "ind": {
+    "t": "Tanggal batas pakai",
+    "d": "Hari terakhir makanan berisiko tinggi seperti daging, ikan atau susu dan olahannya aman dipakai. Lewat tanggal ini, buang."
+   },
+   "tr": {
+    "t": "Son tüketim tarihi",
+    "d": "Et, balık ya da süt ürünleri gibi yüksek riskli gıdanın güvenle kullanılabileceği son gün. Bu tarihten sonra at."
+   }
+  },
+  {
+   "id": "w19",
+   "ch": 12,
+   "pic": {
+    "icon": "calendar"
+   },
+   "en": {
+    "t": "Best-before date",
+    "d": "The date until which long-life food like cans, dry food and frozen food is at its best quality."
+   },
+   "ur": {
+    "t": "بیسٹ بیفور تاریخ (اس تاریخ تک سب سے اچھا)",
+    "d": "وہ تاریخ جب تک لمبا چلنے والا کھانا، جیسے ڈبے، خشک کھانا اور جما ہوا کھانا، اپنی سب سے اچھی حالت میں رہتا ہے۔"
+   },
+   "hi": {
+    "t": "बेस्ट बिफ़ोर तारीख (इस तारीख तक सबसे अच्छा)",
+    "d": "वह तारीख जब तक लंबा चलने वाला खाना, जैसे डिब्बाबंद खाना, सूखा खाना और जमा हुआ खाना, अपनी सबसे अच्छी हालत में रहता है।"
+   },
+   "bn": {
+    "t": "বেস্ট বিফোর তারিখ (এই তারিখ পর্যন্ত সবচেয়ে ভালো)",
+    "d": "যে তারিখ পর্যন্ত অনেকদিন ভালো থাকা খাবার, যেমন টিনের খাবার, শুকনো খাবার আর জমাট খাবার, সবচেয়ে ভালো মানে থাকে।"
+   },
+   "ar": {
+    "t": "يُفضل استهلاكه قبل",
+    "d": "التاريخ الذي يبقى فيه الطعام طويل الحفظ، مثل المعلبات والمواد الجافة والطعام المجمّد، في أفضل جودة."
+   },
+   "ne": {
+    "t": "राम्रो गुणको अन्तिम मिति (बेस्ट बिफोर डेट)",
+    "d": "टिनका खाना, सुख्खा खाना र जमेको खाना जस्ता लामो समय टिक्ने खाना सबैभन्दा राम्रो गुणमा रहने मिति।"
+   },
+   "ml": {
+    "t": "\"ബെസ്റ്റ് ബിഫോർ\" തീയതി (ഈ ദിവസം വരെ ഏറ്റവും നല്ലത്)",
+    "d": "ടിൻ ഭക്ഷണം, ഉണങ്ങിയ സാധനങ്ങൾ, ഫ്രോസൺ ഭക്ഷണം പോലെ ഏറെക്കാലം ഇരിക്കുന്ന ഭക്ഷണം ഏറ്റവും നല്ല ഗുണത്തിൽ ഇരിക്കുന്ന അവസാന തീയതി."
+   },
+   "ta": {
+    "t": "சிறந்த தரத்துக்கான தேதி (பெஸ்ட்-பிஃபோர் தேதி)",
+    "d": "டின் உணவு, உலர் பொருட்கள், உறைந்த உணவு போன்ற நீண்ட நாள் கெடாத உணவு மிகச் சிறந்த தரத்தில் இருக்கும் கடைசி தேதி."
+   },
+   "fil": {
+    "t": "Best-before date (pinakamasarap bago ang petsang ito)",
+    "d": "Ang petsa kung hanggang kailan nasa pinakamagandang kalidad ang pagkaing matagal masira, gaya ng de-lata, tuyong pagkain at frozen na pagkain."
+   },
+   "ind": {
+    "t": "Tanggal \"baik digunakan sebelum\"",
+    "d": "Tanggal sampai kapan makanan yang tahan lama, seperti makanan kaleng, makanan kering dan makanan beku, masih dalam kualitas terbaiknya."
+   },
+   "tr": {
+    "t": "Tavsiye edilen tüketim tarihi",
+    "d": "Konserve, kuru gıda ve donmuş gıda gibi uzun ömürlü gıdaların en iyi kalitede kaldığı son tarih."
+   }
+  },
+  {
+   "id": "w20",
+   "ch": 12,
+   "pic": {
+    "icon": "boxes"
+   },
+   "en": {
+    "t": "First in, first out (FIFO)",
+    "d": "Use the older stock first. Put new deliveries behind or under the old ones."
+   },
+   "ur": {
+    "t": "پہلے آیا، پہلے استعمال (FIFO)",
+    "d": "پرانا سامان پہلے استعمال کریں۔ نئی ڈیلیوری کو پرانے سامان کے پیچھے یا نیچے رکھیں۔"
+   },
+   "hi": {
+    "t": "जो पहले आया, वो पहले इस्तेमाल (FIFO)",
+    "d": "पुराना स्टॉक पहले इस्तेमाल करें। नई डिलीवरी को पुराने सामान के पीछे या नीचे रखें।"
+   },
+   "bn": {
+    "t": "আগে এলে আগে ব্যবহার (FIFO)",
+    "d": "পুরোনো মাল আগে ব্যবহার করুন। নতুন ডেলিভারি পুরোনো মালের পেছনে বা নিচে রাখুন।"
+   },
+   "ar": {
+    "t": "الأقدم يُستعمل أولاً (FIFO)",
+    "d": "استعمل المخزون الأقدم أولاً. ضع البضاعة الواصلة الجديدة خلف القديمة أو تحتها."
+   },
+   "ne": {
+    "t": "पहिले आएको पहिले प्रयोग (FIFO)",
+    "d": "पुरानो सामान (स्टक) पहिले प्रयोग गर्नुहोस्। नयाँ डेलिभरी पुरानोको पछाडि वा मुनि राख्नुहोस्।"
+   },
+   "ml": {
+    "t": "ആദ്യം വന്നത് ആദ്യം ഉപയോഗിക്കുക (FIFO)",
+    "d": "പഴയ സ്റ്റോക്ക് ആദ്യം ഉപയോഗിക്കുക. പുതിയ ഡെലിവറി പഴയതിന്റെ പിന്നിലോ താഴെയോ വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "முதலில் வந்ததை முதலில் பயன்படுத்துங்கள் (FIFO)",
+    "d": "பழைய ஸ்டாக்கை முதலில் பயன்படுத்துங்கள். புதிதாக வந்த டெலிவரியைப் பழையதற்குப் பின்னால் அல்லது கீழே வையுங்கள்."
+   },
+   "fil": {
+    "t": "First in, first out o FIFO (unahing gamitin ang luma)",
+    "d": "Unahing gamitin ang mas lumang stock. Ilagay ang bagong delivery sa likod o sa ilalim ng mga luma."
+   },
+   "ind": {
+    "t": "Yang pertama masuk, pertama dipakai (FIFO)",
+    "d": "Pakai stok yang lama dulu. Taruh barang kiriman baru di belakang atau di bawah yang lama."
+   },
+   "tr": {
+    "t": "İlk giren ilk çıkar (FIFO)",
+    "d": "Önce eski stoku kullan. Yeni gelen malları eskilerin arkasına ya da altına koy."
+   }
+  },
+  {
+   "id": "w21",
+   "ch": 6,
+   "pic": {
+    "icon": "nut"
+   },
+   "en": {
+    "t": "Allergen",
+    "d": "A food that makes some people's body react badly, like peanuts, milk, eggs, wheat, fish, shrimp and sesame. Even a tiny amount can kill. There are 14 main allergens."
+   },
+   "ur": {
+    "t": "الرجی والی چیز (الرجن)",
+    "d": "ایسا کھانا جس سے کچھ لوگوں کا جسم برا ردعمل دیتا ہے، جیسے مونگ پھلی، دودھ، انڈے، گندم، مچھلی، جھینگا اور تل۔ بہت تھوڑی سی مقدار سے بھی جان جا سکتی ہے۔ 14 بڑی الرجی والی چیزیں ہیں۔"
+   },
+   "hi": {
+    "t": "एलर्जी वाली चीज़ (एलर्जन)",
+    "d": "ऐसा खाना जिससे कुछ लोगों का शरीर बुरी तरह रिएक्ट करता है, जैसे मूँगफली, दूध, अंडे, गेहूँ, मछली, झींगा और तिल। बहुत थोड़ी सी मात्रा से भी जान जा सकती है। 14 मुख्य एलर्जी वाली चीज़ें हैं।"
+   },
+   "bn": {
+    "t": "অ্যালার্জির খাবার (অ্যালার্জেন)",
+    "d": "যে খাবারে কিছু মানুষের শরীর খারাপভাবে প্রতিক্রিয়া করে, যেমন চিনাবাদাম, দুধ, ডিম, গম, মাছ, চিংড়ি আর তিল। খুব অল্প একটু খেলেও মানুষ মারা যেতে পারে। প্রধান অ্যালার্জির খাবার 14টি।"
+   },
+   "ar": {
+    "t": "مسبب الحساسية",
+    "d": "طعام يجعل جسم بعض الناس يتفاعل معه بشكل سيئ، مثل الفول السوداني والحليب والبيض والقمح والسمك والروبيان والسمسم. حتى كمية صغيرة جداً قد تقتل. هناك 14 مسبباً رئيسياً للحساسية."
+   },
+   "ne": {
+    "t": "एलर्जी गराउने खाना (एलर्जेन)",
+    "d": "कसै-कसैको शरीरमा नराम्रो असर गर्ने खाना, जस्तै बदाम, दूध, अण्डा, गहुँ, माछा, झिंगे माछा र तिल। अलिकति मात्रले पनि ज्यान लिन सक्छ। मुख्य एलर्जी गराउने खाना 14 वटा छन्।"
+   },
+   "ml": {
+    "t": "അലർജി ഉണ്ടാക്കുന്ന ഭക്ഷണം (അലർജൻ)",
+    "d": "ചിലരുടെ ശരീരത്തിന് മോശം പ്രതികരണം ഉണ്ടാക്കുന്ന ഭക്ഷണം. ഉദാഹരണം കപ്പലണ്ടി, പാൽ, മുട്ട, ഗോതമ്പ്, മീൻ, ചെമ്മീൻ, എള്ള്. വളരെ കുറച്ച് മതി ജീവൻ പോകാൻ. പ്രധാനമായി 14 അലർജൻ ഭക്ഷണങ്ങൾ ഉണ്ട്."
+   },
+   "ta": {
+    "t": "அலர்ஜி உண்டாக்கும் பொருள்",
+    "d": "சிலருடைய உடலில் மோசமான எதிர்வினை உண்டாக்கும் உணவு, உதாரணமாக வேர்க்கடலை, பால், முட்டை, கோதுமை, மீன், இறால், எள். மிகக் கொஞ்சம் கூட உயிரைப் பறிக்கலாம். முக்கியமான 14 அலர்ஜி உணவுகள் உள்ளன."
+   },
+   "fil": {
+    "t": "Allergen (pagkaing puwedeng magdulot ng allergy)",
+    "d": "Pagkaing nagdudulot ng masamang reaksyon sa katawan ng ilang tao, gaya ng mani, gatas, itlog, trigo, isda, hipon at linga. Kahit napakaliit na dami ay puwedeng makamatay. May 14 na pangunahing allergen."
+   },
+   "ind": {
+    "t": "Alergen (makanan yang bisa menyebabkan alergi)",
+    "d": "Makanan yang membuat tubuh sebagian orang bereaksi buruk, seperti kacang tanah, susu, telur, gandum, ikan, udang dan wijen. Sedikit saja bisa membunuh. Ada 14 alergen utama."
+   },
+   "tr": {
+    "t": "Alerjen (bazı insanlara alerji yapan gıda)",
+    "d": "Bazı insanların vücudunda kötü tepki yapan gıda, örneğin yer fıstığı, süt, yumurta, buğday, balık, karides ve susam. Çok küçük bir miktarı bile öldürebilir. 14 ana alerjen vardır."
+   }
+  },
+  {
+   "id": "w22",
+   "ch": 7,
+   "pic": {
+    "icon": "hands"
+   },
+   "en": {
+    "t": "Hand washing",
+    "d": "At the hand-wash sink only, with warm water and liquid soap, for at least 20 seconds. Dry your hands with a paper towel."
+   },
+   "ur": {
+    "t": "ہاتھ دھونا",
+    "d": "صرف ہاتھ دھونے والے سنک پر، نیم گرم پانی اور مائع صابن سے، کم از کم 20 سیکنڈ تک۔ ہاتھ کاغذی تولیے سے خشک کریں۔"
+   },
+   "hi": {
+    "t": "हाथ धोना",
+    "d": "सिर्फ़ हाथ धोने वाले सिंक पर, गुनगुने पानी और लिक्विड साबुन से, कम से कम 20 सेकंड तक। हाथ पेपर टॉवल से सुखाएँ।"
+   },
+   "bn": {
+    "t": "হাত ধোয়া",
+    "d": "শুধু হাত ধোয়ার বেসিনে, হালকা গরম পানি আর তরল সাবান দিয়ে, অন্তত 20 সেকেন্ড। কাগজের তোয়ালে দিয়ে হাত শুকান।"
+   },
+   "ar": {
+    "t": "غسل اليدين",
+    "d": "في مغسلة اليدين فقط، بماء دافئ وصابون سائل، لمدة 20 ثانية على الأقل. جفف يديك بمنديل ورقي."
+   },
+   "ne": {
+    "t": "हात धुनु",
+    "d": "हात धुने सिंकमा मात्र, मनतातो पानी र झोल साबुनले, कम्तीमा 20 सेकेन्डसम्म। हात कागजको रुमाल (पेपर टावल) ले सुकाउनुहोस्।"
+   },
+   "ml": {
+    "t": "കൈ കഴുകൽ",
+    "d": "കൈ കഴുകാനുള്ള സിങ്കിൽ മാത്രം, ഇളം ചൂടുവെള്ളവും ലിക്വിഡ് സോപ്പും ഉപയോഗിച്ച്, കുറഞ്ഞത് 20 സെക്കൻഡ്. പേപ്പർ ടവൽ കൊണ്ട് കൈ ഉണക്കുക."
+   },
+   "ta": {
+    "t": "கை கழுவுதல்",
+    "d": "கை கழுவும் சிங்கில் மட்டும், வெதுவெதுப்பான தண்ணீர் மற்றும் திரவ சோப்புடன், குறைந்தது 20 வினாடிகள். பேப்பர் டவலால் கையைத் துடையுங்கள்."
+   },
+   "fil": {
+    "t": "Paghuhugas ng kamay",
+    "d": "Sa lababo para sa paghuhugas ng kamay lang, gamit ang maligamgam na tubig at liquid soap, nang hindi bababa sa 20 segundo. Patuyuin ang kamay gamit ang paper towel."
+   },
+   "ind": {
+    "t": "Cuci tangan",
+    "d": "Hanya di wastafel cuci tangan, dengan air hangat dan sabun cair, paling sedikit 20 detik. Keringkan tangan dengan tisu kertas."
+   },
+   "tr": {
+    "t": "El yıkama",
+    "d": "Sadece el yıkama lavabosunda, ılık su ve sıvı sabunla, en az 20 saniye. Ellerini kağıt havluyla kurula."
+   }
+  },
+  {
+   "id": "w23",
+   "ch": 7,
+   "pic": {
+    "icon": "glove"
+   },
+   "en": {
+    "t": "Gloves",
+    "d": "Wash your hands before putting them on. Change them every 30 minutes, after touching raw food, rubbish or after a break, and when they tear. Gloves do not replace hand washing."
+   },
+   "ur": {
+    "t": "دستانے",
+    "d": "پہننے سے پہلے ہاتھ دھوئیں۔ انہیں ہر 30 منٹ بعد بدلیں، کچا کھانا یا کچرا چھونے کے بعد یا وقفے کے بعد بدلیں، اور جب پھٹ جائیں تب بھی۔ دستانے ہاتھ دھونے کی جگہ نہیں لیتے۔"
+   },
+   "hi": {
+    "t": "दस्ताने",
+    "d": "पहनने से पहले हाथ धोएँ। इन्हें हर 30 मिनट में बदलें, कच्चा खाना या कचरा छूने के बाद या ब्रेक के बाद बदलें, और जब फट जाएँ तब भी। दस्ताने हाथ धोने की जगह नहीं लेते।"
+   },
+   "bn": {
+    "t": "গ্লাভস",
+    "d": "পরার আগে হাত ধুয়ে নিন। প্রতি 30 মিনিটে বদলান, কাঁচা খাবার বা ময়লা ছোঁয়ার পরে বা বিরতির পরে বদলান, আর ছিঁড়ে গেলেও বদলান। গ্লাভস পরলেও হাত ধোয়া লাগবে।"
+   },
+   "ar": {
+    "t": "القفازات",
+    "d": "اغسل يديك قبل أن تلبسها. غيّرها كل 30 دقيقة، وبعد لمس الطعام النيء أو النفايات أو بعد الاستراحة، وعندما تتمزق. القفازات لا تغني عن غسل اليدين."
+   },
+   "ne": {
+    "t": "पन्जा (ग्लोभ्स)",
+    "d": "लगाउनुअघि हात धुनुहोस्। हरेक 30 मिनेटमा फेर्नुहोस्, काँचो खाना वा फोहोर छोएपछि वा ब्रेकपछि फेर्नुहोस्, र च्यातिँदा पनि फेर्नुहोस्। पन्जा लगाए पनि हात धुनैपर्छ।"
+   },
+   "ml": {
+    "t": "ഗ്ലൗസ്",
+    "d": "ഇടുന്നതിന് മുമ്പ് കൈ കഴുകുക. ഓരോ 30 മിനിറ്റിലും മാറ്റുക. പച്ച ഭക്ഷണമോ മാലിന്യമോ തൊട്ടതിന് ശേഷവും, ബ്രേക്ക് കഴിഞ്ഞും, കീറിയാലും മാറ്റുക. ഗ്ലൗസ് ഇട്ടാലും കൈ കഴുകണം."
+   },
+   "ta": {
+    "t": "கையுறைகள் (க்ளவுஸ்)",
+    "d": "அணிவதற்கு முன் கையைக் கழுவுங்கள். ஒவ்வொரு 30 நிமிடத்துக்கும் மாற்றுங்கள். பச்சையான உணவு அல்லது குப்பையைத் தொட்ட பிறகும், இடைவேளைக்குப் பிறகும், கிழிந்தாலும் மாற்றுங்கள். கையுறை போட்டாலும் கை கழுவ வேண்டும்."
+   },
+   "fil": {
+    "t": "Gloves",
+    "d": "Hugasan ang kamay bago isuot ang mga ito. Palitan ang mga ito tuwing 30 minuto, pagkatapos humawak ng hilaw na pagkain o basura, pagkatapos ng break, at kapag napunit. Hindi pamalit ang gloves sa paghuhugas ng kamay."
+   },
+   "ind": {
+    "t": "Sarung tangan",
+    "d": "Cuci tangan sebelum memakainya. Ganti setiap 30 menit, setelah menyentuh makanan mentah atau sampah, setelah istirahat, dan kalau robek. Sarung tangan tidak menggantikan cuci tangan."
+   },
+   "tr": {
+    "t": "Eldiven",
+    "d": "Takmadan önce ellerini yıka. Her 30 dakikada bir, çiğ gıdaya ya da çöpe dokunduktan sonra, moladan sonra ve yırtılınca değiştir. Eldiven, el yıkamanın yerini tutmaz."
+   }
+  },
+  {
+   "id": "w24",
+   "ch": 8,
+   "pic": {
+    "icon": "sponge"
+   },
+   "en": {
+    "t": "Cleaning",
+    "d": "Removing dirt, grease and bits of food with hot water and detergent (soap). Cleaning does not kill all germs."
+   },
+   "ur": {
+    "t": "صفائی",
+    "d": "گرم پانی اور ڈٹرجنٹ (صابن) سے گندگی، چکنائی اور کھانے کے ٹکڑے ہٹانا۔ صفائی سے سارے جراثیم نہیں مرتے۔"
+   },
+   "hi": {
+    "t": "सफ़ाई",
+    "d": "गरम पानी और डिटर्जेंट (साबुन) से गंदगी, चिकनाई और खाने के टुकड़े हटाना। सफ़ाई से सारे कीटाणु नहीं मरते।"
+   },
+   "bn": {
+    "t": "পরিষ্কার করা",
+    "d": "গরম পানি আর ডিটারজেন্ট (সাবান) দিয়ে ময়লা, তেল-চর্বি আর খাবারের টুকরা সরানো। পরিষ্কার করলেই সব জীবাণু মরে না।"
+   },
+   "ar": {
+    "t": "التنظيف",
+    "d": "إزالة الوسخ والدهون وبقايا الطعام بماء ساخن ومنظف (سائل التنظيف). التنظيف لا يقتل كل الجراثيم."
+   },
+   "ne": {
+    "t": "सफा गर्नु",
+    "d": "तातो पानी र डिटर्जेन्ट (साबुन) ले फोहोर, चिल्लो र खानाका टुक्रा हटाउनु। सफा गर्दैमा सबै किटाणु मर्दैनन्।"
+   },
+   "ml": {
+    "t": "വൃത്തിയാക്കൽ",
+    "d": "ചൂടുവെള്ളവും ഡിറ്റർജന്റും (സോപ്പ്) ഉപയോഗിച്ച് അഴുക്കും എണ്ണമയവും ഭക്ഷണത്തിന്റെ ബാക്കിയും നീക്കുന്നത്. വൃത്തിയാക്കിയാൽ എല്ലാ അണുക്കളും ചാകില്ല."
+   },
+   "ta": {
+    "t": "சுத்தம் செய்தல்",
+    "d": "சூடான தண்ணீர் மற்றும் டிடர்ஜென்ட் (சோப்புத் திரவம்) கொண்டு அழுக்கு, எண்ணெய்ப் பசை, உணவுத் துண்டுகளை நீக்குவது. சுத்தம் செய்தால் எல்லாக் கிருமிகளும் சாகாது."
+   },
+   "fil": {
+    "t": "Paglilinis",
+    "d": "Pag-alis ng dumi, mantika at piraso ng pagkain gamit ang mainit na tubig at detergent (sabon panlinis). Hindi pinapatay ng paglilinis ang lahat ng mikrobyo."
+   },
+   "ind": {
+    "t": "Membersihkan",
+    "d": "Menghilangkan kotoran, minyak dan sisa makanan dengan air panas dan deterjen (sabun cuci). Membersihkan tidak membunuh semua kuman."
+   },
+   "tr": {
+    "t": "Temizlik",
+    "d": "Kiri, yağı ve yemek parçalarını sıcak su ve deterjanla (sabun) gidermek. Temizlik, mikropların hepsini öldürmez."
+   }
+  },
+  {
+   "id": "w25",
+   "ch": 8,
+   "pic": {
+    "icon": "spray"
+   },
+   "en": {
+    "t": "Disinfecting (sanitising)",
+    "d": "Killing germs after cleaning, with a sanitiser or very hot water at 82°C. Always clean first, then disinfect."
+   },
+   "ur": {
+    "t": "جراثیم سے پاک کرنا (سینیٹائز کرنا)",
+    "d": "صفائی کے بعد جراثیم مارنا، سینیٹائزر سے یا 82°C والے بہت گرم پانی سے۔ ہمیشہ پہلے صاف کریں، پھر جراثیم سے پاک کریں۔"
+   },
+   "hi": {
+    "t": "सैनिटाइज़ करना (कीटाणु मारना)",
+    "d": "सफ़ाई के बाद कीटाणु मारना, सैनिटाइज़र से या 82°C वाले बहुत गरम पानी से। हमेशा पहले साफ़ करें, फिर सैनिटाइज़ करें।"
+   },
+   "bn": {
+    "t": "জীবাণুমুক্ত করা (স্যানিটাইজ করা)",
+    "d": "পরিষ্কারের পরে জীবাণু মারা, স্যানিটাইজার দিয়ে বা 82°C এর খুব গরম পানি দিয়ে। সবসময় আগে পরিষ্কার করুন, তারপর জীবাণুমুক্ত করুন।"
+   },
+   "ar": {
+    "t": "التطهير (قتل الجراثيم)",
+    "d": "قتل الجراثيم بعد التنظيف، بالمعقم أو بماء ساخن جداً على 82°C. نظّف أولاً دائماً، ثم طهّر."
+   },
+   "ne": {
+    "t": "किटाणुनाशक लगाउनु (किटाणु मार्नु)",
+    "d": "सफा गरेपछि स्यानिटाइजर वा 82°C को धेरै तातो पानीले किटाणु मार्नु। सधैँ पहिले सफा गर्नुहोस्, अनि किटाणुनाशक लगाउनुहोस्।"
+   },
+   "ml": {
+    "t": "അണുനശീകരണം (അണുക്കളെ കൊല്ലൽ, സാനിറ്റൈസ് ചെയ്യൽ)",
+    "d": "വൃത്തിയാക്കിയ ശേഷം അണുക്കളെ കൊല്ലുന്നത്, സാനിറ്റൈസർ കൊണ്ടോ 82°C ഉള്ള നല്ല ചൂടുവെള്ളം കൊണ്ടോ. എപ്പോഴും ആദ്യം വൃത്തിയാക്കുക, പിന്നെ അണുനശീകരണം ചെയ്യുക."
+   },
+   "ta": {
+    "t": "கிருமிநீக்கம் செய்தல் (கிருமிகளைக் கொல்லுதல், சானிடைஸ்)",
+    "d": "சுத்தம் செய்த பிறகு கிருமிகளைக் கொல்வது, சானிடைசர் அல்லது 82°C உள்ள மிகச் சூடான தண்ணீரால். எப்போதும் முதலில் சுத்தம் செய்யுங்கள், பிறகு கிருமிநீக்கம் செய்யுங்கள்."
+   },
+   "fil": {
+    "t": "Pag-disinfect o pag-sanitize (pagpatay ng mikrobyo)",
+    "d": "Pagpatay ng mikrobyo pagkatapos maglinis, gamit ang sanitizer o napakainit na tubig na 82°C. Laging maglinis muna, saka mag-disinfect."
+   },
+   "ind": {
+    "t": "Mendisinfeksi / menyanitasi (membunuh kuman)",
+    "d": "Membunuh kuman setelah dibersihkan, dengan sanitizer (cairan pembunuh kuman) atau air sangat panas 82°C. Selalu bersihkan dulu, baru disinfeksi."
+   },
+   "tr": {
+    "t": "Dezenfekte etmek (mikropları öldürmek)",
+    "d": "Temizledikten sonra mikropları sanitizer (mikrop öldürücü) ya da 82°C çok sıcak su ile öldürmek. Her zaman önce temizle, sonra dezenfekte et."
+   }
+  },
+  {
+   "id": "w26",
+   "ch": 12,
+   "pic": {
+    "icon": "timer"
+   },
+   "en": {
+    "t": "Contact time",
+    "d": "How long the sanitiser must stay on a surface to kill germs, usually 30 seconds to 5 minutes. Read the label."
+   },
+   "ur": {
+    "t": "مقررہ وقت (کانٹیکٹ ٹائم)",
+    "d": "سینیٹائزر کو جراثیم مارنے کے لیے سطح پر کتنی دیر لگا رہنا چاہیے، عام طور پر 30 سیکنڈ سے 5 منٹ۔ لیبل پڑھیں۔"
+   },
+   "hi": {
+    "t": "तय समय (कॉन्टैक्ट टाइम)",
+    "d": "सैनिटाइज़र को कीटाणु मारने के लिए सतह पर कितनी देर लगा रहना चाहिए, आम तौर पर 30 सेकंड से 5 मिनट। लेबल पढ़ें।"
+   },
+   "bn": {
+    "t": "নির্দিষ্ট সময় (কন্টাক্ট টাইম)",
+    "d": "জীবাণু মারতে স্যানিটাইজার কতক্ষণ জায়গার উপর লেগে থাকতে হবে, সাধারণত 30 সেকেন্ড থেকে 5 মিনিট। লেবেল পড়ুন।"
+   },
+   "ar": {
+    "t": "مدة التأثير",
+    "d": "المدة التي يجب أن يبقى فيها المعقم على السطح ليقتل الجراثيم، عادة من 30 ثانية إلى 5 دقائق. اقرأ الملصق."
+   },
+   "ne": {
+    "t": "लगाएर छोड्नुपर्ने समय",
+    "d": "किटाणु मार्न स्यानिटाइजर सतहमा कति बेर रहनुपर्छ, प्रायः 30 सेकेन्डदेखि 5 मिनेटसम्म। लेबल पढ्नुहोस्।"
+   },
+   "ml": {
+    "t": "കോൺടാക്ട് ടൈം (ലേബലിൽ പറയുന്ന സമയം വരെ വയ്ക്കൽ)",
+    "d": "അണുക്കളെ കൊല്ലാൻ സാനിറ്റൈസർ പ്രതലത്തിൽ എത്ര നേരം ഇരിക്കണം എന്നത്. സാധാരണ 30 സെക്കൻഡ് മുതൽ 5 മിനിറ്റ് വരെ. ലേബൽ വായിക്കുക."
+   },
+   "ta": {
+    "t": "தொடர்பு நேரம் (சானிடைசரை விட வேண்டிய நேரம்)",
+    "d": "கிருமிகளைக் கொல்ல சானிடைசர் மேற்பரப்பில் எவ்வளவு நேரம் இருக்க வேண்டும் என்பது, பொதுவாக 30 வினாடிகள் முதல் 5 நிமிடங்கள் வரை. லேபிளைப் படியுங்கள்."
+   },
+   "fil": {
+    "t": "Contact time (oras na dapat nakababad o nakalagay)",
+    "d": "Gaano katagal dapat manatili ang sanitizer sa surface para mapatay ang mikrobyo, kadalasan 30 segundo hanggang 5 minuto. Basahin ang label."
+   },
+   "ind": {
+    "t": "Waktu kontak (berapa lama cairan harus didiamkan)",
+    "d": "Berapa lama sanitizer harus tetap di permukaan untuk membunuh kuman, biasanya 30 detik sampai 5 menit. Baca labelnya."
+   },
+   "tr": {
+    "t": "Bekleme süresi (ilacın yüzeyde kalması gereken süre)",
+    "d": "Mikrop öldürücünün mikropları öldürmek için yüzeyde ne kadar kalması gerektiği, genelde 30 saniye ile 5 dakika arası. Etiketi oku."
+   }
+  },
+  {
+   "id": "w27",
+   "ch": 12,
+   "pic": {
+    "icon": "sink"
+   },
+   "en": {
+    "t": "Three-sink method",
+    "d": "Washing dishes by hand. Sink 1 wash with detergent at about 50°C, sink 2 rinse, sink 3 disinfect, then let them air dry."
+   },
+   "ur": {
+    "t": "تین سنک والا طریقہ",
+    "d": "ہاتھ سے برتن دھونا۔ سنک 1 میں تقریباً 50°C پانی اور ڈٹرجنٹ سے دھوئیں، سنک 2 میں صاف پانی سے کھنگالیں، سنک 3 میں جراثیم سے پاک کریں، پھر ہوا میں خشک ہونے دیں۔"
+   },
+   "hi": {
+    "t": "तीन सिंक वाला तरीका",
+    "d": "हाथ से बर्तन धोना। सिंक 1 में लगभग 50°C पानी और डिटर्जेंट से धोएँ, सिंक 2 में साफ़ पानी से खंगालें, सिंक 3 में सैनिटाइज़ करें, फिर हवा में सूखने दें।"
+   },
+   "bn": {
+    "t": "তিন সিঙ্ক পদ্ধতি",
+    "d": "হাতে বাসন ধোয়া। সিঙ্ক 1 এ প্রায় 50°C পানি আর ডিটারজেন্ট দিয়ে ধোন, সিঙ্ক 2 এ পরিষ্কার পানিতে ধুয়ে নিন, সিঙ্ক 3 এ জীবাণুমুক্ত করুন, তারপর বাতাসে শুকাতে দিন।"
+   },
+   "ar": {
+    "t": "طريقة الأحواض الثلاثة",
+    "d": "غسل الصحون باليد. الحوض 1 للغسل بالمنظف على حرارة 50°C تقريباً، والحوض 2 للشطف، والحوض 3 للتطهير، ثم اتركها تجف في الهواء."
+   },
+   "ne": {
+    "t": "तीन सिंक तरिका",
+    "d": "हातले भाँडा धुने तरिका। सिंक 1 मा करिब 50°C को पानी र डिटर्जेन्टले धुनुहोस्, सिंक 2 मा पखाल्नुहोस्, सिंक 3 मा किटाणुनाशक लगाउनुहोस्, अनि हावामा सुक्न दिनुहोस्।"
+   },
+   "ml": {
+    "t": "മൂന്ന് സിങ്ക് രീതി",
+    "d": "പാത്രങ്ങൾ കൈകൊണ്ട് കഴുകുന്ന രീതി. സിങ്ക് 1-ൽ ഏകദേശം 50°C വെള്ളത്തിൽ ഡിറ്റർജന്റ് ഇട്ട് കഴുകുക, സിങ്ക് 2-ൽ വെള്ളത്തിൽ കഴുകിക്കളയുക, സിങ്ക് 3-ൽ അണുനശീകരണം ചെയ്യുക, എന്നിട്ട് തനിയെ ഉണങ്ങാൻ വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "மூன்று சிங்க் முறை",
+    "d": "பாத்திரங்களைக் கையால் கழுவுவது. சிங்க் 1-இல் சுமார் 50°C தண்ணீரில் டிடர்ஜென்ட் போட்டுக் கழுவுங்கள், சிங்க் 2-இல் தண்ணீரில் அலசுங்கள், சிங்க் 3-இல் கிருமிநீக்கம் செய்யுங்கள், பிறகு தானாக உலர விடுங்கள்."
+   },
+   "fil": {
+    "t": "Three-sink method (tatlong lababo)",
+    "d": "Paghuhugas ng pinggan gamit ang kamay. Sa lababo 1, hugasan gamit ang detergent sa mga 50°C, sa lababo 2 banlawan, sa lababo 3 i-disinfect, saka patuyuin sa hangin."
+   },
+   "ind": {
+    "t": "Cara tiga bak cuci",
+    "d": "Mencuci piring dengan tangan. Bak 1 cuci dengan deterjen pada sekitar 50°C, bak 2 bilas, bak 3 disinfeksi, lalu biarkan kering sendiri di udara."
+   },
+   "tr": {
+    "t": "Üç lavabo yöntemi",
+    "d": "Bulaşıkları elde yıkamak. 1. lavaboda yaklaşık 50°C'de deterjanla yıka, 2. lavaboda durula, 3. lavaboda dezenfekte et, sonra kendi kendine kurumaya bırak."
+   }
+  },
+  {
+   "id": "w28",
+   "ch": 8,
+   "pic": {
+    "icon": "bug"
+   },
+   "en": {
+    "t": "Pests",
+    "d": "Rats, mice, cockroaches, flies and other animals that spread germs. Signs are droppings (poo), chewed packets, dead insects and strange smells. Tell your supervisor."
+   },
+   "ur": {
+    "t": "کیڑے اور چوہے",
+    "d": "چوہے، کاکروچ، مکھیاں اور دوسرے جانور جو جراثیم پھیلاتے ہیں۔ ان کی نشانیاں ہیں فضلہ (پاخانہ)، کترے ہوئے پیکٹ، مرے ہوئے کیڑے اور عجیب بو۔ اپنے سپروائزر کو بتائیں۔"
+   },
+   "hi": {
+    "t": "कीड़े-मकोड़े और चूहे",
+    "d": "चूहे, कॉकरोच, मक्खियाँ और दूसरे जानवर जो कीटाणु फैलाते हैं। इनके निशान हैं मल (पॉटी), कुतरे हुए पैकेट, मरे हुए कीड़े और अजीब बदबू। अपने सुपरवाइज़र को बताएँ।"
+   },
+   "bn": {
+    "t": "পোকামাকড় ও ইঁদুর",
+    "d": "বড় ইঁদুর, ছোট ইঁদুর, তেলাপোকা, মাছি আর অন্য প্রাণী যারা জীবাণু ছড়ায়। লক্ষণ হলো পায়খানা, কামড়ানো প্যাকেট, মরা পোকা আর অদ্ভুত গন্ধ। আপনার সুপারভাইজারকে জানান।"
+   },
+   "ar": {
+    "t": "الآفات (الحشرات والفئران)",
+    "d": "الجرذان والفئران والصراصير والذباب وحيوانات أخرى تنشر الجراثيم. علاماتها: براز الفئران أو الصراصير، وأكياس مقروضة، وحشرات ميتة، وروائح غريبة. أخبر المشرف."
+   },
+   "ne": {
+    "t": "कीरा र मुसा",
+    "d": "मुसा, साङ्लो, झिँगा र किटाणु फैलाउने अरू जनावर। यिनका चिह्न मुसा वा साङ्लोको दिसा, टोकेका प्याकेट, मरेका कीरा र अनौठो गन्ध हुन्। आफ्नो सुपरभाइजरलाई भन्नुहोस्।"
+   },
+   "ml": {
+    "t": "കീടങ്ങൾ (എലി, പാറ്റ, പ്രാണികൾ)",
+    "d": "എലി, ചുണ്ടെലി, പാറ്റ, ഈച്ച പോലെ അണുക്കൾ പരത്തുന്ന ജീവികൾ. എലിയുടെയോ പാറ്റയുടെയോ കാഷ്ഠം, കരണ്ട പാക്കറ്റുകൾ, ചത്ത പ്രാണികൾ, വിചിത്രമായ മണം എന്നിവയാണ് ലക്ഷണങ്ങൾ. സൂപ്പർവൈസറോട് പറയുക."
+   },
+   "ta": {
+    "t": "பூச்சிகள் மற்றும் எலிகள்",
+    "d": "எலி, சுண்டெலி, கரப்பான்பூச்சி, ஈ போன்ற கிருமிகளைப் பரப்பும் உயிரினங்கள். எலி, சுண்டெலி அல்லது கரப்பான்பூச்சி மலம், கடித்த பாக்கெட்டுகள், செத்த பூச்சிகள், வித்தியாசமான வாசனை ஆகியவை அடையாளங்கள். உங்கள் சூப்பர்வைசரிடம் சொல்லுங்கள்."
+   },
+   "fil": {
+    "t": "Peste",
+    "d": "Daga, ipis, langaw at iba pang hayop na nagkakalat ng mikrobyo. Mga palatandaan nito ang ipot, nangatngat na pakete, patay na insekto at kakaibang amoy. Sabihan ang supervisor mo."
+   },
+   "ind": {
+    "t": "Hama",
+    "d": "Tikus, kecoak, lalat dan hewan lain yang menyebarkan kuman. Tandanya adalah kotoran (tahi), bungkus yang digigit, serangga mati dan bau aneh. Beri tahu atasan Anda."
+   },
+   "tr": {
+    "t": "Haşereler",
+    "d": "Sıçan, fare, hamamböceği, sinek ve mikrop yayan diğer hayvanlar. Dışkı (kaka), kemirilmiş paketler, ölü böcekler ve garip kokular onların işaretidir. Amirine söyle."
+   }
+  },
+  {
+   "id": "w29",
+   "ch": 4,
+   "pic": {
+    "icon": "bottle"
+   },
+   "en": {
+    "t": "Chemical hazard",
+    "d": "Harmful chemicals getting into food, like cleaning liquid or pest poison. Keep chemicals away from food, in labelled containers."
+   },
+   "ur": {
+    "t": "کیمیکل خطرہ",
+    "d": "نقصان دہ کیمیکل کا کھانے میں چلے جانا، جیسے صفائی کا مائع یا کیڑے مار زہر۔ کیمیکل کو کھانے سے دور، لیبل لگے برتنوں میں رکھیں۔"
+   },
+   "hi": {
+    "t": "केमिकल खतरा",
+    "d": "नुकसान वाले केमिकल का खाने में चले जाना, जैसे सफ़ाई का लिक्विड या कीड़े मारने का ज़हर। केमिकल को खाने से दूर, लेबल लगे डिब्बों में रखें।"
+   },
+   "bn": {
+    "t": "কেমিক্যাল বিপদ",
+    "d": "ক্ষতিকর কেমিক্যাল খাবারে চলে যাওয়া, যেমন পরিষ্কারের তরল বা পোকা মারার বিষ। কেমিক্যাল খাবার থেকে দূরে, লেবেল লাগানো পাত্রে রাখুন।"
+   },
+   "ar": {
+    "t": "خطر كيميائي",
+    "d": "دخول مواد كيميائية ضارة إلى الطعام، مثل سائل التنظيف أو سم الحشرات والفئران. أبعد المواد الكيميائية عن الطعام، وضعها في أوعية عليها ملصق."
+   },
+   "ne": {
+    "t": "रसायनको खतरा",
+    "d": "सफा गर्ने झोल वा कीरा मार्ने विष जस्ता हानिकारक रसायन (केमिकल) खानामा पर्नु। रसायनलाई खानाबाट टाढा, लेबल लगाएका भाँडामा राख्नुहोस्।"
+   },
+   "ml": {
+    "t": "രാസവസ്തു മൂലമുള്ള അപകടം",
+    "d": "ദോഷമുള്ള രാസവസ്തുക്കൾ ഭക്ഷണത്തിൽ കലരുന്നത്, ഉദാഹരണം ക്ലീനിങ് ലിക്വിഡ് അല്ലെങ്കിൽ എലിയെയും പ്രാണികളെയും കൊല്ലുന്ന വിഷം. രാസവസ്തുക്കൾ ഭക്ഷണത്തിൽ നിന്ന് മാറ്റി, ലേബൽ ഒട്ടിച്ച പാത്രങ്ങളിൽ വയ്ക്കുക."
+   },
+   "ta": {
+    "t": "ரசாயன ஆபத்து",
+    "d": "கெடுதலான ரசாயனங்கள் உணவில் கலப்பது, உதாரணமாகச் சுத்தம் செய்யும் திரவம் அல்லது பூச்சி, எலி மருந்து. ரசாயனங்களை உணவிலிருந்து தள்ளி, லேபிள் ஒட்டிய டப்பாக்களில் வையுங்கள்."
+   },
+   "fil": {
+    "t": "Panganib na kemikal",
+    "d": "Kapag nakapasok sa pagkain ang nakakasamang kemikal, gaya ng panlinis o lason sa peste. Ilayo ang kemikal sa pagkain, sa lalagyang may label."
+   },
+   "ind": {
+    "t": "Bahaya kimia",
+    "d": "Bahan kimia berbahaya masuk ke makanan, seperti cairan pembersih atau racun hama. Jauhkan bahan kimia dari makanan, simpan di wadah yang berlabel."
+   },
+   "tr": {
+    "t": "Kimyasal tehlike",
+    "d": "Temizlik sıvısı ya da haşere zehri gibi zararlı kimyasalların gıdaya karışması. Kimyasalları gıdadan uzakta, etiketli kaplarda tut."
+   }
+  },
+  {
+   "id": "w30",
+   "ch": 4,
+   "pic": {
+    "icon": "hair"
+   },
+   "en": {
+    "t": "Physical hazard",
+    "d": "Objects falling into food, like hair, glass, metal, plastic, bone or stones. Wear a hair cover and no jewellery."
+   },
+   "ur": {
+    "t": "جسمانی خطرہ (کھانے میں گرنے والی چیز)",
+    "d": "کھانے میں چیزیں گر جانا، جیسے بال، شیشہ، دھات، پلاسٹک، ہڈی یا کنکر۔ بالوں کا کور پہنیں اور زیور نہ پہنیں۔"
+   },
+   "hi": {
+    "t": "फिज़िकल खतरा (खाने में गिरने वाली चीज़)",
+    "d": "खाने में चीज़ें गिर जाना, जैसे बाल, काँच, धातु, प्लास्टिक, हड्डी या कंकड़। बालों को ढकने वाली टोपी पहनें और गहने न पहनें।"
+   },
+   "bn": {
+    "t": "শারীরিক বিপদ (খাবারে পড়ে যাওয়া জিনিস)",
+    "d": "খাবারে জিনিস পড়ে যাওয়া, যেমন চুল, কাচ, ধাতু, প্লাস্টিক, হাড় বা পাথর। চুলের ঢাকনা পরুন আর গয়না পরবেন না।"
+   },
+   "ar": {
+    "t": "خطر فيزيائي (أجسام تسقط في الطعام)",
+    "d": "أشياء تسقط في الطعام، مثل الشعر والزجاج والمعدن والبلاستيك والعظم والحصى. البس غطاء الشعر ولا تلبس المجوهرات."
+   },
+   "ne": {
+    "t": "वस्तुको खतरा (खानामा परेको वस्तु)",
+    "d": "खानामा कपाल, सिसा, धातु, प्लास्टिक, हड्डी वा ढुङ्गा जस्ता वस्तु खस्नु। कपाल छोप्ने टोपी लगाउनुहोस् र गहना नलगाउनुहोस्।"
+   },
+   "ml": {
+    "t": "വസ്തുക്കൾ മൂലമുള്ള അപകടം (ഗ്ലാസ്, മുടി, കല്ല് പോലുള്ളവ)",
+    "d": "ഭക്ഷണത്തിൽ സാധനങ്ങൾ വീഴുന്നത്, ഉദാഹരണം മുടി, ഗ്ലാസ്, ലോഹം, പ്ലാസ്റ്റിക്, എല്ല്, കല്ല്. തലമുടി മൂടുന്ന ക്യാപ്പ് ഇടുക, ആഭരണങ്ങൾ ഇടരുത്."
+   },
+   "ta": {
+    "t": "பொருள் ஆபத்து (முடி, உலோகம் போன்றவை)",
+    "d": "உணவில் பொருட்கள் விழுவது, உதாரணமாக முடி, கண்ணாடி, உலோகம், பிளாஸ்டிக், எலும்பு, கல். முடி மூடி அணியுங்கள், நகைகள் அணியாதீர்கள்."
+   },
+   "fil": {
+    "t": "Pisikal na panganib (bagay na puwedeng mahulog sa pagkain)",
+    "d": "Mga bagay na nahuhulog sa pagkain, gaya ng buhok, bubog, bakal, plastik, buto o bato. Magsuot ng hair cover at huwag magsuot ng alahas."
+   },
+   "ind": {
+    "t": "Bahaya fisik (benda yang bisa jatuh ke makanan)",
+    "d": "Benda yang jatuh ke makanan, seperti rambut, kaca, logam, plastik, tulang atau batu. Pakai penutup rambut dan jangan pakai perhiasan."
+   },
+   "tr": {
+    "t": "Fiziksel tehlike",
+    "d": "Gıdaya düşen şeyler, örneğin saç, cam, metal, plastik, kemik ya da taş. Bone tak ve takı takma."
+   }
+  },
+  {
+   "id": "w31",
+   "ch": 5,
+   "pic": {
+    "icon": "mould"
+   },
+   "en": {
+    "t": "Spoilage (food going bad)",
+    "d": "Food that changes colour, smell, taste or texture, or grows mould. Do not use it. Swollen or leaking cans are dangerous too."
+   },
+   "ur": {
+    "t": "کھانا خراب ہونا",
+    "d": "جس کھانے کا رنگ، بو، ذائقہ یا بناوٹ بدل جائے، یا اس پر پھپھوندی لگ جائے۔ اسے استعمال نہ کریں۔ پھولے ہوئے یا رستے ہوئے ڈبے بھی خطرناک ہیں۔"
+   },
+   "hi": {
+    "t": "खाना ख़राब होना",
+    "d": "जिस खाने का रंग, गंध, स्वाद या बनावट बदल जाए, या उस पर फफूँद लग जाए। उसे इस्तेमाल न करें। फूले हुए या रिसते हुए डिब्बे (कैन) भी ख़तरनाक हैं।"
+   },
+   "bn": {
+    "t": "খাবার নষ্ট হওয়া",
+    "d": "যে খাবারের রং, গন্ধ, স্বাদ বা গঠন (নরম-শক্ত ভাব) বদলে যায়, বা ছত্রাক (ছাতা) পড়ে। সেটা ব্যবহার করবেন না। ফুলে যাওয়া বা চুইয়ে পড়া টিনও বিপজ্জনক।"
+   },
+   "ar": {
+    "t": "فساد الطعام",
+    "d": "طعام يتغير لونه أو رائحته أو طعمه أو ملمسه، أو يظهر عليه العفن. لا تستعمله. العلب المنتفخة أو التي يسيل منها شيء خطيرة أيضاً."
+   },
+   "ne": {
+    "t": "खाना बिग्रनु",
+    "d": "रङ, गन्ध, स्वाद वा बनावट फेरिएको, वा ढुसी लागेको खाना। यसलाई प्रयोग नगर्नुहोस्। फुलेका वा चुहिएका टिन पनि खतरनाक हुन्छन्।"
+   },
+   "ml": {
+    "t": "ഭക്ഷണം കേടാകൽ",
+    "d": "നിറമോ മണമോ രുചിയോ രൂപമോ മാറിയ ഭക്ഷണം, അല്ലെങ്കിൽ പൂപ്പൽ വന്ന ഭക്ഷണം. ഇത് ഉപയോഗിക്കരുത്. വീർത്തതോ ചോരുന്നതോ ആയ ടിന്നുകളും അപകടമാണ്."
+   },
+   "ta": {
+    "t": "கெட்டுப்போதல் (உணவு கெடுவது)",
+    "d": "நிறம், வாசனை, சுவை அல்லது தன்மை மாறிய உணவு, அல்லது பூஞ்சை பிடித்த உணவு. அதைப் பயன்படுத்தாதீர்கள். உப்பிய அல்லது ஒழுகும் டின்களும் ஆபத்தானவை."
+   },
+   "fil": {
+    "t": "Sirang pagkain (panis)",
+    "d": "Pagkaing nag-iba ang kulay, amoy, lasa o tekstura, o tinubuan ng amag. Huwag itong gamitin. Delikado rin ang lata na namamaga o tumutulo."
+   },
+   "ind": {
+    "t": "Makanan basi (rusak)",
+    "d": "Makanan yang berubah warna, bau, rasa atau teksturnya, atau berjamur. Jangan dipakai. Kaleng yang menggembung atau bocor juga berbahaya."
+   },
+   "tr": {
+    "t": "Bozulma (gıdanın bozulması)",
+    "d": "Rengi, kokusu, tadı ya da kıvamı değişen ya da küflenen gıda. Kullanma. Şişmiş ya da sızdıran konserveler de tehlikelidir."
+   }
+  },
+  {
+   "id": "w32",
+   "ch": 10,
+   "pic": {
+    "icon": "check"
+   },
+   "en": {
+    "t": "HACCP",
+    "d": "A food safety plan for the kitchen. It finds the dangers before they happen and sets checks to stop them, like checking cooking temperatures."
+   },
+   "ur": {
+    "t": "HACCP",
+    "d": "کچن کے لیے کھانے کی حفاظت کا پلان۔ یہ خطروں کو ہونے سے پہلے ڈھونڈتا ہے اور انہیں روکنے کے لیے جانچ رکھتا ہے، جیسے پکانے کا درجہ حرارت چیک کرنا۔"
+   },
+   "hi": {
+    "t": "HACCP",
+    "d": "किचन के लिए खाने की सुरक्षा का प्लान। यह ख़तरों को होने से पहले ढूँढता है और उन्हें रोकने के लिए जाँच तय करता है, जैसे पकाने का तापमान जाँचना।"
+   },
+   "bn": {
+    "t": "HACCP",
+    "d": "রান্নাঘরের জন্য খাবার নিরাপদ রাখার একটা পরিকল্পনা। এটা বিপদ ঘটার আগেই খুঁজে বের করে আর থামানোর জন্য চেক ঠিক করে, যেমন রান্নার তাপমাত্রা চেক করা।"
+   },
+   "ar": {
+    "t": "HACCP",
+    "d": "خطة لسلامة الطعام في المطبخ. تجد الأخطار قبل أن تحدث، وتضع فحوصات لمنعها، مثل فحص حرارة الطبخ."
+   },
+   "ne": {
+    "t": "HACCP",
+    "d": "भान्साको लागि खाना सुरक्षाको योजना। यसले खतरा हुनुअघि नै पत्ता लगाउँछ र रोक्न जाँचहरू तोक्छ, जस्तै पकाउने तापक्रम जाँच्नु।"
+   },
+   "ml": {
+    "t": "HACCP",
+    "d": "അടുക്കളയ്ക്കുള്ള ഒരു ഭക്ഷ്യ സുരക്ഷാ പ്ലാൻ. അപകടങ്ങൾ സംഭവിക്കുന്നതിന് മുമ്പ് കണ്ടെത്തി, അവ തടയാൻ പരിശോധനകൾ വയ്ക്കുന്നു, ഉദാഹരണം വേവിക്കുന്ന ചൂട് പരിശോധിക്കൽ."
+   },
+   "ta": {
+    "t": "HACCP",
+    "d": "சமையலறைக்கான உணவுப் பாதுகாப்புத் திட்டம். ஆபத்துகள் நடப்பதற்கு முன்பே கண்டுபிடித்து, அவற்றைத் தடுக்கச் சோதனைகளை வைக்கும், உதாரணமாகச் சமைக்கும் வெப்பநிலையைச் சோதிப்பது."
+   },
+   "fil": {
+    "t": "HACCP",
+    "d": "Isang food safety plan para sa kusina. Hinahanap nito ang mga panganib bago pa mangyari at naglalagay ng mga pag-check para mapigilan ang mga ito, gaya ng pag-check ng temperatura ng pagluluto."
+   },
+   "ind": {
+    "t": "HACCP",
+    "d": "Rencana keamanan pangan untuk dapur. HACCP mencari bahaya sebelum terjadi dan menetapkan pemeriksaan untuk mencegahnya, seperti memeriksa suhu memasak."
+   },
+   "tr": {
+    "t": "HACCP",
+    "d": "Mutfak için bir gıda güvenliği planı. Tehlikeleri olmadan önce bulur ve onları önlemek için kontroller koyar, örneğin pişirme sıcaklığını kontrol etmek."
+   }
+  },
+  {
+   "id": "w33",
+   "ch": 10,
+   "pic": {
+    "icon": "flag"
+   },
+   "en": {
+    "t": "Critical control point (CCP)",
+    "d": "A step where a check is a must to keep food safe, like cooking chicken to 75°C. If the check fails, it is fixed straight away."
+   },
+   "ur": {
+    "t": "اہم کنٹرول پوائنٹ (CCP)",
+    "d": "ایسا مرحلہ جہاں کھانا محفوظ رکھنے کے لیے جانچ لازمی ہے، جیسے چکن کو 75°C تک پکانا۔ اگر جانچ میں مسئلہ نکلے تو اسے فوراً ٹھیک کیا جاتا ہے۔"
+   },
+   "hi": {
+    "t": "ज़रूरी नियंत्रण बिंदु (CCP)",
+    "d": "ऐसा स्टेप जहाँ खाना सुरक्षित रखने के लिए जाँच ज़रूरी है, जैसे चिकन को 75°C तक पकाना। अगर जाँच में गड़बड़ हो, तो उसे तुरंत ठीक किया जाता है।"
+   },
+   "bn": {
+    "t": "গুরুত্বপূর্ণ নিয়ন্ত্রণ বিন্দু (CCP)",
+    "d": "এমন একটা ধাপ যেখানে খাবার নিরাপদ রাখতে চেক করতেই হবে, যেমন মুরগি 75°C পর্যন্ত রান্না করা। চেকে সমস্যা পেলে সাথে সাথে ঠিক করা হয়।"
+   },
+   "ar": {
+    "t": "نقطة التحكم الحرجة (CCP)",
+    "d": "خطوة يجب فيها الفحص حتى يبقى الطعام آمناً، مثل طبخ الدجاج حتى 75°C. إذا فشل الفحص تُصلح المشكلة فوراً."
+   },
+   "ne": {
+    "t": "मुख्य नियन्त्रण बिन्दु (CCP)",
+    "d": "खाना सुरक्षित राख्न जाँच गर्नैपर्ने चरण, जस्तै कुखुरालाई 75°C सम्म पकाउनु। जाँच असफल भए, तुरुन्तै सुधार गरिन्छ।"
+   },
+   "ml": {
+    "t": "ക്രിട്ടിക്കൽ കൺട്രോൾ പോയിന്റ് (CCP)",
+    "d": "ഭക്ഷണം സുരക്ഷിതമായി ഇരിക്കാൻ പരിശോധന നിർബന്ധമായ ഒരു ഘട്ടം, ഉദാഹരണം ചിക്കൻ 75°C വരെ വേവിക്കൽ. പരിശോധന പരാജയപ്പെട്ടാൽ ഉടനെ ശരിയാക്കും."
+   },
+   "ta": {
+    "t": "முக்கியக் கட்டுப்பாட்டு இடம் (CCP)",
+    "d": "உணவைப் பாதுகாப்பாக வைக்கச் சோதனை கட்டாயமாகத் தேவைப்படும் ஒரு படி, உதாரணமாகக் கோழியை 75°C வரை சமைப்பது. சோதனை தோல்வியடைந்தால், உடனே சரிசெய்யப்படும்."
+   },
+   "fil": {
+    "t": "Critical control point o CCP (hakbang na kailangang bantayan)",
+    "d": "Isang hakbang kung saan kailangang-kailangan ang pag-check para manatiling ligtas ang pagkain, gaya ng pagluto ng manok hanggang 75°C. Kapag pumalya ang check, inaayos ito agad."
+   },
+   "ind": {
+    "t": "Titik kendali kritis (CCP)",
+    "d": "Langkah di mana pemeriksaan wajib dilakukan agar makanan tetap aman, seperti memasak ayam sampai 75°C. Kalau pemeriksaan gagal, segera diperbaiki."
+   },
+   "tr": {
+    "t": "Kritik kontrol noktası (CCP)",
+    "d": "Gıdanın güvenli kalması için kontrolün şart olduğu adım, örneğin tavuğu 75°C'ye kadar pişirmek. Kontrol tutmazsa hemen düzeltilir."
+   }
+  }
+ ]
+}

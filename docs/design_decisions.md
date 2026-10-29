@@ -35,6 +35,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D24 | 28 Oct | All 11 exam languages (adds Arabic, Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish); a language dropdown at the top replaces the four buttons | User | Kitchen workers in Saudi speak them; the real exam offers exactly these 11 |
 | D25 | 28 Oct | Codes can have a time limit (no limit / 1 / 3 / 7 / 30 days), counted from the first use; the seller sets it when making the code and can change it later | User asked, AI designed | Trials for people who don't want to pay the full amount first |
 | D26 | 28 Oct | Save every finished test against its code and show analytics in the seller app (Results tab + a page per person), for Mustafa and Wessam | User | See who is ready, which topics and questions people miss, which test types they use |
+| D27 | 29 Oct | "Key words" screen: the exam's 33 hard words explained simply in every language, with pictures, thermometers and a cartoon video; the app is sold alongside the course, not instead of it | User asked (Wessam: workers won't understand HACCP, probes, danger zones before the course) | Workers learn the words before practising; managers see it supports the 800-riyal course |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -164,4 +165,18 @@ worker app's question bank, which the seller app may read (`vercel.json`). Worke
 screen, in their language, that their results are saved so the person who gave them the code can help.
 Abandoned timed tests are not recorded (only finished ones). Rejected: a separate owner-only page (the user
 chose the seller app); counting on the server from individual answers (more traffic, and tests run offline).
+
+## D27. Key words, cartoon clips, and selling alongside the course
+
+Wessam said workers won't understand the exam's words (HACCP, probe thermometer, danger zone) until they have
+done the paid course. Two answers: the pitch now says Kartak makes the 800-riyal course pay off (practise after
+training, send only ready workers to the exam), and the app gets a "Key words" screen. 33 words from the
+handbook, each with the word as the questions use it, a short plain explanation with the handbook's numbers,
+and a picture: a line icon, a thermometer at the right temperature, the danger zone drawn as a band from 5°C to
+63°C, or a short video. Content lives in `data/words.json` (all 11 languages, written from each language's
+glossary so the words match the questions) and loads only when the screen opens. The real exam's videos are
+real footage (Wessam, 29 Oct); Claude can't film or generate realistic video, so the first clip
+(cross-contamination) is a cartoon drawn frame by frame with code (`scripts/clips/`, `scripts/make-clip.mjs`).
+Rejected for now: AI video tools (cost, wrong hands and text) and filming (needs a kitchen and permission);
+both stay options for the video questions later.
 

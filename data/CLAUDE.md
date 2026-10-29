@@ -5,6 +5,7 @@ The question bank. JSON can't hold comments, so its format is documented here.
 | File | Purpose |
 |---|---|
 | `questions.json` | Every question in every language. Fetched by `js/app.js` at start; checked by `scripts/validate-questions.js` |
+| `words.json` | The "Key words" screen (D27): 33 exam words explained simply, in every language, each with a picture. Format below |
 
 ## Format
 
@@ -33,3 +34,20 @@ QUESTION:
 - Simple everyday words in every language (D4); write numbers as 5°C, −18°C (real minus sign), 20.
 - After any edit: `node scripts/validate-questions.js`, then the tests. The full mock needs at least 50 live
   questions.
+
+## words.json format (Key words, D27)
+
+```json
+{ "words": [ { "id": "w04", "ch": 3, "pic": { "thermo": "zone" }, "en": { "t": "Danger zone", "d": "From 5°C to 63°C..." }, "ur": { ... }, ... } ] }
+```
+
+| Field | Meaning |
+|---|---|
+| `id` | `w01`, `w02`, ... in the order shown |
+| `ch` | Handbook chapter (docs/handbook.md) |
+| `pic` | One of `{ "icon": name }` (line pictures in `WICON`, js/app.js), `{ "thermo": "fridge" \| "freezer" \| "probe" \| "hot", "v": °C }`, `{ "thermo": "zone" }` (the danger zone), `{ "video": "/videos/<file>.mp4" }` |
+| one key per language | `{ "t": the word as the questions use it (plain meaning in brackets if hard), "d": the explanation }` |
+
+Rules: the words and numbers must match the handbook and the words the questions use in that language;
+`node scripts/validate-questions.js` checks every language is there and every picture exists.
+

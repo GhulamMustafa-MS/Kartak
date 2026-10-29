@@ -6,7 +6,8 @@
  *             exits with code 1 on any problem.
  * Run:        node scripts/validate-questions.js            (from the repo root, no install needed)
  * Depends on: data/questions.json (format: data/CLAUDE.md); chapters 1-13 = docs/handbook.md;
- *             js/i18n.js (every language with screen words must be in the bank, and the other way round).
+ *             js/i18n.js (every language with screen words must be in the bank, and the other way round);
+ *             data/words.json (Key words, D27: every word in every language, pictures and videos present).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -51,9 +52,22 @@ for (const l of uiLangs) if (!LANGS.includes(l)) problems.push(`js/i18n.js has "
 for (const l of LANGS) if (!uiLangs.includes(l)) problems.push(`data/questions.json has "${l}" but js/i18n.js does not`);
 for (const l of uiLangs) if (!window.KARTAK_LANGS.some((m) => m.code === l)) problems.push(`"${l}" is missing from KARTAK_LANGS in js/i18n.js`);
 
+// Key words (data/words.json, D27): every word in every language, a known picture, the video file present.
+const words = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "words.json"), "utf8")).words;
+const wids = new Set();
+for (const w of words) {
+  if (!w.id || wids.has(w.id)) problems.push(`words.json ${w.id || "?"}: missing or duplicate id`);
+  wids.add(w.id);
+  for (const lang of LANGS) if (!w[lang] || !w[lang].t || !w[lang].d) problems.push(`words.json ${w.id}: ${lang} needs t and d`);
+  const p = w.pic || {};
+  if (!p.icon && !p.thermo && !p.video) problems.push(`words.json ${w.id}: pic needs icon, thermo or video`);
+  if (p.video && !fs.existsSync(path.join(__dirname, "..", p.video))) problems.push(`words.json ${w.id}: video ${p.video} not found`);
+}
+for (const lang of LANGS) if (!window.KARTAK_UI[lang] || !window.KARTAK_UI[lang].words) problems.push(`js/i18n.js ${lang}: needs "words" and "wordsD"`);
+
 const live = bank.questions.filter((q) => q.enabled !== false);
 const byType = live.reduce((m, q) => ((m[q.type] = (m[q.type] || 0) + 1), m), {});
 const byCh = live.reduce((m, q) => ((m[q.ch || "none"] = (m[q.ch || "none"] || 0) + 1), m), {});
 if (problems.length) { console.log(problems.join("\n")); console.log(`${problems.length} problem(s)`); process.exit(1); }
-console.log(`OK: ${bank.questions.length} questions (${live.length} live), languages ${LANGS.join(", ")}, live by type ${JSON.stringify(byType)}, live by handbook chapter ${JSON.stringify(byCh)}`);
+console.log(`OK: ${words.length} key words; ${bank.questions.length} questions (${live.length} live), languages ${LANGS.join(", ")}, live by type ${JSON.stringify(byType)}, live by handbook chapter ${JSON.stringify(byCh)}`);
 if (live.length < 50) { console.log("Problem: fewer than 50 live questions, the full mock needs 50"); process.exit(1); }

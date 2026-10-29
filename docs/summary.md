@@ -36,6 +36,9 @@
   state (fridge shelf order, reheat only once, return to work after vomiting) and may differ from the exam.
 - The handbook is an English edition; the exam's Urdu, Hindi and Bangla wording may use different words.
 - No video questions yet (D5); the real exam has them.
+- The real exam's videos are real footage; Kartak's clips are cartoons (D27), so they look different. The Key
+  words were written by AI in every language and reviewed by a second AI (5 meaning fixes), not yet by
+  native speakers.
 - Some of the 204 new questions use steps or wrong options from general good practice where the handbook
   gives no fixed order or example (writers flagged them on 28 Oct); native speakers and real exam reports
   should confirm them.

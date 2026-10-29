@@ -59,7 +59,8 @@ Worker app (installable, works offline after the first visit):
   in the worker's language (D25).
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
-  the worker stopped, D21), "Learn the question types" with a small example of each type.
+  the worker stopped, D21), "Key words" (33 exam words explained simply with pictures, thermometers and a
+  cartoon clip, D27), "Learn the question types" with a small example of each type.
 - 304 live questions from all 13 handbook chapters (+2 video questions held back, D5) in every language the app offers; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
@@ -128,6 +129,10 @@ languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md s
 4. `node scripts/validate-questions.js` (checks the bank and that every language in `i18n.js` is in the bank),
    then the tests: the browser test opens every language, checks its words and questions, its direction and
    that nothing is wider than a 390 px phone.
+
+**Make a clip** (cartoon, no sound, D27): copy `scripts/clips/cross-contamination.html`, change what
+`render(t)` draws, then `node scripts/make-clip.mjs <name> <seconds>` writes `videos/<name>.mp4`. Use it in
+`data/words.json` as `"pic": {"video": "/videos/<name>.mp4"}` and add a row to `videos/CLAUDE.md`.
 
 **Change the timer or test sizes:** `QSEC` and `SIZES` at the top of `js/app.js`; update the wording in
 `js/i18n.js` (`fullD`, `quickD`, `practiceD`, `intro`) and plan.md section 3.

@@ -115,7 +115,8 @@ Only push when both end in OK / ALL ... PASSED.
 | `README.md` | Short public description and checks |
 | [api/](api/CLAUDE.md) | Serverless endpoints for access codes |
 | [css/](css/CLAUDE.md), [js/](js/CLAUDE.md) | Worker app styles and scripts |
-| [data/](data/CLAUDE.md) | The question bank (`questions.json`) and its format |
+| [data/](data/CLAUDE.md) | The question bank (`questions.json`), the Key words (`words.json`) and their formats |
+| [videos/](videos/CLAUDE.md) | Short clips shown in the app (Key words) |
 | [db/](db/CLAUDE.md) | Schema and migrations |
 | [icons/](icons/CLAUDE.md) | Worker app icons |
 | [seller/](seller/CLAUDE.md) | The seller app (separate Vercel project) |

@@ -11,7 +11,7 @@
  *                         code is re-checked on every start with internet (turned off / time limit ended, D25)
  *               Speech    "Listen" button, shown only when the phone has a voice for the language
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
- *               Screens   drawLang, drawHome, drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
+ *               Screens   drawLang, drawHome, drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
  *               Events    one click handler for #app and #bar, the language dropdown, start-up
@@ -22,7 +22,7 @@
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
  *             kartak-all (saved place in "All questions", so it can be finished over several days).
  * Used by:    index.html.
- * Depends on: js/i18n.js, data/questions.json, api/activate.js, api/transfer.js, api/result.js, sw.js, icons/.
+ * Depends on: js/i18n.js, data/questions.json, data/words.json, videos/, api/activate.js, api/transfer.js, api/result.js, sw.js, icons/.
  */
 (function () {
   "use strict";
@@ -57,6 +57,7 @@
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
     book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>',
     shapes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="7" cy="7" r="4"/><rect x="13" y="3" width="8" height="8" rx="2"/><path d="M7 13l4 7H3z"/><path d="M14 15h6v6h-6z"/></svg>',
+    words: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a3 3 0 0 1 3 3v12H7a3 3 0 0 1-3-3z"/><path d="M8 9h6M8 13h4"/><path d="M18 8h2v12"/></svg>',
     speaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>'
   };
 
@@ -174,6 +175,7 @@
         '<button type="button" class="mode" data-go="intro-quick"><span class="ic">' + ICONS.quick + '</span><span class="t">' + t.quick + '</span><span class="d">' + t.quickD + '</span></button>' +
         '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
         allCard() +
+        '<button type="button" class="mode" data-go="words"><span class="ic">' + ICONS.words + '</span><span class="t">' + t.words + '</span><span class="d">' + t.wordsD + '</span></button>' +
         '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
       '</section>' +
       '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + '%</bdi>' : t.none) + '</b></div>' +
@@ -186,6 +188,63 @@
     var desc = d ? t.allResume.replace("{i}", d.results.length + 1).replace("{n}", d.ids.length) : t.allD.replace("{n}", n);
     return '<button type="button" class="mode" data-go="all"><span class="ic">' + ICONS.stack + '</span><span class="t">' + t.all + '</span><span class="d">' + desc + '</span></button>' +
       (d ? '<button type="button" class="small-btn" data-go="all-restart">' + t.allRestart + '</button>' : '');
+  }
+
+  /* "Key words" (decision D27): the exam's hard words explained simply, each with a picture, a thermometer or a
+     short video. Content in data/words.json (all languages), loaded the first time the screen opens. */
+  var WORDS = null;
+  var WICON = { // simple line pictures, 48x48
+    person: '<circle cx="24" cy="14" r="7"/><path d="M10 42c1-9 6-14 14-14s13 5 14 14"/><path d="M17 9h14"/>',
+    card: '<rect x="6" y="11" width="36" height="26" rx="4"/><circle cx="17" cy="23" r="4"/><path d="M12 32c1-3 3-4 5-4s4 1 5 4M27 20h10M27 26h8"/>',
+    germ: '<circle cx="24" cy="24" r="10"/><path d="M24 8v6M24 34v6M8 24h6M34 24h6M13 13l4 4M31 31l4 4M35 13l-4 4M13 35l4-4"/><circle cx="21" cy="22" r="2"/><circle cx="27" cy="27" r="1.5"/>',
+    sick: '<circle cx="24" cy="24" r="16"/><path d="M17 20h4M27 20h4M17 32c4-4 10-4 14 0"/><path d="M36 10c2 3 2 5 0 7"/>',
+    meat: '<path d="M30 8c8 2 12 10 9 17-3 8-12 11-19 8l-6 6c-2 2-5 0-4-2l1-3-3-1c-2 0-3-3-1-4l6-6c-3-7 1-14 8-16"/><circle cx="29" cy="20" r="3"/>',
+    plate: '<circle cx="24" cy="26" r="15"/><circle cx="24" cy="26" r="9"/><path d="M6 9v10c0 2 2 3 3 3v18M11 9v8M42 8c-3 2-4 7-4 11h4v21"/>',
+    warn: '<path d="M24 7l19 33H5z"/><path d="M24 19v10M24 34v1"/>',
+    clock: '<circle cx="24" cy="25" r="15"/><path d="M24 17v9l6 4M19 6h10"/>',
+    timer: '<circle cx="24" cy="26" r="14"/><path d="M24 26l6-6M20 6h8M24 6v6M36 13l3-3"/>',
+    snow: '<path d="M24 6v36M8.4 15l31.2 18M8.4 33l31.2-18M19 9l5 4 5-4M19 39l5-4 5 4"/>',
+    calendar: '<rect x="7" y="10" width="34" height="30" rx="4"/><path d="M7 18h34M15 6v8M33 6v8M15 26h5M23 26h5M31 26h3M15 33h5M23 33h5"/>',
+    boxes: '<rect x="6" y="24" width="16" height="16" rx="2"/><rect x="26" y="24" width="16" height="16" rx="2"/><rect x="16" y="8" width="16" height="16" rx="2"/><path d="M10 44h28M34 46l4-2-4-2"/>',
+    nut: '<path d="M24 6c6 0 9 5 8 10-1 4-3 5-3 8s3 5 3 9c0 5-4 9-8 9s-8-4-8-9c0-4 3-6 3-9s-2-4-3-8c-1-5 2-10 8-10z"/><path d="M21 14h1M26 20h1M21 30h1M26 35h1"/>',
+    hands: '<path d="M14 40V20c0-2 3-2 3 0v8M17 26V14c0-2 3-2 3 0v12M20 26V12c0-2 3-2 3 0v14M23 26V15c0-2 3-2 3 0v17l4-5c2-2 5 0 3 2l-7 10c-2 2-4 3-7 3h-3c-2 0-4-1-4-3z"/><path d="M33 8c2 3 2 5 0 7M38 6c3 4 3 9 0 13"/>',
+    glove: '<path d="M14 42V22c0-2 3-2 3 0v-10c0-2 3-2 3 0v-2c0-2 3-2 3 0v2c0-2 3-2 3 0v3c0-2 3-2 3 0v14l4-4c2-2 5 0 3 2l-8 9v8z"/><path d="M14 36h17"/>',
+    sponge: '<rect x="8" y="16" width="32" height="18" rx="5"/><path d="M8 24h32"/><circle cx="16" cy="29" r="1.5"/><circle cx="26" cy="30" r="1.5"/><circle cx="33" cy="28" r="1.2"/><path d="M14 10c1-2 3-2 4 0M28 8c1-2 3-2 4 0"/>',
+    spray: '<path d="M16 18h12v24H16zM18 18v-6h8v6M26 12h6l4-3M34 14l6-2M34 18l6 2M34 22l5 4"/>',
+    sink: '<path d="M6 22h36v6c0 7-6 12-13 12H19c-7 0-13-5-13-12z"/><path d="M14 22v-8M34 22V10c0-2-2-3-4-3s-4 1-4 3"/><path d="M18 30h12"/>',
+    bug: '<ellipse cx="24" cy="27" rx="9" ry="13"/><path d="M24 14v26M18 10l3 4M30 10l-3 4M15 22H8M15 30H7M15 37l-6 3M33 22h7M33 30h8M33 37l6 3"/>',
+    bottle: '<path d="M19 6h10v6l5 6v22c0 2-1 3-3 3H17c-2 0-3-1-3-3V18l5-6z"/><path d="M19 24l10 10M29 24L19 34"/>',
+    hair: '<path d="M8 36c8-2 10-10 18-12s12-8 14-14"/><path d="M10 40c7-3 12-9 19-10"/><circle cx="34" cy="34" r="5"/>',
+    mould: '<circle cx="24" cy="26" r="15"/><circle cx="18" cy="22" r="3"/><circle cx="28" cy="30" r="4"/><circle cx="29" cy="19" r="2"/><path d="M24 11c0-3 2-5 5-5"/>',
+    check: '<rect x="9" y="6" width="30" height="36" rx="4"/><path d="M15 16l3 3 5-6M15 27l3 3 5-6M27 16h7M27 28h7M15 37h19"/>',
+    flag: '<path d="M10 42V6M10 8h24l-5 7 5 7H10"/><circle cx="34" cy="36" r="6"/><path d="M31 36l2 2 4-4"/>'
+  };
+  // The danger zone: a band from 5°C to 63°C on a 0-100°C scale, cold and hot safe zones either side.
+  function dangerZone() {
+    var y = function (v) { return 176 - v / 100 * 160; };
+    return '<svg viewBox="0 0 120 214" role="img" aria-label="5°C - 63°C"><rect class="dz-hot" x="22" y="' + y(100) + '" width="26" height="' + (y(63) - y(100)) + '" rx="6"/>' +
+      '<rect class="dz-bad" x="22" y="' + y(63) + '" width="26" height="' + (y(5) - y(63)) + '"/><rect class="dz-cold" x="22" y="' + y(5) + '" width="26" height="' + (y(-5) - y(5)) + '" rx="6"/>' +
+      [[63, "63°C"], [5, "5°C"], [37, "37°C"]].map(function (m) { return '<line class="th-tick" x1="50" x2="60" y1="' + y(m[0]) + '" y2="' + y(m[0]) + '"/><text class="th-lab" x="63" y="' + (y(m[0]) + 4) + '">' + m[1] + '</text>'; }).join("") + '</svg>';
+  }
+  function wordPic(p) {
+    if (p.video) return '<video src="' + p.video + '" controls playsinline muted loop preload="metadata"></video>';
+    if (p.thermo === "zone") return '<div class="wpic">' + dangerZone() + '</div>';
+    if (p.thermo) return '<div class="wpic">' + thermo(p.thermo, p.v) + '<b><bdi dir="ltr">' + minus(p.v) + '°C</bdi></b></div>';
+    return '<div class="wpic icon"><svg viewBox="0 0 48 48" aria-hidden="true">' + (WICON[p.icon] || "") + '</svg></div>';
+  }
+  function drawWords() {
+    var t = T();
+    if (!WORDS) {
+      app.innerHTML = '<section class="learn"><h1>' + t.words + '</h1><p class="lead">' + t.checking + '</p></section>';
+      fetch("/data/words.json").then(function (r) { return r.json(); }).then(function (d) { WORDS = d.words; if (S.screen === "words") drawWords(); }).catch(function () {});
+      return;
+    }
+    var cards = WORDS.map(function (w) {
+      var lw = w[S.lang] || w.en;
+      return '<article class="word' + (w.pic.video ? " vid" : "") + '">' + wordPic(w.pic) + '<div class="wt"><h2>' + txt(lw.t) + '</h2><p>' + txt(lw.d) + '</p></div></article>';
+    }).join("");
+    app.innerHTML = '<section class="learn words"><h1>' + t.words + '</h1><p class="lead">' + t.wordsD + '</p>' + cards + '</section>';
+    setBar('<button type="button" class="cta ghost" data-two="1" data-go="home">' + t.home + '</button><button type="button" class="cta" data-go="practice">' + t.tryPractice + '</button>');
   }
 
   function drawLearn() {
@@ -517,6 +576,7 @@
     if (needCode()) { S.screen = "gate"; return drawGate(); }
     if (S.screen === "home") drawHome();
     else if (S.screen === "learn") drawLearn();
+    else if (S.screen === "words") drawWords();
     else if (S.screen === "intro") drawIntro();
     else if (S.screen === "q") drawQ();
     else if (S.screen === "results") drawResults();
