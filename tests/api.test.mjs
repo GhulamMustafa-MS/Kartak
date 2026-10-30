@@ -5,7 +5,8 @@
  *             wrong passwords are refused, the iPhone hand-over token works once, CORS is only for the
  *             seller app, time limits (a code ends N days after its first use, the seller can change
  *             or remove the limit, D25), test results (only from the locked phone, saved once, summed up
- *             for the seller, deleted with their code, D26). Prints each check and exits with code 1 if any fails.
+ *             for the seller, deleted with their code, D26), bunches (several codes made in one go share a
+ *             batch id and are turned off, on and deleted together, D33). Prints each check and exits with code 1 if any fails.
  * Run:        cd tests && npm install && node api.test.mjs
  * Depends on: tests/testdb.mjs, api/*.js.
  */
@@ -76,6 +77,24 @@ check("stats: totals, pass rate and hardest questions", st.overall.tests === 2 &
 check("one person's tests, newest first", (await admin("results", { code: rc })).body.results.length === 2);
 await admin("delete", { code: rc });
 check("deleting a code deletes its results", (await admin("stats")).body.stats.overall.tests === 0);
+
+// Bunches (D33): "Make 3 codes" makes 3 codes sharing one batch id; batch actions touch only that bunch.
+const b3 = (await admin("new", { note: "Shop A", count: 3, days: 7 })).body;
+const inB = (l) => l.filter((x) => x.batch && x.batch === l.find((y) => y.code === b3.made).batch);
+check("count 3 makes 3 codes in one bunch", b3.madeAll.length === 3 && inB(b3.list).length === 3 && inB(b3.list).every((x) => x.note === "Shop A" && x.valid_days === 7));
+const single = (await admin("new", { note: "Alone" })).body;
+check("one code on its own has no bunch", single.madeAll.length === 1 && single.list.find((x) => x.code === single.made).batch === null);
+check("a silly count makes one code", (await admin("new", { count: 500 })).body.madeAll.length === 1);
+const bid = inB(b3.list)[0].batch;
+await callApi("activate", { code: b3.madeAll[0], device: "phone-BUN1" });
+let bl = (await admin("batch_disable", { batch: bid })).body.list;
+check("turn all off turns off the whole bunch only", inB(bl).every((x) => x.disabled) && !bl.find((x) => x.code === single.made).disabled);
+check("a turned-off bunch code is refused", (await callApi("activate", { code: b3.madeAll[0], device: "phone-BUN1" })).body.reason === "disabled");
+bl = (await admin("batch_enable", { batch: bid })).body.list;
+check("turn all back on", inB(bl).every((x) => !x.disabled) && (await callApi("activate", { code: b3.madeAll[0], device: "phone-BUN1" })).body.ok);
+check("a made-up bunch id changes nothing", (await admin("batch_delete", { batch: "x' or 1=1" })).body.list.length === bl.length);
+bl = (await admin("batch_delete", { batch: bid })).body.list;
+check("delete all removes the bunch and keeps other codes", !bl.some((x) => b3.madeAll.includes(x.code)) && bl.some((x) => x.code === single.made));
 
 const pre = await callApi("admin", {}, { method: "OPTIONS", origin: "https://kartak-seller.vercel.app" });
 check("CORS allowed for the seller app", pre.status === 204 && pre.headers["Access-Control-Allow-Origin"] === "https://kartak-seller.vercel.app");

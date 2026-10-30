@@ -4,7 +4,7 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 30 Oct 2026, afternoon)
+## START HERE (last updated 30 Oct 2026, evening)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
@@ -12,8 +12,9 @@ passes about ten entries, move the oldest into the Archive at the bottom.
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place, every
   type or one type such as ordering only, D29) /
   key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
-- Seller app https://kartak-seller.vercel.app: make (with an optional 1/3/7/30-day limit for trials), send,
-  reset, change the time limit, turn off and delete codes; Results tab with each person's scores, readiness,
+- Seller app https://kartak-seller.vercel.app: make one code or a bunch of up to 50 at once (D33; copy, turn off,
+  turn on or delete a bunch together), with an optional 1/3/7/30-day limit for trials; send, reset, change the
+  time limit, turn off and delete codes; Results tab with each person's scores, readiness,
   weak topics and the hardest questions (D26).
 - Wessam has the seller link and password. Price agreed: 20 SAR per person, upfront (plan.md 5).
 - Code split for growth and fully documented; tests pass (`cd tests && npm test`).
@@ -38,6 +39,11 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **30 Oct 2026 (4):** bunches of codes in the seller app (D33): "How many codes" (1/3/5/10/20 or any number up
+  to 50) makes codes that share a batch id, name and time limit; the list shows them as one bunch with Copy all,
+  Turn all off / back on and Delete all; WhatsApp for a bunch lists every code. Migration 005 (`batch` column) run
+  on the live database before the push. API checks and browser test added. Removed a stale line in summary.md
+  (results now reach the seller, D26). Tested in the test browser, not yet on a real phone.
 - **30 Oct 2026 (3):** right-or-wrong video questions are live (D31): 12 cartoon clips (6 right, 6 wrong:
   hand washing, boards, tasting, fridge, probe, sneeze, cut finger, phone and gloves), each a question with two
   answers, Right and Wrong, in all 11 languages; shared clip drawing code `scripts/clips/lib.js`. Ordering steps

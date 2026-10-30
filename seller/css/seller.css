@@ -2,7 +2,7 @@
  * seller/css/seller.css - styles for the seller app (seller/index.html).
  *
  * Purpose:    Colour tokens (light + dark) and the layout of the code list, buttons, install card and
- *             help sheet, and the time-limit chips (D25). Shares the green brand with the worker app; the seller icon is brown so the
+ *             help sheet, the time-limit chips (D25) and bunches of codes (D33). Shares the green brand with the worker app; the seller icon is brown so the
  *             two apps are easy to tell apart on a phone.
  * Used by:    seller/index.html.
  */
@@ -99,3 +99,15 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .trend small { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .back { min-height: 44px; justify-self: start; }
 
+
+/* Bunches of codes made together (decision D33): the "how many" box beside the chips, the new codes list,
+   and a bunch in the list (a framed group with its own Copy all / Turn all off / Delete all buttons). */
+.chips input.count { width: 76px; min-height: 44px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface-2); padding: 0 12px; font: inherit; font-size: 15px; text-align: center; }
+.new-code .codes { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; }
+.new-code .codes span { font-size: 20px; font-weight: 700; letter-spacing: .08em; color: var(--good); font-variant-numeric: tabular-nums; }
+.bunch { border: 2px solid var(--primary); border-radius: 18px; padding: 10px; display: grid; gap: 8px; background: var(--surface-2); }
+.bunch .bhead { display: grid; gap: 8px; padding: 2px 4px; }
+.bunch .bhead > div:first-child { display: grid; }
+.bunch .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.bunch .bhead .acts button { min-height: 40px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface); padding: 0 12px; cursor: pointer; font-size: 15px; }
+.bunch .bhead .acts button.del { color: var(--bad); border-color: var(--bad); background: var(--bad-bg); }

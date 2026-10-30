@@ -70,7 +70,8 @@ Worker app (installable, works offline after the first visit):
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 
 Seller app: password once per phone; make / copy / WhatsApp a code, with an optional time limit (1, 3, 7 or 30
-days from the first use, for people who want to try it first; changeable later, D25); list with status
+days from the first use, for people who want to try it first; changeable later, D25); make a bunch of codes in
+one go (up to 50) and copy, turn off, turn on or delete the whole bunch at once (D33); list with status
 (including "Time over") and each code's results summary; a Results tab with totals, full-mock pass rate, who is
 ready, test types, weakest topics, hardest questions and languages, and a page per person (D26); reset for a
 new phone;

@@ -41,6 +41,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
 | D31 | 30 Oct | Video questions go live as cartoon clips with two answers, Right and Wrong, like the real exam (Wessam: the exam always asks "is this right or wrong?"); 12 clips, half right, half wrong; replaces holding videos back (D5) | User asked, AI made the clips | The exam has video questions; workers should practise the format now, not wait for real footage |
 | D32 | 30 Oct | Ordering steps stay neutral (no colour) until "Check my answer" | User | The red used for moved steps looked like a wrong answer |
+| D33 | 30 Oct | The seller can make a bunch of codes in one go (1, 3, 5, 10, 20 or any number up to 50); codes made together share a batch id, show together in the list, and can be copied, turned off, turned on and deleted all at once | User asked, AI designed | Restaurants buy codes for several workers at a time; one by one was slow |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -254,3 +255,18 @@ way), AI video tools and filming (cost, permission; still an option to replace t
 Moving a step used to colour every row red (the ordering type's colour), which looked like a wrong answer
 before the worker had finished (Mustafa, 30 Oct). Rows and their numbers now stay neutral; green and red appear
 only after "Check my answer" (or at the end of a timed test).
+
+## D33. Bunches of codes
+
+Mustafa (30 Oct) wanted to make several codes at once (for a restaurant buying for 3, 5 or 10 workers) and to
+turn them off or delete them together. The "New code" card now has "How many codes" (chips 1 / 3 / 5 / 10 / 20
+and a box for any number up to 50). Codes made in one go get the same `batch` id (`B` + 6 code letters, new
+column, migration 005), the same name and the same time limit. The list draws them as one framed bunch with
+Copy all, Turn all off / Turn all back on and Delete all (two taps, like every destructive button); each code
+inside keeps its own buttons (reset, time limit, results). "Send on WhatsApp" for a bunch sends one message
+listing every code. One code made on its own has no batch and looks exactly as before.
+- Rejected: a separate "groups" table with its own name. A batch column is enough: a bunch is only ever made in
+  one go, and its name is the codes' shared name.
+- Rejected: letting the seller move codes between bunches later. Not asked for; adds screens.
+- The cap of 50 per go keeps one request short and stops a mistyped 500.
+

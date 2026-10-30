@@ -25,6 +25,7 @@
 | 30 Oct | The clip renderer (`scripts/make-clip.mjs`) failed in the AI's cloud workspace: the Playwright copy in tests/ wanted a different Chromium version than the one installed | Rendered with the installed Chromium (environment only; on a normal computer `npx playwright install chromium` in tests/ fixes it) |
 | 30 Oct | A beginner review found 15 more questions that a worker with no training would find confusing (textbook wording, HACCP jargon, ordering questions with more than one sensible order, numbers that seemed to clash) | Rewritten in kitchen words in all 11 languages, none dropped, 2 clearer ordering questions added (D30) |
 | 30 Oct | Changing a question could reset a worker's saved place in "All questions" (any change to the bank started it again) | `resumeAll()` keeps the place and drops only answered questions that changed shape; browser test checks it |
+| 30 Oct | The bunch feature needed a new database column, and the live API would fail on every seller call if it went live before the column existed | Ran migration 005 (add column only, nothing deleted) on the live database first, then pushed the code (D33) |
 | 30 Oct | Ordering question k139 (the life of a spore: conditions get bad, spore forms, waits, wakes) was abstract science that made no sense to a kitchen worker (Mustafa tested it on his phone) | Rewritten as a kitchen story about cooked rice left out (raw rice has spores, they survive cooking, rice left warm, spores wake and germs multiply, germs make poison), same id and chapter, all 11 languages; the other 50 ordering questions were read through and kept |
 | 29 Oct | "Listen" on an ordering question read the steps in the correct order, giving the answer away (it read the stored list, which is kept correct-first); the other types were also read in stored order, not the shuffled order on screen | Listen now reads the choices exactly as they are on the screen; browser test fakes a phone voice and checks it |
 | 29 Oct | The phone's Back button closed the whole app (it is one page with no history) | Each app keeps one history entry while an inner screen is open; Back now goes to the home screen (seller: up a level), and asks before losing test answers (D28) |
@@ -70,7 +71,8 @@
   limit should be added if abuse appears.
 
 **Product**
-- Test results stay on the phone; the seller can't see who is ready.
+- A bunch is fixed when it is made (D33): a code can't be added to or moved between bunches later, and codes
+  made one by one before 30 Oct are not in any bunch. Up to 50 codes per go.
 - No online payment; cash through one seller.
 - Not yet tested on a real iPhone end to end (home-screen install and hand-over were tested in a simulated
   iPhone browser).

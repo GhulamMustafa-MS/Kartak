@@ -8,7 +8,7 @@
  *             "All questions" saves the place, carries on, and can be only one type of question (D29);
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); "Listen" reads ordering steps in the order on the screen; clip questions play a video with Right and Wrong (D31); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
+ *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); "Listen" reads ordering steps in the order on the screen; clip questions play a video with Right and Wrong (D31); the seller makes a bunch of 3 codes, turns it off and deletes it (D33); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -118,6 +118,24 @@ await seller.goBack(); await seller.waitForSelector(".person");
 check("seller Back from a person goes to the Results tab", !(await seller.$(".trend")));
 await seller.goBack(); await seller.waitForSelector("#make");
 check("seller Back from Results goes to the Codes tab", (await seller.evaluate(() => history.state)) === null);
+// Bunches (D33): make 3 codes in one go, see them together, turn the whole bunch off, then delete it
+await seller.click("[data-count='3']");
+check("the make button says how many", (await seller.textContent("#make")).trim() === "Make 3 codes");
+await seller.fill("#note", "Shop bunch");
+await seller.click("#make");
+await seller.waitForSelector(".new-code .codes span");
+check("seller makes 3 codes at once", (await seller.$$(".new-code .codes span")).length === 3);
+check("the WhatsApp message for a bunch lists every code", decodeURIComponent(await seller.getAttribute(".new-code a", "href")).split("\n").filter((l) => /^[A-Z2-9]{3}-[A-Z2-9]{3}$/.test(l)).length === 3);
+check("the list shows them together as a bunch of 3", (await seller.$$(".bunch .item")).length === 3 && (await seller.textContent(".bunch .bhead")).includes("Bunch of 3 codes"));
+check("the bunch fits the phone width", (await seller.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+await seller.screenshot({ path: SHOTS + "seller-bunch.png", fullPage: true });
+await seller.click("[data-bact=batch_disable]"); await seller.click("[data-bact=batch_disable]");
+await seller.waitForSelector("[data-bact=batch_enable]");
+check("turn all off turns off every code in the bunch", (await seller.$$(".bunch .pill.off")).length === 3);
+await seller.click("[data-bact=batch_delete]"); await seller.click("[data-bact=batch_delete]");
+await seller.waitForFunction(() => !document.querySelector(".bunch"));
+check("delete all removes the bunch", !(await seller.$(".new-code .codes")));
+await seller.click("[data-count='1']");
 await worker.screenshot({ path: SHOTS + "result.png", fullPage: true });
 
 // "All questions": every live question, untimed, place saved between sittings (D21)

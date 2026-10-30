@@ -8,7 +8,7 @@ The server side: Vercel serverless functions (Node 24, ES modules) for the acces
 | `_db.js` | Shared Postgres client (`sql`), `normCode()`, `readBody()`; swapped for an in-memory database by the tests. Not an endpoint (leading `_`) |
 | `activate.js` | POST /api/activate - unlock with a code; locks it to one phone (D9); refuses a code whose time limit is over (D25) |
 | `transfer.js` | POST /api/transfer - one-time token that moves a code to the iPhone home-screen app (D13) |
-| `admin.js` | POST /api/admin - seller actions (list with each code's results summary, new with an optional time limit, limit, reset, disable, enable, delete, stats, results); password checked by hash; CORS for the seller app (D12) |
+| `admin.js` | POST /api/admin - seller actions (list with each code's results summary, new with an optional time limit and count (a bunch, D33), limit, reset, disable, enable, delete, the same three for a whole bunch, stats, results); password checked by hash; CORS for the seller app (D12) |
 | `result.js` | POST /api/result - the worker app's finished tests, saved for the seller's Results tab; only from the phone the code is locked to (D26) |
 | `health.js` | GET /api/health - `{ok:true}` when the database answers |
 

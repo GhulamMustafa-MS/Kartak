@@ -1,12 +1,15 @@
 /*
  * api/admin.js - POST /api/admin: everything the seller app does with codes.
  *
- * Purpose:    Request { key, action, code?, note?, days? }. action: "list" | "new" | "reset" | "disable" |
- *             "enable" | "delete" | "limit" | "stats" | "results". "new" and "limit" take days = 1-365 for a
+ * Purpose:    Request { key, action, code?, note?, days?, count?, batch? }. action: "list" | "new" | "reset" |
+ *             "disable" | "enable" | "delete" | "limit" | "stats" | "results" | "batch_disable" |
+ *             "batch_enable" | "batch_delete". "new" and "limit" take days = 1-365 for a
  *             time limit counted from the code's first use, or nothing / null for no limit (decision D25).
+ *             "new" takes count = 1-50 (default 1); more than one makes a bunch sharing one batch id, and the
+ *             batch_* actions turn off, turn on or delete every code of that bunch at once (decision D33).
  *             Every code in the list carries a summary of its test results (tests, avg, last_test, fulls,
  *             fulls_passed); "stats" adds the totals for all codes, "results" adds one code's tests (D26). Every call returns the full list (newest first, max 500) so the seller
- *             screen redraws from one response; "new" also returns { made: CODE }.
+ *             screen redraws from one response; "new" also returns { made: FIRST CODE, madeAll: [CODES] }.
  *             The key is the seller password; only its SHA-256 hash is stored (kartak_settings.admin_hash).
  *             Wrong key: 401 after a 1-second delay (slows guessing).
  * Used by:    seller/js/seller.js, which runs on a different address (kartak-seller.vercel.app), so this
@@ -21,6 +24,10 @@ const gen = () => Array.from(crypto.randomBytes(6), (b) => ALPHABET[b % ALPHABET
 const ALLOWED_ORIGINS = ["https://kartak-seller.vercel.app"];
 // Time limit in whole days (1-365), or null for no limit; anything else counts as no limit.
 const days = (v) => (Number.isInteger(v) && v >= 1 && v <= 365 ? v : null);
+// How many codes to make in one go (D33): 1-50, anything else counts as 1.
+const count = (v) => (Number.isInteger(v) && v >= 1 && v <= 50 ? v : 1);
+// A bunch id is "B" + 6 code letters; anything else matches no bunch.
+const batchId = (v) => (/^B[A-Z0-9]{6}$/.test(String(v || "")) ? String(v) : "");
 
 // Everything the seller's Results tab shows for all codes together (D26).
 async function stats() {
@@ -64,13 +71,28 @@ export default async function handler(req, res) {
       return res.status(401).json({ ok: false, reason: "key" });
     }
     const code = norm(body.code);
+    const batch = batchId(body.batch);
     let made = null;
+    const madeAll = [];
     if (body.action === "new") {
       const note = String(body.note || "").trim().slice(0, 60);
-      for (let i = 0; i < 5 && !made; i++) {
-        const r = await sql`insert into kartak_codes (code, note, valid_days) values (${gen()}, ${note}, ${days(body.days)}) on conflict do nothing returning code`;
-        if (r.length) made = r[0].code;
+      const n = count(body.count);
+      const group = n > 1 ? "B" + gen() : null; // codes made together share one bunch id (D33)
+      for (let k = 0; k < n; k++) {
+        let one = null;
+        for (let i = 0; i < 5 && !one; i++) {
+          const r = await sql`insert into kartak_codes (code, note, valid_days, batch) values (${gen()}, ${note}, ${days(body.days)}, ${group}) on conflict do nothing returning code`;
+          if (r.length) one = r[0].code;
+        }
+        if (one) madeAll.push(one);
       }
+      made = madeAll[0] || null;
+    } else if (body.action === "batch_disable" && batch) {
+      await sql`update kartak_codes set disabled = true where batch = ${batch}`;
+    } else if (body.action === "batch_enable" && batch) {
+      await sql`update kartak_codes set disabled = false where batch = ${batch}`;
+    } else if (body.action === "batch_delete" && batch) {
+      await sql`delete from kartak_codes where batch = ${batch}`;
     } else if (body.action === "reset") {
       await sql`update kartak_codes set device_id = null, reset_count = reset_count + 1 where code = ${code}`;
     } else if (body.action === "disable") {
@@ -86,7 +108,7 @@ export default async function handler(req, res) {
     // A full mock is passed at 80%: correct * 5 >= total * 4.
     const list = await sql`
       select c.code, c.note, c.device_id is not null as active, c.disabled, c.created_at, c.activated_at, c.last_seen,
-             c.reset_count, c.valid_days, c.activated_at + make_interval(days => c.valid_days) as ends,
+             c.reset_count, c.valid_days, c.batch, c.activated_at + make_interval(days => c.valid_days) as ends,
              coalesce(c.activated_at + make_interval(days => c.valid_days) <= now(), false) as expired,
              coalesce(r.tests, 0)::int as tests, r.avg, r.last_test, coalesce(r.fulls, 0)::int as fulls,
              coalesce(r.fulls_passed, 0)::int as fulls_passed
@@ -96,7 +118,7 @@ export default async function handler(req, res) {
                           count(*) filter (where mode = 'full' and correct * 5 >= total * 4) as fulls_passed
                      from kartak_results group by code) r on r.code = c.code
        order by c.created_at desc limit 500`;
-    const out = { ok: true, made, list };
+    const out = { ok: true, made, madeAll, list };
     if (body.action === "stats") out.stats = await stats();
     if (body.action === "results") out.results = await sql`
       select mode, lang, total, correct, timed_out, seconds, asked, wrong, finished_at
