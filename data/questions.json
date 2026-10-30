@@ -33890,6 +33890,630 @@
     ],
     "e": "Tehlikeyi bul, güvenli sayıyı belirle, kontrol et, tutmazsa düzelt ve yaz. HACCP gıdayı her gün böyle güvende tutar."
    }
+  },
+  {
+   "id": "k310",
+   "type": "video",
+   "ans": 0,
+   "ch": 7,
+   "d": 2,
+   "clip": "/videos/handwash-right.mp4",
+   "en": {
+    "q": "A worker washes his hands. Watch the clip. Is this right or wrong?",
+    "e": "Right. He used water and liquid soap, rubbed every part of his hands, rinsed, dried them with a paper towel and turned off the tap with the towel."
+   },
+   "ur": {
+    "q": "ایک ورکر ہاتھ دھو رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے پانی اور مائع صابن استعمال کیا، ہاتھوں کا ہر حصہ رگڑا، پانی سے دھویا، کاغذی تولیے سے ہاتھ خشک کیے اور اسی تولیے سے نل بند کیا۔"
+   },
+   "hi": {
+    "q": "एक वर्कर हाथ धो रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। उसने पानी और लिक्विड साबुन इस्तेमाल किया, हाथों का हर हिस्सा रगड़ा, पानी से धोया, पेपर टॉवल से हाथ सुखाए और उसी टॉवल से नल बंद किया।"
+   },
+   "bn": {
+    "q": "একজন কর্মী হাত ধুচ্ছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি পানি আর লিকুইড সাবান ব্যবহার করেছেন, হাতের প্রতিটি অংশ ঘষেছেন, ধুয়ে ফেলেছেন, পেপার টাওয়েল দিয়ে শুকিয়েছেন আর সেই টাওয়েল দিয়েই কল বন্ধ করেছেন।"
+   },
+   "ar": {
+    "q": "عامل يغسل يديه. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. استعمل الماء والصابون السائل، وفرك كل جزء من يديه، وشطفهما، وجففهما بمنديل ورقي، وأغلق الصنبور بالمنديل."
+   },
+   "ne": {
+    "q": "एक जना कामदार हात धुँदै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले पानी र झोल साबुन प्रयोग गर्‍यो, हातको हरेक भाग रगड्यो, पखाल्यो, कागजको रुमाल (पेपर टावल) ले सुकायो र त्यही रुमालले धारा बन्द गर्‍यो।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ കൈ കഴുകുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ വെള്ളവും ലിക്വിഡ് സോപ്പും ഉപയോഗിച്ചു, കൈയുടെ എല്ലാ ഭാഗവും ഉരച്ചു കഴുകി, വെള്ളത്തിൽ കഴുകിക്കളഞ്ഞു, പേപ്പർ ടവൽ കൊണ്ട് ഉണക്കി, ആ ടവൽ കൊണ്ട് തന്നെ ടാപ്പ് അടച്ചു."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் கைகளைக் கழுவுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் தண்ணீரையும் திரவ சோப்பையும் பயன்படுத்தினார், கைகளின் ஒவ்வொரு பகுதியையும் தேய்த்தார், தண்ணீரில் அலசினார், பேப்பர் டவலால் கைகளை உலர்த்தினார், அதே டவலால் குழாயை மூடினார்."
+   },
+   "fil": {
+    "q": "Naghuhugas ng kamay ang isang worker. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. Gumamit siya ng tubig at liquid soap, kinuskos ang bawat bahagi ng kamay niya, binanlawan, pinatuyo gamit ang paper towel at isinara ang gripo gamit ang paper towel."
+   },
+   "ind": {
+    "q": "Seorang pekerja mencuci tangan. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Dia memakai air dan sabun cair, menggosok semua bagian tangannya, membilas, mengeringkan dengan tisu kertas, lalu menutup keran dengan tisu itu."
+   },
+   "tr": {
+    "q": "Bir çalışan ellerini yıkıyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Su ve sıvı sabun kullandı, ellerinin her yerini ovdu, duruladı, kağıt havluyla kuruladı ve musluğu havluyla kapattı."
+   }
+  },
+  {
+   "id": "k311",
+   "type": "video",
+   "ans": 1,
+   "ch": 7,
+   "d": 1,
+   "clip": "/videos/handwash-wrong.mp4",
+   "en": {
+    "q": "A worker washes his hands before going back to work. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. He only splashed his hands with water, used no soap and dried them on his apron. Wash with soap for at least 20 seconds and dry with a paper towel."
+   },
+   "ur": {
+    "q": "ایک ورکر کام پر واپس جانے سے پہلے ہاتھ دھو رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ اس نے صرف ہاتھوں پر پانی کے چھینٹے مارے، صابن نہیں لگایا اور ہاتھ ایپرن سے پونچھے۔ صابن سے کم از کم 20 سیکنڈ ہاتھ دھوئیں اور کاغذی تولیے سے خشک کریں۔"
+   },
+   "hi": {
+    "q": "एक वर्कर काम पर वापस जाने से पहले हाथ धो रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। उसने सिर्फ़ हाथों पर पानी के छींटे मारे, साबुन नहीं लगाया और हाथ एप्रन पर पोंछे। साबुन से कम से कम 20 सेकंड तक हाथ धोएं और पेपर टॉवल से सुखाएं।"
+   },
+   "bn": {
+    "q": "কাজে ফেরার আগে একজন কর্মী হাত ধুচ্ছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। তিনি শুধু হাতে একটু পানি ছিটিয়েছেন, কোনো সাবান দেননি আর অ্যাপ্রনে হাত মুছেছেন। সাবান দিয়ে অন্তত 20 সেকেন্ড হাত ধুয়ে নিন আর পেপার টাওয়েল দিয়ে শুকান।"
+   },
+   "ar": {
+    "q": "عامل يغسل يديه قبل أن يرجع إلى العمل. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. رشّ الماء على يديه فقط، ولم يستعمل الصابون، وجففهما بالمريلة. اغسل يديك بالصابون لمدة 20 ثانية على الأقل، وجففهما بمنديل ورقي."
+   },
+   "ne": {
+    "q": "एक जना कामदार काममा फर्कनुअघि हात धुँदै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। उसले हातमा पानी मात्र छ्याप्यो, साबुन लगाएन र एप्रनमा हात पुछ्यो। साबुनले कम्तीमा 20 सेकेन्ड हात धुनुहोस् र कागजको रुमालले सुकाउनुहोस्।"
+   },
+   "ml": {
+    "q": "ജോലിക്ക് തിരികെ പോകുന്നതിന് മുമ്പ് ഒരു ജോലിക്കാരൻ കൈ കഴുകുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. അയാൾ കൈയിൽ കുറച്ച് വെള്ളം തെറിപ്പിച്ചതേയുള്ളൂ, സോപ്പ് ഉപയോഗിച്ചില്ല, ഏപ്രണിൽ കൈ തുടച്ച് ഉണക്കി. കുറഞ്ഞത് 20 സെക്കൻഡ് സോപ്പ് കൊണ്ട് കഴുകുക, പേപ്പർ ടവൽ കൊണ്ട് ഉണക്കുക."
+   },
+   "ta": {
+    "q": "மீண்டும் வேலைக்குச் செல்லும் முன் ஒரு பணியாளர் கைகளைக் கழுவுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. அவர் கைகளில் தண்ணீரைத் தெளித்துக்கொண்டார், அவ்வளவுதான். சோப்பு போடவில்லை, ஏப்ரனில் கைகளைத் துடைத்தார். குறைந்தது 20 வினாடிகள் சோப்பு போட்டுக் கழுவுங்கள், பேப்பர் டவலால் உலர்த்துங்கள்."
+   },
+   "fil": {
+    "q": "Naghuhugas ng kamay ang isang worker bago bumalik sa trabaho. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Binasa lang niya ng tubig ang kamay niya, walang sabon, at pinunasan ito sa apron niya. Maghugas gamit ang sabon nang hindi bababa sa 20 segundo at patuyuin gamit ang paper towel."
+   },
+   "ind": {
+    "q": "Seorang pekerja mencuci tangan sebelum kembali bekerja. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Dia hanya membasahi tangan dengan air, tidak memakai sabun, dan mengeringkan tangan di celemeknya. Cuci dengan sabun paling sedikit 20 detik dan keringkan dengan tisu kertas."
+   },
+   "tr": {
+    "q": "Bir çalışan işe dönmeden önce ellerini yıkıyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Ellerine sadece biraz su çarptı, sabun kullanmadı ve ellerini önlüğüyle kuruladı. Ellerini en az 20 saniye sabunla yıka ve kağıt havluyla kurula."
+   }
+  },
+  {
+   "id": "k312",
+   "type": "video",
+   "ans": 0,
+   "ch": 2,
+   "d": 2,
+   "clip": "/videos/boards-right.mp4",
+   "en": {
+    "q": "A worker cuts raw chicken and then a carrot. Watch the clip. Is this right or wrong?",
+    "e": "Right. He cut the raw chicken on the red board and put that board and knife aside to be washed. Then he used a clean green board and a different knife for the carrot."
+   },
+   "ur": {
+    "q": "ایک ورکر پہلے کچا چکن اور پھر گاجر کاٹتا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے کچا چکن لال بورڈ پر کاٹا اور وہ بورڈ اور چھری دھونے کے لیے الگ رکھ دیے۔ پھر گاجر کے لیے اس نے صاف ہرا بورڈ اور دوسری چھری استعمال کی۔"
+   },
+   "hi": {
+    "q": "एक वर्कर पहले कच्चा चिकन और फिर गाजर काटता है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। उसने कच्चा चिकन लाल बोर्ड पर काटा और वह बोर्ड और चाकू धोने के लिए अलग रख दिए। फिर गाजर के लिए उसने साफ़ हरा बोर्ड और दूसरा चाकू इस्तेमाल किया।"
+   },
+   "bn": {
+    "q": "একজন কর্মী কাঁচা মুরগি কাটছেন, তারপর একটা গাজর। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি কাঁচা মুরগি লাল বোর্ডে কেটেছেন আর সেই বোর্ড আর ছুরি ধোয়ার জন্য সরিয়ে রেখেছেন। তারপর গাজরের জন্য একটা পরিষ্কার সবুজ বোর্ড আর অন্য একটা ছুরি নিয়েছেন।"
+   },
+   "ar": {
+    "q": "عامل يقطع دجاجاً نيئاً ثم جزرة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. قطع الدجاج النيء على اللوح الأحمر، ووضع هذا اللوح والسكين جانباً ليُغسلا. ثم استعمل لوحاً أخضر نظيفاً وسكيناً أخرى للجزرة."
+   },
+   "ne": {
+    "q": "एक जना कामदारले पहिले काँचो कुखुराको मासु काट्छ, अनि गाजर काट्छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले काँचो कुखुराको मासु रातो पाटीमा काट्यो र त्यो पाटी र चक्कु धुनका लागि छुट्टै राख्यो। अनि गाजरका लागि सफा हरियो पाटी र अर्कै चक्कु प्रयोग गर्‍यो।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ വേവിക്കാത്ത ചിക്കൻ മുറിക്കുന്നു, പിന്നെ ഒരു ക്യാരറ്റും. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ വേവിക്കാത്ത ചിക്കൻ ചുവന്ന ബോർഡിൽ മുറിച്ചു, ആ ബോർഡും കത്തിയും കഴുകാനായി മാറ്റിവച്ചു. പിന്നെ ക്യാരറ്റിന് വൃത്തിയുള്ള ഒരു പച്ച ബോർഡും വേറൊരു കത്തിയും ഉപയോഗിച്ചു."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சமைக்காத கோழியை வெட்டுகிறார், பிறகு ஒரு கேரட்டை வெட்டுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் சமைக்காத கோழியைச் சிவப்புப் பலகையில் வெட்டினார், அந்தப் பலகையையும் கத்தியையும் கழுவுவதற்காகத் தனியே வைத்தார். பிறகு கேரட்டுக்குச் சுத்தமான பச்சைப் பலகையையும் வேறு கத்தியையும் பயன்படுத்தினார்."
+   },
+   "fil": {
+    "q": "Naghiwa ang isang worker ng hilaw na manok, tapos ng carrot. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. Hiniwa niya ang hilaw na manok sa pulang chopping board at itinabi ang board at kutsilyo para hugasan. Tapos gumamit siya ng malinis na berdeng board at ibang kutsilyo para sa carrot."
+   },
+   "ind": {
+    "q": "Seorang pekerja memotong ayam mentah, lalu wortel. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Dia memotong ayam mentah di talenan merah, lalu menyisihkan talenan dan pisau itu untuk dicuci. Lalu dia memakai talenan hijau yang bersih dan pisau lain untuk wortel."
+   },
+   "tr": {
+    "q": "Bir çalışan çiğ tavuk, sonra da havuç doğruyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Çiğ tavuğu kırmızı tahtada doğradı, o tahtayı ve bıçağı yıkanmak üzere kenara koydu. Sonra havuç için temiz, yeşil bir tahta ve başka bir bıçak kullandı."
+   }
+  },
+  {
+   "id": "k313",
+   "type": "video",
+   "ans": 1,
+   "ch": 2,
+   "d": 2,
+   "clip": "/videos/cross-contamination.mp4",
+   "en": {
+    "q": "A worker cuts a carrot and then raw chicken. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. He cut the raw chicken on the green vegetable board without washing it. Raw meat needs its own red board and knife."
+   },
+   "ur": {
+    "q": "ایک ورکر پہلے گاجر اور پھر کچا چکن کاٹتا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ اس نے سبزی والے ہرے بورڈ کو دھوئے بغیر اسی پر کچا چکن کاٹا۔ کچے گوشت کے لیے الگ لال بورڈ اور الگ چھری ہونی چاہیے۔"
+   },
+   "hi": {
+    "q": "एक वर्कर पहले गाजर और फिर कच्चा चिकन काटता है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। उसने सब्ज़ी वाले हरे बोर्ड को धोए बिना उसी पर कच्चा चिकन काटा। कच्चे मांस के लिए अलग लाल बोर्ड और अलग चाकू होना चाहिए।"
+   },
+   "bn": {
+    "q": "একজন কর্মী একটা গাজর কাটছেন, তারপর কাঁচা মুরগি। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। তিনি সবজির সবুজ বোর্ডটা না ধুয়েই তাতে কাঁচা মুরগি কেটেছেন। কাঁচা মাংসের জন্য আলাদা লাল বোর্ড আর আলাদা ছুরি লাগে।"
+   },
+   "ar": {
+    "q": "عامل يقطع جزرة ثم دجاجاً نيئاً. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. قطع الدجاج النيء على لوح الخضار الأخضر بدون أن يغسله. اللحم النيء يحتاج لوحاً أحمر خاصاً به وسكيناً خاصة به."
+   },
+   "ne": {
+    "q": "एक जना कामदारले पहिले गाजर काट्छ, अनि काँचो कुखुराको मासु काट्छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। उसले तरकारीको हरियो पाटी नधोईकन त्यसैमा काँचो कुखुराको मासु काट्यो। काँचो मासुका लागि छुट्टै रातो पाटी र चक्कु चाहिन्छ।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ ഒരു ക്യാരറ്റ് മുറിക്കുന്നു, പിന്നെ വേവിക്കാത്ത ചിക്കനും. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. പച്ചക്കറിക്കുള്ള പച്ച ബോർഡ് കഴുകാതെ അയാൾ അതിൽ വേവിക്കാത്ത ചിക്കൻ മുറിച്ചു. വേവിക്കാത്ത ഇറച്ചിക്ക് അതിന്റേതായ ചുവന്ന ബോർഡും കത്തിയും വേണം."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் ஒரு கேரட்டை வெட்டுகிறார், பிறகு சமைக்காத கோழியை வெட்டுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. காய்கறிக்கான பச்சைப் பலகையைக் கழுவாமலேயே அதில் சமைக்காத கோழியை வெட்டினார். சமைக்காத இறைச்சிக்குத் தனிச் சிவப்புப் பலகையும் தனிக் கத்தியும் வேண்டும்."
+   },
+   "fil": {
+    "q": "Naghiwa ang isang worker ng carrot, tapos ng hilaw na manok. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Hiniwa niya ang hilaw na manok sa berdeng board para sa gulay nang hindi ito hinuhugasan. Kailangan ng hilaw na karne ang sarili nitong pulang board at kutsilyo."
+   },
+   "ind": {
+    "q": "Seorang pekerja memotong wortel, lalu ayam mentah. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Dia memotong ayam mentah di talenan hijau untuk sayur tanpa mencucinya dulu. Daging mentah harus punya talenan merah dan pisau sendiri."
+   },
+   "tr": {
+    "q": "Bir çalışan havuç, sonra da çiğ tavuk doğruyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Çiğ tavuğu yeşil sebze tahtasında, tahtayı yıkamadan doğradı. Çiğ et için ayrı bir kırmızı tahta ve ayrı bir bıçak gerekir."
+   }
+  },
+  {
+   "id": "k314",
+   "type": "video",
+   "ans": 1,
+   "ch": 7,
+   "d": 1,
+   "clip": "/videos/taste-wrong.mp4",
+   "en": {
+    "q": "A worker tastes the sauce. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. He tasted the sauce with his finger and then put the finger back in the pot. This puts germs from his mouth into the food."
+   },
+   "ur": {
+    "q": "ایک ورکر ساس چکھ رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ اس نے انگلی سے ساس چکھی اور پھر وہی انگلی دوبارہ برتن میں ڈال دی۔ اس سے اس کے منہ کے جراثیم کھانے میں چلے جاتے ہیں۔"
+   },
+   "hi": {
+    "q": "एक वर्कर सॉस चख रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। उसने उंगली से सॉस चखी और फिर वही उंगली वापस बर्तन में डाल दी। इससे उसके मुँह के कीटाणु खाने में चले जाते हैं।"
+   },
+   "bn": {
+    "q": "একজন কর্মী সসের স্বাদ দেখছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। তিনি আঙুল দিয়ে সসের স্বাদ দেখেছেন, তারপর সেই আঙুল আবার হাঁড়িতে ঢুকিয়েছেন। এতে তার মুখের জীবাণু খাবারে চলে যায়।"
+   },
+   "ar": {
+    "q": "عامل يتذوق الصلصة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. تذوق الصلصة بإصبعه، ثم أعاد إصبعه إلى القدر. هذا ينقل الجراثيم من فمه إلى الطعام."
+   },
+   "ne": {
+    "q": "एक जना कामदार सस चाख्दै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। उसले औंलाले सस चाख्यो र त्यही औंला फेरि भाँडामा हाल्यो। यसले उसको मुखका किटाणु खानामा पुर्‍याउँछ।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ സോസ് രുചിച്ചു നോക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. അയാൾ വിരൽ കൊണ്ട് സോസ് രുചിച്ചു നോക്കി, പിന്നെ അതേ വിരൽ വീണ്ടും പാത്രത്തിൽ ഇട്ടു. ഇങ്ങനെ അയാളുടെ വായിലെ അണുക്കൾ ഭക്ഷണത്തിൽ എത്തും."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சாஸை ருசி பார்க்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. அவர் விரலால் சாஸை ருசி பார்த்தார், பிறகு அதே விரலை மீண்டும் பாத்திரத்துக்குள் வைத்தார். இதனால் அவர் வாயில் உள்ள கிருமிகள் உணவுக்குள் போகும்."
+   },
+   "fil": {
+    "q": "Tinitikman ng isang worker ang sauce. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Tinikman niya ang sauce gamit ang daliri niya, tapos ibinalik ang daliri sa kaldero. Napupunta sa pagkain ang mikrobyo mula sa bibig niya."
+   },
+   "ind": {
+    "q": "Seorang pekerja mencicipi saus. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Dia mencicipi saus dengan jarinya, lalu memasukkan jari itu lagi ke panci. Ini memindahkan kuman dari mulutnya ke makanan."
+   },
+   "tr": {
+    "q": "Bir çalışan sosun tadına bakıyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Sosun tadına parmağıyla baktı, sonra parmağını tekrar tencereye soktu. Bu, ağzındaki mikropları yemeğe geçirir."
+   }
+  },
+  {
+   "id": "k315",
+   "type": "video",
+   "ans": 0,
+   "ch": 7,
+   "d": 2,
+   "clip": "/videos/taste-right.mp4",
+   "en": {
+    "q": "A worker tastes the sauce. Watch the clip. Is this right or wrong?",
+    "e": "Right. He tasted with a clean spoon, used it only once and put it aside to be washed. It never went back into the pot."
+   },
+   "ur": {
+    "q": "ایک ورکر ساس چکھ رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے صاف چمچ سے چکھا، اسے صرف ایک بار استعمال کیا اور دھونے کے لیے الگ رکھ دیا۔ وہ چمچ دوبارہ برتن میں نہیں گیا۔"
+   },
+   "hi": {
+    "q": "एक वर्कर सॉस चख रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। उसने साफ़ चम्मच से चखा, उसे सिर्फ़ एक बार इस्तेमाल किया और धोने के लिए अलग रख दिया। वह चम्मच कभी वापस बर्तन में नहीं गया।"
+   },
+   "bn": {
+    "q": "একজন কর্মী সসের স্বাদ দেখছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি একটা পরিষ্কার চামচ দিয়ে স্বাদ দেখেছেন, চামচটা শুধু একবার ব্যবহার করেছেন আর ধোয়ার জন্য সরিয়ে রেখেছেন। চামচটা আর কখনো হাঁড়িতে যায়নি।"
+   },
+   "ar": {
+    "q": "عامل يتذوق الصلصة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. تذوق بملعقة نظيفة، واستعملها مرة واحدة فقط، ووضعها جانباً لتُغسل. لم يُرجعها إلى القدر أبداً."
+   },
+   "ne": {
+    "q": "एक जना कामदार सस चाख्दै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले सफा चम्चाले चाख्यो, त्यो चम्चा एक पटक मात्र प्रयोग गर्‍यो र धुनका लागि छुट्टै राख्यो। त्यो चम्चा फेरि कहिल्यै भाँडामा गएन।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ സോസ് രുചിച്ചു നോക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ വൃത്തിയുള്ള ഒരു സ്പൂൺ കൊണ്ട് രുചിച്ചു, അത് ഒരു തവണ മാത്രം ഉപയോഗിച്ചു, കഴുകാനായി മാറ്റിവച്ചു. ആ സ്പൂൺ ഒരിക്കലും വീണ്ടും പാത്രത്തിൽ ഇട്ടില്ല."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சாஸை ருசி பார்க்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் சுத்தமான கரண்டியால் ருசி பார்த்தார், அதை ஒரு முறை மட்டுமே பயன்படுத்தினார், கழுவுவதற்காகத் தனியே வைத்தார். அந்தக் கரண்டி மீண்டும் பாத்திரத்துக்குள் போகவே இல்லை."
+   },
+   "fil": {
+    "q": "Tinitikman ng isang worker ang sauce. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. Tumikim siya gamit ang malinis na kutsara, isang beses lang ito ginamit at itinabi para hugasan. Hindi na ito ibinalik sa kaldero."
+   },
+   "ind": {
+    "q": "Seorang pekerja mencicipi saus. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Dia mencicipi dengan sendok bersih, memakainya sekali saja, lalu menyisihkannya untuk dicuci. Sendok itu tidak pernah masuk lagi ke panci."
+   },
+   "tr": {
+    "q": "Bir çalışan sosun tadına bakıyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Temiz bir kaşıkla tadına baktı, kaşığı sadece bir kez kullandı ve yıkanmak üzere kenara koydu. Kaşık hiç tencereye geri girmedi."
+   }
+  },
+  {
+   "id": "k316",
+   "type": "video",
+   "ans": 1,
+   "ch": 12,
+   "d": 2,
+   "clip": "/videos/fridge-wrong.mp4",
+   "en": {
+    "q": "A worker puts raw chicken in the fridge. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. The raw chicken was uncovered on the top shelf, and its juice dripped onto the cake below. Raw meat goes covered on the bottom shelf."
+   },
+   "ur": {
+    "q": "ایک ورکر کچا چکن فریج میں رکھ رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ کچا چکن بغیر ڈھکے اوپر والے خانے میں تھا، اور اس کا پانی نیچے رکھے کیک پر ٹپک گیا۔ کچا گوشت ڈھک کر نیچے والے خانے میں رکھیں۔"
+   },
+   "hi": {
+    "q": "एक वर्कर कच्चा चिकन फ्रिज में रख रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। कच्चा चिकन बिना ढके ऊपर वाले खाने में था, और उसका पानी नीचे रखे केक पर टपक गया। कच्चा मांस ढककर नीचे वाले खाने में रखें।"
+   },
+   "bn": {
+    "q": "একজন কর্মী ফ্রিজে কাঁচা মুরগি রাখছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। কাঁচা মুরগি ঢাকনা ছাড়া সবচেয়ে উপরের তাকে ছিল, আর এর রস নিচের কেকের উপর পড়েছে। কাঁচা মাংস ঢেকে সবচেয়ে নিচের তাকে রাখতে হয়।"
+   },
+   "ar": {
+    "q": "عامل يضع دجاجاً نيئاً في الثلاجة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. كان الدجاج النيء مكشوفاً على الرف العلوي، وقطرت عصارته على الكعكة التي تحته. اللحم النيء يوضع مغطى على الرف السفلي."
+   },
+   "ne": {
+    "q": "एक जना कामदार फ्रिजमा काँचो कुखुराको मासु राख्दै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। काँचो कुखुराको मासु नछोपी माथिल्लो दराजमा थियो, र त्यसको रस तलको केकमा चुहियो। काँचो मासु छोपेर तल्लो दराजमा राख्नुपर्छ।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ വേവിക്കാത്ത ചിക്കൻ ഫ്രിഡ്ജിൽ വയ്ക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. വേവിക്കാത്ത ചിക്കൻ മൂടാതെ മുകളിലെ തട്ടിൽ വച്ചു, അതിന്റെ നീര് താഴെയുള്ള കേക്കിലേക്ക് ഇറ്റുവീണു. വേവിക്കാത്ത ഇറച്ചി മൂടി താഴത്തെ തട്ടിൽ വയ്ക്കണം."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சமைக்காத கோழியை ஃப்ரிட்ஜில் வைக்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. சமைக்காத கோழி மூடப்படாமல் மேல் அடுக்கில் இருந்தது, அதன் சாறு கீழே இருந்த கேக்கின் மேல் சொட்டியது. சமைக்காத இறைச்சியை மூடி, கீழ் அடுக்கில் வைக்க வேண்டும்."
+   },
+   "fil": {
+    "q": "Naglalagay ang isang worker ng hilaw na manok sa ref. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Walang takip ang hilaw na manok sa pinakataas na shelf, at tumulo ang katas nito sa cake sa ibaba. Dapat may takip ang hilaw na karne at nasa pinakababang shelf."
+   },
+   "ind": {
+    "q": "Seorang pekerja menaruh ayam mentah di kulkas. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Ayam mentah tidak ditutup dan ada di rak paling atas, dan cairannya menetes ke kue di bawahnya. Daging mentah harus ditutup dan ditaruh di rak paling bawah."
+   },
+   "tr": {
+    "q": "Bir çalışan buzdolabına çiğ tavuk koyuyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Çiğ tavuk en üst rafta, üstü açıktı ve suyu alttaki pastanın üstüne damladı. Çiğ et üstü kapalı olarak en alt rafa konur."
+   }
+  },
+  {
+   "id": "k317",
+   "type": "video",
+   "ans": 0,
+   "ch": 12,
+   "d": 2,
+   "clip": "/videos/fridge-right.mp4",
+   "en": {
+    "q": "A worker puts raw chicken in the fridge. Watch the clip. Is this right or wrong?",
+    "e": "Right. The raw chicken is covered and on the bottom shelf, below the ready-to-eat food, so nothing can drip onto it."
+   },
+   "ur": {
+    "q": "ایک ورکر کچا چکن فریج میں رکھ رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ کچا چکن ڈھکا ہوا ہے اور نیچے والے خانے میں، تیار کھانے سے نیچے رکھا ہے، اس لیے تیار کھانے پر کچھ نہیں ٹپک سکتا۔"
+   },
+   "hi": {
+    "q": "एक वर्कर कच्चा चिकन फ्रिज में रख रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। कच्चा चिकन ढका हुआ है और नीचे वाले खाने में, तैयार खाने से नीचे रखा है, इसलिए तैयार खाने पर कुछ नहीं टपक सकता।"
+   },
+   "bn": {
+    "q": "একজন কর্মী ফ্রিজে কাঁচা মুরগি রাখছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। কাঁচা মুরগি ঢাকা আছে আর সবচেয়ে নিচের তাকে, খাওয়ার জন্য তৈরি খাবারের নিচে আছে, তাই সেই খাবারের উপর কিছু পড়তে পারে না।"
+   },
+   "ar": {
+    "q": "عامل يضع دجاجاً نيئاً في الثلاجة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. الدجاج النيء مغطى وعلى الرف السفلي، تحت الطعام الجاهز للأكل، حتى لا يقطر أي شيء على هذا الطعام."
+   },
+   "ne": {
+    "q": "एक जना कामदार फ्रिजमा काँचो कुखुराको मासु राख्दै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। काँचो कुखुराको मासु छोपिएको छ र तल्लो दराजमा, सिधै खाने खानाभन्दा तल छ, त्यसैले त्यो खानामा केही चुहिन सक्दैन।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ വേവിക്കാത്ത ചിക്കൻ ഫ്രിഡ്ജിൽ വയ്ക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. വേവിക്കാത്ത ചിക്കൻ മൂടിയിട്ടുണ്ട്, നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണത്തിന് താഴെ, താഴത്തെ തട്ടിലാണ് വച്ചിരിക്കുന്നത്. അതുകൊണ്ട് ആ ഭക്ഷണത്തിലേക്ക് ഒന്നും ഇറ്റുവീഴില്ല."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சமைக்காத கோழியை ஃப்ரிட்ஜில் வைக்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. சமைக்காத கோழி மூடப்பட்டு, அப்படியே சாப்பிடக்கூடிய உணவுக்குக் கீழே, கீழ் அடுக்கில் உள்ளது. அதனால் அந்த உணவின் மேல் எதுவும் சொட்ட முடியாது."
+   },
+   "fil": {
+    "q": "Naglalagay ang isang worker ng hilaw na manok sa ref. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. May takip ang hilaw na manok at nasa pinakababang shelf, sa ilalim ng pagkaing handa nang kainin, kaya walang tutulo dito."
+   },
+   "ind": {
+    "q": "Seorang pekerja menaruh ayam mentah di kulkas. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Ayam mentah ditutup dan ada di rak paling bawah, di bawah makanan siap makan, jadi tidak ada yang bisa menetes ke makanan itu."
+   },
+   "tr": {
+    "q": "Bir çalışan buzdolabına çiğ tavuk koyuyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Çiğ tavuk üstü kapalı ve en alt rafta, hazır yenecek gıdanın altında. Böylece o gıdanın üstüne hiçbir şey damlayamaz."
+   }
+  },
+  {
+   "id": "k318",
+   "type": "video",
+   "ans": 0,
+   "ch": 12,
+   "d": 3,
+   "clip": "/videos/probe-right.mp4",
+   "en": {
+    "q": "A worker checks cooked chicken with a probe thermometer. Watch the clip. Is this right or wrong?",
+    "e": "Right. He cleaned the probe before and after, pushed it into the thickest part, and the centre reached 76°C, which is above 75°C."
+   },
+   "ur": {
+    "q": "ایک ورکر پروب تھرمامیٹر سے پکا ہوا چکن چیک کر رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے پروب کو استعمال سے پہلے اور بعد میں صاف کیا، اسے سب سے موٹے حصے میں ڈالا، اور بیچ کا درجہ حرارت 76°C تک پہنچ گیا، جو 75°C سے زیادہ ہے۔"
+   },
+   "hi": {
+    "q": "एक वर्कर प्रोब थर्मामीटर से पका हुआ चिकन जाँच रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। उसने प्रोब को इस्तेमाल से पहले और बाद में साफ़ किया, उसे सबसे मोटे हिस्से में डाला, और बीच का तापमान 76°C तक पहुँच गया, जो 75°C से ज़्यादा है।"
+   },
+   "bn": {
+    "q": "একজন কর্মী প্রোব থার্মোমিটার দিয়ে রান্না করা মুরগি পরীক্ষা করছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি ব্যবহারের আগে আর পরে প্রোব পরিষ্কার করেছেন, সবচেয়ে মোটা অংশে ঢুকিয়েছেন, আর মাঝখানে 76°C হয়েছে, যা 75°C এর বেশি।"
+   },
+   "ar": {
+    "q": "عامل يفحص دجاجاً مطبوخاً بميزان الحرارة ذي السيخ. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. نظّف السيخ قبل الاستعمال وبعده، وأدخله في أسمك جزء، ووصلت حرارة وسط الطعام إلى 76°C، وهذا أعلى من 75°C."
+   },
+   "ne": {
+    "q": "एक जना कामदार प्रोब थर्मामिटरले पकाएको कुखुराको मासु जाँच्दै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले प्रयोग गर्नुअघि र पछि प्रोब सफा गर्‍यो, सबैभन्दा बाक्लो भागमा घुसायो, र बीच भाग 76°C पुग्यो, जुन 75°C भन्दा बढी हो।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ പ്രോബ് തെർമോമീറ്റർ കൊണ്ട് വേവിച്ച ചിക്കൻ പരിശോധിക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ ഉപയോഗിക്കുന്നതിന് മുമ്പും ശേഷവും പ്രോബ് വൃത്തിയാക്കി, ചിക്കന്റെ ഏറ്റവും കട്ടിയുള്ള ഭാഗത്ത് കുത്തിയിറക്കി. നടുഭാഗത്തെ ചൂട് 76°C എത്തി, ഇത് 75°C-നെക്കാൾ കൂടുതലാണ്."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சமைத்த கோழியை ப்ரோப் தெர்மாமீட்டரால் சோதிக்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் பயன்படுத்தும் முன்னும் பின்னும் ப்ரோபைச் சுத்தம் செய்தார், கோழியின் மிகத் தடிமனான பகுதியில் குத்தினார். நடுப்பகுதி 76°C-ஐ எட்டியது, இது 75°C-ஐ விட அதிகம்."
+   },
+   "fil": {
+    "q": "Sinusuri ng isang worker ang lutong manok gamit ang probe thermometer. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. Nilinis niya ang probe bago at pagkatapos gamitin, itinusok ito sa pinakamakapal na bahagi, at umabot sa 76°C ang gitna, na mas mataas sa 75°C."
+   },
+   "ind": {
+    "q": "Seorang pekerja memeriksa ayam matang dengan termometer tusuk. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Dia membersihkan ujung termometer sebelum dan sesudah dipakai, menusukkannya ke bagian paling tebal, dan bagian tengahnya mencapai 76°C, lebih dari 75°C."
+   },
+   "tr": {
+    "q": "Bir çalışan pişmiş tavuğu batırmalı termometreyle kontrol ediyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Termometrenin ucunu önce ve sonra temizledi, ucu en kalın yere batırdı ve yemeğin ortası 76°C oldu. Bu, 75°C'nin üstünde."
+   }
+  },
+  {
+   "id": "k319",
+   "type": "video",
+   "ans": 1,
+   "ch": 7,
+   "d": 1,
+   "clip": "/videos/sneeze-wrong.mp4",
+   "en": {
+    "q": "A worker is mixing a salad. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. He sneezed over open food and carried on without washing his hands. Turn away from food, sneeze into your arm or a tissue, then wash your hands."
+   },
+   "ur": {
+    "q": "ایک ورکر سلاد ملا رہا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ اس نے کھلے کھانے کے اوپر چھینک ماری اور ہاتھ دھوئے بغیر کام کرتا رہا۔ کھانے سے منہ دوسری طرف کریں، اپنے بازو یا ٹشو میں چھینکیں، پھر ہاتھ دھوئیں۔"
+   },
+   "hi": {
+    "q": "एक वर्कर सलाद मिला रहा है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। उसने खुले खाने के ऊपर छींका और हाथ धोए बिना काम करता रहा। खाने से मुँह दूसरी तरफ़ करें, अपनी बाँह या टिश्यू में छींकें, फिर हाथ धोएं।"
+   },
+   "bn": {
+    "q": "একজন কর্মী সালাদ মেশাচ্ছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। তিনি খোলা খাবারের উপর হাঁচি দিয়েছেন আর হাত না ধুয়েই কাজ চালিয়ে গেছেন। খাবার থেকে মুখ ঘুরিয়ে নিন, বাহুতে বা টিস্যুতে হাঁচি দিন, তারপর হাত ধুয়ে নিন।"
+   },
+   "ar": {
+    "q": "عامل يخلط سلطة. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. عطس فوق طعام مكشوف، وأكمل العمل بدون أن يغسل يديه. أدر وجهك بعيداً عن الطعام، واعطس في ذراعك أو في منديل، ثم اغسل يديك."
+   },
+   "ne": {
+    "q": "एक जना कामदार सलाद मिलाउँदै छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। उसले खुला खानामाथि हाच्छ्युँ गर्‍यो र हात नधोईकन काम गरिरह्यो। खानाबाट मुख फर्काउनुहोस्, आफ्नो पाखुरामा वा टिस्युमा हाच्छ्युँ गर्नुहोस्, अनि हात धुनुहोस्।"
+   },
+   "ml": {
+    "q": "ഒരു ജോലിക്കാരൻ സാലഡ് മിക്സ് ചെയ്യുകയാണ്. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. അയാൾ തുറന്നിരിക്കുന്ന ഭക്ഷണത്തിന് മുകളിലേക്ക് തുമ്മി, കൈ കഴുകാതെ ജോലി തുടർന്നു. ഭക്ഷണത്തിൽ നിന്ന് മുഖം തിരിക്കുക, കൈമുട്ടിലേക്കോ ടിഷ്യൂവിലേക്കോ തുമ്മുക, പിന്നെ കൈ കഴുകുക."
+   },
+   "ta": {
+    "q": "ஒரு பணியாளர் சாலட்டைக் கலக்கிக்கொண்டிருக்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. அவர் திறந்திருந்த உணவின் மேல் தும்மினார், கைகளைக் கழுவாமலேயே வேலையைத் தொடர்ந்தார். உணவிலிருந்து திரும்பிக்கொண்டு, முழங்கையிலோ டிஷ்யூவிலோ தும்முங்கள், பிறகு கைகளைக் கழுவுங்கள்."
+   },
+   "fil": {
+    "q": "Naghahalo ng salad ang isang worker. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Bumahing siya sa ibabaw ng bukas na pagkain at nagpatuloy nang hindi naghuhugas ng kamay. Tumalikod sa pagkain, bumahing sa braso mo o sa tissue, tapos maghugas ng kamay."
+   },
+   "ind": {
+    "q": "Seorang pekerja sedang mengaduk salad. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Dia bersin di atas makanan terbuka dan terus bekerja tanpa mencuci tangan. Berpaling dari makanan, bersin ke lengan atau tisu, lalu cuci tangan."
+   },
+   "tr": {
+    "q": "Bir çalışan salata karıştırıyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Üstü açık yemeğin üstüne hapşırdı ve ellerini yıkamadan işe devam etti. Yemekten başını çevir, koluna ya da bir mendile hapşır, sonra ellerini yıka."
+   }
+  },
+  {
+   "id": "k320",
+   "type": "video",
+   "ans": 0,
+   "ch": 7,
+   "d": 2,
+   "clip": "/videos/plaster-right.mp4",
+   "en": {
+    "q": "A worker cuts his finger while preparing food. Watch the clip. Is this right or wrong?",
+    "e": "Right. He moved his hand away from the food, covered the cut with a blue waterproof plaster and put a glove over it."
+   },
+   "ur": {
+    "q": "کھانا تیار کرتے ہوئے ایک ورکر کی انگلی کٹ جاتی ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے ہاتھ کھانے سے دور کیا، زخم پر نیلی واٹر پروف پٹی لگائی اور اس کے اوپر دستانہ پہن لیا۔"
+   },
+   "hi": {
+    "q": "खाना तैयार करते समय एक वर्कर की उंगली कट जाती है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "सही। उसने अपना हाथ खाने से दूर किया, कट पर नीली वॉटरप्रूफ पट्टी लगाई और उसके ऊपर दस्ताना पहन लिया।"
+   },
+   "bn": {
+    "q": "খাবার বানানোর সময় একজন কর্মীর আঙুল কেটে যায়। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি খাবার থেকে হাত সরিয়ে নিয়েছেন, কাটা জায়গা নীল ওয়াটারপ্রুফ প্লাস্টার দিয়ে ঢেকেছেন আর তার উপর গ্লাভস পরেছেন।"
+   },
+   "ar": {
+    "q": "عامل يجرح إصبعه وهو يحضّر الطعام. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "صح. أبعد يده عن الطعام، وغطى الجرح بلاصق جروح أزرق مقاوم للماء، ولبس قفازاً فوقه."
+   },
+   "ne": {
+    "q": "खाना तयार गर्दा एक जना कामदारको औंला काटिन्छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले हात खानाबाट टाढा सार्‍यो, घाउलाई पानी नछिर्ने नीलो प्लास्टरले छोप्यो र त्यसमाथि पन्जा लगायो।"
+   },
+   "ml": {
+    "q": "ഭക്ഷണം തയ്യാറാക്കുന്നതിനിടെ ഒരു ജോലിക്കാരന്റെ വിരൽ മുറിയുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ കൈ ഭക്ഷണത്തിൽ നിന്ന് മാറ്റി, മുറിവ് വെള്ളം കയറാത്ത നീല പ്ലാസ്റ്റർ കൊണ്ട് മൂടി, അതിന് മുകളിൽ ഒരു ഗ്ലൗസ് ഇട്ടു."
+   },
+   "ta": {
+    "q": "உணவு தயாரிக்கும்போது ஒரு பணியாளர் தன் விரலை வெட்டிக்கொள்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் கையை உணவிலிருந்து விலக்கினார், வெட்டுக்காயத்தைத் தண்ணீர் புகாத நீல நிற பிளாஸ்டரால் மூடினார், அதன் மேல் ஒரு கையுறையை அணிந்தார்."
+   },
+   "fil": {
+    "q": "Nahiwa ng isang worker ang daliri niya habang naghahanda ng pagkain. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Tama. Inilayo niya ang kamay niya sa pagkain, tinakpan ang sugat ng asul na waterproof na plaster at nagsuot ng gloves sa ibabaw nito."
+   },
+   "ind": {
+    "q": "Jari seorang pekerja teriris saat menyiapkan makanan. Lihat videonya. Ini benar atau salah?",
+    "e": "Benar. Dia menjauhkan tangannya dari makanan, menutup lukanya dengan plester biru tahan air, lalu memakai sarung tangan di atasnya."
+   },
+   "tr": {
+    "q": "Bir çalışan yemek hazırlarken parmağını kesiyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Elini yemekten uzaklaştırdı, kesiği mavi, su geçirmez yara bandıyla kapattı ve üstüne eldiven giydi."
+   }
+  },
+  {
+   "id": "k321",
+   "type": "video",
+   "ans": 1,
+   "ch": 7,
+   "d": 2,
+   "clip": "/videos/phone-gloves-wrong.mp4",
+   "en": {
+    "q": "A worker wearing gloves answers his phone. Watch the clip. Is this right or wrong?",
+    "e": "Wrong. He touched the food with the same gloves after touching his phone. Phones carry germs. Take the gloves off, wash your hands and put on new gloves."
+   },
+   "ur": {
+    "q": "دستانے پہنے ہوئے ایک ورکر اپنا فون سنتا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
+    "e": "غلط۔ اس نے فون چھونے کے بعد انہی دستانوں سے کھانے کو ہاتھ لگایا۔ فون پر جراثیم ہوتے ہیں۔ دستانے اتاریں، ہاتھ دھوئیں اور نئے دستانے پہنیں۔"
+   },
+   "hi": {
+    "q": "दस्ताने पहने हुए एक वर्कर अपना फ़ोन उठाता है। वीडियो देखें। क्या यह सही है या गलत?",
+    "e": "गलत। फ़ोन छूने के बाद उसने उन्हीं दस्तानों से खाना छुआ। फ़ोन पर कीटाणु होते हैं। दस्ताने उतारें, हाथ धोएं और नए दस्ताने पहनें।"
+   },
+   "bn": {
+    "q": "গ্লাভস পরা একজন কর্মী ফোন ধরছেন। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
+    "e": "ভুল। ফোন ধরার পর তিনি সেই একই গ্লাভস দিয়ে খাবার ধরেছেন। ফোনে জীবাণু থাকে। গ্লাভস খুলুন, হাত ধুয়ে নিন আর নতুন গ্লাভস পরুন।"
+   },
+   "ar": {
+    "q": "عامل يلبس قفازات ويرد على هاتفه. شاهد المقطع. هل هذا صح أم خطأ؟",
+    "e": "خطأ. لمس الطعام بنفس القفازات بعد أن لمس هاتفه. الهواتف تحمل الجراثيم. اخلع القفازات، واغسل يديك، والبس قفازات جديدة."
+   },
+   "ne": {
+    "q": "पन्जा लगाएको एक जना कामदारले फोन उठाउँछ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "गलत। फोन छोएपछि उसले त्यही पन्जाले खाना छोयो। फोनमा किटाणु हुन्छन्। पन्जा फुकाल्नुहोस्, हात धुनुहोस् र नयाँ पन्जा लगाउनुहोस्।"
+   },
+   "ml": {
+    "q": "ഗ്ലൗസ് ഇട്ട ഒരു ജോലിക്കാരൻ ഫോൺ എടുത്ത് സംസാരിക്കുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "തെറ്റ്. ഫോണിൽ തൊട്ട അതേ ഗ്ലൗസ് കൊണ്ട് അയാൾ ഭക്ഷണത്തിൽ തൊട്ടു. ഫോണിൽ അണുക്കൾ ഉണ്ടാകും. ഗ്ലൗസ് ഊരി, കൈ കഴുകി, പുതിയ ഗ്ലൗസ് ഇടുക."
+   },
+   "ta": {
+    "q": "கையுறை அணிந்த ஒரு பணியாளர் தன் ஃபோனை எடுத்துப் பேசுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
+    "e": "தவறு. ஃபோனைத் தொட்ட அதே கையுறைகளால் அவர் உணவைத் தொட்டார். ஃபோன்களில் கிருமிகள் இருக்கும். கையுறைகளைக் கழற்றி, கைகளைக் கழுவி, புதிய கையுறைகளை அணியுங்கள்."
+   },
+   "fil": {
+    "q": "Sinagot ng isang worker na naka-gloves ang phone niya. Panoorin ang video. Tama ba ito o mali?",
+    "e": "Mali. Hinawakan niya ang pagkain gamit ang parehong gloves pagkatapos hawakan ang phone niya. May mikrobyo ang phone. Tanggalin ang gloves, maghugas ng kamay at magsuot ng bagong gloves."
+   },
+   "ind": {
+    "q": "Seorang pekerja yang memakai sarung tangan menerima telepon di HP-nya. Lihat videonya. Ini benar atau salah?",
+    "e": "Salah. Dia memegang makanan dengan sarung tangan yang sama setelah memegang HP-nya. HP membawa kuman. Lepas sarung tangan, cuci tangan, lalu pakai sarung tangan baru."
+   },
+   "tr": {
+    "q": "Eldivenli bir çalışan telefonuna cevap veriyor. Videoyu izle. Bu doğru mu, yanlış mı?",
+    "e": "Yanlış. Telefonuna dokunduktan sonra aynı eldivenlerle yemeğe dokundu. Telefonlar mikrop taşır. Eldivenleri çıkar, ellerini yıka ve yeni eldiven giy."
+   }
   }
  ]
 }

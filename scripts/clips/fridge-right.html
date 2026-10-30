@@ -1,0 +1,217 @@
+<!doctype html>
+<!--
+  scripts/clips/fridge-right.html - draws the fridge-right clip, one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-10) on a 1280x720 canvas: the worker (seen from their own eyes) puts a tray of raw chicken with a clear
+              lid on the BOTTOM shelf of an open fridge; a cake under a clear cover and a closed box of cooked
+              food are on the top shelves; then the worker closes the fridge door (RIGHT: raw meat at the
+              bottom, covered, below ready-to-eat food). No words or right/wrong signs.
+              Pure drawing code (open fridge, door, tray, cake, food boxes, the worker's arms) on top of lib.js.
+              The fridge scene code is the same in fridge-wrong.html and fridge-right.html; change both together.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/fridge-right.mp4.
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+// ---------- the open fridge scene (shared by fridge-wrong and fridge-right; the worker's view) ----------
+const FR = { x: 300, y: 24, w: 660, h: 680 };          // fridge body
+const OPEN = { x: 326, y: 50, w: 608, h: 640 };        // the opening (front edge of the inside)
+const VP = { x: 630, y: 370 }, DEPTH = 0.83;           // inside back wall = opening shrunk towards VP
+const SHELF = { A: 200, B: 420, C: 560, D: 680 };      // front edge y of each shelf (D = fridge floor)
+const back = (p) => ({ x: VP.x + (p.x - VP.x) * DEPTH, y: VP.y + (p.y - VP.y) * DEPTH });
+function poly(pts, fill) { g.beginPath(); g.moveTo(pts[0].x, pts[0].y); for (const p of pts.slice(1)) g.lineTo(p.x, p.y); g.closePath(); g.fillStyle = fill; g.fill(); }
+
+function room() {
+  g.fillStyle = "#E9EEEC"; g.fillRect(0, 0, W, 690);
+  g.strokeStyle = "#D3DBD8"; g.lineWidth = 2;
+  for (let y = 0; y < 690; y += 54) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+  for (let r = 0; r * 54 < 690; r++) for (let x = (r % 2) * 40; x < W; x += 80) { g.beginPath(); g.moveTo(x, r * 54); g.lineTo(x, r * 54 + 54); g.stroke(); }
+  g.fillStyle = "#A9B3B0"; g.fillRect(0, 690, W, 300); // floor
+  g.fillStyle = "#97A19E"; g.fillRect(0, 690, W, 5);
+}
+
+function fridgeBody() {
+  g.fillStyle = "rgba(0,0,0,.12)"; rr(FR.x - 8, FR.y + 8, FR.w + 16, FR.h, 16); g.fill();
+  const s = g.createLinearGradient(FR.x, 0, FR.x + FR.w, 0);
+  s.addColorStop(0, "#C9D1D5"); s.addColorStop(0.5, "#E3E8EA"); s.addColorStop(1, "#C3CBCF");
+  g.fillStyle = s; rr(FR.x, FR.y, FR.w, FR.h, 14); g.fill();
+  // the inside: ceiling, side walls, floor, back wall
+  const o = OPEN, tl = { x: o.x, y: o.y }, tr = { x: o.x + o.w, y: o.y }, bl = { x: o.x, y: o.y + o.h }, br = { x: o.x + o.w, y: o.y + o.h };
+  const TL = back(tl), TR = back(tr), BL = back(bl), BR = back(br);
+  poly([tl, tr, TR, TL], "#EDF2F4"); poly([tl, TL, BL, bl], "#DCE4E8"); poly([tr, br, BR, TR], "#DCE4E8"); poly([bl, br, BR, BL], "#D3DCE0");
+  const bw = g.createLinearGradient(0, TL.y, 0, BL.y); bw.addColorStop(0, "#FBFDFE"); bw.addColorStop(1, "#E8EFF2");
+  poly([TL, TR, BR, BL], bw);
+  // light in the ceiling
+  g.fillStyle = "#FFF9DD"; rr(VP.x - 50, o.y + 10, 100, 14, 7); g.fill();
+  // rubber seal round the opening
+  g.strokeStyle = "#AEB8BD"; g.lineWidth = 6; rr(o.x - 3, o.y - 3, o.w + 6, o.h + 6, 8); g.stroke();
+}
+
+// a wire shelf whose front edge is at y
+function shelf(y) {
+  const fl = { x: OPEN.x + 4, y }, fr = { x: OPEN.x + OPEN.w - 4, y }, bl = back(fl), brp = back(fr);
+  poly([fl, fr, brp, bl], "rgba(150,165,172,.28)");
+  g.strokeStyle = "rgba(120,135,142,.55)"; g.lineWidth = 2;
+  for (let k = 0; k <= 30; k++) { const a = L(fl, fr, k / 30), b = L(bl, brp, k / 30); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
+  g.fillStyle = "#B9C3C8"; rr(fl.x, y - 2, fr.x - fl.x, 9, 4); g.fill();
+  g.fillStyle = "rgba(255,255,255,.6)"; g.fillRect(fl.x + 6, y, fr.x - fl.x - 12, 2);
+}
+function shelves() { shelf(SHELF.A); shelf(SHELF.B); shelf(SHELF.C); }
+
+// ---- the door: hinged on the right edge; open = 95 degrees, closed = 0 ----
+const HINGE_X = FR.x + FR.w, FOCAL = 2400, EYE = { x: 640, y: 364 };
+function doorPt(u, v, ang) { // u 0 hinge..1 free edge, v 0 top..1 bottom, ang in degrees
+  const a = ang * Math.PI / 180, X = HINGE_X - FR.w * u * Math.cos(a), Z = FR.w * u * Math.sin(a), Y = FR.y + FR.h * v;
+  const f = FOCAL / (FOCAL - Z);
+  return { x: EYE.x + (X - EYE.x) * f, y: EYE.y + (Y - EYE.y) * f };
+}
+function doorQuad(u0, v0, u1, v1, ang, fill) { poly([doorPt(u0, v0, ang), doorPt(u1, v0, ang), doorPt(u1, v1, ang), doorPt(u0, v1, ang)], fill); }
+function door(ang) {
+  const edge = doorPt(1, 0.5, ang).x;
+  if (edge > HINGE_X + 1) { // inside of the door, with bottles in the door racks
+    doorQuad(0, 0, 1, 1, ang, "#B9C2C6");
+    doorQuad(0.05, 0.03, 0.95, 0.97, ang, "#EEF3F5");
+    const bottles = [["#9FD3F0", "#3D7FB8"], ["#F2A33A", "#2E7D4F"], ["#FFFFFF", "#3D7FB8"]];
+    [0.33, 0.6, 0.86].forEach((v, r) => {
+      [0.2, 0.42, 0.64].forEach((u, k) => {
+        const [body, cap] = bottles[(r + k) % 3];
+        doorQuad(u, v - 0.16, u + 0.16, v, ang, body);
+        doorQuad(u + 0.04, v - 0.2, u + 0.12, v - 0.16, ang, cap);
+      });
+      doorQuad(0.1, v - 0.06, 0.9, v + 0.01, ang, "rgba(205,215,220,.92)"); // rack lip
+    });
+  } else if (edge < HINGE_X - 1) { // outside of the door (stainless) with its handle
+    const s = g.createLinearGradient(edge, 0, HINGE_X, 0); s.addColorStop(0, "#D4DBDE"); s.addColorStop(1, "#BCC5C9");
+    doorQuad(0, 0, 1, 1, ang, s);
+    doorQuad(0.9, 0.34, 0.94, 0.66, ang, "#7E898E");
+  }
+}
+
+// ---- food ----
+// tray: (x, y) = middle of its bottom edge; s = scale; cover: "none" or "lid"; juice: raw-juice puddle 0-1
+function rawTray(x, y, s, cover, juice) {
+  g.save(); g.translate(x, y); g.scale(s, s);
+  g.fillStyle = "rgba(0,0,0,.14)"; g.beginPath(); g.ellipse(0, 2, 128, 10, 0, 0, 7); g.fill();
+  // three raw chicken breasts heaped in the tray
+  chicken(-62, -34, 0.78, 0); chicken(58, -34, 0.78, 0); chicken(0, -44, 0.85, 0);
+  if (juice > 0) { g.fillStyle = `rgba(214,72,96,${0.75 * juice})`; g.beginPath(); g.ellipse(-20, -22, 105, 7, 0, 0, 7); g.fill(); }
+  // tray front (shallow steel tray)
+  const f = g.createLinearGradient(0, -28, 0, 0); f.addColorStop(0, "#E6EBED"); f.addColorStop(1, "#AEB8BC");
+  g.fillStyle = f; g.beginPath(); g.moveTo(-124, -28); g.lineTo(124, -28); g.lineTo(116, 0); g.lineTo(-116, 0); g.closePath(); g.fill();
+  g.fillStyle = "#F4F7F8"; rr(-128, -32, 256, 7, 3); g.fill();
+  if (cover === "lid") { // clear plastic lid with a blue rim and handle
+    g.fillStyle = "rgba(190,225,245,.26)"; g.beginPath(); g.moveTo(-126, -30); g.lineTo(-118, -86); g.quadraticCurveTo(0, -96, 118, -86); g.lineTo(126, -30); g.closePath(); g.fill();
+    g.strokeStyle = "rgba(90,150,190,.9)"; g.lineWidth = 3; g.stroke();
+    g.fillStyle = "#3B7DD8"; rr(-130, -36, 260, 10, 4); g.fill();
+    rr(-26, -100, 52, 12, 6); g.fill();
+    g.strokeStyle = "rgba(255,255,255,.85)"; g.lineWidth = 5; g.lineCap = "round";
+    g.beginPath(); g.moveTo(-96, -76); g.lineTo(-70, -46); g.moveTo(-74, -80); g.lineTo(-58, -62); g.moveTo(70, -82); g.lineTo(92, -54); g.stroke();
+  }
+  g.restore();
+}
+
+// round cake with white icing; stains: list of {x, k} pink stains on top (k 0-1 size), dome: clear cover
+function cake(x, y, stains = [], dome = false) {
+  g.fillStyle = "#DDE3E6"; g.beginPath(); g.ellipse(x, y - 4, 128, 14, 0, 0, 7); g.fill(); // plate
+  g.fillStyle = "#C3CBCF"; g.beginPath(); g.ellipse(x, y - 1, 128, 8, 0, 0, Math.PI); g.fill();
+  const top = y - 86;
+  g.fillStyle = "#F4E7D6"; g.fillRect(x - 108, top, 216, 80); // side
+  g.beginPath(); g.ellipse(x, y - 6, 108, 18, 0, 0, Math.PI); g.fill();
+  g.fillStyle = "#E9D3B7"; g.fillRect(x - 108, top + 40, 216, 6); // icing band
+  g.fillStyle = "#FFFDF8"; g.beginPath(); g.ellipse(x, top, 108, 24, 0, 0, 7); g.fill();
+  // icing drips round the top edge
+  for (let k = -4; k <= 4; k++) { g.beginPath(); g.ellipse(x + k * 24, top + 18 + Math.cos(k) * 3, 9, 14 + (k % 2) * 5, 0, 0, 7); g.fill(); }
+  // sprinkles (blue, yellow, green) and three cream swirls
+  [["#3B7DD8", -60, -6], ["#E8C33A", -20, 8], ["#3C9D5A", 30, -8], ["#3B7DD8", 62, 6], ["#E8C33A", 10, -14], ["#3C9D5A", -48, 10]].forEach(([c, dx, dy]) => {
+    g.fillStyle = c; rr(x + dx - 5, top + dy - 2, 10, 4, 2); g.fill();
+  });
+  [-56, 0, 56].forEach((dx) => { g.fillStyle = "#F5EBDD"; g.beginPath(); g.arc(x + dx, top - 6, 10, 0, 7); g.fill(); g.fillStyle = "#FFFDF8"; g.beginPath(); g.arc(x + dx - 2, top - 8, 6, 0, 7); g.fill(); });
+  for (const s of stains) { // raw chicken juice soaked into the icing
+    g.fillStyle = "rgba(214,72,96,.85)"; g.beginPath(); g.ellipse(x + s.x, top + 2, 6 + 16 * s.k, 3 + 6 * s.k, 0, 0, 7); g.fill();
+    if (s.k > 0.6) { g.beginPath(); g.ellipse(x + s.x + 4, top + 10 + 10 * s.k, 4, 8 * s.k, 0, 0, 7); g.fill(); }
+  }
+  if (dome) {
+    g.fillStyle = "rgba(195,228,245,.38)"; g.beginPath(); g.moveTo(x - 122, y - 6); g.lineTo(x - 122, top - 10); g.quadraticCurveTo(x - 120, top - 58, x, top - 60); g.quadraticCurveTo(x + 120, top - 58, x + 122, top - 10); g.lineTo(x + 122, y - 6); g.closePath(); g.fill();
+    g.strokeStyle = "rgba(90,150,190,.8)"; g.lineWidth = 3; g.stroke();
+    g.fillStyle = "#7FB2D9"; g.beginPath(); g.arc(x, top - 64, 10, 0, 7); g.fill();
+    g.strokeStyle = "rgba(255,255,255,.85)"; g.lineWidth = 5; g.lineCap = "round";
+    g.beginPath(); g.moveTo(x - 96, top - 24); g.lineTo(x - 96, y - 30); g.moveTo(x - 80, top - 38); g.lineTo(x - 70, top - 46); g.stroke();
+  }
+}
+
+// crate of vegetables (lettuce, tomatoes, peppers); (x, y) = middle of its bottom
+function vegBox(x, y) {
+  [[-70, "#4FA34A", 34], [-20, "#C9402F", 22], [20, "#E8B82E", 24], [62, "#3E8C3A", 30], [-46, "#C9402F", 20], [40, "#C9402F", 20]].forEach(([dx, c, r], k) => {
+    g.fillStyle = c; g.beginPath(); g.arc(x + dx, y - 50 - (k > 3 ? 0 : 6), r, 0, 7); g.fill();
+  });
+  g.fillStyle = "#4C7FA8"; g.beginPath(); g.moveTo(x - 110, y - 56); g.lineTo(x + 110, y - 56); g.lineTo(x + 104, y); g.lineTo(x - 104, y); g.closePath(); g.fill();
+  g.fillStyle = "#3D6B8F"; for (let k = -2; k <= 2; k++) { rr(x + k * 40 - 12, y - 44, 24, 10, 5); g.fill(); }
+}
+
+// clear box of cooked rice and chicken with a green lid (covered cooked food); (x, y) = middle of its bottom
+function cookedBox(x, y) {
+  g.fillStyle = "rgba(210,232,240,.8)"; rr(x - 100, y - 70, 200, 70, 10); g.fill();
+  g.fillStyle = "#F2E3B3"; rr(x - 92, y - 46, 184, 40, 8); g.fill(); // rice
+  [[-40, -46], [10, -50], [55, -44]].forEach(([dx, dy]) => { g.fillStyle = "#B8722E"; g.beginPath(); g.ellipse(x + dx, y + dy, 26, 13, 0.1, 0, 7); g.fill(); g.fillStyle = "#8E5520"; g.fillRect(x + dx - 14, y + dy - 3, 28, 3); });
+  g.fillStyle = "#3C9D5A"; rr(x - 106, y - 82, 212, 16, 6); g.fill(); // lid
+  g.fillStyle = "#2E7D4F"; rr(x - 30, y - 88, 60, 8, 4); g.fill();
+}
+
+// ---- the worker's arms, seen from the worker's own eyes: sleeves come up from the bottom of the frame ----
+const SH_L = { x: 330, y: 930 }, SH_R = { x: 950, y: 930 };
+function povArm(sh, p) {
+  const dx = p.x - sh.x, dy = p.y - sh.y, len = Math.hypot(dx, dy), ux = dx / len, uy = dy / len;
+  const cuff = { x: p.x - ux * 120, y: p.y - uy * 120 }, nx = -uy, ny = ux;
+  const quad = (a, wa, b, wb, fill) => poly([{ x: a.x + nx * wa, y: a.y + ny * wa }, { x: b.x + nx * wb, y: b.y + ny * wb }, { x: b.x - nx * wb, y: b.y - ny * wb }, { x: a.x - nx * wa, y: a.y - ny * wa }], fill);
+  quad(cuff, 24, p, 20, SKIN);                         // forearm
+  quad(sh, 70, cuff, 38, "#E6EAE8"); quad(sh, 64, cuff, 33, "#F9FAF9"); // white sleeve
+  g.fillStyle = "#EEF1F0"; g.beginPath(); g.ellipse(cuff.x, cuff.y, 36, 16, Math.atan2(uy, ux) + Math.PI / 2, 0, 7); g.fill();
+}
+function bigHand(p, ang = 0) { g.save(); g.translate(p.x, p.y); g.rotate(ang); g.scale(1.45, 1.45); hand({ x: 0, y: 0 }, true); g.restore(); }
+
+// ---------- the timeline (seconds) ----------
+// 0.0-0.6 hold: the worker holds a tray of raw chicken with a clear lid in front of the open fridge
+// 0.6-3.2 the tray goes onto the BOTTOM shelf (cake and cooked food are on the shelves above)
+// 3.6-4.4 hands go away | 4.2-6.8 the view moves in on the covered tray and back out
+// 6.4-8.0 the right hand takes the door edge and swings it | 8.0-8.6 door shuts | 8.6-10.0 hold
+const DOOR_OPEN = 95, DOOR_LET_GO = 62;
+
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  const z = ease(ph(t, 4.2, 5.0)) - ease(ph(t, 6.0, 6.8));
+  g.save();
+  g.translate(W / 2, H / 2); g.scale(lerp(1, 1.4, z), lerp(1, 1.4, z)); g.translate(-640, -lerp(360, 460, z));
+
+  room(); fridgeBody(); shelves();
+  // ready-to-eat food on the top shelves: cake under a clear cover, closed box of cooked food; vegetables below
+  g.save(); g.translate(640, SHELF.A - 4); g.scale(0.85, 0.85); cake(0, 0, [], true); g.restore();
+  cookedBox(640, SHELF.B - 4);
+  vegBox(640, SHELF.C - 4);
+
+  // tray: carried in with both hands, put down on the bottom shelf
+  const move = ease(ph(t, 0.6, 3.2));
+  const P = { x: 640, y: lerp(610, SHELF.D - 4, move) - Math.sin(move * Math.PI) * 20 }, s = lerp(1.3, 1, move);
+  rawTray(P.x, P.y, s, "lid", 0);
+
+  // door: pulled by the right hand from open to DOOR_LET_GO, then swings shut
+  const pull = ease(ph(t, 7.2, 8.0)), swing = ph(t, 8.0, 8.6);
+  const ang = t < 8.0 ? lerp(DOOR_OPEN, DOOR_LET_GO, pull) : lerp(DOOR_LET_GO, 0, 1 - (1 - swing) * (1 - swing));
+  door(ang);
+
+  // hands
+  const away = ease(ph(t, 3.6, 4.4));
+  const lh = { x: P.x - 128 * s - 10, y: P.y - 22 * s }, rh = { x: P.x + 128 * s + 10, y: P.y - 22 * s };
+  if (away < 1) { const l = { x: lh.x - 120 * away, y: lh.y + 500 * away }; povArm(SH_L, l); bigHand(l, 0.5); }
+  let r = null;
+  const grip = doorPt(0.97, 0.5, Math.min(ang, DOOR_OPEN));
+  if (t < 4.4) r = { x: rh.x + 120 * away, y: rh.y + 500 * away };
+  else if (t >= 6.4 && t < 7.2) r = L({ x: 1000, y: 1000 }, grip, ease(ph(t, 6.4, 7.2)));
+  else if (t >= 7.2 && t < 8.0) r = grip;
+  else if (t >= 8.0 && t < 8.8) r = L(doorPt(0.97, 0.5, DOOR_LET_GO), { x: 1000, y: 1000 }, ease(ph(t, 8.0, 8.8)));
+  if (r) { povArm(SH_R, r); bigHand(r, -0.5); }
+  g.restore();
+}
+window.render = render;
+render(0);
+</script></body></html>

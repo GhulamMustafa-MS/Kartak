@@ -1,0 +1,199 @@
+<!doctype html>
+<!--
+  scripts/clips/boards-right.html - draws the "separate boards" clip (the RIGHT way), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-12.5) on a 1280x720 canvas: raw chicken cut on a RED
+              board with a red-handled knife, the pieces swept into the meat tray, the red board and knife put in the
+              sink, then a separate GREEN board and a green-handled knife used to cut a carrot. Raw meat never touches
+              the vegetable board (handbook: separate colour-coded boards and tools). Pure drawing code, no images.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/boards-right.mp4.
+  Depends on: scripts/clips/lib.js (kitchen, worker, arms, hands, boards, chicken, carrot, slices).
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+const RB = { x: 460, y: 478, w: 320, h: 86 };              // where a board lies while it is used
+const SINK = { x: 10, y: 452, w: 350, h: 150 };
+const IN_SINK = { x: 22, y: 492, w: 320, h: 86 };          // the red board once it is in the sink
+const UP = { x: 803, y: 306, a: -Math.PI / 2 };            // green board standing against the wall (centre, angle)
+const MEAT = { x: 1030, y: 540 };                          // meat tray on the right
+const STRIP = { x: 870, y: 240, w: 260 };                  // magnetic knife strip on the wall
+const GKNIFE_REST = { x: 1050, y: 266 };                   // green knife hanging on the strip (grip)
+const SHELF = { x: 200, y: 300, w: 260 };                   // small shelf above the sink with the carrot on a plate
+const CHICK = { x: 570, y: 520 };
+
+// knife with a coloured handle (colour-coded tools); (x, y) = grip, blade points left
+function cknife(x, y, ang, handle) {
+  g.save(); g.translate(x, y); g.rotate(ang);
+  g.fillStyle = handle; rr(-6, -9, 64, 18, 7); g.fill();
+  g.fillStyle = "rgba(0,0,0,.25)"; rr(-6, 4, 64, 5, 3); g.fill();
+  g.fillStyle = "#C9CED1"; g.beginPath(); g.moveTo(-6, -9); g.lineTo(-128, -2); g.quadraticCurveTo(-136, 8, -120, 14); g.lineTo(-6, 13); g.closePath(); g.fill();
+  g.fillStyle = "#EEF2F4"; g.beginPath(); g.moveTo(-6, 6); g.lineTo(-122, 10); g.lineTo(-6, 13); g.closePath(); g.fill();
+  g.restore();
+}
+const RED_H = "#B3262B", GREEN_H = "#23864A";
+
+// a board drawn around its centre, turned by angle a (0 = lying flat on the counter)
+function boardAt(colour, cx, cy, a) {
+  g.save(); g.translate(cx, cy); g.rotate(a);
+  board(colour, { x: -RB.w / 2, y: -RB.h / 2, w: RB.w, h: RB.h });
+  g.restore();
+}
+
+function sinkBack() {
+  const s = SINK;
+  g.fillStyle = "#8F9A9F"; rr(s.x, s.y, s.w, s.h, 14); g.fill();             // steel rim
+  const inner = g.createLinearGradient(0, s.y, 0, s.y + s.h);
+  inner.addColorStop(0, "#5F6A70"); inner.addColorStop(1, "#7C878C");
+  g.fillStyle = inner; rr(s.x + 12, s.y + 10, s.w - 24, s.h - 22, 10); g.fill(); // basin
+  g.fillStyle = "#3E474C"; g.beginPath(); g.ellipse(s.x + s.w / 2, s.y + s.h - 30, 14, 6, 0, 0, 7); g.fill(); // drain
+  // tap on the wall
+  g.strokeStyle = "#A9B3B7"; g.lineWidth = 16; g.lineCap = "round";
+  g.beginPath(); g.moveTo(185, 395); g.lineTo(185, 410); g.quadraticCurveTo(185, 380, 215, 380); g.quadraticCurveTo(245, 380, 245, 420); g.stroke();
+  g.fillStyle = "#7F8A8E"; rr(170, 400, 30, 40, 6); g.fill();
+}
+function sinkFront() {
+  const s = SINK;
+  g.fillStyle = "#97A2A6"; rr(s.x, s.y + s.h - 40, s.w, 40, 12); g.fill();   // front lip, hides the bottom of what is inside
+  g.fillStyle = "rgba(255,255,255,.25)"; g.fillRect(s.x + 14, s.y + s.h - 38, s.w - 28, 4);
+}
+
+function wallThings(carrotOnShelf, greenUp, knifeOnStrip) {
+  // small shelf with a plate (carrot on it until it is taken)
+  g.fillStyle = "#9AA7A3"; g.fillRect(SHELF.x, SHELF.y, SHELF.w, 12);
+  g.fillStyle = "#FFFFFF"; g.beginPath(); g.ellipse(SHELF.x + 130, SHELF.y - 4, 110, 10, 0, 0, 7); g.fill();
+  g.strokeStyle = "#D6DCDE"; g.lineWidth = 2; g.stroke();
+  if (carrotOnShelf) carrot(SHELF.x + 50, SHELF.y - 16, SHELF.x + 210, 0);
+  // knife strip
+  g.fillStyle = "#4A5358"; rr(STRIP.x, STRIP.y, STRIP.w, 12, 4); g.fill();
+  if (knifeOnStrip) cknife(GKNIFE_REST.x, GKNIFE_REST.y, 0, GREEN_H);
+  if (greenUp) boardAt("green", UP.x, UP.y, UP.a);
+}
+
+function meatTray(n) {
+  const { x, y } = MEAT;
+  g.fillStyle = "rgba(0,0,0,.12)"; g.beginPath(); g.ellipse(x, y + 30, 110, 12, 0, 0, 7); g.fill();
+  g.fillStyle = "#D7DEE1"; rr(x - 110, y - 22, 220, 50, 10); g.fill();
+  g.fillStyle = "#B5BEC2"; rr(x - 100, y - 16, 200, 36, 8); g.fill();
+  for (let k = 0; k < n; k++) chickenPiece(x - 70 + (k % 6) * 28, y + ((k * 5) % 9) - 4 - (k >= 6 ? 6 : 0), k);
+}
+
+// ---------- the timeline (seconds) ----------
+// 0-0.4 hold | 0.4-3.2 cut chicken on the red board | 3.2-3.7 red knife laid on the red board
+// 3.7-4.9 pieces swept into the meat tray | 4.9-6.6 red board (with its knife) lifted into the sink
+// 6.6-8.2 green board taken from the wall and laid flat | 8.2-9.0 carrot from the shelf onto the green board,
+// green knife from the strip | 9.0-11.4 carrot chopped with the green knife | 11.4-12.5 hold
+const N_PIECES = 6;
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  background(t);
+  const takeGreen = ease(ph(t, 6.9, 8.1));
+  const carrotK = ease(ph(t, 8.5, 9.0));
+  const gknifeK = ease(ph(t, 8.2, 9.0));
+  wallThings(t < 8.2, t < 6.9, t < 8.2);
+  person(t); counter(); sinkBack(); meatTray(0);
+
+  // ---- red board: on the counter, then carried into the sink ----
+  const carryK = ease(ph(t, 5.0, 6.4));
+  const rb = {
+    x: lerp(RB.x, IN_SINK.x, carryK),
+    y: lerp(RB.y, IN_SINK.y, carryK) - Math.sin(carryK * Math.PI) * 70,
+  };
+  board("red", { x: rb.x, y: rb.y, w: RB.w, h: RB.h });
+
+  // chicken on the red board, cut, then swept into the meat tray
+  const cutK = ph(t, 0.4, 3.2);
+  const sweepK = ease(ph(t, 3.7, 4.9));
+  const toTray = (p, k) => L(p, { x: MEAT.x - 70 + (k % 6) * 28, y: MEAT.y }, sweepK);
+  const pieces = Math.min(N_PIECES, Math.floor(cutK * N_PIECES));
+  if (t < 4.9) {
+    const c = toTray(CHICK, 0);
+    chicken(c.x, c.y, 1, cutK * 0.85);
+    for (let k = 0; k < pieces; k++) { const p = toTray({ x: 650 + k * 22, y: CHICK.y + (k % 2) * 6 }, k + 1); chickenPiece(p.x, p.y, k); }
+  }
+  // wipe the tray drawn earlier: draw the full tray on top once the chicken is in
+  if (t >= 4.9) meatTray(N_PIECES + 1);
+
+  // the red knife lies on the red board once it is put down, and rides with the board
+  const knifeOnBoard = t >= 3.7;
+  const onBoardKnife = { x: rb.x + 262, y: rb.y + 62 };
+
+  if (t >= 6.4) sinkFront();
+  if (knifeOnBoard) cknife(onBoardKnife.x, onBoardKnife.y, 0, RED_H);
+  if (t >= 6.4) { // knife and board are now in the sink: lip in front again so they sit inside it
+    g.save(); g.beginPath(); g.rect(SINK.x, SINK.y + SINK.h - 40, SINK.w, 40); g.clip(); sinkFront(); g.restore();
+  }
+
+  // ---- green board: from the wall to the counter ----
+  let gb = null;
+  if (t >= 6.9) {
+    gb = { x: lerp(UP.x, RB.x + RB.w / 2, takeGreen), y: lerp(UP.y, RB.y + RB.h / 2, takeGreen) - Math.sin(takeGreen * Math.PI) * 30, a: lerp(UP.a, 0, takeGreen) };
+    boardAt("green", gb.x, gb.y, gb.a);
+  }
+
+  // ---- carrot: shelf -> green board -> chopped ----
+  const CAR_X0 = 520, CAR_Y = 520, CAR_LEN = 160;
+  const chopK = ph(t, 9.0, 11.4);
+  const cutX = lerp(CAR_X0 + CAR_LEN, CAR_X0 + 30, chopK);
+  let carrotAt = null;
+  if (t >= 8.2) {
+    carrotAt = L({ x: SHELF.x + 50, y: SHELF.y - 16 }, { x: CAR_X0, y: CAR_Y }, carrotK);
+    carrotAt.y -= Math.sin(carrotK * Math.PI) * 40;
+    const nSlices = Math.floor((CAR_X0 + CAR_LEN - cutX) / 16);
+    for (let k = 0; k < nSlices; k++) slice(cutX + 12 + k * 15 + (k % 2) * 3, CAR_Y + ((k * 7) % 11) - 5, 1);
+    carrot(carrotAt.x, carrotAt.y, carrotAt.x + (cutX - CAR_X0), 0);
+  }
+
+  // ---- hands ----
+  const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+  const chop = (k) => Math.abs(Math.sin(k * Math.PI));
+  let lh, rh, knifeAt = null, knifeAng = 0, knifeCol = RED_H;
+  const lhCarry = { x: rb.x + 30, y: rb.y + 40 }, rhCarry = { x: rb.x + RB.w - 70, y: rb.y + 40 };
+  const rest = { l: { x: 470, y: 470 }, r: { x: 810, y: 470 } };
+  const gEnds = (s) => gb ? { x: gb.x + Math.cos(gb.a) * s, y: gb.y + Math.sin(gb.a) * s } : null;
+
+  // left hand
+  if (t < 3.7) lh = { x: CHICK.x - 40, y: CHICK.y - 8 };                       // holds the chicken
+  else if (t < 5.0) lh = L({ x: CHICK.x - 40, y: CHICK.y - 8 }, lhCarry, ease(ph(t, 3.7, 4.1))); // rests on the board's end
+  else if (t < 6.4) lh = lhCarry;                                               // carries the red board
+  else if (t < 6.9) lh = L(lhCarry, { x: UP.x, y: UP.y + 110 }, ease(ph(t, 6.4, 6.9)));
+  else if (t < 8.1) lh = gEnds(-110);                                           // lays the green board down
+  else if (t < 8.2) lh = gEnds(-110);
+  else if (t < 9.0) {
+    const a = gEnds(-110), shelfC = { x: SHELF.x + 110, y: SHELF.y - 22 };
+    lh = t < 8.5 ? L(a, shelfC, ease(ph(t, 8.2, 8.5))) : { x: carrotAt.x + 60, y: carrotAt.y - 6 };
+  } else lh = { x: Math.max(CAR_X0 + 20, cutX - 60), y: CAR_Y - 6 };           // holds the carrot
+
+  // right hand
+  if (t < 3.2) {                                                                // cuts the chicken
+    const cx = lerp(682, 570, cutK), up = t < 0.4 ? 1 : chop((t - 0.4) / 0.36);
+    rh = { x: cx + 120, y: 490 - up * 68 }; knifeAt = { x: rh.x - 4, y: rh.y }; knifeAng = -0.05 - up * 0.08;
+  } else if (t < 3.7) {                                                         // lays the red knife on the red board
+    rh = L({ x: 690, y: 422 }, { x: onBoardKnife.x + 20, y: onBoardKnife.y - 4 }, ease(ph(t, 3.2, 3.7)));
+    knifeAt = { x: rh.x - 20, y: rh.y + 4 }; knifeAng = lerp(-0.13, 0, ease(ph(t, 3.2, 3.7)));
+  } else if (t < 4.9) {                                                         // sweeps the chicken into the tray
+    const p = toTray({ x: CHICK.x - 10, y: CHICK.y - 4 }, 0);
+    rh = t < 3.9 ? L({ x: onBoardKnife.x + 20, y: onBoardKnife.y - 4 }, { x: CHICK.x + 30, y: CHICK.y - 14 }, ease(ph(t, 3.7, 3.9))) : { x: p.x + 30, y: p.y - 14 };
+  } else if (t < 5.0) rh = L({ x: MEAT.x - 40, y: MEAT.y - 14 }, rhCarry, ease(ph(t, 4.9, 5.0)));
+  else if (t < 6.4) rh = rhCarry;                                               // carries the red board
+  else if (t < 6.9) rh = L(rhCarry, { x: UP.x, y: UP.y - 110 }, ease(ph(t, 6.4, 6.9)));
+  else if (t < 8.2) rh = gEnds(110);
+  else if (t < 9.0) {                                                           // takes the green knife from the strip
+    const a = gEnds(110), cutStart = { x: CAR_X0 + CAR_LEN + 120, y: CAR_Y - 30 - 70 };
+    if (t < 8.55) rh = L(a, { x: GKNIFE_REST.x, y: GKNIFE_REST.y }, ease(ph(t, 8.2, 8.55)));
+    else { rh = L({ x: GKNIFE_REST.x, y: GKNIFE_REST.y }, cutStart, ease(ph(t, 8.55, 9.0))); knifeAt = { x: rh.x - 4, y: rh.y }; knifeCol = GREEN_H; knifeAng = -0.13; }
+  } else {                                                                      // chops the carrot
+    const up = t > 11.4 ? 1 : chop((t - 9.0) / 0.3);
+    rh = { x: cutX + 120, y: CAR_Y - 30 - up * 70 }; knifeAt = { x: rh.x - 4, y: rh.y }; knifeAng = -0.05 - up * 0.08; knifeCol = GREEN_H;
+  }
+  if (t >= 8.55 && t < 9.0) knifeCol = GREEN_H;
+  if (t >= 8.2 && t < 8.55) { /* green knife still on the strip until the hand reaches it */ cknife(GKNIFE_REST.x, GKNIFE_REST.y, 0, GREEN_H); }
+
+  arm(LS, lh, -1); arm(RS, rh, 1);
+  if (knifeAt) cknife(knifeAt.x, knifeAt.y, knifeAng, knifeCol);
+  hand(lh, false); hand(rh, !!knifeAt);
+}
+window.render = render;
+render(0);
+</script></body></html>

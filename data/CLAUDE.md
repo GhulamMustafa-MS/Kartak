@@ -19,12 +19,13 @@ QUESTION:
 |---|---|
 | `id` | Stable id, `k001`, `k002`, ... Never reuse or renumber (future results will refer to it) |
 | `type` | `single`, `multi`, `tf` (true/false), `order`, `picture`, `video` |
-| `ans` | `single` / `picture` / `video`: index of the right option. `multi`: array of all right indexes (2+). `tf`: 0 = true, 1 = false. `order`: none - the options are written in the right order and the app shuffles them |
+| `ans` | `single` / `picture` / old `video`: index of the right option. `video` with a `clip`: 0 = right, 1 = wrong. `multi`: array of all right indexes (2+). `tf`: 0 = true, 1 = false. `order`: none - the options are written in the right order and the app shuffles them |
 | `d` | Optional difficulty 1 very easy, 2 easy, 3 moderate, 4 difficult (real exam: 20/40/30/10%) |
 | `ch` | Handbook chapter 1-13 the question tests (`docs/handbook.md` section 1); every question has one (D22) |
 | `pic` | `picture` only: `{ "kind": "fridge" \| "freezer" \| "probe" \| "hot", "v": <°C> }`; the app draws a thermometer (scales: fridge −5..15, freezer −30..10, probe/hot 0..100) |
-| `vid` | `video` only: list of frames (HTML) shown one after another; to be replaced by real clips (D5) |
-| `enabled` | `false` hides a question from every test (the video questions until D5 is done) |
+| `vid` | old `video` questions only: list of frames (HTML) shown one after another; kept turned off (D5) |
+| `clip` | `video` questions with a clip (D31): `"/videos/<name>.mp4"`. The app plays it above two buttons, Right and Wrong; `ans` 0 = right, 1 = wrong; every language has only `q` and `e` (no `o`), like the real exam |
+| `enabled` | `false` hides a question from every test (the two old picture-frame video questions, D5) |
 | one key per language in `languages` (`en`, `ur`, `hi`, `bn`, `ar`, `ne`, `ml`, `ta`, `fil`, `ind`, `tr`) | `{ "q": question, "o": [options], "e": explanation }`; `tf` has no `o`. Same number and order of options in every language. Numbers in Western digits exactly as in English. Indonesian is `ind` because `id` is the question id |
 
 ## Rules

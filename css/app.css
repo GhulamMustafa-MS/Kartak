@@ -7,7 +7,7 @@
  *             in screen order: header + language dropdown, language picker, home, question
  *             type tags (kitchen chopping-board colours: blue single, green multi, yellow true/false,
  *             red order, brown picture, purple video), question screen, timer dial, answers, order rows,
- *             bottom bar, intro/learn, results, phone tap fixes, install card + sheet, code gate.
+ *             clip questions (.clip video, D31), bottom bar, intro/learn, results, phone tap fixes, install card + sheet, code gate.
  * Used by:    index.html.
  * Notes:      Phone rule: hover effects only inside @media (hover: hover) and no text selection on
  *             buttons, otherwise taps look "stuck" or select text (decision D15).
@@ -184,6 +184,10 @@ html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
 .t-order   { --c: var(--c-red);    --cbg: var(--c-red-bg); }
 .t-picture { --c: var(--c-brown);  --cbg: var(--c-brown-bg); }
 .t-video   { --c: var(--c-purple); --cbg: var(--c-purple-bg); }
+.clip { display: grid; gap: 8px; }
+.clip video { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 14px; background: #000; }
+.mini .mclip { display: grid; place-items: center; height: 56px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
+.mini .mclip svg { width: 28px; height: 28px; }
 .vid { display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
 .vgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .vp { position: relative; background: var(--surface-2); border-radius: 12px; min-height: 104px; display: grid; place-items: center; animation: vpop .45s ease-out both; }
@@ -275,18 +279,18 @@ html[lang="ur"] .stepb { line-height: 2; font-size: 16px; }
 @media (hover: hover) { .stepb:hover { border-color: var(--c-red); } }
 .olist { display: grid; gap: 8px; }
 .orow { display: flex; align-items: center; gap: 10px; border: 2px solid var(--line); background: var(--surface); border-radius: 14px; padding: 6px 6px 6px 12px; min-height: 60px; }
-.orow .n { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-latin); font-weight: 700; font-size: 15px; background: var(--c-red); color: var(--surface); }
+/* Neutral until "Check my answer": red here looked like a wrong answer while the worker was still moving steps. */
+.orow .n { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-latin); font-weight: 700; font-size: 15px; background: var(--surface-2); color: var(--ink); border: 1.5px solid var(--line); }
 .orow .tx { flex: 1; min-width: 0; font-size: 17px; line-height: 1.35; }
 html[lang="ur"] .orow .tx { line-height: 2; font-size: 16px; }
 .orow .arr { display: flex; gap: 6px; flex: none; }
 .orow .arr button { width: 46px; height: 46px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface-2); cursor: pointer; display: grid; place-items: center; }
 .orow .arr button svg { width: 22px; height: 22px; color: var(--ink); }
 .orow .arr button:disabled { opacity: 0.3; cursor: default; }
-.orow.moved { border-color: var(--c-red); background: var(--c-red-bg); }
 .orow.ok { border-color: var(--good); background: var(--good-bg); }
-.orow.ok .n { background: var(--good); }
+.orow.ok .n { background: var(--good); color: var(--surface); border-color: var(--good); }
 .orow.no { border-color: var(--bad); background: var(--bad-bg); }
-.orow.no .n { background: var(--bad); }
+.orow.no .n { background: var(--bad); color: var(--surface); border-color: var(--bad); }
 .otools { display: flex; gap: 10px; flex-wrap: wrap; }
 .small-btn { background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; min-height: 40px; cursor: pointer; font-size: 15px; }
 

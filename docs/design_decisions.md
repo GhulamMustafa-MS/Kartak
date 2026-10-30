@@ -39,6 +39,8 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D28 | 29 Oct | The phone's Back button goes back a screen (to home in the worker app; person -> Results -> Codes in the seller app) instead of closing the app; leaving a test with answers asks first | User asked, AI designed | Back closed the whole app because it is one web page |
 | D29 | 29 Oct | "All questions" can be only one type of question (for example only "Order the steps"); a chooser screen offers every type or one type, with how many questions each has | User asked, AI designed | Workers who struggle with one type (often ordering) can practise just that |
 | D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
+| D31 | 30 Oct | Video questions go live as cartoon clips with two answers, Right and Wrong, like the real exam (Wessam: the exam always asks "is this right or wrong?"); 12 clips, half right, half wrong; replaces holding videos back (D5) | User asked, AI made the clips | The exam has video questions; workers should practise the format now, not wait for real footage |
+| D32 | 30 Oct | Ordering steps stay neutral (no colour) until "Check my answer" | User | The red used for moved steps looked like a wrong answer |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -229,3 +231,26 @@ Same ids are kept, so "All questions" keeps each worker's place: `resumeAll()` n
 questions that changed shape and re-shuffles unanswered ones (it used to restart when the bank changed).
 Rejected: dropping the questions (skips exam topics) and changing the fridge numbers to one value (the
 handbook and the exam use both).
+
+## D31. Right-or-wrong video clips
+
+The real exam shows a short video and asks whether what the worker does is right or wrong, with exactly two
+answers (Wessam, 30 Oct). D5 had held video questions back until real clips existed; Mustafa asked for clips
+now. Twelve cartoon clips were drawn with code (the method of D27, now with a shared `scripts/clips/lib.js` so
+every clip has the same kitchen and worker): proper hand washing and a quick no-soap rinse dried on the apron,
+separate red and green boards and the same board for chicken after vegetables, tasting with a clean spoon and
+with a finger, covered raw chicken on the bottom shelf and uncovered chicken dripping onto a cake, a probe check
+reaching 76°C, sneezing over a salad, a cut finger covered with a blue plaster and a glove, and touching a
+phone then food in the same gloves. Six are right and six wrong, so guessing gives nothing. A right clip has no
+mistake at all; a wrong clip has one, shown big and slow; no ticks, crosses or faces give the answer away.
+In the bank a clip question is `"type": "video"` with `"clip"`, `ans` 0 = right, 1 = wrong, and only `q` and
+`e` in each language; the app plays the MP4 above two buttons (Right, Wrong) and keeps it playing when the
+worker taps. Videos are not saved for offline use, so a test started offline leaves clip questions out.
+Rejected: a multiple-choice "what is wrong here?" format (the old frame questions; the exam does not ask that
+way), AI video tools and filming (cost, permission; still an option to replace the cartoons with real footage).
+
+## D32. No colour on ordering steps before checking
+
+Moving a step used to colour every row red (the ordering type's colour), which looked like a wrong answer
+before the worker had finished (Mustafa, 30 Oct). Rows and their numbers now stay neutral; green and red appear
+only after "Check my answer" (or at the end of a timed test).

@@ -8,7 +8,7 @@
  *             "All questions" saves the place, carries on, and can be only one type of question (D29);
  *             a second phone is refused; every language in the dropdown shows its own words and questions,
  *             reads in the right direction (temperatures too) and fits a 390 px phone; the first screen has a tile per
- *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); "Listen" reads ordering steps in the order on the screen; a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
+ *             language; Key words shows every word with its picture and the video (D27); the phone's Back button goes to the home screen in both apps, and asks before leaving a test with answers (D28); "Listen" reads ordering steps in the order on the screen; clip questions play a video with Right and Wrong (D31); a 7-day code locks the app once its time is over (D25); offline after the first visit (a local server, then the internet off); the install help sheet
  *             opens on iPhone; the iPhone hand-over token unlocks the home-screen copy.
  *             Screenshots go to tests/screenshots/ (git-ignored).
  * Run:        cd tests && npm install && npx playwright install chromium && node e2e.test.mjs
@@ -151,6 +151,8 @@ await worker.click("[data-go=allpick]");
 await worker.click("[data-alltype=order]");
 await worker.waitForSelector(".qtext");
 check("picking one type starts again at question 1 of that type only", (await worker.textContent(".qhead .pos span")).includes(`1 / ${ORDER_N}`));
+await worker.click(".orow [data-down='0']");
+check("moving a step colours nothing before Check my answer", (await worker.$$(".orow.no, .orow.ok, .fb")).length === 0);
 let onlyOrder = true;
 for (let k = 0; k < 3; k++) {
   if (!(await worker.$(".tag.t-order"))) onlyOrder = false;
@@ -201,6 +203,23 @@ const stepsShown = await worker.$$eval(".orow .tx", (els) => els.map((e) => e.te
 await worker.click("#listenBtn");
 const said = (await worker.evaluate(() => window.__said)).pop() || "";
 check("Listen reads the steps in the order on the screen, not the answer order", stepsShown.length > 1 && said.endsWith(stepsShown.join(". ")));
+await worker.click("#brandBtn");
+
+// Clip questions (D31): the video plays above two answers, Right and Wrong, like the real exam
+const CLIP_N = LIVE_Q.filter((q) => q.clip).length;
+await worker.click("[data-go=allpick]");
+await worker.click("[data-alltype=video]");
+await worker.waitForSelector(".clip video");
+const clipSrc = await worker.getAttribute(".clip video", "src");
+const clipOk = await worker.evaluate(async (src) => (await fetch(src)).ok, clipSrc);
+const twoBtns = await worker.$$eval(".tfrow .opt", (els) => els.map((e) => e.textContent.trim()));
+check(`video type offers all ${CLIP_N} clips`, CLIP_N >= 10 && (await worker.textContent(".qhead .pos span")).includes(`1 / ${CLIP_N}`));
+check("a clip question plays a video from videos/ with only Right and Wrong", clipOk && /^\/videos\/.+\.mp4$/.test(clipSrc) && twoBtns.length === 2 && twoBtns[0] === UI.en.tRight && twoBtns[1] === UI.en.tWrong);
+await worker.click(".tfrow .opt");
+await worker.click("#cta");
+check("a clip question shows the answer and why", !!(await worker.$(".fb")) && (await worker.$$(".clip video")).length === 1);
+check("clip questions fit the phone width", (await worker.evaluate(() => document.documentElement.scrollWidth)) <= 390);
+await worker.screenshot({ path: SHOTS + "clip-question.png", fullPage: true });
 await worker.click("#brandBtn");
 
 // Second phone refused

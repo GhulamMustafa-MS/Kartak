@@ -1,0 +1,161 @@
+<!doctype html>
+<!--
+  scripts/clips/plaster-right.html - draws the "cut finger, blue plaster and glove" clip (RIGHT), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-13) on a 1280x720 canvas: a worker cutting a carrot
+              nicks a finger, stops, lifts the hand away from the food (shown big), puts a blue waterproof plaster on
+              the finger, pulls a blue food glove over that hand, then carries on cutting. Handbook: cover cuts with
+              a blue waterproof plaster and wear a glove over it. Uses the shared drawing code in lib.js.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/plaster-right.mp4.
+  Depends on: scripts/clips/lib.js (wall, worker, counter, board, carrot, knife, arms, hands, helpers).
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+const GLOVE = "#3B7DD8", PLASTER = "#1E88E5", PLASTER_PAD = "#90CAF9";
+const CAR_X0 = 520, CAR_Y = 520, CAR_END = 750;
+const UP = { x: 420, y: 330 };          // where the cut hand is held up, away from the food
+const BIG = 3;                         // how big the raised hand is drawn
+const PLASTER_AT = { x: 985, y: 520 };   // plaster lying on the counter
+const BOX = { x: 1110, y: 505 };         // box of blue gloves
+
+// Raised left hand, palm towards us, index finger up. cut: show the cut; plaster 0-1 (on the finger);
+// glove 0-1 (how far the glove has been pulled down the hand)
+function bigHand(p, s, cut, plaster, glove) {
+  g.save(); g.translate(p.x, p.y); g.scale(s, s);
+  const shape = (fill) => {
+    g.fillStyle = fill;
+    g.beginPath(); g.ellipse(0, 6, 24, 22, 0, 0, 7); g.fill();                    // palm
+    rr(-8, -46, 15, 46, 7); g.fill();                                              // index finger (up)
+    g.beginPath(); g.ellipse(20, 2, 8, 15, -0.5, 0, 7); g.fill();                  // thumb
+    [-14, -4, 6].forEach((x) => { g.beginPath(); g.ellipse(x - 2, -10, 7, 9, 0, 0, 7); g.fill(); }); // curled fingers
+    rr(-14, 18, 28, 22, 6); g.fill();                                              // wrist
+  };
+  shape(SKIN);
+  g.strokeStyle = SKIN_D; g.lineWidth = 1.2;
+  g.beginPath(); g.moveTo(-6, -14); g.lineTo(6, -14); g.stroke();                 // knuckle line
+  if (cut && plaster <= 0) {
+    g.strokeStyle = "#C62828"; g.lineWidth = 2.4; g.lineCap = "round";
+    g.beginPath(); g.moveTo(-5, -30); g.lineTo(5, -27); g.stroke();
+    g.fillStyle = "#D32F2F"; g.beginPath(); g.moveTo(1, -27); g.quadraticCurveTo(6, -19, 1, -17); g.quadraticCurveTo(-4, -19, 1, -27); g.fill();
+  }
+  if (plaster > 0) { // blue plaster wraps the finger over the cut
+    const w = lerp(26, 19, plaster);
+    g.fillStyle = PLASTER; rr(-w / 2 - 0.5, -35, w, 13, 4); g.fill();
+    g.fillStyle = PLASTER_PAD; rr(-5, -32, 9, 7, 2); g.fill();
+    g.fillStyle = "rgba(255,255,255,.5)"; [-7, 6].forEach((x) => { g.beginPath(); g.arc(x, -28.5, 1, 0, 7); g.fill(); });
+  }
+  if (glove > 0) { // glove covers the hand from the fingertip down
+    g.save(); g.beginPath(); g.rect(-40, -60, 80, lerp(0, 102, glove)); g.clip();
+    shape(GLOVE);
+    if (plaster > 0) { g.fillStyle = "rgba(0,30,90,.35)"; rr(-10, -35, 20, 13, 4); g.fill(); } // plaster under the glove
+    g.strokeStyle = "rgba(255,255,255,.35)"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(-4, -42); g.lineTo(-4, -20); g.stroke();
+    g.restore();
+    if (glove < 1) { g.strokeStyle = "#2A5FAE"; g.lineWidth = 2.5; const y = lerp(-60, 42, glove); g.beginPath(); g.moveTo(-20, y); g.lineTo(20, y); g.stroke(); }
+  }
+  g.restore();
+}
+
+function plasterFlat(x, y, s) {
+  g.fillStyle = PLASTER; rr(x - 32 * s, y - 9 * s, 64 * s, 18 * s, 6 * s); g.fill();
+  g.fillStyle = PLASTER_PAD; rr(x - 11 * s, y - 6 * s, 22 * s, 12 * s, 3 * s); g.fill();
+}
+function gloveBox() {
+  const { x, y } = BOX;
+  g.fillStyle = "rgba(0,0,0,.12)"; g.beginPath(); g.ellipse(x, y + 42, 80, 10, 0, 0, 7); g.fill();
+  g.fillStyle = "#E3EAF2"; rr(x - 78, y - 30, 156, 70, 8); g.fill();
+  g.fillStyle = "#BFD0E4"; rr(x - 78, y - 30, 156, 14, 6); g.fill();
+  g.fillStyle = "#9DB3CC"; rr(x - 34, y - 28, 68, 10, 5); g.fill();                // opening
+  g.fillStyle = GLOVE; g.beginPath(); g.moveTo(x - 14, y - 24); g.quadraticCurveTo(x - 10, y - 48, x + 2, y - 46); g.quadraticCurveTo(x + 14, y - 44, x + 12, y - 24); g.fill();
+}
+// glove held flat in the right hand on its way to the left hand
+function gloveFlat(x, y) {
+  g.fillStyle = GLOVE; g.beginPath();
+  g.moveTo(x - 18, y + 20); g.lineTo(x - 22, y - 18);
+  [-22, -10, 2, 14].forEach((fx, i) => { g.lineTo(x + fx, y - 38 - (i === 1 ? 6 : 0)); g.lineTo(x + fx + 8, y - 38 - (i === 1 ? 6 : 0)); g.lineTo(x + fx + 9, y - 18); });
+  g.lineTo(x + 26, y - 8); g.lineTo(x + 18, y + 20); g.closePath(); g.fill();
+}
+
+// ---------- the timeline (seconds) ----------
+// 0-0.5 hold | 0.5-2.9 chop carrot | 2.9-3.3 knife slips onto a finger | 3.3-4.2 knife down, hand lifted away (big)
+// 4.2-5.0 cut shown | 4.6-5.6 right hand takes the plaster | 5.6-6.6 plaster to the finger | 6.6-7.4 wrapped
+// 7.4-8.3 takes a glove from the box | 8.3-9.0 to the hand | 9.0-9.9 glove pulled on | 9.9-10.8 back to the carrot,
+// knife picked up | 10.8-12.2 cutting again | 12.2-13 hold
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  background(t); person(t); counter(); board("green");
+  gloveBox();
+
+  const chop1 = ph(t, 0.5, 2.9), chop2 = ph(t, 10.8, 12.2);
+  const cutX = t < 10.8 ? lerp(CAR_END, 680, chop1) : lerp(680, 600, chop2);
+  const nSlices = Math.floor((CAR_END - cutX) / 16);
+  for (let k = 0; k < nSlices; k++) slice(cutX + 10 + k * 15 + (k % 2) * 3, CAR_Y + ((k * 7) % 11) - 5, 1);
+  carrot(CAR_X0, CAR_Y, cutX, 0);
+
+  const plasterTaken = t >= 5.4, plasterOn = ph(t, 6.6, 7.4);
+  if (!plasterTaken) plasterFlat(PLASTER_AT.x, PLASTER_AT.y, 1.4);
+
+  // ---- left hand ----
+  const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+  const onCarrot = { x: Math.max(CAR_X0 + 10, cutX - 70), y: CAR_Y - 6 };
+  const liftK = ease(ph(t, 3.3, 4.1)), backK = ease(ph(t, 9.9, 10.7));
+  let lh, lScale = 1, lBig = false;
+  if (t < 3.3) lh = onCarrot;
+  else if (t < 9.9) { lh = L(onCarrot, UP, liftK); lScale = lerp(1, BIG, liftK); lBig = liftK > 0.35; }
+  else { lh = L(UP, onCarrot, backK); lScale = lerp(BIG, 1, backK); lBig = backK < 0.65; }
+  const gloveK = ph(t, 9.0, 9.9);
+  const cut = t >= 3.15;
+
+  // ---- right hand ----
+  const chop = (k) => Math.abs(Math.sin(k * Math.PI));
+  const fingerTip = { x: UP.x - 1 * BIG, y: UP.y - 28 * BIG };
+  let rh, knifeAt = null, knifeAng = 0, holding = null;
+  if (t < 2.9) {
+    const up = t < 0.5 ? 1 : chop((t - 0.5) / 0.32);
+    rh = { x: cutX + 120, y: CAR_Y - 30 - up * 70 }; knifeAt = { x: rh.x - 4, y: rh.y }; knifeAng = -0.05 - up * 0.08;
+  } else if (t < 3.3) { // last chop slips to the left, onto the finger tips
+    const k = ph(t, 2.9, 3.15), up = 1 - Math.sin(clamp(k) * Math.PI / 2);
+    rh = { x: cutX + 120 - 50 * clamp(k * 1.2), y: CAR_Y - 30 - up * 70 + (t > 3.15 ? -30 * ph(t, 3.15, 3.3) : 0) };
+    knifeAt = { x: rh.x - 4, y: rh.y }; knifeAng = -0.05;
+  } else if (t < 4.1) {
+    rh = L({ x: cutX + 70, y: CAR_Y - 60 }, KNIFE_REST, ease(ph(t, 3.3, 4.1))); knifeAt = { x: rh.x - 4, y: rh.y };
+  } else if (t < 5.4) {
+    rh = L(KNIFE_REST, { x: PLASTER_AT.x, y: PLASTER_AT.y - 4 }, ease(ph(t, 4.4, 5.3)));
+  } else if (t < 6.6) {
+    rh = L({ x: PLASTER_AT.x, y: PLASTER_AT.y - 4 }, { x: fingerTip.x + 70, y: fingerTip.y + 4 }, ease(ph(t, 5.5, 6.5))); holding = "plaster";
+  } else if (t < 7.4) { // wraps it round the finger
+    const k = ph(t, 6.6, 7.4);
+    rh = { x: fingerTip.x + 50 - Math.sin(k * Math.PI) * 10, y: fingerTip.y + 6 + Math.sin(k * Math.PI * 2) * 6 };
+  } else if (t < 8.3) {
+    rh = L({ x: fingerTip.x + 34, y: fingerTip.y + 6 }, { x: BOX.x, y: BOX.y - 40 }, ease(ph(t, 7.4, 8.2)));
+    if (t > 8.0) holding = "glove";
+  } else if (t < 9.0) {
+    rh = L({ x: BOX.x, y: BOX.y - 40 }, { x: UP.x + 4, y: UP.y - 70 * BIG }, ease(ph(t, 8.3, 9.0))); holding = "glove";
+  } else if (t < 9.9) { // pulls the glove down over the hand
+    rh = { x: UP.x + 26 * BIG, y: lerp(UP.y - 60 * BIG, UP.y + 30 * BIG, gloveK) };
+  } else if (t < 10.8) {
+    rh = L({ x: UP.x + 26 * BIG, y: UP.y + 30 * BIG }, KNIFE_REST, ease(ph(t, 9.9, 10.5)));
+    if (t > 10.5) { rh = L(KNIFE_REST, { x: cutX + 120, y: CAR_Y - 70 }, ease(ph(t, 10.5, 10.8))); knifeAt = { x: rh.x - 4, y: rh.y }; }
+  } else {
+    const up = t > 12.2 ? 1 : chop((t - 10.8) / 0.34);
+    rh = { x: cutX + 120, y: CAR_Y - 30 - up * 70 }; knifeAt = { x: rh.x - 4, y: rh.y }; knifeAng = -0.05 - up * 0.08;
+  }
+  if (!knifeAt) knife(KNIFE_REST.x, KNIFE_REST.y, 0.02);
+
+  arm(LS, lBig ? { x: lh.x + 4 * lScale, y: lh.y + 34 * lScale } : lh, -1); // raised hand: arm ends at the wrist
+  if (lBig) bigHand(lh, lScale, cut, plasterOn, gloveK);
+  else hand(lh, false, t > 9.9 ? GLOVE : null);
+  arm(RS, rh, 1);
+  if (knifeAt) knife(knifeAt.x, knifeAt.y, knifeAng);
+  if (holding === "glove") gloveFlat(rh.x - 6, rh.y - 18);
+  hand(rh, !!knifeAt);
+  if (holding === "plaster") plasterFlat(rh.x - 30, rh.y - 6, 1.2);
+  // the cut shows on the small hand for the moment before it is lifted
+  if (!lBig && cut && t < 4) {
+    g.fillStyle = "#D32F2F"; g.beginPath(); g.arc(lh.x - 18, lh.y + 10, 4, 0, 7); g.fill();
+  }
+}
+window.render = render;
+render(0);
+</script></body></html>

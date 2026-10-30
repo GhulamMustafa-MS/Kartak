@@ -1,0 +1,164 @@
+<!doctype html>
+<!--
+  scripts/clips/taste-right.html - draws the "tasting with a clean spoon" clip (the RIGHT way), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-10.5) on a 1280x720 canvas: the worker stirs a pot of
+              sauce, rests the cooking spoon, takes a clean teaspoon from the glass, scoops a little sauce, tastes it,
+              puts the teaspoon in the used-spoon bowl (never back in the pot), then stirs again with the cooking
+              spoon (handbook: taste with a clean spoon used once; never taste with fingers).
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/taste-right.mp4.
+  Depends on: scripts/clips/lib.js (kitchen, worker, arms, hands). The pot, spoons and bowls are drawn here
+              (same shapes as taste-wrong.html).
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+// ---- the pot scene (shared shape with the other taste clip) ----
+const POT = { x: 640, y: 450, rx: 200, ry: 42, bottom: 598 };
+const SAUCE = { x: 640, y: 458, rx: 184, ry: 32, c: "#C8452B", light: "#E0694A" };
+const GLASS = { x: 935, y: 500 };          // glass of clean teaspoons (bottom centre)
+const USED = { x: 1062, y: 566 };          // bowl for used teaspoons
+const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+const HANDLE_L = { x: 428, y: 482 };
+// the camera is a little closer than in the board clips, so the hands, mouth and spoon read on a phone
+const ZOOM = 1.25, ZC = { x: 640, y: 300 };
+function zoom() { g.setTransform(ZOOM, 0, 0, ZOOM, ZC.x * (1 - ZOOM), ZC.y * (1 - ZOOM)); }
+const mouthAt = (t) => ({ x: 640 + Math.sin(t * 2.1) * 2, y: 216 });
+
+function hob() {
+  g.fillStyle = "#2E3438"; rr(400, 584, 480, 24, 8); g.fill();
+  g.fillStyle = "#1E2326"; g.fillRect(410, 604, 460, 6);
+}
+function potBack() {
+  // pot body (front wall), then the open top with the sauce inside
+  const body = g.createLinearGradient(POT.x - POT.rx, 0, POT.x + POT.rx, 0);
+  body.addColorStop(0, "#8C979C"); body.addColorStop(0.45, "#E8EDEF"); body.addColorStop(1, "#808B90");
+  g.fillStyle = body; g.beginPath();
+  g.moveTo(POT.x - POT.rx, POT.y); g.lineTo(POT.x - POT.rx + 8, POT.bottom - 14);
+  g.quadraticCurveTo(POT.x, POT.bottom + 14, POT.x + POT.rx - 8, POT.bottom - 14); g.lineTo(POT.x + POT.rx, POT.y); g.closePath(); g.fill();
+  // side handles
+  g.fillStyle = "#4A5358";
+  rr(POT.x - POT.rx - 34, 470, 40, 22, 8); g.fill(); rr(POT.x + POT.rx - 6, 470, 40, 22, 8); g.fill();
+  // rim and inside
+  g.fillStyle = "#B9C2C6"; g.beginPath(); g.ellipse(POT.x, POT.y, POT.rx, POT.ry, 0, 0, 7); g.fill();
+  g.fillStyle = "#6E787C"; g.beginPath(); g.ellipse(POT.x, POT.y + 2, POT.rx - 10, POT.ry - 7, 0, 0, 7); g.fill();
+  sauceSurface();
+}
+function sauceSurface() {
+  g.fillStyle = SAUCE.c; g.beginPath(); g.ellipse(SAUCE.x, SAUCE.y, SAUCE.rx, SAUCE.ry, 0, 0, 7); g.fill();
+  g.fillStyle = "rgba(255,255,255,.12)"; g.beginPath(); g.ellipse(SAUCE.x - 50, SAUCE.y - 8, 70, 9, 0, 0, 7); g.fill();
+}
+function steam(t) {
+  g.strokeStyle = "rgba(255,255,255,.75)"; g.lineWidth = 6; g.lineCap = "round";
+  [540, 760].forEach((x0, i) => {
+    g.beginPath();
+    for (let k = 0; k <= 12; k++) {
+      const y = 430 - k * 9, x = x0 + Math.sin(k * 0.7 + t * 3 + i) * 8;
+      if (k === 0) g.moveTo(x, y); else g.lineTo(x, y);
+    }
+    g.stroke();
+  });
+}
+// where something goes into the sauce: cover its end with a little ring of sauce
+function ripple(p, big = 1) {
+  g.fillStyle = SAUCE.c; g.beginPath(); g.ellipse(p.x, p.y + 2, 26 * big, 8 * big, 0, 0, 7); g.fill();
+  g.strokeStyle = SAUCE.light; g.lineWidth = 3; g.beginPath(); g.ellipse(p.x, p.y + 2, 30 * big, 10 * big, 0, 0, 7); g.stroke();
+}
+
+// long wooden cooking spoon from the grip to its bowl (tip)
+function cookSpoon(grip, tip) {
+  g.lineCap = "round";
+  g.strokeStyle = "#8A5A2B"; g.lineWidth = 14; g.beginPath(); g.moveTo(grip.x, grip.y); g.lineTo(tip.x, tip.y); g.stroke();
+  g.strokeStyle = "#B07A40"; g.lineWidth = 8; g.beginPath(); g.moveTo(grip.x, grip.y); g.lineTo(tip.x, tip.y); g.stroke();
+  const a = Math.atan2(tip.y - grip.y, tip.x - grip.x);
+  g.fillStyle = "#A36D37"; g.beginPath(); g.ellipse(tip.x, tip.y, 26, 15, a, 0, 7); g.fill();
+}
+// teaspoon: big enough to see on a phone; bowl at `bowl`, handle pointing back along angle a (radians, bowl direction)
+function teaspoon(bowlP, a, full) {
+  const hx = bowlP.x - Math.cos(a) * 118, hy = bowlP.y - Math.sin(a) * 118;
+  g.lineCap = "round";
+  g.strokeStyle = "#8D979B"; g.lineWidth = 9; g.beginPath(); g.moveTo(hx, hy); g.lineTo(bowlP.x - Math.cos(a) * 20, bowlP.y - Math.sin(a) * 20); g.stroke();
+  g.strokeStyle = "#E3E8EA"; g.lineWidth = 5; g.beginPath(); g.moveTo(hx, hy); g.lineTo(bowlP.x - Math.cos(a) * 20, bowlP.y - Math.sin(a) * 20); g.stroke();
+  g.fillStyle = "#C3CACD"; g.beginPath(); g.ellipse(bowlP.x, bowlP.y, 26, 17, a, 0, 7); g.fill();
+  g.fillStyle = full ? SAUCE.c : "#EEF2F3"; g.beginPath(); g.ellipse(bowlP.x, bowlP.y, 20, 12, a, 0, 7); g.fill();
+  return { x: hx, y: hy };
+}
+function glassOfSpoons(n) {
+  const { x, y } = GLASS;
+  for (let k = 0; k < n; k++) teaspoon({ x: x - 20 + k * 22, y: y - 140 + (k % 2) * 8 }, -Math.PI / 2 - 0.15 + k * 0.15, false);
+  g.fillStyle = "rgba(210,235,245,.55)"; rr(x - 42, y - 92, 84, 92, 10); g.fill();
+  g.strokeStyle = "rgba(150,175,185,.9)"; g.lineWidth = 3; g.stroke();
+}
+function usedBowl(spoonIn) {
+  const { x, y } = USED;
+  g.fillStyle = "rgba(0,0,0,.12)"; g.beginPath(); g.ellipse(x, y + 32, 76, 10, 0, 0, 7); g.fill();
+  g.fillStyle = "#6E787C"; g.beginPath(); g.ellipse(x, y - 6, 72, 15, 0, 0, 7); g.fill();
+  g.fillStyle = "#59636A"; g.beginPath(); g.ellipse(x, y - 4, 64, 10, 0, 0, 7); g.fill();
+  if (spoonIn) teaspoon({ x: x - 28, y: y - 6 }, Math.PI + 0.25, false);
+  const s = g.createLinearGradient(x - 72, 0, x + 72, 0); s.addColorStop(0, "#9AA4A8"); s.addColorStop(0.5, "#EEF2F3"); s.addColorStop(1, "#8D979B");
+  g.fillStyle = s; g.beginPath(); g.moveTo(x - 72, y - 2); g.quadraticCurveTo(x - 62, y + 38, x, y + 40); g.quadraticCurveTo(x + 62, y + 38, x + 72, y - 2); g.quadraticCurveTo(x, y + 12, x - 72, y - 2); g.fill();
+}
+function openMouth(t, k) {
+  if (k <= 0) return;
+  const m = mouthAt(t);
+  g.fillStyle = "#5A2418"; g.beginPath(); g.ellipse(m.x, m.y + 2, 11 * k, 8 * k, 0, 0, 7); g.fill();
+}
+
+const stirHand = (st) => ({ x: 790 + Math.cos(st) * 30, y: 372 + Math.sin(st) * 6 });
+const stirTip = (st) => ({ x: 690 + Math.cos(st) * 60, y: SAUCE.y + Math.sin(st) * 10 });
+const REST = { grip: { x: 850, y: 392 }, tip: { x: 742, y: SAUCE.y } };   // cooking spoon leaning on the rim
+const A0 = -Math.PI / 2 + 0.15, BOWL0 = { x: GLASS.x + 24, y: GLASS.y - 140 };  // the teaspoon taken from the glass
+const DIP_A = 1.9, MOUTH_A = 3.88, USED_A = Math.PI + 0.25;
+const SPOON_GRIP = 80;                                                 // hand distance from the teaspoon bowl
+const gripOf = (b, a) => ({ x: b.x - Math.cos(a) * SPOON_GRIP, y: b.y - Math.sin(a) * SPOON_GRIP });
+
+// ---------- the timeline (seconds) ----------
+// 0-1.8 stir | 1.8-2.1 cooking spoon rested on the rim | 2.1-2.6 hand to the glass | 2.6-3.0 clean teaspoon lifted out
+// 3.0-3.8 over the pot | 3.8-4.4 a little sauce scooped | 4.4-5.6 up to the mouth | 5.6-6.4 tasted
+// 6.4-7.6 teaspoon carried right (clear of the glass) and down into the used-spoon bowl | 7.6-8.4 hand back to the cooking spoon | 8.4-9.6 stir | 9.6-10.5 hold
+function render(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, W, H);
+  zoom();
+  background(t); person(t); counter(); hob();
+  glassOfSpoons(t < 2.6 ? 3 : 2);
+  usedBowl(t >= 7.6);
+  potBack(); steam(t);
+
+  // ---- cooking spoon and right hand ----
+  const stA = 1.8 * 2.2;                               // where the stir was when it stopped
+  const stB = stA + Math.min(Math.max(t - 8.4, 0), 1.2) * 2.2;
+  let grip, tip, rh, spoon = null, full = false, mouthK = 0;
+  if (t < 1.8) { const st = t * 2.2; grip = stirHand(st); tip = stirTip(st); rh = grip; }
+  else if (t < 2.1) { const k = ease(ph(t, 1.8, 2.1)); grip = L(stirHand(stA), REST.grip, k); tip = L(stirTip(stA), REST.tip, k); rh = grip; }
+  else if (t < 8.4) { grip = REST.grip; tip = REST.tip; }
+  else { const k = ease(ph(t, 8.4, 8.7)); grip = L(REST.grip, stirHand(stB), k); tip = L(REST.tip, stirTip(stB), k); rh = grip; }
+  cookSpoon(grip, tip); ripple(tip);
+
+  // ---- teaspoon ----
+  const m = mouthAt(t), AT_MOUTH = { x: m.x - 2, y: m.y + 8 };
+  const OVER = { x: 600, y: 396 }, DIP = { x: 600, y: SAUCE.y - 4 }, IN_USED = { x: USED.x - 28, y: USED.y - 6 }, WAY = { x: USED.x - 28, y: 330 };
+  if (t >= 2.1 && t < 2.6) rh = L(REST.grip, gripOf(BOWL0, A0), ease(ph(t, 2.1, 2.6)));
+  else if (t >= 2.6 && t < 7.6) {
+    let b, a = A0;
+    if (t < 3.0) b = L(BOWL0, { x: BOWL0.x, y: BOWL0.y - 60 }, ease(ph(t, 2.6, 3.0)));
+    else if (t < 3.8) { const k = ease(ph(t, 3.0, 3.8)); b = L({ x: BOWL0.x, y: BOWL0.y - 60 }, OVER, k); b.y -= Math.sin(k * Math.PI) * 30; a = lerp(A0 + 2 * Math.PI, DIP_A + 2 * Math.PI, k); }
+    else if (t < 4.4) { const k = ph(t, 3.8, 4.4), d = Math.sin(k * Math.PI); b = L(OVER, DIP, d); a = DIP_A; full = k > 0.5; if (d > 0.8) spoon = "dip"; }
+    else if (t < 5.6) { const k = ease(ph(t, 4.4, 5.6)); b = L(OVER, AT_MOUTH, k); a = lerp(DIP_A, MOUTH_A, k); full = true; mouthK = ph(t, 5.2, 5.6); }
+    else if (t < 6.4) { const k = ph(t, 5.6, 6.4); b = { x: AT_MOUTH.x, y: AT_MOUTH.y + Math.sin(k * Math.PI) * 4 }; a = MOUTH_A; full = k < 0.45; mouthK = 1 - ph(t, 6.2, 6.4); }
+    else if (t < 7.0) { const k = ease(ph(t, 6.4, 7.0)); b = L(AT_MOUTH, WAY, k); a = lerp(MOUTH_A, USED_A, k); }  // up and right, over nothing
+    else { b = L(WAY, IN_USED, ease(ph(t, 7.0, 7.6))); a = USED_A; }                                       // straight down into the used bowl
+    spoon = { b, a, full, dip: spoon === "dip" };
+    rh = gripOf(b, a);
+  } else if (t >= 7.6 && t < 8.4) rh = L(gripOf(IN_USED, USED_A), REST.grip, ease(ph(t, 7.6, 8.4)));
+
+  openMouth(t, mouthK);
+  // left hand holds the pot handle the whole time
+  arm(LS, HANDLE_L, -1); hand(HANDLE_L, true);
+  arm(RS, rh, 1);
+  if (spoon) { teaspoon(spoon.b, spoon.a, spoon.full); if (spoon.dip) ripple(spoon.b, 0.8); }
+  hand(rh, true);
+}
+window.render = render;
+render(0);
+</script></body></html>

@@ -12,6 +12,8 @@
  *               Speech    "Listen" button, shown only when the phone has a voice for the language; reads the
  *                         choices in the order on the screen (never the answer order)
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
+ *               Clips     "video" questions with a clip (q.clip, D31): the MP4 plays above two buttons, Right and
+ *                         Wrong (twoWay()); left out of tests started offline, because videos are not saved
  *               Screens   drawLang, drawHome, drawAllPick ("All questions": every type or one type, D29), drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
@@ -124,7 +126,9 @@
     while (a.every(function (v, k) { return v === k; }));
     return a;
   }
-  function optsOf(q) { return q.type === "tf" ? [T().tTrue, T().tFalse] : L(q).o; }
+  // "tf" and clip questions (D31) have two fixed buttons instead of options from the bank.
+  function twoWay(q) { return q.type === "tf" || !!q.clip; }
+  function optsOf(q) { return q.type === "tf" ? [T().tTrue, T().tFalse] : q.clip ? [T().tRight, T().tWrong] : L(q).o; }
   function hasAnswer(q, sel) {
     if (q.type === "multi") return sel && sel.length > 0;
     if (q.type === "order") return sel && sel.length === q.en.o.length;
@@ -273,8 +277,8 @@
       order: '<div class="mini"><div class="r"><span class="num">1</span><span style="flex:1">' + esc(t.exampleSteps[0]) + '</span><b>↑ ↓</b></div><div class="r"><span class="num">2</span><span style="flex:1">' + esc(t.exampleSteps[1]) + '</span><b>↑ ↓</b></div></div>',
       picture: '<div class="mini" style="justify-items:center">' + thermo("fridge", 3).replace('<svg ', '<svg style="width:56px" ') + '</div>'
     };
-    ex.video = '<div class="mini"><div class="vgrid">' + ["🧑‍🍳", "🔪🍗", "🥬", "🥗"].map(function (e, k) { return '<div class="vp" style="min-height:56px;animation-delay:' + (k * 0.8) + 's"><span class="vn">' + (k + 1) + '</span><div class="sc" style="font-size:24px">' + e + '</div></div>'; }).join("") + '</div></div>';
-    var cards = ["single", "multi", "tf", "order", "picture"].map(function (ty) {
+    ex.video = '<div class="mini"><div class="mclip">' + ICONS.video + '</div><div class="two"><span class="on">' + t.tRight + '</span><span>' + t.tWrong + '</span></div></div>';
+    var cards = ["single", "multi", "tf", "order", "picture", "video"].map(function (ty) {
       return '<div class="ex">' + tag(ty) + ex[ty] + '</div>';
     }).join("");
     app.innerHTML = '<section class="learn"><h1>' + t.learn + '</h1><p class="lead">' + t.learnD + '</p>' + cards + '</section>';
@@ -295,11 +299,12 @@
     S.mode = mode; S.i = 0; S.results = []; S.notice = false; S.screen = "q"; S.allSent = 0; syncHistory();
     if (mode === "all" && resumeAll()) return;
     var idx = BANK.map(function (q, k) { return k; });
+    if (navigator.onLine === false) idx = idx.filter(function (k) { return !BANK[k].clip; }); // clips need internet (D31)
     if (mode === "all" && S.allType) idx = idx.filter(function (k) { return BANK[k].type === S.allType; }); // one type only (D29)
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
     S.qs = idx.slice(0, Math.min(SIZES[mode], BANK.length)).map(function (k) { return BANK[k]; });
     S.shuffles = S.qs.map(function (q) { return q.type === "order" ? shuffle(q.en.o.length) : null; });
-    S.perms = S.qs.map(function (q) { return q.type === "order" || q.type === "tf" ? null : shuffle(q.en.o.length); });
+    S.perms = S.qs.map(function (q) { return q.type === "order" || twoWay(q) ? null : shuffle(q.en.o.length); });
     S.startedAt = Date.now();
     openQ();
   }
@@ -360,11 +365,11 @@
     d.ids.forEach(function (id, k) {
       var q = byId[id], n = q ? q.en.o ? q.en.o.length : 0 : 0, answered = k < d.results.length;
       var okShuffle = q && (q.type === "order" ? d.shuffles[k] && d.shuffles[k].length === n : !d.shuffles[k]);
-      var okPerm = q && (q.type === "order" || q.type === "tf" ? !d.perms[k] : d.perms[k] && d.perms[k].length === n);
+      var okPerm = q && (q.type === "order" || twoWay(q) ? !d.perms[k] : d.perms[k] && d.perms[k].length === n);
       if (!q || (answered && !(okShuffle && okPerm)) || (!answered && d.type && q.type !== d.type)) return;
       qs.push(q);
       shuffles.push(okShuffle ? d.shuffles[k] : q.type === "order" ? shuffle(n) : null);
-      perms.push(okPerm ? d.perms[k] : q.type === "order" || q.type === "tf" ? null : shuffle(n));
+      perms.push(okPerm ? d.perms[k] : q.type === "order" || twoWay(q) ? null : shuffle(n));
       if (answered) { results.push(d.results[k]); if (k < (d.sent || 0)) sent++; }
     });
     if (!qs.length || results.length >= qs.length) { forgetAll(); return false; }
@@ -444,7 +449,10 @@
     html += '<section class="qcard"><div class="qrow"><h1 class="qtext">' + txt(lq.q) + '</h1>' +
       (canSpeak() ? '<button type="button" class="listen" id="listenBtn" aria-pressed="' + S.speaking + '">' + ICONS.speaker + '<span>' + (S.speaking ? t.stop : t.listen) + '</span></button>' : '') + '</div>';
 
-    if (q.vid) {
+    if (q.clip) {
+      html += '<div class="clip"><video src="' + q.clip + '" playsinline muted autoplay preload="auto"></video>' +
+        '<div class="vbar"><button type="button" class="small-btn" data-replay="1">↻ ' + t.replay + '</button></div></div>';
+    } else if (q.vid) {
       var el = (Date.now() - S.vidStart) / 1000;
       html += '<div class="vid"><div class="vgrid">' + q.vid.map(function (f, k) { return '<div class="vp" style="animation-delay:' + (k * 1.2 - el).toFixed(2) + 's"><span class="vn">' + (k + 1) + '</span><div>' + f + '</div></div>'; }).join("") +
         '</div><div class="vbar"><button type="button" class="small-btn" data-replay="1">↻ ' + t.replay + '</button></div></div>';
@@ -454,8 +462,8 @@
     }
 
     if (q.type === "order") html += orderHTML(q);
-    else if (q.type === "tf") {
-      html += '<div class="tfrow">' + [t.tTrue, t.tFalse].map(function (o, k) { return optBtn(q, o, k, "tfb"); }).join("") + '</div>';
+    else if (twoWay(q)) {
+      html += '<div class="tfrow">' + optsOf(q).map(function (o, k) { return optBtn(q, o, k, "tfb"); }).join("") + '</div>';
     } else {
       var oo = optsOf(q);
       html += '<div class="opts">' + S.perms[S.i].map(function (k) { return optBtn(q, oo[k], k, q.type === "multi" ? "multi" : ""); }).join("") + '</div>';
@@ -467,7 +475,10 @@
       html += '<div class="fb ' + (ok ? "ok" : "no") + '"><b>' + (ok ? t.correct : t.wrong) + '</b>' + extra + '<p>' + txt(lq.e) + '</p></div>';
     }
     html += '</section>';
+    var playing = app.querySelector(".clip video"); // keep the clip playing when the screen is redrawn (a tap)
     app.innerHTML = html;
+    var fresh = app.querySelector(".clip video");
+    if (playing && fresh && playing.getAttribute("src") === fresh.getAttribute("src")) fresh.parentNode.replaceChild(playing, fresh);
 
     var last = S.i === N() - 1, ready = hasAnswer(q, S.sel);
     var label = mock ? (last ? t.finish : t.next) : (S.checked ? (last ? t.finish : t.next) : t.check);
@@ -488,7 +499,7 @@
     var dn = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>';
     var html = '<div class="olist">';
     for (var k = 0; k < n; k++) {
-      var it = S.sel[k], cls = "orow" + (S.touched ? " moved" : "");
+      var it = S.sel[k], cls = "orow"; // colours appear only after "Check my answer"
       if (S.checked) cls = "orow " + (it === k ? "ok" : "no");
       html += '<div class="' + cls + '"><span class="n">' + (k + 1) + '</span><span class="tx">' + txt(lq.o[it]) + '</span>' +
         (S.checked ? '' : '<span class="arr"><button type="button" data-up="' + k + '" aria-label="' + t.up + '"' + (k === 0 ? " disabled" : "") + '>' + up + '</button><button type="button" data-down="' + k + '" aria-label="' + t.down + '"' + (k === n - 1 ? " disabled" : "") + '>' + dn + '</button></span>') + '</div>';
@@ -668,7 +679,11 @@
       else parts = parts.concat(optsOf(q));
       speak(parts.join(". ")); drawQ(); return;
     }
-    if (b.dataset.replay) { S.vidStart = Date.now(); drawQ(); return; }
+    if (b.dataset.replay) {
+      var v = app.querySelector(".clip video");
+      if (v) { v.currentTime = 0; v.play(); return; }
+      S.vidStart = Date.now(); drawQ(); return;
+    }
     if (S.checked) { if (b.id === "cta") { advance(); } return; }
     if (b.dataset.opt !== undefined) {
       var k = +b.dataset.opt;

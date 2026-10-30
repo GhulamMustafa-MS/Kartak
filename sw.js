@@ -3,12 +3,12 @@
  *
  * Purpose:    Lets phones install the app and keeps it working offline. Network first: when online,
  *             people always get the newest files and questions; the saved copy is used only offline.
- *             /api/ calls are never cached. Every page visit falls back to the saved "/". On install it
+ *             /api/ calls and /videos/ are never cached. Every page visit falls back to the saved "/". On install it
  *             saves FILES (the app and all questions), so offline works after the very first visit.
  *             Fonts come from Google Fonts and are not saved: offline, the phone's own fonts are used.
  * Used by:    js/app.js (navigator.serviceWorker.register("/sw.js")).
  */
-const CACHE = "kartak-v8"; // change the number to drop old saved copies after a big change
+const CACHE = "kartak-v10"; // change the number to drop old saved copies after a big change
 // Saved as soon as the app is first opened, so it works offline straight away (not only from the 2nd visit).
 const FILES = ["/", "/css/app.css", "/js/i18n.js", "/js/app.js", "/data/questions.json", "/data/words.json", "/manifest.webmanifest",
   "/icons/icon-192.png", "/icons/icon-512.png", "/icons/apple-touch-icon.png", "/icons/favicon-32.png"];
@@ -22,7 +22,8 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   const url = new URL(req.url);
-  if (req.method !== "GET" || url.origin !== location.origin || url.pathname.startsWith("/api/")) return;
+  // Videos are not saved: they are big, and phones ask for them in parts (range requests) that cannot be cached.
+  if (req.method !== "GET" || url.origin !== location.origin || url.pathname.startsWith("/api/") || url.pathname.startsWith("/videos/")) return;
   e.respondWith(
     fetch(req).then((res) => {
       if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req.mode === "navigate" ? "/" : req, copy)); }

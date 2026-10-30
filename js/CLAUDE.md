@@ -21,4 +21,7 @@ Rules:
   in `kartak-all`; the chooser is `drawAllPick()` (screen `allpick`).
 - `resumeAll()` keeps a worker's place when the bank changes (D30): answered questions that changed shape are
   dropped, unanswered ones re-shuffled. Keep question ids stable when rewriting a question.
+- Clip questions (D31): `q.clip` plays in `drawQ()` above two buttons from `optsOf()` (`tRight`, `tWrong`);
+  `twoWay()` marks questions with two fixed buttons (true/false and clips); the playing video is kept when the
+  screen redraws, and tests started offline leave clips out.
 - localStorage keys are listed in the `app.js` header; renaming one logs everyone out of that setting.

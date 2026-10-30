@@ -4,11 +4,11 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 30 Oct 2026)
+## START HERE (last updated 30 Oct 2026, afternoon)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
-  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 306 live questions
+  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 318 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place, every
   type or one type such as ordering only, D29) /
   key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
@@ -20,7 +20,7 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 
 **Next steps (roadmap steps 1 and 3, plan.md 6):**
 1. Wessam gives codes to workers; collect confusing words per language and real exam results.
-2. Ask workers what the real exam videos show (needed before making clips, D5).
+2. Ask workers what the real exam clips show, to add clips for those situations (12 cartoon clips are live, D31).
 3. Native speakers check every language except English (all AI-translated; reviewers' open points per
    language are in summary.md 2).
 4. The user tests the apps on a real iPhone (home-screen install and hand-over).
@@ -38,6 +38,10 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **30 Oct 2026 (3):** right-or-wrong video questions are live (D31): 12 cartoon clips (6 right, 6 wrong:
+  hand washing, boards, tasting, fridge, probe, sneeze, cut finger, phone and gloves), each a question with two
+  answers, Right and Wrong, in all 11 languages; shared clip drawing code `scripts/clips/lib.js`. Ordering steps
+  no longer turn red before checking (D32). 318 live questions. Cache `kartak-v10`. Tested in the test browser.
 - **30 Oct 2026 (2):** beginner review of the whole bank (D30): 15 confusing questions rewritten in kitchen words
   in all 11 languages (none dropped, every topic is in the handbook), 2 new ordering questions (k308 spill,
   k309 HACCP as a chicken routine), fridge and display numbers tied together in the explanations. 306 live
@@ -66,11 +70,11 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 - **28 Oct 2026 (night):** offline fixed for the first visit: the service worker now saves the app and all
   questions as soon as it installs (it used to save only what loaded after it started); browser test turns the
   internet off and checks practice still works.
-- **28 Oct 2026 (late, 6):** Malayalam, Tamil, Filipino, Indonesian and Turkish added; every language had a
-  word list, three translators and an independent full review before going live (D24).
 
 ## Archive
 
+- **28 Oct 2026 (late, 6):** Malayalam, Tamil, Filipino, Indonesian and Turkish added; every language had a
+  word list, three translators and an independent full review before going live (D24).
 - **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
   Hindi: 2 meaning and 22 wording fixes).
 - **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46

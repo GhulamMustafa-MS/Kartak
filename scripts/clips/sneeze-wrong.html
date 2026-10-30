@@ -1,0 +1,182 @@
+<!doctype html>
+<!--
+  scripts/clips/sneeze-wrong.html - draws the "sneeze over food" clip (WRONG), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-10) on a 1280x720 canvas: a worker mixes an open
+              salad bowl with two salad spoons, sneezes straight over it (a spray of droplets lands on the salad),
+              then carries on mixing without moving away, covering or washing. Handbook: move away from food,
+              cover with your arm or a tissue, wash hands after. Uses the shared drawing code in lib.js.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/sneeze-wrong.mp4.
+  Depends on: scripts/clips/lib.js (wall, counter, arms, hands, helpers).
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+// Fixed-seed random numbers so every render of a frame is the same.
+function rng(seed) { return () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+
+const SB = { x: 640, y: 500, rx: 190, ry: 40 };   // salad bowl rim (centre and radii)
+
+// Salad pieces in bowl coordinates: r 0-1 from the centre, a = angle
+const PIECES = (() => {
+  const R = rng(7), out = [];
+  for (let k = 0; k < 90; k++) out.push({ r: Math.sqrt(R()) * 0.95, a: R() * Math.PI * 2, kind: k % 6 === 5 ? 0 : k % 5, s: 1.0 + R() * 0.5, rot: R() * 3 });
+  return out.sort((p, q) => Math.sin(p.a) * p.r - Math.sin(q.a) * q.r); // back to front
+})();
+// Where each sneeze droplet lands (bowl coordinates) and how it flies
+const DROPS = (() => {
+  const R = rng(31), out = [];
+  for (let k = 0; k < 38; k++) out.push({ r: Math.sqrt(R()) * 0.8, a: R() * Math.PI * 2, d: R() * 0.35, size: 3.5 + R() * 3.5, sx: (R() - 0.5) * 30, sy: (R() - 0.5) * 12 });
+  return out;
+})();
+
+function bowlPoint(r, a, spin) {
+  const x = SB.x + Math.cos(a + spin) * r * SB.rx;
+  const y = SB.y - 14 + Math.sin(a + spin) * r * SB.ry - (1 - r * r) * 34; // salad heaped in the middle
+  return { x, y };
+}
+
+function bowlBack() {
+  g.fillStyle = "rgba(0,0,0,.13)"; g.beginPath(); g.ellipse(SB.x, SB.y + 104, 170, 18, 0, 0, 7); g.fill();
+  const s = g.createLinearGradient(SB.x - 200, 0, SB.x + 200, 0);
+  s.addColorStop(0, "#9AA4A8"); s.addColorStop(0.5, "#F1F4F5"); s.addColorStop(1, "#8D979B");
+  g.fillStyle = s; g.beginPath(); g.moveTo(SB.x - 198, SB.y); g.quadraticCurveTo(SB.x - 170, SB.y + 108, SB.x, SB.y + 110);
+  g.quadraticCurveTo(SB.x + 170, SB.y + 108, SB.x + 198, SB.y); g.closePath(); g.fill();
+  g.fillStyle = "#7A8488"; g.beginPath(); g.ellipse(SB.x, SB.y, 198, 44, 0, 0, 7); g.fill();
+  g.fillStyle = "#5E686E"; g.beginPath(); g.ellipse(SB.x, SB.y + 2, 186, 37, 0, 0, 7); g.fill();
+}
+function bowlFrontRim() {
+  // front lip of the bowl drawn over the salad so the salad sits inside it
+  g.strokeStyle = "#C7CED1"; g.lineWidth = 10; g.beginPath(); g.ellipse(SB.x, SB.y, 194, 41, 0, 0.05 * Math.PI, 0.95 * Math.PI); g.stroke();
+}
+
+function piece(p, spin) {
+  const { x, y } = bowlPoint(p.r, p.a, spin), s = p.s;
+  g.save(); g.translate(x, y); g.rotate(p.rot + spin * 0.5);
+  if (p.kind <= 1) { // lettuce leaf
+    g.fillStyle = p.kind ? "#5DB33F" : "#3E9A35"; g.beginPath(); g.ellipse(0, 0, 30 * s, 15 * s, 0, 0, 7); g.fill();
+    g.strokeStyle = "#A7DC7E"; g.lineWidth = 2; g.beginPath(); g.moveTo(-24 * s, 0); g.lineTo(24 * s, 0); g.stroke();
+  } else if (p.kind === 2) { // tomato slice
+    g.fillStyle = "#D9362B"; g.beginPath(); g.arc(0, 0, 13 * s, 0, 7); g.fill();
+    g.fillStyle = "#F06A55"; g.beginPath(); g.arc(0, 0, 9 * s, 0, 7); g.fill();
+    g.fillStyle = "#F7D36A"; [0, 2.1, 4.2].forEach((a) => { g.beginPath(); g.arc(Math.cos(a) * 5 * s, Math.sin(a) * 5 * s, 2 * s, 0, 7); g.fill(); });
+  } else if (p.kind === 3) { // cucumber slice
+    g.fillStyle = "#2E7D32"; g.beginPath(); g.ellipse(0, 0, 13 * s, 10 * s, 0, 0, 7); g.fill();
+    g.fillStyle = "#CDE8A6"; g.beginPath(); g.ellipse(0, 0, 10 * s, 7.5 * s, 0, 0, 7); g.fill();
+  } else { // onion ring / pepper strip
+    g.strokeStyle = "#E8C33A"; g.lineWidth = 6 * s; g.beginPath(); g.arc(0, 0, 10 * s, 0.2, 2.8); g.stroke();
+  }
+  g.restore();
+}
+
+// Wooden salad spoon: (x, y) = where the hand grips, the head goes down into the salad
+function spoon(x, y, hx, hy) {
+  g.lineCap = "round"; g.strokeStyle = "#8A5A2B"; g.lineWidth = 12; g.beginPath(); g.moveTo(x, y - 16); g.lineTo(hx, hy); g.stroke();
+  g.fillStyle = "#A8743F"; g.beginPath(); g.ellipse(hx, hy + 8, 22, 15, 0, 0, 7); g.fill();
+  g.fillStyle = "#8A5A2B"; g.beginPath(); g.ellipse(hx, hy + 6, 15, 9, 0, 0, 7); g.fill();
+}
+
+// Body only (same look as lib.js person), so the head can move for the sneeze
+function body() {
+  g.fillStyle = "#F7F8F6"; g.beginPath();
+  g.moveTo(500, 470); g.quadraticCurveTo(495, 300, 560, 262); g.lineTo(720, 262); g.quadraticCurveTo(785, 300, 780, 470); g.closePath(); g.fill();
+  g.strokeStyle = "#D9DEDC"; g.lineWidth = 3; g.stroke();
+  g.fillStyle = "#2F3B45"; rr(560, 330, 160, 160, 18); g.fill();
+  g.strokeStyle = "#2F3B45"; g.lineWidth = 6; g.beginPath(); g.moveTo(575, 333); g.lineTo(600, 268); g.moveTo(705, 333); g.lineTo(680, 268); g.stroke();
+  g.fillStyle = "#C9CFCD"; [290, 312].forEach((y) => { g.beginPath(); g.arc(640, y, 4, 0, 7); g.fill(); });
+}
+
+// Head at (x, y), scale s, tilt (radians); scr 0 = neutral face, 1 = eyes squeezed shut; mouth 0-1 open
+function head(x, y, s, tilt, scr, mouth) {
+  g.fillStyle = SKIN; rr(620, 220, 40, Math.max(50, y - 150), 12); g.fill(); // neck
+  g.save(); g.translate(x, y); g.rotate(tilt); g.scale(s, s);
+  g.fillStyle = SKIN; g.beginPath(); g.ellipse(0, 0, 50, 58, 0, 0, 7); g.fill();
+  g.fillStyle = SKIN_D; g.beginPath(); g.ellipse(-49, 6, 9, 15, 0, 0, 7); g.ellipse(49, 6, 9, 15, 0, 0, 7); g.fill();
+  g.strokeStyle = "#2A1A10"; g.lineCap = "round"; g.lineWidth = 4;
+  if (scr < 0.5) { // normal eyes looking down
+    g.beginPath(); g.arc(-18, 12, 9, 0.15 * Math.PI, 0.85 * Math.PI); g.stroke();
+    g.beginPath(); g.arc(18, 12, 9, 0.15 * Math.PI, 0.85 * Math.PI); g.stroke();
+  } else { // squeezed shut: > <
+    g.beginPath(); g.moveTo(-28, 6); g.lineTo(-14, 12); g.lineTo(-28, 18); g.stroke();
+    g.beginPath(); g.moveTo(28, 6); g.lineTo(14, 12); g.lineTo(28, 18); g.stroke();
+  }
+  g.lineWidth = 5; const bd = scr * 6; // eyebrows pull down and in
+  g.beginPath(); g.moveTo(-30, -4 + bd * 0.3); g.lineTo(-8, -2 + bd); g.moveTo(8, -2 + bd); g.lineTo(30, -4 + bd * 0.3); g.stroke();
+  // nose wrinkle while scrunched
+  if (scr > 0.5) { g.strokeStyle = SKIN_D; g.lineWidth = 3; g.beginPath(); g.moveTo(-6, 20); g.lineTo(6, 20); g.moveTo(-5, 25); g.lineTo(5, 25); g.stroke(); }
+  if (mouth > 0.05) { g.fillStyle = "#5A2418"; g.beginPath(); g.ellipse(0, 38, 10 + mouth * 4, 3 + mouth * 9, 0, 0, 7); g.fill(); }
+  else { g.strokeStyle = "#7A4A2C"; g.lineWidth = 3; g.beginPath(); g.moveTo(-8, 36); g.quadraticCurveTo(0, 40, 8, 36); g.stroke(); }
+  // white hair cover
+  g.fillStyle = "#FFFFFF"; g.beginPath(); g.ellipse(0, -30, 56, 40, 0, Math.PI, 2 * Math.PI); g.fill();
+  rr(-56, -34, 112, 16, 8); g.fill();
+  g.strokeStyle = "#DCE1DF"; g.lineWidth = 2; g.beginPath(); g.moveTo(-54, -20); g.lineTo(54, -20); g.stroke();
+  g.restore();
+}
+
+// ---------- the timeline (seconds) ----------
+// 0-0.5 hold | 0.5-2.8 mixing | 2.8-3.9 head goes back (about to sneeze) | 3.9-4.2 head jerks down over the bowl
+// 4.0-5.3 spray of droplets lands on the salad | 5.3-6.2 face back to neutral | 6.2-9.0 carries on mixing | 9-10 hold
+const SNEEZE = 3.95;
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  background(t); body();
+
+  // head pose
+  const back = ease(ph(t, 2.8, 3.8)), jerk = ease(ph(t, 3.9, 4.15)), relax = ease(ph(t, 5.3, 6.2));
+  let hy = 180 - back * 16 + jerk * (16 + 80), hs = 1 + jerk * 0.06, tilt = -back * 0.08 + jerk * 0.08;
+  hy = lerp(hy, 180, relax); hs = lerp(hs, 1, relax); tilt = lerp(tilt, 0, relax);
+  const scr = t < 2.9 || t > 5.9 ? 0 : (t < 3.9 ? back * 0.6 : 1);
+  const mouth = t < 2.9 || t > 5.9 ? 0 : (t < 3.9 ? back * 0.5 : (t < 5.3 ? 1 : 1 - relax));
+  head(640, hy, hs, tilt, scr, mouth);
+
+  counter();
+  bowlBack();
+
+  // salad spins slowly while it is mixed
+  const mixA = ph(t, 0.5, 2.8) * 2.3, mixB = ph(t, 6.2, 9.0) * 2.8;
+  const mixing = (t > 0.5 && t < 2.8) || (t > 6.2 && t < 9.0);
+  const spin = (mixA + mixB) * 0.9;
+  // green base so the salad looks full
+  g.fillStyle = "#3C8F33"; g.beginPath(); g.ellipse(SB.x, SB.y - 12, 182, 34, 0, Math.PI, 2 * Math.PI); g.fill();
+  g.beginPath(); g.ellipse(SB.x, SB.y - 12, 182, 34, 0, 0, Math.PI); g.fill();
+  g.beginPath(); g.ellipse(SB.x, SB.y - 30, 120, 30, 0, 0, 7); g.fill();
+  PIECES.forEach((p) => piece(p, spin));
+
+  // droplets: fly from the mouth to the salad, then stay on it and turn with the mixing
+  const mouthP = { x: 640, y: hy + 38 * hs };
+  const sprayOn = t >= SNEEZE;
+  if (sprayOn) {
+    // short mist cone
+    const mist = clamp(1 - ph(t, 4.4, 5.4)) * clamp(ph(t, SNEEZE, 4.1));
+    if (mist > 0) {
+      g.fillStyle = `rgba(220,235,245,${0.45 * mist})`; g.beginPath();
+      g.moveTo(mouthP.x - 10, mouthP.y + 6); g.lineTo(SB.x - 170, SB.y - 30); g.quadraticCurveTo(SB.x, SB.y + 10, SB.x + 170, SB.y - 30); g.lineTo(mouthP.x + 10, mouthP.y + 6); g.closePath(); g.fill();
+    }
+    DROPS.forEach((d) => {
+      const k = ease(ph(t, SNEEZE + d.d * 0.6, SNEEZE + 0.6 + d.d * 1.4));
+      if (k <= 0) return;
+      const land = bowlPoint(d.r, d.a, k >= 1 ? spin : (mixA) * 0.9);
+      const p = L({ x: mouthP.x + d.sx * 0.2, y: mouthP.y + 8 }, { x: land.x, y: land.y - 6 }, k);
+      p.y -= Math.sin(k * Math.PI) * 18; // slight arc
+      const r = d.size * (k >= 1 ? 1 : 0.8 + k * 0.2);
+      g.fillStyle = "#EAF6FF"; g.beginPath(); g.arc(p.x, p.y, r, 0, 7); g.fill();
+      g.strokeStyle = "#5C88A8"; g.lineWidth = 1.6; g.stroke();
+      g.fillStyle = "#FFFFFF"; g.beginPath(); g.arc(p.x - r * 0.35, p.y - r * 0.35, r * 0.35, 0, 7); g.fill();
+    });
+  }
+  bowlFrontRim();
+
+  // hands with the two salad spoons; they circle while mixing, stay still during the sneeze
+  const w = mixing ? (t < 3 ? t - 0.5 : t - 6.2) * 5.5 : (t < 6 ? 2.3 * 5.5 : 2.8 * 5.5);
+  const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+  const lh = { x: 548 + Math.cos(w) * 22, y: 420 + Math.sin(w) * 12 };
+  const rh = { x: 732 - Math.cos(w) * 22, y: 420 - Math.sin(w) * 12 };
+  arm(LS, lh, -1); arm(RS, rh, 1);
+  spoon(lh.x, lh.y, lh.x - 30, lh.y + 66);
+  spoon(rh.x, rh.y, rh.x + 30, rh.y + 66);
+  hand(lh, true); hand(rh, true);
+}
+window.render = render;
+render(0);
+</script></body></html>

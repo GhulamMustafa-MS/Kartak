@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+  scripts/clips/probe-right.html - draws the probe-right clip, one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-13) on a 1280x720 canvas: the worker takes a
+              sanitiser wipe and wipes the probe thermometer, pushes it into the thickest part of a cooked chicken
+              piece on a tray (not touching the tray), the display counts up to 76 degrees C (shown big in a bubble),
+              then pulls it out, wipes it again and lays it on the counter (RIGHT: clean probe before and after,
+              thickest part, centre at 75 degrees C or above). No words or right/wrong signs; only the
+              thermometer's digits and degrees C. Pure drawing code on top of lib.js.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/probe-right.mp4.
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+// Probe thermometer clip: clean the probe, check the thickest part of cooked chicken reaches 76 C, clean it again.
+const TRAY_C = { x: 680, y: 548 };
+const ENTRY = { x: 680, y: 452 };          // top of the thickest part of the chicken
+const NEEDLE = 200, BODY = 150, DEPTH = 62; // needle length, body length, how deep the probe goes
+const TUB = { x: 320, y: 540 };
+const WIPE_POSE = { b: { x: 820, y: 330 }, a: 1.15 }, IN_ANG = 0.55;
+const dirOf = (a) => ({ x: -Math.sin(a), y: Math.cos(a) }); // needle direction for angle a (0 = straight down)
+const along = (b, a, d) => { const u = dirOf(a); return { x: b.x + u.x * d, y: b.y + u.y * d }; };
+const restPose = { b: { x: 1070, y: 597 }, a: Math.PI / 2 };
+
+function steelTray() {
+  const { x, y } = TRAY_C;
+  g.fillStyle = "rgba(0,0,0,.13)"; g.beginPath(); g.ellipse(x, y + 32, 200, 14, 0, 0, 7); g.fill();
+  g.fillStyle = "#D7DEE1"; rr(x - 190, y - 22, 380, 52, 12); g.fill();
+  g.fillStyle = "#B5BEC2"; rr(x - 178, y - 15, 356, 36, 9); g.fill();
+}
+
+// big cooked chicken piece: golden brown, thickest in the middle
+function cookedChicken() {
+  const x = TRAY_C.x, base = 556, top = 446;
+  const gr = g.createLinearGradient(0, top, 0, base); gr.addColorStop(0, "#C98A3E"); gr.addColorStop(1, "#9A5A22");
+  g.fillStyle = gr; g.beginPath();
+  g.moveTo(x - 160, base); g.bezierCurveTo(x - 150, top + 30, x - 70, top, x, top); g.bezierCurveTo(x + 70, top, x + 150, top + 30, x + 160, base);
+  g.quadraticCurveTo(x, base + 10, x - 160, base); g.fill();
+  g.strokeStyle = "rgba(90,45,15,.55)"; g.lineWidth = 7; g.lineCap = "round"; // grill marks
+  [-90, -40, 10, 60, 110].forEach((dx) => { g.beginPath(); g.moveTo(x + dx - 18, top + 30 + Math.abs(dx) * 0.25); g.lineTo(x + dx + 18, top + 62 + Math.abs(dx) * 0.25); g.stroke(); });
+  g.fillStyle = "rgba(255,230,170,.45)"; g.beginPath(); g.ellipse(x - 50, top + 22, 50, 9, -0.2, 0, 7); g.fill();
+}
+function wipesTub(open) {
+  const { x, y } = TUB;
+  g.fillStyle = "rgba(0,0,0,.12)"; g.beginPath(); g.ellipse(x, y + 4, 62, 12, 0, 0, 7); g.fill();
+  g.fillStyle = "#F4F7F8"; g.fillRect(x - 56, y - 92, 112, 92); g.beginPath(); g.ellipse(x, y, 56, 12, 0, 0, Math.PI); g.fill();
+  g.fillStyle = "#3C9D5A"; g.fillRect(x - 56, y - 64, 112, 26); // band
+  g.fillStyle = "#2E7D4F"; g.beginPath(); g.ellipse(x, y - 92, 58, 14, 0, 0, 7); g.fill(); // lid
+  if (open) { g.fillStyle = "#EAF4FA"; g.beginPath(); g.moveTo(x - 12, y - 94); g.quadraticCurveTo(x - 4, y - 124, x + 10, y - 118); g.quadraticCurveTo(x + 6, y - 100, x + 14, y - 92); g.closePath(); g.fill(); }
+}
+// sanitiser wipe held in the left hand
+function wipe(p) {
+  g.save(); g.translate(p.x, p.y); g.rotate(-0.3);
+  g.fillStyle = "#EAF4FA"; g.beginPath(); g.moveTo(-34, -30); g.lineTo(26, -36); g.lineTo(36, 22); g.lineTo(-28, 30); g.closePath(); g.fill();
+  g.strokeStyle = "#BFD8E6"; g.lineWidth = 2; g.stroke();
+  g.beginPath(); g.moveTo(-20, -18); g.lineTo(20, -22); g.moveTo(-18, 14); g.lineTo(22, 10); g.stroke();
+  g.restore();
+}
+
+// seven-segment text: digits, "°" and "C"
+const SEGS = { 0: "abcdef", 1: "bc", 2: "abdeg", 3: "abcdg", 4: "bcfg", 5: "acdfg", 6: "acdefg", 7: "abc", 8: "abcdefg", 9: "abcdfg", C: "adef" };
+function seg7(str, x, y, h, col) {
+  const w = h * 0.55, th = h * 0.16;
+  g.fillStyle = col;
+  for (const ch of str) {
+    if (ch === "°") { g.strokeStyle = col; g.lineWidth = th * 0.8; g.beginPath(); g.arc(x + w * 0.22, y + w * 0.22, w * 0.18, 0, 7); g.stroke(); x += w * 0.6; continue; }
+    const s = SEGS[ch], hh = h / 2, q = th * 0.55;
+    const bar = (x0, y0, ww, hh2) => { rr(x0, y0, ww, hh2, th / 2.5); g.fill(); };
+    if (s.includes("a")) bar(x + q, y, w - 2 * q, th);
+    if (s.includes("g")) bar(x + q, y + hh - th / 2, w - 2 * q, th);
+    if (s.includes("d")) bar(x + q, y + h - th, w - 2 * q, th);
+    if (s.includes("f")) bar(x, y + q, th, hh - q);
+    if (s.includes("b")) bar(x + w - th, y + q, th, hh - q);
+    if (s.includes("e")) bar(x, y + hh, th, hh - q);
+    if (s.includes("c")) bar(x + w - th, y + hh, th, hh - q);
+    x += w + th * 1.6;
+  }
+}
+
+// probe thermometer: b = where the needle leaves the body, a = angle, vis = visible needle length
+function probe(b, a, vis, temp) {
+  g.save(); g.translate(b.x, b.y); g.rotate(a);
+  // needle (points along +y)
+  if (vis > 0) {
+    const tip = Math.min(vis, NEEDLE);
+    g.fillStyle = "#C9CED1"; g.beginPath(); g.moveTo(-4, 0); g.lineTo(4, 0); g.lineTo(3, tip - (vis >= NEEDLE ? 10 : 0)); if (vis >= NEEDLE) g.lineTo(0, tip); g.lineTo(-3, tip - (vis >= NEEDLE ? 10 : 0)); g.closePath(); g.fill();
+    g.fillStyle = "#EEF2F4"; g.fillRect(-1, 0, 2, tip - 12);
+  }
+  // body (above the needle, along -y)
+  g.fillStyle = "#1F2326"; rr(-12, -12, 24, 16, 5); g.fill();
+  g.fillStyle = "#E8C33A"; rr(-30, -BODY, 60, BODY - 8, 16); g.fill();
+  g.fillStyle = "#C9A21F"; rr(-30, -40, 60, 32, 10); g.fill(); // grip
+  g.fillStyle = "#2F3B45"; rr(-24, -BODY + 10, 48, 58, 8); g.fill();
+  g.fillStyle = "#BFD9A8"; rr(-19, -BODY + 16, 38, 46, 5); g.fill(); // display
+  g.save(); g.translate(0, -BODY + 39); g.rotate(-a); seg7(String(temp), -13, -9, 18, "#1F2A1A"); g.restore();
+  g.fillStyle = "#2F3B45"; g.beginPath(); g.arc(0, -BODY + 86, 7, 0, 7); g.fill(); // button
+  g.restore();
+}
+// big reading bubble next to the probe display
+function bubble(disp, temp, k) {
+  if (k <= 0) return;
+  const c = { x: 1065, y: 225 }, r = 132 * k;
+  g.fillStyle = "#FFFFFF"; g.strokeStyle = "#2F3B45"; g.lineWidth = 5;
+  [[0.16, 9], [0.3, 15]].forEach(([f, rad]) => { const p = L(disp, c, f); g.beginPath(); g.arc(p.x, p.y, rad * k, 0, 7); g.fill(); g.stroke(); });
+  g.beginPath(); g.arc(c.x, c.y, r, 0, 7); g.fill(); g.stroke();
+  g.save(); g.translate(c.x, c.y); g.scale(k, k);
+  g.fillStyle = "#2F3B45"; rr(-112, -64, 224, 128, 16); g.fill();
+  g.fillStyle = "#BFD9A8"; rr(-100, -52, 200, 104, 10); g.fill();
+  seg7(temp + "°C", -88, -38, 76, "#1F2A1A");
+  g.restore();
+}
+
+// ---------- the timeline (seconds) ----------
+// 0.0-0.4 hold | 0.4-1.0 wipe taken from the tub | 1.0-3.3 two wipes along the needle | 3.3-4.2 probe over the chicken
+// 4.2-5.0 pushed into the thickest part | 5.0-8.2 reading climbs to 76 | 8.2-9.2 hold 76 | 9.2-9.7 pulled out
+// 9.7-11.1 wiped again | 11.1-11.9 laid down on the counter | 11.9-13.0 hold
+const STROKES = [[1.0, 2.2], [2.5, 3.3], [10.2, 11.1]];
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  background(t); person(t); counter();
+  wipesTub(t < 0.7);
+  steelTray(); cookedChicken();
+
+  // probe pose
+  const inPose = { b: along(ENTRY, IN_ANG, -(NEEDLE + 14)), a: IN_ANG };
+  let pose = WIPE_POSE, depth = 0;
+  const mix = (p, q, k) => ({ b: L(p.b, q.b, k), a: lerp(p.a, q.a, k) });
+  if (t >= 3.3 && t < 4.2) pose = mix(WIPE_POSE, inPose, ease(ph(t, 3.3, 4.2)));
+  else if (t >= 4.2 && t < 9.7) { pose = inPose; depth = (14 + DEPTH) * (ease(ph(t, 4.2, 5.0)) - ease(ph(t, 9.2, 9.7))); }
+  else if (t >= 9.7 && t < 11.1) pose = mix(inPose, WIPE_POSE, ease(ph(t, 9.7, 10.2)));
+  else if (t >= 11.1) pose = mix(WIPE_POSE, restPose, ease(ph(t, 11.1, 11.9)));
+  const b = along(pose.b, pose.a, depth);
+  const inside = Math.max(0, depth - 14);
+  // reading: room temperature, then climbs to 76 while in the chicken
+  const climb = ph(t, 5.0, 8.2), temp = t < 5.0 ? 24 : Math.round(lerp(24, 76, 1 - Math.pow(1 - climb, 3)));
+
+  // left hand: tub -> needle strokes -> rest on the counter
+  const needleAt = (f) => along(WIPE_POSE.b, WIPE_POSE.a, NEEDLE * f);
+  const lift = (p) => ({ x: p.x + 10, y: p.y - 40 });
+  const leftRest = { x: 440, y: 520 };
+  let lh;
+  if (t < 0.4) lh = { x: TUB.x, y: TUB.y - 100 };
+  else if (t < 1.0) lh = L({ x: TUB.x, y: TUB.y - 100 }, needleAt(0.12), ease(ph(t, 0.4, 1.0)));
+  else if (t < 2.2) lh = needleAt(lerp(0.12, 1.08, ease(ph(t, 1.0, 2.2))));
+  else if (t < 2.5) lh = L(lift(needleAt(1.08)), lift(needleAt(0.12)), ease(ph(t, 2.2, 2.5)));
+  else if (t < 3.3) lh = needleAt(lerp(0.12, 1.08, ease(ph(t, 2.5, 3.3))));
+  else if (t < 9.6) lh = L(needleAt(1.08), leftRest, ease(ph(t, 3.3, 3.9)));
+  else if (t < 10.2) lh = L(leftRest, needleAt(0.12), ease(ph(t, 9.6, 10.2)));
+  else if (t < 11.1) lh = needleAt(lerp(0.12, 1.08, ease(ph(t, 10.2, 11.1))));
+  else lh = L(needleAt(1.08), leftRest, ease(ph(t, 11.1, 11.8)));
+
+  // right hand holds the probe by its grip; lets go once it lies on the counter
+  const grip = along(b, pose.a, -24);
+  const let_go = ease(ph(t, 11.9, 12.4));
+  const rh = L(grip, { x: 930, y: 520 }, let_go);
+
+  const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+  arm(LS, lh, -1); arm(RS, rh, 1);
+  probe(b, pose.a, NEEDLE - inside, temp);
+  if (t >= 0.7) wipe({ x: lh.x - 6, y: lh.y + 4 });
+  hand(lh, true); hand(rh, let_go < 0.5);
+
+  const disp = along(b, pose.a, -BODY + 39);
+  bubble(disp, temp, ease(ph(t, 4.9, 5.2)) * (1 - ease(ph(t, 9.2, 9.45))));
+}
+window.render = render;
+render(0);
+</script></body></html>

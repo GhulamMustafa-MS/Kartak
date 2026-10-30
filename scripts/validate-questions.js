@@ -7,7 +7,8 @@
  * Run:        node scripts/validate-questions.js            (from the repo root, no install needed)
  * Depends on: data/questions.json (format: data/CLAUDE.md); chapters 1-13 = docs/handbook.md;
  *             js/i18n.js (every language with screen words must be in the bank, and the other way round);
- *             data/words.json (Key words, D27: every word in every language, pictures and videos present).
+ *             data/words.json (Key words, D27: every word in every language, pictures and videos present);
+ *             videos/ (every clip question's MP4 must exist, D31).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -31,17 +32,23 @@ for (const q of bank.questions) {
   for (const lang of LANGS) {
     const t = q[lang];
     if (!t || !t.q || !t.e) { say(q, `${lang}: missing question (q) or explanation (e)`); continue; }
-    if (q.type === "tf") { if (t.o) say(q, `${lang}: true/false must not have options`); }
+    if (q.type === "tf" || q.clip) { if (t.o) say(q, `${lang}: true/false and clip questions must not have options`); }
     else if (!Array.isArray(t.o) || t.o.length !== n) say(q, `${lang}: needs ${n} options like English`);
   }
-  if (["single", "picture", "video"].includes(q.type) && !(Number.isInteger(q.ans) && q.ans >= 0 && q.ans < n)) say(q, "ans must be an option index");
+  if (["single", "picture", "video"].includes(q.type) && !q.clip && !(Number.isInteger(q.ans) && q.ans >= 0 && q.ans < n)) say(q, "ans must be an option index");
+  // Clip questions (D31): an MP4 in videos/ and two fixed answers, 0 = right, 1 = wrong, like the real exam.
+  if (q.clip) {
+    if (q.type !== "video") say(q, "only video questions have a clip");
+    if (q.ans !== 0 && q.ans !== 1) say(q, "clip ans must be 0 (right) or 1 (wrong)");
+    if (!/^\/videos\/[a-z0-9-]+\.mp4$/.test(q.clip) || !fs.existsSync(path.join(__dirname, "..", q.clip))) say(q, `clip ${q.clip} not found in videos/`);
+  }
   if (q.type === "tf" && q.ans !== 0 && q.ans !== 1) say(q, "ans must be 0 (true) or 1 (false)");
   if (q.type === "multi" && !(Array.isArray(q.ans) && q.ans.length >= 2 && q.ans.every((a) => a >= 0 && a < n))) say(q, "ans must list at least two option indexes");
   if (q.type === "order" && "ans" in q) say(q, "order questions list options in the right order and have no ans");
   if (q.type === "picture" && !(q.pic && PIC_KINDS.includes(q.pic.kind) && typeof q.pic.v === "number")) say(q, "pic needs a kind and a number");
   if ("ch" in q && !(Number.isInteger(q.ch) && q.ch >= 1 && q.ch <= 13)) say(q, "ch must be a handbook chapter 1-13 (docs/handbook.md)");
   if ("d" in q && ![1, 2, 3, 4].includes(q.d)) say(q, "d must be 1, 2, 3 or 4");
-  if (q.type === "video" && q.enabled !== false) say(q, "video questions stay disabled until real clips exist (decision D5)");
+  if (q.type === "video" && !q.clip && q.enabled !== false) say(q, "video questions without a clip (frames only) stay disabled (D5, D31)");
 }
 
 // The app offers a language only when js/i18n.js has its screen words; every one of those must be in the bank.

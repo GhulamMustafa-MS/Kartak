@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  scripts/clips/phone-gloves-wrong.html - draws the "phone with food gloves on" clip (WRONG), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-10.5) on a 1280x720 canvas: a worker in blue food
+              gloves makes a sandwich, the phone on the counter buzzes, he picks it up with the gloved hand, holds it
+              to his ear, puts it down, then puts the top of the roll on the sandwich with the SAME gloves (no
+              change, no hand wash). Handbook: change gloves (and wash hands) after touching anything else; phones
+              carry germs and stay out of the food area. Uses the shared drawing code in lib.js.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/phone-gloves-wrong.mp4.
+  Depends on: scripts/clips/lib.js (wall, worker, counter, board, arms, gloved hands, helpers).
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script>
+const GLOVE = "#3B7DD8";
+const SAND = { x: 600, y: 518 };       // bottom half of the roll on the board
+const TOP_REST = { x: 760, y: 520 };   // top half waiting on the board
+const LET_TRAY = { x: 300, y: 525 };   // tray of lettuce
+const PHONE = { x: 1020, y: 528 };     // phone lying on the counter
+const EAR = { x: 700, y: 214 };        // where the hand holds the phone at the ear
+
+function rollBottom(x, y) {
+  g.fillStyle = "#B8742E"; rr(x - 70, y - 4, 140, 24, 12); g.fill();
+  g.fillStyle = "#F2D9A6"; g.beginPath(); g.ellipse(x, y - 4, 70, 12, 0, 0, 7); g.fill();
+}
+function rollTop(x, y) {
+  g.fillStyle = "#C47F35"; g.beginPath(); g.moveTo(x - 72, y + 8); g.quadraticCurveTo(x - 70, y - 44, x, y - 46); g.quadraticCurveTo(x + 70, y - 44, x + 72, y + 8); g.closePath(); g.fill();
+  g.fillStyle = "#E3A65A"; g.beginPath(); g.ellipse(x - 18, y - 30, 26, 8, -0.2, 0, 7); g.fill();
+  g.fillStyle = "#FFF3D6"; [[-30, -20], [-5, -36], [20, -24], [40, -10], [-48, -4], [5, -14]].forEach(([dx, dy]) => { g.beginPath(); g.ellipse(x + dx, y + dy, 4, 2.4, 0.4, 0, 7); g.fill(); });
+  g.fillStyle = "#A9662A"; rr(x - 72, y + 2, 144, 10, 5); g.fill();
+}
+function tomatoes(x, y) {
+  [-36, 0, 36].forEach((dx) => { g.fillStyle = "#D9362B"; g.beginPath(); g.ellipse(x + dx, y - 10, 22, 8, 0, 0, 7); g.fill(); g.fillStyle = "#F06A55"; g.beginPath(); g.ellipse(x + dx, y - 11, 16, 5, 0, 0, 7); g.fill(); });
+}
+function lettuce(x, y, s = 1) {
+  g.fillStyle = "#4CAF50"; g.beginPath(); g.moveTo(x - 76 * s, y);
+  for (let k = 0; k <= 8; k++) g.quadraticCurveTo(x - 76 * s + (k - 0.5) * 19 * s, y - 26 * s, x - 76 * s + k * 19 * s, y - 4 * s);
+  g.quadraticCurveTo(x, y + 16 * s, x - 76 * s, y); g.fill();
+  g.strokeStyle = "#A5D6A7"; g.lineWidth = 2; g.beginPath(); g.moveTo(x - 60 * s, y - 2 * s); g.lineTo(x + 60 * s, y - 4 * s); g.stroke();
+}
+function lettuceTray(hasTop) {
+  const { x, y } = LET_TRAY;
+  g.fillStyle = "rgba(0,0,0,.12)"; g.beginPath(); g.ellipse(x, y + 30, 100, 11, 0, 0, 7); g.fill();
+  g.fillStyle = "#D7DEE1"; rr(x - 100, y - 22, 200, 50, 10); g.fill();
+  g.fillStyle = "#B5BEC2"; rr(x - 90, y - 16, 180, 36, 8); g.fill();
+  lettuce(x - 10, y + 6, 0.9); lettuce(x + 14, y + 2, 0.85);
+  if (hasTop) lettuce(x, y - 2, 0.9);
+}
+// phone lying on the counter (lit = screen on), or held up (held: drawn upright next to the ear)
+function phone(x, y, lit, buzz, held) {
+  g.save(); g.translate(x, y); if (!held) g.rotate(-0.12);
+  const w = held ? 56 : 120, h = held ? 104 : 64;
+  if (!held) { g.fillStyle = "rgba(0,0,0,.18)"; rr(-w / 2 + 4, -h / 2 + 8, w, h, 12); g.fill(); }
+  g.fillStyle = "#1C2126"; rr(-w / 2, -h / 2, w, h, 12); g.fill();
+  if (lit) { const s = g.createLinearGradient(0, -h / 2, 0, h / 2); s.addColorStop(0, "#9BE7FF"); s.addColorStop(1, "#4FC3F7"); g.fillStyle = s; }
+  else g.fillStyle = "#2E3740";
+  rr(-w / 2 + 6, -h / 2 + 6, w - 12, h - 12, 8); g.fill();
+  if (lit && !held) { // a simple round icon in the middle of the screen (no text)
+    g.fillStyle = "#FFFFFF"; g.beginPath(); g.arc(0, 0, 13, 0, 7); g.fill();
+    g.fillStyle = "#43A047"; g.beginPath(); g.arc(0, 0, 9, 0, 7); g.fill();
+  }
+  g.restore();
+  if (buzz > 0) { // vibration lines either side
+    g.strokeStyle = `rgba(30,40,50,${0.75 * buzz})`; g.lineWidth = 4; g.lineCap = "round";
+    [1, 2].forEach((k) => {
+      g.beginPath(); g.arc(x, y, 60 + k * 18, -0.45, 0.45); g.stroke();
+      g.beginPath(); g.arc(x, y, 60 + k * 18, Math.PI - 0.45, Math.PI + 0.45); g.stroke();
+    });
+  }
+}
+
+// ---------- the timeline (seconds) ----------
+// 0-0.5 hold | 0.6-2.3 left hand puts lettuce on the roll | 2.4-4.4 phone buzzes | 3.4-4.2 right hand to the phone
+// 4.3-5.0 phone to the ear | 5.0-6.6 at the ear | 6.6-7.4 phone back down | 7.6-8.4 same glove takes the top of the roll
+// 8.4-9.3 puts it on the sandwich | 9.3-9.6 presses | 9.6-10.5 hold
+function render(t) {
+  g.clearRect(0, 0, W, H);
+  // camera a little closer than the other clips so the gloves, phone and sandwich read on a small phone
+  g.save(); g.translate(640, 360); g.scale(1.25, 1.25); g.translate(-660, -380);
+  background(t); person(t); counter();
+  board("white", { x: 440, y: 478, w: 420, h: 86 });
+
+  const letK = ease(ph(t, 1.0, 2.1));
+  const letOn = t >= 2.1;
+  lettuceTray(t < 1.0);
+  rollBottom(SAND.x, SAND.y); tomatoes(SAND.x, SAND.y);
+
+  // phone state
+  const ringing = t >= 2.4 && t < 4.3;
+  const lit = t >= 2.4 && t < 7.4;
+  const jitter = ringing ? Math.sin(t * 90) * 3 : 0;
+  const toEar = ease(ph(t, 4.3, 5.0)), toDesk = ease(ph(t, 6.6, 7.4));
+  const inHand = t >= 4.2 && t < 7.4;
+
+  // ---- left hand: lettuce from the tray onto the roll, then holds the board still
+  const LS = { x: 560, y: 290 }, RS = { x: 720, y: 290 };
+  let lh;
+  if (t < 1.0) lh = L({ x: 470, y: 500 }, { x: LET_TRAY.x, y: LET_TRAY.y - 10 }, ease(ph(t, 0.5, 1.0)));
+  else if (t < 2.1) { lh = L({ x: LET_TRAY.x, y: LET_TRAY.y - 10 }, { x: SAND.x - 10, y: SAND.y - 30 }, letK); lh.y -= Math.sin(letK * Math.PI) * 50; }
+  else lh = L({ x: SAND.x - 10, y: SAND.y - 30 }, { x: 480, y: 505 }, ease(ph(t, 2.2, 2.8)));
+  const lettuceAt = t < 1.0 ? null : (letOn ? { x: SAND.x, y: SAND.y - 14 } : { x: lh.x + 10, y: lh.y + 18 });
+
+  // ---- right hand
+  const restR = { x: 800, y: 470 };
+  const grabP = { x: PHONE.x + 10, y: PHONE.y - 14 };
+  let rh;
+  if (t < 3.4) rh = restR;
+  else if (t < 4.3) rh = L(restR, grabP, ease(ph(t, 3.4, 4.2)));
+  else if (t < 6.6) rh = L(grabP, EAR, toEar);
+  else if (t < 7.6) rh = L(EAR, grabP, toDesk);
+  else if (t < 8.4) rh = L(grabP, { x: TOP_REST.x + 10, y: TOP_REST.y - 40 }, ease(ph(t, 7.6, 8.4)));
+  else if (t < 9.3) { const k = ease(ph(t, 8.4, 9.3)); rh = L({ x: TOP_REST.x + 10, y: TOP_REST.y - 40 }, { x: SAND.x + 10, y: SAND.y - 66 }, k); rh.y -= Math.sin(k * Math.PI) * 60; }
+  else rh = { x: SAND.x + 10, y: SAND.y - 66 + Math.sin(ph(t, 9.3, 9.6) * Math.PI) * 6 };
+  const topHeld = t >= 8.4, topOn = t >= 9.3;
+  const topAt = topHeld ? { x: rh.x - 10, y: rh.y + 40 } : TOP_REST;
+
+  // food: lettuce, top of the roll
+  if (lettuceAt) lettuce(lettuceAt.x, lettuceAt.y, 0.95);
+  if (!topHeld) rollTop(TOP_REST.x, TOP_REST.y);
+
+  // phone on the counter (when not in the hand)
+  if (!inHand) phone(PHONE.x + jitter, PHONE.y, lit, ringing ? 0.6 + 0.4 * Math.abs(Math.sin(t * 6)) : 0, false);
+  if (inHand && t < 4.6) phone(rh.x - 6, rh.y + 4, lit, 0, false);
+
+  // the head is drawn by person(); the arm reaching up to the ear goes over the jacket
+  arm(LS, lh, -1);
+  arm(RS, rh, 1);
+  if (inHand && t >= 4.6) phone(rh.x + 2, rh.y - 30, true, 0, true);
+  if (topHeld) rollTop(topAt.x, topOn ? SAND.y - 26 : topAt.y);
+  hand(lh, false, GLOVE);
+  hand(rh, inHand || topHeld, GLOVE);
+  g.restore();
+}
+window.render = render;
+render(0);
+</script></body></html>

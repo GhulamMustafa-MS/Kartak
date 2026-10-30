@@ -1,0 +1,149 @@
+<!doctype html>
+<!--
+  scripts/clips/handwash-right.html - draws the "hand washing done right" clip (RIGHT), one frame at a time.
+
+  Purpose:    window.render(t) draws the scene at t seconds (0-14) on a 1280x720 canvas: at the hand-wash sink the
+              worker turns the tap on, wets both hands, takes liquid soap, rubs palms, between the fingers and the
+              backs of the hands with plenty of lather while the wall clock's hand moves, rinses, dries with a paper
+              towel, turns the tap off with the towel and drops it in the pedal bin opened with the foot.
+              Handbook: wash at least 20 seconds with warm water and liquid soap at the hand-wash sink.
+  Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/handwash-right.mp4.
+  Depends on: lib.js, handwash-scene.js.
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1280" height="720"></canvas>
+<script src="lib.js"></script>
+<script src="handwash-scene.js"></script>
+<script>
+// ---------- the timeline (seconds) ----------
+// 0.0-0.5 rest | 0.5-1.3 tap on | 1.3-2.2 wet hands | 2.2-3.2 soap from the dispenser (right hand) | 3.2-3.7 back
+// 3.7-8.2 rub: palms, between fingers, backs (lather) | 8.2-9.1 rinse | 9.1-10.3 take a paper towel
+// 10.3-11.0 dry | 11.0-11.7 tap off with the towel | 11.7-12.9 foot opens the bin, towel dropped in | 12.9-14 hold
+const REST_L = { x: 584, y: 506 }, REST_R = { x: 698, y: 506 };
+const RUB = { x: 588, y: 476 };
+const DRY = { x: 556, y: 448 };   // drying happens away from the running water
+const UNDER_L = { x: 624, y: 464 }, UNDER_R = { x: 660, y: 464 };
+const SOAP_HAND = { x: SOAP_NOZ.x, y: 432 };
+const TAB = { x: TOWEL.x + 70, y: TOWEL.y + 150 };
+const OVER_BIN = { x: BIN.x + 60, y: 536 };
+const CLOCK_RATE = 0.26;
+
+function flowAt(t) { return t < 1.1 ? 0 : t < 1.3 ? ph(t, 1.1, 1.3) : t < 11.55 ? 1 : 1 - ph(t, 11.55, 11.7); }
+function leverAt(t) { return t < 1.0 ? 0 : t < 1.3 ? ease(ph(t, 1.0, 1.3)) : t < 11.4 ? 1 : 1 - ease(ph(t, 11.4, 11.7)); }
+
+function render(t) {
+  camera();
+  const lever = leverAt(t), flow = flowAt(t);
+
+  // clock: second hand always moves; the blue wedge marks the time the water has been running
+  const sec = 0.4 + t * CLOCK_RATE;
+  const wedgeEnd = Math.min(t, 11.6);
+  wallAndFloor();
+  clock(sec, t > 1.2 ? [0.4 + 1.2 * CLOCK_RATE, 0.4 + wedgeEnd * CLOCK_RATE] : null);
+  workCounter();
+  soapDispenser(t > 2.8 && t < 3.25 ? Math.sin(ph(t, 2.8, 3.25) * Math.PI) : 0);
+  towelDispenser(t > 9.6 && t < 9.9 ? ph(t, 9.6, 9.9) : 0, t >= 9.9);
+
+  // pedal bin and the foot
+  const footK = t < 11.7 ? 0 : t < 12.0 ? ease(ph(t, 11.7, 12.0)) : t < 12.6 ? 1 : 1 - ease(ph(t, 12.6, 12.9));
+  const lid = t < 11.85 ? 0 : t < 12.1 ? ease(ph(t, 11.85, 12.1)) : t < 12.6 ? 1 : 1 - ease(ph(t, 12.6, 12.85));
+  const footR = { x: lerp(FOOT_R.x, PEDAL.x - 8, footK), y: FOOT_R.y - Math.sin(footK * Math.PI) * 18 - (footK > 0.9 ? 4 : 0) };
+  const fall = t >= 12.25 && t < 12.6 ? () => { const k = ph(t, 12.25, 12.55); towelSheet(OVER_BIN.x, lerp(OVER_BIN.y + 12, 640, k * k), 0.8, k * 0.8); } : null;
+  bin(lid, footK > 0.9 ? 1 : 0, fall);
+  legs(footR);
+  person(t);
+  basin();
+
+  // ---- hands ----
+  let lh = REST_L, rh = REST_R, mode = "", towelIn = false, wetK = 0, soap = 0, lath = 0;
+  if (t < 0.5) { /* rest */ }
+  else if (t < 1.3) {
+    const tip = leverTip(lever);
+    rh = t < 1.0 ? L(REST_R, leverTip(0), ease(ph(t, 0.5, 1.0))) : { x: tip.x + 4, y: tip.y + 4 };
+  } else if (t < 2.2) {
+    const k = ease(ph(t, 1.3, 1.6)), w = Math.sin(t * 9) * 6;
+    lh = L(REST_L, { x: UNDER_L.x + w, y: UNDER_L.y }, k);
+    rh = L({ x: leverTip(1).x + 4, y: leverTip(1).y + 4 }, { x: UNDER_R.x - w, y: UNDER_R.y + 4 }, k);
+    wetK = ph(t, 1.5, 2.0);
+  } else if (t < 3.7) {
+    wetK = 1;
+    if (t < 2.8) rh = L(UNDER_R, SOAP_HAND, ease(ph(t, 2.2, 2.8)));
+    else if (t < 3.2) rh = { x: SOAP_HAND.x, y: SOAP_HAND.y - Math.sin(ph(t, 2.8, 3.2) * Math.PI) * 6 };
+    else rh = L(SOAP_HAND, { x: RUB.x + 20, y: RUB.y }, ease(ph(t, 3.2, 3.7)));
+    lh = L(UNDER_L, { x: RUB.x - 22, y: RUB.y }, ease(ph(t, 2.2, 2.8)));
+    if (t > 3.15) soap = 1;
+  } else if (t < 8.2) {
+    wetK = 1; soap = 1 - ph(t, 3.7, 4.4);
+    lath = Math.min(1, ph(t, 3.8, 5.0) + 0.0);
+    const s = Math.sin((t - 3.7) * Math.PI * 2 * 1.6);
+    if (t < 5.2) { mode = "palms"; lh = { x: RUB.x - 18 + s * 12, y: RUB.y + 2 }; rh = { x: RUB.x + 18 - s * 12, y: RUB.y - 2 }; }
+    else if (t < 6.7) { mode = "fingers"; lh = { x: RUB.x - 10, y: RUB.y + s * 10 }; rh = { x: RUB.x + 10, y: RUB.y - s * 10 }; }
+    else { mode = t < 7.45 ? "backR" : "backL";
+      if (mode === "backR") { lh = { x: RUB.x - 16, y: RUB.y + 8 }; rh = { x: RUB.x + 6 + s * 16, y: RUB.y - 8 }; }
+      else { rh = { x: RUB.x + 16, y: RUB.y + 8 }; lh = { x: RUB.x - 6 - s * 16, y: RUB.y - 8 }; } }
+  } else if (t < 9.1) {
+    wetK = 1; lath = 1 - ph(t, 8.35, 9.0);
+    const k = ease(ph(t, 8.2, 8.5)), w = Math.sin(t * 10) * 7;
+    lh = L({ x: RUB.x - 16, y: RUB.y }, { x: UNDER_L.x + w, y: UNDER_L.y }, k);
+    rh = L({ x: RUB.x + 16, y: RUB.y }, { x: UNDER_R.x - w, y: UNDER_R.y + 4 }, k);
+  } else if (t < 10.3) {
+    wetK = 1; lh = L(UNDER_L, { x: DRY.x - 16, y: DRY.y + 6 }, ease(ph(t, 9.1, 9.5)));
+    if (t < 9.6) rh = L(UNDER_R, TAB, ease(ph(t, 9.1, 9.6)));
+    else if (t < 9.9) rh = L(TAB, { x: TAB.x - 4, y: TAB.y + 50 }, ph(t, 9.6, 9.9));
+    else { rh = L({ x: TAB.x - 4, y: TAB.y + 50 }, { x: DRY.x + 16, y: DRY.y }, ease(ph(t, 9.9, 10.3))); }
+    towelIn = t >= 9.9;
+  } else if (t < 11.0) {
+    wetK = 1 - ph(t, 10.3, 10.9); mode = "dry";
+    const s = Math.sin((t - 10.3) * Math.PI * 2 * 1.8);
+    lh = { x: DRY.x - 16 + s * 8, y: DRY.y + 6 }; rh = { x: DRY.x + 16 - s * 8, y: DRY.y };
+  } else if (t < 11.7) {
+    lh = L({ x: DRY.x - 16, y: DRY.y + 6 }, REST_L, ease(ph(t, 11.0, 11.4)));
+    const tip = leverTip(lever);
+    rh = t < 11.4 ? L({ x: DRY.x + 16, y: DRY.y }, { x: leverTip(1).x + 4, y: leverTip(1).y - 2 }, ease(ph(t, 11.0, 11.4))) : { x: tip.x + 4, y: tip.y - 2 };
+    towelIn = true;
+  } else {
+    const off = { x: leverTip(0).x + 4, y: leverTip(0).y - 2 };
+    if (t < 12.2) rh = L(off, OVER_BIN, ease(ph(t, 11.7, 12.2)));
+    else if (t < 12.35) rh = OVER_BIN;
+    else rh = L(OVER_BIN, REST_R, ease(ph(t, 12.35, 12.9)));
+    towelIn = t < 12.25;
+  }
+
+  // water stops on the hands when they are under it
+  let yEnd = SINK.y + 8;
+  [lh, rh].forEach((p) => { if (Math.abs(p.x - SPOUT.x) < 26 && p.y > SPOUT.y && p.y - 22 < yEnd) yEnd = p.y - 22; });
+  water(flow, t, yEnd);
+  tap(lever);
+
+  // arms and hands
+  arm(LS, lh, -1); arm(RS, rh, 1);
+  const wet = wetK > 0.3;
+  if (mode === "backL") { bigHand(RS, rh, 1, { wet }); bigHand(LS, lh, -1, { back: true, wet }); }
+  else if (mode === "backR") { bigHand(LS, lh, -1, { wet }); bigHand(RS, rh, 1, { back: true, wet }); }
+  else if (mode === "fingers") { bigHand(LS, lh, -1, { spread: 3, wet }); bigHand(RS, rh, 1, { spread: 3, wet }); }
+  else { bigHand(LS, lh, -1, { wet }); bigHand(RS, rh, 1, { soap, wet }); }
+
+  // soap drop falling from the nozzle into the right palm
+  if (t > 2.9 && t < 3.15) {
+    const k = ph(t, 2.9, 3.15);
+    g.fillStyle = "#6CC7AE"; g.beginPath(); g.ellipse(SOAP_NOZ.x, lerp(SOAP_NOZ.y + 4, SOAP_HAND.y - 4, k), 6, 9, 0, 0, 7); g.fill();
+  }
+  if (mode === "dry") towelSheet(DRY.x, DRY.y, 1.05, Math.sin(t * 9) * 0.06);
+  else if (towelIn) towelSheet(rh.x + 6, rh.y + 6, 0.85, 0.15);
+
+  // lather on and around the hands, bubbles running into the basin while rinsing
+  if (lath > 0) {
+    const cx = (lh.x + rh.x) / 2, cy = (lh.y + rh.y) / 2;
+    lather(cx, cy, lath, t, 0);
+    lather(lh.x - 30, lh.y - 26, lath * 0.45, t, 300); lather(rh.x + 30, rh.y - 26, lath * 0.45, t, 500);
+  }
+  if (t > 8.3 && t < 9.6) {
+    const a = 1 - ph(t, 9.1, 9.6);
+    g.globalAlpha = a; lather(SINK.x, SINK.y + 6, 0.35, t, 900); g.globalAlpha = 1;
+  }
+  // water splashing off the hands
+  if (flow > 0.5 && yEnd < SINK.y) splash(SPOUT.x, yEnd + 6, t, 10, 50);
+}
+window.render = render;
+render(0);
+</script></body></html>

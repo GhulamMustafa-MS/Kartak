@@ -61,7 +61,11 @@ Worker app (installable, works offline after the first visit):
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
   the worker stopped, D21; every type or only one type, such as ordering, D29), "Key words" (33 exam words explained simply with pictures, thermometers and a
   cartoon clip, D27), "Learn the question types" with a small example of each type.
-- 306 live questions from all 13 handbook chapters (+2 video questions held back, D5) in every language the app offers; question order and answer
+- Video questions like the real exam (D31): a short cartoon clip of a kitchen action, then "Is this right or
+  wrong?" with two buttons, Right and Wrong. 12 clips, half right and half wrong (hand washing, boards,
+  tasting, fridge shelves, probe, sneezing, cut finger, phone and gloves). Clips need internet, so tests started
+  offline leave them out.
+- 318 live questions from all 13 handbook chapters, 12 of them video clips (+2 old picture-frame video questions held back, D5) in every language the app offers; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 
@@ -92,9 +96,8 @@ Ordered; each step should be finished, tested and documented before the next.
 3. **Content quality:** native speakers check Bangla, Urdu and Hindi; check the few answers that rely on
    general advice the handbook doesn't state (fridge shelf order, reheat only once, return to work after
    vomiting); add questions on any topic workers report from the real exam.
-4. **Video questions:** find out what the real videos show; make 7-8 short clips with an AI video tool
-   (Google Veo via Gemini/Flow, or Kling; about £19 for a month) or film them; host them with the app; turn
-   the video questions back on (`enabled: true`) and add new ones (D5).
+4. **Video questions:** 12 cartoon clips are live (D31). Next: ask workers what the real exam clips show and
+   add clips for those situations; later, real footage (filmed in a kitchen) could replace the cartoons.
 5. **Protect the content:** make the GitHub repo private (Vercel deploys private repos; the old GitHub Pages
    link then stops working); optionally load questions from the API only for unlocked phones.
 6. **More languages** the exam offers: Nepali, Malayalam, Tamil, Filipino first (section 8).
@@ -130,9 +133,13 @@ languages, run `node scripts/validate-questions.js`, then the tests (CLAUDE.md s
    then the tests: the browser test opens every language, checks its words and questions, its direction and
    that nothing is wider than a 390 px phone.
 
-**Make a clip** (cartoon, no sound, D27): copy `scripts/clips/cross-contamination.html`, change what
-`render(t)` draws, then `node scripts/make-clip.mjs <name> <seconds>` writes `videos/<name>.mp4`. Use it in
-`data/words.json` as `"pic": {"video": "/videos/<name>.mp4"}` and add a row to `videos/CLAUDE.md`.
+**Make a clip** (cartoon, no sound, no words, D27, D31): write `scripts/clips/<name>.html` that loads
+`lib.js` (shared kitchen, worker, hands, boards, knife) and defines `render(t)`; copy a finished clip as a start.
+Then `node scripts/make-clip.mjs <name> <seconds>` writes `videos/<name>.mp4` (keep it under 1 MB). A "right"
+clip has no mistake at all; a "wrong" clip has exactly one, big and slow. Use it in `data/words.json` as
+`"pic": {"video": "/videos/<name>.mp4"}`, or as a question: `"type": "video", "clip": "/videos/<name>.mp4",
+"ans": 0` (right) or `1` (wrong), `q` and `e` in every language and no `o` (format in `data/CLAUDE.md`).
+Add a row to `videos/CLAUDE.md` and `scripts/CLAUDE.md`.
 
 **Change the timer or test sizes:** `QSEC` and `SIZES` at the top of `js/app.js`; update the wording in
 `js/i18n.js` (`fullD`, `quickD`, `practiceD`, `intro`) and plan.md section 3.
