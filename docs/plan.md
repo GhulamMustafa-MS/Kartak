@@ -61,7 +61,7 @@ Worker app (installable, works offline after the first visit):
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
   the worker stopped, D21; every type or only one type, such as ordering, D29), "Key words" (33 exam words explained simply with pictures, thermometers and a
   cartoon clip, D27), "Learn the question types" with a small example of each type.
-- 304 live questions from all 13 handbook chapters (+2 video questions held back, D5) in every language the app offers; question order and answer
+- 306 live questions from all 13 handbook chapters (+2 video questions held back, D5) in every language the app offers; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 

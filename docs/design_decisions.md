@@ -38,6 +38,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D27 | 29 Oct | "Key words" screen: the exam's 33 hard words explained simply in every language, with pictures, thermometers and a cartoon video; the app is sold alongside the course, not instead of it | User asked (Wessam: workers won't understand HACCP, probes, danger zones before the course) | Workers learn the words before practising; managers see it supports the 800-riyal course |
 | D28 | 29 Oct | The phone's Back button goes back a screen (to home in the worker app; person -> Results -> Codes in the seller app) instead of closing the app; leaving a test with answers asks first | User asked, AI designed | Back closed the whole app because it is one web page |
 | D29 | 29 Oct | "All questions" can be only one type of question (for example only "Order the steps"); a chooser screen offers every type or one type, with how many questions each has | User asked, AI designed | Workers who struggle with one type (often ordering) can practise just that |
+| D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
 **Considered, then dropped:** pay after passing (D10); a monthly subscription (D10); SMS one-time
@@ -205,3 +206,26 @@ in that type and the home card says which type it is. Starting again goes back t
 to the seller as "All questions" (the analytics already show which questions each person gets wrong).
 Rejected: a type filter on the timed mocks (the real exam mixes types, so the mocks should too) and filters on
 several types at once (more taps for little gain; "All types" covers the mix).
+
+## D30. Questions a beginner can follow
+
+Mustafa found an ordering question (spores) that a worker with no food training could never follow, so every
+live question was read as such a worker would read it (30 Oct). The ones that were confusing were rewritten,
+not dropped, because every one of their topics is in the handbook syllabus (docs/handbook.md section 1) and the
+exam can ask about it (Mustafa: "don't make them skip a topic, make it better for them"):
+- Abstract or textbook questions now use plain words or a kitchen example: why food safety matters more today
+  (k115), a bone in a kebab is an injury, not food poisoning (k181), HACCP's 7 principles and 12 steps (k241),
+  germs that grow inside the body (k175), viruses passing from hands (k134).
+- The three HACCP-steps ordering questions (k245-k247) explain each step in kitchen words, with the HACCP name in brackets, and a
+  new question (k309) shows HACCP as a chicken-cooking routine (danger, safe number, check, fix, record).
+- Ordering questions with more than one sensible order were rewritten so only one order makes sense (k016,
+  k113, k305); the hand-washing pair became one full ordering question (k200) and one "which parts do you rub"
+  question (k201); the water-temperature puzzle now shows the temperatures (k223). New k308: cleaning up a
+  raw chicken juice spill.
+- Numbers the handbook gives two ways stay as the handbook gives them (the exam may ask either), but the
+  explanations now link them: "Set the fridge at 0-4°C, so chilled food stays at 5°C or below" and "8°C is
+  only for cold food on display; in the fridge and in vans it must be 5°C or below".
+Same ids are kept, so "All questions" keeps each worker's place: `resumeAll()` now drops only answered
+questions that changed shape and re-shuffles unanswered ones (it used to restart when the bank changed).
+Rejected: dropping the questions (skips exam topics) and changing the fridge numbers to one value (the
+handbook and the exam use both).

@@ -19,4 +19,6 @@ Rules:
   `popstate` handler goes home; call `render()` or `go()` to change screens so it stays right.
 - "All questions" by type (D29): `S.allType` (null = every type) filters the bank in `start()` and is saved
   in `kartak-all`; the chooser is `drawAllPick()` (screen `allpick`).
+- `resumeAll()` keeps a worker's place when the bank changes (D30): answered questions that changed shape are
+  dropped, unanswered ones re-shuffled. Keep question ids stable when rewriting a question.
 - localStorage keys are listed in the `app.js` header; renaming one logs everyone out of that setting.

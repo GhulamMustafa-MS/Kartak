@@ -23,7 +23,7 @@
  *             (results not sent yet),
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
  *             kartak-all (saved place in "All questions", and its question type if one was picked, so it can
- *             be finished over several days).
+ *             be finished over several days; kept when questions change, see resumeAll()).
  * Used by:    index.html.
  * Depends on: js/i18n.js, data/questions.json, data/words.json, videos/, api/activate.js, api/transfer.js, api/result.js, sw.js, icons/.
  */
@@ -354,9 +354,21 @@
   function resumeAll() {
     var d = savedAll(); if (!d) return false;
     var byId = {}; BANK.forEach(function (q) { byId[q.id] = q; });
-    if (!d.ids.every(function (id) { return byId[id]; })) { forgetAll(); return false; } // bank changed: start fresh
-    S.qs = d.ids.map(function (id) { return byId[id]; });
-    S.results = d.results; S.shuffles = d.shuffles; S.perms = d.perms; S.i = d.results.length; S.allSent = d.sent || 0; S.allType = d.type || null;
+    // The bank can change between sittings (a question rewritten, turned off, or given a different number of
+    // options). Keep the place: drop answered questions that no longer match, and re-shuffle unanswered ones.
+    var qs = [], results = [], shuffles = [], perms = [], sent = 0;
+    d.ids.forEach(function (id, k) {
+      var q = byId[id], n = q ? q.en.o ? q.en.o.length : 0 : 0, answered = k < d.results.length;
+      var okShuffle = q && (q.type === "order" ? d.shuffles[k] && d.shuffles[k].length === n : !d.shuffles[k]);
+      var okPerm = q && (q.type === "order" || q.type === "tf" ? !d.perms[k] : d.perms[k] && d.perms[k].length === n);
+      if (!q || (answered && !(okShuffle && okPerm)) || (!answered && d.type && q.type !== d.type)) return;
+      qs.push(q);
+      shuffles.push(okShuffle ? d.shuffles[k] : q.type === "order" ? shuffle(n) : null);
+      perms.push(okPerm ? d.perms[k] : q.type === "order" || q.type === "tf" ? null : shuffle(n));
+      if (answered) { results.push(d.results[k]); if (k < (d.sent || 0)) sent++; }
+    });
+    if (!qs.length || results.length >= qs.length) { forgetAll(); return false; }
+    S.qs = qs; S.results = results; S.shuffles = shuffles; S.perms = perms; S.i = results.length; S.allSent = sent; S.allType = d.type || null;
     S.startedAt = Date.now(); openQ(); return true;
   }
   function forgetAll() { try { localStorage.removeItem("kartak-all"); } catch (e) {} }

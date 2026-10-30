@@ -160,6 +160,13 @@ for (let k = 0; k < 3; k++) {
 check("every question shown is an ordering question", onlyOrder && !!(await worker.$(".tag.t-order")));
 await worker.click("#brandBtn");
 check("home carries on in the same type", (await worker.textContent("[data-go=all] .d")).includes(`question 4 of ${ORDER_N}`) && (await worker.textContent("[data-go=all] .d")).includes(UI.en.types.order[0]));
+// The bank changed since the last sitting (an answered question was removed): the place is kept, not reset
+await worker.evaluate(() => { const d = JSON.parse(localStorage.getItem("kartak-all")); d.ids[0] = "k999"; localStorage.setItem("kartak-all", JSON.stringify(d)); });
+await worker.reload();
+await worker.click("[data-go=all]");
+await worker.waitForSelector(".qtext");
+check("a changed question bank keeps the saved place", (await worker.textContent(".qhead .pos span")).includes(`3 / ${ORDER_N - 1}`));
+await worker.click("#brandBtn");
 
 // Phone Back button (D28): goes to the home screen instead of closing the app; a test with answers asks first
 await worker.click("[data-go=words]");

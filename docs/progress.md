@@ -8,7 +8,7 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
-  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 304 live questions
+  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 306 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place, every
   type or one type such as ordering only, D29) /
   key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
@@ -38,6 +38,11 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **30 Oct 2026 (2):** beginner review of the whole bank (D30): 15 confusing questions rewritten in kitchen words
+  in all 11 languages (none dropped, every topic is in the handbook), 2 new ordering questions (k308 spill,
+  k309 HACCP as a chicken routine), fridge and display numbers tied together in the explanations. 306 live
+  questions (52 ordering). "All questions" now keeps the saved place when questions change. Translations by AI,
+  each checked; native-speaker check still open.
 - **30 Oct 2026:** ordering question k139 (spores) rewritten as a cooked-rice story in all 11 languages, after
   Mustafa found it made no sense; the other 50 ordering questions read through and kept. Same id, so saved
   places in "All questions" carry on.
@@ -63,11 +68,11 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
   internet off and checks practice still works.
 - **28 Oct 2026 (late, 6):** Malayalam, Tamil, Filipino, Indonesian and Turkish added; every language had a
   word list, three translators and an independent full review before going live (D24).
-- **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
-  Hindi: 2 meaning and 22 wording fixes).
 
 ## Archive
 
+- **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
+  Hindi: 2 meaning and 22 wording fixes).
 - **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
   wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
   thermometer scale too (was showing "C°18−"); browser test checks it for every language.
