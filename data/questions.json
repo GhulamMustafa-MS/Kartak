@@ -14932,125 +14932,125 @@
    "d": 4,
    "ch": 3,
    "en": {
-    "q": "Some germs make spores (hard shells). Put what happens in the right order.",
-    "e": "Spores can live through cooking and drying. Keep food at the right temperature so spores do not wake up and grow.",
+    "q": "Why can cooked rice make people sick? Put what happens in the right order.",
     "o": [
-     "Conditions get bad, like too hot or too dry",
-     "The germ makes a hard spore to protect itself",
-     "The spore waits without growing",
-     "The food becomes warm and moist again",
-     "The spore turns back into a germ and multiplies"
-    ]
+     "Raw rice has spores (germs inside hard shells) on it",
+     "The spores stay alive through the cooking",
+     "The rice is left warm on the counter for hours",
+     "The spores wake up and the germs multiply",
+     "The germs make poison, and people who eat the rice get sick"
+    ],
+    "e": "Germs on rice make spores that stay alive through cooking. Cool cooked rice quickly and keep it in the fridge, so the spores cannot wake up."
    },
    "ur": {
-    "q": "کچھ جراثیم سپور (سخت خول) بناتے ہیں۔ جو ہوتا ہے اسے صحیح ترتیب میں لگائیں۔",
-    "e": "سپور پکانے اور خشک کرنے کے بعد بھی زندہ رہ سکتے ہیں۔ کھانا صحیح درجہ حرارت پر رکھیں تاکہ سپور جاگ کر نہ بڑھیں۔",
+    "q": "پکے ہوئے چاول لوگوں کو بیمار کیوں کر سکتے ہیں؟ جو ہوتا ہے اسے صحیح ترتیب میں لگائیں۔",
     "o": [
-     "حالات خراب ہو جاتے ہیں، جیسے بہت گرمی یا بہت خشکی",
-     "جراثیم اپنی حفاظت کے لیے سخت سپور بناتا ہے",
-     "سپور بڑھے بغیر انتظار کرتا ہے",
-     "کھانا پھر سے گرم اور نم ہو جاتا ہے",
-     "سپور پھر جراثیم بن کر بڑھنے لگتا ہے"
-    ]
+     "کچے چاولوں پر سپور (سخت خول میں بند جراثیم) ہوتے ہیں",
+     "سپور پکانے کے بعد بھی زندہ رہتے ہیں",
+     "چاول کئی گھنٹے کاؤنٹر پر گرم پڑے رہتے ہیں",
+     "سپور جاگ جاتے ہیں اور جراثیم بڑھنے لگتے ہیں",
+     "جراثیم زہر بناتے ہیں، اور چاول کھانے والے بیمار ہو جاتے ہیں"
+    ],
+    "e": "چاولوں پر موجود جراثیم ایسے سپور بناتے ہیں جو پکانے کے بعد بھی زندہ رہتے ہیں۔ پکے ہوئے چاول جلدی ٹھنڈے کریں اور فریج میں رکھیں تاکہ سپور جاگ نہ سکیں۔"
    },
    "hi": {
-    "q": "कुछ कीटाणु स्पोर (सख्त खोल) बनाते हैं। जो होता है उसे सही क्रम में लगाएँ।",
-    "e": "स्पोर पकाने और सुखाने के बाद भी ज़िंदा रह सकते हैं। खाना सही तापमान पर रखें ताकि स्पोर जागकर न बढ़ें।",
+    "q": "पके हुए चावल लोगों को बीमार क्यों कर सकते हैं? जो होता है उसे सही क्रम में लगाएँ।",
     "o": [
-     "हालात खराब हो जाते हैं, जैसे बहुत गरमी या बहुत सूखा",
-     "कीटाणु अपनी हिफ़ाज़त के लिए सख्त स्पोर बनाता है",
-     "स्पोर बिना बढ़े इंतज़ार करता है",
-     "खाना फिर से गरम और नम हो जाता है",
-     "स्पोर फिर कीटाणु बनकर बढ़ने लगता है"
-    ]
+     "कच्चे चावल पर स्पोर (सख्त खोल में बंद कीटाणु) होते हैं",
+     "स्पोर पकाने के बाद भी ज़िंदा रहते हैं",
+     "चावल कई घंटे काउंटर पर गरम पड़े रहते हैं",
+     "स्पोर जाग जाते हैं और कीटाणु बढ़ने लगते हैं",
+     "कीटाणु ज़हर बनाते हैं, और चावल खाने वाले बीमार हो जाते हैं"
+    ],
+    "e": "चावल पर मौजूद कीटाणु ऐसे स्पोर बनाते हैं जो पकाने के बाद भी ज़िंदा रहते हैं। पके चावल जल्दी ठंडे करें और फ्रिज में रखें ताकि स्पोर जाग न सकें।"
    },
    "bn": {
-    "q": "কিছু জীবাণু স্পোর (শক্ত খোসা) তৈরি করে। যা ঘটে তা সঠিক ক্রমে সাজান।",
-    "e": "স্পোর রান্না আর শুকানোর পরও বেঁচে থাকতে পারে। খাবার ঠিক তাপমাত্রায় রাখুন যাতে স্পোর জেগে উঠে না বাড়ে।",
+    "q": "রান্না করা ভাত কেন মানুষকে অসুস্থ করতে পারে? যা ঘটে তা সঠিক ক্রমে সাজান।",
     "o": [
-     "অবস্থা খারাপ হয়, যেমন খুব গরম বা খুব শুকনো",
-     "জীবাণু নিজেকে বাঁচাতে শক্ত স্পোর বানায়",
-     "স্পোর না বেড়ে অপেক্ষা করে",
-     "খাবার আবার গরম আর ভেজা হয়",
-     "স্পোর আবার জীবাণু হয়ে বাড়তে থাকে"
-    ]
+     "কাঁচা চালে স্পোর (শক্ত খোসার ভেতরে জীবাণু) থাকে",
+     "রান্নার পরও স্পোর বেঁচে থাকে",
+     "ভাত অনেক ঘণ্টা কাউন্টারে গরম অবস্থায় পড়ে থাকে",
+     "স্পোর জেগে ওঠে আর জীবাণু বাড়তে থাকে",
+     "জীবাণু বিষ তৈরি করে, আর যারা ভাত খায় তারা অসুস্থ হয়"
+    ],
+    "e": "চালের জীবাণু এমন স্পোর তৈরি করে যা রান্নার পরও বেঁচে থাকে। রান্না করা ভাত তাড়াতাড়ি ঠান্ডা করুন আর ফ্রিজে রাখুন, যাতে স্পোর জেগে উঠতে না পারে।"
    },
    "ar": {
-    "q": "بعض الجراثيم تصنع الأبواغ (قشرة صلبة تحمي الجرثومة). رتّب ما يحدث بالترتيب الصحيح.",
+    "q": "لماذا يمكن أن يُمرض الأرز المطبوخ الناس؟ رتّب ما يحدث بالترتيب الصحيح.",
     "o": [
-     "الظروف تصبح سيئة، مثل حرارة شديدة أو جفاف شديد",
-     "الجرثومة تصنع بوغاً صلباً لتحمي نفسها",
-     "البوغ ينتظر بدون أن ينمو",
-     "الطعام يصبح دافئاً ورطباً مرة أخرى",
-     "البوغ يرجع جرثومة وتتكاثر"
+     "على الأرز النيء أبواغ (جراثيم داخل قشرة صلبة)",
+     "الأبواغ تبقى حية بعد الطبخ",
+     "يُترك الأرز دافئاً على سطح العمل عدة ساعات",
+     "الأبواغ تستيقظ والجراثيم تتكاثر",
+     "الجراثيم تصنع سُمّاً، ومن يأكل الأرز يمرض"
     ],
-    "e": "الأبواغ يمكن أن تبقى حية بعد الطبخ والتجفيف. احفظ الطعام على الحرارة الصحيحة حتى لا تستيقظ الأبواغ وتنمو."
+    "e": "الجراثيم الموجودة على الأرز تصنع أبواغاً تبقى حية بعد الطبخ. برّد الأرز المطبوخ بسرعة واحفظه في الثلاجة حتى لا تستيقظ الأبواغ."
    },
    "ne": {
-    "q": "केही किटाणुले स्पोर (कडा खोल) बनाउँछन्। के हुन्छ, सही क्रममा मिलाउनुहोस्।",
+    "q": "पकाएको भातले मान्छेलाई किन बिरामी बनाउन सक्छ? के हुन्छ, सही क्रममा मिलाउनुहोस्।",
     "o": [
-     "अवस्था नराम्रो हुन्छ, जस्तै धेरै तातो वा धेरै सुख्खा",
-     "किटाणुले आफूलाई जोगाउन कडा स्पोर बनाउँछ",
-     "स्पोर नबढी पर्खेर बस्छ",
-     "खाना फेरि तातो र ओसिलो हुन्छ",
-     "स्पोर फेरि किटाणु बन्छ र बढ्छ"
+     "काँचो चामलमा स्पोर (कडा खोलभित्रका किटाणु) हुन्छन्",
+     "स्पोर पकाएपछि पनि बाँचिरहन्छन्",
+     "भात धेरै घण्टा काउन्टरमा तातो अवस्थामा छोडिन्छ",
+     "स्पोर ब्युँझिन्छन् र किटाणु बढ्न थाल्छन्",
+     "किटाणुले विष बनाउँछन्, र भात खाने मान्छे बिरामी हुन्छन्"
     ],
-    "e": "स्पोर पकाउँदा र सुकाउँदा पनि बाँच्न सक्छन्। स्पोर नब्युँझियोस् र नबढोस् भनेर खाना सही तापक्रममा राख्नुहोस्।"
+    "e": "चामलमा भएका किटाणुले पकाएपछि पनि बाँच्ने स्पोर बनाउँछन्। पकाएको भात छिटो चिसो पार्नुहोस् र फ्रिजमा राख्नुहोस्, ताकि स्पोर ब्युँझिन नसकून्।"
    },
    "ml": {
-    "q": "ചില അണുക്കൾ സ്പോറുകൾ (കട്ടിയുള്ള തോട്) ഉണ്ടാക്കും. സംഭവിക്കുന്നത് ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "വേവിച്ച ചോറ് എന്തുകൊണ്ട് ആളുകളെ രോഗികളാക്കാം? സംഭവിക്കുന്നത് ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
-     "സാഹചര്യം മോശമാകുന്നു, കൂടുതൽ ചൂടോ കൂടുതൽ ഉണക്കമോ പോലെ",
-     "സ്വയം സംരക്ഷിക്കാൻ അണു കട്ടിയുള്ള സ്പോർ ഉണ്ടാക്കുന്നു",
-     "സ്പോർ വളരാതെ കാത്തിരിക്കുന്നു",
-     "ഭക്ഷണം വീണ്ടും ചൂടും നനവും ഉള്ളതാകുന്നു",
-     "സ്പോർ വീണ്ടും അണുവായി മാറി പെരുകുന്നു"
+     "അരിയിൽ സ്പോറുകൾ (കട്ടിയുള്ള തോടിനുള്ളിലെ അണുക്കൾ) ഉണ്ട്",
+     "വേവിച്ച ശേഷവും സ്പോറുകൾ ജീവനോടെ ഇരിക്കുന്നു",
+     "ചോറ് മണിക്കൂറുകളോളം കൗണ്ടറിൽ ചൂടോടെ വച്ചിരിക്കുന്നു",
+     "സ്പോറുകൾ ഉണരുന്നു, അണുക്കൾ പെരുകുന്നു",
+     "അണുക്കൾ വിഷം ഉണ്ടാക്കുന്നു, ചോറ് കഴിക്കുന്നവർ രോഗികളാകുന്നു"
     ],
-    "e": "സ്പോറുകൾക്ക് വേവിക്കലും ഉണക്കലും കഴിഞ്ഞും ജീവിക്കാൻ കഴിയും. സ്പോറുകൾ ഉണർന്ന് വളരാതിരിക്കാൻ ഭക്ഷണം ശരിയായ താപനിലയിൽ വയ്ക്കുക."
+    "e": "അരിയിലെ അണുക്കൾ ഉണ്ടാക്കുന്ന സ്പോറുകൾ വേവിച്ചാലും ജീവനോടെ ഇരിക്കും. വേവിച്ച ചോറ് വേഗം തണുപ്പിച്ച് ഫ്രിഡ്ജിൽ വയ്ക്കുക, അപ്പോൾ സ്പോറുകൾക്ക് ഉണരാൻ കഴിയില്ല."
    },
    "ta": {
-    "q": "சில கிருமிகள் ஸ்போர்களை (கடினமான ஓடு) உண்டாக்குகின்றன. என்ன நடக்கிறது என்பதைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "சமைத்த சாதம் ஏன் மக்களை நோய்வாய்ப்படுத்தலாம்? என்ன நடக்கிறது என்பதைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
-     "அதிக சூடு அல்லது அதிக உலர்வு போல சூழ்நிலை மோசமாகிறது",
-     "கிருமி தன்னைப் பாதுகாக்க ஒரு கடினமான ஸ்போரை உண்டாக்குகிறது",
-     "ஸ்போர் வளராமல் காத்திருக்கிறது",
-     "உணவு மீண்டும் சூடாகவும் ஈரமாகவும் ஆகிறது",
-     "ஸ்போர் மீண்டும் கிருமியாக மாறி பெருகுகிறது"
+     "அரிசியில் ஸ்போர்கள் (கடினமான ஓட்டுக்குள் உள்ள கிருமிகள்) இருக்கின்றன",
+     "சமைத்த பிறகும் ஸ்போர்கள் உயிருடன் இருக்கின்றன",
+     "சாதம் பல மணி நேரம் கவுண்டரில் சூடாக விடப்படுகிறது",
+     "ஸ்போர்கள் விழிக்கின்றன, கிருமிகள் பெருகுகின்றன",
+     "கிருமிகள் விஷத்தை உண்டாக்குகின்றன, சாதம் சாப்பிடுபவர்கள் நோய்வாய்ப்படுகிறார்கள்"
     ],
-    "e": "ஸ்போர்கள் சமையலிலும் உலர்த்துதலிலும் தப்பிப் பிழைக்கும். ஸ்போர்கள் விழித்து வளராமல் இருக்க, உணவைச் சரியான வெப்பநிலையில் வையுங்கள்."
+    "e": "அரிசியில் உள்ள கிருமிகள் சமைத்த பிறகும் உயிர் வாழும் ஸ்போர்களை உண்டாக்குகின்றன. சமைத்த சாதத்தை வேகமாகக் குளிர்வித்து ஃபிரிட்ஜில் வையுங்கள், அப்போது ஸ்போர்கள் விழிக்க முடியாது."
    },
    "fil": {
-    "q": "May mga mikrobyo na gumagawa ng spore (matigas na balot). Ayusin ang nangyayari sa tamang pagkakasunod.",
+    "q": "Bakit puwedeng makapagpasakit ng tao ang lutong kanin? Ayusin ang nangyayari sa tamang pagkakasunod.",
     "o": [
-     "Sumasama ang kondisyon, tulad ng sobrang init o sobrang tuyo",
-     "Gumagawa ang mikrobyo ng matigas na spore para protektahan ang sarili",
-     "Naghihintay ang spore nang hindi dumarami",
-     "Nagiging mainit-init at basa ulit ang pagkain",
-     "Bumabalik ang spore sa pagiging mikrobyo at dumarami"
+     "May spore (mikrobyo sa loob ng matigas na balot) ang hilaw na bigas",
+     "Nakakaligtas ang spore sa pagluluto",
+     "Naiiwan ang kanin nang mainit-init sa counter nang ilang oras",
+     "Nagigising ang spore at dumarami ang mikrobyo",
+     "Gumagawa ng lason ang mikrobyo, at nagkakasakit ang kumain ng kanin"
     ],
-    "e": "Nakakaligtas ang spore sa pagluluto at pagpapatuyo. Panatilihin ang pagkain sa tamang temperatura para hindi magising at dumami ang spore."
+    "e": "Gumagawa ang mikrobyo sa bigas ng spore na nakakaligtas sa pagluluto. Palamigin agad ang lutong kanin at ilagay sa ref para hindi magising ang spore."
    },
    "ind": {
-    "q": "Ada kuman yang membuat spora (cangkang keras). Susun apa yang terjadi dengan urutan yang benar.",
+    "q": "Kenapa nasi yang sudah dimasak bisa membuat orang sakit? Susun apa yang terjadi dengan urutan yang benar.",
     "o": [
-     "Keadaan menjadi buruk, misalnya terlalu panas atau terlalu kering",
-     "Kuman membuat spora keras untuk melindungi dirinya",
-     "Spora menunggu tanpa tumbuh",
-     "Makanan menjadi hangat dan lembap lagi",
-     "Spora berubah lagi menjadi kuman dan berkembang biak"
+     "Pada beras mentah ada spora (kuman di dalam cangkang keras)",
+     "Spora tetap hidup walaupun sudah dimasak",
+     "Nasi dibiarkan hangat di meja dapur selama berjam-jam",
+     "Spora bangun dan kuman berkembang biak",
+     "Kuman membuat racun, dan orang yang makan nasi itu jadi sakit"
     ],
-    "e": "Spora bisa bertahan saat dimasak dan dikeringkan. Jaga makanan di suhu yang benar supaya spora tidak bangun dan tumbuh."
+    "e": "Kuman pada beras membuat spora yang tetap hidup walaupun sudah dimasak. Dinginkan nasi dengan cepat dan simpan di kulkas supaya spora tidak bangun."
    },
    "tr": {
-    "q": "Bazı mikroplar spor (sert kabuk) yapar. Olanları doğru sıraya koy.",
+    "q": "Pişmiş pirinç neden insanları hasta edebilir? Olanları doğru sıraya koy.",
     "o": [
-     "Koşullar kötüleşir, örneğin çok sıcak ya da çok kuru olur",
-     "Mikrop kendini korumak için sert bir spor yapar",
-     "Spor üremeden bekler",
-     "Yiyecek yine ılık ve nemli olur",
-     "Spor tekrar mikroba dönüşür ve çoğalır"
+     "Çiğ pirinçte spor (sert kabuk içinde mikrop) vardır",
+     "Sporlar pişirmeden sonra da canlı kalır",
+     "Pilav saatlerce tezgâhta ılık bekletilir",
+     "Sporlar uyanır ve mikroplar çoğalır",
+     "Mikroplar zehir yapar ve pilavı yiyenler hastalanır"
     ],
-    "e": "Sporlar pişirmeye ve kurutmaya dayanabilir. Yiyeceği doğru sıcaklıkta tut ki sporlar uyanıp üremesin."
+    "e": "Pirinçteki mikroplar pişirmeye dayanan sporlar yapar. Pişmiş pilavı çabuk soğut ve buzdolabına koy ki sporlar uyanmasın."
    }
   },
   {

@@ -4,7 +4,7 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 29 Oct 2026, evening)
+## START HERE (last updated 30 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
@@ -38,6 +38,9 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **30 Oct 2026:** ordering question k139 (spores) rewritten as a cooked-rice story in all 11 languages, after
+  Mustafa found it made no sense; the other 50 ordering questions read through and kept. Same id, so saved
+  places in "All questions" carry on.
 - **29 Oct 2026 (4):** fixed "Listen" giving away the answer on ordering questions (it read the steps in the
   correct order); it now reads every question's choices in the order on the screen. Cache `kartak-v7`.
 - **29 Oct 2026 (3):** "All questions" can be one type only (D29): a chooser shows All types and each
@@ -62,12 +65,12 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
   word list, three translators and an independent full review before going live (D24).
 - **28 Oct 2026 (late, 5):** Nepali added (app screens + all 306 questions; review checked it is real Nepali, not
   Hindi: 2 meaning and 22 wording fixes).
-- **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
-  wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
-  thermometer scale too (was showing "C°18−"); browser test checks it for every language.
 
 ## Archive
 
+- **28 Oct 2026 (late, 4):** Arabic added (app screens + all 306 questions, independent review: 3 meaning and 46
+  wording fixes). Temperatures like −18°C now stay left-to-right inside Arabic and Urdu text, and the
+  thermometer scale too (was showing "C°18−"); browser test checks it for every language.
 - **28 Oct 2026 (late, 3):** language dropdown at the top instead of four buttons; first screen shows a tile per
   language; `KARTAK_LANGS` in `js/i18n.js` drives both; validator checks every screen language is in the bank;
   browser test opens every language and checks it fits a 390 px phone (D24). Seven more languages in progress.
