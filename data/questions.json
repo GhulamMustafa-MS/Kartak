@@ -1228,7 +1228,7 @@
      "The newest delivery",
      "The oldest stock that is still in date",
      "The biggest pack",
-     "Whatever is at the front of the shelf"
+     "Whatever is easiest to reach"
     ],
     "e": "First in, first out. Use older stock first, and never use food that is past its use-by date."
    },
@@ -1238,7 +1238,7 @@
      "سب سے نئی سپلائی",
      "سب سے پرانا سامان جو ابھی میعاد میں ہو",
      "سب سے بڑا پیک",
-     "جو شیلف کے سامنے رکھا ہو"
+     "جو سب سے آسانی سے ہاتھ آئے"
     ],
     "e": "پہلے آیا، پہلے استعمال۔ پرانا سامان پہلے استعمال کریں، اور میعاد ختم ہونے والا کھانا کبھی استعمال نہ کریں۔"
    },
@@ -1248,7 +1248,7 @@
      "সবচেয়ে নতুন আসা মাল",
      "সবচেয়ে পুরোনো মাল, যার মেয়াদ এখনো আছে",
      "সবচেয়ে বড় প্যাকেট",
-     "তাকের সামনে যা আছে"
+     "যেটা হাতের সবচেয়ে কাছে"
     ],
     "e": "আগে এলে আগে ব্যবহার। পুরোনো মাল আগে ব্যবহার করুন, আর মেয়াদ শেষ হওয়া খাবার কখনো ব্যবহার করবেন না।"
    },
@@ -1258,7 +1258,7 @@
      "सबसे नई डिलीवरी",
      "सबसे पुराना स्टॉक जिसकी तारीख अभी खत्म नहीं हुई",
      "सबसे बड़ा पैक",
-     "जो भी शेल्फ पर सबसे आगे हो"
+     "जो सबसे आसानी से हाथ आए"
     ],
     "e": "जो पहले आया, वो पहले इस्तेमाल करें। पुराना स्टॉक पहले इस्तेमाल करें, और यूज़-बाय तारीख निकल चुका खाना कभी इस्तेमाल न करें।"
    },
@@ -1268,7 +1268,7 @@
      "آخر بضاعة وصلت",
      "المخزون الأقدم الذي لم تنتهِ صلاحيته",
      "العلبة الأكبر",
-     "أي شيء في مقدمة الرف"
+     "أي شيء أسهل في الوصول إليه"
     ],
     "e": "الأقدم يُستعمل أولاً. استعمل المخزون القديم أولاً، ولا تستعمل أبداً طعاماً انتهى تاريخ صلاحيته."
    },
@@ -1278,7 +1278,7 @@
      "सबैभन्दा नयाँ डेलिभरी",
      "मिति बाँकी भएको सबैभन्दा पुरानो सामान",
      "सबैभन्दा ठूलो प्याकेट",
-     "दराजको अगाडि जे छ त्यही"
+     "जुन सबैभन्दा सजिलै हात पर्छ त्यही"
     ],
     "e": "पहिले आएको पहिले प्रयोग। पुरानो सामान पहिले प्रयोग गर्नुहोस्, र प्रयोग गर्ने अन्तिम मिति (युज बाइ डेट) नाघेको खाना कहिल्यै प्रयोग नगर्नुहोस्।"
    },
@@ -1288,7 +1288,7 @@
      "ഏറ്റവും പുതിയ ഡെലിവറി",
      "തീയതി കഴിയാത്ത ഏറ്റവും പഴയ സ്റ്റോക്ക്",
      "ഏറ്റവും വലിയ പാക്കറ്റ്",
-     "തട്ടിന്റെ മുന്നിൽ ഉള്ളത് ഏതായാലും"
+     "എളുപ്പത്തിൽ കൈയെത്തുന്നത് ഏതായാലും"
     ],
     "e": "ആദ്യം വന്നത് ആദ്യം ഉപയോഗിക്കുക. പഴയ സ്റ്റോക്ക് ആദ്യം ഉപയോഗിക്കുക, \"യൂസ് ബൈ\" തീയതി കഴിഞ്ഞ ഭക്ഷണം ഒരിക്കലും ഉപയോഗിക്കരുത്."
    },
@@ -1298,7 +1298,7 @@
      "புதிதாக வந்த டெலிவரியை",
      "தேதி இன்னும் முடியாத பழைய ஸ்டாக்கை",
      "பெரிய பாக்கெட்டை",
-     "தட்டின் முன்னால் இருப்பதை"
+     "கைக்கு எளிதாக எட்டுவதை"
     ],
     "e": "முதலில் வந்ததை முதலில் பயன்படுத்துங்கள். பழைய ஸ்டாக்கை முதலில் பயன்படுத்துங்கள். பயன்படுத்த வேண்டிய கடைசி தேதி (யூஸ்-பை தேதி) முடிந்த உணவை ஒருபோதும் பயன்படுத்தாதீர்கள்."
    },
@@ -1308,7 +1308,7 @@
      "Ang pinakabagong delivery",
      "Ang pinakalumang stock na hindi pa lampas sa petsa",
      "Ang pinakamalaking pakete",
-     "Kahit ano na nasa harap ng shelf"
+     "Kahit ano na pinakamadaling abutin"
     ],
     "e": "First in, first out. Unahing gamitin ang mas lumang stock, at huwag kailanman gamitin ang pagkaing lampas na sa use-by date."
    },
@@ -1318,7 +1318,7 @@
      "Kiriman yang paling baru",
      "Stok paling lama yang belum lewat tanggal",
      "Kemasan yang paling besar",
-     "Apa saja yang ada di depan rak"
+     "Apa saja yang paling mudah dijangkau"
     ],
     "e": "Yang pertama masuk, pertama dipakai. Pakai stok lama dulu, dan jangan pernah pakai makanan yang sudah lewat tanggal batas pakai."
    },
@@ -1328,7 +1328,7 @@
      "En yeni teslimatı",
      "Tarihi hâlâ geçmemiş en eski stoku",
      "En büyük paketi",
-     "Rafın önünde ne varsa onu"
+     "Eline en kolay ne geliyorsa onu"
     ],
     "e": "İlk giren ilk çıkar. Önce eski stoku kullan. Son tüketim tarihi geçmiş gıdayı asla kullanma."
    }
@@ -1641,112 +1641,101 @@
    "en": {
     "q": "Put these steps in order for getting ready before you start work in the kitchen.",
     "o": [
-     "Take off rings and watch",
-     "Put on clean work clothes, an apron and a hair cover",
+     "Take off rings and watch, and put on clean work clothes and a hair cover",
      "Wash your hands",
      "Put on gloves if your job needs them"
     ],
-    "e": "Jewellery comes off first, then clean clothes and the hair cover go on. Wash your hands after touching your clothes and hair, and put gloves only on clean hands."
+    "e": "Get changed first: jewellery off, clean clothes and hair cover on. Then wash your hands, because you touched your clothes and hair. Gloves go only on clean hands."
    },
    "ur": {
     "q": "کچن میں کام شروع کرنے سے پہلے تیار ہونے کے مراحل ترتیب میں لگائیں۔",
     "o": [
-     "انگوٹھی اور گھڑی اتاریں",
-     "صاف کام کے کپڑے، ایپرن اور بالوں کا کور پہنیں",
+     "انگوٹھی اور گھڑی اتاریں، اور صاف کام کے کپڑے اور بالوں کا کور پہنیں",
      "ہاتھ دھوئیں",
      "اگر آپ کے کام میں ضرورت ہو تو دستانے پہنیں"
     ],
-    "e": "پہلے زیور اتاریں، پھر صاف کپڑے اور بالوں کا کور پہنیں۔ کپڑوں اور بالوں کو چھونے کے بعد ہاتھ دھوئیں، اور دستانے صرف صاف ہاتھوں پر پہنیں۔"
+    "e": "پہلے کپڑے بدلیں: زیور اتاریں، صاف کپڑے اور بالوں کا کور پہنیں۔ پھر ہاتھ دھوئیں، کیونکہ آپ نے اپنے کپڑوں اور بالوں کو چھوا ہے۔ دستانے صرف صاف ہاتھوں پر پہنیں۔"
    },
    "hi": {
     "q": "किचन में काम शुरू करने से पहले तैयार होने के ये स्टेप्स क्रम में लगाएं।",
     "o": [
-     "अंगूठियाँ और घड़ी उतारें",
-     "साफ़ काम के कपड़े, एप्रन और बालों का कवर पहनें",
+     "अंगूठियाँ और घड़ी उतारें, और साफ़ काम के कपड़े और बालों का कवर पहनें",
      "हाथ धोएं",
      "अगर आपके काम में ज़रूरत हो तो दस्ताने पहनें"
     ],
-    "e": "पहले गहने उतारें, फिर साफ़ कपड़े और बालों का कवर पहनें। कपड़ों और बालों को छूने के बाद हाथ धोएं, और दस्ताने सिर्फ़ साफ़ हाथों पर पहनें।"
+    "e": "पहले कपड़े बदलें: गहने उतारें, साफ़ कपड़े और बालों का कवर पहनें। फिर हाथ धोएं, क्योंकि आपने अपने कपड़ों और बालों को छुआ है। दस्ताने सिर्फ़ साफ़ हाथों पर पहनें।"
    },
    "bn": {
     "q": "রান্নাঘরে কাজ শুরুর আগে তৈরি হওয়ার এই ধাপগুলো ক্রমে সাজান।",
     "o": [
-     "আংটি আর ঘড়ি খুলে ফেলুন",
-     "পরিষ্কার কাজের কাপড়, অ্যাপ্রন আর চুলের ঢাকনা পরুন",
+     "আংটি আর ঘড়ি খুলে ফেলুন, আর পরিষ্কার কাজের কাপড় আর চুলের ঢাকনা পরুন",
      "হাত ধুয়ে নিন",
      "কাজে দরকার হলে গ্লাভস পরুন"
     ],
-    "e": "আগে গয়না খুলুন, তারপর পরিষ্কার কাপড় আর চুলের ঢাকনা পরুন। কাপড় আর চুলে হাত লাগার পরে হাত ধুয়ে নিন, আর গ্লাভস শুধু পরিষ্কার হাতেই পরুন।"
+    "e": "আগে কাপড় বদলান: গয়না খুলুন, পরিষ্কার কাপড় আর চুলের ঢাকনা পরুন। তারপর হাত ধুয়ে নিন, কারণ আপনি কাপড় আর চুলে হাত দিয়েছেন। গ্লাভস শুধু পরিষ্কার হাতেই পরুন।"
    },
    "ar": {
     "q": "رتّب هذه الخطوات للاستعداد قبل أن تبدأ العمل في المطبخ.",
     "o": [
-     "اخلع الخواتم والساعة",
-     "البس ملابس عمل نظيفة والمريلة وغطاء الشعر",
+     "اخلع الخواتم والساعة، والبس ملابس عمل نظيفة وغطاء الشعر",
      "اغسل يديك",
      "البس القفازات إذا كان عملك يحتاجها"
     ],
-    "e": "أولاً تخلع المجوهرات، ثم تلبس الملابس النظيفة وغطاء الشعر. اغسل يديك بعد أن تلمس ملابسك وشعرك، والبس القفازات فقط على يدين نظيفتين."
+    "e": "غيّر ملابسك أولاً: اخلع المجوهرات، والبس الملابس النظيفة وغطاء الشعر. ثم اغسل يديك، لأنك لمست ملابسك وشعرك. القفازات تُلبس فقط على يدين نظيفتين."
    },
    "ne": {
     "q": "भान्सामा काम सुरु गर्नुअघि तयार हुने यी चरणहरूलाई क्रममा मिलाउनुहोस्।",
     "o": [
-     "औंठी र घडी फुकाल्नुहोस्",
-     "सफा कामको लुगा, एप्रन र कपाल छोप्ने टोपी लगाउनुहोस्",
+     "औंठी र घडी फुकाल्नुहोस्, अनि सफा कामको लुगा र कपाल छोप्ने टोपी लगाउनुहोस्",
      "हात धुनुहोस्",
      "तपाईंको काममा चाहिन्छ भने पन्जा लगाउनुहोस्"
     ],
-    "e": "पहिले गहना फुकाल्ने, अनि सफा लुगा र कपाल छोप्ने टोपी लगाउने। लुगा र कपाल छोएपछि हात धुनुहोस्, र पन्जा सफा हातमा मात्र लगाउनुहोस्।"
+    "e": "पहिले लुगा फेर्नुहोस्: गहना फुकाल्ने, सफा लुगा र कपाल छोप्ने टोपी लगाउने। त्यसपछि हात धुनुहोस्, किनभने तपाईंले लुगा र कपाल छुनुभयो। पन्जा सफा हातमा मात्र लगाउनुहोस्।"
    },
    "ml": {
     "q": "അടുക്കളയിൽ ജോലി തുടങ്ങുന്നതിന് മുമ്പ് തയ്യാറാകാനുള്ള ഈ സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
-     "മോതിരവും വാച്ചും ഊരുക",
-     "വൃത്തിയുള്ള ജോലി വസ്ത്രവും ഏപ്രണും തലമുടി മൂടുന്ന ക്യാപ്പും ധരിക്കുക",
+     "മോതിരവും വാച്ചും ഊരി, വൃത്തിയുള്ള ജോലി വസ്ത്രവും തലമുടി മൂടുന്ന ക്യാപ്പും ധരിക്കുക",
      "കൈ കഴുകുക",
      "ജോലിക്ക് ആവശ്യമുണ്ടെങ്കിൽ ഗ്ലൗസ് ഇടുക"
     ],
-    "e": "ആദ്യം ആഭരണങ്ങൾ ഊരുക, പിന്നെ വൃത്തിയുള്ള വസ്ത്രവും തലമുടി മൂടുന്ന ക്യാപ്പും ധരിക്കുക. വസ്ത്രത്തിലും മുടിയിലും തൊട്ട ശേഷം കൈ കഴുകുക. വൃത്തിയുള്ള കൈയിൽ മാത്രമേ ഗ്ലൗസ് ഇടാവൂ."
+    "e": "ആദ്യം വസ്ത്രം മാറുക: ആഭരണങ്ങൾ ഊരുക, വൃത്തിയുള്ള വസ്ത്രവും തലമുടി മൂടുന്ന ക്യാപ്പും ധരിക്കുക. പിന്നെ കൈ കഴുകുക, കാരണം നിങ്ങൾ വസ്ത്രത്തിലും മുടിയിലും തൊട്ടു. വൃത്തിയുള്ള കൈയിൽ മാത്രമേ ഗ്ലൗസ് ഇടാവൂ."
    },
    "ta": {
     "q": "சமையலறையில் வேலையைத் தொடங்கும் முன் தயாராகும் இந்தப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
-     "மோதிரங்களையும் கைக்கடிகாரத்தையும் கழற்றுங்கள்",
-     "சுத்தமான வேலை உடை, ஏப்ரன், முடி மூடி (ஹேர்நெட்) அணியுங்கள்",
+     "மோதிரங்களையும் கைக்கடிகாரத்தையும் கழற்றி, சுத்தமான வேலை உடையும் முடி மூடியும் (ஹேர்நெட்) அணியுங்கள்",
      "கைகளைக் கழுவுங்கள்",
      "உங்கள் வேலைக்குத் தேவைப்பட்டால் கையுறைகள் (க்ளவுஸ்) அணியுங்கள்"
     ],
-    "e": "முதலில் நகைகளைக் கழற்றுங்கள், பிறகு சுத்தமான உடையையும் முடி மூடியையும் அணியுங்கள். உடையையும் முடியையும் தொட்ட பிறகு கைகளைக் கழுவுங்கள். சுத்தமான கைகளில் மட்டுமே கையுறைகள் அணியுங்கள்."
+    "e": "முதலில் உடை மாற்றுங்கள்: நகைகளைக் கழற்றி, சுத்தமான உடையும் முடி மூடியும் அணியுங்கள். பிறகு கைகளைக் கழுவுங்கள், ஏனென்றால் நீங்கள் உடையையும் முடியையும் தொட்டீர்கள். சுத்தமான கைகளில் மட்டுமே கையுறைகள் அணியுங்கள்."
    },
    "fil": {
     "q": "Ayusin ang mga hakbang na ito sa paghahanda bago ka magsimulang magtrabaho sa kusina.",
     "o": [
-     "Tanggalin ang singsing at relo",
-     "Isuot ang malinis na damit pantrabaho, apron at hair cover",
+     "Tanggalin ang singsing at relo, at isuot ang malinis na damit pantrabaho at hair cover",
      "Hugasan ang mga kamay mo",
      "Isuot ang gloves kung kailangan sa trabaho mo"
     ],
-    "e": "Unang tinatanggal ang alahas, tapos isinusuot ang malinis na damit at hair cover. Hugasan ang kamay pagkatapos hawakan ang damit at buhok mo, at sa malinis na kamay lang isuot ang gloves."
+    "e": "Magbihis muna: tanggalin ang alahas, isuot ang malinis na damit at hair cover. Saka hugasan ang mga kamay mo, dahil nahawakan mo ang damit at buhok mo. Sa malinis na kamay lang isuot ang gloves."
    },
    "ind": {
     "q": "Susun langkah bersiap sebelum mulai kerja di dapur dengan urutan yang benar.",
     "o": [
-     "Lepas cincin dan jam tangan",
-     "Pakai baju kerja bersih, celemek dan penutup rambut",
+     "Lepas cincin dan jam tangan, lalu pakai baju kerja bersih dan penutup rambut",
      "Cuci tangan",
      "Pakai sarung tangan kalau pekerjaan Anda membutuhkannya"
     ],
-    "e": "Perhiasan dilepas lebih dulu, lalu baju bersih dan penutup rambut dipakai. Cuci tangan setelah menyentuh baju dan rambut Anda, dan pakai sarung tangan hanya di tangan yang bersih."
+    "e": "Ganti baju dulu: perhiasan dilepas, baju bersih dan penutup rambut dipakai. Lalu cuci tangan, karena Anda sudah menyentuh baju dan rambut. Sarung tangan hanya dipakai di tangan yang bersih."
    },
    "tr": {
     "q": "Mutfakta işe başlamadan önce hazırlanma adımlarını sıraya koy.",
     "o": [
-     "Yüzüğünü ve saatini çıkar",
-     "Temiz iş kıyafetini ve önlüğünü giy, boneni tak",
+     "Yüzüğünü ve saatini çıkar, temiz iş kıyafetini giy ve boneni tak",
      "Ellerini yıka",
      "İşin gerektiriyorsa eldiven giy"
     ],
-    "e": "Önce takılar çıkarılır, sonra temiz kıyafetler giyilir ve bone takılır. Kıyafetine ve saçına dokunduktan sonra ellerini yıka. Eldiveni sadece temiz ellere giy."
+    "e": "Önce üstünü değiştir: takıları çıkar, temiz kıyafetini giy ve boneni tak. Sonra ellerini yıka, çünkü kıyafetine ve saçına dokundun. Eldiveni sadece temiz ellere giy."
    }
   },
   {
@@ -7458,110 +7447,110 @@
     "o": [
      "Open it and smell it first",
      "Use it quickly before it gets worse",
-     "Do not use it, throw it away",
+     "Do not use it. Put it aside and tell your supervisor",
      "Put it in the fridge"
     ],
-    "e": "A swollen can may have dangerous germs inside. Never open or taste it."
+    "e": "A swollen can may have dangerous germs inside. Never open or taste it. Your supervisor decides how to get rid of it."
    },
    "ur": {
     "q": "آپ کو لوبیے کا ایک ڈبہ ملا جو پھولا ہوا ہے۔ آپ کیا کریں گے؟",
     "o": [
      "پہلے کھول کر سونگھ لیں",
      "خراب ہونے سے پہلے جلدی استعمال کر لیں",
-     "استعمال نہ کریں، پھینک دیں",
+     "استعمال نہ کریں۔ اسے الگ رکھیں اور اپنے سپروائزر کو بتائیں",
      "فریج میں رکھ دیں"
     ],
-    "e": "پھولے ہوئے ڈبے میں خطرناک جراثیم ہو سکتے ہیں۔ اسے کبھی نہ کھولیں نہ چکھیں۔"
+    "e": "پھولے ہوئے ڈبے میں خطرناک جراثیم ہو سکتے ہیں۔ اسے کبھی نہ کھولیں نہ چکھیں۔ اسے کیسے ضائع کرنا ہے، یہ آپ کا سپروائزر طے کرے گا۔"
    },
    "bn": {
     "q": "আপনি শিমের একটা টিন পেলেন যেটা ফুলে গেছে। কী করবেন?",
     "o": [
      "আগে খুলে গন্ধ শুঁকবেন",
      "খারাপ হওয়ার আগে তাড়াতাড়ি ব্যবহার করবেন",
-     "ব্যবহার করবেন না, ফেলে দেবেন",
+     "ব্যবহার করবেন না। আলাদা করে রেখে সুপারভাইজারকে জানাবেন",
      "ফ্রিজে রেখে দেবেন"
     ],
-    "e": "ফুলে যাওয়া টিনে বিপজ্জনক জীবাণু থাকতে পারে। কখনো খুলবেন না বা চেখে দেখবেন না।"
+    "e": "ফুলে যাওয়া টিনে বিপজ্জনক জীবাণু থাকতে পারে। কখনো খুলবেন না বা চেখে দেখবেন না। এটা কীভাবে ফেলা হবে তা আপনার সুপারভাইজার ঠিক করবেন।"
    },
    "hi": {
     "q": "आपको बीन्स का एक डिब्बा (कैन) फूला हुआ मिलता है। आप क्या करें?",
     "o": [
      "पहले खोलकर सूंघें",
      "और खराब होने से पहले जल्दी इस्तेमाल कर लें",
-     "इस्तेमाल न करें, फेंक दें",
+     "इस्तेमाल न करें। उसे अलग रखें और अपने सुपरवाइज़र को बताएं",
      "फ्रिज में रख दें"
     ],
-    "e": "फूले हुए डिब्बे के अंदर खतरनाक कीटाणु हो सकते हैं। उसे कभी न खोलें, न चखें।"
+    "e": "फूले हुए डिब्बे के अंदर खतरनाक कीटाणु हो सकते हैं। उसे कभी न खोलें, न चखें। उसे कैसे हटाना (फेंकना) है, यह आपका सुपरवाइज़र तय करेगा।"
    },
    "ar": {
     "q": "وجدت علبة فول منتفخة. ماذا يجب أن تفعل؟",
     "o": [
      "افتحها وشمّها أولاً",
      "استعملها بسرعة قبل أن تسوء أكثر",
-     "لا تستعملها، ارمها",
+     "لا تستعملها. ضعها جانباً وأخبر المشرف",
      "ضعها في الثلاجة"
     ],
-    "e": "العلبة المنتفخة قد يكون فيها جراثيم خطيرة. لا تفتحها ولا تتذوقها أبداً."
+    "e": "العلبة المنتفخة قد يكون فيها جراثيم خطيرة. لا تفتحها ولا تتذوقها أبداً. المشرف هو الذي يقرر كيف يتم التخلص منها."
    },
    "ne": {
     "q": "तपाईंले सिमीको एउटा फुलेको टिन भेट्टाउनुभयो। के गर्नुपर्छ?",
     "o": [
      "पहिले खोलेर सुँघ्नुहोस्",
      "झन् बिग्रनुअघि छिटो प्रयोग गर्नुहोस्",
-     "प्रयोग नगर्नुहोस्, फालिदिनुहोस्",
+     "प्रयोग नगर्नुहोस्। छुट्टै राख्नुहोस् र आफ्नो सुपरभाइजरलाई भन्नुहोस्",
      "फ्रिजमा राख्नुहोस्"
     ],
-    "e": "फुलेको टिनभित्र खतरनाक किटाणु हुन सक्छन्। यसलाई कहिल्यै नखोल्नुहोस् वा नचाख्नुहोस्।"
+    "e": "फुलेको टिनभित्र खतरनाक किटाणु हुन सक्छन्। यसलाई कहिल्यै नखोल्नुहोस् वा नचाख्नुहोस्। यसलाई कसरी हटाउने (फाल्ने) भनेर तपाईंको सुपरभाइजरले निर्णय गर्छन्।"
    },
    "ml": {
     "q": "വീർത്ത (പൊങ്ങിയ) ഒരു ബീൻസ് ടിൻ നിങ്ങൾ കാണുന്നു. നിങ്ങൾ എന്ത് ചെയ്യണം?",
     "o": [
      "ആദ്യം തുറന്ന് മണത്തു നോക്കുക",
      "കൂടുതൽ മോശമാകുന്നതിന് മുമ്പ് വേഗം ഉപയോഗിക്കുക",
-     "ഉപയോഗിക്കരുത്, കളയുക",
+     "ഉപയോഗിക്കരുത്. മാറ്റി വച്ച് സൂപ്പർവൈസറോട് പറയുക",
      "ഫ്രിഡ്ജിൽ വയ്ക്കുക"
     ],
-    "e": "വീർത്ത ടിന്നിനുള്ളിൽ അപകടകരമായ അണുക്കൾ ഉണ്ടാകാം. ഒരിക്കലും തുറക്കുകയോ രുചിച്ചു നോക്കുകയോ ചെയ്യരുത്."
+    "e": "വീർത്ത ടിന്നിനുള്ളിൽ അപകടകരമായ അണുക്കൾ ഉണ്ടാകാം. ഒരിക്കലും തുറക്കുകയോ രുചിച്ചു നോക്കുകയോ ചെയ്യരുത്. അത് എങ്ങനെ കളയണമെന്ന് നിങ്ങളുടെ സൂപ്പർവൈസർ തീരുമാനിക്കും."
    },
    "ta": {
     "q": "உப்பிய (வீங்கிய) ஒரு பீன்ஸ் டின்னைப் பார்க்கிறீர்கள். நீங்கள் என்ன செய்ய வேண்டும்?",
     "o": [
      "முதலில் திறந்து முகர்ந்து பாருங்கள்",
      "இன்னும் மோசமாவதற்குள் வேகமாகப் பயன்படுத்துங்கள்",
-     "பயன்படுத்தாதீர்கள், தூக்கி எறியுங்கள்",
+     "பயன்படுத்தாதீர்கள். அதைத் தனியாக வைத்து, உங்கள் சூப்பர்வைசரிடம் சொல்லுங்கள்",
      "ஃப்ரிட்ஜில் வையுங்கள்"
     ],
-    "e": "உப்பிய டின்னுக்குள் ஆபத்தான கிருமிகள் இருக்கலாம். அதை ஒருபோதும் திறக்காதீர்கள், சுவைக்காதீர்கள்."
+    "e": "உப்பிய டின்னுக்குள் ஆபத்தான கிருமிகள் இருக்கலாம். அதை ஒருபோதும் திறக்காதீர்கள், சுவைக்காதீர்கள். அதை எப்படி அப்புறப்படுத்துவது என்று உங்கள் சூப்பர்வைசர் முடிவு செய்வார்."
    },
    "fil": {
     "q": "May nakita kang lata ng beans na namamaga (umbok). Ano ang dapat mong gawin?",
     "o": [
      "Buksan at amuyin muna",
      "Gamitin agad bago lumala",
-     "Huwag gamitin, itapon ito",
+     "Huwag gamitin. Itabi ito at sabihan ang supervisor mo",
      "Ilagay ito sa ref"
     ],
-    "e": "Baka may delikadong mikrobyo sa loob ng latang namamaga. Huwag kailanman buksan o tikman ito."
+    "e": "Baka may delikadong mikrobyo sa loob ng latang namamaga. Huwag kailanman buksan o tikman ito. Ang supervisor mo ang magpapasya kung paano ito itatapon."
    },
    "ind": {
     "q": "Anda menemukan kaleng kacang yang menggembung. Apa yang harus Anda lakukan?",
     "o": [
      "Buka dan cium baunya dulu",
      "Cepat dipakai sebelum makin rusak",
-     "Jangan dipakai, buang",
+     "Jangan dipakai. Pisahkan dan beri tahu atasan Anda",
      "Masukkan ke kulkas"
     ],
-    "e": "Kaleng menggembung mungkin berisi kuman berbahaya. Jangan pernah membuka atau mencicipinya."
+    "e": "Kaleng menggembung mungkin berisi kuman berbahaya. Jangan pernah membuka atau mencicipinya. Atasan Anda yang menentukan cara membuangnya."
    },
    "tr": {
     "q": "Şişmiş (kabarmış) bir fasulye konservesi buluyorsun. Ne yapmalısın?",
     "o": [
      "Önce aç ve kokla",
      "Daha kötü olmadan hemen kullan",
-     "Kullanma, at",
+     "Kullanma. Bir kenara ayır ve amirine söyle",
      "Buzdolabına koy"
     ],
-    "e": "Şişmiş konservenin içinde tehlikeli mikroplar olabilir. Asla açma ya da tadına bakma."
+    "e": "Şişmiş konservenin içinde tehlikeli mikroplar olabilir. Asla açma ya da tadına bakma. Nasıl atılacağına amirin karar verir."
    }
   },
   {
@@ -8470,110 +8459,99 @@
     "o": [
      "Check the temperature, packaging and dates",
      "Send back any food that fails the checks",
-     "Sign for the food you accept",
-     "Put the food in the fridge straight away"
+     "Put the good food in the fridge straight away"
     ],
-    "e": "Check first, then send back bad food. Sign only for good food, and get it cold quickly."
+    "e": "Check first, then send back bad food. Get the good food cold quickly."
    },
    "ur": {
     "q": "ٹھنڈی ڈیلیوری لینے کے یہ مرحلے صحیح ترتیب میں لگائیں۔",
     "o": [
      "درجہ حرارت، پیکنگ اور تاریخ چیک کریں",
      "جو کھانا چیک میں فیل ہو، واپس کر دیں",
-     "جو کھانا لیا ہے اس پر سائن کریں",
-     "کھانا فوراً فریج میں رکھیں"
+     "ٹھیک کھانا فوراً فریج میں رکھیں"
     ],
-    "e": "پہلے چیک کریں، پھر خراب کھانا واپس کریں۔ صرف ٹھیک کھانے پر سائن کریں اور اسے جلدی ٹھنڈا کریں۔"
+    "e": "پہلے چیک کریں، پھر خراب کھانا واپس کریں۔ ٹھیک کھانے کو جلدی ٹھنڈا کریں۔"
    },
    "bn": {
     "q": "ঠান্ডা ডেলিভারি নেওয়ার এই ধাপগুলো সঠিক ক্রমে সাজান।",
     "o": [
      "তাপমাত্রা, প্যাকেট আর তারিখ চেক করবেন",
      "যে খাবার চেকে বাদ পড়ে, ফেরত দেবেন",
-     "যে খাবার নিলেন তাতে সই করবেন",
-     "খাবার সাথে সাথে ফ্রিজে রাখবেন"
+     "ভালো খাবার সাথে সাথে ফ্রিজে রাখবেন"
     ],
-    "e": "আগে চেক করুন, তারপর খারাপ খাবার ফেরত দিন। শুধু ভালো খাবারে সই করুন আর তাড়াতাড়ি ঠান্ডায় রাখুন।"
+    "e": "আগে চেক করুন, তারপর খারাপ খাবার ফেরত দিন। ভালো খাবার তাড়াতাড়ি ঠান্ডায় রাখুন।"
    },
    "hi": {
     "q": "ठंडे सामान की डिलीवरी लेने के ये स्टेप सही क्रम में लगाएं।",
     "o": [
      "तापमान, पैकिंग और तारीखें चेक करें",
      "जो खाना चेक में फेल हो, उसे वापस भेजें",
-     "जो खाना आप ले रहे हैं, उसके लिए साइन करें",
-     "खाना तुरंत फ्रिज में रखें"
+     "अच्छा खाना तुरंत फ्रिज में रखें"
     ],
-    "e": "पहले चेक करें, फिर खराब खाना वापस भेजें। सिर्फ अच्छे खाने के लिए साइन करें, और उसे जल्दी ठंडा करें।"
+    "e": "पहले चेक करें, फिर खराब खाना वापस भेजें। अच्छे खाने को जल्दी ठंडा करें।"
    },
    "ar": {
     "q": "رتّب خطوات استلام بضاعة مبرّدة بالترتيب الصحيح.",
     "o": [
      "افحص الحرارة والتغليف والتواريخ",
      "أرجع أي طعام لا ينجح في الفحص",
-     "وقّع على الطعام الذي تقبله",
-     "ضع الطعام في الثلاجة مباشرة"
+     "ضع الطعام الجيد في الثلاجة مباشرة"
     ],
-    "e": "افحص أولاً، ثم أرجع الطعام السيئ. وقّع فقط على الطعام الجيد، وبرّده بسرعة."
+    "e": "افحص أولاً، ثم أرجع الطعام السيئ. برّد الطعام الجيد بسرعة."
    },
    "ne": {
     "q": "चिसो सामानको डेलिभरी बुझ्ने यी चरणहरूलाई सही क्रममा मिलाउनुहोस्।",
     "o": [
      "तापक्रम, प्याकेट र मिति जाँच्नुहोस्",
      "जाँचमा पास नभएको खाना फिर्ता पठाउनुहोस्",
-     "तपाईंले लिने खानाका लागि हस्ताक्षर (साइन) गर्नुहोस्",
-     "खाना तुरुन्तै फ्रिजमा राख्नुहोस्"
+     "राम्रो खाना तुरुन्तै फ्रिजमा राख्नुहोस्"
     ],
-    "e": "पहिले जाँच्नुहोस्, अनि खराब खाना फिर्ता पठाउनुहोस्। राम्रो खानाका लागि मात्र हस्ताक्षर गर्नुहोस्, र छिटो चिसोमा राख्नुहोस्।"
+    "e": "पहिले जाँच्नुहोस्, अनि खराब खाना फिर्ता पठाउनुहोस्। राम्रो खानालाई छिटो चिसोमा राख्नुहोस्।"
    },
    "ml": {
     "q": "തണുപ്പിച്ച ഭക്ഷണത്തിന്റെ ഡെലിവറി എടുക്കുന്ന ഈ സ്റ്റെപ്പുകൾ ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
      "താപനില, പാക്കിങ്, തീയതി എന്നിവ നോക്കുക",
      "പരിശോധനയിൽ ശരിയല്ലാത്ത ഭക്ഷണം തിരിച്ചയക്കുക",
-     "നിങ്ങൾ വാങ്ങുന്ന ഭക്ഷണത്തിന് ഒപ്പിടുക",
-     "ഭക്ഷണം ഉടനെ ഫ്രിഡ്ജിൽ വയ്ക്കുക"
+     "നല്ല ഭക്ഷണം ഉടനെ ഫ്രിഡ്ജിൽ വയ്ക്കുക"
     ],
-    "e": "ആദ്യം പരിശോധിക്കുക, പിന്നെ മോശം ഭക്ഷണം തിരിച്ചയക്കുക. നല്ല ഭക്ഷണത്തിന് മാത്രം ഒപ്പിടുക, അത് വേഗം തണുപ്പിൽ വയ്ക്കുക."
+    "e": "ആദ്യം പരിശോധിക്കുക, പിന്നെ മോശം ഭക്ഷണം തിരിച്ചയക്കുക. നല്ല ഭക്ഷണം വേഗം തണുപ്പിൽ വയ്ക്കുക."
    },
    "ta": {
     "q": "குளிர வைத்த உணவின் டெலிவரியை வாங்கும் இந்தப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
      "வெப்பநிலை, பாக்கிங், தேதிகளைச் சோதியுங்கள்",
      "சோதனையில் தோற்ற உணவைத் திருப்பி அனுப்புங்கள்",
-     "நீங்கள் ஏற்றுக்கொள்ளும் உணவுக்குக் கையெழுத்துப் போடுங்கள்",
-     "உணவை உடனே ஃப்ரிட்ஜில் வையுங்கள்"
+     "நல்ல உணவை உடனே ஃப்ரிட்ஜில் வையுங்கள்"
     ],
-    "e": "முதலில் சோதியுங்கள், பிறகு கெட்ட உணவைத் திருப்பி அனுப்புங்கள். நல்ல உணவுக்கு மட்டுமே கையெழுத்துப் போடுங்கள், அதை வேகமாகக் குளிரில் வையுங்கள்."
+    "e": "முதலில் சோதியுங்கள், பிறகு கெட்ட உணவைத் திருப்பி அனுப்புங்கள். நல்ல உணவை வேகமாகக் குளிரில் வையுங்கள்."
    },
    "fil": {
     "q": "Ayusin ang mga hakbang na ito sa pagtanggap ng delivery ng pinalamig na pagkain sa tamang pagkakasunod.",
     "o": [
      "I-check ang temperatura, balot at petsa",
      "Ibalik ang anumang pagkaing hindi pumasa sa check",
-     "Pumirma para sa pagkaing tinanggap mo",
-     "Ilagay agad ang pagkain sa ref"
+     "Ilagay agad sa ref ang maayos na pagkain"
     ],
-    "e": "Mag-check muna, tapos ibalik ang sirang pagkain. Pumirma lang para sa maayos na pagkain, at palamigin ito agad."
+    "e": "Mag-check muna, tapos ibalik ang sirang pagkain. Palamigin agad ang maayos na pagkain."
    },
    "ind": {
     "q": "Susun langkah menerima kiriman makanan dingin ini dengan urutan yang benar.",
     "o": [
      "Periksa suhu, kemasan dan tanggal",
      "Kembalikan makanan yang tidak lolos pemeriksaan",
-     "Tanda tangani makanan yang Anda terima",
-     "Segera masukkan makanan ke kulkas"
+     "Segera masukkan makanan yang baik ke kulkas"
     ],
-    "e": "Periksa dulu, lalu kembalikan makanan yang tidak baik. Tanda tangani hanya makanan yang baik, dan cepat dinginkan."
+    "e": "Periksa dulu, lalu kembalikan makanan yang tidak baik. Cepat dinginkan makanan yang baik."
    },
    "tr": {
     "q": "Soğuk tutulan gıda teslimatını alma adımlarını doğru sıraya koy.",
     "o": [
      "Sıcaklığı, ambalajı ve tarihleri kontrol et",
      "Kontrolden geçmeyen yiyecekleri geri gönder",
-     "Kabul ettiğin yiyecekler için imza at",
-     "Yiyecekleri hemen buzdolabına koy"
+     "İyi yiyecekleri hemen buzdolabına koy"
     ],
-    "e": "Önce kontrol et, sonra kötü yiyecekleri geri gönder. Sadece iyi yiyecekler için imza at ve onları hemen soğuğa koy."
+    "e": "Önce kontrol et, sonra kötü yiyecekleri geri gönder. İyi yiyecekleri hemen soğuğa koy."
    }
   },
   {
@@ -8585,111 +8563,100 @@
     "q": "Put these foods in fridge order, from the top shelf to the bottom shelf.",
     "o": [
      "Ready-to-eat food, like cakes and cooked food",
-     "Raw fish",
-     "Raw beef or lamb",
-     "Raw chicken"
+     "Raw vegetables and fruit that will be washed",
+     "Raw meat and raw chicken"
     ],
-    "e": "Ready-to-eat food goes at the top. Raw food that needs the most cooking, like chicken, goes at the bottom."
+    "e": "Ready-to-eat food goes at the top. Raw meat and chicken go at the bottom, so their juice cannot drip onto other food."
    },
    "ur": {
     "q": "یہ کھانے فریج میں اوپر والے خانے سے نیچے والے خانے تک ترتیب سے لگائیں۔",
     "o": [
      "تیار کھانا، جیسے کیک اور پکا ہوا کھانا",
-     "کچی مچھلی",
-     "کچا بیف یا مٹن",
-     "کچا چکن"
+     "کچی سبزیاں اور پھل جو دھوئے جائیں گے",
+     "کچا گوشت اور کچا چکن"
     ],
-    "e": "تیار کھانا سب سے اوپر رکھیں۔ جس کچے کھانے کو سب سے زیادہ پکانا پڑتا ہے، جیسے چکن، وہ سب سے نیچے۔"
+    "e": "تیار کھانا سب سے اوپر رکھیں۔ کچا گوشت اور چکن سب سے نیچے رکھیں، تاکہ ان کا پانی دوسرے کھانے پر نہ ٹپکے۔"
    },
    "bn": {
     "q": "এই খাবারগুলো ফ্রিজে উপরের তাক থেকে নিচের তাক পর্যন্ত সঠিক ক্রমে সাজান।",
     "o": [
      "তৈরি খাবার, যেমন কেক আর রান্না করা খাবার",
-     "কাঁচা মাছ",
-     "কাঁচা গরু বা খাসির মাংস",
-     "কাঁচা মুরগি"
+     "কাঁচা সবজি আর ফল, যা পরে ধোয়া হবে",
+     "কাঁচা মাংস আর কাঁচা মুরগি"
     ],
-    "e": "তৈরি খাবার সবার উপরে। যে কাঁচা খাবার সবচেয়ে বেশি রান্না লাগে, যেমন মুরগি, সেটা সবার নিচে।"
+    "e": "তৈরি খাবার সবার উপরে। কাঁচা মাংস আর মুরগি সবার নিচে, যাতে এদের রস অন্য খাবারে টপকে না পড়ে।"
    },
    "hi": {
     "q": "इन खानों को फ्रिज के क्रम में लगाएं, ऊपर वाले खाने से नीचे वाले खाने तक।",
     "o": [
      "तैयार खाना, जैसे केक और पका हुआ खाना",
-     "कच्ची मछली",
-     "कच्चा बीफ़ या मटन",
-     "कच्चा चिकन"
+     "कच्ची सब्ज़ियाँ और फल जो धोए जाएँगे",
+     "कच्चा मीट और कच्चा चिकन"
     ],
-    "e": "तैयार खाना सबसे ऊपर रखें। जिस कच्चे खाने को सबसे ज़्यादा पकाना पड़ता है, जैसे चिकन, वो सबसे नीचे रखें।"
+    "e": "तैयार खाना सबसे ऊपर रखें। कच्चा मीट और चिकन सबसे नीचे रखें, ताकि उनका रस दूसरे खाने पर न टपके।"
    },
    "ar": {
     "q": "رتّب هذه الأطعمة في الثلاجة، من الرف العلوي إلى الرف السفلي.",
     "o": [
      "الطعام الجاهز للأكل، مثل الكيك والطعام المطبوخ",
-     "السمك النيء",
-     "لحم البقر أو الغنم النيء",
-     "الدجاج النيء"
+     "الخضار والفواكه النيئة التي ستُغسل",
+     "اللحم النيء والدجاج النيء"
     ],
-    "e": "الطعام الجاهز للأكل يوضع في الأعلى. الطعام النيء الذي يحتاج أكثر طبخ، مثل الدجاج، يوضع في الأسفل."
+    "e": "الطعام الجاهز للأكل يوضع في الأعلى. اللحم والدجاج النيء يوضعان في الأسفل، حتى لا تنقط عصارتهما على الطعام الآخر."
    },
    "ne": {
     "q": "यी खानालाई फ्रिजमा राख्ने क्रममा, माथिल्लो दराजदेखि तल्लो दराजसम्म मिलाउनुहोस्।",
     "o": [
      "सिधै खाने खाना, जस्तै केक र पकाएको खाना",
-     "काँचो माछा",
-     "गाई वा भेडाको काँचो मासु",
-     "काँचो कुखुराको मासु"
+     "धोएर प्रयोग गरिने काँचो तरकारी र फलफूल",
+     "काँचो मासु र काँचो कुखुराको मासु"
     ],
-    "e": "सिधै खाने खाना माथि राखिन्छ। सबैभन्दा धेरै पकाउनुपर्ने काँचो खाना, जस्तै कुखुराको मासु, तल राखिन्छ।"
+    "e": "सिधै खाने खाना माथि राखिन्छ। काँचो मासु र कुखुराको मासु तल राखिन्छ, ताकि तिनको रस अरू खानामा नचुहियोस्।"
    },
    "ml": {
     "q": "ഈ ഭക്ഷണങ്ങൾ ഫ്രിഡ്ജിലെ ക്രമത്തിൽ വയ്ക്കുക, ഏറ്റവും മുകളിലെ തട്ട് മുതൽ ഏറ്റവും താഴത്തെ തട്ട് വരെ.",
     "o": [
      "കേക്ക്, വേവിച്ച ഭക്ഷണം പോലുള്ള നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണം",
-     "പച്ച മീൻ",
-     "പച്ച ബീഫ് അല്ലെങ്കിൽ ആട്ടിറച്ചി",
-     "പച്ച ചിക്കൻ"
+     "പിന്നീട് കഴുകാനുള്ള പച്ചക്കറികളും പഴങ്ങളും",
+     "പച്ച ഇറച്ചിയും പച്ച ചിക്കനും"
     ],
-    "e": "നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണം ഏറ്റവും മുകളിൽ. ചിക്കൻ പോലെ ഏറ്റവും കൂടുതൽ വേവിക്കേണ്ട പച്ച ഭക്ഷണം ഏറ്റവും താഴെ."
+    "e": "നേരിട്ട് കഴിക്കാവുന്ന ഭക്ഷണം ഏറ്റവും മുകളിൽ. പച്ച ഇറച്ചിയും ചിക്കനും ഏറ്റവും താഴെ, അങ്ങനെ അവയുടെ നീര് മറ്റ് ഭക്ഷണത്തിലേക്ക് ഇറ്റുവീഴില്ല."
    },
    "ta": {
     "q": "ஃப்ரிட்ஜில் மேல் தட்டிலிருந்து கீழ் தட்டு வரை, இந்த உணவுகளைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
      "அப்படியே சாப்பிடக்கூடிய உணவு, கேக், சமைத்த உணவு போன்றவை",
-     "பச்சை மீன்",
-     "பச்சை மாட்டிறைச்சி அல்லது ஆட்டிறைச்சி",
-     "பச்சைக் கோழி"
+     "கழுவப்படும் பச்சைக் காய்கறிகளும் பழங்களும்",
+     "பச்சை இறைச்சியும் பச்சைக் கோழியும்"
     ],
-    "e": "அப்படியே சாப்பிடக்கூடிய உணவு மேலே போகும். கோழி போல அதிகம் சமைக்க வேண்டிய பச்சை உணவு கீழே போகும்."
+    "e": "அப்படியே சாப்பிடக்கூடிய உணவு மேலே போகும். பச்சை இறைச்சியும் கோழியும் கீழே போகும், அப்போதுதான் அவற்றின் சாறு மற்ற உணவின் மேல் சொட்டாது."
    },
    "fil": {
     "q": "Ayusin ang mga pagkaing ito ayon sa puwesto sa ref, mula sa pinakataas na shelf hanggang sa pinakababa.",
     "o": [
      "Pagkaing handa nang kainin, gaya ng cake at lutong pagkain",
-     "Hilaw na isda",
-     "Hilaw na baka o tupa",
-     "Hilaw na manok"
+     "Hilaw na gulay at prutas na huhugasan pa",
+     "Hilaw na karne at hilaw na manok"
     ],
-    "e": "Nasa pinakataas ang pagkaing handa nang kainin. Nasa pinakababa ang hilaw na pagkaing kailangang lutuin nang pinakamatagal, gaya ng manok."
+    "e": "Nasa pinakataas ang pagkaing handa nang kainin. Nasa pinakababa ang hilaw na karne at manok, para hindi tumulo ang katas nila sa ibang pagkain."
    },
    "ind": {
     "q": "Susun makanan ini sesuai urutan di kulkas, dari rak paling atas sampai rak paling bawah.",
     "o": [
      "Makanan siap makan, seperti kue dan makanan matang",
-     "Ikan mentah",
-     "Daging sapi atau kambing mentah",
-     "Ayam mentah"
+     "Sayur dan buah mentah yang nanti dicuci",
+     "Daging mentah dan ayam mentah"
     ],
-    "e": "Makanan siap makan ditaruh paling atas. Makanan mentah yang paling perlu dimasak matang, seperti ayam, ditaruh paling bawah."
+    "e": "Makanan siap makan ditaruh paling atas. Daging dan ayam mentah ditaruh paling bawah, supaya cairannya tidak menetes ke makanan lain."
    },
    "tr": {
     "q": "Bu yiyecekleri buzdolabı sırasına koy, en üst raftan en alt rafa.",
     "o": [
      "Hazır yenecek gıda, kek ve pişmiş yemek gibi",
-     "Çiğ balık",
-     "Çiğ dana ya da kuzu eti",
-     "Çiğ tavuk"
+     "Yıkanacak çiğ sebze ve meyve",
+     "Çiğ et ve çiğ tavuk"
     ],
-    "e": "Hazır yenecek gıda en üste konur. En çok pişirilmesi gereken çiğ gıda, tavuk gibi, en alta konur."
+    "e": "Hazır yenecek gıda en üste konur. Çiğ et ve tavuk en alta konur, böylece suları başka yiyeceklerin üstüne damlayamaz."
    }
   },
   {
@@ -12146,130 +12113,120 @@
   },
   {
    "id": "k112",
-   "type": "order",
+   "type": "single",
    "d": 2,
    "ch": 1,
    "en": {
-    "q": "Put the steps for getting a health certificate in the correct order.",
+    "q": "What do you need to get a health certificate?",
     "o": [
-     "Go to the health office (health authority)",
-     "Have the medical checks and vaccinations (injections)",
-     "Receive the health certificate",
-     "Start working with food",
-     "Renew it before 1 year ends"
+     "Medical checks, vaccinations (injections) and the health education course",
+     "Only a passport photo",
+     "Only a letter from your manager",
+     "Nothing, every worker gets one"
     ],
-    "e": "You visit the health office, have checks and vaccines, then get the certificate. It lasts 1 year, so renew it in time."
+    "e": "You need the medical checks, the vaccinations and the health training course. The certificate lasts 1 year, so renew it before it ends."
    },
    "ur": {
-    "q": "ہیلتھ سرٹیفکیٹ لینے کے مراحل صحیح ترتیب میں لگائیں۔",
+    "q": "ہیلتھ سرٹیفکیٹ لینے کے لیے کیا ضروری ہے؟",
     "o": [
-     "صحت کے سرکاری دفتر جائیں",
-     "میڈیکل چیک اپ اور ویکسین (ٹیکے) کروائیں",
-     "ہیلتھ سرٹیفکیٹ لیں",
-     "کھانے کا کام شروع کریں",
-     "1 سال ختم ہونے سے پہلے نیا کروائیں"
+     "میڈیکل چیک اپ، ویکسین (ٹیکے) اور صحت کی تعلیم کا کورس",
+     "صرف پاسپورٹ والی تصویر",
+     "صرف مینیجر کا خط",
+     "کچھ نہیں، ہر ورکر کو مل جاتا ہے"
     ],
-    "e": "پہلے صحت کے دفتر جائیں، چیک اپ اور ٹیکے کروائیں، پھر سرٹیفکیٹ ملتا ہے۔ یہ 1 سال چلتا ہے، اس لیے وقت پر نیا کروائیں۔"
+    "e": "آپ کو میڈیکل چیک اپ، ٹیکے اور صحت کی ٹریننگ کا کورس چاہیے۔ سرٹیفکیٹ 1 سال چلتا ہے، اس لیے ختم ہونے سے پہلے نیا کروائیں۔"
    },
    "hi": {
-    "q": "हेल्थ सर्टिफिकेट लेने के कदम सही क्रम में लगाएँ।",
+    "q": "हेल्थ सर्टिफिकेट लेने के लिए क्या चाहिए?",
     "o": [
-     "सेहत के सरकारी दफ़्तर जाएँ",
-     "मेडिकल जाँच और टीके करवाएँ",
-     "हेल्थ सर्टिफिकेट लें",
-     "खाने का काम शुरू करें",
-     "1 साल ख़त्म होने से पहले नया करवाएँ"
+     "मेडिकल जाँच, टीके (इंजेक्शन) और सेहत की शिक्षा का कोर्स",
+     "सिर्फ़ पासपोर्ट वाली फ़ोटो",
+     "सिर्फ़ मैनेजर की चिट्ठी",
+     "कुछ नहीं, हर वर्कर को मिल जाता है"
     ],
-    "e": "पहले सेहत के दफ़्तर जाएँ, जाँच और टीके करवाएँ, फिर सर्टिफिकेट मिलता है। यह 1 साल चलता है, इसलिए समय पर नया करवाएँ।"
+    "e": "आपको मेडिकल जाँच, टीके और सेहत की ट्रेनिंग का कोर्स चाहिए। सर्टिफिकेट 1 साल चलता है, इसलिए ख़त्म होने से पहले नया करवाएँ।"
    },
    "bn": {
-    "q": "হেলথ সার্টিফিকেট পাওয়ার ধাপগুলো সঠিক ক্রমে সাজান।",
+    "q": "হেলথ সার্টিফিকেট পেতে কী কী লাগে?",
     "o": [
-     "স্বাস্থ্যের সরকারি অফিসে যান",
-     "মেডিকেল চেকআপ আর টিকা নিন",
-     "হেলথ সার্টিফিকেট নিন",
-     "খাবারের কাজ শুরু করুন",
-     "1 বছর শেষ হওয়ার আগে নতুন করুন"
+     "মেডিকেল চেকআপ, টিকা (ইনজেকশন) আর স্বাস্থ্য শিক্ষার কোর্স",
+     "শুধু পাসপোর্টের ছবি",
+     "শুধু আপনার ম্যানেজারের একটা চিঠি",
+     "কিছুই লাগে না, সব কর্মী এমনিই পায়"
     ],
-    "e": "আগে স্বাস্থ্য অফিসে যান, চেকআপ আর টিকা নিন, তারপর সার্টিফিকেট পাবেন। এটা 1 বছর চলে, তাই সময়মতো নতুন করুন।"
+    "e": "মেডিকেল চেকআপ, টিকা আর স্বাস্থ্য প্রশিক্ষণের কোর্স লাগে। সার্টিফিকেট 1 বছর চলে, তাই শেষ হওয়ার আগেই নতুন করুন।"
    },
    "ar": {
-    "q": "رتّب خطوات الحصول على الشهادة الصحية بالترتيب الصحيح.",
+    "q": "ماذا تحتاج للحصول على الشهادة الصحية؟",
     "o": [
-     "اذهب إلى مكتب الصحة (الجهة الصحية)",
-     "اعمل الفحوصات الطبية والتطعيمات (الحقن)",
-     "استلم الشهادة الصحية",
-     "ابدأ العمل بالطعام",
-     "جدّدها قبل أن تنتهي السنة الأولى"
+     "الفحوصات الطبية والتطعيمات (الحقن) ودورة التثقيف الصحي",
+     "صورة جواز سفر فقط",
+     "رسالة من مديرك فقط",
+     "لا شيء، كل عامل يحصل عليها"
     ],
-    "e": "تذهب إلى مكتب الصحة، وتعمل الفحوصات والتطعيمات، ثم تأخذ الشهادة. هي صالحة لمدة سنة واحدة، فجدّدها في الوقت المناسب."
+    "e": "تحتاج الفحوصات الطبية والتطعيمات ودورة التدريب الصحي. الشهادة صالحة لمدة سنة واحدة، فجدّدها قبل أن تنتهي."
    },
    "ne": {
-    "q": "हेल्थ सर्टिफिकेट लिने चरणहरूलाई सही क्रममा मिलाउनुहोस्।",
+    "q": "हेल्थ सर्टिफिकेट लिन के चाहिन्छ?",
     "o": [
-     "स्वास्थ्य कार्यालय (स्वास्थ्य निकाय) मा जाने",
-     "स्वास्थ्य जाँच गराउने र खोप (सुई) लगाउने",
-     "हेल्थ सर्टिफिकेट पाउने",
-     "खानाको काम सुरु गर्ने",
-     "1 वर्ष सकिनुअघि नवीकरण गर्ने"
+     "स्वास्थ्य जाँच, खोप (सुई) र स्वास्थ्य शिक्षाको कोर्स",
+     "पासपोर्ट साइजको फोटो मात्र",
+     "म्यानेजरको चिठी मात्र",
+     "केही चाहिँदैन, हरेक कामदारले पाउँछ"
     ],
-    "e": "तपाईं स्वास्थ्य कार्यालय जानुहुन्छ, जाँच र खोप गराउनुहुन्छ, अनि सर्टिफिकेट पाउनुहुन्छ। यो 1 वर्ष चल्छ, त्यसैले समयमै नवीकरण गर्नुहोस्।"
+    "e": "तपाईंलाई स्वास्थ्य जाँच, खोप र स्वास्थ्य तालिमको कोर्स चाहिन्छ। सर्टिफिकेट 1 वर्ष चल्छ, त्यसैले म्याद सकिनुअघि नै नवीकरण गर्नुहोस्।"
    },
    "ml": {
-    "q": "ഹെൽത്ത് സർട്ടിഫിക്കറ്റ് കിട്ടാനുള്ള സ്റ്റെപ്പുകൾ ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "ഹെൽത്ത് സർട്ടിഫിക്കറ്റ് കിട്ടാൻ എന്തൊക്കെ വേണം?",
     "o": [
-     "ആരോഗ്യ ഓഫീസിൽ (ഹെൽത്ത് അതോറിറ്റി) പോകുക",
-     "മെഡിക്കൽ പരിശോധനകളും വാക്സിനുകളും (കുത്തിവയ്പ്പുകൾ) എടുക്കുക",
-     "ഹെൽത്ത് സർട്ടിഫിക്കറ്റ് വാങ്ങുക",
-     "ഭക്ഷണ ജോലി തുടങ്ങുക",
-     "1 വർഷം തീരുന്നതിന് മുമ്പ് അത് പുതുക്കുക"
+     "മെഡിക്കൽ പരിശോധനകൾ, വാക്സിനുകൾ (കുത്തിവയ്പ്പുകൾ), ആരോഗ്യ വിദ്യാഭ്യാസ കോഴ്സ്",
+     "പാസ്പോർട്ട് ഫോട്ടോ മാത്രം",
+     "മാനേജറുടെ ഒരു കത്ത് മാത്രം",
+     "ഒന്നും വേണ്ട, എല്ലാ ജോലിക്കാർക്കും കിട്ടും"
     ],
-    "e": "ആരോഗ്യ ഓഫീസിൽ പോയി പരിശോധനകളും വാക്സിനുകളും എടുക്കുക, പിന്നെ സർട്ടിഫിക്കറ്റ് കിട്ടും. അതിന് 1 വർഷം കാലാവധിയുണ്ട്, അതുകൊണ്ട് സമയത്ത് പുതുക്കുക."
+    "e": "മെഡിക്കൽ പരിശോധനകളും വാക്സിനുകളും ആരോഗ്യ ട്രെയിനിങ് കോഴ്സും വേണം. സർട്ടിഫിക്കറ്റിന് 1 വർഷം കാലാവധിയുണ്ട്, അതുകൊണ്ട് അത് തീരുന്നതിന് മുമ്പ് പുതുക്കുക."
    },
    "ta": {
-    "q": "ஹெல்த் சர்டிஃபிகேட் வாங்குவதற்கான படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "ஹெல்த் சர்டிஃபிகேட் வாங்க உங்களுக்கு என்ன தேவை?",
     "o": [
-     "சுகாதார அலுவலகத்துக்கு (சுகாதாரத் துறை) செல்லுங்கள்",
-     "மருத்துவப் பரிசோதனைகள் செய்து, தடுப்பூசிகள் (ஊசிகள்) போட்டுக்கொள்ளுங்கள்",
-     "ஹெல்த் சர்டிஃபிகேட்டை வாங்குங்கள்",
-     "உணவு வேலையைத் தொடங்குங்கள்",
-     "1 வருடம் முடிவதற்கு முன் அதைப் புதுப்பியுங்கள்"
+     "மருத்துவப் பரிசோதனைகள், தடுப்பூசிகள் (ஊசிகள்), சுகாதாரக் கல்வி கோர்ஸ் (பயிற்சி வகுப்பு)",
+     "பாஸ்போர்ட் புகைப்படம் மட்டும்",
+     "உங்கள் மேனேஜரிடமிருந்து ஒரு கடிதம் மட்டும்",
+     "எதுவும் தேவையில்லை, எல்லாப் பணியாளர்களுக்கும் கிடைக்கும்"
     ],
-    "e": "சுகாதார அலுவலகத்துக்குப் போய், பரிசோதனைகளும் தடுப்பூசிகளும் முடிந்த பிறகு சர்டிஃபிகேட் கிடைக்கும். அது 1 வருடம் மட்டுமே செல்லும், அதனால் நேரத்தில் புதுப்பியுங்கள்."
+    "e": "மருத்துவப் பரிசோதனைகள், தடுப்பூசிகள், சுகாதாரப் பயிற்சி கோர்ஸ் ஆகியவை தேவை. சர்டிஃபிகேட் 1 வருடம் செல்லும், அதனால் அது முடிவதற்கு முன் புதுப்பியுங்கள்."
    },
    "fil": {
-    "q": "Ayusin ang mga hakbang sa pagkuha ng health certificate sa tamang pagkakasunod.",
+    "q": "Ano ang kailangan mo para makakuha ng health certificate?",
     "o": [
-     "Pumunta sa health office (health authority)",
-     "Magpa-medical check at magpabakuna (iniksyon)",
-     "Tanggapin ang health certificate",
-     "Magsimulang magtrabaho sa pagkain",
-     "I-renew ito bago matapos ang 1 taon"
+     "Medical check, bakuna (iniksyon) at ang health education course",
+     "Passport photo lang",
+     "Sulat lang mula sa manager mo",
+     "Wala, lahat ng trabahador ay nabibigyan nito"
     ],
-    "e": "Pupunta ka sa health office, magpapa-check at magpapabakuna, tapos makukuha mo ang certificate. 1 taon ang bisa nito, kaya i-renew ito sa tamang oras."
+    "e": "Kailangan mo ang medical check, ang mga bakuna at ang health training course. 1 taon ang bisa ng certificate, kaya i-renew ito bago matapos."
    },
    "ind": {
-    "q": "Susun langkah-langkah untuk mendapatkan sertifikat kesehatan dengan urutan yang benar.",
+    "q": "Apa yang Anda perlukan untuk mendapatkan sertifikat kesehatan?",
     "o": [
-     "Pergi ke kantor kesehatan (dinas kesehatan)",
-     "Jalani pemeriksaan kesehatan dan vaksinasi (suntikan)",
-     "Terima sertifikat kesehatan",
-     "Mulai bekerja dengan makanan",
-     "Perpanjang sebelum 1 tahun habis"
+     "Pemeriksaan kesehatan, vaksinasi (suntikan) dan kursus pendidikan kesehatan",
+     "Hanya pas foto",
+     "Hanya surat dari manajer Anda",
+     "Tidak perlu apa-apa, semua pekerja pasti dapat"
     ],
-    "e": "Anda datang ke kantor kesehatan, menjalani pemeriksaan dan vaksin, lalu mendapat sertifikat. Sertifikat berlaku 1 tahun, jadi perpanjang tepat waktu."
+    "e": "Anda perlu pemeriksaan kesehatan, vaksinasi dan kursus pelatihan kesehatan. Sertifikat berlaku 1 tahun, jadi perpanjang sebelum habis."
    },
    "tr": {
-    "q": "Sağlık sertifikası alma adımlarını doğru sıraya koy.",
+    "q": "Sağlık sertifikası almak için neye ihtiyacın var?",
     "o": [
-     "Sağlık müdürlüğüne (sağlık kurumuna) git",
-     "Sağlık kontrollerini ve aşıları (iğneleri) yaptır",
-     "Sağlık sertifikasını al",
-     "Gıdayla çalışmaya başla",
-     "1 yıl bitmeden yenile"
+     "Sağlık kontrolleri, aşılar (iğneler) ve sağlık eğitimi kursu",
+     "Sadece vesikalık fotoğraf",
+     "Sadece müdüründen bir mektup",
+     "Hiçbir şey, her çalışan otomatik alır"
     ],
-    "e": "Sağlık müdürlüğüne gidersin, kontrolleri ve aşıları yaptırırsın, sonra sertifikayı alırsın. 1 yıl geçerlidir, o yüzden zamanında yenile."
-   }
+    "e": "Sağlık kontrolleri, aşılar ve sağlık eğitimi kursu gerekir. Sertifika 1 yıl geçerlidir, o yüzden süresi bitmeden yenile."
+   },
+   "ans": 0
   },
   {
    "id": "k113",
@@ -14794,125 +14751,125 @@
    "d": 2,
    "ch": 3,
    "en": {
-    "q": "Put these temperatures in order, from the coldest to the hottest.",
-    "e": "Cold slows germs, 5°C to 63°C is the danger zone, and 75°C kills most harmful germs.",
+    "q": "Put these places in order, from the coldest to the hottest.",
     "o": [
-     "−18°C: freezer, germs stop but do not die",
-     "4°C: fridge, germs grow very slowly",
-     "37°C: germs grow fastest",
-     "63°C: keep hot food at this or above",
-     "75°C: most harmful germs are killed"
-    ]
+     "Freezer",
+     "Fridge",
+     "Room temperature in a warm kitchen",
+     "Hot food display",
+     "Centre of chicken when it is fully cooked"
+    ],
+    "e": "Freezer −18°C or colder, fridge 0-4°C, a warm kitchen about 25-37°C (germs grow fast), hot display 63°C or above, cooked chicken 75°C in the centre."
    },
    "ur": {
-    "q": "ان درجہ حرارت کو سب سے ٹھنڈے سے سب سے گرم تک ترتیب دیں۔",
-    "e": "ٹھنڈ جراثیم کو سست کرتی ہے، 5°C سے 63°C خطرے کا زون ہے، اور 75°C پر زیادہ تر نقصان دہ جراثیم مر جاتے ہیں۔",
+    "q": "ان جگہوں کو سب سے ٹھنڈی سے سب سے گرم تک ترتیب دیں۔",
     "o": [
-     "−18°C: فریزر، جراثیم رک جاتے ہیں مگر مرتے نہیں",
-     "4°C: فریج، جراثیم بہت آہستہ بڑھتے ہیں",
-     "37°C: جراثیم سب سے تیز بڑھتے ہیں",
-     "63°C: گرم کھانا اتنے یا زیادہ پر رکھیں",
-     "75°C: زیادہ تر نقصان دہ جراثیم مر جاتے ہیں"
-    ]
+     "فریزر",
+     "فریج",
+     "گرم کچن میں کمرے کا درجہ حرارت",
+     "گرم کھانے کا ڈسپلے",
+     "پوری طرح پکی ہوئی مرغی کا درمیان"
+    ],
+    "e": "فریزر −18°C یا اس سے ٹھنڈا، فریج 0-4°C، گرم کچن تقریباً 25-37°C (جراثیم تیزی سے بڑھتے ہیں)، گرم ڈسپلے 63°C یا زیادہ، پکی ہوئی مرغی کا درمیان 75°C۔"
    },
    "hi": {
-    "q": "इन तापमानों को सबसे ठंडे से सबसे गरम तक क्रम में लगाएँ।",
-    "e": "ठंड कीटाणुओं को धीमा करती है, 5°C से 63°C खतरे का ज़ोन है, और 75°C पर ज़्यादातर नुकसान वाले कीटाणु मर जाते हैं।",
+    "q": "इन जगहों को सबसे ठंडी से सबसे गरम तक क्रम में लगाएँ।",
     "o": [
-     "−18°C: फ़्रीज़र, कीटाणु रुकते हैं पर मरते नहीं",
-     "4°C: फ्रिज, कीटाणु बहुत धीरे बढ़ते हैं",
-     "37°C: कीटाणु सबसे तेज़ बढ़ते हैं",
-     "63°C: गरम खाना इतने या ज़्यादा पर रखें",
-     "75°C: ज़्यादातर नुकसान वाले कीटाणु मर जाते हैं"
-    ]
+     "फ़्रीज़र",
+     "फ्रिज",
+     "गरम किचन में कमरे का तापमान",
+     "गरम खाने का डिस्प्ले",
+     "पूरी तरह पके चिकन का बीच का हिस्सा"
+    ],
+    "e": "फ़्रीज़र −18°C या उससे ठंडा, फ्रिज 0-4°C, गरम किचन लगभग 25-37°C (कीटाणु तेज़ी से बढ़ते हैं), गरम डिस्प्ले 63°C या ज़्यादा, पका चिकन बीच में 75°C।"
    },
    "bn": {
-    "q": "এই তাপমাত্রাগুলো সবচেয়ে ঠান্ডা থেকে সবচেয়ে গরম ক্রমে সাজান।",
-    "e": "ঠান্ডা জীবাণুকে ধীর করে, 5°C থেকে 63°C বিপদের সীমা, আর 75°C-এ বেশিরভাগ ক্ষতিকর জীবাণু মরে।",
+    "q": "এই জায়গাগুলো সবচেয়ে ঠান্ডা থেকে সবচেয়ে গরম ক্রমে সাজান।",
     "o": [
-     "−18°C: ফ্রিজার, জীবাণু থেমে থাকে কিন্তু মরে না",
-     "4°C: ফ্রিজ, জীবাণু খুব ধীরে বাড়ে",
-     "37°C: জীবাণু সবচেয়ে দ্রুত বাড়ে",
-     "63°C: গরম খাবার এতে বা এর বেশিতে রাখুন",
-     "75°C: বেশিরভাগ ক্ষতিকর জীবাণু মরে যায়"
-    ]
+     "ফ্রিজার",
+     "ফ্রিজ",
+     "গরম রান্নাঘরে ঘরের তাপমাত্রা",
+     "গরম খাবারের ডিসপ্লে",
+     "পুরো রান্না হওয়া মুরগির মাঝখান"
+    ],
+    "e": "ফ্রিজার −18°C বা আরও ঠান্ডা, ফ্রিজ 0-4°C, গরম রান্নাঘর প্রায় 25-37°C (জীবাণু দ্রুত বাড়ে), গরম ডিসপ্লে 63°C বা বেশি, রান্না করা মুরগির মাঝখান 75°C।"
    },
    "ar": {
-    "q": "رتّب درجات الحرارة هذه، من الأبرد إلى الأسخن.",
+    "q": "رتّب هذه الأماكن، من الأبرد إلى الأسخن.",
     "o": [
-     "−18°C: الفريزر، الجراثيم تتوقف لكنها لا تموت",
-     "4°C: الثلاجة، الجراثيم تنمو ببطء شديد",
-     "37°C: الجراثيم تنمو بأسرع شكل",
-     "63°C: احفظ الطعام الساخن على هذه الحرارة أو أكثر",
-     "75°C: معظم الجراثيم الضارة تموت"
+     "الفريزر",
+     "الثلاجة",
+     "حرارة الغرفة في مطبخ دافئ",
+     "خزانة عرض الطعام الساخن",
+     "وسط الدجاج عندما ينضج تماماً"
     ],
-    "e": "البرد يبطئ الجراثيم، ومن 5°C إلى 63°C هي منطقة الخطر، و 75°C تقتل معظم الجراثيم الضارة."
+    "e": "الفريزر −18°C أو أبرد، والثلاجة 0-4°C، والمطبخ الدافئ حوالي 25-37°C (الجراثيم تنمو بسرعة)، وخزانة العرض الساخنة 63°C أو أكثر، والدجاج المطبوخ 75°C في الوسط."
    },
    "ne": {
-    "q": "यी तापक्रमलाई सबैभन्दा चिसोदेखि सबैभन्दा तातोसम्म क्रममा मिलाउनुहोस्।",
+    "q": "यी ठाउँहरूलाई सबैभन्दा चिसोदेखि सबैभन्दा तातोसम्म क्रममा मिलाउनुहोस्।",
     "o": [
-     "−18°C: फ्रिजर, किटाणु रोकिन्छन् तर मर्दैनन्",
-     "4°C: फ्रिज, किटाणु धेरै बिस्तारै बढ्छन्",
-     "37°C: किटाणु सबैभन्दा छिटो बढ्छन्",
-     "63°C: तातो खाना यति वा यसभन्दा बढीमा राख्ने",
-     "75°C: धेरैजसो हानिकारक किटाणु मर्छन्"
+     "फ्रिजर",
+     "फ्रिज",
+     "तातो भान्साको कोठाको तापक्रम",
+     "तातो खानाको डिस्प्ले",
+     "राम्ररी पाकेको कुखुराको बीच भाग"
     ],
-    "e": "चिसोले किटाणुलाई ढिलो बनाउँछ, 5°C देखि 63°C खतराको तापक्रम (डेन्जर जोन) हो, र 75°C ले धेरैजसो हानिकारक किटाणु मार्छ।"
+    "e": "फ्रिजर −18°C वा त्योभन्दा चिसो, फ्रिज 0-4°C, तातो भान्सा करिब 25-37°C (किटाणु छिटो बढ्छन्), तातो डिस्प्ले 63°C वा बढी, पाकेको कुखुराको बीच भाग 75°C।"
    },
    "ml": {
-    "q": "ഈ താപനിലകൾ ഏറ്റവും തണുപ്പ് മുതൽ ഏറ്റവും ചൂട് വരെ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "ഈ സ്ഥലങ്ങൾ ഏറ്റവും തണുപ്പ് മുതൽ ഏറ്റവും ചൂട് വരെ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
-     "−18°C: ഫ്രീസർ, അണുക്കൾ നിൽക്കും പക്ഷേ ചാകില്ല",
-     "4°C: ഫ്രിഡ്ജ്, അണുക്കൾ വളരെ പതുക്കെ വളരും",
-     "37°C: അണുക്കൾ ഏറ്റവും വേഗത്തിൽ വളരും",
-     "63°C: ചൂടുള്ള ഭക്ഷണം ഈ ചൂടിലോ അതിനു മുകളിലോ വയ്ക്കുക",
-     "75°C: ദോഷമുള്ള മിക്ക അണുക്കളും ചാകും"
+     "ഫ്രീസർ",
+     "ഫ്രിഡ്ജ്",
+     "ചൂടുള്ള അടുക്കളയിലെ സാധാരണ ചൂട്",
+     "ചൂടുള്ള ഭക്ഷണത്തിന്റെ ഡിസ്പ്ലേ",
+     "നന്നായി വെന്ത ചിക്കന്റെ നടുഭാഗം"
     ],
-    "e": "തണുപ്പ് അണുക്കളുടെ വളർച്ച കുറയ്ക്കും, 5°C മുതൽ 63°C വരെ അപകട മേഖലയാണ്, 75°C ദോഷമുള്ള മിക്ക അണുക്കളെയും കൊല്ലും."
+    "e": "ഫ്രീസർ −18°C അല്ലെങ്കിൽ അതിലും തണുപ്പ്, ഫ്രിഡ്ജ് 0-4°C, ചൂടുള്ള അടുക്കള ഏകദേശം 25-37°C (അണുക്കൾ വേഗം വളരും), ചൂടുള്ള ഡിസ്പ്ലേ 63°C അല്ലെങ്കിൽ അതിനു മുകളിൽ, വെന്ത ചിക്കന്റെ നടുഭാഗം 75°C."
    },
    "ta": {
-    "q": "இந்த வெப்பநிலைகளை, மிகக் குளிரானதிலிருந்து மிகச் சூடானது வரை வரிசையில் வையுங்கள்.",
+    "q": "இந்த இடங்களை, மிகக் குளிரானதிலிருந்து மிகச் சூடானது வரை வரிசையில் வையுங்கள்.",
     "o": [
-     "−18°C: ஃப்ரீசர், கிருமிகள் நின்றுவிடும் ஆனால் சாகாது",
-     "4°C: ஃப்ரிட்ஜ், கிருமிகள் மிக மெதுவாக வளரும்",
-     "37°C: கிருமிகள் மிக வேகமாக வளரும்",
-     "63°C: சூடான உணவை இந்த அளவில் அல்லது அதற்கு மேல் வையுங்கள்",
-     "75°C: பெரும்பாலான தீங்கான கிருமிகள் சாகும்"
+     "ஃப்ரீசர்",
+     "ஃப்ரிட்ஜ்",
+     "சூடான சமையலறையில் அறை வெப்பநிலை",
+     "சூடான உணவு டிஸ்ப்ளே",
+     "முழுமையாகச் சமைத்த கோழியின் நடுப்பகுதி"
     ],
-    "e": "குளிர் கிருமிகளை மெதுவாக்கும், 5°C முதல் 63°C வரை ஆபத்தான வெப்பநிலை (டேஞ்சர் சோன்), 75°C பெரும்பாலான தீங்கான கிருமிகளைக் கொல்லும்."
+    "e": "ஃப்ரீசர் −18°C அல்லது அதைவிடக் குளிர், ஃப்ரிட்ஜ் 0-4°C, சூடான சமையலறை சுமார் 25-37°C (கிருமிகள் வேகமாக வளரும்), சூடான டிஸ்ப்ளே 63°C அல்லது அதற்கு மேல், சமைத்த கோழி நடுப்பகுதியில் 75°C."
    },
    "fil": {
-    "q": "Ayusin ang mga temperaturang ito, mula sa pinakamalamig hanggang sa pinakamainit.",
+    "q": "Ayusin ang mga lugar na ito, mula sa pinakamalamig hanggang sa pinakamainit.",
     "o": [
-     "−18°C: freezer, tumitigil ang mikrobyo pero hindi namamatay",
-     "4°C: ref, napakabagal dumami ng mikrobyo",
-     "37°C: pinakamabilis dumami ang mikrobyo",
-     "63°C: panatilihin ang mainit na pagkain dito o mas mataas",
-     "75°C: namamatay ang karamihan ng masamang mikrobyo"
+     "Freezer",
+     "Ref",
+     "Temperatura ng kuwarto sa mainit na kusina",
+     "Display ng mainit na pagkain",
+     "Gitna ng manok kapag luto na ito nang buo"
     ],
-    "e": "Pinapabagal ng lamig ang mikrobyo, ang 5°C hanggang 63°C ay danger zone, at ang 75°C ay pumapatay sa karamihan ng masamang mikrobyo."
+    "e": "Freezer −18°C o mas malamig, ref 0-4°C, mainit na kusina mga 25-37°C (mabilis dumami ang mikrobyo), mainit na display 63°C o mas mataas, lutong manok 75°C sa gitna."
    },
    "ind": {
-    "q": "Susun suhu-suhu ini dengan urutan yang benar, dari yang paling dingin ke yang paling panas.",
+    "q": "Susun tempat-tempat ini dengan urutan yang benar, dari yang paling dingin ke yang paling panas.",
     "o": [
-     "−18°C: freezer, kuman berhenti tetapi tidak mati",
-     "4°C: kulkas, kuman tumbuh sangat lambat",
-     "37°C: kuman tumbuh paling cepat",
-     "63°C: jaga makanan panas di suhu ini atau lebih",
-     "75°C: sebagian besar kuman berbahaya mati"
+     "Freezer",
+     "Kulkas",
+     "Suhu ruangan di dapur yang hangat",
+     "Etalase makanan panas",
+     "Bagian tengah ayam yang sudah matang sempurna"
     ],
-    "e": "Dingin memperlambat kuman, 5°C sampai 63°C adalah zona bahaya, dan 75°C membunuh sebagian besar kuman berbahaya."
+    "e": "Freezer −18°C atau lebih dingin, kulkas 0-4°C, dapur yang hangat sekitar 25-37°C (kuman tumbuh cepat), etalase panas 63°C atau lebih, ayam matang 75°C di bagian tengah."
    },
    "tr": {
-    "q": "Bu sıcaklıkları en soğuktan en sıcağa doğru sıraya koy.",
+    "q": "Bu yerleri en soğuktan en sıcağa doğru sıraya koy.",
     "o": [
-     "−18°C: dondurucu, mikroplar durur ama ölmez",
-     "4°C: buzdolabı, mikroplar çok yavaş ürer",
-     "37°C: mikroplar en hızlı ürer",
-     "63°C: sıcak yemeği bu derecede ya da daha sıcak tut",
-     "75°C: zararlı mikropların çoğu ölür"
+     "Dondurucu",
+     "Buzdolabı",
+     "Sıcak bir mutfakta oda sıcaklığı",
+     "Sıcak yemek teşhiri",
+     "Tamamen pişmiş tavuğun ortası"
     ],
-    "e": "Soğuk mikropları yavaşlatır, 5°C ile 63°C arası tehlikeli sıcaklık aralığıdır ve 75°C zararlı mikropların çoğunu öldürür."
+    "e": "Dondurucu −18°C ya da daha soğuk, buzdolabı 0-4°C, sıcak bir mutfak yaklaşık 25-37°C (mikroplar hızlı ürer), sıcak teşhir 63°C ya da daha sıcak, pişmiş tavuğun ortası 75°C."
    }
   },
   {
@@ -18079,7 +18036,7 @@
    "d": 3,
    "ch": 6,
    "en": {
-    "q": "Meat gravy is made in the morning and kept warm until dinner. What is the danger?",
+    "q": "Meat gravy is made in the morning and left on the side of the stove, warm but not hot, until dinner. What is the danger?",
     "o": [
      "Germs from the meat grow in it while it waits",
      "Only the taste gets worse",
@@ -18089,7 +18046,7 @@
     "e": "Some meat germs survive cooking and grow in warm gravy. Make it close to serving time, or keep it at 63°C or above."
    },
    "ur": {
-    "q": "گوشت کی گریوی صبح بنا کر رات کے کھانے تک ہلکی گرم رکھی گئی۔ اس میں کیا خطرہ ہے؟",
+    "q": "گوشت کی گریوی صبح بنا کر رات کے کھانے تک چولہے کے ایک طرف رکھی گئی، ہلکی گرم مگر زیادہ گرم نہیں۔ اس میں کیا خطرہ ہے؟",
     "o": [
      "گوشت کے جراثیم انتظار کے دوران اس میں بڑھتے ہیں",
      "صرف ذائقہ خراب ہوتا ہے",
@@ -18099,7 +18056,7 @@
     "e": "گوشت کے کچھ جراثیم پکانے کے بعد بھی بچ جاتے ہیں اور ہلکی گرم گریوی میں بڑھتے ہیں۔ اسے پیش کرنے کے قریب بنائیں، یا 63°C یا زیادہ پر رکھیں۔"
    },
    "hi": {
-    "q": "मीट की ग्रेवी सुबह बनाकर रात के खाने तक हल्की गरम रखी गई। इसमें क्या खतरा है?",
+    "q": "मीट की ग्रेवी सुबह बनाकर रात के खाने तक चूल्हे के किनारे रखी गई, हल्की गरम पर ज़्यादा गरम नहीं। इसमें क्या खतरा है?",
     "o": [
      "मीट के कीटाणु इंतज़ार में इसमें बढ़ते हैं",
      "सिर्फ स्वाद खराब होता है",
@@ -18109,7 +18066,7 @@
     "e": "मीट के कुछ कीटाणु पकाने के बाद भी बच जाते हैं और हल्की गरम ग्रेवी में बढ़ते हैं। इसे परोसने के समय के पास बनाएं, या 63°C या उससे ज़्यादा पर रखें।"
    },
    "bn": {
-    "q": "মাংসের ঝোল সকালে রান্না করে রাতের খাবার পর্যন্ত হালকা গরম রাখা হয়েছে। এতে কী বিপদ?",
+    "q": "মাংসের ঝোল সকালে রান্না করে রাতের খাবার পর্যন্ত চুলার পাশে রেখে দেওয়া হয়েছে, হালকা গরম কিন্তু বেশি গরম না। এতে কী বিপদ?",
     "o": [
      "অপেক্ষার সময় মাংসের জীবাণু এতে বাড়ে",
      "শুধু স্বাদ খারাপ হয়",
@@ -18119,7 +18076,7 @@
     "e": "মাংসের কিছু জীবাণু রান্নার পরও বেঁচে থাকে আর হালকা গরম ঝোলে বাড়ে। পরিবেশনের কাছাকাছি সময়ে বানান, অথবা 63°C বা বেশিতে রাখুন।"
    },
    "ar": {
-    "q": "مرق اللحم يُعمل في الصباح ويُحفظ دافئاً حتى العشاء. ما الخطر؟",
+    "q": "مرق اللحم يُعمل في الصباح ويُترك على جانب الموقد، دافئاً لكن ليس ساخناً، حتى العشاء. ما الخطر؟",
     "o": [
      "جراثيم اللحم تنمو فيه وهو ينتظر",
      "الطعم فقط يصبح أسوأ",
@@ -18129,7 +18086,7 @@
     "e": "بعض جراثيم اللحم تبقى حية بعد الطبخ وتنمو في المرق الدافئ. اعمله قريباً من وقت التقديم، أو احفظه على 63°C أو أكثر."
    },
    "ne": {
-    "q": "मासुको झोल बिहान बनाइन्छ र बेलुकाको खानासम्म तातो राखिन्छ। खतरा के छ?",
+    "q": "मासुको झोल बिहान बनाइन्छ र बेलुकाको खानासम्म चुलोको छेउमा राखिन्छ, मनतातो तर धेरै तातो होइन। खतरा के छ?",
     "o": [
      "पर्खिँदै गर्दा मासुका किटाणु यसमा बढ्छन्",
      "स्वाद मात्र नराम्रो हुन्छ",
@@ -18139,7 +18096,7 @@
     "e": "मासुका केही किटाणु पकाउँदा पनि बाँच्छन् र तातो झोलमा बढ्छन्। खाना दिने बेला नजिकै बनाउनुहोस्, नत्र 63°C वा त्योभन्दा बढीमा राख्नुहोस्।"
    },
    "ml": {
-    "q": "ഇറച്ചി ഗ്രേവി രാവിലെ ഉണ്ടാക്കി രാത്രി ഭക്ഷണം വരെ ചൂടോടെ വയ്ക്കുന്നു. എന്താണ് അപകടം?",
+    "q": "ഇറച്ചി ഗ്രേവി രാവിലെ ഉണ്ടാക്കി രാത്രി ഭക്ഷണം വരെ അടുപ്പിന്റെ ഒരു വശത്ത് വയ്ക്കുന്നു, ഇളംചൂടിൽ, നല്ല ചൂടില്ലാതെ. എന്താണ് അപകടം?",
     "o": [
      "കാത്തിരിക്കുന്ന സമയത്ത് ഇറച്ചിയിലെ അണുക്കൾ അതിൽ വളരും",
      "രുചി മാത്രമേ മോശമാകൂ",
@@ -18149,7 +18106,7 @@
     "e": "ഇറച്ചിയിലെ ചില അണുക്കൾ വേവിക്കലിനെ അതിജീവിച്ച് ചൂടുള്ള ഗ്രേവിയിൽ വളരും. വിളമ്പുന്ന സമയത്തോട് അടുത്ത് ഉണ്ടാക്കുക, അല്ലെങ്കിൽ 63°C അല്ലെങ്കിൽ അതിനു മുകളിൽ വയ്ക്കുക."
    },
    "ta": {
-    "q": "இறைச்சி கிரேவி காலையில் செய்யப்பட்டு, இரவு சாப்பாடு வரை சூடாக (வெதுவெதுப்பாக) வைக்கப்படுகிறது. என்ன ஆபத்து?",
+    "q": "இறைச்சி கிரேவி காலையில் செய்யப்பட்டு, இரவு சாப்பாடு வரை அடுப்பின் ஓரத்தில் வைக்கப்படுகிறது. அது வெதுவெதுப்பாக இருக்கிறது, ஆனால் சூடாக இல்லை. என்ன ஆபத்து?",
     "o": [
      "காத்திருக்கும்போது இறைச்சியிலிருந்து வந்த கிருமிகள் அதில் வளரும்",
      "சுவை மட்டுமே மோசமாகும்",
@@ -18159,7 +18116,7 @@
     "e": "இறைச்சியில் உள்ள சில கிருமிகள் சமையலில் தப்பிப் பிழைத்து, வெதுவெதுப்பான கிரேவியில் வளரும். பரிமாறும் நேரத்துக்குப் பக்கத்தில் செய்யுங்கள், அல்லது 63°C அல்லது அதற்கு மேல் வையுங்கள்."
    },
    "fil": {
-    "q": "Ang gravy ng karne ay ginawa sa umaga at pinanatiling mainit-init hanggang hapunan. Ano ang panganib?",
+    "q": "Ang gravy ng karne ay ginawa sa umaga at iniwan sa gilid ng kalan, mainit-init pero hindi mainit, hanggang hapunan. Ano ang panganib?",
     "o": [
      "Dumarami dito ang mikrobyo mula sa karne habang naghihintay",
      "Lasa lang ang sumasama",
@@ -18169,7 +18126,7 @@
     "e": "May mga mikrobyo sa karne na nakakaligtas sa pagluluto at dumarami sa mainit-init na gravy. Gawin ito malapit sa oras ng paghahain, o panatilihin sa 63°C o mas mataas."
    },
    "ind": {
-    "q": "Kuah daging dibuat pagi hari dan dijaga tetap hangat sampai makan malam. Apa bahayanya?",
+    "q": "Kuah daging dibuat pagi hari dan dibiarkan di pinggir kompor, hangat tetapi tidak panas, sampai makan malam. Apa bahayanya?",
     "o": [
      "Kuman dari daging tumbuh di dalamnya selama menunggu",
      "Hanya rasanya yang jadi kurang enak",
@@ -18179,7 +18136,7 @@
     "e": "Ada kuman daging yang tetap hidup setelah dimasak dan tumbuh di kuah yang hangat. Buat kuah dekat waktu penyajian, atau jaga di suhu 63°C atau lebih."
    },
    "tr": {
-    "q": "Et sosu sabah yapılıyor ve akşam yemeğine kadar ılık tutuluyor. Tehlike ne?",
+    "q": "Et sosu sabah yapılıyor ve akşam yemeğine kadar ocağın kenarında bırakılıyor. Ilık duruyor ama sıcak değil. Tehlike ne?",
     "o": [
      "Bekledikçe etten gelen mikroplar sosun içinde ürer",
      "Sadece tadı kötüleşir",
@@ -23197,11 +23154,11 @@
      "They lower the risk of food poisoning",
      "They make the workplace safer",
      "They protect equipment so it lasts longer",
-     "They bring more customers",
+     "They protect the restaurant's good name",
      "They mean you do not need to wash your hands",
      "They let food stay out of the fridge longer"
     ],
-    "e": "Good cleaning protects customers, staff, equipment and the shop's name. It never replaces hand washing or the fridge."
+    "e": "Good cleaning protects customers, staff, equipment and the restaurant's name. It never replaces hand washing or the fridge."
    },
    "ur": {
     "q": "صفائی اور جراثیم مارنا کیوں ضروری ہے؟ جتنے صحیح ہیں سب چنیں۔",
@@ -23209,11 +23166,11 @@
      "فوڈ پوائزننگ کا خطرہ کم ہوتا ہے",
      "کام کی جگہ زیادہ محفوظ ہوتی ہے",
      "سامان محفوظ رہتا ہے اور زیادہ چلتا ہے",
-     "زیادہ گاہک آتے ہیں",
+     "ریسٹورنٹ کا اچھا نام بچا رہتا ہے",
      "پھر ہاتھ دھونے کی ضرورت نہیں رہتی",
      "کھانا فریج سے باہر زیادہ دیر رہ سکتا ہے"
     ],
-    "e": "اچھی صفائی گاہک، عملے، سامان اور دکان کے نام کی حفاظت کرتی ہے۔ یہ ہاتھ دھونے یا فریج کی جگہ نہیں لیتی۔"
+    "e": "اچھی صفائی گاہک، عملے، سامان اور ریسٹورنٹ کے نام کی حفاظت کرتی ہے۔ یہ ہاتھ دھونے یا فریج کی جگہ نہیں لیتی۔"
    },
    "hi": {
     "q": "सफ़ाई और कीटाणु मारना क्यों ज़रूरी है? जितने सही हैं सब चुनें।",
@@ -23221,11 +23178,11 @@
      "फ़ूड पॉइज़निंग का खतरा कम होता है",
      "काम की जगह ज़्यादा सुरक्षित होती है",
      "सामान बचा रहता है और ज़्यादा चलता है",
-     "ज़्यादा ग्राहक आते हैं",
+     "रेस्टोरेंट का अच्छा नाम बचा रहता है",
      "फिर हाथ धोने की ज़रूरत नहीं रहती",
      "खाना फ्रिज से बाहर ज़्यादा देर रह सकता है"
     ],
-    "e": "अच्छी सफ़ाई ग्राहक, स्टाफ़, सामान और दुकान के नाम की रक्षा करती है। यह हाथ धोने या फ्रिज की जगह नहीं लेती।"
+    "e": "अच्छी सफ़ाई ग्राहक, स्टाफ़, सामान और रेस्टोरेंट के नाम की रक्षा करती है। यह हाथ धोने या फ्रिज की जगह नहीं लेती।"
    },
    "bn": {
     "q": "পরিষ্কার আর জীবাণুমুক্ত করা কেন জরুরি? যতগুলো ঠিক সব বেছে নিন।",
@@ -23233,11 +23190,11 @@
      "খাবারে বিষক্রিয়ার ঝুঁকি কমে",
      "কাজের জায়গা বেশি নিরাপদ হয়",
      "যন্ত্রপাতি ভালো থাকে, বেশিদিন চলে",
-     "বেশি কাস্টমার আসে",
+     "রেস্টুরেন্টের সুনাম রক্ষা হয়",
      "তখন আর হাত ধোয়ার দরকার হয় না",
      "খাবার ফ্রিজের বাইরে বেশিক্ষণ রাখা যায়"
     ],
-    "e": "ভালো পরিষ্কার কাস্টমার, কর্মী, যন্ত্রপাতি আর দোকানের সুনাম রক্ষা করে। এটা হাত ধোয়া বা ফ্রিজের বদলে চলে না।"
+    "e": "ভালো পরিষ্কার কাস্টমার, কর্মী, যন্ত্রপাতি আর রেস্টুরেন্টের সুনাম রক্ষা করে। এটা হাত ধোয়া বা ফ্রিজের বদলে চলে না।"
    },
    "ar": {
     "q": "لماذا التنظيف والتطهير مهمان؟ اختر كل الأجوبة الصحيحة.",
@@ -23245,11 +23202,11 @@
      "يقللان خطر التسمم الغذائي",
      "يجعلان مكان العمل أكثر أماناً",
      "يحميان المعدات فتدوم مدة أطول",
-     "يجلبان زبائن أكثر",
+     "يحميان سمعة المطعم الطيبة",
      "يعنيان أنك لا تحتاج إلى غسل يديك",
      "يسمحان ببقاء الطعام خارج الثلاجة مدة أطول"
     ],
-    "e": "التنظيف الجيد يحمي الزبائن والعمال والمعدات وسمعة المحل. ولا يغني أبداً عن غسل اليدين أو عن الثلاجة."
+    "e": "التنظيف الجيد يحمي الزبائن والعمال والمعدات وسمعة المطعم. ولا يغني أبداً عن غسل اليدين أو عن الثلاجة."
    },
    "ne": {
     "q": "सफा गर्नु र किटाणुनाशक लगाउनु किन महत्त्वपूर्ण छ? सही भएका सबै छान्नुहोस्।",
@@ -23257,11 +23214,11 @@
      "यसले खानाबाट हुने बिरामी (फुड पोइजनिङ) को जोखिम घटाउँछ",
      "यसले काम गर्ने ठाउँलाई अझ सुरक्षित बनाउँछ",
      "यसले उपकरणलाई जोगाउँछ, त्यसैले ती धेरै टिक्छन्",
-     "यसले धेरै ग्राहक ल्याउँछ",
+     "यसले रेस्टुरेन्टको राम्रो नाम जोगाउँछ",
      "यसो गरे हात धुनु पर्दैन",
      "यसले खानालाई फ्रिजबाहिर धेरै बेर राख्न दिन्छ"
     ],
-    "e": "राम्रो सफाइले ग्राहक, कामदार, उपकरण र पसलको नाम जोगाउँछ। यसले कहिल्यै हात धुने काम वा फ्रिजको ठाउँ लिँदैन।"
+    "e": "राम्रो सफाइले ग्राहक, कामदार, उपकरण र रेस्टुरेन्टको नाम जोगाउँछ। यसले कहिल्यै हात धुने काम वा फ्रिजको ठाउँ लिँदैन।"
    },
    "ml": {
     "q": "വൃത്തിയാക്കലും അണുനശീകരണവും പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്? ശരിയായ എല്ലാം തിരഞ്ഞെടുക്കുക.",
@@ -23269,11 +23226,11 @@
      "അവ ഭക്ഷ്യവിഷബാധയുടെ സാധ്യത കുറയ്ക്കുന്നു",
      "അവ ജോലിസ്ഥലം കൂടുതൽ സുരക്ഷിതമാക്കുന്നു",
      "അവ ഉപകരണങ്ങളെ സംരക്ഷിക്കുന്നു, അങ്ങനെ അവ കൂടുതൽ കാലം നിലനിൽക്കും",
-     "അവ കൂടുതൽ കസ്റ്റമർമാരെ കൊണ്ടുവരുന്നു",
+     "അവ ഹോട്ടലിന്റെ നല്ല പേര് സംരക്ഷിക്കുന്നു",
      "അവ ഉള്ളതുകൊണ്ട് കൈ കഴുകേണ്ട ആവശ്യമില്ല",
      "അവ കാരണം ഭക്ഷണം ഫ്രിഡ്ജിന് പുറത്ത് കൂടുതൽ നേരം വയ്ക്കാം"
     ],
-    "e": "നല്ല വൃത്തിയാക്കൽ കസ്റ്റമർമാരെയും ജോലിക്കാരെയും ഉപകരണങ്ങളെയും കടയുടെ പേരിനെയും സംരക്ഷിക്കുന്നു. അത് ഒരിക്കലും കൈ കഴുകലിനോ ഫ്രിഡ്ജിനോ പകരമാകില്ല."
+    "e": "നല്ല വൃത്തിയാക്കൽ കസ്റ്റമർമാരെയും ജോലിക്കാരെയും ഉപകരണങ്ങളെയും ഹോട്ടലിന്റെ പേരിനെയും സംരക്ഷിക്കുന്നു. അത് ഒരിക്കലും കൈ കഴുകലിനോ ഫ്രിഡ്ജിനോ പകരമാകില്ല."
    },
    "ta": {
     "q": "சுத்தம் செய்தலும் கிருமிநீக்கம் செய்தலும் ஏன் முக்கியம்? சரியான எல்லாவற்றையும் தேர்ந்தெடுக்கவும்.",
@@ -23281,11 +23238,11 @@
      "அவை உணவு நச்சு (ஃபுட் பாய்சனிங்) ஆபத்தைக் குறைக்கின்றன",
      "அவை வேலை இடத்தை இன்னும் பாதுகாப்பாக்குகின்றன",
      "அவை கருவிகள் நீண்ட நாள் உழைக்க உதவுகின்றன",
-     "அவை அதிக வாடிக்கையாளர்களைக் கொண்டு வருகின்றன",
+     "அவை உணவகத்தின் நல்ல பெயரைக் காக்கின்றன",
      "அவை இருந்தால் கை கழுவத் தேவையில்லை",
      "அவை உணவை ஃப்ரிட்ஜுக்கு வெளியே அதிக நேரம் வைக்க உதவுகின்றன"
     ],
-    "e": "நன்றாகச் சுத்தம் செய்வது வாடிக்கையாளர்கள், பணியாளர்கள், கருவிகள், கடையின் பெயர் எல்லாவற்றையும் காக்கும். அது ஒருபோதும் கை கழுவுவதற்கோ ஃப்ரிட்ஜுக்கோ பதில் ஆகாது."
+    "e": "நன்றாகச் சுத்தம் செய்வது வாடிக்கையாளர்கள், பணியாளர்கள், கருவிகள், உணவகத்தின் பெயர் எல்லாவற்றையும் காக்கும். அது ஒருபோதும் கை கழுவுவதற்கோ ஃப்ரிட்ஜுக்கோ பதில் ஆகாது."
    },
    "fil": {
     "q": "Bakit mahalaga ang paglilinis at pag-disinfect? Piliin ang lahat ng tama.",
@@ -23293,11 +23250,11 @@
      "Binabawasan nito ang panganib ng food poisoning",
      "Ginagawa nitong mas ligtas ang lugar ng trabaho",
      "Pinoprotektahan nito ang mga gamit para mas tumagal",
-     "Nagdadala ito ng mas maraming customer",
+     "Pinoprotektahan nito ang magandang pangalan ng restaurant",
      "Hindi mo na kailangang maghugas ng kamay",
      "Puwedeng mas matagal ang pagkain sa labas ng ref"
     ],
-    "e": "Ang maayos na paglilinis ay nagpoprotekta sa customer, sa mga trabahador, sa mga gamit at sa pangalan ng tindahan. Hindi nito kailanman pinapalitan ang paghuhugas ng kamay o ang ref."
+    "e": "Ang maayos na paglilinis ay nagpoprotekta sa customer, sa mga trabahador, sa mga gamit at sa pangalan ng restaurant. Hindi nito kailanman pinapalitan ang paghuhugas ng kamay o ang ref."
    },
    "ind": {
     "q": "Kenapa membersihkan dan mendisinfeksi itu penting? Pilih semua yang benar.",
@@ -23305,11 +23262,11 @@
      "Mengurangi risiko keracunan makanan",
      "Membuat tempat kerja lebih aman",
      "Melindungi peralatan supaya lebih awet",
-     "Mendatangkan lebih banyak pelanggan",
+     "Menjaga nama baik restoran",
      "Membuat Anda tidak perlu mencuci tangan",
      "Membuat makanan boleh lebih lama di luar kulkas"
     ],
-    "e": "Pembersihan yang baik melindungi pelanggan, staf, peralatan dan nama baik toko. Pembersihan tidak pernah menggantikan cuci tangan atau kulkas."
+    "e": "Pembersihan yang baik melindungi pelanggan, staf, peralatan dan nama baik restoran. Pembersihan tidak pernah menggantikan cuci tangan atau kulkas."
    },
    "tr": {
     "q": "Temizlik ve dezenfeksiyon neden önemlidir? Doğru olanların hepsini seç.",
@@ -23317,11 +23274,11 @@
      "Gıda zehirlenmesi riskini azaltır",
      "İş yerini daha güvenli yapar",
      "Ekipmanı korur, böylece daha uzun dayanır",
-     "Daha çok müşteri getirir",
+     "Restoranın iyi adını korur",
      "Ellerini yıkamana gerek kalmaz",
      "Gıda buzdolabı dışında daha uzun kalabilir"
     ],
-    "e": "İyi temizlik müşterileri, çalışanları, ekipmanı ve dükkanın adını korur. Asla el yıkamanın ya da buzdolabının yerini tutmaz."
+    "e": "İyi temizlik müşterileri, çalışanları, ekipmanı ve restoranın adını korur. Asla el yıkamanın ya da buzdolabının yerini tutmaz."
    }
   },
   {
@@ -23339,7 +23296,7 @@
     "q": "Which of these touch food and must be cleaned and disinfected after every use? Choose all that are correct.",
     "o": [
      "Chopping board",
-     "Weighing scale",
+     "Tongs",
      "Knife",
      "Food prep table",
      "Wall behind the sink",
@@ -23351,7 +23308,7 @@
     "q": "ان میں سے کون سی چیزیں کھانے کو چھوتی ہیں اور ہر استعمال کے بعد صاف کر کے ان کے جراثیم مارنے ہیں؟ جتنے صحیح ہیں سب چنیں۔",
     "o": [
      "کٹنگ بورڈ",
-     "ترازو",
+     "چمٹا",
      "چھری",
      "کھانا تیار کرنے کی میز",
      "سنک کے پیچھے والی دیوار",
@@ -23363,7 +23320,7 @@
     "q": "इनमें से कौन सी चीज़ें खाने को छूती हैं और हर इस्तेमाल के बाद साफ़ करके उनके कीटाणु मारने हैं? जितने सही हैं सब चुनें।",
     "o": [
      "कटिंग बोर्ड",
-     "तराज़ू",
+     "चिमटा",
      "चाकू",
      "खाना बनाने की मेज़",
      "सिंक के पीछे वाली दीवार",
@@ -23375,7 +23332,7 @@
     "q": "এগুলোর মধ্যে কোনগুলো খাবার ছোঁয় আর প্রতিবার ব্যবহারের পরে পরিষ্কার ও জীবাণুমুক্ত করতে হয়? যতগুলো ঠিক সব বেছে নিন।",
     "o": [
      "কাটিং বোর্ড",
-     "ওজন মাপার পাল্লা",
+     "চিমটা",
      "ছুরি",
      "খাবার বানানোর টেবিল",
      "সিঙ্কের পেছনের দেয়াল",
@@ -23387,7 +23344,7 @@
     "q": "أي من هذه الأشياء يلمس الطعام ويجب تنظيفه وتطهيره بعد كل استعمال؟ اختر كل الأجوبة الصحيحة.",
     "o": [
      "لوح التقطيع",
-     "ميزان الوزن",
+     "الملقط",
      "السكين",
      "طاولة تحضير الطعام",
      "الجدار خلف المغسلة",
@@ -23399,7 +23356,7 @@
     "q": "यीमध्ये कुन चीजले खाना छुन्छ र हरेक पटक प्रयोग गरेपछि सफा गरी किटाणुनाशक लगाउनुपर्छ? सही भएका सबै छान्नुहोस्।",
     "o": [
      "काट्ने पाटी (चपिङ बोर्ड)",
-     "तौलने तराजु",
+     "चिम्टा",
      "चक्कु",
      "खाना तयार गर्ने टेबल",
      "सिंकको पछाडिको भित्ता",
@@ -23411,7 +23368,7 @@
     "q": "ഇവയിൽ ഏതൊക്കെയാണ് ഭക്ഷണം തൊടുന്നതും ഓരോ ഉപയോഗത്തിനു ശേഷവും വൃത്തിയാക്കി അണുനശീകരണം ചെയ്യേണ്ടതും? ശരിയായ എല്ലാം തിരഞ്ഞെടുക്കുക.",
     "o": [
      "കട്ടിങ് ബോർഡ്",
-     "തൂക്കം നോക്കുന്ന ത്രാസ്",
+     "ടോങ്സ് (ഭക്ഷണം എടുക്കുന്ന കൊടിൽ)",
      "കത്തി",
      "ഭക്ഷണം തയ്യാറാക്കുന്ന മേശ",
      "സിങ്കിന് പിന്നിലെ ചുമര്",
@@ -23423,7 +23380,7 @@
     "q": "இவற்றில் எவை உணவைத் தொடுகின்றன, ஒவ்வொரு முறை பயன்படுத்திய பிறகும் சுத்தம் செய்து கிருமிநீக்கம் செய்ய வேண்டும்? சரியான எல்லாவற்றையும் தேர்ந்தெடுக்கவும்.",
     "o": [
      "வெட்டும் பலகை",
-     "எடை போடும் தராசு",
+     "இடுக்கி (டாங்ஸ்)",
      "கத்தி",
      "உணவு தயாரிக்கும் மேசை",
      "சிங்கின் பின்னால் உள்ள சுவர்",
@@ -23435,7 +23392,7 @@
     "q": "Alin dito ang dumidikit sa pagkain at dapat linisin at i-disinfect pagkatapos ng bawat gamit? Piliin ang lahat ng tama.",
     "o": [
      "Chopping board",
-     "Timbangan",
+     "Sipit (tongs)",
      "Kutsilyo",
      "Mesa ng paghahanda",
      "Pader sa likod ng lababo",
@@ -23447,7 +23404,7 @@
     "q": "Mana dari benda ini yang menyentuh makanan dan harus dibersihkan dan didisinfeksi setiap kali selesai dipakai? Pilih semua yang benar.",
     "o": [
      "Talenan",
-     "Timbangan",
+     "Penjepit makanan",
      "Pisau",
      "Meja persiapan makanan",
      "Dinding di belakang bak cuci",
@@ -23459,7 +23416,7 @@
     "q": "Bunlardan hangileri gıdaya değer ve her kullanımdan sonra temizlenip dezenfekte edilmelidir? Doğru olanların hepsini seç.",
     "o": [
      "Kesme tahtası",
-     "Tartı",
+     "Maşa",
      "Bıçak",
      "Gıda hazırlama masası",
      "Lavabonun arkasındaki duvar",
@@ -24147,111 +24104,111 @@
     "q": "Put these kinds of water in order, from coolest to hottest.",
     "o": [
      "Cold tap water",
-     "Washing water with detergent, about 50°C",
-     "Germ-killing water, 75°C for 30 seconds",
-     "Germ-killing water, 82°C for 10 seconds"
+     "Washing water with detergent",
+     "Germ-killing water, plates stay in 30 seconds",
+     "Germ-killing water, plates stay in 10 seconds"
     ],
-    "e": "Washing water is about 50°C. Germ-killing water must be 75°C for 30 seconds or 82°C for 10 seconds. The hotter the water, the less time it needs."
+    "e": "Washing water is about 50°C. Germ-killing water is 75°C for 30 seconds or 82°C for 10 seconds. The hotter the water, the less time it needs."
    },
    "ur": {
     "q": "ان پانیوں کو ترتیب سے لگائیں، سب سے ٹھنڈے سے سب سے گرم تک۔",
     "o": [
      "نل کا ٹھنڈا پانی",
-     "ڈٹرجنٹ والا دھونے کا پانی، تقریباً 50°C",
-     "جراثیم مارنے کا پانی، 75°C پر 30 سیکنڈ",
-     "جراثیم مارنے کا پانی، 82°C پر 10 سیکنڈ"
+     "ڈٹرجنٹ والا دھونے کا پانی",
+     "جراثیم مارنے کا پانی، پلیٹیں 30 سیکنڈ اندر رہیں",
+     "جراثیم مارنے کا پانی، پلیٹیں 10 سیکنڈ اندر رہیں"
     ],
-    "e": "دھونے کا پانی تقریباً 50°C ہوتا ہے۔ جراثیم مارنے کا پانی 75°C پر 30 سیکنڈ یا 82°C پر 10 سیکنڈ ہونا چاہیے۔ پانی جتنا گرم ہو، اتنا کم وقت چاہیے۔"
+    "e": "دھونے کا پانی تقریباً 50°C ہوتا ہے۔ جراثیم مارنے کا پانی 75°C پر 30 سیکنڈ یا 82°C پر 10 سیکنڈ ہوتا ہے۔ پانی جتنا گرم ہو، اتنا کم وقت چاہیے۔"
    },
    "hi": {
     "q": "इन पानियों को क्रम में लगाएँ, सबसे ठंडे से सबसे गरम तक।",
     "o": [
      "नल का ठंडा पानी",
-     "डिटर्जेंट वाला धोने का पानी, लगभग 50°C",
-     "कीटाणु मारने का पानी, 75°C पर 30 सेकंड",
-     "कीटाणु मारने का पानी, 82°C पर 10 सेकंड"
+     "डिटर्जेंट वाला धोने का पानी",
+     "कीटाणु मारने का पानी, प्लेटें 30 सेकंड अंदर रहें",
+     "कीटाणु मारने का पानी, प्लेटें 10 सेकंड अंदर रहें"
     ],
-    "e": "धोने का पानी लगभग 50°C होता है। कीटाणु मारने का पानी 75°C पर 30 सेकंड या 82°C पर 10 सेकंड होना चाहिए। पानी जितना गरम, उतना कम समय चाहिए।"
+    "e": "धोने का पानी लगभग 50°C होता है। कीटाणु मारने का पानी 75°C पर 30 सेकंड या 82°C पर 10 सेकंड होता है। पानी जितना गरम, उतना कम समय चाहिए।"
    },
    "bn": {
     "q": "এই পানিগুলো ক্রমে সাজান, সবচেয়ে ঠান্ডা থেকে সবচেয়ে গরম।",
     "o": [
      "কলের ঠান্ডা পানি",
-     "ডিটারজেন্ট দেওয়া ধোয়ার পানি, প্রায় 50°C",
-     "জীবাণু মারার পানি, 75°C-এ 30 সেকেন্ড",
-     "জীবাণু মারার পানি, 82°C-এ 10 সেকেন্ড"
+     "ডিটারজেন্ট দেওয়া ধোয়ার পানি",
+     "জীবাণু মারার পানি, প্লেট 30 সেকেন্ড ভেতরে থাকে",
+     "জীবাণু মারার পানি, প্লেট 10 সেকেন্ড ভেতরে থাকে"
     ],
-    "e": "ধোয়ার পানি প্রায় 50°C। জীবাণু মারার পানি হতে হবে 75°C-এ 30 সেকেন্ড বা 82°C-এ 10 সেকেন্ড। পানি যত গরম, তত কম সময় লাগে।"
+    "e": "ধোয়ার পানি প্রায় 50°C। জীবাণু মারার পানি 75°C-এ 30 সেকেন্ড বা 82°C-এ 10 সেকেন্ড। পানি যত গরম, তত কম সময় লাগে।"
    },
    "ar": {
     "q": "رتّب أنواع الماء هذه من الأبرد إلى الأسخن.",
     "o": [
      "ماء الحنفية البارد",
-     "ماء الغسل مع المنظف، حوالي 50°C",
-     "ماء قتل الجراثيم، 75°C لمدة 30 ثانية",
-     "ماء قتل الجراثيم، 82°C لمدة 10 ثوان"
+     "ماء الغسل مع المنظف",
+     "ماء قتل الجراثيم، تبقى فيه الصحون 30 ثانية",
+     "ماء قتل الجراثيم، تبقى فيه الصحون 10 ثوان"
     ],
-    "e": "ماء الغسل حوالي 50°C. ماء قتل الجراثيم يجب أن يكون 75°C لمدة 30 ثانية أو 82°C لمدة 10 ثوان. كلما كان الماء أسخن، احتاج وقتاً أقل."
+    "e": "ماء الغسل حوالي 50°C. ماء قتل الجراثيم يكون 75°C لمدة 30 ثانية أو 82°C لمدة 10 ثوان. كلما كان الماء أسخن، احتاج وقتاً أقل."
    },
    "ne": {
     "q": "यी पानीहरूलाई सबैभन्दा कम तातोदेखि सबैभन्दा तातोसम्म क्रममा मिलाउनुहोस्।",
     "o": [
      "धाराको चिसो पानी",
-     "डिटर्जेन्टसँग धुने पानी, करिब 50°C",
-     "किटाणु मार्ने पानी, 75°C मा 30 सेकेन्ड",
-     "किटाणु मार्ने पानी, 82°C मा 10 सेकेन्ड"
+     "डिटर्जेन्टसँग धुने पानी",
+     "किटाणु मार्ने पानी, प्लेट 30 सेकेन्ड भित्र रहन्छ",
+     "किटाणु मार्ने पानी, प्लेट 10 सेकेन्ड भित्र रहन्छ"
     ],
-    "e": "धुने पानी करिब 50°C हुन्छ। किटाणु मार्ने पानी 75°C मा 30 सेकेन्ड वा 82°C मा 10 सेकेन्ड हुनुपर्छ। पानी जति तातो, त्यति कम समय चाहिन्छ।"
+    "e": "धुने पानी करिब 50°C हुन्छ। किटाणु मार्ने पानी 75°C मा 30 सेकेन्ड वा 82°C मा 10 सेकेन्ड हुन्छ। पानी जति तातो, त्यति कम समय चाहिन्छ।"
    },
    "ml": {
     "q": "ഈ വെള്ളങ്ങളെ ഏറ്റവും കുറഞ്ഞ ചൂട് മുതൽ ഏറ്റവും കൂടിയ ചൂട് വരെ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
      "ടാപ്പിലെ തണുത്ത വെള്ളം",
-     "ഡിറ്റർജന്റ് ചേർത്ത് കഴുകാനുള്ള വെള്ളം, ഏകദേശം 50°C",
-     "അണുക്കളെ കൊല്ലുന്ന വെള്ളം, 75°C-ൽ 30 സെക്കൻഡ്",
-     "അണുക്കളെ കൊല്ലുന്ന വെള്ളം, 82°C-ൽ 10 സെക്കൻഡ്"
+     "ഡിറ്റർജന്റ് ചേർത്ത് കഴുകാനുള്ള വെള്ളം",
+     "അണുക്കളെ കൊല്ലുന്ന വെള്ളം, പ്ലേറ്റുകൾ 30 സെക്കൻഡ് മുങ്ങി കിടക്കും",
+     "അണുക്കളെ കൊല്ലുന്ന വെള്ളം, പ്ലേറ്റുകൾ 10 സെക്കൻഡ് മുങ്ങി കിടക്കും"
     ],
-    "e": "കഴുകാനുള്ള വെള്ളം ഏകദേശം 50°C ആണ്. അണുക്കളെ കൊല്ലുന്ന വെള്ളം 75°C-ൽ 30 സെക്കൻഡ് അല്ലെങ്കിൽ 82°C-ൽ 10 സെക്കൻഡ് ആയിരിക്കണം. വെള്ളത്തിന് ചൂട് കൂടുന്തോറും കുറച്ച് സമയം മതി."
+    "e": "കഴുകാനുള്ള വെള്ളം ഏകദേശം 50°C ആണ്. അണുക്കളെ കൊല്ലുന്ന വെള്ളം 75°C-ൽ 30 സെക്കൻഡ് അല്ലെങ്കിൽ 82°C-ൽ 10 സെക്കൻഡ് ആണ്. വെള്ളത്തിന് ചൂട് കൂടുന്തോറും കുറച്ച് സമയം മതി."
    },
    "ta": {
     "q": "இந்தத் தண்ணீர் வகைகளை, குறைந்த சூட்டிலிருந்து அதிக சூடு வரை, வரிசையில் வையுங்கள்.",
     "o": [
      "குழாயில் வரும் குளிர்ந்த தண்ணீர்",
-     "டிடர்ஜென்டுடன் கழுவும் தண்ணீர், சுமார் 50°C",
-     "கிருமி கொல்லும் தண்ணீர், 75°C-இல் 30 வினாடிகள்",
-     "கிருமி கொல்லும் தண்ணீர், 82°C-இல் 10 வினாடிகள்"
+     "டிடர்ஜென்டுடன் கழுவும் தண்ணீர்",
+     "கிருமி கொல்லும் தண்ணீர், தட்டுகள் 30 வினாடிகள் உள்ளே இருக்கும்",
+     "கிருமி கொல்லும் தண்ணீர், தட்டுகள் 10 வினாடிகள் உள்ளே இருக்கும்"
     ],
-    "e": "கழுவும் தண்ணீர் சுமார் 50°C. கிருமி கொல்லும் தண்ணீர் 75°C-இல் 30 வினாடிகள் அல்லது 82°C-இல் 10 வினாடிகள் இருக்க வேண்டும். தண்ணீர் எவ்வளவு சூடாக இருக்கிறதோ, அவ்வளவு குறைந்த நேரம் போதும்."
+    "e": "கழுவும் தண்ணீர் சுமார் 50°C. கிருமி கொல்லும் தண்ணீர் 75°C-இல் 30 வினாடிகள் அல்லது 82°C-இல் 10 வினாடிகள். தண்ணீர் எவ்வளவு சூடாக இருக்கிறதோ, அவ்வளவு குறைந்த நேரம் போதும்."
    },
    "fil": {
     "q": "Ayusin ang mga uri ng tubig na ito, mula pinakamalamig hanggang pinakamainit.",
     "o": [
      "Malamig na tubig mula sa gripo",
-     "Tubig panghugas na may detergent, mga 50°C",
-     "Tubig pamatay-mikrobyo, 75°C nang 30 segundo",
-     "Tubig pamatay-mikrobyo, 82°C nang 10 segundo"
+     "Tubig panghugas na may detergent",
+     "Tubig pamatay-mikrobyo, nakalubog ang plato nang 30 segundo",
+     "Tubig pamatay-mikrobyo, nakalubog ang plato nang 10 segundo"
     ],
-    "e": "Ang tubig panghugas ay mga 50°C. Ang tubig pamatay-mikrobyo ay dapat 75°C nang 30 segundo o 82°C nang 10 segundo. Habang mas mainit ang tubig, mas maikling oras ang kailangan."
+    "e": "Ang tubig panghugas ay mga 50°C. Ang tubig pamatay-mikrobyo ay 75°C nang 30 segundo o 82°C nang 10 segundo. Habang mas mainit ang tubig, mas maikling oras ang kailangan."
    },
    "ind": {
     "q": "Susun jenis air ini dengan urutan yang benar, dari yang paling dingin sampai yang paling panas.",
     "o": [
      "Air keran dingin",
-     "Air cuci dengan deterjen, sekitar 50°C",
-     "Air pembunuh kuman, 75°C selama 30 detik",
-     "Air pembunuh kuman, 82°C selama 10 detik"
+     "Air cuci dengan deterjen",
+     "Air pembunuh kuman, piring direndam 30 detik",
+     "Air pembunuh kuman, piring direndam 10 detik"
     ],
-    "e": "Air cuci sekitar 50°C. Air pembunuh kuman harus 75°C selama 30 detik atau 82°C selama 10 detik. Makin panas airnya, makin singkat waktu yang dibutuhkan."
+    "e": "Air cuci sekitar 50°C. Air pembunuh kuman 75°C selama 30 detik atau 82°C selama 10 detik. Makin panas airnya, makin singkat waktu yang dibutuhkan."
    },
    "tr": {
     "q": "Bu suları en serinden en sıcağa doğru sıraya koy.",
     "o": [
      "Musluktan gelen soğuk su",
-     "Deterjanlı yıkama suyu, yaklaşık 50°C",
-     "Mikrop öldürme suyu, 30 saniye boyunca 75°C",
-     "Mikrop öldürme suyu, 10 saniye boyunca 82°C"
+     "Deterjanlı yıkama suyu",
+     "Mikrop öldürme suyu, tabaklar içinde 30 saniye kalır",
+     "Mikrop öldürme suyu, tabaklar içinde 10 saniye kalır"
     ],
-    "e": "Yıkama suyu yaklaşık 50°C'dir. Mikrop öldürme suyu 30 saniye boyunca 75°C ya da 10 saniye boyunca 82°C olmalıdır. Su ne kadar sıcaksa o kadar az süre ister."
+    "e": "Yıkama suyu yaklaşık 50°C'dir. Mikrop öldürme suyu 30 saniye boyunca 75°C ya da 10 saniye boyunca 82°C'dir. Su ne kadar sıcaksa o kadar az süre ister."
    }
   },
   {
@@ -25926,114 +25883,114 @@
    "d": 3,
    "ch": 10,
    "en": {
-    "q": "The plan says cooked chicken must reach 75°C in the centre. What is 75°C called in HACCP?",
+    "q": "The food safety plan says cooked chicken must reach 75°C in the centre. What does this number mean for you?",
     "o": [
-     "A critical limit (the safe level that must be met)",
-     "A corrective action",
-     "A flow diagram",
-     "A hazard analysis"
+     "It is the safe level the chicken must reach before it is served",
+     "It is the temperature of the fridge",
+     "It is how many minutes to cook the chicken",
+     "It is only for the manager, not for cooks"
     ],
-    "e": "A critical limit is the safe number set for a CCP. Food that does not reach it is not safe yet."
+    "e": "75°C is the safe level (in HACCP it is called the critical limit). Chicken that has not reached it is not safe yet."
    },
    "ur": {
-    "q": "پلان کہتا ہے کہ پکی مرغی کا درمیان 75°C تک پہنچے۔ HACCP میں 75°C کو کیا کہتے ہیں؟",
+    "q": "فوڈ سیفٹی پلان کہتا ہے کہ پکی مرغی کا درمیان 75°C تک پہنچنا چاہیے۔ آپ کے لیے اس نمبر کا کیا مطلب ہے؟",
     "o": [
-     "اہم حد (وہ محفوظ درجہ جو لازمی پورا ہو)",
-     "درستگی کا قدم",
-     "کام کا نقشہ",
-     "خطرات کی جانچ"
+     "یہ وہ محفوظ درجہ ہے جہاں تک مرغی کو سرو کرنے سے پہلے پہنچنا ہے",
+     "یہ فریج کا درجہ حرارت ہے",
+     "یہ بتاتا ہے کہ مرغی کتنے منٹ پکانی ہے",
+     "یہ صرف مینیجر کے لیے ہے، کک کے لیے نہیں"
     ],
-    "e": "اہم حد وہ محفوظ نمبر ہے جو CCP کے لیے طے ہوتا ہے۔ جو کھانا اس تک نہ پہنچے وہ ابھی محفوظ نہیں۔"
+    "e": "75°C محفوظ درجہ ہے (HACCP میں اسے اہم حد کہتے ہیں)۔ جو مرغی اس تک نہیں پہنچی وہ ابھی محفوظ نہیں۔"
    },
    "hi": {
-    "q": "प्लान कहता है कि पके चिकन का बीच 75°C तक पहुँचे। HACCP में 75°C को क्या कहते हैं?",
+    "q": "फ़ूड सेफ़्टी प्लान कहता है कि पके चिकन का बीच 75°C तक पहुँचना चाहिए। आपके लिए इस नंबर का क्या मतलब है?",
     "o": [
-     "ज़रूरी सीमा (वह सुरक्षित स्तर जो पूरा होना ही चाहिए)",
-     "सुधार का क़दम",
-     "काम का नक्शा",
-     "ख़तरों की जाँच"
+     "यह वह सुरक्षित स्तर है जहाँ तक चिकन को परोसने से पहले पहुँचना है",
+     "यह फ्रिज का तापमान है",
+     "यह बताता है कि चिकन कितने मिनट पकाना है",
+     "यह सिर्फ़ मैनेजर के लिए है, कुक के लिए नहीं"
     ],
-    "e": "ज़रूरी सीमा वह सुरक्षित नंबर है जो CCP के लिए तय होता है। जो खाना उस तक न पहुँचे वह अभी सुरक्षित नहीं।"
+    "e": "75°C सुरक्षित स्तर है (HACCP में इसे ज़रूरी सीमा कहते हैं)। जो चिकन इस तक नहीं पहुँचा, वह अभी सुरक्षित नहीं है।"
    },
    "bn": {
-    "q": "পরিকল্পনায় বলা আছে রান্না করা মুরগির মাঝখান 75°C হতে হবে। HACCP এ 75°C কে কী বলে?",
+    "q": "খাদ্য নিরাপত্তার পরিকল্পনায় বলা আছে রান্না করা মুরগির মাঝখান 75°C হতে হবে। এই সংখ্যার মানে আপনার জন্য কী?",
     "o": [
-     "গুরুত্বপূর্ণ সীমা (যে নিরাপদ মাত্রা পূরণ করতেই হবে)",
-     "সংশোধনের পদক্ষেপ",
-     "কাজের নকশা",
-     "বিপদ যাচাই"
+     "এটা সেই নিরাপদ মাত্রা, পরিবেশনের আগে মুরগিকে যেখানে পৌঁছাতে হবে",
+     "এটা ফ্রিজের তাপমাত্রা",
+     "এটা মুরগি কত মিনিট রান্না করতে হবে",
+     "এটা শুধু ম্যানেজারের জন্য, রাঁধুনিদের জন্য না"
     ],
-    "e": "গুরুত্বপূর্ণ সীমা হলো CCP এর জন্য ঠিক করা নিরাপদ সংখ্যা। যে খাবার সেখানে পৌঁছায়নি তা এখনো নিরাপদ না।"
+    "e": "75°C হলো নিরাপদ মাত্রা (HACCP এ একে গুরুত্বপূর্ণ সীমা বলে)। যে মুরগি সেখানে পৌঁছায়নি তা এখনো নিরাপদ না।"
    },
    "ar": {
-    "q": "الخطة تقول إن الدجاج المطبوخ يجب أن يصل إلى 75°C في الوسط. ماذا تسمى درجة 75°C في HACCP؟",
+    "q": "خطة سلامة الغذاء تقول إن الدجاج المطبوخ يجب أن يصل إلى 75°C في الوسط. ماذا يعني هذا الرقم بالنسبة لك؟",
     "o": [
-     "الحد الحرج (المستوى الآمن الذي يجب الوصول إليه)",
-     "الإجراء التصحيحي",
-     "مخطط سير العمل",
-     "تحليل المخاطر"
+     "هو المستوى الآمن الذي يجب أن يصل إليه الدجاج قبل تقديمه",
+     "هو حرارة الثلاجة",
+     "هو عدد دقائق طبخ الدجاج",
+     "هو للمدير فقط، وليس للطباخين"
     ],
-    "e": "الحد الحرج هو الرقم الآمن المحدد لنقطة التحكم الحرجة. الطعام الذي لا يصل إليه ليس آمناً بعد."
+    "e": "75°C هي المستوى الآمن (ويسمى في HACCP الحد الحرج). الدجاج الذي لم يصل إليها ليس آمناً بعد."
    },
    "ne": {
-    "q": "योजनामा पकाएको कुखुराको बीच भाग 75°C पुग्नुपर्छ भनिएको छ। HACCP मा 75°C लाई के भनिन्छ?",
+    "q": "खाना सुरक्षाको योजनामा पकाएको कुखुराको बीच भाग 75°C पुग्नुपर्छ भनिएको छ। तपाईंका लागि यो अंकको अर्थ के हो?",
     "o": [
-     "तोकिएको सीमा (पुग्नैपर्ने सुरक्षित तह)",
-     "सुधार गर्ने काम",
-     "फ्लो डायग्राम",
-     "खतराको विश्लेषण"
+     "खाना दिनुअघि कुखुरा पुग्नैपर्ने सुरक्षित तह हो",
+     "फ्रिजको तापक्रम हो",
+     "कुखुरा कति मिनेट पकाउने भन्ने हो",
+     "म्यानेजरका लागि मात्र हो, कुकका लागि होइन"
     ],
-    "e": "तोकिएको सीमा भनेको CCP का लागि राखिएको सुरक्षित अंक हो। त्यहाँसम्म नपुगेको खाना अझै सुरक्षित छैन।"
+    "e": "75°C सुरक्षित तह हो (HACCP मा यसलाई तोकिएको सीमा भनिन्छ)। यहाँसम्म नपुगेको कुखुरा अझै सुरक्षित छैन।"
    },
    "ml": {
-    "q": "വേവിച്ച ചിക്കന്റെ നടുഭാഗം 75°C എത്തണമെന്ന് പ്ലാനിൽ പറയുന്നു. HACCP-യിൽ ഈ 75°C-നെ എന്താണ് വിളിക്കുന്നത്?",
+    "q": "വേവിച്ച ചിക്കന്റെ നടുഭാഗം 75°C എത്തണമെന്ന് ഭക്ഷ്യ സുരക്ഷാ പ്ലാനിൽ പറയുന്നു. ഈ സംഖ്യ നിങ്ങൾക്ക് എന്താണ് അർത്ഥമാക്കുന്നത്?",
     "o": [
-     "ക്രിട്ടിക്കൽ ലിമിറ്റ് (എത്തേണ്ട സുരക്ഷിത അളവ്)",
-     "തിരുത്തൽ നടപടി",
-     "ഫ്ലോ ഡയഗ്രം",
-     "ഹസാർഡ് അനാലിസിസ്"
+     "വിളമ്പുന്നതിന് മുമ്പ് ചിക്കൻ എത്തേണ്ട സുരക്ഷിത അളവാണ് അത്",
+     "അത് ഫ്രിഡ്ജിന്റെ താപനിലയാണ്",
+     "ചിക്കൻ എത്ര മിനിറ്റ് വേവിക്കണം എന്നതാണ് അത്",
+     "അത് മാനേജർക്ക് മാത്രമുള്ളതാണ്, പാചകക്കാർക്ക് അല്ല"
     ],
-    "e": "ഒരു CCP-ക്ക് നിശ്ചയിക്കുന്ന സുരക്ഷിത സംഖ്യയാണ് ക്രിട്ടിക്കൽ ലിമിറ്റ്. അത് എത്താത്ത ഭക്ഷണം ഇതുവരെ സുരക്ഷിതമല്ല."
+    "e": "75°C ആണ് സുരക്ഷിത അളവ് (HACCP-യിൽ ഇതിനെ ക്രിട്ടിക്കൽ ലിമിറ്റ് എന്ന് പറയുന്നു). അത് എത്താത്ത ചിക്കൻ ഇതുവരെ സുരക്ഷിതമല്ല."
    },
    "ta": {
-    "q": "சமைத்த கோழியின் நடுப்பகுதி 75°C அடைய வேண்டும் என்று திட்டம் சொல்கிறது. HACCP-இல் 75°C-ஐ என்ன என்று அழைப்பார்கள்?",
+    "q": "சமைத்த கோழியின் நடுப்பகுதி 75°C அடைய வேண்டும் என்று உணவுப் பாதுகாப்புத் திட்டம் சொல்கிறது. இந்த எண் உங்களுக்கு என்ன அர்த்தம்?",
     "o": [
-     "முக்கிய எல்லை அளவு (அடைய வேண்டிய பாதுகாப்பான அளவு)",
-     "சரிசெய்யும் நடவடிக்கை",
-     "ஓட்ட வரைபடம் (ஃப்ளோ டயகிராம்)",
-     "ஆபத்து ஆய்வு"
+     "பரிமாறுவதற்கு முன் கோழி அடைய வேண்டிய பாதுகாப்பான அளவு இது",
+     "இது ஃப்ரிட்ஜின் வெப்பநிலை",
+     "கோழியை எத்தனை நிமிடம் சமைக்க வேண்டும் என்பது இது",
+     "இது மேனேஜருக்கு மட்டுமே, சமையல்காரர்களுக்கு அல்ல"
     ],
-    "e": "முக்கிய எல்லை அளவு என்பது ஒரு CCP-க்கு வைக்கப்படும் பாதுகாப்பான எண். அதை அடையாத உணவு இன்னும் பாதுகாப்பானது அல்ல."
+    "e": "75°C என்பது பாதுகாப்பான அளவு (HACCP-இல் இதை முக்கிய எல்லை அளவு என்று அழைப்பார்கள்). அதை அடையாத கோழி இன்னும் பாதுகாப்பானது அல்ல."
    },
    "fil": {
-    "q": "Sinasabi ng plano na dapat umabot sa 75°C ang gitna ng lutong manok. Ano ang tawag sa 75°C sa HACCP?",
+    "q": "Sinasabi ng food safety plan na dapat umabot sa 75°C ang gitna ng lutong manok. Ano ang ibig sabihin ng numerong ito para sa iyo?",
     "o": [
-     "Critical limit (ligtas na antas na dapat maabot)",
-     "Corrective action",
-     "Flow diagram",
-     "Hazard analysis"
+     "Ito ang ligtas na antas na dapat maabot ng manok bago ito i-serve",
+     "Ito ang temperatura ng ref",
+     "Ito ang dami ng minuto ng pagluluto ng manok",
+     "Para lang ito sa manager, hindi sa mga kusinero"
     ],
-    "e": "Ang critical limit ay ang ligtas na numerong itinakda para sa CCP. Ang pagkaing hindi umabot dito ay hindi pa ligtas."
+    "e": "Ang 75°C ay ang ligtas na antas (sa HACCP, tinatawag itong critical limit). Ang manok na hindi pa umaabot dito ay hindi pa ligtas."
    },
    "ind": {
-    "q": "Rencana bilang ayam matang harus mencapai 75°C di bagian tengah. Dalam HACCP, 75°C ini disebut apa?",
+    "q": "Rencana keamanan pangan bilang ayam matang harus mencapai 75°C di bagian tengah. Apa arti angka ini untuk Anda?",
     "o": [
-     "Batas kritis (batas aman yang harus dicapai)",
-     "Tindakan perbaikan",
-     "Diagram alur",
-     "Analisis bahaya"
+     "Ini batas aman yang harus dicapai ayam sebelum disajikan",
+     "Ini suhu kulkas",
+     "Ini berapa menit ayam harus dimasak",
+     "Ini hanya untuk manajer, bukan untuk juru masak"
     ],
-    "e": "Batas kritis adalah angka aman yang ditetapkan untuk sebuah CCP. Makanan yang belum mencapainya belum aman."
+    "e": "75°C adalah batas aman (dalam HACCP disebut batas kritis). Ayam yang belum mencapainya belum aman."
    },
    "tr": {
-    "q": "Plana göre pişmiş tavuğun ortası 75°C olmalı. HACCP'de bu 75°C'ye ne denir?",
+    "q": "Gıda güvenliği planına göre pişmiş tavuğun ortası 75°C'ye ulaşmalı. Bu sayı senin için ne demek?",
     "o": [
-     "Kritik limit (ulaşılması gereken güvenli sınır)",
-     "Düzeltici faaliyet",
-     "Akış şeması",
-     "Tehlike analizi"
+     "Tavuğun servis edilmeden önce ulaşması gereken güvenli sınır",
+     "Buzdolabının sıcaklığı",
+     "Tavuğun kaç dakika pişeceği",
+     "Sadece müdür için, aşçılar için değil"
     ],
-    "e": "Kritik limit, bir CCP için belirlenen güvenli sayıdır. Bu sayıya ulaşmayan gıda henüz güvenli değildir."
+    "e": "75°C güvenli sınırdır (HACCP'de buna kritik limit denir). Bu dereceye ulaşmayan tavuk henüz güvenli değildir."
    }
   },
   {
@@ -26043,114 +26000,114 @@
    "d": 4,
    "ch": 10,
    "en": {
-    "q": "Chicken reaches only 65°C, so you cook it longer until 75°C. What is this in HACCP?",
+    "q": "Your probe shows the chicken is only 70°C in the centre. It must reach 75°C. What do you do?",
     "o": [
-     "A corrective action (fixing the problem)",
-     "A critical limit",
-     "A hazard analysis",
-     "Forming the HACCP team"
+     "Cook it longer, check again and write down the reading",
+     "Serve it, 70°C is close enough",
+     "Write 75°C on the sheet and serve it",
+     "Put it in the fridge for later"
     ],
-    "e": "When a check misses the critical limit, you take a corrective action. Here, cooking longer makes the chicken safe."
+    "e": "Fix the problem by cooking it longer, then check again. Write down the real reading. In HACCP, fixing a failed check is called a corrective action."
    },
    "ur": {
-    "q": "مرغی صرف 65°C تک پہنچی، اس لیے آپ اسے 75°C تک مزید پکاتے ہیں۔ HACCP میں یہ کیا ہے؟",
+    "q": "آپ کا پروب تھرمامیٹر دکھاتا ہے کہ مرغی کا درمیان صرف 70°C ہے۔ اسے 75°C تک پہنچنا چاہیے۔ آپ کیا کریں گے؟",
     "o": [
-     "درستگی کا قدم (مسئلہ ٹھیک کرنا)",
-     "اہم حد",
-     "خطرات کی جانچ",
-     "HACCP ٹیم بنانا"
+     "اور پکائیں، دوبارہ چیک کریں اور ریڈنگ لکھیں",
+     "سرو کر دیں، 70°C کافی قریب ہے",
+     "شیٹ پر 75°C لکھ کر سرو کر دیں",
+     "بعد کے لیے فریج میں رکھ دیں"
     ],
-    "e": "جب چیک میں اہم حد پوری نہ ہو تو درستگی کا قدم اٹھاتے ہیں۔ یہاں زیادہ دیر پکانے سے مرغی محفوظ ہو جاتی ہے۔"
+    "e": "اور پکا کر مسئلہ ٹھیک کریں، پھر دوبارہ چیک کریں۔ اصل ریڈنگ لکھیں۔ HACCP میں فیل چیک کو ٹھیک کرنے کو درستگی کا قدم کہتے ہیں۔"
    },
    "hi": {
-    "q": "चिकन सिर्फ़ 65°C तक पहुँचा, इसलिए आप उसे 75°C तक और पकाते हैं। HACCP में यह क्या है?",
+    "q": "आपका प्रोब थर्मामीटर दिखाता है कि चिकन बीच में सिर्फ़ 70°C है। इसे 75°C तक पहुँचना चाहिए। आप क्या करें?",
     "o": [
-     "सुधार का क़दम (समस्या ठीक करना)",
-     "ज़रूरी सीमा",
-     "ख़तरों की जाँच",
-     "HACCP टीम बनाना"
+     "और देर पकाएँ, फिर से जाँचें और रीडिंग लिखें",
+     "परोस दें, 70°C काफ़ी पास है",
+     "शीट पर 75°C लिखकर परोस दें",
+     "बाद के लिए फ्रिज में रख दें"
     ],
-    "e": "जब जाँच में ज़रूरी सीमा पूरी न हो तो सुधार का क़दम उठाते हैं। यहाँ ज़्यादा देर पकाने से चिकन सुरक्षित हो जाता है।"
+    "e": "और देर पकाकर समस्या ठीक करें, फिर से जाँचें। असली रीडिंग लिखें। HACCP में फ़ेल हुई जाँच को ठीक करने को सुधार का क़दम कहते हैं।"
    },
    "bn": {
-    "q": "মুরগি মাত্র 65°C হয়েছে, তাই আপনি 75°C পর্যন্ত আরও রান্না করলেন। HACCP এ এটা কী?",
+    "q": "আপনার প্রোব থার্মোমিটার দেখাচ্ছে মুরগির মাঝখান মাত্র 70°C। এটা 75°C হতে হবে। কী করবেন?",
     "o": [
-     "সংশোধনের পদক্ষেপ (সমস্যা ঠিক করা)",
-     "গুরুত্বপূর্ণ সীমা",
-     "বিপদ যাচাই",
-     "HACCP দল গঠন"
+     "আরও রান্না করুন, আবার পরীক্ষা করুন আর রিডিং লিখে রাখুন",
+     "পরিবেশন করুন, 70°C যথেষ্ট কাছাকাছি",
+     "শিটে 75°C লিখে পরিবেশন করুন",
+     "পরে ব্যবহারের জন্য ফ্রিজে রেখে দিন"
     ],
-    "e": "পরীক্ষায় গুরুত্বপূর্ণ সীমা পূরণ না হলে সংশোধনের পদক্ষেপ নিতে হয়। এখানে বেশি সময় রান্না করলে মুরগি নিরাপদ হয়।"
+    "e": "আরও রান্না করে সমস্যা ঠিক করুন, তারপর আবার পরীক্ষা করুন। আসল রিডিং লিখুন। HACCP এ ফেল করা পরীক্ষা ঠিক করাকে সংশোধনের পদক্ষেপ বলে।"
    },
    "ar": {
-    "q": "الدجاج وصل إلى 65°C فقط، فطبخته مدة أطول حتى 75°C. ماذا يسمى هذا في HACCP؟",
+    "q": "ميزان الحرارة ذو السيخ يُظهر أن الدجاج 70°C فقط في الوسط. يجب أن يصل إلى 75°C. ماذا تفعل؟",
     "o": [
-     "الإجراء التصحيحي (إصلاح المشكلة)",
-     "الحد الحرج",
-     "تحليل المخاطر",
-     "تكوين فريق HACCP"
+     "اطبخه مدة أطول، وافحصه مرة ثانية، واكتب القراءة",
+     "قدّمه، 70°C قريبة بما يكفي",
+     "اكتب 75°C في الورقة وقدّمه",
+     "ضعه في الثلاجة لوقت لاحق"
     ],
-    "e": "عندما لا يصل الفحص إلى الحد الحرج، تقوم بإجراء تصحيحي. هنا، الطبخ مدة أطول يجعل الدجاج آمناً."
+    "e": "أصلح المشكلة بطبخه مدة أطول، ثم افحصه مرة ثانية. اكتب القراءة الحقيقية. في HACCP، إصلاح الفحص الفاشل يسمى الإجراء التصحيحي."
    },
    "ne": {
-    "q": "कुखुरा 65°C मात्र पुग्छ, त्यसैले तपाईं 75°C नपुगेसम्म अझ पकाउनुहुन्छ। HACCP मा यसलाई के भनिन्छ?",
+    "q": "तपाईंको प्रोब थर्मामिटरले कुखुराको बीच भाग 70°C मात्र देखाउँछ। यो 75°C पुग्नुपर्छ। तपाईं के गर्नुहुन्छ?",
     "o": [
-     "सुधार गर्ने काम (समस्या मिलाउनु)",
-     "तोकिएको सीमा",
-     "खतराको विश्लेषण",
-     "HACCP टोली बनाउनु"
+     "अझ पकाउनुहोस्, फेरि जाँच्नुहोस् र रिडिङ लेख्नुहोस्",
+     "खाना दिनुहोस्, 70°C नजिकै त हो",
+     "पानामा 75°C लेखेर खाना दिनुहोस्",
+     "पछिका लागि फ्रिजमा राख्नुहोस्"
     ],
-    "e": "जाँचमा तोकिएको सीमा पुगेन भने सुधार गर्ने काम गर्नुहुन्छ। यहाँ अझ पकाउँदा कुखुरा सुरक्षित हुन्छ।"
+    "e": "अझ पकाएर समस्या मिलाउनुहोस्, अनि फेरि जाँच्नुहोस्। साँचो रिडिङ लेख्नुहोस्। HACCP मा असफल जाँचलाई मिलाउनुलाई सुधार गर्ने काम भनिन्छ।"
    },
    "ml": {
-    "q": "ചിക്കൻ 65°C മാത്രമേ എത്തുന്നുള്ളൂ, അതുകൊണ്ട് 75°C ആകുന്നത് വരെ കൂടുതൽ നേരം വേവിക്കുന്നു. HACCP-യിൽ ഇതിനെ എന്താണ് പറയുന്നത്?",
+    "q": "നിങ്ങളുടെ പ്രോബ് തെർമോമീറ്റർ ചിക്കന്റെ നടുഭാഗം 70°C മാത്രമേ ഉള്ളൂ എന്ന് കാണിക്കുന്നു. അത് 75°C എത്തണം. നിങ്ങൾ എന്ത് ചെയ്യും?",
     "o": [
-     "തിരുത്തൽ നടപടി (പ്രശ്നം ശരിയാക്കൽ)",
-     "ക്രിട്ടിക്കൽ ലിമിറ്റ്",
-     "ഹസാർഡ് അനാലിസിസ്",
-     "HACCP ടീം ഉണ്ടാക്കൽ"
+     "കൂടുതൽ നേരം വേവിക്കുക, വീണ്ടും പരിശോധിക്കുക, കാണിക്കുന്ന താപനില എഴുതുക",
+     "വിളമ്പുക, 70°C ഏകദേശം മതി",
+     "ഷീറ്റിൽ 75°C എന്ന് എഴുതി വിളമ്പുക",
+     "പിന്നീടത്തേക്ക് ഫ്രിഡ്ജിൽ വയ്ക്കുക"
     ],
-    "e": "പരിശോധനയിൽ ക്രിട്ടിക്കൽ ലിമിറ്റ് എത്തിയില്ലെങ്കിൽ നിങ്ങൾ തിരുത്തൽ നടപടി എടുക്കണം. ഇവിടെ, കൂടുതൽ നേരം വേവിക്കുന്നത് ചിക്കനെ സുരക്ഷിതമാക്കുന്നു."
+    "e": "കൂടുതൽ നേരം വേവിച്ച് പ്രശ്നം ശരിയാക്കുക, പിന്നെ വീണ്ടും പരിശോധിക്കുക. ശരിയായ താപനില തന്നെ എഴുതുക. HACCP-യിൽ, പരാജയപ്പെട്ട പരിശോധന ശരിയാക്കുന്നതിനെ തിരുത്തൽ നടപടി എന്ന് പറയുന്നു."
    },
    "ta": {
-    "q": "கோழி 65°C மட்டுமே அடைகிறது, அதனால் 75°C வரும் வரை இன்னும் சமைக்கிறீர்கள். HACCP-இல் இது என்ன?",
+    "q": "உங்கள் ப்ரோப் தெர்மாமீட்டர் கோழியின் நடுப்பகுதி 70°C மட்டுமே என்று காட்டுகிறது. அது 75°C அடைய வேண்டும். நீங்கள் என்ன செய்வீர்கள்?",
     "o": [
-     "சரிசெய்யும் நடவடிக்கை (பிரச்சினையைச் சரிசெய்தல்)",
-     "முக்கிய எல்லை அளவு",
-     "ஆபத்து ஆய்வு",
-     "HACCP குழுவை அமைத்தல்"
+     "இன்னும் சமைத்து, மீண்டும் சோதித்து, காட்டும் அளவை எழுதுங்கள்",
+     "பரிமாறுங்கள், 70°C கிட்டத்தட்ட போதும்",
+     "தாளில் 75°C என்று எழுதிப் பரிமாறுங்கள்",
+     "பிறகு பயன்படுத்த ஃப்ரிட்ஜில் வையுங்கள்"
     ],
-    "e": "ஒரு சோதனையில் முக்கிய எல்லை அளவு வரவில்லை என்றால், சரிசெய்யும் நடவடிக்கை எடுக்கிறீர்கள். இங்கே, இன்னும் சமைப்பது கோழியைப் பாதுகாப்பாக்கும்."
+    "e": "இன்னும் சமைத்துப் பிரச்சினையைச் சரிசெய்யுங்கள், பிறகு மீண்டும் சோதியுங்கள். உண்மையான அளவை எழுதுங்கள். HACCP-இல், தோற்ற சோதனையைச் சரிசெய்வதை சரிசெய்யும் நடவடிக்கை என்று அழைப்பார்கள்."
    },
    "fil": {
-    "q": "Umabot lang sa 65°C ang manok, kaya niluto mo pa ito hanggang 75°C. Ano ito sa HACCP?",
+    "q": "Ipinapakita ng probe mo na 70°C lang ang gitna ng manok. Dapat itong umabot sa 75°C. Ano ang gagawin mo?",
     "o": [
-     "Corrective action (pag-ayos sa problema)",
-     "Critical limit",
-     "Hazard analysis",
-     "Pagbuo ng HACCP team"
+     "Lutuin pa ito nang mas matagal, i-check ulit at isulat ang basa ng thermometer",
+     "I-serve ito, malapit na rin ang 70°C",
+     "Isulat ang 75°C sa sheet at i-serve ito",
+     "Ilagay ito sa ref para mamaya"
     ],
-    "e": "Kapag ipinakita ng check na hindi naabot ang critical limit, gagawa ka ng corrective action. Dito, ang mas matagal na pagluluto ang nagpapaligtas sa manok."
+    "e": "Ayusin ang problema sa pagluluto nang mas matagal, saka i-check ulit. Isulat ang totoong basa ng thermometer. Sa HACCP, ang pag-ayos sa check na pumalya ay tinatawag na corrective action."
    },
    "ind": {
-    "q": "Ayam hanya mencapai 65°C, jadi Anda memasaknya lebih lama sampai 75°C. Dalam HACCP, ini disebut apa?",
+    "q": "Termometer tusuk Anda menunjukkan bagian tengah ayam hanya 70°C. Ayam harus mencapai 75°C. Apa yang Anda lakukan?",
     "o": [
-     "Tindakan perbaikan (memperbaiki masalah)",
-     "Batas kritis",
-     "Analisis bahaya",
-     "Membentuk tim HACCP"
+     "Masak lebih lama, periksa lagi dan catat angkanya",
+     "Sajikan saja, 70°C sudah hampir cukup",
+     "Tulis 75°C di lembar catatan lalu sajikan",
+     "Masukkan ke kulkas untuk nanti"
     ],
-    "e": "Kalau hasil pemeriksaan tidak mencapai batas kritis, Anda melakukan tindakan perbaikan. Di sini, memasak lebih lama membuat ayam aman."
+    "e": "Perbaiki masalahnya dengan memasak lebih lama, lalu periksa lagi. Catat angka yang sebenarnya. Dalam HACCP, memperbaiki pemeriksaan yang gagal disebut tindakan perbaikan."
    },
    "tr": {
-    "q": "Tavuk sadece 65°C'ye ulaşıyor, bu yüzden 75°C olana kadar daha uzun pişiriyorsun. HACCP'de buna ne denir?",
+    "q": "Batırmalı termometren tavuğun ortasını sadece 70°C gösteriyor. 75°C'ye ulaşması gerekiyor. Ne yaparsın?",
     "o": [
-     "Düzeltici faaliyet (sorunu düzeltmek)",
-     "Kritik limit",
-     "Tehlike analizi",
-     "HACCP ekibini kurmak"
+     "Daha uzun pişir, tekrar kontrol et ve ölçümü yaz",
+     "Servis et, 70°C yeterince yakın",
+     "Kağıda 75°C yaz ve servis et",
+     "Sonra kullanmak için buzdolabına koy"
     ],
-    "e": "Kontrol kritik limite ulaşmadığında düzeltici faaliyet yaparsın. Burada daha uzun pişirmek tavuğu güvenli yapar."
+    "e": "Sorunu daha uzun pişirerek düzelt, sonra tekrar kontrol et. Gerçek ölçümü yaz. HACCP'de tutmayan bir kontrolü düzeltmeye düzeltici faaliyet denir."
    }
   },
   {
@@ -26308,145 +26265,119 @@
   },
   {
    "id": "k243",
-   "type": "multi",
-   "ans": [
-    0,
-    1,
-    2
-   ],
+   "type": "single",
+   "ans": 0,
    "d": 4,
    "ch": 10,
    "en": {
-    "q": "Which of these must be in place before HACCP starts? Choose all that are correct.",
+    "q": "A food safety plan (HACCP) only works if the kitchen does the basics every day. Which of these is one of the basics?",
     "o": [
-     "A plan to control insects and rats",
-     "A regular cleaning schedule",
-     "Hygiene training for workers",
-     "Setting critical limits",
-     "Checking the flow diagram on site",
-     "Choosing the critical control points"
+     "Cleaning, pest control and hygiene training",
+     "Choosing new prices for the menu",
+     "Painting the walls a new colour",
+     "Buying a bigger fridge every year"
     ],
-    "e": "Pest control, cleaning and training are basics that come first. Limits, the flow diagram check and CCPs are HACCP steps themselves."
+    "e": "Cleaning, pest control and training come first. Without them, no plan can keep food safe."
    },
    "ur": {
-    "q": "HACCP شروع ہونے سے پہلے ان میں سے کیا موجود ہونا ضروری ہے؟ سب صحیح جواب چنیں۔",
+    "q": "فوڈ سیفٹی پلان (HACCP) تبھی کام کرتا ہے جب کچن روز بنیادی کام کرے۔ ان میں سے کون سا ایک بنیادی کام ہے؟",
     "o": [
-     "کیڑوں اور چوہوں کو روکنے کا پلان",
-     "باقاعدہ صفائی کا شیڈول",
-     "ملازمین کی صفائی ستھرائی کی ٹریننگ",
-     "اہم حدیں طے کرنا",
-     "جگہ پر جا کر کام کا نقشہ چیک کرنا",
-     "اہم کنٹرول پوائنٹ چننا"
+     "صفائی، کیڑوں اور چوہوں کا کنٹرول، اور صفائی ستھرائی کی ٹریننگ",
+     "مینیو کی نئی قیمتیں طے کرنا",
+     "دیواروں پر نیا رنگ کرنا",
+     "ہر سال بڑا فریج خریدنا"
     ],
-    "e": "کیڑوں کا کنٹرول، صفائی اور ٹریننگ بنیادی چیزیں ہیں جو پہلے آتی ہیں۔ حدیں، نقشے کی جانچ اور CCP خود HACCP کے قدم ہیں۔"
+    "e": "صفائی، کیڑوں کا کنٹرول اور ٹریننگ سب سے پہلے آتے ہیں۔ ان کے بغیر کوئی پلان کھانا محفوظ نہیں رکھ سکتا۔"
    },
    "hi": {
-    "q": "HACCP शुरू होने से पहले इनमें से क्या होना ज़रूरी है? सभी सही जवाब चुनें।",
+    "q": "फ़ूड सेफ़्टी प्लान (HACCP) तभी काम करता है जब किचन रोज़ बुनियादी काम करे। इनमें से कौन सा एक बुनियादी काम है?",
     "o": [
-     "कीड़ों और चूहों को रोकने का प्लान",
-     "नियमित सफ़ाई का शेड्यूल",
-     "कर्मचारियों की साफ़-सफ़ाई की ट्रेनिंग",
-     "ज़रूरी सीमाएँ तय करना",
-     "जगह पर जाकर काम का नक्शा जाँचना",
-     "ज़रूरी नियंत्रण बिंदु चुनना"
+     "सफ़ाई, कीड़ों और चूहों का नियंत्रण, और साफ़-सफ़ाई की ट्रेनिंग",
+     "मेन्यू की नई क़ीमतें तय करना",
+     "दीवारों पर नया रंग करना",
+     "हर साल बड़ा फ्रिज ख़रीदना"
     ],
-    "e": "कीड़ों का नियंत्रण, सफ़ाई और ट्रेनिंग बुनियादी चीज़ें हैं जो पहले आती हैं। सीमाएँ, नक्शे की जाँच और CCP ख़ुद HACCP के क़दम हैं।"
+    "e": "सफ़ाई, कीड़ों का नियंत्रण और ट्रेनिंग सबसे पहले आते हैं। इनके बिना कोई भी प्लान खाने को सुरक्षित नहीं रख सकता।"
    },
    "bn": {
-    "q": "HACCP শুরুর আগে এগুলোর মধ্যে কী কী থাকতে হবে? সব সঠিক উত্তর বাছুন।",
+    "q": "খাদ্য নিরাপত্তার পরিকল্পনা (HACCP) তখনই কাজ করে যখন রান্নাঘরে রোজ মূল কাজগুলো হয়। এগুলোর মধ্যে কোনটা মূল কাজের একটা?",
     "o": [
-     "পোকা আর ইঁদুর ঠেকানোর পরিকল্পনা",
-     "নিয়মিত পরিষ্কারের তালিকা",
-     "কর্মীদের পরিচ্ছন্নতার প্রশিক্ষণ",
-     "গুরুত্বপূর্ণ সীমা ঠিক করা",
-     "জায়গায় গিয়ে কাজের নকশা মিলিয়ে দেখা",
-     "গুরুত্বপূর্ণ নিয়ন্ত্রণ বিন্দু বাছাই"
+     "পরিষ্কার, পোকা নিয়ন্ত্রণ আর পরিচ্ছন্নতার প্রশিক্ষণ",
+     "মেনুর জন্য নতুন দাম ঠিক করা",
+     "দেয়ালে নতুন রং করা",
+     "প্রতি বছর একটা বড় ফ্রিজ কেনা"
     ],
-    "e": "পোকা নিয়ন্ত্রণ, পরিষ্কার আর প্রশিক্ষণ মূল জিনিস, এগুলো আগে আসে। সীমা, নকশা মিলানো আর CCP নিজেই HACCP এর ধাপ।"
+    "e": "পরিষ্কার, পোকা নিয়ন্ত্রণ আর প্রশিক্ষণ আগে আসে। এগুলো ছাড়া কোনো পরিকল্পনা খাবার নিরাপদ রাখতে পারে না।"
    },
    "ar": {
-    "q": "أي من هذه الأشياء يجب أن تكون جاهزة قبل بدء HACCP؟ اختر كل الأجوبة الصحيحة.",
+    "q": "خطة سلامة الغذاء (HACCP) لا تنجح إلا إذا عمل المطبخ الأساسيات كل يوم. أي من هذه من الأساسيات؟",
     "o": [
-     "خطة لمكافحة الحشرات والجرذان",
-     "جدول تنظيف منتظم",
-     "تدريب العمال على النظافة",
-     "تحديد الحدود الحرجة",
-     "التحقق من مخطط سير العمل في المكان",
-     "اختيار نقاط التحكم الحرجة"
+     "التنظيف ومكافحة الآفات والتدريب على النظافة",
+     "وضع أسعار جديدة لقائمة الطعام",
+     "دهن الجدران بلون جديد",
+     "شراء ثلاجة أكبر كل سنة"
     ],
-    "e": "مكافحة الآفات والتنظيف والتدريب أساسيات تأتي أولاً. الحدود الحرجة والتحقق من مخطط سير العمل ونقاط التحكم الحرجة هي نفسها من خطوات HACCP."
+    "e": "التنظيف ومكافحة الآفات والتدريب تأتي أولاً. بدونها لا تستطيع أي خطة أن تحافظ على سلامة الطعام."
    },
    "ne": {
-    "q": "HACCP सुरु हुनुअघि यीमध्ये कुन कुरा तयार हुनुपर्छ? सही भएका सबै छान्नुहोस्।",
+    "q": "भान्साले हरेक दिन आधारभूत काम गरे मात्र खाना सुरक्षाको योजना (HACCP) ले काम गर्छ। यीमध्ये कुन आधारभूत काम हो?",
     "o": [
-     "कीरा र मुसा नियन्त्रण गर्ने योजना",
-     "नियमित सफाइ तालिका",
-     "कामदारलाई सरसफाइको तालिम",
-     "तोकिएको सीमा राख्नु",
-     "काम गर्ने ठाउँमै फ्लो डायग्राम जाँच्नु",
-     "मुख्य नियन्त्रण बिन्दु छान्नु"
+     "सफाइ, कीरा-मुसा नियन्त्रण र सरसफाइको तालिम",
+     "मेनुको नयाँ मूल्य छान्नु",
+     "भित्तालाई नयाँ रङ लगाउनु",
+     "हरेक वर्ष ठूलो फ्रिज किन्नु"
     ],
-    "e": "कीरा-मुसा नियन्त्रण, सफाइ र तालिम पहिले चाहिने आधारभूत कुरा हुन्। सीमा, फ्लो डायग्रामको जाँच र CCP चाहिँ HACCP का आफ्नै चरण हुन्।"
+    "e": "सफाइ, कीरा-मुसा नियन्त्रण र तालिम पहिले आउँछन्। यिनीबिना कुनै पनि योजनाले खाना सुरक्षित राख्न सक्दैन।"
    },
    "ml": {
-    "q": "HACCP തുടങ്ങുന്നതിന് മുമ്പ് ഇവയിൽ ഏതൊക്കെ ഉണ്ടായിരിക്കണം? ശരിയായ എല്ലാം തിരഞ്ഞെടുക്കുക.",
+    "q": "അടുക്കളയിൽ എല്ലാ ദിവസവും അടിസ്ഥാന കാര്യങ്ങൾ ചെയ്താലേ ഭക്ഷ്യ സുരക്ഷാ പ്ലാൻ (HACCP) പ്രവർത്തിക്കൂ. ഇവയിൽ ഏതാണ് അടിസ്ഥാന കാര്യങ്ങളിൽ ഒന്ന്?",
     "o": [
-     "പ്രാണികളെയും എലികളെയും നിയന്ത്രിക്കാനുള്ള ഒരു പ്ലാൻ",
-     "സ്ഥിരമായ ഒരു ക്ലീനിങ് ഷെഡ്യൂൾ",
-     "ജോലിക്കാർക്ക് ശുചിത്വ ട്രെയിനിങ്",
-     "ക്രിട്ടിക്കൽ ലിമിറ്റുകൾ നിശ്ചയിക്കൽ",
-     "ഫ്ലോ ഡയഗ്രം സ്ഥലത്ത് വച്ച് പരിശോധിക്കൽ",
-     "ക്രിട്ടിക്കൽ കൺട്രോൾ പോയിന്റുകൾ തിരഞ്ഞെടുക്കൽ"
+     "വൃത്തിയാക്കൽ, പെസ്റ്റ് കൺട്രോൾ (കീട നിയന്ത്രണം), ശുചിത്വ ട്രെയിനിങ്",
+     "മെനുവിന് പുതിയ വില നിശ്ചയിക്കൽ",
+     "ചുമരുകൾക്ക് പുതിയ നിറം അടിക്കൽ",
+     "എല്ലാ വർഷവും ഒരു വലിയ ഫ്രിഡ്ജ് വാങ്ങൽ"
     ],
-    "e": "പെസ്റ്റ് കൺട്രോൾ, വൃത്തിയാക്കൽ, ട്രെയിനിങ് എന്നിവയാണ് ആദ്യം വേണ്ട അടിസ്ഥാന കാര്യങ്ങൾ. ലിമിറ്റുകൾ, ഫ്ലോ ഡയഗ്രം പരിശോധന, CCP-കൾ എന്നിവ HACCP-യുടെ തന്നെ സ്റ്റെപ്പുകളാണ്."
+    "e": "വൃത്തിയാക്കൽ, പെസ്റ്റ് കൺട്രോൾ, ട്രെയിനിങ് എന്നിവയാണ് ആദ്യം വേണ്ടത്. ഇവയില്ലാതെ ഒരു പ്ലാനിനും ഭക്ഷണം സുരക്ഷിതമാക്കാൻ കഴിയില്ല."
    },
    "ta": {
-    "q": "HACCP தொடங்குவதற்கு முன் இவற்றில் எவை தயாராக இருக்க வேண்டும்? சரியான எல்லாவற்றையும் தேர்ந்தெடுக்கவும்.",
+    "q": "சமையலறை தினமும் அடிப்படை வேலைகளைச் செய்தால் மட்டுமே உணவுப் பாதுகாப்புத் திட்டம் (HACCP) வேலை செய்யும். இவற்றில் எது அடிப்படைகளில் ஒன்று?",
     "o": [
-     "பூச்சிகளையும் எலிகளையும் கட்டுப்படுத்த ஒரு திட்டம்",
-     "வழக்கமான சுத்தம் செய்யும் அட்டவணை",
-     "பணியாளர்களுக்குச் சுகாதாரப் பயிற்சி",
-     "முக்கிய எல்லை அளவுகளை வைப்பது",
-     "ஓட்ட வரைபடத்தை இடத்திலேயே சரிபார்ப்பது",
-     "முக்கியக் கட்டுப்பாட்டு இடங்களைத் தேர்ந்தெடுப்பது"
+     "சுத்தம், பூச்சி, எலி கட்டுப்பாடு, சுகாதாரப் பயிற்சி",
+     "மெனுவுக்குப் புதிய விலைகளை முடிவு செய்வது",
+     "சுவர்களுக்குப் புதிய நிறம் அடிப்பது",
+     "ஒவ்வொரு வருடமும் பெரிய ஃப்ரிட்ஜ் வாங்குவது"
     ],
-    "e": "பூச்சி, எலி கட்டுப்பாடு, சுத்தம், பயிற்சி ஆகியவை முதலில் வர வேண்டிய அடிப்படைகள். எல்லை அளவுகள், ஓட்ட வரைபடச் சரிபார்ப்பு, CCP-கள் ஆகியவை HACCP-இன் படிகளே."
+    "e": "சுத்தம், பூச்சி, எலி கட்டுப்பாடு, பயிற்சி ஆகியவை முதலில் வரும். அவை இல்லாமல் எந்தத் திட்டமும் உணவைப் பாதுகாப்பாக வைக்க முடியாது."
    },
    "fil": {
-    "q": "Alin dito ang dapat nakahanda na bago magsimula ang HACCP? Piliin ang lahat ng tama.",
+    "q": "Gumagana lang ang food safety plan (HACCP) kung ginagawa ng kusina ang mga pangunahing bagay araw-araw. Alin dito ang isa sa mga pangunahing bagay?",
     "o": [
-     "Plano para kontrolin ang insekto at daga",
-     "Regular na cleaning schedule",
-     "Training sa kalinisan para sa mga trabahador",
-     "Pagtakda ng critical limits",
-     "Pagtingin sa flow diagram sa mismong lugar",
-     "Pagpili ng critical control points"
+     "Paglilinis, pest control at training sa kalinisan",
+     "Pagpili ng bagong presyo sa menu",
+     "Pagpinta ng bagong kulay sa pader",
+     "Pagbili ng mas malaking ref bawat taon"
     ],
-    "e": "Ang pest control, paglilinis at training ay mga pangunahing bagay na nauuna. Ang limits, ang pagtingin sa flow diagram at ang CCP ay mga hakbang na ng HACCP mismo."
+    "e": "Nauuna ang paglilinis, pest control at training. Kung wala ang mga ito, walang plano na makakapagpanatiling ligtas sa pagkain."
    },
    "ind": {
-    "q": "Mana dari hal ini yang harus sudah ada sebelum HACCP dimulai? Pilih semua yang benar.",
+    "q": "Rencana keamanan pangan (HACCP) hanya berjalan kalau dapur mengerjakan hal-hal dasar setiap hari. Mana dari ini yang termasuk hal dasar?",
     "o": [
-     "Rencana untuk mengendalikan serangga dan tikus",
-     "Jadwal bersih-bersih yang rutin",
-     "Pelatihan kebersihan untuk pekerja",
-     "Menetapkan batas kritis",
-     "Memeriksa diagram alur di tempat",
-     "Memilih titik kendali kritis"
+     "Bersih-bersih, pembasmian hama dan pelatihan kebersihan",
+     "Menentukan harga baru untuk menu",
+     "Mengecat dinding dengan warna baru",
+     "Membeli kulkas yang lebih besar setiap tahun"
     ],
-    "e": "Pembasmi hama, pembersihan dan pelatihan adalah dasar yang harus ada lebih dulu. Batas kritis, pemeriksaan diagram alur dan CCP adalah langkah HACCP itu sendiri."
+    "e": "Bersih-bersih, pembasmian hama dan pelatihan harus ada lebih dulu. Tanpa itu, tidak ada rencana yang bisa menjaga makanan tetap aman."
    },
    "tr": {
-    "q": "Bunlardan hangileri HACCP başlamadan önce hazır olmalıdır? Doğru olanların hepsini seç.",
+    "q": "Bir gıda güvenliği planı (HACCP) ancak mutfak temel işleri her gün yaparsa işe yarar. Bunlardan hangisi temel işlerden biridir?",
     "o": [
-     "Böcekleri ve sıçanları kontrol etmek için bir plan",
-     "Düzenli bir temizlik planı",
-     "Çalışanlar için hijyen eğitimi",
-     "Kritik limitleri belirlemek",
-     "Akış şemasını yerinde kontrol etmek",
-     "Kritik kontrol noktalarını seçmek"
+     "Temizlik, haşere kontrolü ve hijyen eğitimi",
+     "Menü için yeni fiyatlar seçmek",
+     "Duvarları yeni bir renge boyamak",
+     "Her yıl daha büyük bir buzdolabı almak"
     ],
-    "e": "Haşere kontrolü, temizlik ve eğitim önce gelen temel şeylerdir. Limitler, akış şemasının kontrolü ve CCP'ler ise HACCP'nin kendi adımlarıdır."
+    "e": "Temizlik, haşere kontrolü ve eğitim önce gelir. Bunlar olmadan hiçbir plan gıdayı güvende tutamaz."
    }
   },
   {
@@ -26595,351 +26526,354 @@
   },
   {
    "id": "k245",
-   "type": "order",
+   "type": "single",
    "ch": 10,
    "d": 3,
    "en": {
-    "q": "A restaurant makes its HACCP plan (food safety plan). Put the first four steps in order.",
+    "q": "What is HACCP?",
     "o": [
-     "Choose a team of staff to make the plan",
-     "Write down what the food is (ingredients, how it is stored, how long it lasts)",
-     "Write down who will eat it and how",
-     "Draw a map of every stage the food goes through (flow diagram)"
+     "A system that finds the dangers to food and stops them before they happen",
+     "A list of food prices",
+     "A type of cleaning chemical",
+     "A type of fridge thermometer"
     ],
-    "e": "First a team is chosen. The team writes down the food and who eats it, then draws every stage on a map."
+    "e": "HACCP is a food safety system. It finds where food can become unsafe and puts checks there, so problems are stopped early."
    },
    "ur": {
-    "q": "ایک ریسٹورنٹ اپنا HACCP پلان (کھانے کی حفاظت کا پلان) بناتا ہے۔ پہلے چار قدم ترتیب میں لگائیں۔",
+    "q": "HACCP کیا ہے؟",
     "o": [
-     "پلان بنانے کے لیے عملے کی ایک ٹیم چنیں",
-     "لکھیں کہ کھانا کیا ہے (اجزاء، کیسے رکھا جاتا ہے، کتنے دن چلتا ہے)",
-     "لکھیں کہ اسے کون کھائے گا اور کیسے",
-     "ہر مرحلے کا نقشہ بنائیں جس سے کھانا گزرتا ہے (فلو ڈایاگرام)"
+     "ایک نظام جو کھانے کے خطرے ڈھونڈتا ہے اور انہیں ہونے سے پہلے روکتا ہے",
+     "کھانے کی قیمتوں کی فہرست",
+     "صفائی کے کیمیکل کی ایک قسم",
+     "فریج کے تھرمامیٹر کی ایک قسم"
     ],
-    "e": "پہلے ٹیم چنی جاتی ہے۔ ٹیم لکھتی ہے کہ کھانا کیا ہے اور کون کھائے گا، پھر ہر مرحلہ نقشے پر بناتی ہے۔"
+    "e": "HACCP کھانے کی حفاظت کا نظام ہے۔ یہ ڈھونڈتا ہے کہ کھانا کہاں غیر محفوظ ہو سکتا ہے اور وہاں چیک لگاتا ہے، تاکہ مسئلے جلدی روکے جائیں۔"
    },
    "hi": {
-    "q": "एक रेस्टोरेंट अपना HACCP प्लान (खाने की सुरक्षा का प्लान) बनाता है। पहले चार क़दम क्रम में लगाएँ।",
+    "q": "HACCP क्या है?",
     "o": [
-     "प्लान बनाने के लिए स्टाफ़ की एक टीम चुनें",
-     "लिखें कि खाना क्या है (सामग्री, कैसे रखा जाता है, कितने दिन चलता है)",
-     "लिखें कि इसे कौन खाएगा और कैसे",
-     "खाना जिन-जिन चरणों से गुज़रता है, उन सबका नक्शा बनाएँ (फ़्लो डायग्राम)"
+     "एक सिस्टम जो खाने के ख़तरे ढूँढता है और उन्हें होने से पहले रोकता है",
+     "खाने की क़ीमतों की लिस्ट",
+     "सफ़ाई के केमिकल की एक क़िस्म",
+     "फ्रिज के थर्मामीटर की एक क़िस्म"
     ],
-    "e": "पहले एक टीम चुनी जाती है। टीम लिखती है कि खाना क्या है और उसे कौन खाएगा, फिर हर चरण का नक्शा बनाती है।"
+    "e": "HACCP खाने की सुरक्षा का एक सिस्टम है। यह ढूँढता है कि खाना कहाँ असुरक्षित हो सकता है और वहाँ जाँच लगाता है, ताकि समस्याएँ जल्दी रोकी जाएँ।"
    },
    "bn": {
-    "q": "একটা রেস্টুরেন্ট তার HACCP প্ল্যান (খাবার নিরাপদ রাখার পরিকল্পনা) বানাচ্ছে। প্রথম চারটি ধাপ ক্রমে সাজান।",
+    "q": "HACCP কী?",
     "o": [
-     "প্ল্যান বানানোর জন্য কর্মীদের একটা দল বাছাই করুন",
-     "খাবারটা কী তা লিখুন (উপকরণ, কীভাবে রাখা হয়, কত দিন ভালো থাকে)",
-     "কে খাবে আর কীভাবে খাবে তা লিখুন",
-     "খাবার যে যে ধাপ পার হয় তার একটা নকশা আঁকুন (ফ্লো ডায়াগ্রাম)"
+     "এমন একটা ব্যবস্থা যা খাবারের বিপদ খুঁজে বের করে আর ঘটার আগেই থামায়",
+     "খাবারের দামের তালিকা",
+     "এক ধরনের পরিষ্কারের কেমিক্যাল",
+     "এক ধরনের ফ্রিজের থার্মোমিটার"
     ],
-    "e": "আগে একটা দল বাছাই করা হয়। দল খাবারের কথা আর কে খাবে তা লেখে, তারপর প্রতিটি ধাপ নকশায় আঁকে।"
+    "e": "HACCP একটা খাদ্য নিরাপত্তার ব্যবস্থা। এটা খুঁজে বের করে কোথায় খাবার অনিরাপদ হতে পারে আর সেখানে পরীক্ষা রাখে, যাতে সমস্যা আগেই থামে।"
    },
    "ar": {
-    "q": "مطعم يضع خطة HACCP (خطة سلامة الغذاء). رتّب أول أربع خطوات.",
+    "q": "ما هو HACCP؟",
     "o": [
-     "اختر فريقاً من العمال لوضع الخطة",
-     "اكتب وصف الطعام (المكونات، طريقة تخزينه، مدة صلاحيته)",
-     "اكتب من سيأكله وكيف",
-     "ارسم خريطة لكل مرحلة يمر بها الطعام (مخطط سير العمل)"
+     "نظام يكتشف الأخطار على الطعام ويوقفها قبل أن تحدث",
+     "قائمة بأسعار الطعام",
+     "نوع من مواد التنظيف الكيميائية",
+     "نوع من موازين حرارة الثلاجة"
     ],
-    "e": "أولاً يتم اختيار فريق. الفريق يكتب وصف الطعام ومن سيأكله، ثم يرسم كل مرحلة على خريطة."
+    "e": "HACCP نظام لسلامة الغذاء. يكتشف الأماكن التي قد يصبح فيها الطعام غير آمن ويضع فيها فحوصاً، حتى تتوقف المشاكل مبكراً."
    },
    "ne": {
-    "q": "एउटा रेस्टुरेन्टले आफ्नो HACCP योजना (खाना सुरक्षाको योजना) बनाउँछ। पहिला चार चरणलाई क्रममा मिलाउनुहोस्।",
+    "q": "HACCP भनेको के हो?",
     "o": [
-     "योजना बनाउन कर्मचारीहरूको टोली छान्नुहोस्",
-     "खाना के हो लेख्नुहोस् (सामग्री, कसरी राखिन्छ, कति दिन टिक्छ)",
-     "कसले र कसरी खान्छ भनेर लेख्नुहोस्",
-     "खाना जाने हरेक चरणको नक्सा बनाउनुहोस् (फ्लो डायग्राम)"
+     "खानाका खतरा पत्ता लगाएर ती हुनुअघि नै रोक्ने प्रणाली",
+     "खानाको मूल्यको सूची",
+     "सफा गर्ने एक किसिमको रसायन",
+     "फ्रिजको एक किसिमको थर्मामिटर"
     ],
-    "e": "पहिले टोली छानिन्छ। टोलीले खाना के हो र कसले खान्छ भनेर लेख्छ, अनि हरेक चरणलाई नक्सामा देखाउँछ।"
+    "e": "HACCP खाना सुरक्षाको प्रणाली हो। यसले खाना कहाँ असुरक्षित हुन सक्छ पत्ता लगाउँछ र त्यहाँ जाँच राख्छ, ताकि समस्या चाँडै रोकियोस्।"
    },
    "ml": {
-    "q": "ഒരു ഹോട്ടൽ അതിന്റെ HACCP പ്ലാൻ (ഭക്ഷ്യ സുരക്ഷാ പ്ലാൻ) ഉണ്ടാക്കുന്നു. ആദ്യത്തെ നാല് സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "HACCP എന്നാൽ എന്താണ്?",
     "o": [
-     "പ്ലാൻ ഉണ്ടാക്കാൻ ജോലിക്കാരുടെ ഒരു ടീമിനെ തിരഞ്ഞെടുക്കുക",
-     "ഭക്ഷണം എന്താണെന്ന് എഴുതി വയ്ക്കുക (ചേരുവകൾ, സൂക്ഷിക്കുന്ന രീതി, എത്ര കാലം കേടാകാതെ ഇരിക്കും)",
-     "ആര് കഴിക്കും, എങ്ങനെ കഴിക്കും എന്ന് എഴുതി വയ്ക്കുക",
-     "ഭക്ഷണം കടന്നുപോകുന്ന ഓരോ ഘട്ടവും കാണിക്കുന്ന ചിത്രം വരയ്ക്കുക (ഫ്ലോ ഡയഗ്രം)"
+     "ഭക്ഷണത്തിനുള്ള അപകടങ്ങൾ കണ്ടെത്തി അവ ഉണ്ടാകുന്നതിന് മുമ്പ് തടയുന്ന ഒരു സംവിധാനം",
+     "ഭക്ഷണ വിലകളുടെ ഒരു ലിസ്റ്റ്",
+     "ഒരു തരം ക്ലീനിങ് കെമിക്കൽ",
+     "ഒരു തരം ഫ്രിഡ്ജ് തെർമോമീറ്റർ"
     ],
-    "e": "ആദ്യം ഒരു ടീമിനെ തിരഞ്ഞെടുക്കുന്നു. ടീം ഭക്ഷണത്തെക്കുറിച്ചും അത് ആര് കഴിക്കുമെന്നും എഴുതി വയ്ക്കുന്നു, പിന്നെ എല്ലാ ഘട്ടങ്ങളും ഒരു ചിത്രത്തിൽ വരയ്ക്കുന്നു."
+    "e": "HACCP ഒരു ഭക്ഷ്യ സുരക്ഷാ സംവിധാനമാണ്. ഭക്ഷണം എവിടെ സുരക്ഷിതമല്ലാതാകാം എന്ന് കണ്ടെത്തി അവിടെ പരിശോധനകൾ വയ്ക്കുന്നു, അങ്ങനെ പ്രശ്നങ്ങൾ നേരത്തെ തടയുന്നു."
    },
    "ta": {
-    "q": "ஒரு உணவகம் தன் HACCP திட்டத்தை (உணவுப் பாதுகாப்புத் திட்டம்) தயாரிக்கிறது. முதல் நான்கு படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "HACCP என்றால் என்ன?",
     "o": [
-     "திட்டத்தைத் தயாரிக்கப் பணியாளர்களில் ஒரு குழுவைத் தேர்ந்தெடுங்கள்",
-     "உணவு என்ன என்று எழுதுங்கள் (என்ன பொருட்கள், எப்படிச் சேமிப்பது, எவ்வளவு நாள் வைக்கலாம்)",
-     "அதை யார் சாப்பிடுவார்கள், எப்படிச் சாப்பிடுவார்கள் என்று எழுதுங்கள்",
-     "உணவு போகும் ஒவ்வொரு கட்டத்தையும் வரைபடமாக வரையுங்கள் (ஓட்ட வரைபடம்)"
+     "உணவுக்கு வரும் ஆபத்துகளைக் கண்டுபிடித்து, அவை நடப்பதற்கு முன்பே தடுக்கும் ஒரு முறை",
+     "உணவு விலைகளின் பட்டியல்",
+     "ஒரு வகை சுத்தம் செய்யும் கெமிக்கல்",
+     "ஒரு வகை ஃப்ரிட்ஜ் தெர்மாமீட்டர்"
     ],
-    "e": "முதலில் ஒரு குழு தேர்ந்தெடுக்கப்படும். குழு உணவையும் அதை யார் சாப்பிடுவார்கள் என்பதையும் எழுதி, பிறகு ஒவ்வொரு கட்டத்தையும் வரைபடத்தில் வரையும்."
+    "e": "HACCP என்பது ஒரு உணவுப் பாதுகாப்பு முறை. உணவு எங்கே பாதுகாப்பற்றதாகலாம் என்று கண்டுபிடித்து, அங்கே சோதனைகளை வைக்கிறது. அதனால் பிரச்சினைகள் சீக்கிரமே தடுக்கப்படுகின்றன."
    },
    "fil": {
-    "q": "Gumagawa ang isang restaurant ng HACCP plan (food safety plan). Ayusin ang unang apat na hakbang sa tamang pagkakasunod.",
+    "q": "Ano ang HACCP?",
     "o": [
-     "Pumili ng team ng mga staff na gagawa ng plano",
-     "Isulat kung ano ang pagkain (sangkap, paano ito iniimbak, gaano katagal ito tatagal)",
-     "Isulat kung sino ang kakain nito at paano",
-     "Gumuhit ng mapa ng bawat yugtong dinaraanan ng pagkain (flow diagram)"
+     "Isang sistema na naghahanap ng mga panganib sa pagkain at pumipigil dito bago pa mangyari",
+     "Listahan ng presyo ng pagkain",
+     "Isang uri ng kemikal na panlinis",
+     "Isang uri ng thermometer ng ref"
     ],
-    "e": "Una, pumipili ng team. Isusulat ng team ang pagkain at kung sino ang kakain nito, tapos iguguhit ang bawat yugto sa isang mapa."
+    "e": "Ang HACCP ay isang sistema ng food safety. Hinahanap nito kung saan puwedeng maging hindi ligtas ang pagkain at naglalagay ng check doon, kaya maagang napipigilan ang problema."
    },
    "ind": {
-    "q": "Sebuah restoran membuat rencana HACCP (rencana keamanan pangan). Susun empat langkah pertama dengan urutan yang benar.",
+    "q": "Apa itu HACCP?",
     "o": [
-     "Pilih tim staf untuk membuat rencana",
-     "Tulis tentang makanannya (bahan, cara simpan, berapa lama tahan)",
-     "Tulis siapa yang akan memakannya dan bagaimana",
-     "Gambar peta setiap tahap yang dilalui makanan (diagram alur)"
+     "Sistem yang mencari bahaya pada makanan dan mencegahnya sebelum terjadi",
+     "Daftar harga makanan",
+     "Salah satu jenis bahan kimia pembersih",
+     "Salah satu jenis termometer kulkas"
     ],
-    "e": "Pertama tim dipilih. Tim menulis tentang makanannya dan siapa yang memakannya, lalu menggambar setiap tahap di sebuah peta."
+    "e": "HACCP adalah sistem keamanan pangan. Sistem ini mencari di mana makanan bisa menjadi tidak aman dan memasang pemeriksaan di sana, jadi masalah dihentikan lebih awal."
    },
    "tr": {
-    "q": "Bir restoran HACCP planını (gıda güvenliği planı) yapıyor. İlk dört adımı sıraya koy.",
+    "q": "HACCP nedir?",
     "o": [
-     "Planı yapacak çalışanlardan bir ekip seç",
-     "Gıdanın ne olduğunu yaz (içindekiler, nasıl saklandığı, ne kadar dayandığı)",
-     "Kimin, nasıl yiyeceğini yaz",
-     "Gıdanın geçtiği her aşamanın haritasını çiz (akış şeması)"
+     "Gıdaya gelen tehlikeleri bulan ve onları olmadan önce durduran bir sistem",
+     "Bir yemek fiyat listesi",
+     "Bir çeşit temizlik kimyasalı",
+     "Bir çeşit buzdolabı termometresi"
     ],
-    "e": "Önce bir ekip seçilir. Ekip gıdayı ve kimin yiyeceğini yazar, sonra her aşamayı bir haritaya çizer."
-   }
+    "e": "HACCP bir gıda güvenliği sistemidir. Gıdanın nerede güvensiz olabileceğini bulur ve oraya kontroller koyar, böylece sorunlar erkenden durdurulur."
+   },
+   "ans": 0
   },
   {
    "id": "k246",
-   "type": "order",
+   "type": "single",
    "ch": 10,
    "d": 3,
    "en": {
-    "q": "Put these middle steps of the HACCP plan in order.",
+    "q": "Who writes the HACCP plan, and who must follow it?",
     "o": [
-     "Walk through the kitchen to check the map is right",
-     "List the dangers at each stage (hazard analysis)",
-     "Choose the stages where a check must be done (critical control points)",
-     "Set the safe number for each check, like 75°C (critical limit)"
+     "The managers and their team write it, and every worker follows it every day",
+     "Only the customers follow it",
+     "Each worker writes their own plan",
+     "Nobody needs to follow it once it is written"
     ],
-    "e": "The map must match the real kitchen. Then the team finds the dangers, the stages that control them, and the safe number for each."
+    "e": "Managers and a team make the plan. It only keeps food safe if every worker follows it, from receiving to serving."
    },
    "ur": {
-    "q": "HACCP پلان کے یہ درمیانی قدم ترتیب میں لگائیں۔",
+    "q": "HACCP پلان کون لکھتا ہے، اور اس پر کس کو چلنا ہے؟",
     "o": [
-     "کچن میں چل کر دیکھیں کہ نقشہ صحیح ہے",
-     "ہر مرحلے کے خطرات کی فہرست بنائیں (خطرات کی جانچ)",
-     "وہ مرحلے چنیں جہاں چیک کرنا ضروری ہے (اہم کنٹرول پوائنٹ)",
-     "ہر چیک کے لیے محفوظ نمبر طے کریں، جیسے 75°C (اہم حد)"
+     "مینیجر اور ان کی ٹیم لکھتے ہیں، اور ہر ملازم روز اس پر چلتا ہے",
+     "صرف گاہک اس پر چلتے ہیں",
+     "ہر ملازم اپنا الگ پلان لکھتا ہے",
+     "لکھنے کے بعد کسی کو اس پر چلنے کی ضرورت نہیں"
     ],
-    "e": "نقشہ اصل کچن سے ملنا چاہیے۔ پھر ٹیم خطرے ڈھونڈتی ہے، وہ مرحلے جہاں انہیں روکا جاتا ہے، اور ہر ایک کا محفوظ نمبر۔"
+    "e": "مینیجر اور ایک ٹیم پلان بناتے ہیں۔ یہ کھانا تبھی محفوظ رکھتا ہے جب ہر ملازم اس پر چلے، سامان آنے سے سرو کرنے تک۔"
    },
    "hi": {
-    "q": "HACCP प्लान के ये बीच वाले क़दम क्रम में लगाएँ।",
+    "q": "HACCP प्लान कौन लिखता है, और उस पर किसे चलना है?",
     "o": [
-     "किचन में घूमकर जाँचें कि नक्शा सही है",
-     "हर चरण के ख़तरों की लिस्ट बनाएँ (ख़तरों की जाँच)",
-     "वे चरण चुनें जहाँ जाँच ज़रूरी है (ज़रूरी नियंत्रण बिंदु)",
-     "हर जाँच के लिए सुरक्षित नंबर तय करें, जैसे 75°C (ज़रूरी सीमा)"
+     "मैनेजर और उनकी टीम लिखते हैं, और हर कर्मचारी रोज़ उस पर चलता है",
+     "सिर्फ़ ग्राहक उस पर चलते हैं",
+     "हर कर्मचारी अपना अलग प्लान लिखता है",
+     "लिखने के बाद किसी को उस पर चलने की ज़रूरत नहीं"
     ],
-    "e": "नक्शा असली किचन से मिलना चाहिए। फिर टीम ख़तरे ढूँढती है, वे चरण ढूँढती है जहाँ उन्हें रोका जाता है, और हर एक का सुरक्षित नंबर तय करती है।"
+    "e": "मैनेजर और एक टीम प्लान बनाते हैं। यह खाने को तभी सुरक्षित रखता है जब हर कर्मचारी उस पर चले, सामान आने से परोसने तक।"
    },
    "bn": {
-    "q": "HACCP প্ল্যানের মাঝের এই ধাপগুলো ক্রমে সাজান।",
+    "q": "HACCP প্ল্যান কে লেখেন, আর কাকে মানতে হয়?",
     "o": [
-     "রান্নাঘর ঘুরে দেখুন নকশাটা ঠিক আছে কিনা",
-     "প্রতিটি ধাপের বিপদগুলোর তালিকা করুন (বিপদ যাচাই)",
-     "যে ধাপগুলোতে পরীক্ষা করতেই হবে সেগুলো বাছুন (গুরুত্বপূর্ণ নিয়ন্ত্রণ বিন্দু)",
-     "প্রতিটি পরীক্ষার নিরাপদ সংখ্যা ঠিক করুন, যেমন 75°C (গুরুত্বপূর্ণ সীমা)"
+     "ম্যানেজার আর তাঁদের দল লেখেন, আর প্রত্যেক কর্মী রোজ মানেন",
+     "শুধু কাস্টমাররা মানেন",
+     "প্রত্যেক কর্মী নিজের প্ল্যান নিজে লেখেন",
+     "লেখা হয়ে গেলে আর কাউকে মানতে হয় না"
     ],
-    "e": "নকশাটা আসল রান্নাঘরের সাথে মিলতে হবে। তারপর দল বিপদগুলো খোঁজে, কোন ধাপে সেগুলো থামানো যায় তা বের করে, আর প্রতিটির নিরাপদ সংখ্যা ঠিক করে।"
+    "e": "ম্যানেজার আর একটা দল প্ল্যান বানান। প্রত্যেক কর্মী মানলে তবেই এটা খাবার নিরাপদ রাখে, মাল আসা থেকে পরিবেশন পর্যন্ত।"
    },
    "ar": {
-    "q": "رتّب هذه الخطوات الوسطى من خطة HACCP.",
+    "q": "من يكتب خطة HACCP، ومن يجب أن يتبعها؟",
     "o": [
-     "امشِ في المطبخ لتتأكد أن الخريطة صحيحة",
-     "اكتب الأخطار في كل مرحلة (تحليل المخاطر)",
-     "اختر المراحل التي يجب أن يتم فيها فحص (نقاط التحكم الحرجة)",
-     "حدد الرقم الآمن لكل فحص، مثل 75°C (الحد الحرج)"
+     "المديرون وفريقهم يكتبونها، وكل عامل يتبعها كل يوم",
+     "الزبائن فقط يتبعونها",
+     "كل عامل يكتب خطته الخاصة",
+     "لا أحد يحتاج أن يتبعها بعد كتابتها"
     ],
-    "e": "يجب أن تطابق الخريطة المطبخ الحقيقي. ثم يبحث الفريق عن الأخطار، والمراحل التي تتحكم فيها، والرقم الآمن لكل واحدة منها."
+    "e": "المديرون وفريق يضعون الخطة. ولا تحافظ على سلامة الطعام إلا إذا اتبعها كل عامل، من الاستلام إلى التقديم."
    },
    "ne": {
-    "q": "HACCP योजनाका यी बीचका चरणलाई क्रममा मिलाउनुहोस्।",
+    "q": "HACCP योजना कसले लेख्छ, र कसले पालना गर्नुपर्छ?",
     "o": [
-     "नक्सा ठीक छ कि छैन भनेर भान्सामा घुमेर जाँच्नुहोस्",
-     "हरेक चरणका खतराको सूची बनाउनुहोस् (खतराको विश्लेषण)",
-     "जाँच गर्नैपर्ने चरणहरू छान्नुहोस् (मुख्य नियन्त्रण बिन्दु)",
-     "हरेक जाँचका लागि सुरक्षित अंक तोक्नुहोस्, जस्तै 75°C (तोकिएको सीमा)"
+     "म्यानेजर र उनको टोलीले लेख्छन्, र हरेक कामदारले हरेक दिन पालना गर्छन्",
+     "ग्राहकले मात्र पालना गर्छन्",
+     "हरेक कामदारले आफ्नै छुट्टै योजना लेख्छन्",
+     "लेखिसकेपछि कसैले पालना गर्नु पर्दैन"
     ],
-    "e": "नक्सा साँच्चैको भान्सासँग मिल्नुपर्छ। त्यसपछि टोलीले खतरा, तिनलाई नियन्त्रण गर्ने चरण, र हरेकको सुरक्षित अंक पत्ता लगाउँछ।"
+    "e": "म्यानेजर र एउटा टोलीले योजना बनाउँछन्। सामान बुझ्नेदेखि खाना दिनेसम्म हरेक कामदारले पालना गरे मात्र यसले खाना सुरक्षित राख्छ।"
    },
    "ml": {
-    "q": "HACCP പ്ലാനിന്റെ ഈ നടുവിലെ സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "HACCP പ്ലാൻ ആരാണ് എഴുതുന്നത്, ആരാണ് അത് പാലിക്കേണ്ടത്?",
     "o": [
-     "ഘട്ടങ്ങൾ കാണിക്കുന്ന ചിത്രം ശരിയാണോ എന്ന് നോക്കാൻ അടുക്കളയിലൂടെ നടന്ന് പരിശോധിക്കുക",
-     "ഓരോ ഘട്ടത്തിലെയും അപകടങ്ങൾ എഴുതുക (ഹസാർഡ് അനാലിസിസ്)",
-     "പരിശോധന നിർബന്ധമായും വേണ്ട ഘട്ടങ്ങൾ തിരഞ്ഞെടുക്കുക (ക്രിട്ടിക്കൽ കൺട്രോൾ പോയിന്റുകൾ)",
-     "ഓരോ പരിശോധനയ്ക്കും സുരക്ഷിത സംഖ്യ നിശ്ചയിക്കുക, ഉദാഹരണത്തിന് 75°C (ക്രിട്ടിക്കൽ ലിമിറ്റ്)"
+     "മാനേജർമാരും അവരുടെ ടീമും എഴുതുന്നു, എല്ലാ ജോലിക്കാരും എല്ലാ ദിവസവും പാലിക്കുന്നു",
+     "കസ്റ്റമർമാർ മാത്രം പാലിക്കുന്നു",
+     "ഓരോ ജോലിക്കാരനും സ്വന്തം പ്ലാൻ എഴുതുന്നു",
+     "എഴുതിക്കഴിഞ്ഞാൽ ആരും പാലിക്കേണ്ടതില്ല"
     ],
-    "e": "ചിത്രം യഥാർത്ഥ അടുക്കളയുമായി ഒത്തുപോകണം. പിന്നെ ടീം അപകടങ്ങളും, അവയെ നിയന്ത്രിക്കുന്ന ഘട്ടങ്ങളും, ഓരോന്നിന്റെയും സുരക്ഷിത സംഖ്യയും കണ്ടെത്തുന്നു."
+    "e": "മാനേജർമാരും ഒരു ടീമും ചേർന്ന് പ്ലാൻ ഉണ്ടാക്കുന്നു. ഡെലിവറി എടുക്കുന്നത് മുതൽ വിളമ്പുന്നത് വരെ എല്ലാ ജോലിക്കാരും പാലിച്ചാലേ അത് ഭക്ഷണം സുരക്ഷിതമാക്കൂ."
    },
    "ta": {
-    "q": "HACCP திட்டத்தின் இந்த நடுப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "HACCP திட்டத்தை யார் எழுதுகிறார்கள், யார் அதைப் பின்பற்ற வேண்டும்?",
     "o": [
-     "வரைபடம் சரியா என்று பார்க்க சமையலறையில் நடந்து சரிபாருங்கள்",
-     "ஒவ்வொரு கட்டத்திலும் உள்ள ஆபத்துகளைப் பட்டியலிடுங்கள் (ஆபத்து ஆய்வு)",
-     "சோதனை செய்ய வேண்டிய கட்டங்களைத் தேர்ந்தெடுங்கள் (முக்கியக் கட்டுப்பாட்டு இடங்கள்)",
-     "ஒவ்வொரு சோதனைக்கும் 75°C போன்ற பாதுகாப்பான எண்ணை வையுங்கள் (முக்கிய எல்லை அளவு)"
+     "மேனேஜர்களும் அவர்களின் குழுவும் எழுதுகிறார்கள், ஒவ்வொரு பணியாளரும் தினமும் பின்பற்றுகிறார்கள்",
+     "வாடிக்கையாளர்கள் மட்டுமே பின்பற்றுகிறார்கள்",
+     "ஒவ்வொரு பணியாளரும் தன் சொந்தத் திட்டத்தை எழுதுகிறார்",
+     "எழுதிய பிறகு யாரும் அதைப் பின்பற்றத் தேவையில்லை"
     ],
-    "e": "வரைபடம் உண்மையான சமையலறையுடன் ஒத்துப்போக வேண்டும். பிறகு குழு ஆபத்துகளையும், அவற்றைக் கட்டுப்படுத்தும் கட்டங்களையும், ஒவ்வொன்றுக்கும் பாதுகாப்பான எண்ணையும் கண்டுபிடிக்கும்."
+    "e": "மேனேஜர்களும் ஒரு குழுவும் திட்டத்தைத் தயாரிக்கிறார்கள். டெலிவரி வாங்குவதிலிருந்து பரிமாறுவது வரை, ஒவ்வொரு பணியாளரும் பின்பற்றினால்தான் அது உணவைப் பாதுகாப்பாக வைக்கும்."
    },
    "fil": {
-    "q": "Ayusin ang mga hakbang na ito sa gitna ng HACCP plan sa tamang pagkakasunod.",
+    "q": "Sino ang sumusulat ng HACCP plan, at sino ang dapat sumunod dito?",
     "o": [
-     "Libutin ang kusina para tingnan kung tama ang mapa",
-     "Ilista ang mga panganib sa bawat yugto (hazard analysis)",
-     "Piliin ang mga yugto kung saan kailangang mag-check (critical control points)",
-     "Itakda ang ligtas na numero para sa bawat check, gaya ng 75°C (critical limit)"
+     "Ang mga manager at ang team nila ang sumusulat, at sinusunod ito ng bawat trabahador araw-araw",
+     "Ang mga customer lang ang sumusunod dito",
+     "Bawat trabahador ay sumusulat ng sarili niyang plano",
+     "Wala nang kailangang sumunod kapag naisulat na ito"
     ],
-    "e": "Dapat tugma ang mapa sa totoong kusina. Tapos hahanapin ng team ang mga panganib, ang mga yugtong kumokontrol dito, at ang ligtas na numero para sa bawat isa."
+    "e": "Ang mga manager at isang team ang gumagawa ng plano. Napapanatili lang nitong ligtas ang pagkain kung sinusunod ito ng bawat trabahador, mula pagtanggap hanggang pagse-serve."
    },
    "ind": {
-    "q": "Susun langkah-langkah tengah rencana HACCP ini dengan urutan yang benar.",
+    "q": "Siapa yang menulis rencana HACCP, dan siapa yang harus mengikutinya?",
     "o": [
-     "Keliling dapur untuk memeriksa apakah petanya sudah benar",
-     "Daftar bahaya di setiap tahap (analisis bahaya)",
-     "Pilih tahap yang harus diperiksa (titik kendali kritis)",
-     "Tetapkan angka aman untuk setiap pemeriksaan, misalnya 75°C (batas kritis)"
+     "Manajer dan timnya yang menulis, dan setiap pekerja mengikutinya setiap hari",
+     "Hanya pelanggan yang mengikutinya",
+     "Setiap pekerja menulis rencananya sendiri",
+     "Tidak ada yang perlu mengikutinya setelah ditulis"
     ],
-    "e": "Peta harus sama dengan dapur yang sebenarnya. Lalu tim mencari bahayanya, tahap yang mengendalikannya, dan angka aman untuk masing-masing."
+    "e": "Manajer dan sebuah tim membuat rencananya. Rencana itu hanya menjaga makanan tetap aman kalau setiap pekerja mengikutinya, dari penerimaan barang sampai penyajian."
    },
    "tr": {
-    "q": "HACCP planının bu orta adımlarını sıraya koy.",
+    "q": "HACCP planını kim yazar, kim uymak zorundadır?",
     "o": [
-     "Haritanın doğru olduğunu kontrol etmek için mutfağı gez",
-     "Her aşamadaki tehlikeleri listele (tehlike analizi)",
-     "Kontrol yapılması gereken aşamaları seç (kritik kontrol noktaları)",
-     "Her kontrol için güvenli sayıyı belirle, örneğin 75°C (kritik limit)"
+     "Müdürler ve ekipleri yazar, her çalışan da her gün uyar",
+     "Sadece müşteriler uyar",
+     "Her çalışan kendi planını yazar",
+     "Yazıldıktan sonra kimsenin uymasına gerek yoktur"
     ],
-    "e": "Harita gerçek mutfakla aynı olmalı. Sonra ekip tehlikeleri, onları kontrol eden aşamaları ve her biri için güvenli sayıyı bulur."
-   }
+    "e": "Planı müdürler ve bir ekip yapar. Plan ancak her çalışan mal kabulünden servise kadar uyarsa gıdayı güvende tutar."
+   },
+   "ans": 0
   },
   {
    "id": "k247",
-   "type": "order",
+   "type": "single",
    "ch": 10,
    "d": 3,
    "en": {
-    "q": "Put the last four steps of the HACCP plan in order.",
+    "q": "You forgot to check the temperature of one batch of chicken. What should you do?",
     "o": [
-     "Check every time at each control point (monitoring)",
-     "Decide how to fix it when a check fails (corrective action)",
-     "Prove the plan really works (verification)",
-     "Keep the records and papers (documents)"
+     "Tell your supervisor honestly and check it now if you still can",
+     "Write a normal reading from memory",
+     "Copy yesterday's reading",
+     "Leave the line empty and say nothing"
     ],
-    "e": "First decide the checks, then what to do when a check fails. Then prove the plan works, and keep records that show it is followed."
+    "e": "Records must be true. A made-up reading hides a real danger. Tell your supervisor so the food can be checked."
    },
    "ur": {
-    "q": "HACCP پلان کے آخری چار قدم ترتیب میں لگائیں۔",
+    "q": "آپ مرغی کی ایک کھیپ (ایک ساتھ پکنے والی مرغی) کا درجہ حرارت چیک کرنا بھول گئے۔ آپ کو کیا کرنا چاہیے؟",
     "o": [
-     "ہر کنٹرول پوائنٹ پر ہر بار چیک کریں (نگرانی)",
-     "طے کریں کہ چیک فیل ہو تو کیسے ٹھیک کرنا ہے (درستگی کا قدم)",
-     "ثابت کریں کہ پلان واقعی کام کرتا ہے (تصدیق)",
-     "ریکارڈ اور کاغذات رکھیں (دستاویزات)"
+     "سپروائزر کو سچ بتائیں اور اگر اب بھی ہو سکے تو ابھی چیک کریں",
+     "یاد سے کوئی عام ریڈنگ لکھ دیں",
+     "کل کی ریڈنگ نقل کر دیں",
+     "لائن خالی چھوڑ دیں اور کچھ نہ کہیں"
     ],
-    "e": "پہلے چیک طے کریں، پھر یہ کہ چیک فیل ہو تو کیا کرنا ہے۔ پھر ثابت کریں کہ پلان کام کرتا ہے، اور ایسے ریکارڈ رکھیں جو دکھائیں کہ اس پر عمل ہو رہا ہے۔"
+    "e": "ریکارڈ سچا ہونا چاہیے۔ اپنی طرف سے لکھی ہوئی ریڈنگ اصل خطرے کو چھپا دیتی ہے۔ سپروائزر کو بتائیں تاکہ کھانا چیک ہو سکے۔"
    },
    "hi": {
-    "q": "HACCP प्लान के आख़िरी चार क़दम क्रम में लगाएँ।",
+    "q": "आप चिकन के एक बैच (एक साथ पकने वाला चिकन) का तापमान जाँचना भूल गए। आपको क्या करना चाहिए?",
     "o": [
-     "हर नियंत्रण बिंदु पर हर बार जाँचें (निगरानी)",
-     "तय करें कि जाँच फ़ेल हो तो उसे कैसे ठीक करना है (सुधार का क़दम)",
-     "साबित करें कि प्लान सच में काम करता है (पुष्टि)",
-     "रिकॉर्ड और काग़ज़ात संभालकर रखें (दस्तावेज़)"
+     "सुपरवाइज़र को सच बताएँ और अगर अभी भी हो सके तो अभी जाँचें",
+     "याद से कोई आम रीडिंग लिख दें",
+     "कल की रीडिंग नकल कर दें",
+     "लाइन ख़ाली छोड़ दें और कुछ न कहें"
     ],
-    "e": "पहले जाँच तय करें, फिर यह कि जाँच फ़ेल हो तो क्या करना है। फिर साबित करें कि प्लान काम करता है, और ऐसे रिकॉर्ड रखें जो दिखाएँ कि उस पर अमल हो रहा है।"
+    "e": "रिकॉर्ड सच्चे होने चाहिए। अपनी तरफ़ से बनाई रीडिंग असली ख़तरे को छिपा देती है। सुपरवाइज़र को बताएँ ताकि खाने की जाँच हो सके।"
    },
    "bn": {
-    "q": "HACCP প্ল্যানের শেষ চারটি ধাপ ক্রমে সাজান।",
+    "q": "আপনি একবারের রান্না করা মুরগির তাপমাত্রা চেক করতে ভুলে গেছেন। কী করবেন?",
     "o": [
-     "প্রতিটি নিয়ন্ত্রণ বিন্দুতে প্রতিবার পরীক্ষা করুন (নজরদারি)",
-     "পরীক্ষায় ফেল করলে কীভাবে ঠিক করবেন তা ঠিক করুন (সংশোধনের পদক্ষেপ)",
-     "প্রমাণ করুন প্ল্যান সত্যিই কাজ করে (যাচাই)",
-     "রেকর্ড আর কাগজপত্র রাখুন (ডকুমেন্ট)"
+     "সুপারভাইজারকে সত্যি কথা বলুন, আর এখনো সম্ভব হলে এখনই চেক করুন",
+     "মনে থেকে একটা স্বাভাবিক রিডিং লিখে দিন",
+     "গতকালের রিডিং কপি করুন",
+     "লাইনটা খালি রেখে চুপ থাকুন"
     ],
-    "e": "আগে পরীক্ষাগুলো ঠিক করুন, তারপর পরীক্ষায় ফেল করলে কী করবেন। তারপর প্রমাণ করুন প্ল্যান কাজ করে, আর রেকর্ড রাখুন যা দেখায় প্ল্যান মানা হচ্ছে।"
+    "e": "রেকর্ড সত্যি হতে হবে। বানানো রিডিং আসল বিপদ লুকিয়ে রাখে। সুপারভাইজারকে জানান যাতে খাবারটা পরীক্ষা করা যায়।"
    },
    "ar": {
-    "q": "رتّب آخر أربع خطوات في خطة HACCP.",
+    "q": "نسيت أن تفحص حرارة دفعة من الدجاج. ماذا يجب أن تفعل؟",
     "o": [
-     "افحص في كل مرة عند كل نقطة تحكم (المراقبة)",
-     "حدد كيف تصلح المشكلة عندما يفشل الفحص (الإجراء التصحيحي)",
-     "أثبت أن الخطة تعمل فعلاً (التحقق)",
-     "احتفظ بالسجلات والأوراق (الوثائق)"
+     "أخبر المشرف بصدق، وافحصها الآن إذا كان ذلك ممكناً",
+     "اكتب قراءة عادية من ذاكرتك",
+     "انسخ قراءة الأمس",
+     "اترك السطر فارغاً ولا تقل شيئاً"
     ],
-    "e": "أولاً حدد الفحوص، ثم ما تفعله عندما يفشل الفحص. بعد ذلك أثبت أن الخطة تعمل، واحتفظ بسجلات تُظهر أنها مُتبعة."
+    "e": "السجلات يجب أن تكون صحيحة. القراءة المخترعة تخفي خطراً حقيقياً. أخبر المشرف حتى يمكن فحص الطعام."
    },
    "ne": {
-    "q": "HACCP योजनाका अन्तिम चार चरणलाई क्रममा मिलाउनुहोस्।",
+    "q": "तपाईंले कुखुराको एउटा खेपको तापक्रम जाँच्न बिर्सनुभयो। के गर्नुपर्छ?",
     "o": [
-     "हरेक नियन्त्रण बिन्दुमा हरेक पटक जाँच्नुहोस् (नियमित जाँच)",
-     "जाँच असफल भए कसरी मिलाउने तय गर्नुहोस् (सुधार गर्ने काम)",
-     "योजनाले साँच्चै काम गर्छ भनेर प्रमाणित गर्नुहोस् (ठीक भयो कि भएन पुष्टि गर्नु)",
-     "रेकर्ड र कागजपत्र राख्नुहोस्"
+     "सुपरभाइजरलाई इमानदारीसाथ भन्नुहोस् र अझै सकिन्छ भने अहिले नै जाँच्नुहोस्",
+     "सम्झनाको भरमा सामान्य रिडिङ लेख्नुहोस्",
+     "हिजोकै रिडिङ सारेर लेख्नुहोस्",
+     "लाइन खाली छोड्नुहोस् र केही नभन्नुहोस्"
     ],
-    "e": "पहिले जाँच तय गर्नुहोस्, त्यसपछि जाँच असफल हुँदा के गर्ने। अनि योजनाले काम गर्छ भनेर प्रमाणित गर्नुहोस्, र योजना पालना भएको देखाउने रेकर्ड राख्नुहोस्।"
+    "e": "रेकर्ड साँचो हुनुपर्छ। आफैँ बनाएको रिडिङले साँचो खतरा लुकाउँछ। खाना जाँच्न सकियोस् भनेर सुपरभाइजरलाई भन्नुहोस्।"
    },
    "ml": {
-    "q": "HACCP പ്ലാനിന്റെ അവസാനത്തെ നാല് സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "ഒരു ബാച്ച് ചിക്കന്റെ താപനില പരിശോധിക്കാൻ നിങ്ങൾ മറന്നുപോയി. നിങ്ങൾ എന്ത് ചെയ്യണം?",
     "o": [
-     "ഓരോ കൺട്രോൾ പോയിന്റിലും ഓരോ തവണയും പരിശോധിക്കുക (മോണിറ്ററിങ്)",
-     "പരിശോധനയിൽ പ്രശ്നം കണ്ടാൽ എങ്ങനെ ശരിയാക്കണമെന്ന് തീരുമാനിക്കുക (തിരുത്തൽ നടപടി)",
-     "പ്ലാൻ ശരിക്കും പ്രവർത്തിക്കുന്നുണ്ടെന്ന് തെളിയിക്കുക (വെരിഫിക്കേഷൻ)",
-     "റെക്കോർഡുകളും കടലാസുകളും സൂക്ഷിക്കുക (രേഖകൾ)"
+     "സൂപ്പർവൈസറോട് സത്യം പറയുക, ഇപ്പോഴും പറ്റുമെങ്കിൽ ഇപ്പോൾ തന്നെ പരിശോധിക്കുക",
+     "ഓർമ്മയിൽ നിന്ന് ഒരു സാധാരണ താപനില എഴുതുക",
+     "ഇന്നലത്തെ താപനില പകർത്തി എഴുതുക",
+     "വരി ഒഴിച്ചിട്ട് ഒന്നും പറയാതിരിക്കുക"
     ],
-    "e": "ആദ്യം പരിശോധനകൾ തീരുമാനിക്കുക, പിന്നെ പരിശോധനയിൽ പ്രശ്നം കണ്ടാൽ എന്ത് ചെയ്യണമെന്ന്. അതിനു ശേഷം പ്ലാൻ പ്രവർത്തിക്കുന്നുണ്ടെന്ന് തെളിയിക്കുക, പ്ലാൻ പാലിക്കുന്നുണ്ടെന്ന് കാണിക്കുന്ന റെക്കോർഡുകൾ സൂക്ഷിക്കുക."
+    "e": "രേഖകൾ സത്യമായിരിക്കണം. ഉണ്ടാക്കി എഴുതിയ താപനില ഒരു യഥാർത്ഥ അപകടം മറച്ചുവയ്ക്കും. ഭക്ഷണം പരിശോധിക്കാൻ കഴിയുന്നതിന് സൂപ്പർവൈസറോട് പറയുക."
    },
    "ta": {
-    "q": "HACCP திட்டத்தின் கடைசி நான்கு படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "ஒரு தொகுதி கோழியின் வெப்பநிலையைச் சோதிக்க மறந்துவிட்டீர்கள். நீங்கள் என்ன செய்ய வேண்டும்?",
     "o": [
-     "ஒவ்வொரு கட்டுப்பாட்டு இடத்திலும் ஒவ்வொரு முறையும் சோதியுங்கள் (கண்காணித்தல்)",
-     "சோதனை தோற்றால் எப்படிச் சரிசெய்வது என்று முடிவு செய்யுங்கள் (சரிசெய்யும் நடவடிக்கை)",
-     "திட்டம் உண்மையாக வேலை செய்கிறது என்று நிரூபியுங்கள் (சரிபார்த்தல்)",
-     "பதிவுகளையும் காகிதங்களையும் வைத்திருங்கள் (ஆவணங்கள்)"
+     "உங்கள் சூப்பர்வைசரிடம் நேர்மையாகச் சொல்லுங்கள், இன்னும் முடிந்தால் இப்போதே சோதியுங்கள்",
+     "நினைவிலிருந்து ஒரு சாதாரண அளவை எழுதுங்கள்",
+     "நேற்றைய அளவைப் பார்த்து எழுதுங்கள்",
+     "அந்த வரியைக் காலியாக விட்டு, எதுவும் சொல்லாதீர்கள்"
     ],
-    "e": "முதலில் சோதனைகளை முடிவு செய்யுங்கள், பிறகு சோதனை தோற்றால் என்ன செய்வது என்று முடிவு செய்யுங்கள். பிறகு திட்டம் வேலை செய்கிறது என்று நிரூபித்து, அது பின்பற்றப்படுகிறது என்று காட்டும் பதிவுகளை வைத்திருங்கள்."
+    "e": "பதிவுகள் உண்மையாக இருக்க வேண்டும். பொய்யாக எழுதிய அளவு ஒரு உண்மையான ஆபத்தை மறைக்கும். உணவைச் சோதிக்க முடியும்படி உங்கள் சூப்பர்வைசரிடம் சொல்லுங்கள்."
    },
    "fil": {
-    "q": "Ayusin ang huling apat na hakbang ng HACCP plan sa tamang pagkakasunod.",
+    "q": "Nakalimutan mong i-check ang temperatura ng isang batch ng manok. Ano ang dapat mong gawin?",
     "o": [
-     "Mag-check sa bawat control point, bawat beses (monitoring)",
-     "Pagpasyahan kung paano aayusin kapag pumalya ang check (corrective action)",
-     "Patunayan na talagang gumagana ang plano (verification)",
-     "Mag-ingat ng mga record at papeles (dokumento)"
+     "Sabihin nang tapat sa supervisor mo at i-check ito ngayon kung puwede pa",
+     "Magsulat ng karaniwang basa mula sa alaala",
+     "Kopyahin ang basa kahapon",
+     "Iwanang blangko ang linya at huwag magsalita"
     ],
-    "e": "Unang pagpasyahan ang mga check, tapos kung ano ang gagawin kapag pumalya ang check. Saka patunayan na gumagana ang plano, at mag-ingat ng mga record na nagpapakitang sinusunod ito."
+    "e": "Dapat totoo ang mga record. Ang gawa-gawang basa ay nagtatago ng totoong panganib. Sabihan ang supervisor mo para ma-check ang pagkain."
    },
    "ind": {
-    "q": "Susun empat langkah terakhir rencana HACCP dengan urutan yang benar.",
+    "q": "Anda lupa memeriksa suhu satu masakan ayam. Apa yang harus Anda lakukan?",
     "o": [
-     "Periksa setiap kali di setiap titik kendali (pemantauan)",
-     "Tentukan cara memperbaikinya kalau pemeriksaan gagal (tindakan perbaikan)",
-     "Buktikan rencana itu benar-benar berjalan (verifikasi)",
-     "Simpan catatan dan kertas-kertasnya (dokumen)"
+     "Beri tahu atasan Anda dengan jujur dan periksa sekarang kalau masih bisa",
+     "Tulis angka biasa dari ingatan",
+     "Salin angka kemarin",
+     "Biarkan barisnya kosong dan diam saja"
     ],
-    "e": "Pertama tentukan pemeriksaannya, lalu apa yang harus dilakukan kalau pemeriksaan gagal. Setelah itu buktikan rencananya berjalan, dan simpan catatan yang menunjukkan rencana itu diikuti."
+    "e": "Catatan harus benar. Angka karangan menyembunyikan bahaya yang nyata. Beri tahu atasan Anda supaya makanannya bisa diperiksa."
    },
    "tr": {
-    "q": "HACCP planının son dört adımını sıraya koy.",
+    "q": "Bir parti tavuğun sıcaklığını kontrol etmeyi unuttun. Ne yapmalısın?",
     "o": [
-     "Her kontrol noktasında her seferinde kontrol et (izleme)",
-     "Bir kontrol tutmazsa nasıl düzeltileceğine karar ver (düzeltici faaliyet)",
-     "Planın gerçekten çalıştığını kanıtla (doğrulama)",
-     "Kayıtları ve kağıtları sakla (belgeler)"
+     "Amirine dürüstçe söyle ve hâlâ mümkünse şimdi kontrol et",
+     "Aklından normal bir ölçüm yaz",
+     "Dünkü ölçümü kopyala",
+     "Satırı boş bırak ve bir şey söyleme"
     ],
-    "e": "Önce kontroller belirlenir, sonra bir kontrol tutmazsa ne yapılacağı. Sonra planın çalıştığı kanıtlanır ve plana uyulduğunu gösteren kayıtlar saklanır."
-   }
+    "e": "Kayıtlar doğru olmalı. Uydurma bir ölçüm gerçek bir tehlikeyi saklar. Gıda kontrol edilebilsin diye amirine söyle."
+   },
+   "ans": 0
   },
   {
    "id": "k248",
@@ -28086,122 +28020,122 @@
     "q": "Food is being loaded and carried to your restaurant. Which of these are correct? Choose all that are correct.",
     "o": [
      "Look inside the van for dirt before any food goes in",
-     "Check the temperature while loading and on the way",
+     "Check the food temperature when it arrives",
      "Move chilled food in and out of the van fast",
      "Leave frozen boxes outside while you do paperwork",
      "Keep the van doors open on the trip for air"
     ],
-    "e": "A clean, cold van and quick loading keep food safe. Food left outside or in a warm van can spoil."
+    "e": "A clean van, quick loading and a temperature check on arrival keep food safe. Food left outside or in a warm van can spoil."
    },
    "ur": {
     "q": "کھانا گاڑی میں لاد کر آپ کے ریسٹورنٹ لایا جا رہا ہے۔ ان میں سے کون سے صحیح ہیں؟ جتنے صحیح ہیں سب چنیں۔",
     "o": [
      "کھانا رکھنے سے پہلے گاڑی کے اندر گندگی دیکھیں",
-     "لادتے وقت اور راستے میں درجہ حرارت چیک کریں",
+     "پہنچنے پر کھانے کا درجہ حرارت چیک کریں",
      "ٹھنڈا کھانا گاڑی میں جلدی چڑھائیں اور اتاریں",
      "کاغذی کام کرتے وقت جمے ہوئے ڈبے باہر چھوڑ دیں",
      "ہوا کے لیے راستے میں گاڑی کے دروازے کھلے رکھیں"
     ],
-    "e": "صاف اور ٹھنڈی گاڑی اور جلدی لادنا کھانے کو محفوظ رکھتا ہے۔ باہر پڑا یا گرم گاڑی میں رکھا کھانا خراب ہو سکتا ہے۔"
+    "e": "صاف گاڑی، جلدی لادنا اور پہنچنے پر درجہ حرارت چیک کرنا کھانے کو محفوظ رکھتا ہے۔ باہر پڑا یا گرم گاڑی میں رکھا کھانا خراب ہو سکتا ہے۔"
    },
    "hi": {
     "q": "खाना गाड़ी में लादकर आपके रेस्टोरेंट लाया जा रहा है। इनमें से कौन से सही हैं? जितने सही हैं सब चुनें।",
     "o": [
      "खाना रखने से पहले गाड़ी के अंदर गंदगी देखें",
-     "लादते समय और रास्ते में तापमान जांचें",
+     "पहुँचने पर खाने का तापमान जांचें",
      "ठंडा खाना गाड़ी में जल्दी चढ़ाएं और उतारें",
      "कागज़ का काम करते समय जमे हुए डिब्बे बाहर छोड़ दें",
      "हवा के लिए रास्ते में गाड़ी के दरवाज़े खुले रखें"
     ],
-    "e": "साफ़ और ठंडी गाड़ी और जल्दी लादना खाने को सुरक्षित रखता है। बाहर पड़ा या गर्म गाड़ी में रखा खाना खराब हो सकता है।"
+    "e": "साफ़ गाड़ी, जल्दी लादना और पहुँचने पर तापमान जांचना खाने को सुरक्षित रखता है। बाहर पड़ा या गर्म गाड़ी में रखा खाना खराब हो सकता है।"
    },
    "bn": {
     "q": "খাবার গাড়িতে তুলে আপনার রেস্টুরেন্টে আনা হচ্ছে। এগুলোর মধ্যে কোনগুলো ঠিক? যতগুলো ঠিক সব বেছে নিন।",
     "o": [
      "খাবার তোলার আগে গাড়ির ভেতরে ময়লা আছে কিনা দেখুন",
-     "তোলার সময় আর পথে তাপমাত্রা চেক করুন",
+     "পৌঁছানোর পর খাবারের তাপমাত্রা চেক করুন",
      "ঠান্ডা খাবার গাড়িতে তাড়াতাড়ি ওঠান আর নামান",
      "কাগজের কাজ করার সময় জমানো বাক্স বাইরে রেখে দিন",
      "বাতাসের জন্য পথে গাড়ির দরজা খোলা রাখুন"
     ],
-    "e": "পরিষ্কার, ঠান্ডা গাড়ি আর তাড়াতাড়ি তোলা খাবার নিরাপদ রাখে। বাইরে পড়ে থাকা বা গরম গাড়ির খাবার নষ্ট হতে পারে।"
+    "e": "পরিষ্কার গাড়ি, তাড়াতাড়ি তোলা আর পৌঁছানোর পর তাপমাত্রা চেক খাবার নিরাপদ রাখে। বাইরে পড়ে থাকা বা গরম গাড়ির খাবার নষ্ট হতে পারে।"
    },
    "ar": {
     "q": "يُحمّل الطعام ويُنقل إلى مطعمك. أي من هذه صحيحة؟ اختر كل الأجوبة الصحيحة.",
     "o": [
      "انظر داخل السيارة بحثاً عن الأوساخ قبل وضع أي طعام فيها",
-     "افحص درجة الحرارة أثناء التحميل وفي الطريق",
+     "افحص حرارة الطعام عندما يصل",
      "انقل الطعام المبرّد إلى السيارة ومنها بسرعة",
      "اترك الصناديق المجمّدة في الخارج وأنت تكمل الأوراق",
      "اترك أبواب السيارة مفتوحة أثناء الرحلة للتهوية"
     ],
-    "e": "السيارة النظيفة الباردة والتحميل السريع يحافظان على سلامة الطعام. الطعام المتروك في الخارج أو في سيارة دافئة قد يفسد."
+    "e": "السيارة النظيفة والتحميل السريع وفحص الحرارة عند الوصول تحافظ على سلامة الطعام. الطعام المتروك في الخارج أو في سيارة دافئة قد يفسد."
    },
    "ne": {
     "q": "खाना लोड गरेर तपाईंको रेस्टुरेन्टमा ल्याइँदै छ। यीमध्ये कुन सही हो? सही भएका सबै छान्नुहोस्।",
     "o": [
      "कुनै खाना हाल्नुअघि भ्यानभित्र फोहोर छ कि छैन हेर्नुहोस्",
-     "लोड गर्दा र बाटोमा तापक्रम जाँच्नुहोस्",
+     "खाना आइपुग्दा तापक्रम जाँच्नुहोस्",
      "चिसो राखिएको खाना भ्यानमा छिटो हाल्नुहोस् र छिटो निकाल्नुहोस्",
      "कागजी काम गर्दै गर्दा जमेका बाकस बाहिरै छोड्नुहोस्",
      "हावा आओस् भनेर बाटोमा भ्यानका ढोका खुला राख्नुहोस्"
     ],
-    "e": "सफा, चिसो भ्यान र छिटो लोड गर्दा खाना सुरक्षित रहन्छ। बाहिर वा तातो भ्यानमा छोडिएको खाना बिग्रन सक्छ।"
+    "e": "सफा भ्यान, छिटो लोड गर्नु र आइपुग्दा तापक्रम जाँच्नुले खाना सुरक्षित राख्छ। बाहिर वा तातो भ्यानमा छोडिएको खाना बिग्रन सक्छ।"
    },
    "ml": {
     "q": "ഭക്ഷണം വാനിൽ കയറ്റി നിങ്ങളുടെ റെസ്റ്റോറന്റിലേക്ക് കൊണ്ടുവരുന്നു. ഇവയിൽ ഏതൊക്കെയാണ് ശരി? ശരിയായ എല്ലാം തിരഞ്ഞെടുക്കുക.",
     "o": [
      "ഏതെങ്കിലും ഭക്ഷണം കയറ്റുന്നതിന് മുമ്പ് വാനിന്റെ ഉള്ളിൽ അഴുക്കുണ്ടോ എന്ന് നോക്കുക",
-     "കയറ്റുമ്പോഴും വഴിയിലും താപനില പരിശോധിക്കുക",
+     "ഭക്ഷണം എത്തുമ്പോൾ അതിന്റെ താപനില പരിശോധിക്കുക",
      "തണുപ്പിച്ച ഭക്ഷണം വേഗം വാനിൽ കയറ്റുകയും ഇറക്കുകയും ചെയ്യുക",
      "പേപ്പറുകൾ പൂരിപ്പിക്കുമ്പോൾ ഫ്രോസൺ പെട്ടികൾ പുറത്ത് വയ്ക്കുക",
      "കാറ്റ് കിട്ടാൻ യാത്രയിൽ വാനിന്റെ വാതിലുകൾ തുറന്നിടുക"
     ],
-    "e": "വൃത്തിയുള്ള, തണുപ്പുള്ള വാനും വേഗത്തിലുള്ള കയറ്റലും ഭക്ഷണം സുരക്ഷിതമാക്കുന്നു. പുറത്തോ ചൂടുള്ള വാനിലോ വച്ച ഭക്ഷണം കേടാകാം."
+    "e": "വൃത്തിയുള്ള വാനും വേഗത്തിലുള്ള കയറ്റലും എത്തുമ്പോഴുള്ള താപനില പരിശോധനയും ഭക്ഷണം സുരക്ഷിതമാക്കുന്നു. പുറത്തോ ചൂടുള്ള വാനിലോ വച്ച ഭക്ഷണം കേടാകാം."
    },
    "ta": {
     "q": "உணவு ஏற்றப்பட்டு உங்கள் ரெஸ்டாரன்டுக்குக் கொண்டுவரப்படுகிறது. இவற்றில் எவை சரியானவை? சரியான எல்லாவற்றையும் தேர்ந்தெடுக்கவும்.",
     "o": [
      "எந்த உணவும் ஏற்றுவதற்கு முன் வேனுக்குள் அழுக்கு இருக்கிறதா என்று பாருங்கள்",
-     "ஏற்றும்போதும் வழியிலும் வெப்பநிலையைச் சோதியுங்கள்",
+     "உணவு வந்து சேரும்போது அதன் வெப்பநிலையைச் சோதியுங்கள்",
      "குளிர வைத்த உணவை வேனுக்குள் ஏற்றுவதையும் இறக்குவதையும் வேகமாகச் செய்யுங்கள்",
      "பேப்பர் வேலை செய்யும்போது உறைந்த பெட்டிகளை வெளியே விடுங்கள்",
      "காற்றுக்காகப் பயணத்தில் வேன் கதவுகளைத் திறந்தே வையுங்கள்"
     ],
-    "e": "சுத்தமான, குளிர்ந்த வேனும் வேகமாக ஏற்றுவதும் உணவைப் பாதுகாப்பாக வைக்கும். வெளியே அல்லது சூடான வேனில் விடப்பட்ட உணவு கெட்டுப்போகலாம்."
+    "e": "சுத்தமான வேன், வேகமாக ஏற்றுவது, வந்து சேரும்போது வெப்பநிலைச் சோதனை ஆகியவை உணவைப் பாதுகாப்பாக வைக்கும். வெளியே அல்லது சூடான வேனில் விடப்பட்ட உணவு கெட்டுப்போகலாம்."
    },
    "fil": {
     "q": "May pagkaing isinasakay at dinadala sa restaurant mo. Alin dito ang tama? Piliin ang lahat ng tama.",
     "o": [
      "Tingnan kung may dumi sa loob ng van bago isakay ang pagkain",
-     "Tingnan ang temperatura habang nagsasakay at habang nasa biyahe",
+     "I-check ang temperatura ng pagkain pagdating nito",
      "Isakay at ibaba nang mabilis ang pinalamig na pagkain",
      "Iwan sa labas ang mga frozen na kahon habang nag-aayos ka ng papeles",
      "Iwang bukas ang pinto ng van sa biyahe para mahanginan"
     ],
-    "e": "Ang malinis at malamig na van at mabilis na pagsakay ang nagpapanatiling ligtas sa pagkain. Ang pagkaing iniwan sa labas o nasa mainit na van ay puwedeng masira."
+    "e": "Ang malinis na van, mabilis na pagsakay at pag-check ng temperatura pagdating ang nagpapanatiling ligtas sa pagkain. Ang pagkaing iniwan sa labas o nasa mainit na van ay puwedeng masira."
    },
    "ind": {
     "q": "Makanan sedang dimuat dan dibawa ke restoran Anda. Mana dari hal ini yang benar? Pilih semua yang benar.",
     "o": [
      "Lihat bagian dalam mobil, apakah ada kotoran, sebelum makanan dimasukkan",
-     "Periksa suhu saat memuat dan selama perjalanan",
+     "Periksa suhu makanan saat sampai",
      "Masukkan dan keluarkan makanan dingin dari mobil dengan cepat",
      "Biarkan kardus beku di luar selama Anda mengurus dokumen",
      "Biarkan pintu mobil terbuka selama perjalanan supaya ada udara"
     ],
-    "e": "Mobil yang bersih dan dingin serta memuat dengan cepat menjaga makanan tetap aman. Makanan yang dibiarkan di luar atau di mobil yang hangat bisa basi."
+    "e": "Mobil yang bersih, memuat dengan cepat dan memeriksa suhu saat sampai menjaga makanan tetap aman. Makanan yang dibiarkan di luar atau di mobil yang hangat bisa basi."
    },
    "tr": {
     "q": "Gıda yükleniyor ve restoranına taşınıyor. Bunlardan hangileri doğru? Doğru olanların hepsini seç.",
     "o": [
      "Gıda girmeden önce aracın içinde kir var mı bak",
-     "Yüklerken ve yolda sıcaklığı kontrol et",
+     "Gıda geldiğinde sıcaklığını kontrol et",
      "Soğuk tutulan gıdayı araca hızlı yükle ve hızlı indir",
      "Kağıt işlerini yaparken donmuş kutuları dışarıda bırak",
      "Yolda hava alsın diye aracın kapılarını açık tut"
     ],
-    "e": "Temiz, soğuk bir araç ve hızlı yükleme gıdayı güvende tutar. Dışarıda ya da sıcak bir araçta kalan gıda bozulabilir."
+    "e": "Temiz bir araç, hızlı yükleme ve geldiğinde sıcaklık kontrolü gıdayı güvende tutar. Dışarıda ya da sıcak bir araçta kalan gıda bozulabilir."
    }
   },
   {
@@ -28353,9 +28287,9 @@
      "Check the food is hot and looks good",
      "Put it in a clean, hot display with a cover",
      "Check and write down its temperature regularly",
-     "Remove it when its safe time is over"
+     "Remove it when the time your supervisor set is over"
     ],
-    "e": "Check food before it goes out, keep it hot and covered, record the temperature, and take it away when time is up."
+    "e": "Check food before it goes out, keep it hot and covered, record the temperature, and take it away when the time is up."
    },
    "ur": {
     "q": "گرم کھانا ڈسپلے پر رکھنے کے ان قدموں کو صحیح ترتیب میں لگائیں۔",
@@ -28363,7 +28297,7 @@
      "دیکھیں کہ کھانا گرم ہے اور ٹھیک لگ رہا ہے",
      "اسے صاف، گرم اور ڈھکے ہوئے ڈسپلے میں رکھیں",
      "باقاعدگی سے درجہ حرارت چیک کر کے لکھیں",
-     "محفوظ وقت ختم ہونے پر اسے ہٹا دیں"
+     "سپروائزر کا دیا ہوا وقت ختم ہونے پر اسے ہٹا دیں"
     ],
     "e": "باہر رکھنے سے پہلے کھانا چیک کریں، گرم اور ڈھکا رکھیں، درجہ حرارت لکھیں، اور وقت پورا ہونے پر ہٹا دیں۔"
    },
@@ -28373,7 +28307,7 @@
      "देखें कि खाना गर्म है और ठीक दिख रहा है",
      "उसे साफ़, गर्म और ढके हुए डिस्प्ले में रखें",
      "बार-बार तापमान जांचकर लिखें",
-     "सुरक्षित समय खत्म होने पर उसे हटा दें"
+     "सुपरवाइज़र का तय किया समय खत्म होने पर उसे हटा दें"
     ],
     "e": "बाहर रखने से पहले खाना जांचें, गर्म और ढका रखें, तापमान लिखें, और समय पूरा होने पर हटा दें।"
    },
@@ -28383,7 +28317,7 @@
      "দেখুন খাবার গরম আর ঠিক দেখাচ্ছে",
      "পরিষ্কার, গরম, ঢাকা ডিসপ্লেতে রাখুন",
      "নিয়মিত তাপমাত্রা চেক করে লিখে রাখুন",
-     "নিরাপদ সময় শেষ হলে সরিয়ে ফেলুন"
+     "সুপারভাইজারের ঠিক করা সময় শেষ হলে সরিয়ে ফেলুন"
     ],
     "e": "বাইরে রাখার আগে খাবার চেক করুন, গরম আর ঢাকা রাখুন, তাপমাত্রা লিখুন, আর সময় শেষ হলে সরিয়ে ফেলুন।"
    },
@@ -28393,7 +28327,7 @@
      "تأكد أن الطعام ساخن وشكله جيد",
      "ضعه في خزانة عرض ساخنة ونظيفة ولها غطاء",
      "افحص درجة حرارته واكتبها بانتظام",
-     "أخرجه عندما تنتهي مدته الآمنة"
+     "أخرجه عندما ينتهي الوقت الذي حدده المشرف"
     ],
     "e": "افحص الطعام قبل عرضه، وأبقِه ساخناً ومغطى، وسجّل درجة الحرارة، وأخرجه عندما ينتهي الوقت."
    },
@@ -28403,7 +28337,7 @@
      "खाना तातो छ र राम्रो देखिन्छ भनेर जाँच्नुहोस्",
      "सफा, तातो, छोपिएको डिस्प्लेमा राख्नुहोस्",
      "यसको तापक्रम नियमित रूपमा जाँचेर लेख्नुहोस्",
-     "सुरक्षित समय सकिएपछि हटाउनुहोस्"
+     "सुपरभाइजरले तोकेको समय सकिएपछि हटाउनुहोस्"
     ],
     "e": "बाहिर राख्नुअघि खाना जाँच्नुहोस्, तातो र छोपेर राख्नुहोस्, तापक्रम लेख्नुहोस्, र समय सकिएपछि हटाउनुहोस्।"
    },
@@ -28413,7 +28347,7 @@
      "ഭക്ഷണം ചൂടുള്ളതാണെന്നും കാണാൻ നല്ലതാണെന്നും പരിശോധിക്കുക",
      "വൃത്തിയുള്ള, ചൂടുള്ള, അടപ്പുള്ള ഡിസ്പ്ലേയിൽ വയ്ക്കുക",
      "അതിന്റെ താപനില സ്ഥിരമായി പരിശോധിച്ച് എഴുതി വയ്ക്കുക",
-     "സുരക്ഷിത സമയം കഴിയുമ്പോൾ അത് മാറ്റുക"
+     "സൂപ്പർവൈസർ നിശ്ചയിച്ച സമയം കഴിയുമ്പോൾ അത് മാറ്റുക"
     ],
     "e": "പുറത്ത് വയ്ക്കുന്നതിന് മുമ്പ് ഭക്ഷണം പരിശോധിക്കുക, ചൂടോടെയും മൂടിയും വയ്ക്കുക, താപനില എഴുതി വയ്ക്കുക, സമയം കഴിയുമ്പോൾ മാറ്റുക."
    },
@@ -28423,7 +28357,7 @@
      "உணவு சூடாகவும் நன்றாகவும் இருக்கிறதா என்று சோதியுங்கள்",
      "அதை மூடியுடன் கூடிய சுத்தமான, சூடான டிஸ்ப்ளேயில் வையுங்கள்",
      "அதன் வெப்பநிலையை அடிக்கடி சோதித்து எழுதுங்கள்",
-     "அதன் பாதுகாப்பான நேரம் முடிந்ததும் அதை எடுத்துவிடுங்கள்"
+     "உங்கள் சூப்பர்வைசர் வைத்த நேரம் முடிந்ததும் அதை எடுத்துவிடுங்கள்"
     ],
     "e": "உணவு வெளியே போகும் முன் சோதியுங்கள், அதைச் சூடாகவும் மூடியும் வையுங்கள், வெப்பநிலையை எழுதுங்கள், நேரம் முடிந்ததும் எடுத்துவிடுங்கள்."
    },
@@ -28433,7 +28367,7 @@
      "Tingnan kung mainit ang pagkain at maayos ang itsura",
      "Ilagay ito sa malinis at mainit na display na may takip",
      "Regular na tingnan at isulat ang temperatura nito",
-     "Alisin ito kapag tapos na ang ligtas na oras nito"
+     "Alisin ito kapag tapos na ang oras na itinakda ng supervisor mo"
     ],
     "e": "Tingnan ang pagkain bago ilabas, panatilihin itong mainit at may takip, isulat ang temperatura, at alisin kapag tapos na ang oras."
    },
@@ -28443,7 +28377,7 @@
      "Periksa makanannya panas dan terlihat baik",
      "Taruh di etalase panas yang bersih dengan tutup",
      "Periksa dan catat suhunya secara rutin",
-     "Angkat makanannya saat waktu amannya habis"
+     "Angkat makanannya saat waktu yang ditentukan atasan Anda habis"
     ],
     "e": "Periksa makanan sebelum dipajang, jaga tetap panas dan tertutup, catat suhunya, dan angkat saat waktunya habis."
    },
@@ -28453,7 +28387,7 @@
      "Yemeğin sıcak olduğunu ve iyi göründüğünü kontrol et",
      "Temiz, sıcak, üstü kapalı bir teşhire koy",
      "Sıcaklığını düzenli olarak kontrol et ve yaz",
-     "Güvenli süresi bitince kaldır"
+     "Amirinin belirlediği süre bitince kaldır"
     ],
     "e": "Yemeği çıkarmadan önce kontrol et, sıcak ve üstü kapalı tut, sıcaklığı yaz ve süresi dolunca kaldır."
    }
@@ -31148,125 +31082,125 @@
    "d": 3,
    "ch": 12,
    "en": {
-    "q": "You clean a table with sanitiser (cleans and kills germs in one). Put the steps in order.",
+    "q": "You clean a table with a 2-in-1 cleaner-sanitiser spray. Put the steps in order.",
     "o": [
      "Move food away from the table",
      "Wipe or scrape off food bits",
-     "Spray sanitiser and scrub the whole surface",
+     "Spray the cleaner-sanitiser and scrub the whole surface",
      "Leave it on for the time on the label",
      "Let it air dry or use paper towels"
     ],
-    "e": "Sanitiser needs time on the surface to kill germs, usually 30 seconds to 5 minutes."
+    "e": "The spray needs time on the surface to kill germs, usually 30 seconds to 5 minutes."
    },
    "ur": {
-    "q": "آپ سینیٹائزر (جو ساتھ صاف بھی کرے اور جراثیم بھی مارے) سے میز صاف کر رہے ہیں۔ مراحل ترتیب میں لگائیں۔",
+    "q": "آپ 2 اِن 1 سینیٹائزر اسپرے (جو ایک ساتھ صاف بھی کرے اور جراثیم بھی مارے) سے میز صاف کر رہے ہیں۔ مراحل ترتیب میں لگائیں۔",
     "o": [
      "کھانا میز سے دور کریں",
      "کھانے کے ٹکڑے پونچھیں یا کھرچیں",
-     "سینیٹائزر چھڑکیں اور پوری سطح رگڑیں",
+     "اسپرے چھڑکیں اور پوری سطح رگڑیں",
      "لیبل پر لکھے وقت تک لگا رہنے دیں",
      "ہوا میں سوکھنے دیں یا کاغذی تولیہ استعمال کریں"
     ],
-    "e": "جراثیم مارنے کے لیے سینیٹائزر کو سطح پر وقت چاہیے، عام طور پر 30 سیکنڈ سے 5 منٹ۔"
+    "e": "جراثیم مارنے کے لیے اسپرے کو سطح پر وقت چاہیے، عام طور پر 30 سیکنڈ سے 5 منٹ۔"
    },
    "hi": {
-    "q": "आप सैनिटाइज़र (जो साथ में साफ़ भी करे और कीटाणु भी मारे) से मेज़ साफ़ कर रहे हैं। कदम क्रम में लगाएँ।",
+    "q": "आप 2-इन-1 सैनिटाइज़र स्प्रे (जो एक साथ साफ़ भी करे और कीटाणु भी मारे) से मेज़ साफ़ कर रहे हैं। कदम क्रम में लगाएँ।",
     "o": [
      "खाना मेज़ से दूर करें",
      "खाने के टुकड़े पोंछें या खुरचें",
-     "सैनिटाइज़र छिड़कें और पूरी सतह रगड़ें",
+     "स्प्रे छिड़कें और पूरी सतह रगड़ें",
      "लेबल पर लिखे समय तक लगा रहने दें",
      "हवा में सूखने दें या पेपर तौलिया इस्तेमाल करें"
     ],
-    "e": "कीटाणु मारने के लिए सैनिटाइज़र को सतह पर समय चाहिए, आम तौर पर 30 सेकंड से 5 मिनट।"
+    "e": "कीटाणु मारने के लिए स्प्रे को सतह पर समय चाहिए, आम तौर पर 30 सेकंड से 5 मिनट।"
    },
    "bn": {
-    "q": "আপনি স্যানিটাইজার (যা একসাথে পরিষ্কার করে আর জীবাণু মারে) দিয়ে টেবিল পরিষ্কার করছেন। ধাপগুলো ক্রমে সাজান।",
+    "q": "আপনি একটা 2-ইন-1 ক্লিনার-স্যানিটাইজার স্প্রে (যা একসাথে পরিষ্কার করে আর জীবাণু মারে) দিয়ে টেবিল পরিষ্কার করছেন। ধাপগুলো ক্রমে সাজান।",
     "o": [
      "খাবার টেবিল থেকে সরিয়ে রাখুন",
      "খাবারের টুকরা মুছে বা চেঁছে ফেলুন",
-     "স্যানিটাইজার স্প্রে করে পুরো জায়গা ঘষুন",
+     "ক্লিনার-স্যানিটাইজার স্প্রে করে পুরো জায়গা ঘষুন",
      "লেবেলে লেখা সময় পর্যন্ত লাগিয়ে রাখুন",
      "বাতাসে শুকাতে দিন বা কাগজের তোয়ালে ব্যবহার করুন"
     ],
-    "e": "জীবাণু মারতে স্যানিটাইজার কিছু সময় লাগিয়ে রাখতে হয়, সাধারণত 30 সেকেন্ড থেকে 5 মিনিট।"
+    "e": "জীবাণু মারতে স্প্রেটা কিছু সময় লাগিয়ে রাখতে হয়, সাধারণত 30 সেকেন্ড থেকে 5 মিনিট।"
    },
    "ar": {
-    "q": "تنظف طاولة بالمعقم (ينظف ويقتل الجراثيم معاً). رتّب الخطوات بالترتيب الصحيح.",
+    "q": "تنظف طاولة ببخاخ منظف ومعقم 2 في 1 (ينظف ويقتل الجراثيم معاً). رتّب الخطوات بالترتيب الصحيح.",
     "o": [
      "أبعد الطعام عن الطاولة",
      "امسح أو اكشط بقايا الطعام",
-     "رش المعقم وافرك كل السطح",
+     "رش المنظف المعقم وافرك كل السطح",
      "اتركه المدة المكتوبة على الملصق",
      "اتركه يجف في الهواء أو استعمل مناديل ورقية"
     ],
-    "e": "المعقم يحتاج وقتاً على السطح ليقتل الجراثيم، عادة من 30 ثانية إلى 5 دقائق."
+    "e": "البخاخ يحتاج وقتاً على السطح ليقتل الجراثيم، عادة من 30 ثانية إلى 5 دقائق."
    },
    "ne": {
-    "q": "तपाईं स्यानिटाइजर (एकैचोटि सफा गर्ने र किटाणु मार्ने) ले टेबल सफा गर्दै हुनुहुन्छ। चरणहरूलाई क्रममा मिलाउनुहोस्।",
+    "q": "तपाईं 2-इन-1 स्यानिटाइजर स्प्रे (एकैचोटि सफा गर्ने र किटाणु मार्ने) ले टेबल सफा गर्दै हुनुहुन्छ। चरणहरूलाई क्रममा मिलाउनुहोस्।",
     "o": [
      "टेबलबाट खाना हटाउनुहोस्",
      "खानाका टुक्रा पुछ्नुहोस् वा खुर्केर हटाउनुहोस्",
-     "स्यानिटाइजर छर्कनुहोस् र पूरै सतह माड्नुहोस्",
+     "स्प्रे छर्कनुहोस् र पूरै सतह माड्नुहोस्",
      "लेबलमा लेखेको समयसम्म लगाएर छोड्नुहोस्",
      "आफैँ सुक्न दिनुहोस् वा कागजको रुमाल प्रयोग गर्नुहोस्"
     ],
-    "e": "किटाणु मार्न स्यानिटाइजरलाई सतहमा समय चाहिन्छ, प्रायः 30 सेकेन्डदेखि 5 मिनेट।"
+    "e": "किटाणु मार्न स्प्रेलाई सतहमा समय चाहिन्छ, प्रायः 30 सेकेन्डदेखि 5 मिनेट।"
    },
    "ml": {
-    "q": "സാനിറ്റൈസർ (ഒരുമിച്ച് വൃത്തിയാക്കുകയും അണുക്കളെ കൊല്ലുകയും ചെയ്യുന്നത്) കൊണ്ട് നിങ്ങൾ ഒരു മേശ വൃത്തിയാക്കുന്നു. സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "2-ഇൻ-1 ക്ലീനർ-സാനിറ്റൈസർ സ്പ്രേ (ഒരുമിച്ച് വൃത്തിയാക്കുകയും അണുക്കളെ കൊല്ലുകയും ചെയ്യുന്നത്) കൊണ്ട് നിങ്ങൾ ഒരു മേശ വൃത്തിയാക്കുന്നു. സ്റ്റെപ്പുകൾ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
      "മേശയിൽ നിന്ന് ഭക്ഷണം മാറ്റുക",
      "ഭക്ഷണ കഷണങ്ങൾ തുടച്ചോ ചുരണ്ടിയോ കളയുക",
-     "സാനിറ്റൈസർ സ്പ്രേ ചെയ്ത് മുഴുവൻ പ്രതലവും നന്നായി ഉരയ്ക്കുക",
+     "ക്ലീനർ-സാനിറ്റൈസർ സ്പ്രേ ചെയ്ത് മുഴുവൻ പ്രതലവും നന്നായി ഉരയ്ക്കുക",
      "ലേബലിൽ പറയുന്ന സമയം വരെ അങ്ങനെ വയ്ക്കുക",
      "തനിയെ ഉണങ്ങാൻ വയ്ക്കുക അല്ലെങ്കിൽ പേപ്പർ ടവൽ ഉപയോഗിക്കുക"
     ],
-    "e": "അണുക്കളെ കൊല്ലാൻ സാനിറ്റൈസർ കുറച്ച് സമയം പ്രതലത്തിൽ ഇരിക്കണം, സാധാരണയായി 30 സെക്കൻഡ് മുതൽ 5 മിനിറ്റ് വരെ."
+    "e": "അണുക്കളെ കൊല്ലാൻ സ്പ്രേ കുറച്ച് സമയം പ്രതലത്തിൽ ഇരിക്കണം, സാധാരണയായി 30 സെക്കൻഡ് മുതൽ 5 മിനിറ്റ് വരെ."
    },
    "ta": {
-    "q": "ஒரு மேசையைச் சானிடைசரால் (ஒரே நேரத்தில் சுத்தம் செய்து கிருமிகளைக் கொல்லும்) சுத்தம் செய்கிறீர்கள். படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "சுத்தம் செய்து கிருமிகளையும் கொல்லும் 2-இன்-1 ஸ்ப்ரேயால் (கிளீனர்-சானிடைசர்) ஒரு மேசையைச் சுத்தம் செய்கிறீர்கள். படிகளைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
      "மேசையிலிருந்து உணவைத் தள்ளி வையுங்கள்",
      "உணவுத் துண்டுகளைத் துடைத்து அல்லது வழித்து எடுங்கள்",
-     "சானிடைசர் ஸ்ப்ரே செய்து, முழு மேற்பரப்பையும் நன்றாகத் தேயுங்கள்",
+     "கிளீனர்-சானிடைசரை ஸ்ப்ரே செய்து, முழு மேற்பரப்பையும் நன்றாகத் தேயுங்கள்",
      "லேபிளில் உள்ள நேரம் வரை அதை விடுங்கள்",
      "தானாக உலர விடுங்கள் அல்லது பேப்பர் டவல்களைப் பயன்படுத்துங்கள்"
     ],
-    "e": "கிருமிகளைக் கொல்ல சானிடைசருக்கு மேற்பரப்பில் நேரம் தேவை, பொதுவாக 30 வினாடிகள் முதல் 5 நிமிடங்கள்."
+    "e": "கிருமிகளைக் கொல்ல ஸ்ப்ரேக்கு மேற்பரப்பில் நேரம் தேவை, பொதுவாக 30 வினாடிகள் முதல் 5 நிமிடங்கள்."
    },
    "fil": {
-    "q": "Lilinisin mo ang mesa gamit ang sanitizer (naglilinis at pumapatay ng mikrobyo nang sabay). Ayusin ang mga hakbang sa tamang pagkakasunod.",
+    "q": "Lilinisin mo ang mesa gamit ang 2-in-1 na cleaner-sanitizer spray (naglilinis at pumapatay ng mikrobyo nang sabay). Ayusin ang mga hakbang sa tamang pagkakasunod.",
     "o": [
      "Ilayo ang pagkain sa mesa",
      "Punasan o kayurin ang mga tirang pagkain",
-     "Mag-spray ng sanitizer at kuskusin ang buong surface",
+     "I-spray ang cleaner-sanitizer at kuskusin ang buong surface",
      "Hayaan ito nang kasintagal ng nakasulat sa label",
      "Patuyuin sa hangin o gumamit ng paper towel"
     ],
-    "e": "Kailangan ng sanitizer ng oras sa surface para mapatay ang mikrobyo, kadalasan 30 segundo hanggang 5 minuto."
+    "e": "Kailangan ng spray ng oras sa surface para mapatay ang mikrobyo, kadalasan 30 segundo hanggang 5 minuto."
    },
    "ind": {
-    "q": "Anda membersihkan meja dengan sanitizer (membersihkan dan membunuh kuman sekaligus). Susun langkah-langkahnya dengan urutan yang benar.",
+    "q": "Anda membersihkan meja dengan semprotan 2-in-1 pembersih-sanitizer (membersihkan dan membunuh kuman sekaligus). Susun langkah-langkahnya dengan urutan yang benar.",
     "o": [
      "Jauhkan makanan dari meja",
      "Lap atau kerok sisa makanan",
-     "Semprotkan sanitizer dan gosok seluruh permukaan",
+     "Semprotkan pembersih-sanitizer dan gosok seluruh permukaan",
      "Diamkan selama waktu di label",
      "Biarkan kering sendiri di udara atau pakai tisu kertas"
     ],
-    "e": "Sanitizer butuh waktu di permukaan untuk membunuh kuman, biasanya 30 detik sampai 5 menit."
+    "e": "Semprotan itu butuh waktu di permukaan untuk membunuh kuman, biasanya 30 detik sampai 5 menit."
    },
    "tr": {
-    "q": "Masayı sanitizer ile (tek seferde temizler ve mikropları öldürür) temizliyorsun. Adımları sıraya koy.",
+    "q": "Masayı 2'si 1 arada temizleyici-sanitizer spreyle (tek seferde temizler ve mikropları öldürür) temizliyorsun. Adımları sıraya koy.",
     "o": [
      "Gıdayı masadan uzaklaştır",
      "Yemek artıklarını sil ya da kazı",
-     "Sanitizer sık ve bütün yüzeyi ov",
+     "Temizleyici-sanitizeri sık ve bütün yüzeyi ov",
      "Etikette yazan süre kadar üstünde bırak",
      "Kendi kendine kurumaya bırak ya da kağıt havlu kullan"
     ],
-    "e": "Sanitizerin mikropları öldürmesi için yüzeyde kalması gerekir, genelde 30 saniye ile 5 dakika arası."
+    "e": "Spreyin mikropları öldürmesi için yüzeyde kalması gerekir, genelde 30 saniye ile 5 dakika arası."
    }
   },
   {
@@ -31888,119 +31822,53 @@
   },
   {
    "id": "k292",
-   "type": "single",
-   "ans": 0,
+   "type": "tf",
+   "ans": 1,
    "d": 2,
    "ch": 13,
    "en": {
-    "q": "Oil in a pan catches fire. What must you never do?",
-    "o": [
-     "Throw water on it",
-     "Press the fire alarm",
-     "Warn the people near you",
-     "Leave by the nearest exit"
-    ],
-    "e": "Water makes an oil fire jump and spread. Only trained staff use the right fire extinguisher."
+    "q": "If oil in a pan catches fire, throwing water on it puts the fire out safely.",
+    "e": "False. Water makes an oil fire jump and spread. Press the fire alarm, warn people and leave. Only trained staff use the right fire extinguisher."
    },
    "ur": {
-    "q": "کڑاہی کے تیل میں آگ لگ گئی۔ کیا کام کبھی نہیں کرنا؟",
-    "o": [
-     "اس پر پانی پھینکنا",
-     "فائر الارم بجانا",
-     "پاس والے لوگوں کو خبردار کرنا",
-     "قریبی ایمرجنسی دروازے سے باہر نکلنا"
-    ],
-    "e": "پانی ڈالنے سے تیل کی آگ اچھل کر پھیل جاتی ہے۔ صرف تربیت والا آدمی صحیح آگ بجھانے والا سلنڈر استعمال کرے۔"
+    "q": "اگر کڑاہی کے تیل میں آگ لگ جائے تو اس پر پانی پھینکنے سے آگ محفوظ طریقے سے بجھ جاتی ہے۔",
+    "e": "غلط۔ پانی ڈالنے سے تیل کی آگ اچھل کر پھیل جاتی ہے۔ فائر الارم بجائیں، لوگوں کو خبردار کریں اور باہر نکل جائیں۔ صرف تربیت والا آدمی صحیح آگ بجھانے والا سلنڈر استعمال کرے۔"
    },
    "hi": {
-    "q": "कड़ाही के तेल में आग लग गई। कौन सा काम कभी नहीं करना है?",
-    "o": [
-     "उस पर पानी डालना",
-     "फायर अलार्म बजाना",
-     "पास के लोगों को सावधान करना",
-     "सबसे पास वाले इमरजेंसी दरवाज़े से बाहर निकलना"
-    ],
-    "e": "पानी डालने से तेल की आग उछलकर फैल जाती है। सिर्फ़ ट्रेनिंग वाला आदमी सही आग बुझाने वाला सिलेंडर चलाए।"
+    "q": "अगर कड़ाही के तेल में आग लग जाए, तो उस पर पानी डालने से आग सुरक्षित तरीके से बुझ जाती है।",
+    "e": "ग़लत। पानी डालने से तेल की आग उछलकर फैल जाती है। फायर अलार्म बजाएँ, लोगों को सावधान करें और बाहर निकल जाएँ। सिर्फ़ ट्रेनिंग वाला आदमी सही आग बुझाने वाला सिलेंडर चलाए।"
    },
    "bn": {
-    "q": "কড়াইয়ের তেলে আগুন ধরে গেছে। কোন কাজটা কখনো করবেন না?",
-    "o": [
-     "এর উপর পানি ঢালা",
-     "ফায়ার অ্যালার্ম বাজানো",
-     "কাছের লোকদের সাবধান করা",
-     "সবচেয়ে কাছের জরুরি দরজা দিয়ে বের হওয়া"
-    ],
-    "e": "পানি দিলে তেলের আগুন লাফিয়ে ছড়িয়ে পড়ে। শুধু ট্রেনিং পাওয়া লোক ঠিক আগুন নেভানোর সিলিন্ডার চালাবেন।"
+    "q": "কড়াইয়ের তেলে আগুন ধরলে তার উপর পানি ঢাললে আগুন নিরাপদে নিভে যায়।",
+    "e": "মিথ্যা। পানি দিলে তেলের আগুন লাফিয়ে ছড়িয়ে পড়ে। ফায়ার অ্যালার্ম বাজান, লোকদের সাবধান করুন আর বের হয়ে যান। শুধু ট্রেনিং পাওয়া লোক ঠিক আগুন নেভানোর সিলিন্ডার চালাবেন।"
    },
    "ar": {
-    "q": "اشتعلت النار في الزيت في المقلاة. ما الشيء الذي يجب ألا تفعله أبداً؟",
-    "o": [
-     "رمي الماء عليها",
-     "الضغط على جرس إنذار الحريق",
-     "تحذير الناس القريبين منك",
-     "الخروج من أقرب مخرج"
-    ],
-    "e": "الماء يجعل نار الزيت تقفز وتنتشر. فقط العمال المدربون يستعملون طفاية الحريق المناسبة."
+    "q": "إذا اشتعلت النار في الزيت في المقلاة، فرمي الماء عليها يطفئها بأمان.",
+    "e": "خطأ. الماء يجعل نار الزيت تقفز وتنتشر. اضغط على جرس إنذار الحريق، وحذّر الناس، واخرج. فقط العمال المدربون يستعملون طفاية الحريق المناسبة."
    },
    "ne": {
-    "q": "कराहीको तेलमा आगो लाग्छ। तपाईंले कहिल्यै के गर्नु हुँदैन?",
-    "o": [
-     "त्यसमा पानी हाल्नु",
-     "आगोको अलार्म थिच्नु",
-     "नजिकका मान्छेलाई सचेत गराउनु",
-     "सबैभन्दा नजिकको ढोकाबाट बाहिर निस्कनु"
-    ],
-    "e": "पानीले तेलको आगोलाई उफ्रिएर फैलिन लगाउँछ। तालिम पाएका कामदारले मात्र सही आगो निभाउने यन्त्र प्रयोग गर्छन्।"
+    "q": "कराहीको तेलमा आगो लाग्यो भने त्यसमा पानी हाल्दा आगो सुरक्षित रूपमा निभ्छ।",
+    "e": "गलत। पानीले तेलको आगोलाई उफ्रिएर फैलिन लगाउँछ। आगोको अलार्म थिच्नुहोस्, मान्छेलाई सचेत गराउनुहोस् र बाहिर निस्कनुहोस्। तालिम पाएका कामदारले मात्र सही आगो निभाउने यन्त्र प्रयोग गर्छन्।"
    },
    "ml": {
-    "q": "പാനിലെ എണ്ണയ്ക്ക് തീ പിടിക്കുന്നു. നിങ്ങൾ ഒരിക്കലും ചെയ്യാൻ പാടില്ലാത്തത് എന്താണ്?",
-    "o": [
-     "അതിൽ വെള്ളം ഒഴിക്കുക",
-     "ഫയർ അലാറം അമർത്തുക",
-     "അടുത്തുള്ള ആളുകൾക്ക് മുന്നറിയിപ്പ് നൽകുക",
-     "ഏറ്റവും അടുത്ത വാതിലിലൂടെ പുറത്തു പോകുക"
-    ],
-    "e": "വെള്ളം ഒഴിച്ചാൽ എണ്ണയിലെ തീ ചാടി പടരും. ട്രെയിനിങ് കിട്ടിയ ജോലിക്കാർ മാത്രം ശരിയായ തീ കെടുത്തുന്ന ഉപകരണം ഉപയോഗിക്കുക."
+    "q": "പാനിലെ എണ്ണയ്ക്ക് തീ പിടിച്ചാൽ, അതിൽ വെള്ളം ഒഴിച്ചാൽ തീ സുരക്ഷിതമായി കെടും.",
+    "e": "തെറ്റ്. വെള്ളം ഒഴിച്ചാൽ എണ്ണയിലെ തീ ചാടി പടരും. ഫയർ അലാറം അമർത്തുക, ആളുകൾക്ക് മുന്നറിയിപ്പ് നൽകുക, പുറത്തു പോകുക. ട്രെയിനിങ് കിട്ടിയ ജോലിക്കാർ മാത്രം ശരിയായ തീ കെടുത്തുന്ന ഉപകരണം ഉപയോഗിക്കുക."
    },
    "ta": {
-    "q": "சட்டியில் உள்ள எண்ணெயில் தீப்பிடிக்கிறது. நீங்கள் ஒருபோதும் என்ன செய்யக் கூடாது?",
-    "o": [
-     "அதன் மேல் தண்ணீர் ஊற்றுவது",
-     "தீ அலாரத்தை அழுத்துவது",
-     "அருகில் உள்ளவர்களை எச்சரிப்பது",
-     "அருகில் உள்ள வெளியேறும் வழியாக வெளியே போவது"
-    ],
-    "e": "தண்ணீர் எண்ணெய்த் தீயைத் தாவிப் பரவ வைக்கும். பயிற்சி பெற்றவர்கள் மட்டுமே சரியான தீ அணைப்பானைப் பயன்படுத்த வேண்டும்."
+    "q": "சட்டியில் உள்ள எண்ணெயில் தீப்பிடித்தால், அதன் மேல் தண்ணீர் ஊற்றுவது தீயைப் பாதுகாப்பாக அணைக்கும்.",
+    "e": "தவறு. தண்ணீர் எண்ணெய்த் தீயைத் தாவிப் பரவ வைக்கும். தீ அலாரத்தை அழுத்தி, மக்களை எச்சரித்து, வெளியே போங்கள். பயிற்சி பெற்றவர்கள் மட்டுமே சரியான தீ அணைப்பானைப் பயன்படுத்த வேண்டும்."
    },
    "fil": {
-    "q": "Nagliyab ang mantika sa kawali. Ano ang hindi mo dapat kailanman gawin?",
-    "o": [
-     "Buhusan ito ng tubig",
-     "Pindutin ang fire alarm",
-     "Balaan ang mga tao sa paligid mo",
-     "Lumabas sa pinakamalapit na labasan"
-    ],
-    "e": "Ang tubig ay nagpapatalsik at nagpapakalat ng apoy sa mantika. Ang mga trained na trabahador lang ang gagamit ng tamang fire extinguisher."
+    "q": "Kapag nagliyab ang mantika sa kawali, ligtas na napapatay ang apoy kapag binuhusan ito ng tubig.",
+    "e": "Mali. Ang tubig ay nagpapatalsik at nagpapakalat ng apoy sa mantika. Pindutin ang fire alarm, balaan ang mga tao at lumabas. Ang mga trained na trabahador lang ang gagamit ng tamang fire extinguisher."
    },
    "ind": {
-    "q": "Minyak di wajan terbakar. Apa yang tidak boleh Anda lakukan sama sekali?",
-    "o": [
-     "Menyiram api dengan air",
-     "Menekan alarm kebakaran",
-     "Memperingatkan orang di dekat Anda",
-     "Keluar lewat pintu keluar terdekat"
-    ],
-    "e": "Air membuat api minyak melompat dan menyebar. Hanya staf yang terlatih yang memakai alat pemadam api yang tepat."
+    "q": "Kalau minyak di wajan terbakar, menyiramnya dengan air bisa memadamkan api dengan aman.",
+    "e": "Salah. Air membuat api minyak melompat dan menyebar. Tekan alarm kebakaran, peringatkan orang-orang dan keluar. Hanya staf yang terlatih yang memakai alat pemadam api yang tepat."
    },
    "tr": {
-    "q": "Tavadaki yağ alev alıyor. Asla ne yapmamalısın?",
-    "o": [
-     "Üstüne su atmak",
-     "Yangın alarmına basmak",
-     "Yakınındaki insanları uyarmak",
-     "En yakın çıkıştan çıkmak"
-    ],
-    "e": "Su, yağ yangınının sıçramasına ve yayılmasına neden olur. Sadece eğitimli çalışanlar doğru yangın söndürücüyü kullanır."
+    "q": "Tavadaki yağ alev alırsa, üstüne su atmak yangını güvenli şekilde söndürür.",
+    "e": "Yanlış. Su, yağ yangınının sıçramasına ve yayılmasına neden olur. Yangın alarmına bas, insanları uyar ve dışarı çık. Sadece eğitimli çalışanlar doğru yangın söndürücüyü kullanır."
    }
   },
   {
@@ -33291,119 +33159,120 @@
   },
   {
    "id": "k305",
-   "type": "order",
+   "type": "single",
    "ch": 13,
    "d": 4,
    "en": {
-    "q": "A colleague slips on a wet floor and falls. Put these steps in the right order.",
+    "q": "A colleague slips on a wet floor and falls. What do you do first?",
     "o": [
      "Ask if they are hurt and help them keep still",
-     "Call your supervisor",
-     "Put a wet-floor sign there",
-     "Clean up the water"
+     "Clean up the water",
+     "Put up a wet-floor sign",
+     "Carry on working"
     ],
-    "e": "Help the person first and get your supervisor. Then put up a sign so nobody else slips, and clean up the water."
+    "e": "Help the person first and call your supervisor. Then put up a sign so nobody else slips, and clean up the water."
    },
    "ur": {
-    "q": "ساتھی گیلے فرش پر پھسل کر گر گیا۔ یہ قدم صحیح ترتیب میں لگائیں۔",
+    "q": "ساتھی گیلے فرش پر پھسل کر گر گیا۔ آپ سب سے پہلے کیا کریں گے؟",
     "o": [
      "پوچھیں کہ کہیں چوٹ تو نہیں لگی، اور مدد کریں کہ وہ ہلے نہیں",
-     "سپروائزر کو بلائیں",
-     "وہاں گیلے فرش کا بورڈ لگائیں",
-     "پانی صاف کریں"
+     "پانی صاف کریں",
+     "گیلے فرش کا بورڈ لگائیں",
+     "کام کرتے رہیں"
     ],
     "e": "پہلے ساتھی کی مدد کریں اور سپروائزر کو بلائیں۔ پھر بورڈ لگائیں تاکہ کوئی اور نہ پھسلے، اور پانی صاف کریں۔"
    },
    "hi": {
-    "q": "एक साथी गीले फ़र्श पर फिसलकर गिर गया। ये कदम सही क्रम में लगाएँ।",
+    "q": "एक साथी गीले फ़र्श पर फिसलकर गिर गया। आप सबसे पहले क्या करें?",
     "o": [
      "पूछें कि कहीं चोट तो नहीं लगी, और उसे बिना हिले रहने में मदद करें",
-     "सुपरवाइज़र को बुलाएँ",
-     "वहाँ गीले फ़र्श का बोर्ड लगाएँ",
-     "पानी साफ़ करें"
+     "पानी साफ़ करें",
+     "गीले फ़र्श का बोर्ड लगाएँ",
+     "काम करते रहें"
     ],
     "e": "पहले साथी की मदद करें और सुपरवाइज़र को बुलाएँ। फिर बोर्ड लगाएँ ताकि कोई और न फिसले, और पानी साफ़ करें।"
    },
    "bn": {
-    "q": "সহকর্মী ভেজা মেঝেতে পিছলে পড়ে গেছে। এই ধাপগুলো ঠিক ক্রমে সাজান।",
+    "q": "সহকর্মী ভেজা মেঝেতে পিছলে পড়ে গেছে। আপনি আগে কী করবেন?",
     "o": [
      "জিজ্ঞেস করুন সে ব্যথা পেয়েছে কিনা, আর তাকে স্থির থাকতে সাহায্য করুন",
-     "সুপারভাইজারকে ডাকুন",
-     "সেখানে ভেজা মেঝের বোর্ড লাগান",
-     "পানি মুছে ফেলুন"
+     "পানি মুছে ফেলুন",
+     "ভেজা মেঝের বোর্ড লাগান",
+     "কাজ চালিয়ে যান"
     ],
     "e": "আগে মানুষটাকে সাহায্য করুন আর সুপারভাইজারকে ডাকুন। তারপর বোর্ড লাগান যাতে আর কেউ পিছলে না পড়ে, আর পানি মুছে ফেলুন।"
    },
    "ar": {
-    "q": "زميلك انزلق على أرض مبللة وسقط. رتّب هذه الخطوات بالترتيب الصحيح.",
+    "q": "زميلك انزلق على أرض مبللة وسقط. ماذا تفعل أولاً؟",
     "o": [
      "اسأله هل أصيب، وساعده على البقاء بدون حركة",
-     "نادِ المشرف",
-     "ضع لوحة تحذير الأرض المبللة هناك",
-     "نظّف الماء"
+     "نظّف الماء",
+     "ضع لوحة تحذير الأرض المبللة",
+     "أكمل عملك"
     ],
     "e": "ساعد الشخص أولاً ونادِ المشرف. ثم ضع لوحة تحذير حتى لا ينزلق أحد آخر، ونظّف الماء."
    },
    "ne": {
-    "q": "एक जना सहकर्मी भिजेको भुइँमा चिप्लिएर लड्छन्। यी चरणहरूलाई सही क्रममा मिलाउनुहोस्।",
+    "q": "एक जना सहकर्मी भिजेको भुइँमा चिप्लिएर लड्छन्। तपाईंले सबैभन्दा पहिले के गर्नुहुन्छ?",
     "o": [
      "चोट लाग्यो कि भनेर सोध्नुहोस् र उहाँलाई नचलीकन रहन मद्दत गर्नुहोस्",
-     "सुपरभाइजरलाई बोलाउनुहोस्",
-     "त्यहाँ भिजेको भुइँको चिन्ह राख्नुहोस्",
-     "पानी पुछ्नुहोस्"
+     "पानी पुछ्नुहोस्",
+     "भिजेको भुइँको चिन्ह राख्नुहोस्",
+     "काम गरिरहनुहोस्"
     ],
     "e": "पहिले मान्छेलाई मद्दत गर्नुहोस् र सुपरभाइजरलाई बोलाउनुहोस्। त्यसपछि अरू कोही नचिप्लियोस् भनेर चिन्ह राख्नुहोस्, र पानी पुछ्नुहोस्।"
    },
    "ml": {
-    "q": "കൂടെ ജോലി ചെയ്യുന്നയാൾ നനഞ്ഞ തറയിൽ തെന്നി വീഴുന്നു. ഈ സ്റ്റെപ്പുകൾ ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "കൂടെ ജോലി ചെയ്യുന്നയാൾ നനഞ്ഞ തറയിൽ തെന്നി വീഴുന്നു. നിങ്ങൾ ആദ്യം എന്ത് ചെയ്യും?",
     "o": [
      "പരിക്കുണ്ടോ എന്ന് അയാളോട് ചോദിച്ച്, അനങ്ങാതെ ഇരിക്കാൻ സഹായിക്കുക",
-     "സൂപ്പർവൈസറെ വിളിക്കുക",
-     "അവിടെ \"തറയിൽ നനവ്\" ബോർഡ് വയ്ക്കുക",
-     "വെള്ളം തുടച്ചു കളയുക"
+     "വെള്ളം തുടച്ചു കളയുക",
+     "\"തറയിൽ നനവ്\" ബോർഡ് വയ്ക്കുക",
+     "ജോലി തുടരുക"
     ],
     "e": "ആദ്യം ആളെ സഹായിക്കുക, സൂപ്പർവൈസറെ വിളിക്കുക. പിന്നെ വേറെ ആരും തെന്നി വീഴാതിരിക്കാൻ ബോർഡ് വയ്ക്കുക, വെള്ളം തുടച്ചു കളയുക."
    },
    "ta": {
-    "q": "உடன் வேலை செய்பவர் ஈரமான தரையில் வழுக்கி விழுகிறார். இந்தப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "உடன் வேலை செய்பவர் ஈரமான தரையில் வழுக்கி விழுகிறார். நீங்கள் முதலில் என்ன செய்வீர்கள்?",
     "o": [
      "அவருக்கு அடிபட்டிருக்கிறதா என்று கேட்டு, அவர் அசையாமல் இருக்க உதவுங்கள்",
-     "உங்கள் சூப்பர்வைசரை அழையுங்கள்",
-     "அங்கே ஈரத் தரை எச்சரிக்கைப் பலகை வையுங்கள்",
-     "தண்ணீரைச் சுத்தம் செய்யுங்கள்"
+     "தண்ணீரைச் சுத்தம் செய்யுங்கள்",
+     "ஈரத் தரை எச்சரிக்கைப் பலகை வையுங்கள்",
+     "தொடர்ந்து வேலை செய்யுங்கள்"
     ],
     "e": "முதலில் அவருக்கு உதவுங்கள், உங்கள் சூப்பர்வைசரை அழையுங்கள். பிறகு வேறு யாரும் வழுக்கி விழாமல் இருக்க எச்சரிக்கைப் பலகை வைத்து, தண்ணீரைச் சுத்தம் செய்யுங்கள்."
    },
    "fil": {
-    "q": "Nadulas at natumba ang katrabaho mo sa basang sahig. Ayusin ang mga hakbang na ito sa tamang pagkakasunod.",
+    "q": "Nadulas at natumba ang katrabaho mo sa basang sahig. Ano ang una mong gagawin?",
     "o": [
      "Tanungin kung nasaktan siya at tulungan siyang huwag gumalaw",
-     "Tawagin ang supervisor mo",
-     "Maglagay doon ng babalang basa ang sahig",
-     "Linisin ang tubig"
+     "Linisin ang tubig",
+     "Maglagay ng babalang basa ang sahig",
+     "Ituloy ang trabaho"
     ],
     "e": "Tulungan muna ang tao at tawagin ang supervisor mo. Tapos maglagay ng babala para walang ibang madulas, at linisin ang tubig."
    },
    "ind": {
-    "q": "Rekan kerja terpeleset di lantai basah dan jatuh. Susun langkah-langkah ini dengan urutan yang benar.",
+    "q": "Rekan kerja terpeleset di lantai basah dan jatuh. Apa yang Anda lakukan pertama kali?",
     "o": [
      "Tanya apakah dia terluka dan bantu dia tetap diam",
-     "Panggil atasan Anda",
-     "Pasang tanda lantai basah di sana",
-     "Bersihkan airnya"
+     "Bersihkan airnya",
+     "Pasang tanda lantai basah",
+     "Lanjut bekerja"
     ],
     "e": "Tolong orangnya lebih dulu dan panggil atasan Anda. Lalu pasang tanda supaya tidak ada orang lain yang terpeleset, dan bersihkan airnya."
    },
    "tr": {
-    "q": "Bir iş arkadaşı ıslak zeminde kayıp düşüyor. Bu adımları doğru sıraya koy.",
+    "q": "Bir iş arkadaşı ıslak zeminde kayıp düşüyor. İlk önce ne yaparsın?",
     "o": [
      "Bir yeri acıyor mu diye sor ve kıpırdamadan durmasına yardım et",
-     "Amirini çağır",
-     "Oraya ıslak zemin levhası koy",
-     "Suyu temizle"
+     "Suyu temizle",
+     "Islak zemin levhası koy",
+     "İşine devam et"
     ],
     "e": "Önce kişiye yardım et ve amirini çağır. Sonra kimse kaymasın diye levha koy ve suyu temizle."
-   }
+   },
+   "ans": 0
   },
   {
    "id": "k306",
@@ -34419,48 +34288,48 @@
    "d": 2,
    "clip": "/videos/plaster-right.mp4",
    "en": {
-    "q": "A worker cuts his finger while preparing food. Watch the clip. Is this right or wrong?",
-    "e": "Right. He moved his hand away from the food, covered the cut with a blue waterproof plaster and put a glove over it."
+    "q": "A worker cuts his finger while preparing food. Watch how he covers the cut. Is this right or wrong?",
+    "e": "Right. He moved his hand away from the food, covered the cut with a blue waterproof plaster and put a glove over it. Before the plaster, also wash and dry the cut."
    },
    "ur": {
-    "q": "کھانا تیار کرتے ہوئے ایک ورکر کی انگلی کٹ جاتی ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
-    "e": "درست۔ اس نے ہاتھ کھانے سے دور کیا، زخم پر نیلی واٹر پروف پٹی لگائی اور اس کے اوپر دستانہ پہن لیا۔"
+    "q": "کھانا تیار کرتے ہوئے ایک ورکر کی انگلی کٹ جاتی ہے۔ دیکھیں وہ زخم کو کیسے ڈھکتا ہے۔ کیا یہ درست ہے یا غلط؟",
+    "e": "درست۔ اس نے ہاتھ کھانے سے دور کیا، زخم پر نیلی واٹر پروف پٹی لگائی اور اس کے اوپر دستانہ پہن لیا۔ پٹی لگانے سے پہلے زخم کو دھو کر سکھا بھی لیں۔"
    },
    "hi": {
-    "q": "खाना तैयार करते समय एक वर्कर की उंगली कट जाती है। वीडियो देखें। क्या यह सही है या गलत?",
-    "e": "सही। उसने अपना हाथ खाने से दूर किया, कट पर नीली वॉटरप्रूफ पट्टी लगाई और उसके ऊपर दस्ताना पहन लिया।"
+    "q": "खाना तैयार करते समय एक वर्कर की उंगली कट जाती है। देखें कि वह कट को कैसे ढकता है। क्या यह सही है या गलत?",
+    "e": "सही। उसने अपना हाथ खाने से दूर किया, कट पर नीली वॉटरप्रूफ पट्टी लगाई और उसके ऊपर दस्ताना पहन लिया। पट्टी लगाने से पहले कट को धोकर सुखा भी लें।"
    },
    "bn": {
-    "q": "খাবার বানানোর সময় একজন কর্মীর আঙুল কেটে যায়। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
-    "e": "সঠিক। তিনি খাবার থেকে হাত সরিয়ে নিয়েছেন, কাটা জায়গা নীল ওয়াটারপ্রুফ প্লাস্টার দিয়ে ঢেকেছেন আর তার উপর গ্লাভস পরেছেন।"
+    "q": "খাবার বানানোর সময় একজন কর্মীর আঙুল কেটে যায়। তিনি কীভাবে কাটা জায়গা ঢাকেন দেখুন। এটা সঠিক না ভুল?",
+    "e": "সঠিক। তিনি খাবার থেকে হাত সরিয়ে নিয়েছেন, কাটা জায়গা নীল ওয়াটারপ্রুফ প্লাস্টার দিয়ে ঢেকেছেন আর তার উপর গ্লাভস পরেছেন। প্লাস্টার লাগানোর আগে কাটা জায়গা ধুয়ে শুকিয়েও নিতে হয়।"
    },
    "ar": {
-    "q": "عامل يجرح إصبعه وهو يحضّر الطعام. شاهد المقطع. هل هذا صح أم خطأ؟",
-    "e": "صح. أبعد يده عن الطعام، وغطى الجرح بلاصق جروح أزرق مقاوم للماء، ولبس قفازاً فوقه."
+    "q": "عامل يجرح إصبعه وهو يحضّر الطعام. شاهد كيف يغطي الجرح. هل هذا صح أم خطأ؟",
+    "e": "صح. أبعد يده عن الطعام، وغطى الجرح بلاصق جروح أزرق مقاوم للماء، ولبس قفازاً فوقه. قبل اللاصق، اغسل الجرح وجففه أيضاً."
    },
    "ne": {
-    "q": "खाना तयार गर्दा एक जना कामदारको औंला काटिन्छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
-    "e": "सही। उसले हात खानाबाट टाढा सार्‍यो, घाउलाई पानी नछिर्ने नीलो प्लास्टरले छोप्यो र त्यसमाथि पन्जा लगायो।"
+    "q": "खाना तयार गर्दा एक जना कामदारको औंला काटिन्छ। उसले घाउ कसरी छोप्छ हेर्नुहोस्। यो सही हो कि गलत?",
+    "e": "सही। उसले हात खानाबाट टाढा सार्‍यो, घाउलाई पानी नछिर्ने नीलो प्लास्टरले छोप्यो र त्यसमाथि पन्जा लगायो। प्लास्टर लगाउनुअघि घाउ धोएर सुकाउनु पनि पर्छ।"
    },
    "ml": {
-    "q": "ഭക്ഷണം തയ്യാറാക്കുന്നതിനിടെ ഒരു ജോലിക്കാരന്റെ വിരൽ മുറിയുന്നു. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
-    "e": "ശരി. അയാൾ കൈ ഭക്ഷണത്തിൽ നിന്ന് മാറ്റി, മുറിവ് വെള്ളം കയറാത്ത നീല പ്ലാസ്റ്റർ കൊണ്ട് മൂടി, അതിന് മുകളിൽ ഒരു ഗ്ലൗസ് ഇട്ടു."
+    "q": "ഭക്ഷണം തയ്യാറാക്കുന്നതിനിടെ ഒരു ജോലിക്കാരന്റെ വിരൽ മുറിയുന്നു. അയാൾ മുറിവ് എങ്ങനെ മൂടുന്നു എന്ന് കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
+    "e": "ശരി. അയാൾ കൈ ഭക്ഷണത്തിൽ നിന്ന് മാറ്റി, മുറിവ് വെള്ളം കയറാത്ത നീല പ്ലാസ്റ്റർ കൊണ്ട് മൂടി, അതിന് മുകളിൽ ഒരു ഗ്ലൗസ് ഇട്ടു. പ്ലാസ്റ്ററിന് മുമ്പ് മുറിവ് കഴുകി ഉണക്കുകയും വേണം."
    },
    "ta": {
-    "q": "உணவு தயாரிக்கும்போது ஒரு பணியாளர் தன் விரலை வெட்டிக்கொள்கிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
-    "e": "சரி. அவர் கையை உணவிலிருந்து விலக்கினார், வெட்டுக்காயத்தைத் தண்ணீர் புகாத நீல நிற பிளாஸ்டரால் மூடினார், அதன் மேல் ஒரு கையுறையை அணிந்தார்."
+    "q": "உணவு தயாரிக்கும்போது ஒரு பணியாளர் தன் விரலை வெட்டிக்கொள்கிறார். அவர் காயத்தை எப்படி மூடுகிறார் என்று பாருங்கள். இது சரியா, தவறா?",
+    "e": "சரி. அவர் கையை உணவிலிருந்து விலக்கினார், வெட்டுக்காயத்தைத் தண்ணீர் புகாத நீல நிற பிளாஸ்டரால் மூடினார், அதன் மேல் ஒரு கையுறையை அணிந்தார். பிளாஸ்டர் போடுவதற்கு முன், காயத்தைக் கழுவித் துடைக்கவும் வேண்டும்."
    },
    "fil": {
-    "q": "Nahiwa ng isang worker ang daliri niya habang naghahanda ng pagkain. Panoorin ang video. Tama ba ito o mali?",
-    "e": "Tama. Inilayo niya ang kamay niya sa pagkain, tinakpan ang sugat ng asul na waterproof na plaster at nagsuot ng gloves sa ibabaw nito."
+    "q": "Nahiwa ng isang worker ang daliri niya habang naghahanda ng pagkain. Panoorin kung paano niya tinakpan ang sugat. Tama ba ito o mali?",
+    "e": "Tama. Inilayo niya ang kamay niya sa pagkain, tinakpan ang sugat ng asul na waterproof na plaster at nagsuot ng gloves sa ibabaw nito. Bago ang plaster, hugasan at patuyuin din ang sugat."
    },
    "ind": {
-    "q": "Jari seorang pekerja teriris saat menyiapkan makanan. Lihat videonya. Ini benar atau salah?",
-    "e": "Benar. Dia menjauhkan tangannya dari makanan, menutup lukanya dengan plester biru tahan air, lalu memakai sarung tangan di atasnya."
+    "q": "Jari seorang pekerja teriris saat menyiapkan makanan. Lihat cara dia menutup lukanya. Ini benar atau salah?",
+    "e": "Benar. Dia menjauhkan tangannya dari makanan, menutup lukanya dengan plester biru tahan air, lalu memakai sarung tangan di atasnya. Sebelum memakai plester, cuci dan keringkan juga lukanya."
    },
    "tr": {
-    "q": "Bir çalışan yemek hazırlarken parmağını kesiyor. Videoyu izle. Bu doğru mu, yanlış mı?",
-    "e": "Doğru. Elini yemekten uzaklaştırdı, kesiği mavi, su geçirmez yara bandıyla kapattı ve üstüne eldiven giydi."
+    "q": "Bir çalışan yemek hazırlarken parmağını kesiyor. Kesiği nasıl kapattığını izle. Bu doğru mu, yanlış mı?",
+    "e": "Doğru. Elini yemekten uzaklaştırdı, kesiği mavi, su geçirmez yara bandıyla kapattı ve üstüne eldiven giydi. Yara bandından önce kesiği yıkayıp kurulamak da gerekir."
    }
   },
   {

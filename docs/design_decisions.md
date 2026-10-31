@@ -41,6 +41,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
 | D31 | 30 Oct | Video questions go live as cartoon clips with two answers, Right and Wrong, like the real exam (Wessam: the exam always asks "is this right or wrong?"); 12 clips, half right, half wrong; replaces holding videos back (D5) | User asked, AI made the clips | The exam has video questions; workers should practise the format now, not wait for real footage |
 | D32 | 30 Oct | Ordering steps stay neutral (no colour) until "Check my answer" | User | The red used for moved steps looked like a wrong answer |
+| D34 | 31 Oct | Second whole-bank review from the exam-relevance angle: questions a worker would not be asked (making the HACCP plan, naming HACCP terms, admin steps), orders with more than one fair answer, orders solvable by sorting numbers, and answers that disagreed with other questions were rewritten (23 questions, all 11 languages); none dropped | User (asked for a harder look), AI reviewed (two independent passes) and wrote | Workers were losing marks on things the exam is unlikely to ask; the user kept finding these one at a time |
 | D33 | 30 Oct | The seller can make a bunch of codes in one go (1, 3, 5, 10, 20 or any number up to 50); codes made together share a batch id, show together in the list, and can be copied, turned off, turned on and deleted all at once | User asked, AI designed | Restaurants buy codes for several workers at a time; one by one was slow |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
 
@@ -269,4 +270,34 @@ listing every code. One code made on its own has no batch and looks exactly as b
   one go, and its name is the codes' shared name.
 - Rejected: letting the seller move codes between bunches later. Not asked for; adds screens.
 - The cap of 50 per go keeps one request short and stops a mistyped 500.
+
+## D34. Exam-relevance review (31 Oct)
+
+Mustafa found the HACCP plan-ordering question on his phone and asked why the AI had not caught questions like
+it. Two separate reviews of all 318 live questions followed (one by the AI that wrote them, one by a fresh agent
+that had not seen the earlier work), looking for: knowledge a worker would not be tested on, orders with more
+than one fair answer, orders solvable by sorting numbers, multi-answer marking that can be argued, answers that
+contradict other questions, and wording that traps a beginner. 23 questions were rewritten (same ids and
+chapters, all 11 languages):
+- HACCP at a worker's level: k245 what HACCP is, k246 who writes and who follows the plan, k247 what to do when a
+  check was missed (honest records), k238 what the 75°C number means, k239 what to do when chicken is 70°C,
+  k243 the daily basics (cleaning, pests, training). The 12-step plan is no longer asked; k241 (7 principles,
+  12 steps) and k237 (what a CCP is) stay.
+- One fair order only: k016 getting ready (3 steps), k078 chilled delivery (no signing step), k079 fridge shelves
+  (ready-to-eat, raw vegetables, raw meat; the fish-above-beef rule is not in the handbook facts), k305 a fall
+  (now "what do you do first?"), k261 ("the time your supervisor set").
+- No sorting by numbers: k138 places (freezer to cooked chicken) and k223 water (by how long plates stay in)
+  without the numbers in the options.
+- Agreement: k068 swollen can (put aside and tell the supervisor, as k077 and the handbook say), k012 distractor
+  ("easiest to reach", since FIFO puts old stock in front), k286 (a 2-in-1 cleaner-sanitiser, so it no longer
+  says cleaning and sanitising are one thing), k216 and k217 (arguable options replaced), k168 (gravy "warm but
+  not hot"), k259 (temperature checked on arrival, not on the road).
+- Admin and traps: k112 (what you need for the certificate instead of an office sequence), k292 (true/false about
+  water on an oil fire instead of "what must you never do").
+- k320: the "right" plaster clip has no hand washing, while k032 says wash and dry the cut first. The question
+  now asks only how he covers the cut, and the explanation adds washing. Rendering a new clip with washing is
+  the fuller fix.
+- Kept, considered: near-duplicates (hand washing, thawing, cooling, dish washing asked several times) stay,
+  because repetition of the key facts is part of practising; numbers the handbook states (75% of new diseases
+  from animals, bacteria doubling every 10-20 minutes) stay.
 

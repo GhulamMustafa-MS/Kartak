@@ -4,7 +4,7 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 30 Oct 2026, evening)
+## START HERE (last updated 31 Oct 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
@@ -25,7 +25,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 3. Native speakers check every language except English (all AI-translated; reviewers' open points per
    language are in summary.md 2).
 4. The user tests the apps on a real iPhone (home-screen install and hand-over).
-5. Turn off or delete the test code MUSTFA ("Mustafa test") in the seller app once testing is finished.
+5. Re-render the plaster clip (k320) with hand washing before the plaster (D34).
+6. Turn off or delete the test code MUSTFA ("Mustafa test") in the seller app once testing is finished.
 
 **Open items (the user's decisions):**
 - Make the GitHub repo private? Protects the questions and this plan; the old GitHub Pages link would stop
@@ -39,6 +40,11 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **31 Oct 2026:** exam-relevance review of the whole bank (D34), two independent passes: 23 questions rewritten
+  in all 11 languages, none dropped (HACCP at worker level instead of the 12 plan steps, orders with one fair
+  answer, no orders solvable by sorting numbers, answers that disagreed with other questions fixed). Live mix:
+  single 120, tf 61, multi 57, order 47, picture 21, video 12. Open: re-render the plaster clip with hand
+  washing (k320). Translations by AI as before.
 - **30 Oct 2026 (4):** bunches of codes in the seller app (D33): "How many codes" (1/3/5/10/20 or any number up
   to 50) makes codes that share a batch id, name and time limit; the list shows them as one bunch with Copy all,
   Turn all off / back on and Delete all; WhatsApp for a bunch lists every code. Migration 005 (`batch` column) run
