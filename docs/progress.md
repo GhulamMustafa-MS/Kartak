@@ -8,7 +8,7 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
-  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 318 live questions
+  Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 305 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place, every
   type or one type such as ordering only, D29) /
   key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
@@ -41,6 +41,9 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **1 Nov 2026 (later):** finished the independent review's list (D36): 13 questions turned off (10 repeats, k202,
+  k037, k152), k131, k171 and k309 rewritten in all 11 languages. Live: 305 (single 117, true/false 59, multi 56,
+  order 40, picture 21, video 12).
 - **1 Nov 2026:** fixes from Wessam's testing (D35). Every clip has a poster picture and a big play button when
   the phone refuses autoplay (his iPhone showed the taste clip black). The boards clip (k312) shows hand washing
   after the raw chicken, and its explanation says gloves are not needed but hand washing is. k139 (rice) is now a

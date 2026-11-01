@@ -556,7 +556,8 @@
      "Kağıt havluyla kurula"
     ],
     "e": "Islat, sabunla, ov, durula, kurula."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k006",
@@ -1215,7 +1216,8 @@
      "Kendi kendine kurumaya bırak"
     ],
     "e": "Yemeği al, yıka, durula, sanitize et, sonra kendi kendine kurumaya bırak. Sanitizer zaten temiz olan yüzeyde en iyi çalışır."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k012",
@@ -4091,7 +4093,8 @@
      "Sakız çiğnemek"
     ],
     "e": "Yemek yemek, sigara, sakız ve telefon ağzından ve ellerinden yemeğe mikrop taşır. Bunları sadece mola alanında yap."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k038",
@@ -4858,7 +4861,8 @@
    "tr": {
     "q": "Artan pilav, her seferinde buharı tütecek kadar ısınırsa iki ya da üç kez tekrar ısıtılabilir.",
     "e": "Yanlış. Yemeği sadece bir kez tekrar ısıt. Ondan sonra kalanı at."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k045",
@@ -5235,7 +5239,8 @@
      "Küçük, sığ tepsilere böl"
     ],
     "e": "Küçük, sığ porsiyonlar çok daha hızlı soğur. Büyük derin bir tencerenin ortası uzun süre ılık kalır."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k048",
@@ -5403,7 +5408,8 @@
      "Kokla, kokusu iyiyse kullan"
     ],
     "e": "Oda sıcaklığında uzun süre kaldıktan sonra mikroplar çoğalmış olabilir. Tekrar ısıtmak onu güvenli yapmaz, bu yüzden at."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k050",
@@ -6378,7 +6384,8 @@
      "Müdürüne söyle ve yemeği soğuk bir buzdolabına taşı"
     ],
     "e": "Hemen harekete geç. Atılması gereken yemek olup olmadığına müdürün karar verir."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k059",
@@ -6494,7 +6501,8 @@
      "Ortasının en az 75°C olduğunu kontrol et"
     ],
     "e": "Buzdolabında çözdür, sadece tamamen çözülünce pişir, sonra ortasını kontrol et."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k060",
@@ -10891,7 +10899,8 @@
      "Bir rafta kendi kendine kurumaya bırak"
     ],
     "e": "Kazı, yıka, durula, sanitize et, sonra kendi kendine kurumaya bırak. Durulamak sabunu giderir, böylece sanitizer iyi çalışır."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k101",
@@ -14116,48 +14125,48 @@
    "d": 1,
    "ch": 3,
    "en": {
-    "q": "Bacteria cause most cases of food poisoning.",
-    "e": "True. Bacteria are the main cause of food poisoning and spoiled food, so treat food and surfaces as if germs are there."
+    "q": "Bacteria are one of the main causes of food poisoning.",
+    "e": "True. Bacteria are one of the main causes of food poisoning and spoiled food, so treat food and surfaces as if germs are there."
    },
    "ur": {
-    "q": "فوڈ پوائزننگ (کھانے سے ہونے والی بیماری) زیادہ تر بیکٹیریا کی وجہ سے ہوتی ہے۔",
-    "e": "درست۔ فوڈ پوائزننگ اور خراب کھانے کی سب سے بڑی وجہ بیکٹیریا ہیں، اس لیے کھانے اور سطحوں کو ایسے سمجھیں جیسے ان پر جراثیم موجود ہوں۔"
+    "q": "بیکٹیریا فوڈ پوائزننگ (کھانے سے ہونے والی بیماری) کی بڑی وجوہات میں سے ایک ہیں۔",
+    "e": "درست۔ بیکٹیریا فوڈ پوائزننگ اور خراب کھانے کی بڑی وجوہات میں سے ایک ہیں، اس لیے کھانے اور سطحوں کو ایسے سمجھیں جیسے ان پر جراثیم موجود ہوں۔"
    },
    "hi": {
-    "q": "फूड पॉइज़निंग (खाने से होने वाली बीमारी) ज़्यादातर बैक्टीरिया की वजह से होती है।",
-    "e": "सही। फूड पॉइज़निंग और ख़राब खाने की सबसे बड़ी वजह बैक्टीरिया हैं, इसलिए खाने और सतहों को ऐसे समझें जैसे उन पर कीटाणु हों।"
+    "q": "बैक्टीरिया फूड पॉइज़निंग (खाने से होने वाली बीमारी) की मुख्य वजहों में से एक हैं।",
+    "e": "सही। बैक्टीरिया फूड पॉइज़निंग और ख़राब खाने की मुख्य वजहों में से एक हैं, इसलिए खाने और सतहों को ऐसे समझें जैसे उन पर कीटाणु हों।"
    },
    "bn": {
-    "q": "ফুড পয়জনিং (খাবার থেকে হওয়া অসুখ) বেশিরভাগ ব্যাকটেরিয়ার কারণে হয়।",
-    "e": "সঠিক। ফুড পয়জনিং আর নষ্ট খাবারের প্রধান কারণ ব্যাকটেরিয়া, তাই খাবার আর জায়গাকে এমনভাবে দেখুন যেন সেখানে জীবাণু আছে।"
+    "q": "ব্যাকটেরিয়া ফুড পয়জনিংয়ের (খাবার থেকে হওয়া অসুখ) প্রধান কারণগুলোর একটি।",
+    "e": "সঠিক। ব্যাকটেরিয়া ফুড পয়জনিং আর নষ্ট খাবারের প্রধান কারণগুলোর একটি, তাই খাবার আর জায়গাকে এমনভাবে দেখুন যেন সেখানে জীবাণু আছে।"
    },
    "ar": {
-    "q": "البكتيريا هي سبب معظم حالات التسمم الغذائي.",
-    "e": "صح. البكتيريا هي السبب الأول للتسمم الغذائي وفساد الطعام، لذلك تعامل مع الطعام والأسطح كأن الجراثيم موجودة عليها."
+    "q": "البكتيريا من الأسباب الرئيسية للتسمم الغذائي.",
+    "e": "صح. البكتيريا من الأسباب الرئيسية للتسمم الغذائي وفساد الطعام، لذلك تعامل مع الطعام والأسطح كأن الجراثيم موجودة عليها."
    },
    "ne": {
-    "q": "खानाबाट हुने बिरामी (फुड पोइजनिङ) धेरैजसो ब्याक्टेरियाले गराउँछ।",
-    "e": "सही। खानाबाट हुने बिरामी र खाना बिग्रनुको मुख्य कारण ब्याक्टेरिया हो, त्यसैले खाना र सतहमा किटाणु छ भनेर सोचेर काम गर्नुहोस्।"
+    "q": "ब्याक्टेरिया खानाबाट हुने बिरामी (फुड पोइजनिङ) का मुख्य कारणहरूमध्ये एक हो।",
+    "e": "सही। ब्याक्टेरिया खानाबाट हुने बिरामी र खाना बिग्रनुका मुख्य कारणहरूमध्ये एक हो, त्यसैले खाना र सतहमा किटाणु छ भनेर सोचेर काम गर्नुहोस्।"
    },
    "ml": {
-    "q": "ഭക്ഷ്യവിഷബാധയിൽ കൂടുതലും ഉണ്ടാക്കുന്നത് ബാക്ടീരിയയാണ്.",
-    "e": "ശരി. ഭക്ഷ്യവിഷബാധയ്ക്കും ഭക്ഷണം കേടാകുന്നതിനും പ്രധാന കാരണം ബാക്ടീരിയയാണ്. അതുകൊണ്ട് ഭക്ഷണത്തിലും പ്രതലങ്ങളിലും അണുക്കൾ ഉണ്ടെന്ന് കരുതി പെരുമാറുക."
+    "q": "ഭക്ഷ്യവിഷബാധയുടെ പ്രധാന കാരണങ്ങളിൽ ഒന്നാണ് ബാക്ടീരിയ.",
+    "e": "ശരി. ഭക്ഷ്യവിഷബാധയ്ക്കും ഭക്ഷണം കേടാകുന്നതിനും പ്രധാന കാരണങ്ങളിൽ ഒന്നാണ് ബാക്ടീരിയ. അതുകൊണ്ട് ഭക്ഷണത്തിലും പ്രതലങ്ങളിലും അണുക്കൾ ഉണ്ടെന്ന് കരുതി പെരുമാറുക."
    },
    "ta": {
-    "q": "பெரும்பாலான உணவு நச்சு (ஃபுட் பாய்சனிங்) நிகழ்வுகளுக்கு பாக்டீரியாதான் காரணம்.",
-    "e": "சரி. உணவு நச்சுக்கும் கெட்டுப்போன உணவுக்கும் பாக்டீரியாதான் முக்கியக் காரணம். அதனால் உணவிலும் மேற்பரப்புகளிலும் கிருமிகள் இருப்பதாக நினைத்தே கவனமாக இருங்கள்."
+    "q": "உணவு நச்சுக்கு (ஃபுட் பாய்சனிங்) முக்கியக் காரணங்களில் ஒன்று பாக்டீரியா.",
+    "e": "சரி. உணவு நச்சுக்கும் கெட்டுப்போன உணவுக்கும் முக்கியக் காரணங்களில் ஒன்று பாக்டீரியா. அதனால் உணவிலும் மேற்பரப்புகளிலும் கிருமிகள் இருப்பதாக நினைத்தே கவனமாக இருங்கள்."
    },
    "fil": {
-    "q": "Bacteria ang sanhi ng karamihan ng food poisoning.",
-    "e": "Tama. Bacteria ang pangunahing sanhi ng food poisoning at sirang pagkain, kaya ituring ang pagkain at mga surface na parang may mikrobyo."
+    "q": "Ang bacteria ay isa sa mga pangunahing sanhi ng food poisoning.",
+    "e": "Tama. Ang bacteria ay isa sa mga pangunahing sanhi ng food poisoning at sirang pagkain, kaya ituring ang pagkain at mga surface na parang may mikrobyo."
    },
    "ind": {
-    "q": "Bakteri adalah penyebab sebagian besar kasus keracunan makanan.",
-    "e": "Benar. Bakteri adalah penyebab utama keracunan makanan dan makanan basi, jadi anggap selalu ada kuman di makanan dan permukaan."
+    "q": "Bakteri adalah salah satu penyebab utama keracunan makanan.",
+    "e": "Benar. Bakteri adalah salah satu penyebab utama keracunan makanan dan makanan basi, jadi anggap selalu ada kuman di makanan dan permukaan."
    },
    "tr": {
-    "q": "Gıda zehirlenmelerinin çoğuna bakteriler yol açar.",
-    "e": "Doğru. Gıda zehirlenmesinin ve bozulan gıdanın asıl sebebi bakterilerdir. O yüzden gıdaya ve yüzeylere, üstlerinde mikrop varmış gibi davran."
+    "q": "Bakteriler, gıda zehirlenmesinin başlıca sebeplerinden biridir.",
+    "e": "Doğru. Bakteriler, gıda zehirlenmesinin ve bozulan gıdanın başlıca sebeplerinden biridir. O yüzden gıdaya ve yüzeylere, üstlerinde mikrop varmış gibi davran."
    }
   },
   {
@@ -14311,7 +14320,8 @@
    "tr": {
     "q": "Mide virüsü olan bir çalışan, yemek taze olsa ve soğuk tutulsa bile müşterileri hasta edebilir.",
     "e": "Doğru. Virüslerin gıdada üremesi gerekmez. Çalışanın ellerinden gıdaya geçerler ve insanları hasta ederler. Ellerini iyi yıka ve hastayken gıdayla çalışma."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k135",
@@ -16322,7 +16332,8 @@
      "Mikrobik"
     ],
     "e": "İzin verilen miktardan fazla kimyasalı bilerek katmak kasıtlıdır. Kazara bulaşma, temizlik maddesi ya da makine yağı yanlışlıkla gıdaya karıştığında olur."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k153",
@@ -18379,19 +18390,19 @@
    "en": {
     "q": "What is the difference between a food allergy and food intolerance?",
     "o": [
-     "Allergy: the defence system fights the food. Intolerance: the body can't digest it",
-     "Allergy: the body can't digest the food. Intolerance: the defence system fights it",
-     "They are the same thing with two names",
-     "Allergy comes only from nuts. Intolerance comes only from milk"
+     "Allergy: the body fights the food. Intolerance: the stomach can't break it down",
+     "Allergy: the stomach can't break the food down. Intolerance: the body fights it",
+     "They are the same thing",
+     "Allergy comes only from nuts, intolerance only from milk"
     ],
     "e": "In an allergy the immune (defence) system attacks parts of the food. In intolerance the body lacks what it needs to break the food down."
    },
    "ur": {
     "q": "فوڈ الرجی اور فوڈ انٹالرنس (کھانا ہضم نہ ہونا) میں کیا فرق ہے؟",
     "o": [
-     "الرجی: دفاعی نظام کھانے سے لڑتا ہے۔ انٹالرنس: جسم اسے ہضم نہیں کر پاتا",
-     "الرجی: جسم کھانا ہضم نہیں کر پاتا۔ انٹالرنس: دفاعی نظام اس سے لڑتا ہے",
-     "یہ ایک ہی چیز کے دو نام ہیں",
+     "الرجی: جسم کھانے سے لڑتا ہے۔ انٹالرنس: معدہ اسے ہضم نہیں کر پاتا",
+     "الرجی: معدہ کھانا ہضم نہیں کر پاتا۔ انٹالرنس: جسم اس سے لڑتا ہے",
+     "یہ ایک ہی چیز ہیں",
      "الرجی صرف میووں سے، انٹالرنس صرف دودھ سے ہوتی ہے"
     ],
     "e": "الرجی میں جسم کا دفاعی نظام (امیون سسٹم) کھانے کے کچھ حصوں پر حملہ کرتا ہے۔ انٹالرنس میں جسم کے پاس کھانا توڑنے کی ضروری چیز کم ہوتی ہے۔"
@@ -18399,9 +18410,9 @@
    "hi": {
     "q": "फूड एलर्जी और फूड इनटॉलरेंस (खाना न पचना) में क्या फर्क है?",
     "o": [
-     "एलर्जी: रक्षा तंत्र खाने से लड़ता है। इनटॉलरेंस: शरीर उसे पचा नहीं पाता",
-     "एलर्जी: शरीर खाना पचा नहीं पाता। इनटॉलरेंस: रक्षा तंत्र उससे लड़ता है",
-     "ये एक ही चीज़ के दो नाम हैं",
+     "एलर्जी: शरीर खाने से लड़ता है। इनटॉलरेंस: पेट उसे पचा नहीं पाता",
+     "एलर्जी: पेट खाना पचा नहीं पाता। इनटॉलरेंस: शरीर उससे लड़ता है",
+     "ये एक ही चीज़ हैं",
      "एलर्जी सिर्फ मेवों से, इनटॉलरेंस सिर्फ दूध से होता है"
     ],
     "e": "एलर्जी में शरीर का रक्षा तंत्र (इम्यून सिस्टम) खाने के कुछ हिस्सों पर हमला करता है। इनटॉलरेंस में शरीर के पास खाना तोड़ने की ज़रूरी चीज़ कम होती है।"
@@ -18409,9 +18420,9 @@
    "bn": {
     "q": "ফুড অ্যালার্জি আর ফুড ইনটলারেন্সের (খাবার হজম না হওয়া) মধ্যে পার্থক্য কী?",
     "o": [
-     "অ্যালার্জি: রোগ-প্রতিরোধ ব্যবস্থা খাবারের সাথে লড়ে। ইনটলারেন্স: শরীর তা হজম করতে পারে না",
-     "অ্যালার্জি: শরীর খাবার হজম করতে পারে না। ইনটলারেন্স: রোগ-প্রতিরোধ ব্যবস্থা তার সাথে লড়ে",
-     "এগুলো একই জিনিসের দুই নাম",
+     "অ্যালার্জি: শরীর খাবারের সাথে লড়ে। ইনটলারেন্স: পেট তা হজম করতে পারে না",
+     "অ্যালার্জি: পেট খাবার হজম করতে পারে না। ইনটলারেন্স: শরীর তার সাথে লড়ে",
+     "এগুলো একই জিনিস",
      "অ্যালার্জি শুধু বাদাম থেকে, ইনটলারেন্স শুধু দুধ থেকে হয়"
     ],
     "e": "অ্যালার্জিতে শরীরের রোগ-প্রতিরোধ ব্যবস্থা খাবারের কিছু অংশকে আক্রমণ করে। ইনটলারেন্সে খাবার ভাঙার দরকারি জিনিস শরীরে কম থাকে।"
@@ -18419,70 +18430,70 @@
    "ar": {
     "q": "ما الفرق بين الحساسية من الطعام وعدم تحمل الطعام؟",
     "o": [
-     "الحساسية: جهاز الدفاع يحارب الطعام. عدم التحمل: الجسم لا يستطيع هضمه",
-     "الحساسية: الجسم لا يستطيع هضم الطعام. عدم التحمل: جهاز الدفاع يحاربه",
-     "هما نفس الشيء باسمين",
-     "الحساسية تأتي فقط من المكسرات. عدم التحمل يأتي فقط من الحليب"
+     "الحساسية: الجسم يحارب الطعام. عدم التحمل: المعدة لا تستطيع هضمه",
+     "الحساسية: المعدة لا تستطيع هضم الطعام. عدم التحمل: الجسم يحاربه",
+     "هما نفس الشيء",
+     "الحساسية فقط من المكسرات، وعدم التحمل فقط من الحليب"
     ],
     "e": "في الحساسية جهاز المناعة (الدفاع) يهاجم أجزاء من الطعام. في عدم التحمل الجسم ينقصه ما يحتاجه ليهضم الطعام."
    },
    "ne": {
     "q": "खानाको एलर्जी र खाना नपच्नु (इनटोलरेन्स) मा के फरक छ?",
     "o": [
-     "एलर्जी: शरीरको रक्षा प्रणाली खानासँग लड्छ। इनटोलरेन्स: शरीरले खाना पचाउन सक्दैन",
-     "एलर्जी: शरीरले खाना पचाउन सक्दैन। इनटोलरेन्स: शरीरको रक्षा प्रणाली खानासँग लड्छ",
-     "दुवै एउटै कुरा हुन्, नाम मात्र दुई",
-     "एलर्जी गेडागुडीबाट मात्र हुन्छ। इनटोलरेन्स दूधबाट मात्र हुन्छ"
+     "एलर्जी: शरीर खानासँग लड्छ। इनटोलरेन्स: पेटले खाना पचाउन सक्दैन",
+     "एलर्जी: पेटले खाना पचाउन सक्दैन। इनटोलरेन्स: शरीर खानासँग लड्छ",
+     "दुवै एउटै कुरा हुन्",
+     "एलर्जी गेडागुडीबाट मात्र, इनटोलरेन्स दूधबाट मात्र हुन्छ"
     ],
     "e": "एलर्जीमा शरीरको रोग प्रतिरोधी (रक्षा) प्रणालीले खानाका केही भागमाथि आक्रमण गर्छ। इनटोलरेन्समा खाना पचाउन चाहिने कुरा शरीरमा हुँदैन।"
    },
    "ml": {
     "q": "ഭക്ഷണ അലർജിയും ഇൻടോളറൻസും (ഭക്ഷണം ദഹിക്കാത്ത പ്രശ്നം) തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?",
     "o": [
-     "അലർജി: ശരീരത്തിന്റെ പ്രതിരോധ ശക്തി ഭക്ഷണത്തോട് പൊരുതുന്നു. ഇൻടോളറൻസ്: ശരീരത്തിന് അത് ദഹിപ്പിക്കാൻ കഴിയുന്നില്ല",
-     "അലർജി: ശരീരത്തിന് ഭക്ഷണം ദഹിപ്പിക്കാൻ കഴിയുന്നില്ല. ഇൻടോളറൻസ്: ശരീരത്തിന്റെ പ്രതിരോധ ശക്തി അതിനോട് പൊരുതുന്നു",
-     "രണ്ടും ഒന്നുതന്നെ, രണ്ട് പേരുകൾ മാത്രം",
-     "അലർജി നട്ട്സിൽ നിന്ന് മാത്രം. ഇൻടോളറൻസ് പാലിൽ നിന്ന് മാത്രം"
+     "അലർജി: ശരീരം ഭക്ഷണത്തോട് പൊരുതുന്നു. ഇൻടോളറൻസ്: വയറിന് അത് ദഹിപ്പിക്കാൻ കഴിയുന്നില്ല",
+     "അലർജി: വയറിന് ഭക്ഷണം ദഹിപ്പിക്കാൻ കഴിയുന്നില്ല. ഇൻടോളറൻസ്: ശരീരം അതിനോട് പൊരുതുന്നു",
+     "രണ്ടും ഒന്നുതന്നെ",
+     "അലർജി നട്ട്സിൽ നിന്ന് മാത്രം, ഇൻടോളറൻസ് പാലിൽ നിന്ന് മാത്രം"
     ],
     "e": "അലർജിയിൽ ശരീരത്തിന്റെ പ്രതിരോധ ശക്തി ഭക്ഷണത്തിന്റെ ചില ഭാഗങ്ങളെ ആക്രമിക്കുന്നു. ഇൻടോളറൻസിൽ ഭക്ഷണം ദഹിപ്പിക്കാൻ ശരീരത്തിന് വേണ്ടത് ഇല്ലാതിരിക്കുന്നു."
    },
    "ta": {
     "q": "உணவு அலர்ஜிக்கும் உணவு ஒத்துக்கொள்ளாமைக்கும் (இன்டாலரன்ஸ்) என்ன வித்தியாசம்?",
     "o": [
-     "அலர்ஜி: உடலின் பாதுகாப்பு அமைப்பு உணவோடு சண்டை போடுகிறது. ஒத்துக்கொள்ளாமை: உடலால் அதைச் செரிக்க முடியவில்லை",
-     "அலர்ஜி: உடலால் உணவைச் செரிக்க முடியவில்லை. ஒத்துக்கொள்ளாமை: பாதுகாப்பு அமைப்பு அதோடு சண்டை போடுகிறது",
-     "இரண்டும் ஒன்றுதான், இரண்டு பெயர்கள் மட்டுமே",
-     "அலர்ஜி கொட்டைகளால் மட்டுமே வரும். ஒத்துக்கொள்ளாமை பாலால் மட்டுமே வரும்"
+     "அலர்ஜி: உடல் உணவோடு சண்டை போடுகிறது. ஒத்துக்கொள்ளாமை: வயிற்றால் அதைச் செரிக்க முடியவில்லை",
+     "அலர்ஜி: வயிற்றால் உணவைச் செரிக்க முடியவில்லை. ஒத்துக்கொள்ளாமை: உடல் அதோடு சண்டை போடுகிறது",
+     "இரண்டும் ஒன்றுதான்",
+     "அலர்ஜி கொட்டைகளால் மட்டும், ஒத்துக்கொள்ளாமை பாலால் மட்டும் வரும்"
     ],
     "e": "அலர்ஜியில், உடலின் நோய் எதிர்ப்பு (பாதுகாப்பு) அமைப்பு உணவின் சில பகுதிகளைத் தாக்குகிறது. ஒத்துக்கொள்ளாமையில், உணவைச் செரிக்கத் தேவையானது உடலில் இல்லை."
    },
    "fil": {
     "q": "Ano ang pagkakaiba ng food allergy at food intolerance?",
     "o": [
-     "Allergy: nilalabanan ng panlaban ng katawan ang pagkain. Intolerance: hindi ito kayang tunawin ng katawan",
-     "Allergy: hindi kayang tunawin ng katawan ang pagkain. Intolerance: nilalabanan ito ng panlaban ng katawan",
-     "Iisang bagay lang sila na may dalawang pangalan",
-     "Ang allergy ay galing lang sa nuts. Ang intolerance ay galing lang sa gatas"
+     "Allergy: nilalabanan ng katawan ang pagkain. Intolerance: hindi ito kayang tunawin ng tiyan",
+     "Allergy: hindi kayang tunawin ng tiyan ang pagkain. Intolerance: nilalabanan ito ng katawan",
+     "Iisang bagay lang sila",
+     "Ang allergy ay galing lang sa nuts, ang intolerance ay galing lang sa gatas"
     ],
     "e": "Sa allergy, inaatake ng panlaban ng katawan (immune system) ang ilang parte ng pagkain. Sa intolerance, kulang ang katawan ng kailangan nito para tunawin ang pagkain."
    },
    "ind": {
     "q": "Apa beda alergi makanan dan intoleransi makanan?",
     "o": [
-     "Alergi: sistem pertahanan tubuh melawan makanan. Intoleransi: tubuh tidak bisa mencernanya",
-     "Alergi: tubuh tidak bisa mencerna makanan. Intoleransi: sistem pertahanan tubuh melawannya",
-     "Keduanya sama, hanya beda nama",
-     "Alergi hanya dari kacang. Intoleransi hanya dari susu"
+     "Alergi: tubuh melawan makanan. Intoleransi: perut tidak bisa mencernanya",
+     "Alergi: perut tidak bisa mencerna makanan. Intoleransi: tubuh melawannya",
+     "Keduanya sama saja",
+     "Alergi hanya dari kacang, intoleransi hanya dari susu"
     ],
     "e": "Pada alergi, sistem pertahanan tubuh (sistem imun) menyerang bagian dari makanan. Pada intoleransi, tubuh tidak punya apa yang dibutuhkan untuk mengurai makanan itu."
    },
    "tr": {
     "q": "Gıda alerjisi ile gıda intoleransı arasındaki fark nedir?",
     "o": [
-     "Alerji: vücudun savunma sistemi yiyecekle savaşır. İntolerans: vücut onu sindiremez",
-     "Alerji: vücut yiyeceği sindiremez. İntolerans: vücudun savunma sistemi onunla savaşır",
-     "İkisi aynı şeydir, sadece iki ayrı adı vardır",
-     "Alerji sadece kuruyemişten olur. İntolerans sadece sütten olur"
+     "Alerji: vücut yiyecekle savaşır. İntolerans: mide onu sindiremez",
+     "Alerji: mide yiyeceği sindiremez. İntolerans: vücut onunla savaşır",
+     "İkisi aynı şeydir",
+     "Alerji sadece kuruyemişten, intolerans sadece sütten olur"
     ],
     "e": "Alerjide vücudun savunma sistemi (bağışıklık sistemi) yiyeceğin bazı kısımlarına saldırır. İntoleransta vücutta yiyeceği parçalamak için gereken şey eksiktir."
    }
@@ -21848,7 +21859,8 @@
      "Gıda hazırlamaya başla"
     ],
     "e": "Evde temizlen, işte üstünü değiştir, sonra mutfakta bir şeye dokunmadan önce ellerini yıka."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k203",
@@ -28264,7 +28276,8 @@
      "Servis et ya da teşhire koy"
     ],
     "e": "Gıda satın almadan taşımaya, mal kabule, saklamaya, pişirmeye ve servise gider. Her aşamada güvenlik önemlidir."
-   }
+   },
+   "enabled": false
   },
   {
    "id": "k261",
@@ -33629,125 +33642,103 @@
    "ch": 10,
    "d": 3,
    "en": {
-    "q": "This is HACCP in a real kitchen. Put these steps for cooking chicken in the right order.",
+    "q": "You are cooking chicken. Put these steps in the right order.",
     "o": [
-     "Find the danger: germs in raw chicken",
-     "Set the safe number: 75°C in the centre",
-     "Check every batch with a probe thermometer",
-     "If it is below 75°C, cook it longer",
-     "Write the reading on the record sheet"
+     "Check the centre with a probe thermometer",
+     "If it is below 75°C, cook it longer and check again",
+     "Write the final reading on the record sheet"
     ],
-    "e": "Find the danger, set a safe number, check it, fix it if it fails, and write it down. That is how HACCP keeps food safe every day."
+    "e": "Check the centre, cook longer if it is below 75°C, then write the final reading down. Checking, fixing and writing it down is your part of HACCP."
    },
    "ur": {
-    "q": "یہ اصل کچن میں HACCP ہے۔ مرغی پکانے کے یہ قدم صحیح ترتیب میں لگائیں۔",
+    "q": "آپ مرغی پکا رہے ہیں۔ یہ قدم صحیح ترتیب میں لگائیں۔",
     "o": [
-     "خطرہ پہچانیں: کچی مرغی میں جراثیم",
-     "محفوظ نمبر طے کریں: درمیان میں 75°C",
-     "ہر بار پکنے والی مرغی کو پروب تھرمامیٹر سے چیک کریں",
-     "اگر 75°C سے کم ہو تو اور پکائیں",
-     "ریڈنگ ریکارڈ شیٹ پر لکھیں"
+     "پروب تھرمامیٹر سے درمیان کا ٹمپریچر چیک کریں",
+     "اگر 75°C سے کم ہو تو اور پکائیں اور دوبارہ چیک کریں",
+     "آخری ریڈنگ ریکارڈ شیٹ پر لکھیں"
     ],
-    "e": "خطرہ پہچانیں، محفوظ نمبر طے کریں، چیک کریں، کم ہو تو ٹھیک کریں، اور لکھ لیں۔ اسی طرح HACCP ہر روز کھانا محفوظ رکھتا ہے۔"
+    "e": "درمیان کا ٹمپریچر چیک کریں، 75°C سے کم ہو تو اور پکائیں، پھر آخری ریڈنگ لکھ لیں۔ چیک کرنا، ٹھیک کرنا اور لکھنا HACCP میں آپ کا حصہ ہے۔"
    },
    "hi": {
-    "q": "यह असली किचन में HACCP है। चिकन पकाने के ये कदम सही क्रम में लगाएँ।",
+    "q": "आप चिकन पका रहे हैं। ये कदम सही क्रम में लगाएँ।",
     "o": [
-     "ख़तरा पहचानें: कच्चे चिकन में कीटाणु",
-     "सुरक्षित नंबर तय करें: बीच में 75°C",
-     "हर बार पके चिकन को प्रोब थर्मामीटर से जाँचें",
-     "अगर 75°C से कम हो, तो और देर पकाएँ",
-     "रीडिंग को रिकॉर्ड शीट पर लिखें"
+     "प्रोब थर्मामीटर से बीच का तापमान जाँचें",
+     "अगर 75°C से कम हो, तो और पकाएँ और फिर से जाँचें",
+     "आख़िरी रीडिंग रिकॉर्ड शीट पर लिखें"
     ],
-    "e": "ख़तरा पहचानें, सुरक्षित नंबर तय करें, जाँचें, फ़ेल हो तो ठीक करें, और लिख लें। HACCP ऐसे ही हर दिन खाने को सुरक्षित रखता है।"
+    "e": "बीच का तापमान जाँचें, 75°C से कम हो तो और पकाएँ, फिर आख़िरी रीडिंग लिख लें। जाँचना, ठीक करना और लिखना HACCP में आपका हिस्सा है।"
    },
    "bn": {
-    "q": "আসল রান্নাঘরে HACCP এভাবে কাজ করে। মুরগি রান্নার এই ধাপগুলো ঠিক ক্রমে সাজান।",
+    "q": "আপনি মুরগি রান্না করছেন। এই ধাপগুলো ঠিক ক্রমে সাজান।",
     "o": [
-     "বিপদ খুঁজুন: কাঁচা মুরগিতে জীবাণু",
-     "নিরাপদ সংখ্যা ঠিক করুন: মাঝখানে 75°C",
-     "প্রতিবারের রান্না প্রোব থার্মোমিটার দিয়ে পরীক্ষা করুন",
-     "75°C এর নিচে হলে আরও রান্না করুন",
-     "রিডিংটা রেকর্ড শিটে লিখে রাখুন"
+     "প্রোব থার্মোমিটার দিয়ে মাঝখানের তাপমাত্রা দেখুন",
+     "75°C এর নিচে হলে আরও রান্না করে আবার দেখুন",
+     "শেষ রিডিংটা রেকর্ড শিটে লিখে রাখুন"
     ],
-    "e": "বিপদ খুঁজুন, নিরাপদ সংখ্যা ঠিক করুন, পরীক্ষা করুন, ফেল করলে ঠিক করুন, আর লিখে রাখুন। এভাবেই HACCP প্রতিদিন খাবার নিরাপদ রাখে।"
+    "e": "মাঝখানের তাপমাত্রা দেখুন, 75°C এর নিচে হলে আরও রান্না করুন, তারপর শেষ রিডিংটা লিখে রাখুন। দেখা, ঠিক করা আর লিখে রাখা, এটাই HACCP-তে আপনার কাজ।"
    },
    "ar": {
-    "q": "هذا هو HACCP في مطبخ حقيقي. رتّب خطوات طبخ الدجاج هذه بالترتيب الصحيح.",
+    "q": "أنت تطبخ دجاجاً. رتّب هذه الخطوات بالترتيب الصحيح.",
     "o": [
-     "اعرف الخطر، وهو الجراثيم في الدجاج النيء",
-     "حدد الرقم الآمن، وهو 75°C في الوسط",
-     "افحص كل دفعة بميزان الحرارة ذي السيخ",
-     "إذا كانت الحرارة أقل من 75°C، اطبخ الدجاج مدة أطول",
-     "اكتب القراءة في ورقة السجل"
+     "افحص الوسط بميزان الحرارة ذي السيخ",
+     "إذا كانت الحرارة أقل من 75°C، اطبخه مدة أطول وافحص مرة أخرى",
+     "اكتب القراءة الأخيرة في ورقة السجل"
     ],
-    "e": "اعرف الخطر، وحدد رقماً آمناً، وافحص، وأصلح المشكلة إذا فشل الفحص، واكتب ذلك. هكذا يحافظ HACCP على سلامة الطعام كل يوم."
+    "e": "افحص الوسط، واطبخ مدة أطول إذا كانت الحرارة أقل من 75°C، ثم اكتب القراءة الأخيرة. الفحص والإصلاح والكتابة هي دورك في HACCP."
    },
    "ne": {
-    "q": "यो साँच्चैको भान्सामा HACCP हो। कुखुरा पकाउने यी चरणहरूलाई सही क्रममा मिलाउनुहोस्।",
+    "q": "तपाईं कुखुरा पकाउँदै हुनुहुन्छ। यी चरणहरूलाई सही क्रममा मिलाउनुहोस्।",
     "o": [
-     "खतरा पत्ता लगाउनुहोस्: काँचो कुखुरामा किटाणु",
-     "सुरक्षित अंक तोक्नुहोस्: बीच भागमा 75°C",
-     "हरेक खेपलाई प्रोब थर्मामिटर (भित्र घुसाउने सुई भएको थर्मामिटर) ले जाँच्नुहोस्",
-     "75°C भन्दा कम छ भने अझ पकाउनुहोस्",
-     "रिडिङ रेकर्ड पानामा लेख्नुहोस्"
+     "प्रोब थर्मामिटर (भित्र घुसाउने सुई भएको थर्मामिटर) ले बीच भाग जाँच्नुहोस्",
+     "75°C भन्दा कम छ भने अझ पकाउनुहोस् र फेरि जाँच्नुहोस्",
+     "अन्तिम रिडिङ रेकर्ड पानामा लेख्नुहोस्"
     ],
-    "e": "खतरा पत्ता लगाउने, सुरक्षित अंक तोक्ने, जाँच्ने, नपुगे मिलाउने, अनि लेख्ने। यसरी HACCP ले हरेक दिन खाना सुरक्षित राख्छ।"
+    "e": "बीच भाग जाँच्ने, 75°C भन्दा कम भए अझ पकाउने, अनि अन्तिम रिडिङ लेख्ने। जाँच्ने, मिलाउने र लेख्ने काम HACCP मा तपाईंको भाग हो।"
    },
    "ml": {
-    "q": "ഇതാണ് ഒരു യഥാർത്ഥ അടുക്കളയിലെ HACCP. ചിക്കൻ വേവിക്കാനുള്ള ഈ സ്റ്റെപ്പുകൾ ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "നിങ്ങൾ ചിക്കൻ വേവിക്കുകയാണ്. ഈ സ്റ്റെപ്പുകൾ ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
     "o": [
-     "അപകടം കണ്ടെത്തുക: പച്ച ചിക്കനിലെ അണുക്കൾ",
-     "സുരക്ഷിത സംഖ്യ നിശ്ചയിക്കുക: നടുഭാഗത്ത് 75°C",
-     "ഓരോ ബാച്ചും പ്രോബ് തെർമോമീറ്റർ കൊണ്ട് പരിശോധിക്കുക",
-     "75°C-ൽ താഴെയാണെങ്കിൽ കൂടുതൽ നേരം വേവിക്കുക",
-     "കാണിക്കുന്ന താപനില റെക്കോർഡ് ഷീറ്റിൽ എഴുതുക"
+     "പ്രോബ് തെർമോമീറ്റർ കൊണ്ട് നടുഭാഗം പരിശോധിക്കുക",
+     "75°C-ൽ താഴെയാണെങ്കിൽ കൂടുതൽ നേരം വേവിച്ച് വീണ്ടും പരിശോധിക്കുക",
+     "അവസാനത്തെ താപനില റെക്കോർഡ് ഷീറ്റിൽ എഴുതുക"
     ],
-    "e": "അപകടം കണ്ടെത്തുക, സുരക്ഷിത സംഖ്യ നിശ്ചയിക്കുക, പരിശോധിക്കുക, ശരിയല്ലെങ്കിൽ ശരിയാക്കുക, എഴുതി വയ്ക്കുക. ഇങ്ങനെയാണ് HACCP എല്ലാ ദിവസവും ഭക്ഷണം സുരക്ഷിതമാക്കുന്നത്."
+    "e": "നടുഭാഗം പരിശോധിക്കുക, 75°C-ൽ താഴെയാണെങ്കിൽ കൂടുതൽ വേവിക്കുക, പിന്നെ അവസാനത്തെ താപനില എഴുതുക. പരിശോധിക്കൽ, ശരിയാക്കൽ, എഴുതൽ എന്നിവയാണ് HACCP-യിൽ നിങ്ങളുടെ ഭാഗം."
    },
    "ta": {
-    "q": "உண்மையான சமையலறையில் HACCP இப்படித்தான். கோழி சமைக்கும் இந்தப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "நீங்கள் கோழி சமைக்கிறீர்கள். இந்தப் படிகளைச் சரியான வரிசையில் வையுங்கள்.",
     "o": [
-     "ஆபத்தைக் கண்டுபிடியுங்கள்: பச்சைக் கோழியில் உள்ள கிருமிகள்",
-     "பாதுகாப்பான எண்ணை வையுங்கள்: நடுப்பகுதியில் 75°C",
-     "ஒவ்வொரு தொகுதியையும் ப்ரோப் தெர்மாமீட்டரால் சோதியுங்கள்",
-     "75°C-க்குக் கீழே இருந்தால், இன்னும் சமையுங்கள்",
-     "காட்டும் அளவைப் பதிவுத் தாளில் எழுதுங்கள்"
+     "ப்ரோப் தெர்மாமீட்டரால் நடுப்பகுதியைச் சோதியுங்கள்",
+     "75°C-க்குக் கீழே இருந்தால், இன்னும் சமைத்து மீண்டும் சோதியுங்கள்",
+     "கடைசியாகக் காட்டும் அளவைப் பதிவுத் தாளில் எழுதுங்கள்"
     ],
-    "e": "ஆபத்தைக் கண்டுபிடியுங்கள், பாதுகாப்பான எண்ணை வையுங்கள், சோதியுங்கள், தோற்றால் சரிசெய்யுங்கள், எழுதி வையுங்கள். இப்படித்தான் HACCP ஒவ்வொரு நாளும் உணவைப் பாதுகாப்பாக வைக்கிறது."
+    "e": "நடுப்பகுதியைச் சோதியுங்கள், 75°C-க்குக் கீழே இருந்தால் இன்னும் சமையுங்கள், பிறகு கடைசி அளவை எழுதுங்கள். சோதிப்பது, சரிசெய்வது, எழுதுவது இதுதான் HACCP-இல் உங்கள் பங்கு."
    },
    "fil": {
-    "q": "Ganito ang HACCP sa totoong kusina. Ayusin ang mga hakbang na ito sa pagluluto ng manok sa tamang pagkakasunod.",
+    "q": "Nagluluto ka ng manok. Ayusin ang mga hakbang na ito sa tamang pagkakasunod.",
     "o": [
-     "Hanapin ang panganib: mikrobyo sa hilaw na manok",
-     "Itakda ang ligtas na numero: 75°C sa gitna",
-     "I-check ang bawat batch gamit ang probe thermometer",
-     "Kung mas mababa sa 75°C, lutuin pa ito nang mas matagal",
-     "Isulat ang basa ng thermometer sa record sheet"
+     "I-check ang gitna gamit ang probe thermometer",
+     "Kung mas mababa sa 75°C, lutuin pa ito at i-check ulit",
+     "Isulat ang huling basa ng thermometer sa record sheet"
     ],
-    "e": "Hanapin ang panganib, magtakda ng ligtas na numero, i-check ito, ayusin kapag pumalya, at isulat. Ganyan pinapanatiling ligtas ng HACCP ang pagkain araw-araw."
+    "e": "I-check ang gitna, lutuin pa kung mas mababa sa 75°C, saka isulat ang huling basa. Ang pag-check, pag-ayos at pagsulat ang bahagi mo sa HACCP."
    },
    "ind": {
-    "q": "Ini HACCP di dapur sungguhan. Susun langkah memasak ayam ini dengan urutan yang benar.",
+    "q": "Kamu sedang memasak ayam. Susun langkah ini dengan urutan yang benar.",
     "o": [
-     "Temukan bahayanya: kuman di ayam mentah",
-     "Tetapkan angka aman: 75°C di bagian tengah",
-     "Periksa setiap masakan ayam dengan termometer tusuk",
-     "Kalau di bawah 75°C, masak lebih lama",
-     "Tulis angka termometernya di lembar catatan"
+     "Periksa bagian tengah dengan termometer tusuk",
+     "Kalau di bawah 75°C, masak lebih lama lalu periksa lagi",
+     "Tulis angka terakhir di lembar catatan"
     ],
-    "e": "Temukan bahayanya, tetapkan angka aman, periksa, perbaiki kalau gagal, lalu catat. Begitulah HACCP menjaga makanan tetap aman setiap hari."
+    "e": "Periksa bagian tengah, masak lebih lama kalau di bawah 75°C, lalu catat angka terakhirnya. Memeriksa, memperbaiki, dan mencatat adalah bagianmu dalam HACCP."
    },
    "tr": {
-    "q": "Bu, gerçek bir mutfakta HACCP. Tavuk pişirmenin bu adımlarını doğru sıraya koy.",
+    "q": "Tavuk pişiriyorsun. Bu adımları doğru sıraya koy.",
     "o": [
-     "Tehlikeyi bul: çiğ tavuktaki mikroplar",
-     "Güvenli sayıyı belirle: ortası 75°C",
-     "Her partiyi batırmalı termometreyle kontrol et",
-     "75°C'nin altındaysa daha uzun pişir",
-     "Ölçümü kayıt kağıdına yaz"
+     "Ortasını batırmalı termometreyle kontrol et",
+     "75°C'nin altındaysa daha uzun pişir ve tekrar kontrol et",
+     "Son ölçümü kayıt kağıdına yaz"
     ],
-    "e": "Tehlikeyi bul, güvenli sayıyı belirle, kontrol et, tutmazsa düzelt ve yaz. HACCP gıdayı her gün böyle güvende tutar."
+    "e": "Ortasını kontrol et, 75°C'nin altındaysa daha uzun pişir, sonra son ölçümü yaz. Kontrol etmek, düzeltmek ve yazmak HACCP'de senin payındır."
    }
   },
   {

@@ -65,7 +65,7 @@ Worker app (installable, works offline after the first visit):
   wrong?" with two buttons, Right and Wrong. 12 clips, half right and half wrong (hand washing, boards,
   tasting, fridge shelves, probe, sneezing, cut finger, phone and gloves). Clips need internet, so tests started
   offline leave them out.
-- 318 live questions from all 13 handbook chapters, 12 of them video clips (+2 old picture-frame video questions held back, D5) in every language the app offers; question order and answer
+- 305 live questions from all 13 handbook chapters, 12 of them video clips (+2 old picture-frame video questions held back, D5, and 13 repeats or weak questions turned off, D36) in every language the app offers; question order and answer
   order shuffled every time; results with a score ring, counts, and every mistake explained.
 - Add-to-home-screen button with phone-specific help; iPhone code hand-over (D13).
 

@@ -25,7 +25,7 @@ QUESTION:
 | `pic` | `picture` only: `{ "kind": "fridge" \| "freezer" \| "probe" \| "hot", "v": <°C> }`; the app draws a thermometer (scales: fridge −5..15, freezer −30..10, probe/hot 0..100) |
 | `vid` | old `video` questions only: list of frames (HTML) shown one after another; kept turned off (D5) |
 | `clip` | `video` questions with a clip (D31): `"/videos/<name>.mp4"`. The app plays it above two buttons, Right and Wrong; `ans` 0 = right, 1 = wrong; every language has only `q` and `e` (no `o`), like the real exam |
-| `enabled` | `false` hides a question from every test (the two old picture-frame video questions, D5) |
+| `enabled` | `false` hides a question from every test (the two old picture-frame video questions, D5; 13 repeats and weak questions, D36). Turned-off questions stay in the file so they can be turned back on |
 | one key per language in `languages` (`en`, `ur`, `hi`, `bn`, `ar`, `ne`, `ml`, `ta`, `fil`, `ind`, `tr`) | `{ "q": question, "o": [options], "e": explanation }`; `tf` has no `o`. Same number and order of options in every language. Numbers in Western digits exactly as in English. Indonesian is `ind` because `id` is the question id |
 
 ## Rules
