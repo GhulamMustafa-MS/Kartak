@@ -2,9 +2,9 @@
 <!--
   scripts/clips/boards-right.html - draws the "separate boards" clip (the RIGHT way), one frame at a time.
 
-  Purpose:    window.render(t) draws the scene at t seconds (0-12.5) on a 1280x720 canvas: raw chicken cut on a RED
+  Purpose:    window.render(t) draws the scene at t seconds (0-14.3) on a 1280x720 canvas: raw chicken cut on a RED
               board with a red-handled knife, the pieces swept into the meat tray, the red board and knife put in the
-              sink, then a separate GREEN board and a green-handled knife used to cut a carrot. Raw meat never touches
+              sink, hands washed at the tap, then a separate GREEN board and a green-handled knife used to cut a carrot. Raw meat never touches
               the vegetable board (handbook: separate colour-coded boards and tools). Pure drawing code, no images.
   Used by:    scripts/make-clip.mjs, which saves the frames and joins them into videos/boards-right.mp4.
   Depends on: scripts/clips/lib.js (kitchen, worker, arms, hands, boards, chicken, carrot, slices).
@@ -82,10 +82,11 @@ function meatTray(n) {
 // ---------- the timeline (seconds) ----------
 // 0-0.4 hold | 0.4-3.2 cut chicken on the red board | 3.2-3.7 red knife laid on the red board
 // 3.7-4.9 pieces swept into the meat tray | 4.9-6.6 red board (with its knife) lifted into the sink
+// (6.4-8.2 hand wash at the tap, inserted by render(); later times below are +1.8 in the clip)
 // 6.6-8.2 green board taken from the wall and laid flat | 8.2-9.0 carrot from the shelf onto the green board,
 // green knife from the strip | 9.0-11.4 carrot chopped with the green knife | 11.4-12.5 hold
 const N_PIECES = 6;
-function render(t) {
+function scene(t) {
   g.clearRect(0, 0, W, H);
   background(t);
   const takeGreen = ease(ph(t, 6.9, 8.1));
@@ -190,9 +191,34 @@ function render(t) {
   if (t >= 8.55 && t < 9.0) knifeCol = GREEN_H;
   if (t >= 8.2 && t < 8.55) { /* green knife still on the strip until the hand reaches it */ cknife(GKNIFE_REST.x, GKNIFE_REST.y, 0, GREEN_H); }
 
+  if (WASH) {                                                                   // hand-wash beat: hands at the tap
+    const k = WASH.k, l0 = lh, r0 = rh, w = Math.sin(WASH.r * 18) * 14;
+    const lw = { x: 222 + w, y: 470 }, rw = { x: 268 - w, y: 462 };
+    lh = L(l0, lw, k); rh = L(r0, rw, k); knifeAt = null;
+    if (k === 1) {                                                              // running water from the tap
+      g.strokeStyle = "rgba(120,190,235,.85)"; g.lineWidth = 9; g.lineCap = "round";
+      g.beginPath(); g.moveTo(245, 424); g.lineTo(245, 452); g.stroke();
+      g.fillStyle = "rgba(160,215,245,.9)";
+      for (let d = 0; d < 6; d++) { const yy = 480 + ((WASH.r * 260 + d * 23) % 90); g.beginPath(); g.arc(215 + d * 12, yy, 4, 0, 7); g.fill(); }
+    }
+  }
   arm(LS, lh, -1); arm(RS, rh, 1);
   if (knifeAt) cknife(knifeAt.x, knifeAt.y, knifeAng, knifeCol);
   hand(lh, false); hand(rh, !!knifeAt);
+}
+// The hand-wash beat (WASH_AT to WASH_AT + WASH_LEN): after the red board goes in the sink he washes his hands
+// at the tap before touching anything for the carrot (handbook: wash hands after raw food). Everything after it is
+// the original timeline shifted by WASH_LEN.
+const WASH_AT = 6.4, WASH_LEN = 1.8;
+let WASH = null;
+function render(t) {
+  if (t < WASH_AT) { WASH = null; return scene(t); }
+  if (t < WASH_AT + WASH_LEN) {
+    const r = t - WASH_AT;
+    WASH = { r, k: r < 0.25 ? ease(r / 0.25) : r > WASH_LEN - 0.25 ? ease((WASH_LEN - r) / 0.25) : 1 };
+    return scene(WASH_AT);
+  }
+  WASH = null; return scene(t - WASH_LEN);
 }
 window.render = render;
 render(0);

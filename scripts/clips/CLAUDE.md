@@ -11,7 +11,7 @@ No images, no words, no sound, so a clip can be changed and re-rendered, and wor
 | `cross-contamination.html` | WRONG: a carrot cut on the green board, then raw chicken cut on the same board (has its own copy of the drawing code) | 13 | Key words w06, question k313 |
 | `handwash-right.html` | RIGHT: water, liquid soap, long rubbing with lather, rinse, paper towel, tap off with the towel, towel in the pedal bin | 14 | k310 |
 | `handwash-wrong.html` | WRONG: a quick splash with no soap, hands wiped on the apron, back to the board | 9 | k311 |
-| `boards-right.html` | RIGHT: raw chicken on the red board, board and knife into the sink, carrot on a clean green board with a green knife | 12.5 | k312 |
+| `boards-right.html` | RIGHT: raw chicken on the red board, board and knife into the sink, hands washed at the tap, carrot on a clean green board with a green knife | 14.3 | k312 |
 | `taste-wrong.html` | WRONG: tastes the sauce with a finger, then puts the finger back in the pot | 9.5 | k314 |
 | `taste-right.html` | RIGHT: tastes with a clean teaspoon, used once, then put in the used-spoon bowl | 10.5 | k315 |
 | `fridge-wrong.html` | WRONG: uncovered raw chicken on the top shelf drips onto a cake below | 10.5 | k316 |

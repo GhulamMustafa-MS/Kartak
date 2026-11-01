@@ -9,7 +9,7 @@ leave the clip questions out. Drawing code and what each clip shows: `scripts/cl
 | `cross-contamination.mp4` | 13 s cartoon (1280x720, H.264, no sound): a carrot cut on a green board, the slices moved into a bowl, then raw chicken cut on the same board without cleaning it. Used by the "Key words" card w06 (`data/words.json`, D27) and question k313 (wrong) |
 | `handwash-right.mp4` | 14 s, right: proper hand washing (k310) |
 | `handwash-wrong.mp4` | 9 s, wrong: no soap, hands dried on the apron (k311) |
-| `boards-right.mp4` | 12.5 s, right: red board for raw chicken, clean green board for the carrot (k312) |
+| `boards-right.mp4` | 14.3 s, right: red board for raw chicken, hands washed at the tap, clean green board for the carrot (k312) |
 | `taste-wrong.mp4` | 9.5 s, wrong: tasting with a finger (k314) |
 | `taste-right.mp4` | 10.5 s, right: tasting with a clean spoon used once (k315) |
 | `fridge-wrong.mp4` | 10.5 s, wrong: uncovered raw chicken above a cake, dripping (k316) |
@@ -18,6 +18,8 @@ leave the clip questions out. Drawing code and what each clip shows: `scripts/cl
 | `sneeze-wrong.mp4` | 10 s, wrong: sneezing over an open salad (k319) |
 | `plaster-right.mp4` | 13 s, right: blue plaster and a glove on a cut finger (k320) |
 | `phone-gloves-wrong.mp4` | 10.5 s, wrong: phone then food with the same gloves (k321) |
+
+| `<name>.jpg` | One poster picture per clip (a frame at 0.5 s, 640 px wide). iPhones show a black box until a clip plays, so the app sets it as the video's `poster` (D35). Remake with `ffmpeg -ss 0.5 -i videos/<name>.mp4 -frames:v 1 -q:v 5 -vf scale=640:-2 videos/<name>.jpg` whenever a clip is re-rendered |
 
 Rules: keep clips short (under 1 MB) and without sound or words, so they work in every language. Made by drawing
 each frame with code and joining them with ffmpeg (the method is in docs/plan.md "Make a clip").

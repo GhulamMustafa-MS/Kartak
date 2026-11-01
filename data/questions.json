@@ -14874,130 +14874,120 @@
   },
   {
    "id": "k139",
-   "type": "order",
-   "d": 4,
+   "type": "single",
+   "d": 3,
    "ch": 3,
    "en": {
-    "q": "Why can cooked rice make people sick? Put what happens in the right order.",
+    "q": "Why must cooked rice not be left warm on the counter for hours?",
     "o": [
-     "Raw rice has spores (germs inside hard shells) on it",
-     "The spores stay alive through the cooking",
-     "The rice is left warm on the counter for hours",
-     "The spores wake up and the germs multiply",
-     "The germs make poison, and people who eat the rice get sick"
+     "The rice gets dry and hard",
+     "Germs that stayed alive through the cooking wake up, multiply and make poison",
+     "Warm rice loses its taste",
+     "Nothing happens, because cooking killed all the germs"
     ],
-    "e": "Germs on rice make spores that stay alive through cooking. Cool cooked rice quickly and keep it in the fridge, so the spores cannot wake up."
+    "e": "Some germs on rice live inside hard shells (spores) that cooking does not kill. If the rice stays warm, they wake up and make poison. Cool cooked rice quickly and keep it in the fridge."
    },
    "ur": {
-    "q": "پکے ہوئے چاول لوگوں کو بیمار کیوں کر سکتے ہیں؟ جو ہوتا ہے اسے صحیح ترتیب میں لگائیں۔",
+    "q": "پکے ہوئے چاول کئی گھنٹے کاؤنٹر پر گرم کیوں نہیں چھوڑنے چاہئیں؟",
     "o": [
-     "کچے چاولوں پر سپور (سخت خول میں بند جراثیم) ہوتے ہیں",
-     "سپور پکانے کے بعد بھی زندہ رہتے ہیں",
-     "چاول کئی گھنٹے کاؤنٹر پر گرم پڑے رہتے ہیں",
-     "سپور جاگ جاتے ہیں اور جراثیم بڑھنے لگتے ہیں",
-     "جراثیم زہر بناتے ہیں، اور چاول کھانے والے بیمار ہو جاتے ہیں"
+     "چاول سوکھ کر سخت ہو جاتے ہیں",
+     "جو جراثیم پکانے کے بعد بھی زندہ رہے، وہ جاگ کر بڑھتے ہیں اور زہر بناتے ہیں",
+     "گرم چاولوں کا ذائقہ ختم ہو جاتا ہے",
+     "کچھ نہیں ہوتا، کیونکہ پکانے سے سارے جراثیم مر گئے"
     ],
-    "e": "چاولوں پر موجود جراثیم ایسے سپور بناتے ہیں جو پکانے کے بعد بھی زندہ رہتے ہیں۔ پکے ہوئے چاول جلدی ٹھنڈے کریں اور فریج میں رکھیں تاکہ سپور جاگ نہ سکیں۔"
+    "e": "چاولوں پر کچھ جراثیم سخت خول (سپور) میں رہتے ہیں جنہیں پکانا نہیں مارتا۔ اگر چاول گرم پڑے رہیں تو یہ جاگ کر زہر بناتے ہیں۔ پکے ہوئے چاول جلدی ٹھنڈے کریں اور فریج میں رکھیں۔"
    },
    "hi": {
-    "q": "पके हुए चावल लोगों को बीमार क्यों कर सकते हैं? जो होता है उसे सही क्रम में लगाएँ।",
+    "q": "पके हुए चावल कई घंटे काउंटर पर गरम क्यों नहीं छोड़ने चाहिए?",
     "o": [
-     "कच्चे चावल पर स्पोर (सख्त खोल में बंद कीटाणु) होते हैं",
-     "स्पोर पकाने के बाद भी ज़िंदा रहते हैं",
-     "चावल कई घंटे काउंटर पर गरम पड़े रहते हैं",
-     "स्पोर जाग जाते हैं और कीटाणु बढ़ने लगते हैं",
-     "कीटाणु ज़हर बनाते हैं, और चावल खाने वाले बीमार हो जाते हैं"
+     "चावल सूखकर सख्त हो जाते हैं",
+     "जो कीटाणु पकाने के बाद भी ज़िंदा रहे, वे जागकर बढ़ते हैं और ज़हर बनाते हैं",
+     "गरम चावल का स्वाद चला जाता है",
+     "कुछ नहीं होता, क्योंकि पकाने से सारे कीटाणु मर गए"
     ],
-    "e": "चावल पर मौजूद कीटाणु ऐसे स्पोर बनाते हैं जो पकाने के बाद भी ज़िंदा रहते हैं। पके चावल जल्दी ठंडे करें और फ्रिज में रखें ताकि स्पोर जाग न सकें।"
+    "e": "चावल पर कुछ कीटाणु सख्त खोल (स्पोर) में रहते हैं जिन्हें पकाना नहीं मारता। अगर चावल गरम पड़े रहें तो वे जागकर ज़हर बनाते हैं। पके हुए चावल जल्दी ठंडे करें और फ्रिज में रखें।"
    },
    "bn": {
-    "q": "রান্না করা ভাত কেন মানুষকে অসুস্থ করতে পারে? যা ঘটে তা সঠিক ক্রমে সাজান।",
+    "q": "রান্না করা ভাত কেন কাউন্টারে কয়েক ঘণ্টা গরম রেখে দেওয়া যাবে না?",
     "o": [
-     "কাঁচা চালে স্পোর (শক্ত খোসার ভেতরে জীবাণু) থাকে",
-     "রান্নার পরও স্পোর বেঁচে থাকে",
-     "ভাত অনেক ঘণ্টা কাউন্টারে গরম অবস্থায় পড়ে থাকে",
-     "স্পোর জেগে ওঠে আর জীবাণু বাড়তে থাকে",
-     "জীবাণু বিষ তৈরি করে, আর যারা ভাত খায় তারা অসুস্থ হয়"
+     "ভাত শুকিয়ে শক্ত হয়ে যায়",
+     "যে জীবাণু রান্নার পরেও বেঁচে ছিল, সেগুলো জেগে উঠে বাড়ে আর বিষ তৈরি করে",
+     "গরম ভাতের স্বাদ চলে যায়",
+     "কিছুই হয় না, কারণ রান্নায় সব জীবাণু মরে গেছে"
     ],
-    "e": "চালের জীবাণু এমন স্পোর তৈরি করে যা রান্নার পরও বেঁচে থাকে। রান্না করা ভাত তাড়াতাড়ি ঠান্ডা করুন আর ফ্রিজে রাখুন, যাতে স্পোর জেগে উঠতে না পারে।"
+    "e": "চালের কিছু জীবাণু শক্ত খোলসের (স্পোর) ভেতরে থাকে, রান্নায় সেগুলো মরে না। ভাত গরম পড়ে থাকলে সেগুলো জেগে উঠে বিষ তৈরি করে। রান্না করা ভাত তাড়াতাড়ি ঠান্ডা করে ফ্রিজে রাখুন।"
    },
    "ar": {
-    "q": "لماذا يمكن أن يُمرض الأرز المطبوخ الناس؟ رتّب ما يحدث بالترتيب الصحيح.",
+    "q": "لماذا لا يجوز ترك الأرز المطبوخ دافئاً على الطاولة لساعات؟",
     "o": [
-     "على الأرز النيء أبواغ (جراثيم داخل قشرة صلبة)",
-     "الأبواغ تبقى حية بعد الطبخ",
-     "يُترك الأرز دافئاً على سطح العمل عدة ساعات",
-     "الأبواغ تستيقظ والجراثيم تتكاثر",
-     "الجراثيم تصنع سُمّاً، ومن يأكل الأرز يمرض"
+     "لأن الأرز يجف ويصبح قاسياً",
+     "لأن الجراثيم التي بقيت حية بعد الطبخ تستيقظ وتتكاثر وتصنع سماً",
+     "لأن الأرز الدافئ يفقد طعمه",
+     "لا يحدث شيء، لأن الطبخ قتل كل الجراثيم"
     ],
-    "e": "الجراثيم الموجودة على الأرز تصنع أبواغاً تبقى حية بعد الطبخ. برّد الأرز المطبوخ بسرعة واحفظه في الثلاجة حتى لا تستيقظ الأبواغ."
+    "e": "بعض الجراثيم على الأرز تعيش داخل قشور صلبة (أبواغ) لا يقتلها الطبخ. إذا بقي الأرز دافئاً تستيقظ وتصنع سماً. برّد الأرز المطبوخ بسرعة واحفظه في الثلاجة."
    },
    "ne": {
-    "q": "पकाएको भातले मान्छेलाई किन बिरामी बनाउन सक्छ? के हुन्छ, सही क्रममा मिलाउनुहोस्।",
+    "q": "पकाएको भात किन धेरै घण्टा काउन्टरमा तातो छोड्नु हुँदैन?",
     "o": [
-     "काँचो चामलमा स्पोर (कडा खोलभित्रका किटाणु) हुन्छन्",
-     "स्पोर पकाएपछि पनि बाँचिरहन्छन्",
-     "भात धेरै घण्टा काउन्टरमा तातो अवस्थामा छोडिन्छ",
-     "स्पोर ब्युँझिन्छन् र किटाणु बढ्न थाल्छन्",
-     "किटाणुले विष बनाउँछन्, र भात खाने मान्छे बिरामी हुन्छन्"
+     "भात सुकेर कडा हुन्छ",
+     "पकाउँदा पनि बाँचेका कीटाणु ब्युँझिएर बढ्छन् र विष बनाउँछन्",
+     "तातो भातको स्वाद हराउँछ",
+     "केही हुँदैन, किनभने पकाउँदा सबै कीटाणु मरे"
     ],
-    "e": "चामलमा भएका किटाणुले पकाएपछि पनि बाँच्ने स्पोर बनाउँछन्। पकाएको भात छिटो चिसो पार्नुहोस् र फ्रिजमा राख्नुहोस्, ताकि स्पोर ब्युँझिन नसकून्।"
+    "e": "चामलमा भएका केही कीटाणु कडा खोल (स्पोर) भित्र बस्छन्, जसलाई पकाउँदा पनि मार्दैन। भात तातो रहिरह्यो भने तिनीहरू ब्युँझिएर विष बनाउँछन्। पकाएको भात छिटो चिसो पारेर फ्रिजमा राख्नुहोस्।"
    },
    "ml": {
-    "q": "വേവിച്ച ചോറ് എന്തുകൊണ്ട് ആളുകളെ രോഗികളാക്കാം? സംഭവിക്കുന്നത് ശരിയായ ക്രമത്തിൽ വയ്ക്കുക.",
+    "q": "വേവിച്ച ചോറ് മണിക്കൂറുകളോളം കൗണ്ടറിൽ ചൂടോടെ വയ്ക്കരുതാത്തത് എന്തുകൊണ്ട്?",
     "o": [
-     "അരിയിൽ സ്പോറുകൾ (കട്ടിയുള്ള തോടിനുള്ളിലെ അണുക്കൾ) ഉണ്ട്",
-     "വേവിച്ച ശേഷവും സ്പോറുകൾ ജീവനോടെ ഇരിക്കുന്നു",
-     "ചോറ് മണിക്കൂറുകളോളം കൗണ്ടറിൽ ചൂടോടെ വച്ചിരിക്കുന്നു",
-     "സ്പോറുകൾ ഉണരുന്നു, അണുക്കൾ പെരുകുന്നു",
-     "അണുക്കൾ വിഷം ഉണ്ടാക്കുന്നു, ചോറ് കഴിക്കുന്നവർ രോഗികളാകുന്നു"
+     "ചോറ് ഉണങ്ങി കട്ടിയാകും",
+     "വേവിച്ചിട്ടും ചാകാത്ത അണുക്കൾ ഉണർന്ന് പെരുകി വിഷം ഉണ്ടാക്കും",
+     "ചൂടുള്ള ചോറിന്റെ രുചി പോകും",
+     "ഒന്നും സംഭവിക്കില്ല, കാരണം വേവിച്ചപ്പോൾ എല്ലാ അണുക്കളും ചത്തു"
     ],
-    "e": "അരിയിലെ അണുക്കൾ ഉണ്ടാക്കുന്ന സ്പോറുകൾ വേവിച്ചാലും ജീവനോടെ ഇരിക്കും. വേവിച്ച ചോറ് വേഗം തണുപ്പിച്ച് ഫ്രിഡ്ജിൽ വയ്ക്കുക, അപ്പോൾ സ്പോറുകൾക്ക് ഉണരാൻ കഴിയില്ല."
+    "e": "അരിയിലെ ചില അണുക്കൾ കട്ടിയുള്ള തോടിനുള്ളിൽ (സ്പോർ) കഴിയുന്നു, വേവിച്ചാലും അവ ചാകില്ല. ചോറ് ചൂടോടെ ഇരുന്നാൽ അവ ഉണർന്ന് വിഷം ഉണ്ടാക്കും. വേവിച്ച ചോറ് വേഗം തണുപ്പിച്ച് ഫ്രിഡ്ജിൽ വയ്ക്കുക."
    },
    "ta": {
-    "q": "சமைத்த சாதம் ஏன் மக்களை நோய்வாய்ப்படுத்தலாம்? என்ன நடக்கிறது என்பதைச் சரியான வரிசையில் வையுங்கள்.",
+    "q": "சமைத்த சோற்றை ஏன் பல மணி நேரம் கவுண்டரில் சூடாக வைக்கக் கூடாது?",
     "o": [
-     "அரிசியில் ஸ்போர்கள் (கடினமான ஓட்டுக்குள் உள்ள கிருமிகள்) இருக்கின்றன",
-     "சமைத்த பிறகும் ஸ்போர்கள் உயிருடன் இருக்கின்றன",
-     "சாதம் பல மணி நேரம் கவுண்டரில் சூடாக விடப்படுகிறது",
-     "ஸ்போர்கள் விழிக்கின்றன, கிருமிகள் பெருகுகின்றன",
-     "கிருமிகள் விஷத்தை உண்டாக்குகின்றன, சாதம் சாப்பிடுபவர்கள் நோய்வாய்ப்படுகிறார்கள்"
+     "சோறு காய்ந்து கடினமாகிவிடும்",
+     "சமைத்த பிறகும் உயிரோடு இருந்த கிருமிகள் விழித்து, பெருகி, நஞ்சை உண்டாக்கும்",
+     "சூடான சோற்றின் சுவை போய்விடும்",
+     "எதுவும் ஆகாது, ஏனென்றால் சமைக்கும்போது எல்லாக் கிருமிகளும் இறந்துவிட்டன"
     ],
-    "e": "அரிசியில் உள்ள கிருமிகள் சமைத்த பிறகும் உயிர் வாழும் ஸ்போர்களை உண்டாக்குகின்றன. சமைத்த சாதத்தை வேகமாகக் குளிர்வித்து ஃபிரிட்ஜில் வையுங்கள், அப்போது ஸ்போர்கள் விழிக்க முடியாது."
+    "e": "அரிசியில் உள்ள சில கிருமிகள் கடினமான ஓட்டுக்குள் (ஸ்போர்) வாழ்கின்றன, சமைத்தாலும் அவை இறப்பதில்லை. சோறு சூடாகவே இருந்தால் அவை விழித்து நஞ்சை உண்டாக்கும். சமைத்த சோற்றை விரைவாகக் குளிர்வித்து ஃப்ரிட்ஜில் வையுங்கள்."
    },
    "fil": {
-    "q": "Bakit puwedeng makapagpasakit ng tao ang lutong kanin? Ayusin ang nangyayari sa tamang pagkakasunod.",
+    "q": "Bakit hindi dapat iwanang mainit ang lutong kanin sa counter nang ilang oras?",
     "o": [
-     "May spore (mikrobyo sa loob ng matigas na balot) ang hilaw na bigas",
-     "Nakakaligtas ang spore sa pagluluto",
-     "Naiiwan ang kanin nang mainit-init sa counter nang ilang oras",
-     "Nagigising ang spore at dumarami ang mikrobyo",
-     "Gumagawa ng lason ang mikrobyo, at nagkakasakit ang kumain ng kanin"
+     "Natutuyo at tumitigas ang kanin",
+     "Ang mga mikrobyong nabuhay kahit niluto ay gigising, dadami, at gagawa ng lason",
+     "Nawawala ang lasa ng mainit na kanin",
+     "Walang mangyayari, dahil namatay na ang lahat ng mikrobyo sa pagluluto"
     ],
-    "e": "Gumagawa ang mikrobyo sa bigas ng spore na nakakaligtas sa pagluluto. Palamigin agad ang lutong kanin at ilagay sa ref para hindi magising ang spore."
+    "e": "May mga mikrobyo sa bigas na nakatira sa loob ng matigas na balat (spores) na hindi namamatay sa pagluluto. Kung mananatiling mainit ang kanin, gigising sila at gagawa ng lason. Palamigin agad ang lutong kanin at ilagay sa ref."
    },
    "ind": {
-    "q": "Kenapa nasi yang sudah dimasak bisa membuat orang sakit? Susun apa yang terjadi dengan urutan yang benar.",
+    "q": "Mengapa nasi yang sudah dimasak tidak boleh dibiarkan hangat di meja selama berjam-jam?",
     "o": [
-     "Pada beras mentah ada spora (kuman di dalam cangkang keras)",
-     "Spora tetap hidup walaupun sudah dimasak",
-     "Nasi dibiarkan hangat di meja dapur selama berjam-jam",
-     "Spora bangun dan kuman berkembang biak",
-     "Kuman membuat racun, dan orang yang makan nasi itu jadi sakit"
+     "Nasinya jadi kering dan keras",
+     "Kuman yang tetap hidup setelah dimasak bangun, berkembang biak, dan membuat racun",
+     "Nasi hangat kehilangan rasanya",
+     "Tidak terjadi apa-apa, karena memasak sudah membunuh semua kuman"
     ],
-    "e": "Kuman pada beras membuat spora yang tetap hidup walaupun sudah dimasak. Dinginkan nasi dengan cepat dan simpan di kulkas supaya spora tidak bangun."
+    "e": "Beberapa kuman pada beras hidup di dalam cangkang keras (spora) yang tidak mati saat dimasak. Kalau nasi tetap hangat, kuman itu bangun dan membuat racun. Dinginkan nasi matang dengan cepat dan simpan di kulkas."
    },
    "tr": {
-    "q": "Pişmiş pirinç neden insanları hasta edebilir? Olanları doğru sıraya koy.",
+    "q": "Pişmiş pilav neden saatlerce tezgâhta ılık bırakılmamalı?",
     "o": [
-     "Çiğ pirinçte spor (sert kabuk içinde mikrop) vardır",
-     "Sporlar pişirmeden sonra da canlı kalır",
-     "Pilav saatlerce tezgâhta ılık bekletilir",
-     "Sporlar uyanır ve mikroplar çoğalır",
-     "Mikroplar zehir yapar ve pilavı yiyenler hastalanır"
+     "Pilav kuruyup sertleşir",
+     "Pişirmeye rağmen canlı kalan mikroplar uyanır, çoğalır ve zehir yapar",
+     "Ilık pilavın tadı kaçar",
+     "Hiçbir şey olmaz, çünkü pişirmek bütün mikropları öldürdü"
     ],
-    "e": "Pirinçteki mikroplar pişirmeye dayanan sporlar yapar. Pişmiş pilavı çabuk soğut ve buzdolabına koy ki sporlar uyanmasın."
-   }
+    "e": "Pirinçteki bazı mikroplar, pişirmenin öldürmediği sert kabukların (spor) içinde yaşar. Pilav ılık kalırsa uyanıp zehir yaparlar. Pişmiş pilavı hızla soğutun ve buzdolabında saklayın."
+   },
+   "ans": 1
   },
   {
    "id": "k140",
@@ -33873,47 +33863,47 @@
    "clip": "/videos/boards-right.mp4",
    "en": {
     "q": "A worker cuts raw chicken and then a carrot. Watch the clip. Is this right or wrong?",
-    "e": "Right. He cut the raw chicken on the red board and put that board and knife aside to be washed. Then he used a clean green board and a different knife for the carrot."
+    "e": "Right. He cut the raw chicken on the red board and put that board and knife aside to be washed. Then he used a clean green board and a different knife for the carrot. He also washed his hands after the raw chicken. Gloves are not needed here, but washing your hands is a must."
    },
    "ur": {
     "q": "ایک ورکر پہلے کچا چکن اور پھر گاجر کاٹتا ہے۔ ویڈیو دیکھیں۔ کیا یہ درست ہے یا غلط؟",
-    "e": "درست۔ اس نے کچا چکن لال بورڈ پر کاٹا اور وہ بورڈ اور چھری دھونے کے لیے الگ رکھ دیے۔ پھر گاجر کے لیے اس نے صاف ہرا بورڈ اور دوسری چھری استعمال کی۔"
+    "e": "درست۔ اس نے کچا چکن لال بورڈ پر کاٹا اور وہ بورڈ اور چھری دھونے کے لیے الگ رکھ دیے۔ پھر گاجر کے لیے اس نے صاف ہرا بورڈ اور دوسری چھری استعمال کی۔ اس نے کچا چکن چھونے کے بعد ہاتھ بھی دھوئے۔ یہاں دستانے ضروری نہیں، لیکن ہاتھ دھونا ضروری ہے۔"
    },
    "hi": {
     "q": "एक वर्कर पहले कच्चा चिकन और फिर गाजर काटता है। वीडियो देखें। क्या यह सही है या गलत?",
-    "e": "सही। उसने कच्चा चिकन लाल बोर्ड पर काटा और वह बोर्ड और चाकू धोने के लिए अलग रख दिए। फिर गाजर के लिए उसने साफ़ हरा बोर्ड और दूसरा चाकू इस्तेमाल किया।"
+    "e": "सही। उसने कच्चा चिकन लाल बोर्ड पर काटा और वह बोर्ड और चाकू धोने के लिए अलग रख दिए। फिर गाजर के लिए उसने साफ़ हरा बोर्ड और दूसरा चाकू इस्तेमाल किया। उसने कच्चा चिकन छूने के बाद हाथ भी धोए। यहाँ दस्ताने ज़रूरी नहीं, लेकिन हाथ धोना ज़रूरी है।"
    },
    "bn": {
     "q": "একজন কর্মী কাঁচা মুরগি কাটছেন, তারপর একটা গাজর। ভিডিওটি দেখুন। এটা সঠিক না ভুল?",
-    "e": "সঠিক। তিনি কাঁচা মুরগি লাল বোর্ডে কেটেছেন আর সেই বোর্ড আর ছুরি ধোয়ার জন্য সরিয়ে রেখেছেন। তারপর গাজরের জন্য একটা পরিষ্কার সবুজ বোর্ড আর অন্য একটা ছুরি নিয়েছেন।"
+    "e": "সঠিক। তিনি কাঁচা মুরগি লাল বোর্ডে কেটেছেন আর সেই বোর্ড আর ছুরি ধোয়ার জন্য সরিয়ে রেখেছেন। তারপর গাজরের জন্য একটা পরিষ্কার সবুজ বোর্ড আর অন্য একটা ছুরি নিয়েছেন। কাঁচা মুরগি ধরার পর তিনি হাতও ধুয়েছেন। এখানে গ্লাভস লাগবে না, কিন্তু হাত ধোয়া জরুরি।"
    },
    "ar": {
     "q": "عامل يقطع دجاجاً نيئاً ثم جزرة. شاهد المقطع. هل هذا صح أم خطأ؟",
-    "e": "صح. قطع الدجاج النيء على اللوح الأحمر، ووضع هذا اللوح والسكين جانباً ليُغسلا. ثم استعمل لوحاً أخضر نظيفاً وسكيناً أخرى للجزرة."
+    "e": "صح. قطع الدجاج النيء على اللوح الأحمر، ووضع هذا اللوح والسكين جانباً ليُغسلا. ثم استعمل لوحاً أخضر نظيفاً وسكيناً أخرى للجزرة. وغسل يديه أيضاً بعد لمس الدجاج النيء. القفازات ليست ضرورية هنا، لكن غسل اليدين ضروري."
    },
    "ne": {
     "q": "एक जना कामदारले पहिले काँचो कुखुराको मासु काट्छ, अनि गाजर काट्छ। भिडियो हेर्नुहोस्। यो सही हो कि गलत?",
-    "e": "सही। उसले काँचो कुखुराको मासु रातो पाटीमा काट्यो र त्यो पाटी र चक्कु धुनका लागि छुट्टै राख्यो। अनि गाजरका लागि सफा हरियो पाटी र अर्कै चक्कु प्रयोग गर्‍यो।"
+    "e": "सही। उसले काँचो कुखुराको मासु रातो पाटीमा काट्यो र त्यो पाटी र चक्कु धुनका लागि छुट्टै राख्यो। अनि गाजरका लागि सफा हरियो पाटी र अर्कै चक्कु प्रयोग गर्‍यो। काँचो कुखुराको मासु छोएपछि उसले हात पनि धोयो। यहाँ पन्जा चाहिँदैन, तर हात धुनु जरुरी छ।"
    },
    "ml": {
     "q": "ഒരു ജോലിക്കാരൻ വേവിക്കാത്ത ചിക്കൻ മുറിക്കുന്നു, പിന്നെ ഒരു ക്യാരറ്റും. വീഡിയോ കാണുക. ഇത് ശരിയാണോ തെറ്റാണോ?",
-    "e": "ശരി. അയാൾ വേവിക്കാത്ത ചിക്കൻ ചുവന്ന ബോർഡിൽ മുറിച്ചു, ആ ബോർഡും കത്തിയും കഴുകാനായി മാറ്റിവച്ചു. പിന്നെ ക്യാരറ്റിന് വൃത്തിയുള്ള ഒരു പച്ച ബോർഡും വേറൊരു കത്തിയും ഉപയോഗിച്ചു."
+    "e": "ശരി. അയാൾ വേവിക്കാത്ത ചിക്കൻ ചുവന്ന ബോർഡിൽ മുറിച്ചു, ആ ബോർഡും കത്തിയും കഴുകാനായി മാറ്റിവച്ചു. പിന്നെ ക്യാരറ്റിന് വൃത്തിയുള്ള ഒരു പച്ച ബോർഡും വേറൊരു കത്തിയും ഉപയോഗിച്ചു. വേവിക്കാത്ത ചിക്കൻ തൊട്ടശേഷം അയാൾ കൈയും കഴുകി. ഇവിടെ കൈയുറ വേണ്ട, പക്ഷേ കൈ കഴുകുന്നത് നിർബന്ധമാണ്."
    },
    "ta": {
     "q": "ஒரு பணியாளர் சமைக்காத கோழியை வெட்டுகிறார், பிறகு ஒரு கேரட்டை வெட்டுகிறார். வீடியோவைப் பாருங்கள். இது சரியா, தவறா?",
-    "e": "சரி. அவர் சமைக்காத கோழியைச் சிவப்புப் பலகையில் வெட்டினார், அந்தப் பலகையையும் கத்தியையும் கழுவுவதற்காகத் தனியே வைத்தார். பிறகு கேரட்டுக்குச் சுத்தமான பச்சைப் பலகையையும் வேறு கத்தியையும் பயன்படுத்தினார்."
+    "e": "சரி. அவர் சமைக்காத கோழியைச் சிவப்புப் பலகையில் வெட்டினார், அந்தப் பலகையையும் கத்தியையும் கழுவுவதற்காகத் தனியே வைத்தார். பிறகு கேரட்டுக்குச் சுத்தமான பச்சைப் பலகையையும் வேறு கத்தியையும் பயன்படுத்தினார். சமைக்காத கோழியைத் தொட்ட பிறகு அவர் கைகளையும் கழுவினார். இங்கே கையுறை தேவையில்லை, ஆனால் கை கழுவுவது கட்டாயம்."
    },
    "fil": {
     "q": "Naghiwa ang isang worker ng hilaw na manok, tapos ng carrot. Panoorin ang video. Tama ba ito o mali?",
-    "e": "Tama. Hiniwa niya ang hilaw na manok sa pulang chopping board at itinabi ang board at kutsilyo para hugasan. Tapos gumamit siya ng malinis na berdeng board at ibang kutsilyo para sa carrot."
+    "e": "Tama. Hiniwa niya ang hilaw na manok sa pulang chopping board at itinabi ang board at kutsilyo para hugasan. Tapos gumamit siya ng malinis na berdeng board at ibang kutsilyo para sa carrot. Naghugas din siya ng kamay pagkatapos hawakan ang hilaw na manok. Hindi kailangan ng gloves dito, pero kailangang maghugas ng kamay."
    },
    "ind": {
     "q": "Seorang pekerja memotong ayam mentah, lalu wortel. Lihat videonya. Ini benar atau salah?",
-    "e": "Benar. Dia memotong ayam mentah di talenan merah, lalu menyisihkan talenan dan pisau itu untuk dicuci. Lalu dia memakai talenan hijau yang bersih dan pisau lain untuk wortel."
+    "e": "Benar. Dia memotong ayam mentah di talenan merah, lalu menyisihkan talenan dan pisau itu untuk dicuci. Lalu dia memakai talenan hijau yang bersih dan pisau lain untuk wortel. Dia juga mencuci tangan setelah memegang ayam mentah. Di sini sarung tangan tidak wajib, tetapi cuci tangan wajib."
    },
    "tr": {
     "q": "Bir çalışan çiğ tavuk, sonra da havuç doğruyor. Videoyu izle. Bu doğru mu, yanlış mı?",
-    "e": "Doğru. Çiğ tavuğu kırmızı tahtada doğradı, o tahtayı ve bıçağı yıkanmak üzere kenara koydu. Sonra havuç için temiz, yeşil bir tahta ve başka bir bıçak kullandı."
+    "e": "Doğru. Çiğ tavuğu kırmızı tahtada doğradı, o tahtayı ve bıçağı yıkanmak üzere kenara koydu. Sonra havuç için temiz, yeşil bir tahta ve başka bir bıçak kullandı. Çiğ tavuğa dokunduktan sonra ellerini de yıkadı. Burada eldiven gerekmez, ama el yıkamak şarttır."
    }
   },
   {

@@ -13,7 +13,9 @@
  *                         choices in the order on the screen (never the answer order)
  *               Helpers   shuffle, grading (single/picture/tf/multi/order), type tags
  *               Clips     "video" questions with a clip (q.clip, D31): the MP4 plays above two buttons, Right and
- *                         Wrong (twoWay()); left out of tests started offline, because videos are not saved
+ *                         Wrong (twoWay()); left out of tests started offline, because videos are not saved.
+ *                         Each clip has a poster picture (videos/<name>.jpg) and startClip() shows a big play
+ *                         button if the phone refuses to autoplay (iPhone Low Power Mode, D35)
  *               Screens   drawLang, drawHome, drawAllPick ("All questions": every type or one type, D29), drawWords ("Key words", data/words.json, D27), drawLearn, drawIntro, drawQ (+ dial, thermometer SVG,
  *                         order arrows), drawResults, drawGate (code entry)
  *               Install   add-to-home-screen card + help sheet; iPhone code transfer (/api/transfer)
@@ -436,6 +438,14 @@
       '<circle class="th-liquid" cx="' + x + '" cy="' + (bot + 18) + '" r="12"/>' + ticks + '</svg>';
   }
 
+  // Plays a clip; if the phone refuses (iPhone Low Power Mode, data saver), shows the big play button instead.
+  function startClip(v) {
+    var btn = v.parentNode.querySelector(".vplay");
+    v.onplaying = function () { if (btn) btn.hidden = true; };
+    var p = v.play();
+    if (p && p.catch) p.catch(function () { if (btn) btn.hidden = false; });
+  }
+
   function drawQ() {
     var t = T(), q = S.qs[S.i], lq = L(q), mock = timed();
     var trackHTML = "";
@@ -450,7 +460,9 @@
       (canSpeak() ? '<button type="button" class="listen" id="listenBtn" aria-pressed="' + S.speaking + '">' + ICONS.speaker + '<span>' + (S.speaking ? t.stop : t.listen) + '</span></button>' : '') + '</div>';
 
     if (q.clip) {
-      html += '<div class="clip"><video src="' + q.clip + '" playsinline muted autoplay preload="auto"></video>' +
+      // poster: iPhones paint nothing until a clip plays; the big play button shows if autoplay is refused
+      html += '<div class="clip"><div class="vwrap"><video src="' + q.clip + '" poster="' + q.clip.replace(/\.mp4$/, ".jpg") + '" playsinline muted autoplay preload="auto"></video>' +
+        '<button type="button" class="vplay" data-replay="1" aria-label="' + t.replay + '" hidden>▶</button></div>' +
         '<div class="vbar"><button type="button" class="small-btn" data-replay="1">↻ ' + t.replay + '</button></div></div>';
     } else if (q.vid) {
       var el = (Date.now() - S.vidStart) / 1000;
@@ -479,6 +491,7 @@
     app.innerHTML = html;
     var fresh = app.querySelector(".clip video");
     if (playing && fresh && playing.getAttribute("src") === fresh.getAttribute("src")) fresh.parentNode.replaceChild(playing, fresh);
+    else if (fresh) startClip(fresh);
 
     var last = S.i === N() - 1, ready = hasAnswer(q, S.sel);
     var label = mock ? (last ? t.finish : t.next) : (S.checked ? (last ? t.finish : t.next) : t.check);
@@ -681,7 +694,7 @@
     }
     if (b.dataset.replay) {
       var v = app.querySelector(".clip video");
-      if (v) { v.currentTime = 0; v.play(); return; }
+      if (v) { v.currentTime = 0; startClip(v); return; }
       S.vidStart = Date.now(); drawQ(); return;
     }
     if (S.checked) { if (b.id === "cta") { advance(); } return; }

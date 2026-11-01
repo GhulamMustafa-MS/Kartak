@@ -7,7 +7,7 @@
  *             in screen order: header + language dropdown, language picker, home, question
  *             type tags (kitchen chopping-board colours: blue single, green multi, yellow true/false,
  *             red order, brown picture, purple video), question screen, timer dial, answers, order rows,
- *             clip questions (.clip video, D31), bottom bar, intro/learn, results, phone tap fixes, install card + sheet, code gate.
+ *             clip questions (.clip video, poster + .vplay button, D31, D35), bottom bar, intro/learn, results, phone tap fixes, install card + sheet, code gate.
  * Used by:    index.html.
  * Notes:      Phone rule: hover effects only inside @media (hover: hover) and no text selection on
  *             buttons, otherwise taps look "stuck" or select text (decision D15).
@@ -186,6 +186,9 @@ html[lang="ur"] .tag .tt, html[lang="ur"] .tag .th { line-height: 2; }
 .t-video   { --c: var(--c-purple); --cbg: var(--c-purple-bg); }
 .clip { display: grid; gap: 8px; }
 .clip video { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 14px; background: #000; }
+.clip .vwrap { position: relative; }
+.clip .vplay { position: absolute; inset: 0; margin: auto; width: 72px; height: 72px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font-size: 30px; -webkit-user-select: none; user-select: none; }
+.clip .vplay[hidden] { display: none; }
 .mini .mclip { display: grid; place-items: center; height: 56px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
 .mini .mclip svg { width: 28px; height: 28px; }
 .vid { display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }

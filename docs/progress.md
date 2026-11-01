@@ -4,7 +4,7 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 31 Oct 2026)
+## START HERE (last updated 1 Nov 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
@@ -24,7 +24,8 @@ passes about ten entries, move the oldest into the Archive at the bottom.
 2. Ask workers what the real exam clips show, to add clips for those situations (12 cartoon clips are live, D31).
 3. Native speakers check every language except English (all AI-translated; reviewers' open points per
    language are in summary.md 2).
-4. The user tests the apps on a real iPhone (home-screen install and hand-over).
+4. The user tests the apps on a real iPhone (home-screen install and hand-over); Wessam to confirm the clips
+   now show a picture and play on his iPhone (D35).
 5. Re-render the plaster clip (k320) with hand washing before the plaster (D34).
 6. Turn off or delete the test code MUSTFA ("Mustafa test") in the seller app once testing is finished.
 
@@ -40,6 +41,10 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **1 Nov 2026:** fixes from Wessam's testing (D35). Every clip has a poster picture and a big play button when
+  the phone refuses autoplay (his iPhone showed the taste clip black). The boards clip (k312) shows hand washing
+  after the raw chicken, and its explanation says gloves are not needed but hand washing is. k139 (rice) is now a
+  single-answer question. Live mix: single 121, true/false 61, multi 57, order 46, picture 21, video 12.
 - **31 Oct 2026:** exam-relevance review of the whole bank (D34), two independent passes: 23 questions rewritten
   in all 11 languages, none dropped (HACCP at worker level instead of the 12 plan steps, orders with one fair
   answer, no orders solvable by sorting numbers, answers that disagreed with other questions fixed). Live mix:

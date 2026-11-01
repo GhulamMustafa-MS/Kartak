@@ -41,6 +41,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
 | D31 | 30 Oct | Video questions go live as cartoon clips with two answers, Right and Wrong, like the real exam (Wessam: the exam always asks "is this right or wrong?"); 12 clips, half right, half wrong; replaces holding videos back (D5) | User asked, AI made the clips | The exam has video questions; workers should practise the format now, not wait for real footage |
 | D32 | 30 Oct | Ordering steps stay neutral (no colour) until "Check my answer" | User | The red used for moved steps looked like a wrong answer |
+| D35 | 1 Nov | Three fixes from Wessam's testing: every clip gets a poster picture and a big play button when autoplay is refused; the boards clip (k312) now shows hand washing after the raw chicken and its explanation says gloves are not needed but hand washing is; k139 (rice) becomes a single-answer question | AI, after Wessam's reports | The taste clip was black on his iPhone; he thought the boards clip was wrong because of no gloves; he could not see how to order the rice steps |
 | D34 | 31 Oct | Second whole-bank review from the exam-relevance angle: questions a worker would not be asked (making the HACCP plan, naming HACCP terms, admin steps), orders with more than one fair answer, orders solvable by sorting numbers, and answers that disagreed with other questions were rewritten (23 questions, all 11 languages); none dropped | User (asked for a harder look), AI reviewed (two independent passes) and wrote | Workers were losing marks on things the exam is unlikely to ask; the user kept finding these one at a time |
 | D33 | 30 Oct | The seller can make a bunch of codes in one go (1, 3, 5, 10, 20 or any number up to 50); codes made together share a batch id, show together in the list, and can be copied, turned off, turned on and deleted all at once | User asked, AI designed | Restaurants buy codes for several workers at a time; one by one was slow |
 | D20 | 28 Oct | Keep the repo public for now | AI (open for the user) | The old GitHub Pages link redirects from it; see progress.md open items |
@@ -270,6 +271,19 @@ listing every code. One code made on its own has no batch and looks exactly as b
   one go, and its name is the codes' shared name.
 - Rejected: letting the seller move codes between bunches later. Not asked for; adds screens.
 - The cap of 50 per go keeps one request short and stops a mistyped 500.
+
+## D35. Clip posters, hand washing in the boards clip, k139 single answer (1 Nov)
+
+- **Black clip on iPhone.** The clips are encoded the same as the ones that played, so the cause is the phone: iPhone
+  Safari paints nothing until a video plays, and refuses autoplay in Low Power Mode. Fix: a poster JPG per clip and
+  a big play button shown only when `play()` is refused. Rejected: re-encoding (the encoding is already the most
+  compatible H.264 profile) and always showing controls (clutter, and the clip should start by itself where it can).
+- **"He's not wearing gloves."** The handbook does not require gloves for cutting raw meat, but it does say to wash
+  hands after raw food, and the old clip went straight from chicken to carrot. Fix: a 1.8 s hand wash at the tap
+  after the red board goes in the sink, and one sentence in the explanation. Rejected: putting gloves on him (gloves
+  don't replace hand washing, and he would still need to change them, which is harder to show clearly).
+- **k139 ordering.** Both reviews and Wessam found a 5-step science chain confusing. Now: "Why must cooked rice not be
+  left warm on the counter for hours?" with one right answer. Ordering questions go from 47 to 46 live.
 
 ## D34. Exam-relevance review (31 Oct)
 
