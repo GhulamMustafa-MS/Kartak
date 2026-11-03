@@ -13,7 +13,7 @@
 --                  (decision D25). A reset for a new phone does not restart the time.
 --                  batch = shared id of codes made together in one go (decision D33); null = made on its own.
 -- kartak_results:  one row per finished test or block of "All questions" (decision D26): mode full / quick /
---                  practice / all, language, score, and the question ids asked and got wrong (comma separated).
+--                  practice / all / mistakes (D37, no migration: the column is plain text), language, score, and the question ids asked and got wrong (comma separated).
 -- kartak_settings: key/value. admin_hash = SHA-256 of the seller password (the password itself is never stored).
 
 create table if not exists kartak_codes (

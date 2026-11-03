@@ -18,7 +18,7 @@
   var CH = { 1: "Health certificate and your job", 2: "Food safety basics", 3: "Germs and temperatures", 4: "Chemicals and objects in food",
     5: "Food going bad", 6: "Food poisoning and allergies", 7: "Personal hygiene", 8: "Cleaning and pests", 9: "Kitchen layout",
     10: "HACCP", 11: "Safe food handling", 12: "Practical skills", 13: "Safety at work" };
-  var MODES = { full: "Full mock", quick: "Quick test", practice: "Practice", all: "All questions" };
+  var MODES = { full: "Full mock", quick: "Quick test", practice: "Practice", all: "All questions", mistakes: "My mistakes" };
   var LANGS = { en: "English", ar: "Arabic", ur: "Urdu", hi: "Hindi", bn: "Bangla", ne: "Nepali", ml: "Malayalam", ta: "Tamil", fil: "Filipino", ind: "Indonesian", tr: "Turkish" };
   var TYPES = { single: "one answer", multi: "choose all", tf: "true or false", order: "put in order", picture: "picture", video: "video" };
 
@@ -76,7 +76,7 @@
     if (!o.tests) return '<section class="card"><h2>Results</h2><p class="muted">No results yet. They appear here as soon as someone with a code finishes a test.</p></section>';
     var people = list.filter(function (r) { return r.tests; }).sort(function (a, b) { return new Date(b.last_test) - new Date(a.last_test); });
     var ready = people.filter(function (r) { return verdict(r)[0] === "ready"; }).length;
-    var modes = ["full", "quick", "practice", "all"].map(function (m) {
+    var modes = ["full", "quick", "practice", "all", "mistakes"].map(function (m) {
       var x = st.modes.filter(function (y) { return y.mode === m; })[0];
       return x ? '<div class="trow"><span class="tn">' + MODES[m] + ' <span class="muted">· ' + x.n + '</span></span>' + bar(x.avg, x.avg >= 80 ? "good" : x.avg >= 65 ? "mid" : "bad") + '<span class="tv">avg ' + x.avg + '%</span></div>' : "";
     }).join("");
@@ -111,7 +111,7 @@
       (r.wrong ? r.wrong.split(",") : []).forEach(function (id) { (qs[id] || (qs[id] = { id: id, asked: 0, wrong: 0 })).wrong++; });
     });
     qs = Object.keys(qs).map(function (k) { return qs[k]; });
-    var byMode = ["full", "quick", "practice", "all"].map(function (m) {
+    var byMode = ["full", "quick", "practice", "all", "mistakes"].map(function (m) {
       var rs = results.filter(function (r) { return r.mode === m; }); if (!rs.length) return "";
       var a = Math.round(rs.reduce(function (s, r) { return s + pct(r.correct, r.total); }, 0) / rs.length);
       return '<div class="trow"><span class="tn">' + MODES[m] + ' <span class="muted">· ' + rs.length + '</span></span>' + bar(a, a >= 80 ? "good" : a >= 65 ? "mid" : "bad") + '<span class="tv">avg ' + a + '%</span></div>';

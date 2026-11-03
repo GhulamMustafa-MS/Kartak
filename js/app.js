@@ -4,7 +4,7 @@
  * Purpose:    One IIFE, no framework, no build step (decision D16). Sections, in file order:
  *               Text      UI strings and the language list come from js/i18n.js (KARTAK_UI, KARTAK_LANGS)
  *               Bank      questions fetched from /data/questions.json; enabled !== false only
- *               Settings  SIZES (full 50 / quick 15 / practice 15 / all = whole bank), PASS = 80%,
+ *               Settings  SIZES (full 50 / quick 15 / practice 15 / all = whole bank / mistakes 15), PASS = 80%,
  *                         QSEC = 90 s per question; full and quick are timed, practice and all are not
  *               State     S (current screen, mode, question index, answers); store() wraps localStorage
  *               Codes     API is only used on *.vercel.app; deviceId(), activate() -> /api/activate; the saved
@@ -26,6 +26,7 @@
  * Storage:    localStorage keys: jahiz-lang (language; old name kept so nobody loses it), kartak-outbox
  *             (results not sent yet),
  *             kartak-code, kartak-dev (device id), kartak-best-full (best full-mock %),
+ *             kartak-miss (questions answered wrong: { id: right answers since }, cleared after 2, D37),
  *             kartak-all (saved place in "All questions", and its question type if one was picked, so it can
  *             be finished over several days; kept when questions change, see resumeAll()).
  * Used by:    index.html.
@@ -43,7 +44,7 @@
   var bankReady = fetch("/data/questions.json").then(function (r) { return r.json(); }).then(function (d) {
     BANK = d.questions.filter(function (q) { return q.enabled !== false; });
   });
-  var SIZES = { full: 50, quick: 15, practice: 15, all: 100000 }; // "all" = every live question
+  var SIZES = { full: 50, quick: 15, practice: 15, all: 100000, mistakes: 15 }; // "all" = every live question
   function timed() { return S.mode === "full" || S.mode === "quick"; }
   function N() { return S.qs.length; }
   function PASS() { return Math.ceil(N() * 0.8); }
@@ -60,6 +61,7 @@
     picture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.8"/><path d="M3.5 18l5.5-5.5 4 4 3-3 4.5 4.5"/></svg>',
     video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>',
     quick: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg>',
+    redo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/><path d="M9 12l2 2 4-4"/></svg>',
     stack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M6 5h12M8 2h8" stroke-linecap="round"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
     book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>',
@@ -183,6 +185,7 @@
         '<button type="button" class="mode main" data-go="intro-full"><span class="ic">' + ICONS.clock + '</span><span class="t">' + t.full + '</span><span class="d">' + t.fullD + '</span></button>' +
         '<button type="button" class="mode" data-go="intro-quick"><span class="ic">' + ICONS.quick + '</span><span class="t">' + t.quick + '</span><span class="d">' + t.quickD + '</span></button>' +
         '<button type="button" class="mode" data-go="practice"><span class="ic">' + ICONS.book + '</span><span class="t">' + t.practice + '</span><span class="d">' + t.practiceD + '</span></button>' +
+        mistakesCard() +
         allCard() +
         '<button type="button" class="mode" data-go="words"><span class="ic">' + ICONS.words + '</span><span class="t">' + t.words + '</span><span class="d">' + t.wordsD + '</span></button>' +
         '<button type="button" class="mode" data-go="learn"><span class="ic">' + ICONS.shapes + '</span><span class="t">' + t.learn + '</span><span class="d">' + t.learnD + '</span></button>' +
@@ -190,6 +193,24 @@
       '<div class="best"><span>' + t.best + '</span><b>' + (best ? '<bdi dir="ltr">' + best + '%</bdi>' : t.none) + '</b></div>' +
       '<p class="fine">' + t.fine + '</p>';
     setBar("");
+  }
+
+  /* "Practise my mistakes" (D37): every question answered wrong, in any mode, is kept on the phone in
+     kartak-miss as { id: right answers since }. It leaves the list after it is answered right twice. */
+  function misses() { try { return JSON.parse(store("kartak-miss") || "{}") || {}; } catch (e) { return {}; } }
+  function noteMiss(q, ok) {
+    var m = misses();
+    if (!ok) m[q.id] = 0;
+    else if (m.hasOwnProperty(q.id)) { m[q.id]++; if (m[q.id] >= 2) delete m[q.id]; }
+    else return;
+    store("kartak-miss", JSON.stringify(m));
+  }
+  function missIds() { var m = misses(), live = {}; BANK.forEach(function (q) { live[q.id] = 1; }); return Object.keys(m).filter(function (id) { return live[id]; }); }
+  function mistakesCard() {
+    var n = missIds().length, t = T();
+    if (!BANK.length && Object.keys(misses()).length) bankReady.then(function () { if (S.screen === "home" && BANK.length) drawHome(); }); // the bank loads after the first draw
+    if (!n) return "";
+    return '<button type="button" class="mode" data-go="mistakes"><span class="ic">' + ICONS.redo + '</span><span class="t">' + t.mistakes + '</span><span class="d">' + t.mistakesD.replace("{n}", '<bdi dir="ltr">' + n + '</bdi>') + '</span></button>';
   }
 
   // "All questions": with a saved place the card carries on (and says which type); otherwise it opens the
@@ -303,6 +324,8 @@
     var idx = BANK.map(function (q, k) { return k; });
     if (navigator.onLine === false) idx = idx.filter(function (k) { return !BANK[k].clip; }); // clips need internet (D31)
     if (mode === "all" && S.allType) idx = idx.filter(function (k) { return BANK[k].type === S.allType; }); // one type only (D29)
+    if (mode === "mistakes") { var m = misses(); idx = idx.filter(function (k) { return m.hasOwnProperty(BANK[k].id); }); }
+    if (!idx.length) { S.mode = null; go("home"); return; } // e.g. "again" after the last mistake was cleared
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var tt = idx[j]; idx[j] = idx[r]; idx[r] = tt; }
     S.qs = idx.slice(0, Math.min(SIZES[mode], BANK.length)).map(function (k) { return BANK[k]; });
     S.shuffles = S.qs.map(function (q) { return q.type === "order" ? shuffle(q.en.o.length) : null; });
@@ -400,6 +423,7 @@
       clearInterval(S.tick); S.tick = null;
       var q = S.qs[S.i];
       S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: !hasAnswer(q, S.sel) || (q.type === "order" && !S.touched) };
+      noteMiss(q, S.results[S.i].ok);
       S.notice = true;
       advance();
     }
@@ -712,9 +736,10 @@
     if (b.dataset.undo) { S.sel.pop(); drawQ(); return; }
     if (b.dataset.clear) { S.sel = []; drawQ(); return; }
     if (b.id === "cta") {
-      if (!timed()) { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; S.checked = true; stopSpeak(); saveAll(); recordAll(false); drawQ(); return; }
+      if (!timed()) { S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false }; noteMiss(q, S.results[S.i].ok); S.checked = true; stopSpeak(); saveAll(); recordAll(false); drawQ(); return; }
       clearInterval(S.tick); S.tick = null;
       S.results[S.i] = { ok: grade(q, S.sel), sel: copy(S.sel), timedOut: false };
+      noteMiss(q, S.results[S.i].ok);
       advance();
     }
   }

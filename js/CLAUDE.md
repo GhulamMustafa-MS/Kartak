@@ -24,4 +24,6 @@ Rules:
 - Clip questions (D31): `q.clip` plays in `drawQ()` above two buttons from `optsOf()` (`tRight`, `tWrong`);
   `twoWay()` marks questions with two fixed buttons (true/false and clips); the playing video is kept when the
   screen redraws, and tests started offline leave clips out.
+- "Practise my mistakes" (D37): `noteMiss()` runs after every answer and keeps `kartak-miss`; mode `mistakes`
+  (in `SIZES`, untimed) asks only those ids; `mistakesCard()` shows on home only when some are live.
 - localStorage keys are listed in the `app.js` header; renaming one logs everyone out of that setting.

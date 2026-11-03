@@ -14,7 +14,7 @@
  */
 import { sql, normCode as norm, readBody } from "./_db.js";
 
-const MODES = ["full", "quick", "practice", "all"];
+const MODES = ["full", "quick", "practice", "all", "mistakes"]; // mistakes: "Practise my mistakes" (D37)
 const QID = /^k\d{3,4}$/;
 const int = (v, lo, hi) => (Number.isInteger(v) && v >= lo && v <= hi ? v : null);
 const ids = (a) => (Array.isArray(a) ? a.filter((x) => typeof x === "string" && QID.test(x)).slice(0, 400) : []);

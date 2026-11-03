@@ -207,6 +207,19 @@ await worker.goBack();
 await worker.waitForSelector("[data-go=intro-full]");
 check("Back then OK leaves the test for the home screen (one more Back closes the app)", (await worker.evaluate(() => history.state)) === null);
 
+// "Practise my mistakes" (D37): a question answered wrong is kept on the phone and offered again from home
+await worker.evaluate((id) => localStorage.setItem("kartak-miss", JSON.stringify({ [id]: 1, gone999: 0 })), LIVE_Q.find((q) => !q.clip).id);
+await worker.reload();
+await worker.waitForSelector("[data-go=mistakes]");
+check("home shows Practise my mistakes with the number of live questions missed", (await worker.textContent("[data-go=mistakes]")).includes(UI.en.mistakes) && (await worker.textContent("[data-go=mistakes] .d")).includes("1 "));
+await worker.click("[data-go=mistakes]");
+await worker.waitForSelector(".qtext");
+check("Practise my mistakes asks only the missed questions", (await worker.textContent(".qhead .pos span")).includes("1 / 1"));
+await worker.evaluate(() => localStorage.removeItem("kartak-miss"));
+await worker.click("#brandBtn");
+await worker.waitForSelector("[data-go=intro-full]");
+check("no mistakes card when nothing is missed", !(await worker.$("[data-go=mistakes]")));
+
 // "Listen" reads the steps in the order shown on the screen, never in the answer order (a phone voice is faked)
 await worker.addInitScript(() => {
   window.__said = [];

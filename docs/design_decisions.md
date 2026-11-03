@@ -41,6 +41,7 @@ the AI and accepted; **AI** = made by the AI while building, within the agreed r
 | D30 | 30 Oct | Beginner review of the bank: confusing questions are rewritten in kitchen words, never dropped, when their topic is in the handbook; two clearer ordering questions added; explanations tie the clashing numbers together (fridge 0-4°C vs 5°C, display 8°C) | User (rewrite, don't drop), AI reviewed and wrote | Workers practise with no food training; the exam covers the whole handbook, so no topic may be skipped |
 | D31 | 30 Oct | Video questions go live as cartoon clips with two answers, Right and Wrong, like the real exam (Wessam: the exam always asks "is this right or wrong?"); 12 clips, half right, half wrong; replaces holding videos back (D5) | User asked, AI made the clips | The exam has video questions; workers should practise the format now, not wait for real footage |
 | D32 | 30 Oct | Ordering steps stay neutral (no colour) until "Check my answer" | User | The red used for moved steps looked like a wrong answer |
+| D37 | 3 Nov | "Practise my mistakes" on the home screen: every question answered wrong (any mode) is kept on the phone and asked again, 15 at a time, untimed, until it is answered right twice; results report as mode `mistakes`. Also k306 (chemical in the eye) becomes "What do you do first?" and k137's option "check how long food stays at room temperature" becomes "keep cold food in the fridge at 5°C or below" | User OK'd, AI proposed after Anis's results | Anis got the same questions wrong 3-4 times in a row; k306's order and k137's option were unfair |
 | D36 | 1 Nov | Finish the independent review's list: 13 questions turned off (10 repeats k005 k011 k044 k047 k049 k058 k059 k100 k134 k260, plus k202 obvious, k037 a negative near-copy of k199, k152 confusing "deliberate"), 3 rewritten (k131, k171, k309). Questions on handbook numbers (k119 75%, k125 10-20 minutes, k241 7 principles and 12 steps) and k233 kept | User ("turn off the repeats and whatever is best for the rest"), AI chose per question | The 31 Oct rewrite missed 21 of the review's 40 flags (k139 slipped through and reached Wessam) |
 | D35 | 1 Nov | Three fixes from Wessam's testing: every clip gets a poster picture and a big play button when autoplay is refused; the boards clip (k312) now shows hand washing after the raw chicken and its explanation says gloves are not needed but hand washing is; k139 (rice) becomes a single-answer question | AI, after Wessam's reports | The taste clip was black on his iPhone; he thought the boards clip was wrong because of no gloves; he could not see how to order the rice steps |
 | D34 | 31 Oct | Second whole-bank review from the exam-relevance angle: questions a worker would not be asked (making the HACCP plan, naming HACCP terms, admin steps), orders with more than one fair answer, orders solvable by sorting numbers, and answers that disagreed with other questions were rewritten (23 questions, all 11 languages); none dropped | User (asked for a harder look), AI reviewed (two independent passes) and wrote | Workers were losing marks on things the exam is unlikely to ask; the user kept finding these one at a time |
@@ -272,6 +273,19 @@ listing every code. One code made on its own has no batch and looks exactly as b
   one go, and its name is the codes' shared name.
 - Rejected: letting the seller move codes between bunches later. Not asked for; adds screens.
 - The cap of 50 per go keeps one request short and stops a mistyped 500.
+
+## D37. Practise my mistakes, k306, k137 (3 Nov)
+
+Anis's Results page showed the same questions wrong 3 or 4 times in a row: seeing the explanation once was not
+enough. The app now keeps a list on the phone (`kartak-miss`, question id -> right answers since the last miss).
+A wrong answer in any mode puts the question on the list (or resets it to 0); answering it right twice takes it
+off. The home card "Practise my mistakes" appears only when the list has live questions; it asks up to 15 of them,
+untimed, with the answer after each, like Practice. Rejected: clearing after one right answer (too easy to get
+lucky once), and keeping the list on the server (works offline this way and needs no new endpoint).
+- k306: the old order put "stop work and move away" before rinsing, and "tell your supervisor" vs "go to the
+  clinic" could go either way. Now a single question whose answer is rinsing for 15-20 minutes with eyelids open.
+- k137: "check how long food stays at room temperature" does not stop growth by itself, so leaving it out was
+  fair; it is now "keep cold food in the fridge at 5°C or below" (still a right answer, same position).
 
 ## D36. The rest of the independent review (1 Nov)
 

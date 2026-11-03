@@ -59,7 +59,8 @@ Worker app (installable, works offline after the first visit):
   in the worker's language (D25).
 - Full mock exam (50 random questions, 1:30 each, 80% to pass), quick test (15, timed), practice (15, no timer,
   answer and reason after each), all questions (the whole bank, no timer, answer after each, carries on where
-  the worker stopped, D21; every type or only one type, such as ordering, D29), "Key words" (33 exam words explained simply with pictures, thermometers and a
+  the worker stopped, D21; every type or only one type, such as ordering, D29), practise my mistakes (questions
+  answered wrong, asked again until right twice, D37), "Key words" (33 exam words explained simply with pictures, thermometers and a
   cartoon clip, D27), "Learn the question types" with a small example of each type.
 - Video questions like the real exam (D31): a short cartoon clip of a kitchen action, then "Is this right or
   wrong?" with two buttons, Right and Wrong. 12 clips, half right and half wrong (hand washing, boards,

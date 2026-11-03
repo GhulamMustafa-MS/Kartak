@@ -4,14 +4,14 @@
 Update after every piece of work: rewrite START HERE (under 40 lines) and add a log entry on top. When the log
 passes about ten entries, move the oldest into the Archive at the bottom.
 
-## START HERE (last updated 1 Nov 2026)
+## START HERE (last updated 3 Nov 2026)
 
 **Where we are:** both apps are live and in use for testing in Saudi Arabia.
 - Worker app https://kartak-app.vercel.app: all 11 exam languages (English, Arabic, Urdu, Hindi, Bangla,
   Nepali, Malayalam, Tamil, Filipino, Indonesian, Turkish; dropdown at the top, D24), 305 live questions
   (all 13 handbook chapters, D22, D23), full mock / quick test / practice / all questions (saved place, every
   type or one type such as ordering only, D29) /
-  key words, learn the types, code lock, installable, offline. The phone's Back button goes back a screen.
+  key words, learn the types, practise my mistakes (D37), code lock, installable, offline. The phone's Back button goes back a screen.
 - Seller app https://kartak-seller.vercel.app: make one code or a bunch of up to 50 at once (D33; copy, turn off,
   turn on or delete a bunch together), with an optional 1/3/7/30-day limit for trials; send, reset, change the
   time limit, turn off and delete codes; Results tab with each person's scores, readiness,
@@ -41,6 +41,9 @@ is in the user's laptop folder `Downloads\Code\Kartak` (not a git clone; see tha
 
 ## Log
 
+- **3 Nov 2026:** "Practise my mistakes" on the home screen (D37): wrong answers are kept on the phone and asked
+  again until right twice. k306 (chemical in the eye) is now a single "what first" question; k137's unfair option
+  replaced. Prompted by Anis's results (same questions wrong 3-4 times). Live: 305 (single 118, order 39).
 - **1 Nov 2026 (later):** finished the independent review's list (D36): 13 questions turned off (10 repeats, k202,
   k037, k152), k131, k171 and k309 rewritten in all 11 languages. Live: 305 (single 117, true/false 59, multi 56,
   order 40, picture 21, video 12).
